@@ -10,7 +10,7 @@
 * [Satxm/UUP-ISO-Scripts](https://github.com/Satxm/UUP-ISO-Scripts) - Skripte za generisanje i pakovanje ISO slika iz UUP izvora.
 
 ## DISM & NTLite References
-* [Microsoft DISM Documentation](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/deployment-image-servicing-and-management-dism-technical-reference-overview) - Zvanična Microsoft dokumentacija za komande, servisiranje i upravljanje Windows WIM/ESD slikama.
+* [Microsoft DISM Documentation](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/what-is-dism?view=windows-11) - Zvanična Microsoft dokumentacija za komande, servisiranje i upravljanje Windows WIM/ESD slikama.
 * [NTLite Official Guide](https://www.ntlite.com/docs/) - Zvanično uputstvo za korišćenje NTLite alata za live i offline modifikaciju Windows komponenti.
 
 ## Windows Debloat & Scripting
