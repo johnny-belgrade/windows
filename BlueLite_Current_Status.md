@@ -5,10 +5,11 @@
 ## Authority and publication
 
 - **GitHub published authoritative Master Strategy:** `BlueLite-Master_Germanium_Strategy_final.md` **v2.5**, 2026-10-12.
-- **Latest Strategy v2.5 commit:** `c0018db6fdc342fbff8a8be77bd2ced026a100b5` (mandatory successor status protocol, §30.1).
-- **Latest Strategy Git blob SHA:** `d6b08b5bba7350c21517a2c041dc9ead5ac1ccad`.
+- **Latest Strategy v2.5 commit:** `2484d64cfd0c42e716051739c738a0bebc841d1a` (internal Library evidence-review requirement in §4.1 and §30.1; predecessor governance commit `c0018db6fdc342fbff8a8be77bd2ced026a100b5`).
+- **Latest Strategy Git blob SHA:** `fab56d8772711861fc571a835cd6a4e17439073d`.
 - **Initial Strategy v2.5 publication commit:** `0de6de539dc311a0175e3904e3307bbeba4bad3c`.
-- **Latest local Strategy SHA-256:** `B2165E1C5D17E383287CD0AC2FFD20E1A36820954CE282478DC230B00E125416`.
+- **2026-10-12 Library policy amendment:** `2484d64cfd0c42e716051739c738a0bebc841d1a`; targeted clarification of evidence retrieval and successor workflow only, with no change to the v2.5 technical runtime authorization gates.
+- **Prior operator-prepared v2.5 Strategy SHA-256 (before the internal Library amendment):** `B2165E1C5D17E383287CD0AC2FFD20E1A36820954CE282478DC230B00E125416`. The current post-amendment GitHub content is identified by the latest commit/blob above; do not present the earlier SHA-256 as a hash of the modified file.
 - **Current Status first GitHub creation:** commit `3e820e30002629145f264eda7162c6d278f2d0c0`.
 - GitHub Contents write permission issue **resolved**; `update_file` succeeded after refreshed connection and a fresh remote read independently confirmed v2.5.
 - Canonical successor handoff: `BlueLite_v1.0_CANONICAL_SUCCESSOR_HANDOFF_4.md` (v4.4, synchronized with published v2.5). The historical HANDOFF_3 appendix remains frozen.
@@ -16,6 +17,7 @@
 ## Mandatory successor synchronization contract
 
 - **At the start of every successor BlueLite session:** fetch this status from `https://github.com/johnny-belgrade/windows/blob/main/BlueLite_Current_Status.md`, plus live Master Strategy; do not rely on stale handoff snapshots.
+- **Mandatory internal BlueLite Library check:** During each successor-session startup, search the operator's internal ChatGPT Library for relevant original scripts, logs, audits, `Build_info`, UUP inputs, forensic comparisons and successor handoffs; read material matches before proposing a new technical action. Repeat a target-specific Library lookup whenever researching a component/dependency or revising a production rule. Library documents are evidence candidates, not proof of a current WIM state, operator execution, runtime certification or mutation authorization. If a relevant file is not accessible, report the evidence gap without claiming it was inspected (Master v2.5 §4.1 and §30.1).
 - **After every operator-confirmed significant milestone:** update this same GitHub file, first rereading the latest blob SHA, merging verified progress, and independently refetching the post-commit content. A delivered script is not proof of execution.
 - **At productive session close / handoff:** ensure the latest milestone, certification tier, blockers, and one next operator-approved action are recorded here. No implied permission for UUP download or offline mutation.
 - **If GitHub write fails:** report `GITHUB STATUS NOT SYNCED`; keep a local candidate, never claim a remote update. No PAT/token disclosure in chat or repository.
