@@ -2,8 +2,9 @@
 
 ## Bases & Image Building
 * [UUPdump](https://uupdump.net/) - Izvor za preuzimanje i generisanje originalnih Windows instalacionih ISO fajlova direktno preko UUP paketa.
+* [marcinmajsc/uup-dump-build-and-get-windows-iso](https://github.com/marcinmajsc/uup-dump-build-and-get-windows-iso) - Automatizacija UUP preuzimanja, generisanja Windows ISO fajlova i objave artefakata preko GitHub Actions; istraživačka referenca za BlueLite one-click UUP workflow.
 * [OldGodShen/AutoUUPBuild](https://github.com/OldGodShen/AutoUUPBuild) - Automatizovani alat za preuzimanje i buildovanje UUP slika.
-* [OldGodShen/UUPBuildByPy](https://github.com/OldGodShen/UUPBuildByPy) - Python skripte za obradu i kreiranje UUP paketa.
+* [Cairnstew/uup-builder](https://github.com/Cairnstew/uup-builder) - Python projekat za kreiranje i prilagođavanje Windows ISO slika; istraživačka alternativa nekadašnjem UUPBuildByPy projektu.
 * [issenn/uup-converter-wimlib](https://github.com/issenn/uup-converter-wimlib) - Skripte za konverziju UUP datoteka u WIM/ISO format pomoću wimlib-a.
 * [gitntel/uupdump_actions](https://github.com/gitntel/uupdump_actions) - GitHub Actions radni procesi za automatsko generisanje UUP dump ISO fajlova.
 * [lzw29107/uupdump](https://github.com/lzw29107/uupdump) - Dodatni repozitorijum prilagođen za rad sa UUP dump sistemom.
@@ -20,19 +21,19 @@
 * [sctg-development/windows-in-place-updater](https://github.com/sctg-development/windows-in-place-updater) - Alat namenjen za in-place nadogradnje i flešovanje Windows sistema.
 * [raspiduino/updateinsider](https://github.com/raspiduino/updateinsider) - Skripte za praćenje i primenu Insider nadogradnji.
 * [ArKT-7/woawin](https://github.com/ArKT-7/woawin) - Alat za optimizaciju i prilagođavanje Windows instalacija.
-* [Satxm/ISO-Update](https://github.com/Satxm/ISO-Update) - Skripte za ažuriranje i osvežavanje postojecih ISO slika.
+* [abbodi1406/W10UI direktorijum](https://github.com/abbodi1406/BatUtil/tree/master/W10UI) - Kolekcija skripti i dokumentacije za integraciju Windows ažuriranja u offline WIM/ISO slike; zamena za nepostojeći ISO-Update repozitorijum.
 * [oskarx/Win_ISO_Patching_Scripts_zhCN](https://github.com/oskarx/Win_ISO_Patching_Scripts_zhCN) - Kolekcija skripti za flešovanje i patchovanje Windows ISO fajlova.
 
 ## Advanced Image Customization & Servicing
-* [MSMG Toolkit](https://forums.mydigitallife.net/forums/msmg-toolkit.108/) - Najpoznatiji nezvanični alat (pored NTLite-a) za offline servicing, integraciju drajvera i debloatovanje WIM slika. Odličan za analizu njihovih skripti.
-* [W10UI (Windows 10/11 Update Integrator)](https://github.com/abbodi1406/W10UI) - Skripta za brzu i pouzdanu integraciju Windows nadogradnji (CAB, MSU) direktno u instalacionu sliku.
+* [MSMG Toolkit](https://forums.mydigitallife.net/threads/msmg-toolkit.50572/) - Potvrđena originalna MSMG ToolKit diskusija na My Digital Life forumu; referenca za offline servicing, integraciju i uklanjanje Windows komponenti.
+* [W10UI (Windows 10/11 Update Integrator)](https://github.com/abbodi1406/BatUtil/blob/master/W10UI/W10UI.cmd) - Originalna W10UI.cmd skripta autora abbodi1406 za integraciju Windows nadogradnji (CAB, MSU) u instalacionu sliku.
 * [Windows ADK (Assessment and Deployment Kit)](https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install) - Zvanični alati za masovnu primenu Windows-a, uključuje Windows PE, Sysprep i OSCDIMG.
 * [Sysprep (System Preparation) Documentation](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview) - Baza znanja za generalizaciju Windows slika pre pravljenja finalnog ISO fajla.
 
 ## Premium Debloat, Privacy & Tweaking Tools
 * [ChrisTitusTech/winutil](https://github.com/ChrisTitusTech/winutil) - Jedan od najpopularnijih PowerShell alata za instalaciju programa, tweak-ovanje i debloat Windows-a. Izvor odličnih registry rešenja.
 * [builtbybel/Bloatynosy](https://github.com/builtbybel/Bloatynosy) - Aplikacija specifično dizajnirana za uklanjanje telemetrije i bloatware-a iz Windows 11.
-* [undergroundwire/privacy.sexy](https://github.com/undergroundwire/privacy.sexy) - Ogromna open-source kolekcija stotina skripti za privatnost i bezbednost. Bukvalno rudnik za registry ključeve.
+* [undergroundwires/privacy.sexy](https://github.com/undergroundwires/privacy.sexy) - Open-source kolekcija skripti za privatnost i bezbednost, korisna kao istraživački izvor za registry i policy podešavanja.
 * [Winaero Tweaker](https://winaero.com/winaero-tweaker/) - Ultimativni UI alat za Windows tweakove; njihov blog je najbolja svetska baza za pronalaženje skrivenih registry ključeva.
 * [O&O ShutUp10++](https://www.oo-software.com/en/shutup10) - Referenca za antispy i telemetrijska podešavanja na nivou operativnog sistema.
 * [Michaelunkai/windowsapps](https://github.com/Michaelunkai/windowsapps) - Skripte za upravljanje i uklanjanje fabričkih Windows aplikacija.
@@ -70,4 +71,4 @@
 * [GitHub Official Homepage](https://github.com/) - Glavna platforma za hostovanje koda, repozitorijume i praćenje projekata.
 * [PowerShell Documentation on GitHub](https://github.com/PowerShell/PowerShell) - Zvanični GitHub repozitorijum za PowerShell, module i dokumentaciju.
 * [abbodi1406/website-public](https://github.com/abbodi1406/website-public) - Javni sajt i dokumentacija projekata od ključnog autora za Windows alate (`abbodi1406`).
-* [Dash2KoF/website](https://github.com/Dash2KoF/website) - Repozitorijum web prezentacije vezane za sistemske alate i skripte.
+* [Atlas-OS/Atlas](https://github.com/Atlas-OS/Atlas) - Open-source projekat optimizacije Windows performansi, privatnosti i upotrebljivosti; tematska zamena za nedostupni Dash2KoF/website, a ne njegov nastavak.
