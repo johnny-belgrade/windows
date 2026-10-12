@@ -1,7 +1,7 @@
-# BlueLite v1.0 — MASTER GERMANIUM STRATEGY v2.4
+# BlueLite v1.0 — MASTER GERMANIUM STRATEGY v2.5
 
 **Status:** AUTHORITATIVE / SUPERSEDES PREVIOUS MASTER STRATEGY  
-**Date:** 2026-10-03  
+**Date:** 2026-10-12  
 **Scope:** Windows 11 Germanium family, current development lineage 26100.x / 26200.x  
 **Project:** BlueLite v1.0  
 **Team:** Johnny + ChatGPT  
@@ -11,7 +11,9 @@
 
 ## 0. DOCUMENT AUTHORITY, EVIDENCE CORPUS AND PURPOSE
 
-This document is the new governing strategy for BlueLite. It is not a summary of one build and it is not a list of isolated tweaks. It consolidates the complete project logic developed through the four chronological BlueLite chat histories and replaces the earlier Master Strategy wherever this document is more specific.
+This v2.5 revision retains the full v2.4 operator-relay architecture and adds the canonical UUP MAX_PRE implementation principles, proof ladder, cross-build regression, observed-delta contracts, FBConan forensic lessons and operational manifest policy from the 2026-10-12 handoff. The historical four-chat evidence table below documents the earlier source corpus; later work is in the successor handoff.
+
+This document is the governing strategy for BlueLite. It is not a summary of one build and it is not a list of isolated tweaks. It consolidates the complete project logic developed through the four chronological BlueLite chat histories and replaces the earlier Master Strategy wherever this document is more specific.
 
 The strategy was reconstructed from the following complete chat exports:
 
@@ -148,8 +150,6 @@ This distinction is fundamental:
 ## 2.6 From “NTLite next” to “NTLite only after the Intelligence queue is exhausted”
 
 A premature transition to NTLite was explicitly rejected during the later work.
-
-**NTLite is not opened as an active debloat stage while the offline scripted pipeline is still being designed, tested, merged, generalized or completed. Offline scripting must be complete first.**
 
 Completing the currently known AMBER list does not authorize opening NTLite. Before handoff, every realistic remaining offline candidate must end in one of four terminal dispositions:
 
@@ -433,49 +433,32 @@ Operational rules:
 
 ## 6.1 OPERATOR-RELAY EXECUTION CONTRACT
 
-BlueLite uses an explicit operator-relay execution model.
-
-ChatGPT designs, reviews and supplies commands/scripts; the operator executes them locally on the operator-controlled workstation and returns the requested output/log. Direct remote control of the workstation by ChatGPT is not part of the BlueLite execution architecture.
+BlueLite uses an explicit operator-relay execution model. ChatGPT designs, reviews and supplies complete commands/scripts; the operator executes them locally on the operator-controlled Windows workstation and returns the exact requested output/log. Direct remote control of the workstation by ChatGPT is not part of the BlueLite execution architecture.
 
 Mandatory contract:
 
-1. The live main-desk Windows installation is the **HOST**, not the BlueLite image target.
-2. Normal BlueLite image mutation is permitted only against an explicitly verified offline image under the canonical `C:\work` workspace, normally:
-
-   ```text
-   SOURCE WIM : C:\work\extracted\install.wim
-   INDEX      : 1
-   MOUNT      : C:\work\mount
-   ```
-
-3. `/Online`, live-registry, live-service, live-package, live-driver or equivalent live-host mutation is prohibited during normal BlueLite image work.
-4. ChatGPT does not directly execute commands on the main workstation, browse its filesystem, control its processes, create persistent remote access, manage scheduled remote bridges, or otherwise operate the live host through a remote-control/plugin transport as part of the BlueLite workflow.
-5. If a separate live-host administration task is ever required, it is outside the offline-image workflow. ChatGPT may provide the complete command, but the operator executes it locally and returns the requested output.
-6. Before the first mutation of a work session, ChatGPT supplies a local preflight command and the operator executes it to verify at least:
-   - canonical `C:\work` paths;
-   - current DISM mount table;
-   - intended WIM/index/mount target;
-   - absence of an unintended or stale target that could redirect the operation.
-7. If target identity is ambiguous, mutation fails closed.
-8. Read-only discovery, inventory, health, status, log collection and file inspection are also performed through the operator-relay model unless the information already exists in project files/evidence.
-9. Every executable step is supplied in complete copy/paste-ready form. The operator should not need to edit command fragments.
-10. One executable step remains the default unit of work: execute → return requested output/log → inspect/certify → continue.
-11. Canonical scripts and logs remain under `C:\work\scripts` and `C:\work\logs`; there is no hidden alternate execution path or second source of truth.
-12. No persistent remote authorization, remote bridge, autostart remote task or unattended host-control mechanism is required or assumed by BlueLite.
-13. A successor ChatGPT session must preserve this operator-relay model unless the operator explicitly revises the Master Strategy.
+1. The live Windows installation is the **HOST**, never the target of ordinary BlueLite offline-image mutation.
+2. Normal image mutation is permitted only against an explicitly verified offline image under the canonical `C:\work` workspace, normally source `C:\work\extracted\install.wim`, Index 1, mount `C:\work\mount`, or a verified transaction-scoped disposable derivative.
+3. `/Online`, live-host registry/service/package/driver mutations are prohibited in the offline BlueLite workflow.
+4. ChatGPT does not directly execute commands on the workstation, browse its filesystem, control its processes, create persistent remote access or use remote-control plugins for the BlueLite workflow.
+5. If a separate live-host administration task is explicitly requested, treat it as a separate scope; the operator executes the complete supplied command locally.
+6. Before the first mutation of a session, an **operator-executed local preflight** verifies canonical paths, DISM mount table, WIM/index/mount identity, and absence of a stale/unintended target.
+7. Ambiguous target identity means fail closed. A canonical image, disposable image and reference FBConan image may never share an ambiguous mount/hive namespace.
+8. Read-only discovery and log collection follow the operator-relay model unless already available from files or certified evidence.
+9. One complete copy/paste executable step at a time; specify exactly the required log/output and path.
+10. No hidden alternate source of truth: production scripts stay in `C:\work\scripts`, logs in `C:\work\logs`, checkpoints in `C:\work\backup`.
+11. No standing unattended remote authorization, remote bridge, autorun or scheduled host control is assumed or required.
+12. A successor must preserve this model unless the operator explicitly changes the governing strategy.
 
 ## 6.2 OPERATOR REVIEW GATE FOR CANONICAL DEBLOAT MUTATION
 
-Every command, command sequence or script mutation that is intended to become part of the shared BlueLite canonical/reusable debloat set must be shown to the operator in full **before its first execution as a candidate production mutation**.
+Every command/sequence/script mutation intended for the canonical reusable debloat set **must be shown in full to the operator for review before its first execution** as a candidate production mutation. Material revisions require renewed review.
 
-Mandatory rules:
-
-1. ChatGPT prepares read-only discovery, inventory, health, status, logging and evidence-collection commands and shows them to the operator for local execution.
-2. A mutation/debloat command proposed for later inclusion in a canonical production script, reusable engine module or shared command set must be presented to the operator exactly as it will be executed.
-3. The operator review occurs before the operator locally executes that candidate production mutation.
-4. Any material change to an already approved canonical mutation command or sequence requires renewed operator review before the changed form is executed as the new candidate production rule.
-5. Operator review does not replace disposable testing, topology gates, dependency analysis, post-state certification or any other BlueLite proof requirement; it is an additional governance gate.
-6. Command execution and result collection remain explicit: ChatGPT supplies the command and exact requested output/log; the operator executes locally and returns that evidence.
+- Read-only discovery, inventories, health and evidence collection are supplied to the operator for local execution.
+- The reviewed text must be the **actual complete mutation logic**; an opaque ZIP, SHA-256 checksum, static-anchor check or label of “certified” cannot replace source review.
+- Review precedes local execution of a candidate production mutation.
+- Operator review is additional to, not a substitute for, disposable testing, topology/dependency validation, pre/post-state certification and rollback.
+- No phase number, previous static PASS, plugin availability or continuation of a past chat grants implicit execution authorization.
 
 ## 6.3 26200.xxxx UNIVERSAL SCRIPT MANDATE
 
@@ -597,6 +580,21 @@ If a target was already removed by the UUP pre-ISO engine, the later standalone 
 
 ---
 
+## 7.8 CANONICAL MAX_PRE EXECUTION — ONE ENGINE / ONE PRE-ISO PATH
+
+The **primary** BlueLite build route is: frozen operator-selected UUP source → reconstruction with the entire required delta/FoD/reference closure → immutable reconstructed WIM → disposable mutable WIM → dependency-aware **MAX_PRE GREEN and AMBER** post-reconstruction/pre-ISO removals → independent verification and atomic WIM promotion → final ISO assembly.
+
+1. Only converter-supported source/AppX selection is permitted before reconstruction; do not prune reconstruction-critical Windows/FoD/delta downloads to mimic final-OS removals.
+2. The immutable original reconstructed WIM is hashed and never mutated in place; modifications target an independently identified, hash-verified disposable copy. Mount/dispose/export/rollback is orchestrator-owned.
+3. **Every already-certified** native GREEN/portable AMBER operation safe for the current frozen build belongs before ISO assembly, not a separate post-ISO debloat pipeline. Preserve explicit dependent ordering (e.g. OneDrive current neutral → WOW64 neutral → old staged neutral).
+4. `START.cmd` and standalone offline orchestration must call the **same** versioned engine and Component Intelligence selectors; no duplicate divergent implementations.
+5. Subsequent Phase E/F handlers execute only genuinely unprocessed residue or newly proven rules; completed pre-ISO work yields idempotent `ALREADY_ABSENT`, not a second removal.
+6. Exact pre-state, dynamic owners, native transitions, expected satellites, physical post-state, retained service/VM/network floor, pending count, health and rollback must pass **before** commit/export/replace.
+7. A static PASS never authorizes UUP download, converter execution or mutating WIM. Converter and MAX_PRE require separate runtime certification and explicit operator review/approval.
+8. The operator may defer the next download or disposable test. No development milestone by itself overrides that instruction.
+
+**Canonical operating invariant:** maximizing pre-ISO removal is an engine capability, not a justification for mutating an unproven CBS dependency graph.
+
 # 8. BUILD DISCOVERY AND DELTA MODEL
 
 Every newly reconstructed Germanium `install.wim` begins with a minimal, read-only discovery pass **before any post-reconstruction BlueLite mutation is allowed**.
@@ -652,6 +650,15 @@ No broad rule such as “remove every 26100.x package” is allowed.
 Version numbers are evidence used to resolve an instance of a logical target; they are not the target definition.
 
 ---
+
+## 8.1 CROSS-BUILD TOPOLOGY REGRESSION (REQUIRED)
+
+Use a machine-readable target-by-build matrix for 26200.9278, 26200.9445, 26200.9550 and later verified Germanium builds. Every entry must contain target family and exact identities; versions; CBS `CurrentState`, `Visibility`, owner count, owner identity and DWORD; protected parent/siblings; feature/capability/AppX and hardlink projections; anticipated servicing side effects; allowed CBS delta; physical post-state; and the actual health/pending result.
+
+- Classify `UNCHANGED`/`VERSION_CHANGED` only after **topology**, not just package basename/version, matches.
+- Wrong owner count or value, changed parent state, missing protected feature, altered language satellite or unsupported packaging => `TOPOLOGY_CHANGED`: no mutation, Intelligence research.
+- Historical successes on 26200.9445 do **not** authorize applying OneDrive, printing, FoDMetadata or Recall/AIX owner edits to 26200.9550 without its own exact gate.
+- Positive fixtures and intentionally invalid negative fixtures both belong in CI/static auditing. Keep build exceptions in Intelligence, not scattered engine branches.
 
 # 9. TWO-DIMENSION CLASSIFICATION: REMOVAL CLASS + RELEASE DISPOSITION
 
@@ -799,6 +806,34 @@ A previously certified GREEN target on a new build can skip redundant deep foren
 
 ---
 
+## 10.3 EVIDENCE LADDER — STATIC IS NOT RUNTIME
+
+Every module, wrapper and complete release records the highest proven tier, with no implicit promotion:
+
+1. `STATIC_VERIFIED`: script/package manifests (SHA-256), PowerShell AST, ordering, source anchors, integrity and read-only audit checks passed; no WIM execution implied.
+2. `DISPOSABLE_RUNTIME_VERIFIED`: a clone of a frozen WIM underwent actual native execution and exact post-state/health/rollback verification; retain logs and before/after measured deltas.
+3. `CURRENT_BUILD_CERTIFIED`: the exact currently selected source, dynamic topology and full pre-ISO workflow were executed and verified on the current build.
+4. `RELEASE_CERTIFIED`: common base, component-engine work if needed, Defender branches, first boot/new account, CU/serviceability, final footprint and distribution hashes certified.
+
+Two **independent** workflow gates are mandatory: `CONVERTER_RUNTIME_AUTHORIZED` and `PRE_ISO_MUTATION_RUNTIME_CERTIFIED`. Neither is set by a static AST/hash PASS in the other workstream.
+
+**Operational baseline on 2026-10-12:** MAX_PRE `v2.0-R15-R1` has static PASS (`R15_PACKAGE_SHA256=PASS_54_FILES`, `PHASE_UUP_R15=PASS_STATIC_PORTABLE_RECALL_AIX_PHASE77_PRE_ISO_REVIEW_NO_DOWNLOAD_OR_WIM_MUTATION`). `R15_UUP_DOWNLOAD=NOT_RUN`, `R15_WIM_MUTATION=NOT_RUN`; `R15_PRODUCTION_STATUS=REVIEW_CANDIDATE_NOT_RUNTIME_CERTIFIED`. Legacy C33-R4 converter/supervisor is a different workstream. Neither is automatically released for an end-to-end mutation.
+
+## 10.4 AMBER PRE/POST CBS OBSERVED-DELTA TRANSACTION
+
+Extend the R10 prototype, R11 Search, R12 OneDrive, R13 FoDMetadata, R14 printing and R15 Recall/AIX gates to **every** AMBER target:
+
+- freeze target-specific CBS owners/states/sibling/provider state *before the first mutation*;
+- require exact expected count, owner values, `Visibility`, `CurrentState` and retained parent with no guesswork;
+- export/backup the exact registry keys/hive and preserve a verified disposable WIM checkpoint;
+- perform the smallest allow-listed metadata transition, unload hive before native DISM;
+- allow only named native target and documented satellite side effects;
+- verify target absence/non-resolving identity where applicable, physical payload/hardlinks, retained dependencies, pending=0, CheckHealth and ScanHealth;
+- independently compare observed CBS delta against the preapproved expected map **before WIM commit/promotion**;
+- fail closed and restore/discard on unexplained drift or unknown topology; no wildcard broadening.
+
+The R10 implementation is the first working model of the data contract, not a claim that its static review has certified an entire cross-build graph.
+
 # 11. POST-STATE IS THE AUTHORITY
 
 Command exit codes are evidence, not proof.
@@ -884,6 +919,18 @@ Required practices:
 A parser or reporting failure in a read-only certification script is a script defect, not evidence that the image is damaged. Fix the script without mutating the image.
 
 ---
+
+## 13.1 NEGATIVE FIXTURES / AUDITOR SELF-TEST / DUAL POWERSHELL HOSTS
+
+A static package audit must verify **itself**, not merely engine string anchors. In addition to the positive case, inject deliberate failures: corrupted SHA, invalid AST, malformed or missing anchor, incorrect WIM/index/source, absent/duplicate candidate, extra or wrong-value owner, wrong `CurrentState`/`Visibility`, dropped protected parent, unexpected side effect, failed native exit and missing post-health or premature commit. Every negative fixture must return FAIL_CLOSED.
+
+Specific MAX_PRE defects and durable fixes:
+
+- R14: PowerShell interpolation `$logical:` is invalid in a double-quoted string; use `$($logical):` or `${logical}:`.
+- R15: the auditor used double quotes around an expected `$PSScriptRoot` source literal and expanded its own path, causing a **false** missing-engine-contract failure. Use literal patterns (single quotes, or correctly escaped) and test auditor self-interpolation.
+- R11/R12: implicit `$Matches` reuse after `-notmatch` is not reliable for authorizing owner registry edits; use explicit `[regex]::Match()` captures and typed owner data.
+
+The operator normally uses **PowerShell 7 Admin**, while an upstream converter hook may invoke **Windows PowerShell 5.1** through `powershell.exe`. AST/static checks must test the syntax of all relevant `.ps1` files and record the host/engine contract; successful PS7 AST does not establish PS5.1 runtime behavior, or vice versa. Do not mistake parser/auditor failure for servicing damage.
 
 # 14. CBS / WINSXS POLICY
 
@@ -1154,6 +1201,20 @@ The following approaches were tried, exposed as brittle, or explicitly rejected:
 
 ---
 
+## 21.1 FBCONAN REFERENCE FORENSICS: COMPRESSION, USERS AND SERVICING
+
+FBConan / Windows X-Lite 25H2 Pro v2 (26200.7019) is a **reference end-state**, not automatic permission to reproduce a CBS carve on BlueLite.
+
+**WIM / size:** the reference had a two-index Defender OFF/ON solid/recovery WIM of roughly 2.845 GB with extensive shared data, while logical per-index image size was about 17.17 GB. `SetupComplete.cmd` applied `compact /c /s /i /a /exe:XPRESS8K "%SystemDrive%\*"`; offline `CompactOS:Query` did not report CompactOS enabled. File-level NTFS compression, solid WIM and index sharing can reduce reported distribution/installed physical footprint **without** representing equivalent dependency payload removal. Independently benchmark each lever, and keep the serviceable development master separate from final transport compression.
+
+**OOBE / users:** `Users\Default\NTUSER.DAT` seeded consumer-content/Spotlight/privacy first-run flags, but did not pre-capture an AppX repository for all future users. FBConan's local Admin RID 1000 was a **previously initialized captured profile** (e.g. `LogonCount=14`, `AppReadinessLogonComplete=1`, `PostAppInstallTasksCompleted=1`). `unattend.xml` provisioned a local Admin and bypassed parts of OOBE; the rapid bootstrap desktop (around 5–6 minutes as reported) is **not** proof of equal speed for a fresh profile. Measure bootstrap and genuinely new account first logon separately. Do not copy reference SAM/SID/ACL or assume an unsecured duplicate local account is a release pattern.
+
+**WinSxS / metadata:** FBConan retained broad manifests, MUM/CAT and staged package metadata, but `WinSxS\Backup` and `WinSxS\Migration` were absent. Its DISM `CheckHealth` reported **repairable**, therefore it is not the reference for a clean serviceable BlueLite release. Physical carve and metadata carve are different classes and must not be conflated.
+
+**Disk Cleanup ~190 MB:** the operator repeatedly saw roughly 190 MB left in *Windows Update Cleanup* across FBConan installations. An earlier BlueLite `WinSxS\Backup` inventory was ~192.604 MB, **but the FBConan Backup directory is absent**; they are not a proven match or even the same metric. Examine cleanup handlers and estimation, CBS metadata/history, packages, compaction and servicing floor as competing hypotheses. Never blindly remove files merely to force a cleanmgr indicator to zero.
+
+**Experiment measurements:** distinguish (1) logical bytes, (2) hardlink-aware unique physical payload, (3) actual compressed NTFS allocated size, (4) WIM/ISO transport compressed bytes, (5) clean first-logon time. Hypothesis and observed result must be labeled separately. A `repairable` servicing graph is a research input, not a production PASS.
+
 # 22. CANONICAL PRODUCTION PIPELINE
 
 The normal release pipeline is:
@@ -1178,7 +1239,7 @@ The normal release pipeline is:
 
 ## PHASE C — PRE-ISO OFFLINE ENGINE
 
-Run only already-certified production modules that are safe and useful immediately after reconstruction **and whose current-build contract has passed the Phase B discovery/pre-production gates**.
+Run the **shared canonical MAX_PRE engine** for all already-certified GREEN/AMBER production modules safe and useful immediately after reconstruction **and whose current-build contract has passed the Phase B discovery/pre-production gates**.
 
 This phase may include:
 
@@ -1199,13 +1260,13 @@ It must not contain unproven research carves.
 4. Populate the Intelligence queue with unresolved `TOPOLOGY_CHANGED`, `NEW` and other realistic remaining offline candidates.
 5. Preserve the Phase B pre-mutation manifest and Phase D residue manifest as separate evidence artifacts; never overwrite one with the other.
 
-## PHASE E — GREEN PRODUCTION
+## PHASE E — GREEN RESIDUE / INTELLIGENCE COMPLETION
 
-Apply all proven native rules whose current contract matches.
+Use the **same** certified production modules only on targets not already removed in Phase C. Verify `ALREADY_ABSENT` idempotently; never run a second divergent post-ISO native engine.
 
-## PHASE F — PORTABLE AMBER PRODUCTION
+## PHASE F — PORTABLE AMBER RESIDUE / INTELLIGENCE COMPLETION
 
-Apply all certified AMBER rules whose pre-production gates match.
+Use the **same** certified portable AMBER rules only on newly proven/remaining targets whose present-build gates pass. Do not duplicate or replay completed Phase C AMBER operations.
 
 ## PHASE G — INTELLIGENCE QUEUE EXHAUSTION
 
@@ -1235,8 +1296,6 @@ Read-only certification of:
 - no unexpected mutation.
 
 ## PHASE I — SECONDARY COMPONENT ENGINE / NTLITE
-
-This phase is permitted only after the complete offline scripting cycle for the current source is finished, the realistic offline Intelligence queue is exhausted, the universal 26200.xxxx script set is consolidated for that cycle, and the common base has passed certification.
 
 Only explicit `COMPONENT_ENGINE_HANDOFF` targets.
 
@@ -1319,6 +1378,10 @@ Before runtime release use:
 
 ---
 
+## 23.4 OPERATOR SOURCE REVIEW VS STATIC PACKAGE AUDIT
+
+Before first production execution of a new/changed reusable mutation, show the operator the complete exact code (Section 6.2), its target/owner/expected post-state, rollback and all changed modules. SHA/AST/static PASS indicates file and parser consistency, **not** execution approval, success of native DISM, or confirmation of a future build. Read-only static audit does not mount, invoke DISM mutators, run the downloader/converter or alter the live host.
+
 # 24. COMMON BASE CERTIFICATION DESIGN
 
 Certification scripts are read-only.
@@ -1354,10 +1417,6 @@ Certification output should include:
 # 25. NTLITE BUSINESS POLICY
 
 NTLite is a **secondary dependency-aware component engine**.
-
-It is used only **after the offline BlueLite scripting phase is fully completed** for the current development cycle. That means source/UUP work, certified GREEN and portable AMBER modules, realistic offline Intelligence research, universal-script consolidation, offline post-state gates and common-base certification have all reached their required terminal state.
-
-NTLite must not be used as an active component-removal stage while the offline script set is still being designed, tested, merged, generalized or completed.
 
 It is not:
 
@@ -1419,6 +1478,12 @@ Every major artifact gets:
 LZMS/solid compression is a final transport optimization, not the development master.
 
 ---
+
+## 26.1 MEASURED DEBLOAT EFFICIENCY LEDGER
+
+For each logical target/build, record baseline → expected → actual delta with units and artifact scope: logical WinSxS bytes; unique hardlink-aware NTFS payload; compressed allocated size on disk; WIM/export/final ISO bytes at the same compression settings; Defender ON/OFF index sharing; operation duration; health/pending; and the protected dependency/residue cost. Never add logical hardlinked aliases as reclaimed physical storage or treat solid compression as CBS removal.
+
+Historical physical target deltas on 26200.9445 were approximately: OneDrive Setup **196.71 MiB**; Search srchadmin wrapper **0.244 MiB**; FoDMetadata core **0.562 MiB**; LPD+LPR **0.242 MiB**. These are **historical** measurements, not promised new-build WIM/ISO reductions. Favor large reproducible wins while preserving cheap smaller certified removals and avoiding endless small checks with no new runtime evidence.
 
 # 27. VIRTUALBOX FINAL PHASE
 
@@ -1514,16 +1579,24 @@ The repository should progressively converge on the following canonical artifact
 ```text
 BlueLite-Master_Germanium_Strategy_v2.1.md
 BlueLite_Sources.md
+BlueLite_Current_Status.md
 Component_Intelligence.*
+CrossBuild_Topology_Regression.*
+AMBER_Observed_Delta_Ledger.*
+Debloat_Efficiency_Ledger.*
 Production_Execution_Manifest.*
 Production_Hash_Manifest.*
 NTLite_Handoff_Manifest.*
 Release_Manifest.*
+Converter_Runtime_Certification.*
+MAX_PRE_Runtime_Certification.*
 ```
 
 The exact data format for machine-readable files may evolve, but their logical roles should remain stable.
 
 `Component_Intelligence` should become the durable repository of target rules so that chat memory is never required to reconstruct the project.
+
+`BlueLite_Current_Status.md` is a separately updated operational ledger with timestamp, exact build/source, active MAX_PRE archive/hash, last operator audit and token, current certification tier, converter/MUTATION runtime authorization, open dependency blockers and explicitly permitted next action. Keep the normative Master Strategy stable and versioned; do not turn it into a daily transcript. The legacy C33-R4 converter workstream and MAX_PRE R15-R1 module pipeline retain separate evidence and status.
 
 ---
 
@@ -1539,6 +1612,11 @@ A release is blocked if any of the following is true:
 - a protected dependency is missing;
 - an AMBER topology differs from the certified contract;
 - a production script hash/parser/static audit is invalid;
+- static auditor self-test or a mandatory negative fixture did not fail as designed;
+- the converter and MAX_PRE runtime authorizations have not both passed for integrated mutation;
+- a STATIC_VERIFIED module is mislabeled runtime/current-build/release certified;
+- the present-build owner graph disagrees with the cross-build topology regression contract;
+- an AMBER observed CBS delta is unexplained or has not been checked before commit;
 - a RED target was mutated without new proof;
 - an unclassified realistic offline candidate remains while NTLite handoff is being attempted;
 - NTLite performed an unplanned target operation;
@@ -1609,50 +1687,35 @@ Every new investigation must reduce future manual work.
 
 ---
 
-# 33. CHANGE SUMMARY FROM THE PREVIOUS MASTER STRATEGY
+# 33. CHANGE HISTORY AND AUTHORITY
 
-This v2.4 strategy preserves the v2.1 technical corrections and the v2.3 universal-script governance, while replacing the former direct/remote execution model with the operator-relay contract required for BlueLite work.
+The normative line is v2.1 (technical dependency and virtualization-floor corrections), v2.2 (retired remote-transport draft), v2.3 (universal 26200.xxxx scripts and mandatory operator preview), **v2.4** (explicit operator-relay execution instead of remote host control, preserving the same offline mutation constraints), and **v2.5** (the present UUP MAX_PRE implementation and forensic/regression corrections). Any v2.3 remote execution wording is superseded by Section 6.1 above; a successor MUST NOT reintroduce RDC host control as ordinary BlueLite operation.
 
-1. workspace remains **`C:\work`**;
-2. main workstation remains **ASUS / i7-11700F / GTX 1050 / 16 GB DDR4-3200**;
-3. Ryzen 5 4500U / 8 GB remains the test/backup machine;
-4. UUP pre-debloat is explicitly split into safe source/AppX minimization and post-reconstruction pre-ISO offline debloat;
-5. destructive Windows/FoD/reference queue pruning is prohibited;
-6. one-click UUP packaging must consume the same canonical production rules as standalone offline processing;
-7. removal class and release disposition are formally separated;
-8. `COMPONENT_ENGINE_HANDOFF` is an explicit terminal disposition and is not equivalent to RED;
-9. disposable test → independent certification → canonical pre-production gate → canonical apply → independent certification is the standard AMBER lifecycle;
-10. `ScanHealth` is mandatory for new AMBER certification and other high-risk servicing changes;
-11. target-specific package/capability evidence outranks assumptions from global inventory tables;
-12. PowerShell production coding rules include protection against `$Matches` shadowing, empty typed-list binding and scalar/array ambiguity;
-13. virtualization removals require an explicit VM/network protected-floor gate;
-14. the validated intelligence snapshot records the production vs handoff split discovered in Phases 94–353;
-15. the Intelligence queue must be exhausted before NTLite;
-16. release scripts are a small canonical set; forensic phase history is retained as evidence but removed from normal build execution.
+## v2.4 governance retained
 
-## v2.1 review corrections retained
+- Canonical workspace `C:\work`; main workstation ASUS i7-11700F / GTX 1050 / 16 GB RAM; Ryzen 4500U / 8 GB secondary machine.
+- Universal **26200.xxxx** engine with dynamic exact identity, topology classification and build-specific intelligence records.
+- Operator-local PowerShell 7 Admin execution, one step per response; ChatGPT never performs remote host mutation.
+- Full operator review of every new/changed canonical mutation command; read-only certifications do not mutate.
+- Pre-UUP source/AppX selection distinct from post-reconstruction/pre-ISO WIM debloat; no destructive delta/FoD queue pruning.
+- Disposable AMBER proof → current-build pre-production gate → independent post-state + ScanHealth before commit.
+- NTLite only after the completed scripted offline cycle, dependency classification and common-base certification; VirtualBox last.
 
-17. virtualization-floor terminology explicitly records `hvax64.exe` as the AMD/SVM hypervisor image and `hvix64.exe` as the Intel/VT-x image; unverified `hvamd64.exe` / `hvimd64.exe` names are not introduced;
-18. every future Germanium virtualization rule must resolve the actual architecture-specific hypervisor identities and owners from the current source WIM and fail closed on topology drift;
-19. the reconstructed pre-mutation baseline/delta gate occurs **before** certified pre-ISO mutation;
-20. a separate post-pre-ISO residue/intelligence manifest is mandatory so source topology evidence is never overwritten by the mutated post-state.
+## v2.5 changes — 12 October 2026
 
-## v2.4 operator-relay correction
+1. UUP MAX_PRE is the primary, reconstruction-safe **pre-ISO** offline execution path and shares its production modules with standalone work; later GREEN/AMBER phases process residue idempotently, not duplicate removals.
+2. Four proof tiers: `STATIC_VERIFIED`, `DISPOSABLE_RUNTIME_VERIFIED`, `CURRENT_BUILD_CERTIFIED`, `RELEASE_CERTIFIED`.
+3. Cross-build machine-readable topology regression fixtures and negative drift checks, especially for 26200.9445 versus 26200.9550.
+4. Universal AMBER before/after observed-delta contract and transaction-level rollback, based on R10–R15.
+5. Mandatory negative fixtures, static-auditor self-test, strict PowerShell interpolation/owner parsing, PS7 versus 5.1 execution distinctions.
+6. FBConan forensic methodology: two-index solid WIM, XPRESS8K, captured Admin RID 1000 versus fresh Default profile, separate new-user first-logon benchmarking.
+7. ~190 MB Disk Cleanup residual is a hypothesis to investigate, **not** proven to be WinSxS Backup; FBConan `repairable` health is not a clean servicing reference.
+8. Independent `CONVERTER_RUNTIME_AUTHORIZED` and `PRE_ISO_MUTATION_RUNTIME_CERTIFIED` execution permissions; C33-R4 and MAX_PRE statuses are independent.
+9. Debloat efficiency ledger separates unique physical NTFS bytes, compressed allocated size, logical bytes and WIM/ISO transport savings.
+10. `BlueLite_Current_Status.md` and machine-readable regression/health/footprint records separate fast-changing execution state from normative strategy.
 
-21. direct remote control of the main workstation is removed from the BlueLite execution architecture;
-22. ChatGPT supplies complete commands/scripts and the operator executes them locally and returns the exact requested output/log;
-23. the live OS remains the host and is never the normal BlueLite image-mutation target;
-24. preflight verification of `C:\work`, DISM mount state and exact WIM/index/mount identity is performed through operator-executed commands before mutation;
-25. BlueLite requires no persistent remote authorization, remote bridge, unattended host control or remote autostart mechanism;
-26. successor sessions must preserve the operator-relay model unless the operator explicitly revises this Master Strategy;
-27. live-host administration, if separately requested, remains outside the offline-image workflow and is still executed locally by the operator.
-
-## v2.4 governance retained and clarified
-
-28. every mutation/debloat command intended to become part of the canonical/reusable BlueLite production set must be shown to the operator in full and reviewed before the operator locally executes it as a candidate production mutation;
-29. canonical production logic remains universal for the **26200.xxxx Germanium lineage**, using dynamic identity resolution plus build discovery/topology gates; exact build revisions remain evidence/intelligence unless a proven topology exception requires a narrowly scoped build-specific rule;
-30. NTLite Business remains a secondary component engine and is permitted only after the offline scripted pipeline is fully completed, the realistic offline Intelligence queue is exhausted, and the common base is certified.
+**2026-10-12 boundary:** operator-confirmed MAX_PRE R15-R1 is `STATIC_VERIFIED` only: 54/54, no download, no WIM mutation. A disposable runtime trial requires renewed operator review and explicit authorization. See `BlueLite_v1.0_CANONICAL_SUCCESSOR_HANDOFF_4.md` for detailed operational continuity.
 
 ---
 
-**End of BlueLite v1.0 — MASTER GERMANIUM STRATEGY v2.4**
+**End of BlueLite v1.0 — MASTER GERMANIUM STRATEGY v2.5**
