@@ -51,7 +51,16 @@
 - Source search in this specific preflight: `C:\work\extracted\install.wim` and recursive `install.wim` under `C:\work\UUP_Source` → **CANDIDATE_COUNT=0**. This does not establish that no WIM/ESD/ISO exists elsewhere under `C:\work`.
 - C: free bytes `79573401600` (~74.1 GiB).
 - `R16_WIM_MUTATION=NOT_RUN`, `R16_UUP_DOWNLOAD=NOT_RUN`, `R16_PREFLIGHT=EVIDENCE_COLLECTED_ONLY`.
-- **BLOCKER:** no verified reconstructed image located; no disposable runtime execution authorized. MAX_PRE certification remains `STATIC_VERIFIED`. Next permitted step: operator-executed **read-only** inventory for existing .wim/.esd/.iso in `C:\work`, with exact paths/size and no download, mount or mutation; then freeze actual source/hash/index before requesting runtime authorization.
+- **BLOCKER:** R16 did not locate a WIM in its two searched locations, but subsequent internal Library review recovered a historically verified canonical E2E WIM path and October 10 post-commit SHA-256 (see below). Current on-disk existence/hash/index are still unverified; no disposable MAX_PRE runtime execution authorized. MAX_PRE certification remains `STATIC_VERIFIED`. Next permitted step: operator-executed **read-only** verification of the exact E2E path, with wider `C:\work` .wim/.esd/.iso inventory if necessary. No download, mount or mutation.
+
+## Library recovery of prior E2E WIM location — historical evidence rechecked 2026-10-12
+
+- The R16 `CANDIDATE_COUNT=0` covered only `C:\work\extracted\install.wim` and `C:\work\UUP_Source`; it **did not check** `C:\work\E2E`. It must not be interpreted as a full `C:\work` source inventory.
+- Original operator-returned Library log `PhaseC24_ResumePreISO_ExistingReconstructedWim_20261009_122954.txt` confirms a previously reconstructed WIM at `C:\work\E2E\26200.9550_cb4d2d02_V31_Run1\UUP_Source_WorkingCopy\26200.9550.260920-1400.25H2_GE_RELEASE_SVC_PROD3_CLIENTPRO_OEMRET_X64FRE_EN-US\sources\install.wim`, initially 8,921,167,287 bytes / SHA-256 `C628F88992D284284C3528E807F0BC408F1C51C497638743D5D8DF2E8B243078`.
+- Subsequent operator-original log `PhaseC25_PostPreISO_E2E_RecoveryCertification_20261009_153031.txt` confirms the **same file path** after PreISO: 8,969,940,385 bytes / SHA-256 `4DFAE1771DEA9E7212E8FBC32B99B35D9902E30ACE9A51AC8A34DCAFE3662522`; health, pending and protected floor PASS.
+- **Latest located direct canonical mutation evidence:** original `PhaseC32_DAI_Canonical_ProductionApply_20261010_075810.txt` confirms `COMMIT=PASS`, `CHECKHEALTH=PASS`, `SCANHEALTH=PASS`, `PENDING=0`, `ACTIVE_WIM_MOUNTS=0`, post-WIM **9,014,325,093 bytes** and SHA-256 **`BF7BC720B3870449AF95CA162B33DD9AD30E739BCC6F9C4F36BEA028C1D98A71`** at that same canonical E2E path. A pre-DAI backup was logged under `C:\work\backup\C32_PreDAI_26200.9550_4DFAE177_install.wim`.
+- **Evidence boundary:** These are October 9–10 historical operator logs, not a live October 12+ filesystem check. Current existence, size, hash, image index and mount availability are **not verified**. R15-R1 MAX_PRE has never been runtime-certified on this WIM merely because older C24–C32 procedures passed.
+- **Next operator-permitted action:** read-only local existence/size/SHA-256 verification at the exact recorded E2E `install.wim` path (and mount table); if missing, read-only `C:\work` WIM/ESD/ISO inventory. No UUP download, mount, WIM mutation or converter authorization.
 
 ## Parallel runtime branch
 
@@ -60,7 +69,7 @@
 
 ## Next actions
 
-- R16 operator read-only preflight is complete; the original two source locations held no install.wim. Next authorized step is a read-only discovery of existing WIM/ESD/ISO under C:\work, not an UUP download or WIM mutation.
+- R16 operator read-only preflight is complete and limited to two source locations. Library logs identify the prior C24–C32 canonical E2E `install.wim` and its October 10 post-commit SHA. Next authorized step: **read-only verification at this exact E2E WIM path**, optionally expanding to a WIM/ESD/ISO inventory under `C:\work` if absent. No UUP download or WIM mutation.
 - Before future mutating runtime work: full operator review, frozen source, disposable WIM SHA, present-image cross-build owner/topology gates, rollback, expected CBS delta and health/post-state.
 - NTLite and VirtualBox are not yet authorized stages.
 
