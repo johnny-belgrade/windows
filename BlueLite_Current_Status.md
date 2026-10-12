@@ -21,6 +21,14 @@
 - **If GitHub write fails:** report `GITHUB STATUS NOT SYNCED`; keep a local candidate, never claim a remote update. No PAT/token disclosure in chat or repository.
 - Standing instruction source: Master Strategy v2.5, **§30.1**, and Handoff_4, **§0A.5**.
 
+## Source catalog maintenance — 2026-10-12
+
+- Operator-approved update of `BlueLite_Sources.md` on `main`: commit `a74565eb40489f4529f9927887fb70eb0e4e290e`, Git blob SHA `8f2aaf8a3aa83410c1c857fc2850019b59dd4af1`.
+- Replaced five independently confirmed GitHub 404 source links (UUPBuildByPy, ISO-Update, standalone W10UI, privacy.sexy typo, Dash2KoF) and the MSMG forum-category link with the verified MSMG discussion thread; updated source descriptions.
+- Added `marcinmajsc/uup-dump-build-and-get-windows-iso` to the Bases & Image Building section as an exploratory UUP automation reference.
+- Verified the refreshed catalog by independent GitHub refetch: 51 links; four other access-unconfirmed reference URLs explicitly preserved unchanged.
+- Documentation/source-catalog change only. No UUP download, WIM mount or mutation, runtime tier promotion, NTLite or VirtualBox authorization. The next operator-approved execution boundary remains the existing read-only `C:\work` WIM/ESD/ISO inventory.
+
 ## MAX_PRE
 
 - Highest review package: `BlueLite_UUP_MAX_PRE_v2.0-R15-R1_AUDIT_LITERAL_FIX_REVIEW.zip`.
