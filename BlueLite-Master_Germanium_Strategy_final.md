@@ -306,6 +306,17 @@ A custom build can prove that a small footprint or a particular end-state is ach
 
 For every meaningful target, the intelligence record should retain the evidence trail, including relevant `BlueLite_Sources.md` entries.
 
+## 4.1 MANDATORY INTERNAL BLUELITE LIBRARY REVIEW
+
+In addition to the public source catalog and GitHub governance files, **the operator's internal ChatGPT Library is a standing BlueLite research and evidence source**. It contains historical scripts, original operator logs, WIM/CBS/WinSxS and AppX inventories, reference-build `Build_info` records, forensic analyses, UUP helper materials and handoff documents. Its contents must not be overlooked in favor of reconstructing prior findings from memory or new web searches.
+
+- **At the start of every BlueLite successor session**, after retrieving the live GitHub Current Status and governing Master Strategy, perform a targeted Library search for the latest relevant BlueLite evidence, decisions and supporting source files. Read the actual matching artifacts when material to the current task; do not claim to have reviewed the entire Library from a search alone.
+- **Before new technical investigation, a dependency/removal decision, a revised production rule or a script proposal**, check the Library for original logs, prior tests, existing implementations and reference-build comparisons relevant to that specific target. Reuse independently verified findings where the current-image topology and certification scope permit it.
+- Treat Library entries as **evidence candidates and historical knowledge**, not automatically current execution state, a certified production rule or authorization to mutate a WIM. Validate relevant file contents, dates, version/build identity, exact command or script, hashes, original log results, and their consistency with the live GitHub status and current-image evidence. Prefer original operator output over secondary summaries when a discrepancy matters.
+- If Library search, a file or its full contents is inaccessible in the current session, state the specific evidence-access limitation and continue only from verifiable available material. Do not invent a file, assume the Library is fully indexed, or claim an unseen source was checked.
+
+Library review complements, but **does not supersede**, the normative Master Strategy, the GitHub Current Status checkpoint, actual target-image evidence or BlueLite's operator-relay review and runtime certification gates.
+
 ---
 
 # 5. CANONICAL LOCAL ENVIRONMENT — UPDATED 2026-09-29
@@ -1604,7 +1615,7 @@ The exact data format for machine-readable files may evolve, but their logical r
 
 **Mandatory for every successor assistant/session** (operator-relay only):
 
-1. **Before planning or proposing the next BlueLite command**, fetch `BlueLite_Current_Status.md` from the canonical GitHub repository `johnny-belgrade/windows`, branch `main`: `https://github.com/johnny-belgrade/windows/blob/main/BlueLite_Current_Status.md`. Also read the current Master Strategy and the latest relevant operator log/handoff. Do not assume the historical chat or Handoff_4's last snapshot is still current.
+1. **Before planning or proposing the next BlueLite command**, fetch `BlueLite_Current_Status.md` from the canonical GitHub repository `johnny-belgrade/windows`, branch `main`: `https://github.com/johnny-belgrade/windows/blob/main/BlueLite_Current_Status.md`. Also read the current Master Strategy and the latest relevant operator log/handoff. Do not assume the historical chat or Handoff_4's last snapshot is still current. **As part of the same required pre-command review, search the internal ChatGPT Library for relevant BlueLite source files, original operator evidence and prior analyses, and inspect material matches before repeating research or proposing mutations (see §4.1).**
 2. Treat Master Strategy as **normative authority**, Current Status as the **latest operational checkpoint**, and exact current-image/operator evidence as the authority for whether a mutation is permitted. Any mismatch or stale status must be explicitly reconciled, not silently guessed.
 3. **After every material operator-confirmed milestone**, update the same GitHub `BlueLite_Current_Status.md` in place. Material milestones include new static/negative-test results, disposable runtime certification, current-build certification, source freeze, new ZIP/script hashes, discovered `TOPOLOGY_CHANGED` blockers, approved pipeline or branch changes, NTLite/VM stage transitions and release decisions. Do not claim a PASS from a script merely delivered but not run.
 4. At a chat-to-chat handoff, a significant workflow change, or the close of a productive work session, ensure the last confirmed milestone has been persisted in GitHub Current Status; preserve open blockers and **one next operator-approved action**. Do not schedule unattended work or mutate the user's Windows host.
