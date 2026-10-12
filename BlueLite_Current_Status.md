@@ -106,6 +106,14 @@
 - **Retention classification:** KEEP `Converter`, `Evidence`, `ConverterSafeR56`, supervisor assets; preserve R11 scripts/tooling and authority manifests. Candidate for selective removal is ONLY `ConverterSafeR11\UUPs`, not the R11 root or any current WIM/source image. Removing R11 inputs would require restaging to rerun historical R11–R16 tests.
 - **Next permitted action:** operator-executed read-only final R11 UUP cleanup preflight: check 188-file identity/count, no reparse-point/hardlink external owners, no unintended mount; then seek explicit operator authorization before any deletion. No mutation or runtime gate promotion.
 
+## C33-R4 R11 UUP final cleanup preflight — operator verified, 2026-10-12
+
+- Operator-provided exact log: `C:\work\logs\BlueLite_C33R4_R11_UUP_Cleanup_Preflight.txt`. Result: `CLEANUP_PREFLIGHT=PASS_READ_ONLY`, `VERIFIED_FILES=188`, `VERIFIED_LOGICAL_BYTES=8978091832`, `HARDLINK_EXCEPTIONS=0`, `ACTIVE_WIM_MOUNTS=0`, `CONTENT_IDENTITY=PASS_188_OF_188`, `TARGET_HARDLINK_ISOLATION=PASS`.
+- Earlier complete relative-path SHA-256 comparison also passed `188/188`. The R11 UUP payload is a physically separate set of file records whose content matches `Converter\UUPs`; expected `8.36 GiB` is **logical data**, not a verified physical free-space delta.
+- **Scope if approved by the operator:** remove only `C:\work\E2E\_C33_R4_FreshUUP_26200.9550\ConverterSafeR11\UUPs` after renewed fail-closed local pre-delete identity/source/hardlink check. Do **not** remove `ConverterSafeR11` root, other converter snapshots, `Converter`, `Evidence`, `ConverterSafeR56`, supervisor artifacts, frozen UUP source, or canonical E2E `install.wim`.
+- **Approval boundary:** `DELETION_AUTHORIZED=FALSE` in the returned log. The user has supplied preflight evidence, **not** permission to delete. Next step is to ask for explicit authorization for only the path above before providing an executable deletion step. Retain R11 converter scripts/tools/manifests for historical audit; rerunning old R11–R16 with owned input requires restoration of the 188 files.
+- No WIM mutation, converter execution, UUP download, runtime-tier promotion, NTLite or VirtualBox authorization.
+
 ## Parallel runtime branch
 
 - C33-R4 converter/supervisor is a different line of development; latest status as recorded in handoff_4, not merged into a fully runtime-certified one-click converter.
@@ -113,7 +121,7 @@
 
 ## Next actions
 
-- R16-R1 canonical E2E WIM exact hash/index was verified. The separate C33-R4 R11 UUP copy passed 188/188 full SHA-256 equivalence against retained `Converter\UUPs`. Next: read-only final R11 UUP cleanup preflight and explicit operator approval before selective removal, never wholesale stage deletion. Runtime converter and MAX_PRE remain blocked.
+- R16-R1 canonical E2E WIM exact hash/index is verified. R11 UUP final cleanup preflight also PASS_READ_ONLY (188/188 SHA, hardlink exceptions 0, mounts 0). **One next action:** request explicit operator permission to delete only `C:\work\E2E\_C33_R4_FreshUUP_26200.9550\ConverterSafeR11\UUPs` with a fresh fail-closed pre-delete gate; no removal authorized by merely providing logs. Converter/MAX_PRE runtime gates unchanged.
 - Before future mutating runtime work: full operator review, frozen source, disposable WIM SHA, present-image cross-build owner/topology gates, rollback, expected CBS delta and health/post-state.
 - NTLite and VirtualBox are not yet authorized stages.
 
