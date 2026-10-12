@@ -62,6 +62,12 @@
 - **Evidence boundary:** These are October 9–10 historical operator logs, not a live October 12+ filesystem check. Current existence, size, hash, image index and mount availability are **not verified**. R15-R1 MAX_PRE has never been runtime-certified on this WIM merely because older C24–C32 procedures passed.
 - **Next operator-permitted action:** read-only local existence/size/SHA-256 verification at the exact recorded E2E `install.wim` path (and mount table); if missing, read-only `C:\work` WIM/ESD/ISO inventory. No UUP download, mount, WIM mutation or converter authorization.
 
+## Operator GUI confirmation of E2E WIM location — 2026-10-12
+
+- Operator explicitly confirms that `install.wim` exists at `C:\work\E2E\26200.9550_cb4d2d02_V31_Run1\UUP_Source_WorkingCopy\26200.9550.260920-1400.25H2_GE_RELEASE_SVC_PROD3_CLIENTPRO_OEMRET_X64FRE_EN-US\sources\install.wim`.
+- Confirmation is **GUI/path existence evidence**, not a new `Get-FileHash`, `Get-WimInfo`, DISM health check, mount check or runtime certification. The 2026-10-10 C32 post-commit 9,014,325,093 bytes and SHA-256 `BF7BC720B3870449AF95CA162B33DD9AD30E739BCC6F9C4F36BEA028C1D98A71` remain historical reference expectations, not freshly verified properties.
+- Exact E2E path located; R16's limited-location `CANDIDATE_COUNT=0` should not be described as absence of a local WIM. Next operator-relay step remains one **read-only** verification of current size, SHA-256, WIM indexes and mount table; no mutation, UUP download or converter run authorized.
+
 ## Parallel runtime branch
 
 - C33-R4 converter/supervisor is a different line of development; latest status as recorded in handoff_4, not merged into a fully runtime-certified one-click converter.
