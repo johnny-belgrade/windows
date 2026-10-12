@@ -68,6 +68,15 @@
 - Confirmation is **GUI/path existence evidence**, not a new `Get-FileHash`, `Get-WimInfo`, DISM health check, mount check or runtime certification. The 2026-10-10 C32 post-commit 9,014,325,093 bytes and SHA-256 `BF7BC720B3870449AF95CA162B33DD9AD30E739BCC6F9C4F36BEA028C1D98A71` remain historical reference expectations, not freshly verified properties.
 - Exact E2E path located; R16's limited-location `CANDIDATE_COUNT=0` should not be described as absence of a local WIM. Next operator-relay step remains one **read-only** verification of current size, SHA-256, WIM indexes and mount table; no mutation, UUP download or converter run authorized.
 
+## R16-R1 — E2E canonical WIM read-only verification (operator-returned log, 2026-10-12)
+
+- Evidence: operator-provided `BlueLite_R16_R1_E2E_WIM_Verification.txt` from `C:\work\logs`.
+- Exact `C:\work\E2E\26200.9550_cb4d2d02_V31_Run1\UUP_Source_WorkingCopy\26200.9550.260920-1400.25H2_GE_RELEASE_SVC_PROD3_CLIENTPRO_OEMRET_X64FRE_EN-US\sources\install.wim`: `WIM_BYTES=9014325093`, `WIM_SHA256=BF7BC720B3870449AF95CA162B33DD9AD30E739BCC6F9C4F36BEA028C1D98A71`, `BYTES_MATCH=True`, `SHA256_MATCH=True`.
+- Native DISM `/Get-WimInfo`: exit 0, Index 1 = Windows 11 Pro, uncompressed logical size 28,300,808,345 bytes. `/Get-MountedWimInfo`: exit 0, no mounted images. `READ_ONLY_CHECK_COMPLETE`.
+- **Source identity is now locally confirmed** for this exact E2E WIM, correcting the earlier R16 limited search result. Evidence proves bytes, SHA, index, mount-table state only; it is **not** a new Health/ScanHealth or MAX_PRE runtime execution certificate.
+- **Next separate operator task:** read-only inventory of `C:\work\E2E\_C33_R4_FreshUUP_26200.9550` to classify active converter/supervisor development artifacts, historical snapshots and potential redundant stage copies. Preserve everything until recursive inventory, authority references and any deduplication constraints are reviewed. No deletion, copy/move, converter run, mount or WIM mutation.
+- MAX_PRE R15-R1 remains `STATIC_VERIFIED` only; C33-R4 converter remains independently blocked pending full runtime gates.
+
 ## Parallel runtime branch
 
 - C33-R4 converter/supervisor is a different line of development; latest status as recorded in handoff_4, not merged into a fully runtime-certified one-click converter.
@@ -75,7 +84,7 @@
 
 ## Next actions
 
-- R16 operator read-only preflight is complete and limited to two source locations. Library logs identify the prior C24–C32 canonical E2E `install.wim` and its October 10 post-commit SHA. Next authorized step: **read-only verification at this exact E2E WIM path**, optionally expanding to a WIM/ESD/ISO inventory under `C:\work` if absent. No UUP download or WIM mutation.
+- R16-R1 operator read-only verification confirmed the exact E2E WIM bytes, SHA-256, Index 1 and zero mounts. Next operator-approved investigation: read-only content/size/lineage inventory of `C:\work\E2E\_C33_R4_FreshUUP_26200.9550` before deciding whether any historical converter workspaces are redundant. Do not delete or execute converter, download UUP or mutate WIM.
 - Before future mutating runtime work: full operator review, frozen source, disposable WIM SHA, present-image cross-build owner/topology gates, rollback, expected CBS delta and health/post-state.
 - NTLite and VirtualBox are not yet authorized stages.
 
