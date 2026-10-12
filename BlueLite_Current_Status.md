@@ -11,7 +11,7 @@
 - **Latest local Strategy SHA-256:** `B2165E1C5D17E383287CD0AC2FFD20E1A36820954CE282478DC230B00E125416`.
 - **Current Status first GitHub creation:** commit `3e820e30002629145f264eda7162c6d278f2d0c0`.
 - GitHub Contents write permission issue **resolved**; `update_file` succeeded after refreshed connection and a fresh remote read independently confirmed v2.5.
-- Canonical successor handoff: `BlueLite_v1.0_CANONICAL_SUCCESSOR_HANDOFF_4.md` (v4.3, synchronized with published v2.5). The historical HANDOFF_3 appendix remains frozen.
+- Canonical successor handoff: `BlueLite_v1.0_CANONICAL_SUCCESSOR_HANDOFF_4.md` (v4.4, synchronized with published v2.5). The historical HANDOFF_3 appendix remains frozen.
 
 ## Mandatory successor synchronization contract
 
