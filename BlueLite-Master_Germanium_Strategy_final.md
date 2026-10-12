@@ -1600,6 +1600,22 @@ The exact data format for machine-readable files may evolve, but their logical r
 
 ---
 
+## 30.1 MANDATORY SUCCESSOR WORKFLOW — GITHUB CURRENT STATUS
+
+**Mandatory for every successor assistant/session** (operator-relay only):
+
+1. **Before planning or proposing the next BlueLite command**, fetch `BlueLite_Current_Status.md` from the canonical GitHub repository `johnny-belgrade/windows`, branch `main`: `https://github.com/johnny-belgrade/windows/blob/main/BlueLite_Current_Status.md`. Also read the current Master Strategy and the latest relevant operator log/handoff. Do not assume the historical chat or Handoff_4's last snapshot is still current.
+2. Treat Master Strategy as **normative authority**, Current Status as the **latest operational checkpoint**, and exact current-image/operator evidence as the authority for whether a mutation is permitted. Any mismatch or stale status must be explicitly reconciled, not silently guessed.
+3. **After every material operator-confirmed milestone**, update the same GitHub `BlueLite_Current_Status.md` in place. Material milestones include new static/negative-test results, disposable runtime certification, current-build certification, source freeze, new ZIP/script hashes, discovered `TOPOLOGY_CHANGED` blockers, approved pipeline or branch changes, NTLite/VM stage transitions and release decisions. Do not claim a PASS from a script merely delivered but not run.
+4. At a chat-to-chat handoff, a significant workflow change, or the close of a productive work session, ensure the last confirmed milestone has been persisted in GitHub Current Status; preserve open blockers and **one next operator-approved action**. Do not schedule unattended work or mutate the user's Windows host.
+5. GitHub update is a **concurrency-safe write**: read the latest file and blob SHA, merge only verified changes (retain unrelated newer records), update with the expected SHA, then independently fetch the committed file and confirm its content/commit. Use the GitHub connector's authorized write path. The presence of `push: true` alone does not prove write success.
+6. If GitHub write fails (403, 409/conflict, disconnect, unavailable integration), **never state that the remote status was updated**. Preserve a clearly labeled local candidate and report the blocker; retry only with authorized access. Never paste personal access tokens into chat or source files.
+7. The current status is a concise, timestamped **single source of operational truth**, not a replacement for evidence logs, Component Intelligence or release manifests. Never silently promote `STATIC_VERIFIED` to runtime certification. Update the Master Strategy only when a general project rule changes; do not rewrite it for ordinary task progress.
+
+**This is an explicit standing instruction to future BlueLite ChatGPT successors**, not an optional suggestion. Publication of the status file on 2026-10-12 was confirmed by GitHub commit `3e820e30002629145f264eda7162c6d278f2d0c0`; the latest blob SHA is dynamic and must always be fetched afresh.
+
+---
+
 # 31. RELEASE GATES
 
 A release is blocked if any of the following is true:
