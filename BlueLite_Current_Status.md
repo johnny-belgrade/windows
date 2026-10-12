@@ -77,6 +77,13 @@
 - **Next separate operator task:** read-only inventory of `C:\work\E2E\_C33_R4_FreshUUP_26200.9550` to classify active converter/supervisor development artifacts, historical snapshots and potential redundant stage copies. Preserve everything until recursive inventory, authority references and any deduplication constraints are reviewed. No deletion, copy/move, converter run, mount or WIM mutation.
 - MAX_PRE R15-R1 remains `STATIC_VERIFIED` only; C33-R4 converter remains independently blocked pending full runtime gates.
 
+## C33-R4 storage CSV received — partial inventory, pending physical-duplication probe (2026-10-12)
+
+- Operator ran the read-only `_C33_R4_FreshUUP_26200.9550` storage inventory; the PowerShell formatted-report stage failed at a multi-argument `-f` expression **after successful CSV export**. The accompanying original `BlueLite_C33R4_File_Inventory.csv` was independently parsed: 1,917 file rows, 60 represented top-level folders, 18,264,029,157 logical bytes (~17.01 GiB). The summary TXT was not completed; this is **partial metadata inventory**, not a completed inventory PASS.
+- `Converter`: 259 files / 8,996,067,920 logical bytes; `ConverterSafeR11`: 259 / 8,996,068,916 bytes. All 259 relative filenames match; file lengths match for 257/259, except `convert-UUP.cmd` and `create_virtual_editions.cmd`. This indicates a likely duplicated UUP payload but **does not prove byte-for-byte contents or physical disk duplication**. Inspect NTFS file IDs/hardlinks before calculating recoverable space.
+- `ConverterSafeR56`: 75 files / 18,004,587 bytes; `Evidence`: 19 files / 321,516 bytes; numerous smaller `SupervisorWave*` stage directories. At least one recorded file has a reparse-point attribute. Historical frozen authority and supervisor artifacts must be preserved pending verified lineage.
+- **No deletion authorized.** Next one-step operator action: read-only NTFS file-ID/hardlink sampling of matching UUP payload files under `Converter` vs `ConverterSafeR11`, with an exact output log. No converter runtime, mount or WIM mutation.
+
 ## Parallel runtime branch
 
 - C33-R4 converter/supervisor is a different line of development; latest status as recorded in handoff_4, not merged into a fully runtime-certified one-click converter.
