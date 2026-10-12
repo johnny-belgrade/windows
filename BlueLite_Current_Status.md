@@ -121,6 +121,15 @@
 - **Narrow operator-controlled cleanup step:** script for deleting **only** the 188 verified individual files beneath `C:\work\E2E\_C33_R4_FreshUUP_26200.9550\ConverterSafeR11\UUPs`, with fresh hash/file count/reparse/hardlink/mount checks and an exported restoration hash manifest under `C:\work\logs`. No recursive stage/root deletion. Script presentation is **not evidence of execution**; result must be confirmed from operator log before marking removed.
 - Certification and permission remain unchanged: `CONVERTER_RUNTIME_AUTHORIZED=false`, MAX_PRE `STATIC_VERIFIED` only; no WIM mutation, UUP download, NTLite or VirtualBox.
 
+## C33-R4 R11 selective UUP duplicate removal — operator-executed PASS (2026-10-12)
+
+- Operator returned **both** exact originals: `C:\work\logs\BlueLite_C33R4_R11_UUP_SelectiveRemoval.txt` and `C:\work\logs\BlueLite_C33R4_R11_UUP_RestorationManifest.csv`.
+- Removal log: `SCOPE=R11_UUPS_ONLY`, `ACTIVE_WIM_MOUNTS=0`, `FINAL_IDENTITY=PASS_188_OF_188`, `VERIFIED_BYTES=8978091832`, `PRE_DELETE_CERTIFICATION=PASS`, `SOURCE_PRESERVATION=PASS_188_OF_188`, `REMOVED_FILES=188`, `TARGET_UUP_FILES_REMAINING=0`, `SELECTIVE_CLEANUP=PASS`. The targeted historical copy was `C:\work\E2E\_C33_R4_FreshUUP_26200.9550\ConverterSafeR11\UUPs` **only**.
+- Independent inspection of uploaded CSV: exactly 188 rows, columns `RelativePath,Bytes,SHA256`, sum 8,978,091,832 bytes, no duplicate relative paths or malformed 64-hex SHA-256 entries. Independently computed complete CSV SHA-256: `7D7833AF97197A91E8508BD6745B362C90674F50E7C7853B7611D21DD4CA1FE9`, exactly matching returned operator log.
+- **Milestone classification: OPERATOR_CONFIRMED_PASS** for the narrowly scoped R11 UUP copy removal, on the operator's local filesystem as evidenced by the returned cleanup log; no other deletion inferred. Preserved source passed post-removal SHA-256 for all 188 files. The R11 converter/tool code, scripts, `Evidence`, `Converter`, `ConverterSafeR56`, other development stages, frozen source and canonical E2E WIM remain designated KEEP.
+- Log proves 8.36 GiB logical deleted content, **not the actual NTFS physical free-space increase**, which was not measured in this run. Reconstructing historic R11–R16 requires restoring the UUP files from the surviving `Converter\UUPs` using the saved CSV as reference.
+- No broader cleanup authorized; no MAX_PRE runtime certification, converter execution authorization, UUP download, WIM mutation, NTLite or VM.
+
 ## Parallel runtime branch
 
 - C33-R4 converter/supervisor is a different line of development; latest status as recorded in handoff_4, not merged into a fully runtime-certified one-click converter.
@@ -128,7 +137,7 @@
 
 ## Next actions
 
-- R16-R1 exact canonical E2E WIM hash/index confirmed. R11 UUP cleanup preflight PASS_READ_ONLY, and operator delegated removal only of reproducible non-unique copies while preserving all working/evidence files. **Next:** operator executes one fully reviewed fail-closed selective cleanup for the 188 R11 UUP files only, then returns exact log/manifest; no deletion is yet operator-confirmed. Converter/MAX_PRE runtime gates unchanged.
+- Canonical E2E WIM is verified (R16-R1). **C33-R4 R11 UUP selective duplicate cleanup is now operator-confirmed PASS** (188 removed, original 188 hashes preserved; restoration CSV SHA-256 independently verified). Stop further cleanup absent independent need/proof; next suitable action is read-only post-cleanup state/free-space audit if measurement is desired, then resume the distinct converter/MAX_PRE development gates. No run-time converter or WIM mutation authorized.
 - Before future mutating runtime work: full operator review, frozen source, disposable WIM SHA, present-image cross-build owner/topology gates, rollback, expected CBS delta and health/post-state.
 - NTLite and VirtualBox are not yet authorized stages.
 
