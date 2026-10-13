@@ -197,6 +197,13 @@
 - Next operator action: **R23 read-only focused dataflow and caller-lineage extraction** from the two exact-hash C33 original scripts, covering root-drive scratch/cleanup, source UUP modifications, host `SystemRoot` targets, mirror, registry alias ownership, global DISM cleanup/boot WIM and entrypoint paths. Do not mutate any code or run converter yet. A PASS of R23 will only certify collection, not runtime confinement.
 - `CONVERTER_RUNTIME_AUTHORIZED=FALSE`, R69 `DENY_ONLY`, `MAX_PRE=STATIC_VERIFIED` remain unchanged.
 
+## R23 script error and strict operator host isolation — 2026-10-13
+
+- Operator-returned `C:\work\logs\BlueLite_R23_Converter_HostBoundary_Dataflow_Map.txt` contains 16 file lines: `ACTIVE_WIM_MOUNTS=0`, `MODULE=convert-UUP.cmd`, `SOURCE_SHA256=PASS_BOTH_COPIES`, 4,890 source lines, 176 labels, then `R23=FAIL_CLOSED` / `ERROR=Unable to index into an object of type "System.Int32".` The defect is the **assistant's PowerShell nested array shape** in `$Modules[].Anchors`: the loop received scalar integer items, not robust typed anchor records. No audit anchor was successfully processed, no converter executed and no image/registry mutation occurred; the script wrote its own evidence file under `C:\work\logs`.
+- The operator clarified a **strict local-only, host-isolated execution requirement**: nightly cleanup removes system logs, temporary files and transient registry traces; no BlueLite action may rely on their persistence, deliberately modify live host Windows, or use it as converter temp/registry scratch. Prefer genuinely isolated local runtime (e.g. separately booted Windows PE/maintenance environment or later authorized VM) if a native Windows servicing action would otherwise leave host OS effects. Merely using a VHDX for scratch or setting `/LogPath`/`/ScratchDir` does not guarantee process and HKLM isolation.
+- This is codified normatively in Master Strategy **§6.1A**, commit `391aa42b01376d6cb4bd1620886b52fcabca0362`; previous R21–R22 reports' host-write candidates are now hard release blockers, not cosmetic logs or items fixed by nightly cleanup.
+- Next operator action: **R23-R1 pure source-reader correction**, with explicit named anchor records (instead of nested untyped `@(...)` arrays), pinned SHA-256 identity for main and virtual CMD and configuration, output only under `C:\work\logs`. Omit even read-only DISM queries if not required, to avoid normal DISM host log creation. No CMD/converter, mount, registry calls, copy/delete, direct Windows temp/SysWOW64 or UUP/WIM mutations. Passing static collection does not authorize converter.
+
 ## Parallel runtime branch
 
 - C33-R4 converter/supervisor is a different line of development; latest status as recorded in handoff_4, not merged into a fully runtime-certified one-click converter.
@@ -204,7 +211,7 @@
 
 ## Next actions
 
-- R22 PASS_READ_ONLY_SOURCE_AUDIT gathered 196 matched context sites from pinned C33 originals. Source context exposes root-drive W10UI cleanup and `move` into frozen `!_UUP!` outside the original narrow regex, plus host temp, SysWOW64, HKLM, global DISM and two /MIR sites. **Next:** operator R23 read-only targeted dataflow, scratch path, caller lineage and entrypoint extraction, ahead of protected converter candidate patching. No converter runtime, copy or mutation; R69 DENY_ONLY and MAX_PRE STATIC_VERIFIED.
+- R23 original audit **FAIL_CLOSED** from assistant's flattened PowerShell anchor arrays (source SHA PASS; no converter action). Operator **strict local-only host isolation** and daily host log/temp/registry cleanup are now normative Master §6.1A; no live OS scratch/hive effects permitted or assumed recoverable by cleanup. **Next:** R23-R1 corrected file-only / SHA-pinned source audit without DISM, registry or converter calls. R69 DENY_ONLY and MAX_PRE STATIC_VERIFIED remain.
 - Before future mutating runtime work: full operator review, frozen source, disposable WIM SHA, present-image cross-build owner/topology gates, rollback, expected CBS delta and health/post-state.
 - NTLite and VirtualBox are not yet authorized stages.
 
