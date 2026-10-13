@@ -461,6 +461,19 @@ Mandatory contract:
 11. No standing unattended remote authorization, remote bridge, autorun or scheduled host control is assumed or required.
 12. A successor must preserve this model unless the operator explicitly changes the governing strategy.
 
+## 6.1A STRICT HOST-ISOLATION / EPHEMERAL-SESSION CONTRACT (2026-10-13)
+
+The operator explicitly requires **all BlueLite execution local, completely inspectable, and without treating their running Windows installation as a writable scratch workspace or persistent state database**. At the end of each day the operator cleans live-Windows system logs, temporary files and relevant transient registry state; their retention is neither guaranteed nor a valid dependency of any BlueLite phase.
+
+1. **No intentional live-host mutation** in BlueLite offline work: do not write/delete in `%SystemRoot%\Temp`, `%SystemRoot%\Logs\DISM`, `%SystemRoot%\SysWOW64`, live `HKLM` / services / drivers, or disk-root scratch locations. No broad host log cleanup or `DISM /Cleanup-Wim` / `/Cleanup-Mountpoints` without separate proof of scoped mount ownership and operator review.
+2. **Read-only evidence probes first**: prefer direct PowerShell file reads and hashes when sufficient; a DISM command may create host logs even for a nominally read-only query. No work product should rely on persistent mounted registry hive aliases, global environment configuration, host TEMP/logs or previous-session mount state.
+3. For supported DISM commands, `/LogPath` and `/ScratchDir` can **redirect their respective output**, but **this is not complete host isolation**. VHD/VHDX and scoped folders isolate storage paths, not arbitrary process/registry/OS side effects. Never claim full containment from environment-variable overrides or redirecting paths alone.
+4. All deliberate working files must be created under a **separately identified, operator-owned disposable workspace** and project logs under `C:\work\logs`. Preserve frozen source and canonical WIM. A candidate converter that touches immutable UUP inputs, shared host paths, unknown `robocopy /MIR` targets or uncontrolled HKLM aliases is fail-closed, regardless of historical success.
+5. If a required native CBS/DISM/registry step cannot satisfy the strict host boundary while the normal Windows instance is running, **do not execute it on the host**. Evaluate a genuinely separate local OS execution environment (for example, independently booted WinPE/maintenance Windows, after checking toolchain dependencies) or later an explicitly approved isolated VM. This is a technical prerequisite, not blanket authorization to start VirtualBox early.
+6. Every session recomputes necessary preflight state. Release owned mounts/hives, and remove only positively identified disposable residues via reviewed scoped cleanup; never depend on the operator's general nightly housekeeping to repair unintended host effects. This strict policy supersedes any prior implied acceptance of writing converter scratch to `C:\`, host TEMP, or transient HKLM namespace in the normal host session.
+
+---
+
 ## 6.2 OPERATOR REVIEW GATE FOR CANONICAL DEBLOAT MUTATION
 
 Every command/sequence/script mutation intended for the canonical reusable debloat set **must be shown in full to the operator for review before its first execution** as a candidate production mutation. Material revisions require renewed review.
