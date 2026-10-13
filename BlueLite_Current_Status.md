@@ -188,6 +188,15 @@
 - Next one operator step **R22 read-only host-write source-context classification** of `convert-UUP.cmd` and `create_virtual_editions.cmd`. Verify exact R21-hash identities of both E2E-original and C33-staged copies before reading. Enumerate full source context around relevant host-temp/SysWOW64/HKLM-registry/write/mirror/commit anchors in the C33 staged originals; include all matched sites in one log, with no execution of either CMD. This is a source triage tool, not a dynamic control-flow proof.
 - The converter and MAX_PRE runtime gates stay explicitly blocked; no UUP download, filesystem copy/delete, mount, image mutation, NTLite or VM action authorized.
 
+## R22 host-impact source audit — operator-confirmed PASS 2026-10-13
+
+- Operator-returned exact `C:\work\logs\BlueLite_R22_Converter_HostWrite_ControlFlow_Audit.txt` (complete 3,962 lines read); `R22=PASS_READ_ONLY_SOURCE_AUDIT`, `ACTIVE_WIM_MOUNTS=0`, `ORIGINAL_SOURCE_IDENTITY=PASS`, two module SHA-256 pairs equal to R21 frozen originals: `convert-UUP.cmd=9DBE49E2C2848FCAE09845577CFF688B1BA78DCD009B69D3F3AA51838A0E6A65` (4,890 source lines) and `create_virtual_editions.cmd=B11F29DFACFCC68A8790A57F5FA6B14D62B81593219AB9717A6D56D63F4A074D`. Static source-context site count = 139 main + 57 virtual = **196**.
+- Specific observed host surfaces: `_drv=%~d0`, `_cabdir=%_drv%\W10UIuup` and cleanup incl. `rmdir` / `robocopy /MIR` at main lines 220, 1522, 4862; `_dLog=%SystemRoot%\Logs\DISM` and `del %_dLog%\*` around main 268,1005; host `%SystemRoot%\temp` writes/deletes in many branches; host SysWOW64 copy/delete; HKLM registry hive load/reuse/change/unload incl. main 3593 (`reg query ... || reg load`) and 3683–3684; Windows image DISM mount, commit, global Cleanup-Wim/Mountpoints; **UUP-source modification in main line 2838** (`move ... "!_UUP!\%_ufn%"`) appeared in neighboring lines of R22. The latter source-mutation and root-drive cleanup risks are not fully captured by R22's per-category regex, so R22 is **site collection not complete write-surface classification**.
+- Historical Library `PhaseC33_R4_R13_HiveOwnership_MirrorGuard_Prepatch_20261010_130149.txt` already documented 7+3 hive loads, 5+3 unloads, 3 conditional reuse cases; its `MIRROR_RUNTIME_ARGUMENT_AND_REPARSE_GUARD=NOT_INSTALLED` and `HIVE_OWNERSHIP_ATOMIC_LOAD_UNLOAD_GUARD=NOT_INSTALLED` gates were unresolved in the raw original. Later C33 candidate work remains separate from these unpatched original files; don't assume historical R11 patch applies to `Converter\convert-UUP.cmd`.
+- Independent Microsoft Learn commands confirm `robocopy /MIR` implies `/PURGE` (deletes destination-only content), and `reg load/unload` manipulates an HKLM temporary mount: https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/robocopy/ and https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/reg-load.
+- Next operator action: **R23 read-only focused dataflow and caller-lineage extraction** from the two exact-hash C33 original scripts, covering root-drive scratch/cleanup, source UUP modifications, host `SystemRoot` targets, mirror, registry alias ownership, global DISM cleanup/boot WIM and entrypoint paths. Do not mutate any code or run converter yet. A PASS of R23 will only certify collection, not runtime confinement.
+- `CONVERTER_RUNTIME_AUTHORIZED=FALSE`, R69 `DENY_ONLY`, `MAX_PRE=STATIC_VERIFIED` remain unchanged.
+
 ## Parallel runtime branch
 
 - C33-R4 converter/supervisor is a different line of development; latest status as recorded in handoff_4, not merged into a fully runtime-certified one-click converter.
@@ -195,7 +204,7 @@
 
 ## Next actions
 
-- **Operator reaffirmed local-only workflow.** R21 PASS_READ_ONLY_DISCOVERY confirmed E2E/C33 converter SHA and toolchain, but host-write candidate paths remain. **Next:** operator R22 read-only original-source context audit of high-risk CMD operations (all local, operator-visible log), then targeted guard implementation/review as warranted; do not run converter. C33 DENY_ONLY and MAX_PRE STATIC_VERIFIED.
+- R22 PASS_READ_ONLY_SOURCE_AUDIT gathered 196 matched context sites from pinned C33 originals. Source context exposes root-drive W10UI cleanup and `move` into frozen `!_UUP!` outside the original narrow regex, plus host temp, SysWOW64, HKLM, global DISM and two /MIR sites. **Next:** operator R23 read-only targeted dataflow, scratch path, caller lineage and entrypoint extraction, ahead of protected converter candidate patching. No converter runtime, copy or mutation; R69 DENY_ONLY and MAX_PRE STATIC_VERIFIED.
 - Before future mutating runtime work: full operator review, frozen source, disposable WIM SHA, present-image cross-build owner/topology gates, rollback, expected CBS delta and health/post-state.
 - NTLite and VirtualBox are not yet authorized stages.
 
