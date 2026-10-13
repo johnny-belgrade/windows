@@ -391,6 +391,14 @@
 - **Next user step:** save R38 PS1 to `C:\work\scripts`, verify its stated SHA and PS7 AST, invoke once. Return `C:\work\logs\BlueLite_R38_Converter_HostBoundary_SafeDraft.txt`. If exact source anchor differs, fail closed and correct with original evidence; do not broaden substitutions or bypass deny header. On PASS, inspect physical source diff and remaining register/DISM gates; only later construct an authorized converter broker, produce immutable reconstructed pristine install.wim, then independent R15 MAX_PRE.
 - Future production must remain Germanium 26200.xxxx dynamic; 26200.9550 values in R38 are fixture baseline pins, not defining production build selectors. G1 original source intake Phase A2 already proved, only end-to-end D6 integration remains.
 
+## R38 FAILED CLOSED correctly; exact three orphan root paths remediated in R38-R1 — 2026-10-13
+
+- User PS7 file `C:\work\logs\BlueLite_R38_Converter_HostBoundary_SafeDraft.txt` confirms `R38_SHA256=PASS`, `R38_PS7_AST=PASS`; 7 planned original converter batch source substitutions each match one anchor, `HOST_TEMP_PATH_ALL=37`, host build 26200 guard PASS, then **`R38=FAIL_CLOSED` / `ERROR=RESIDUAL_ROOT_SCRATCH_LITERAL`**. No converter/WIM/host mutation; existing R36/R37 immutable source unaffected. Fail occurred before review directory or converter candidate write.
+- Root cause established by exact original upstream converter v126 code: **three additional root-drive mirror scratch references** near batch source lines 4861–4863 use `%_drv%\_del286` (mkdir, robocopy /MIR, rmdir). R38 replaced only the similar first mirror family `%_drv%\_del`. Its residual prefix test correctly blocked unsafe candidate rather than ignoring remaining paths.
+- **One precise R38-R1 replacement file** `BlueLite_R38_R1_Converter_HostBoundary_SafeDraft.ps1`, SHA256 `0CB30EE39F2C7F99BD6DC639579D3D900E2BBB2466604EE331D1F754C75371C5`, created and verified in conversation sandbox. It is identical R38 source semantics except three new **exact-once pinned replacements** `ROOT_MIRROR286_CREATE`, `ROOT_MIRROR286_ROBOCOPY`, `ROOT_MIRROR286_REMOVE`, R38-R1 log/result names; **unconditional `exit /b 86` preserved and `converterExecutionAuthorized=false`**. Actual PS7 Windows execution not yet tested. Static simulation against actual original github converter text checked 10/10 expected anchors once, 37 SystemRoot temp path occurrences, zero residual drive-root scratch candidates. Staged candidate still **denied/never executed**, original R36 binary and all R37 native 188 copies left untouched.
+- Next **one operator step**: save R38-R1 to `C:\work\scripts`, exact SHA verify and PS7 AST check then run. Return `C:\work\logs\BlueLite_R38_R1_Converter_HostBoundary_SafeDraft.txt`. If `PASS_BLOCKED_RESCOPED_HOST_SCRATCH_CANDIDATE_ONLY`, proceed to separate registry hive lifecycle/DISM host scope before any conversion, not immediate WIM run. Do not remove exit86.
+- Original frozen 26200.9550 is regression fixture only; universal Germanium versioning remains required. R38 broken copy never created due early fail so R38-R1 retains exclusive scratch dir owner guard.
+
 ## Parallel runtime branch
 
 - C33-R4 converter/supervisor is a different line of development; latest status as recorded in handoff_4, not merged into a fully runtime-certified one-click converter.
@@ -398,8 +406,8 @@
 
 ## Next actions
 
-- **R37 operator PASS:** physically isolated converter-native UUPs 188/188, 8,978,091,832 B fully SHA-verified, original converter not run and host unchanged. **Next single step:** R38 guarded host-boundary re-scope into separate **execution-BLOCKED** converter-copy candidate, exact seven drive-root/scratch/DISM anchors and all SystemRoot TEMP occurrences. Owner-preserving PS7 input checks; blocked batch `exit /b 86`; no converter or WIM run. Return R38 log. Then resolve remaining offline registry hive and DISM mount/certification boundaries, not retry prohibited C33 R56 or execute original converter as-is.
-- Full D6 download and R37 native input already done for 26200.9550. After safe converter authorization, produce immutable original reconstructed install.wim and test R15 MAX_PRE on separate working copy (topology/health gates); NTLite/VirtualBox later.
+- R37 physical native converter 188-file source already operator PASS. **R38 original candidate correctly FAILED CLOSED**, because upstream converter has extra root-drive `%_drv%\_del286` mkdir/robocopy/rmdir at 4861–4863. **Next one step:** R38-R1 fix in review-only PowerShell wrapper, adds three exact-once relocated mirrors to earlier seven plus 37 TEMP rewrites; still writes an **entrypoint exit-86 BLOCKED** candidate (never execute converter). Operator runs SHA-pinned PS7 script and returns R38-R1 log. Then independently gate registry hive lifecycle and DISM host path behavior.
+- Do not rerun R20–R37, C33-R56 DENY_ONLY, or unmodified R36 converter. Converter/WIM/MAX_PRE still not run and require future review.
 
 ## Goals
 
