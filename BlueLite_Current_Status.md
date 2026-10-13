@@ -278,6 +278,13 @@
 - **Next single operator step:** save R27 PS1 to `C:\work\scripts`, exact SHA-256 verify, execute once in PS7 Admin on the **already existing** staged 188-file UUP tree, and return R27 report. Review exact provider evidence before implementing the G4 resolver fix, rather than pretending previous static policy scan certified AppX closure. Source-intake G1 and WIM transaction G5 remain separate.
 - Master §6.1A still permits normal local writes, host temp ephemeral, project `C:\work` persistent. C33 R56 DENY_ONLY and R15 MAX_PRE STATIC_VERIFIED; no runtime permission change.
 
+## R27 G4 real payload first attempt FAIL due to shallow directory scan — 2026-10-13
+
+- Operator executed SHA-pinned `BlueLite_R27_G4_RealAppX_Provider_Audit.ps1` in PS7 Admin and uploaded original log `C:\work\logs\BlueLite_R27_G4_RealAppX_Provider_Audit.txt`. It showed `UUP_TOP_LEVEL_FILES=102`, `APPX_ARCHIVES=0`, `R27=FAIL_CLOSED`, `ERROR=INSUFFICIENT_APPX_ARCHIVES=0`. **This is an assistant audit bug**, not absence of AppX from the verified source and not an AppX dependency result.
+- Precise code defect: `$files=@(Get-ChildItem -LiteralPath $UUPRoot -File -ErrorAction Stop)` traverses only the UUP root; `Get-ChildItem ... -Recurse -File` is needed. Already completed **R20** Library `BlueLite_R20_UUP_188_SHA256_CrossSource_Verification.txt` lists 188 relative paths including actual `Apps\Microsoft.WindowsNotepad_8wekyb3d8bbwe\NotepadApp_11.2312.18.0_x64.msix`, `Apps\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\AppInstaller_x64.msix`, and `Apps\MSIXFramework\Microsoft.VCLibs.x64.14.00.appx`. The original 188-file authority is historic, whereas operator's new 102 root count is current; recheck current full tree.
+- **Next operator one step:** create a separate *R27-R1* PS1 by exact-sha guarded three-substitution in local source: add `-Recurse` for file scan, relabel `UUP_TOP_LEVEL_FILES` as `UUP_RECURSIVE_FILES`, and use `[IO.Path]::GetRelativePath($UUPRoot,$file.FullName)` as manifest provenance to distinguish same filename across subfolders. Parse PS AST, run same G4 provider audit read-only on original existing 188-source tree, log to `C:\work\logs\BlueLite_R27_R1_G4_RealAppX_Provider_Audit.txt`. **Do not run another source comparison, network, converter, DISM, or duplicate payload staging.**
+- R26-D4 offline gate remains PASS; G4 not yet provider-certified; G1/G5 outstanding.
+
 ## Parallel runtime branch
 
 - C33-R4 converter/supervisor is a different line of development; latest status as recorded in handoff_4, not merged into a fully runtime-certified one-click converter.
@@ -285,7 +292,7 @@
 
 ## Next actions
 
-- **R26-D4 local acceptance PASS** (SHA 13/13, PS7 AST 8, queue regression 14/14, dynamic frozen source Audit 11/11), **no download/runtime conversion**. G2/G3 code fixes locally exercised; skip repeated synthetic work. Next is **R27 real existing-UUP AppX provider manifest inventory** for G4 (Name/Publisher/MinVersion), read-only, no duplicate UUP copy; then alter R15 resolver to disallow unproven OS/external closure. G1 source intake and G5 immutable WIM handoff still open. C33 DENY_ONLY, MAX_PRE STATIC_VERIFIED.
+- **R27 first run FAIL_CLOSED** on audit script shallow-only UUP root scan: 102 top-level files, 0 AppX; old R20 188 recursive manifests prove actual AppX files are under `Apps\*`. **Next:** single R27-R1 exact-SHA pinned local code correction (`-Recurse` and relative paths), then execute real-payload G4 manifest inventory; no download, file copy, or WIM work. R26-D4 offline gate remains PASS, G1/G5 outstanding. C33 DENY_ONLY, MAX_PRE STATIC_VERIFIED.
 - Before future mutating runtime work: full operator review, frozen source, disposable WIM SHA, present-image cross-build owner/topology gates, rollback, expected CBS delta and health/post-state.
 - NTLite and VirtualBox are not yet authorized stages.
 
