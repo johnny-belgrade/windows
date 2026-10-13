@@ -182,6 +182,12 @@
 - **No conversion or WIM mutation**. R21 is discovery only. Do not directly run frozen converter, C33 converter, R15 MAX_PRE START or NTLite.
 - User raised a potential hybrid workflow: Plus Library has 20 GB total file storage but **512 MB maximum per uploaded file** (OpenAI Help), whereas the current assistant sandbox is Linux without native DISM. Partial server-side static/binary WIM inspection and analysis of smaller evidence packages can be evaluated, but Windows-native CBS/DISM operations continue to require operator-side Windows servicing. No upload of full WIM requested or runtime action authorized.
 
+## Operator workflow decision — local execution only (2026-10-13)
+
+- The operator has explicitly chosen **all BlueLite execution and image operations to stay on their Windows workstation**, with complete local control and inspectable logs. Do not propose uploading a multi-GB WIM or operating on the assistant's server as the normal workflow. ChatGPT may analyze returned text/artifacts and consult internal Library, GitHub and public technical sources, but all commands touching build inputs, converter candidates or WIMs run **locally in PS7 Admin under operator control**.
+- Next one operator step **R22 read-only host-write source-context classification** of `convert-UUP.cmd` and `create_virtual_editions.cmd`. Verify exact R21-hash identities of both E2E-original and C33-staged copies before reading. Enumerate full source context around relevant host-temp/SysWOW64/HKLM-registry/write/mirror/commit anchors in the C33 staged originals; include all matched sites in one log, with no execution of either CMD. This is a source triage tool, not a dynamic control-flow proof.
+- The converter and MAX_PRE runtime gates stay explicitly blocked; no UUP download, filesystem copy/delete, mount, image mutation, NTLite or VM action authorized.
+
 ## Parallel runtime branch
 
 - C33-R4 converter/supervisor is a different line of development; latest status as recorded in handoff_4, not merged into a fully runtime-certified one-click converter.
@@ -189,7 +195,7 @@
 
 ## Next actions
 
-- R21 PASS_READ_ONLY_DISCOVERY: E2E/C33 converters match exact hash and both toolchain trees are present, but raw converter still has host-write candidate paths and C33 runtime DENY_ONLY. **Next:** assess smallest evidence packet for a hybrid local Windows-native servicing / assistant Linux-side forensic workflow, or a focused read-only R22 host-write control-flow classification. No WIM upload or converter run is implicitly authorized. MAX_PRE only STATIC_VERIFIED.
+- **Operator reaffirmed local-only workflow.** R21 PASS_READ_ONLY_DISCOVERY confirmed E2E/C33 converter SHA and toolchain, but host-write candidate paths remain. **Next:** operator R22 read-only original-source context audit of high-risk CMD operations (all local, operator-visible log), then targeted guard implementation/review as warranted; do not run converter. C33 DENY_ONLY and MAX_PRE STATIC_VERIFIED.
 - Before future mutating runtime work: full operator review, frozen source, disposable WIM SHA, present-image cross-build owner/topology gates, rollback, expected CBS delta and health/post-state.
 - NTLite and VirtualBox are not yet authorized stages.
 
