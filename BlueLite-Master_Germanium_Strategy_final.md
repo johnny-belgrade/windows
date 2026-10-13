@@ -1,7 +1,7 @@
-# BlueLite v1.0 — MASTER GERMANIUM STRATEGY v2.5
+# BlueLite v1.0 — MASTER GERMANIUM STRATEGY v2.5.1
 
 **Status:** AUTHORITATIVE / SUPERSEDES PREVIOUS MASTER STRATEGY  
-**Date:** 2026-10-12  
+**Date:** 2026-10-13  
 **Scope:** Windows 11 Germanium family, current development lineage 26100.x / 26200.x  
 **Project:** BlueLite v1.0  
 **Team:** Johnny + ChatGPT  
@@ -11,7 +11,7 @@
 
 ## 0. DOCUMENT AUTHORITY, EVIDENCE CORPUS AND PURPOSE
 
-This v2.5 revision retains the full v2.4 operator-relay architecture and adds the canonical UUP MAX_PRE implementation principles, proof ladder, cross-build regression, observed-delta contracts, FBConan forensic lessons and operational manifest policy from the 2026-10-12 handoff. The historical four-chat evidence table below documents the earlier source corpus; later work is in the successor handoff.
+This v2.5.1 revision retains the full v2.4 operator-relay architecture and adds the canonical UUP MAX_PRE implementation principles, proof ladder, cross-build regression, observed-delta contracts, FBConan forensic lessons and operational manifest policy from the 2026-10-12 handoff. The historical four-chat evidence table below documents the earlier source corpus; later work is in the successor handoff.
 
 This document is the governing strategy for BlueLite. It is not a summary of one build and it is not a list of isolated tweaks. It consolidates the complete project logic developed through the four chronological BlueLite chat histories and replaces the earlier Master Strategy wherever this document is more specific.
 
@@ -461,16 +461,19 @@ Mandatory contract:
 11. No standing unattended remote authorization, remote bridge, autorun or scheduled host control is assumed or required.
 12. A successor must preserve this model unless the operator explicitly changes the governing strategy.
 
-## 6.1A STRICT HOST-ISOLATION / EPHEMERAL-SESSION CONTRACT (2026-10-13)
+## 6.1A CONTROLLED HOST-ASSISTED OFFLINE SERVICING AND SESSION HYGIENE (2026-10-13)
 
-The operator explicitly requires **all BlueLite execution local, completely inspectable, and without treating their running Windows installation as a writable scratch workspace or persistent state database**. At the end of each day the operator cleans live-Windows system logs, temporary files and relevant transient registry state; their retention is neither guaranteed nor a valid dependency of any BlueLite phase.
+**Corrected authoritative operator requirement (supersedes the earlier strict host-isolation paragraph):** the normal locally running Windows installation **is our execution host** for BlueLite, with full operator visibility. Native DISM mount/unmount/commit/query, temporary `reg load/unload` of verified **offline** hives, PowerShell and Windows servicing tools may be used on that host as required. **The active Windows installation is never the intended debloat/servicing target**; `/Online`, live service/package/driver edits and unrelated live-registry changes remain prohibited. An isolated WinPE or VM is not a prerequisite for routine offline servicing; VirtualBox is reserved for the separately agreed later phase.
 
-1. **No intentional live-host mutation** in BlueLite offline work: do not write/delete in `%SystemRoot%\Temp`, `%SystemRoot%\Logs\DISM`, `%SystemRoot%\SysWOW64`, live `HKLM` / services / drivers, or disk-root scratch locations. No broad host log cleanup or `DISM /Cleanup-Wim` / `/Cleanup-Mountpoints` without separate proof of scoped mount ownership and operator review.
-2. **Read-only evidence probes first**: prefer direct PowerShell file reads and hashes when sufficient; a DISM command may create host logs even for a nominally read-only query. No work product should rely on persistent mounted registry hive aliases, global environment configuration, host TEMP/logs or previous-session mount state.
-3. For supported DISM commands, `/LogPath` and `/ScratchDir` can **redirect their respective output**, but **this is not complete host isolation**. VHD/VHDX and scoped folders isolate storage paths, not arbitrary process/registry/OS side effects. Never claim full containment from environment-variable overrides or redirecting paths alone.
-4. All deliberate working files must be created under a **separately identified, operator-owned disposable workspace** and project logs under `C:\work\logs`. Preserve frozen source and canonical WIM. A candidate converter that touches immutable UUP inputs, shared host paths, unknown `robocopy /MIR` targets or uncontrolled HKLM aliases is fail-closed, regardless of historical success.
-5. If a required native CBS/DISM/registry step cannot satisfy the strict host boundary while the normal Windows instance is running, **do not execute it on the host**. Evaluate a genuinely separate local OS execution environment (for example, independently booted WinPE/maintenance Windows, after checking toolchain dependencies) or later an explicitly approved isolated VM. This is a technical prerequisite, not blanket authorization to start VirtualBox early.
-6. Every session recomputes necessary preflight state. Release owned mounts/hives, and remove only positively identified disposable residues via reviewed scoped cleanup; never depend on the operator's general nightly housekeeping to repair unintended host effects. This strict policy supersedes any prior implied acceptance of writing converter scratch to `C:\`, host TEMP, or transient HKLM namespace in the normal host session.
+1. **Transient host participation is explicitly allowed.** Mounting a WIM and assigning a temporary `HKLM\<BlueLite-owned-alias>` via `reg load` use Windows host facilities. Such operations are permitted after checking offline source file identity, alias ownership, mount identity and intended scope. Every opened resource must be tracked and deliberately released; aliases or mount handles must not be treated as persistent across sessions.
+2. **Controlled storage and evidence:** use `C:\work\scripts` for scripts, existing `C:\work\logs` for reproducible output, `C:\work\backup` for checkpoints, and explicitly owned project work/scratch paths. Prefer `DISM /LogPath` and `/ScratchDir` where supported and appropriate. Tool-generated Windows TEMP/log/registry traces are permitted as **temporary incidental byproducts**, not as the only copy of needed project evidence or as permanent infrastructure.
+3. **Session independence:** the operator performs nightly cleanup of Windows system logs, TEMP files and transient registry traces to conserve disk space. BlueLite must not depend on yesterday's system logs, temporary files, loaded registry aliases, environment variables, cached DISM state or stale mount paths. Re-probe the required facts and preserve all durable proofs in explicit project logs/manifests.
+4. **Before any offline mutation:** check original vs disposable WIM ownership, SHA-256/index/target and available rollback; verify DISM mount table, intended mount directory and any existing project hive aliases. Unknown or foreign mounts/aliases are **not** silently modified, reused, unloaded or cleaned.
+5. **When the operator says they are shutting down:** stop initiating new phases; close Total Commander and Explorer handles pointing into relevant mounted files; check `DISM /Get-MountedWimInfo`, relevant mount directories and project-specific `HKLM` offline-hive mappings; commit/discard/unmount each **verified owned** image as explicitly intended; `reg unload` each verified project-owned hive; verify final mount table and alias absence; inspect known project scratch residues, removing only positively identified disposable items; save a concise closure log to `C:\work\logs`. Never perform generic cleanup against unknown mounted images or unrelated registry keys.
+6. **Controlled vs uncontrolled side effects:** the legacy converter's indiscriminate `%SystemRoot%\Logs\DISM` deletion, broad `%SystemRoot%\Temp` deletion, host `SysWOW64` edits, root-drive `robocopy /MIR`, uncertain `HKLM` reuse or frozen `!_UUP!` input mutation are specific issues to gate and scope, not grounds to ban native host-assisted servicing. A valid offline registry mount is **not** equivalent to an authorized edit of live Windows registry configuration. Do not execute the raw converter until identified write targets, ownership and cleanup rules are reviewed.
+7. **Nightly cleaning is not rollback.** Permitted transient work must be released and checked during the working session. A script must not rely on later host housekeeping to fix unrelated system mutations; failures are fail-closed with explicit, scoped recovery.
+
+All execution remains local and operator-relayed; full workstation isolation and server-side processing are not requested.
 
 ---
 
