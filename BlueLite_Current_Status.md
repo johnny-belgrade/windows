@@ -444,7 +444,7 @@
 - R43 source evidence showed complete independence of R36 188 UUP files, R41 70 references and R42 base image; V31 historic folder contained 9,014,325,093-byte installed WIM and 724,665,775-byte boot WIM.
 - R44 operator PASS: independently verified the old V31 188 UUP files against R37 by SHA256 (8,978,091,832 bytes) and removed only the historic duplicate V31 UUP folder; R37, R41, R42, old V31 install/boot images passed post-state.
 - Operator now has ~75GB free after additionally moving an unrelated backup to D:.
-- Next one action: R45 `BlueLite_R45_V31_ConvertedWIM_vs_R42_ReadOnly_Certification.ps1` SHA256 `CEC808DE75F261893B31F976B00663E19AA1B0AF9434BA9701D47642BEFA7C75`; compares WIM embedded edition/build/index metadata and runs native read-only wimlib verify plus SHA256 of V31 9GB WIM. R45 candidate NOT operator executed. No DISM/mount/registry/conversion or existing WIM mutation. Return `C:\work\logs\BlueLite_R45_V31_ConvertedWIM_vs_R42_ReadOnly_Certification.txt`. Any conclusion about update integration requires later offline package provenance; WIM info and verify alone do not certify update integration.
+- Next one action: R45 `BlueLite_R45_V31_ConvertedWIM_vs_R42_ReadOnly_Certification.ps1` SHA256 `2DC345FBCF97A99544D75CF74C1899827E787F2630D64A4BCE342C78AED9AD72`; compares WIM embedded edition/build/index metadata and runs native read-only wimlib verify plus SHA256 of V31 9GB WIM. R45 candidate NOT operator executed. No DISM/mount/registry/conversion or existing WIM mutation. Return `C:\work\logs\BlueLite_R45_V31_ConvertedWIM_vs_R42_ReadOnly_Certification.txt`. Any conclusion about update integration requires later offline package provenance; WIM info and verify alone do not certify update integration.
 
 ## Parallel runtime branch
 
