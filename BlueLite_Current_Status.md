@@ -165,6 +165,14 @@
 - **Next operator action:** one read-only R20 strict pairwise SHA-256 equality check of all 188 E2E vs C33 UUP files, with 188-name-set/count, expected total bytes, reparse guards, and one persistent complete file hash log. No mount, converter execution, copy, deletion or WIM mutation.
 - Relevant outside implementation reference: Microsoft Learn PowerShell 7.6 `Get-FileHash -LiteralPath -Algorithm SHA256`. Distinguish external command documentation, original Library authority and fresh operator results.
 
+## R20 cross-source 188 UUP SHA-256 — operator confirmed 2026-10-13
+
+- Operator-returned `C:\work\logs\BlueLite_R20_UUP_188_SHA256_CrossSource_Verification.txt` passes `R20=PASS_READ_ONLY_SHA256`: `SOURCE_A_FILES=188`, `SOURCE_B_FILES=188`, `RELATIVE_PATH_SET=PASS`, 8,978,091,832 logical bytes each, `SHA256_MATCHED=188`, `SHA256_MISMATCHED=0`, `UUP_CONTENT_EQUIVALENCE=PASS_188_OF_188`.
+- Independent validation of complete submitted text: exactly 188 `MATCH=...` records, 188 unique casefolded relative paths, sum of recorded bytes = 8,978,091,832, SHA-256 formatting consistent with 64-hex, summary PASS. Current E2E `UUP_Source_WorkingCopy\UUPs` and C33 `Converter\UUPs` are byte-equivalent by relative path and per-file SHA-256 at operator check time.
+- Historical original Library `PhaseC33_R4_R5_OfflineConverter_IsolatedStaging_20261010_102120.txt` independently records staging of all 259 converter files, `ALL_STAGED_FILES_SHA256_MATCH=PASS`, 188 UUP inputs, and **six converter host-impact concerns**. R12 Library then confirms frozen R5 UUP SHA authority `SOURCE_188_SHA256_AUTHORITY=PASS`. Neither historically dated log proves converter runtime safety **today**.
+- **No claim of complete source/delta/feature closure** from pairwise equality alone: this verifies equality of local payload sets, not that every needed reconstruction dependency has been independently resolved or that the runtime converter toolchain is certified. R20 explicitly `RECONSTRUCTION_AUTHORIZED=FALSE`, `MAX_PRE_RUNTIME_CERTIFIED=FALSE`.
+- **Next operator step:** read-only R21 candidate converter/toolchain and host-write inspection of **existing E2E working-source root versus C33 original staged converter root**, including exact CMD/config identity, the availability of required conversion tools and UUP payload, and relevant potential host-write anchors. Do not execute either converter; C33 R69 remains DENY_ONLY. Retain canonical E2E WIM and source. No download/mount/mutation.
+
 ## Parallel runtime branch
 
 - C33-R4 converter/supervisor is a different line of development; latest status as recorded in handoff_4, not merged into a fully runtime-certified one-click converter.
@@ -172,7 +180,7 @@
 
 ## Next actions
 
-- R19 read-only contract/manifests SHA PASS and two staged 188-file UUP inputs with identical names and sizes; content hashes are **not yet checked**. **Next:** R20 read-only SHA-256 equality comparison for all 188 E2E UUP files versus C33 verified input, without copy, conversion, downloading, mounting or image mutation. MAX_PRE and converter runtime certification unchanged.
+- R20 independently confirmed the full 188/188 SHA-256 equality of E2E and C33 UUP source trees. **Next:** R21 read-only original vs staged converter toolchain/host-write readiness audit (no converter execution). Source/metadata closure and isolation remain distinct gates; no UUP download, mount or WIM mutation authorized; MAX_PRE only STATIC_VERIFIED, C33 broker DENY_ONLY.
 - Before future mutating runtime work: full operator review, frozen source, disposable WIM SHA, present-image cross-build owner/topology gates, rollback, expected CBS delta and health/post-state.
 - NTLite and VirtualBox are not yet authorized stages.
 
