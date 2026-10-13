@@ -173,6 +173,15 @@
 - **No claim of complete source/delta/feature closure** from pairwise equality alone: this verifies equality of local payload sets, not that every needed reconstruction dependency has been independently resolved or that the runtime converter toolchain is certified. R20 explicitly `RECONSTRUCTION_AUTHORIZED=FALSE`, `MAX_PRE_RUNTIME_CERTIFIED=FALSE`.
 - **Next operator step:** read-only R21 candidate converter/toolchain and host-write inspection of **existing E2E working-source root versus C33 original staged converter root**, including exact CMD/config identity, the availability of required conversion tools and UUP payload, and relevant potential host-write anchors. Do not execute either converter; C33 R69 remains DENY_ONLY. Retain canonical E2E WIM and source. No download/mount/mutation.
 
+## R21 converter tooling and host-impact audit — operator confirmed, 2026-10-13
+
+- Operator-returned `C:\work\logs\BlueLite_R21_Converter_Toolchain_HostImpact_Audit.txt` confirms `R21=PASS_READ_ONLY_DISCOVERY`, `ACTIVE_WIM_MOUNTS=0`, `C_FREE_BYTES=88841670656`, `CONVERTER_EXECUTION=NOT_RUN`, `RECONSTRUCTION_AUTHORIZED=FALSE`, `MAX_PRE_RUNTIME_CERTIFIED=FALSE`.
+- Original E2E working `convert-UUP.cmd` and isolated C33 `Converter\convert-UUP.cmd` are exactly equal by SHA-256 `9DBE49E2C2848FCAE09845577CFF688B1BA78DCD009B69D3F3AA51838A0E6A65` (`CONVERTER_SHA256_EQUAL=True`), same earlier R5 authority; main + virtual CMD/config/App list lengths/hashes match. Original E2E working tree contains `uup_download_windows.cmd` with frozen launcher SHA `8F4F3C7BDA30B701B5A98282B37BCAEB1F2026CD7A1022EEE8ED52D21D920DE3`, intentionally **absent** in isolated C33 converter root.
+- Both trees report toolchain: 26 files under `bin`, 41 files under `files`, with wimlib, DISM-related binaries, 7z, aria2, etc. The R21 audit **enumerates tool availability; it does not execute, fingerprint every binary or certify chain trust**.
+- Potential host-effect anchor hits identical in both copies: **119** `convert-UUP.cmd` lines and **56** `create_virtual_editions.cmd` lines (bounded previews: first 60 per script); examples include host `%SystemRoot%\temp` writes and cleanup, native `reg.exe load/unload/add/delete` of HKLM aliases, host SysWOW64 copy/delete and `robocopy /MIR`, alongside DISM mount/commit/ResetBase calls. Some are read-only or conditional; reviewing source control flow and host ownership is necessary before any execution. Historical C33 safety line (R69 `DENY_ONLY`, R77 0/18 runtime) remains separate and blocked.
+- **No conversion or WIM mutation**. R21 is discovery only. Do not directly run frozen converter, C33 converter, R15 MAX_PRE START or NTLite.
+- User raised a potential hybrid workflow: Plus Library has 20 GB total file storage but **512 MB maximum per uploaded file** (OpenAI Help), whereas the current assistant sandbox is Linux without native DISM. Partial server-side static/binary WIM inspection and analysis of smaller evidence packages can be evaluated, but Windows-native CBS/DISM operations continue to require operator-side Windows servicing. No upload of full WIM requested or runtime action authorized.
+
 ## Parallel runtime branch
 
 - C33-R4 converter/supervisor is a different line of development; latest status as recorded in handoff_4, not merged into a fully runtime-certified one-click converter.
@@ -180,7 +189,7 @@
 
 ## Next actions
 
-- R20 independently confirmed the full 188/188 SHA-256 equality of E2E and C33 UUP source trees. **Next:** R21 read-only original vs staged converter toolchain/host-write readiness audit (no converter execution). Source/metadata closure and isolation remain distinct gates; no UUP download, mount or WIM mutation authorized; MAX_PRE only STATIC_VERIFIED, C33 broker DENY_ONLY.
+- R21 PASS_READ_ONLY_DISCOVERY: E2E/C33 converters match exact hash and both toolchain trees are present, but raw converter still has host-write candidate paths and C33 runtime DENY_ONLY. **Next:** assess smallest evidence packet for a hybrid local Windows-native servicing / assistant Linux-side forensic workflow, or a focused read-only R22 host-write control-flow classification. No WIM upload or converter run is implicitly authorized. MAX_PRE only STATIC_VERIFIED.
 - Before future mutating runtime work: full operator review, frozen source, disposable WIM SHA, present-image cross-build owner/topology gates, rollback, expected CBS delta and health/post-state.
 - NTLite and VirtualBox are not yet authorized stages.
 
