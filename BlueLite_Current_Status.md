@@ -205,6 +205,14 @@
 - Master Strategy **§6.1A** corrected and verified in commit `2e97cb68824b02b889cf20347f984c2087d9716a` (replaces superseded `391aa42...` interpretation); `BlueLite_Sources.md` links the rule and original sources in commit `ff739f614b2b62681a08e4571cf84dbcf0266946`.
 - **Next:** one operator R23-R2 complete in-place **read-only audit code revision**, replacing reserved `$Matches` with `$MutationHitCount`, retaining exact source SHA and all 27 per-line anchors (16 main, 11 virtual). The complete log is written exclusively to `C:\work\logs`. No converter execution or WIM mutation authorized. Static context gathering is not a dynamic runtime certification.
 
+## R23-R2 host-write dataflow completed; R24 protected-candidate correlation (2026-10-13)
+
+- Operator original `C:\work\logs\BlueLite_R23_R2_HostBoundary_Static_Dataflow.txt` independently inspected: file ~64 KB, 1,290 text lines; `R23_R2=PASS_READ_ONLY_DATAFLOW`, **27** exact source SHA-pinned anchors (16 `convert-UUP.cmd`, 11 `create_virtual_editions.cmd`), **125** detailed mutation-reference entries (110 main + 15 virtual) and **61** selected caller-reference entries (47 main + 14 virtual). Both E2E and C33 originals match frozen CMD hashes; `ConvertConfig.ini` matches known hash; `CONVERTER_EXECUTION=NOT_RUN`, `CONVERTER_RUNTIME_AUTHORIZED=FALSE`, `MAX_PRE_RUNTIME_CERTIFIED=FALSE`.
+- Collected evidence highlights main original `%SystemRoot%\Logs\DISM` deletion, TEMP .mum writes/deletes, root-drive `_tmp` and `robocopy /MIR`, conditional HKLM SOFTWARE/COMPONENTS hive loads and unloads, `!_UUP!` input update/move plus delete on QUIT; virtual helper uses host TEMP, SysWOW64, `reg load HKLM\SOF` / `HKLM\SYS`, mount/cleanup operations. This is the **unmodified original**, not proof of executable danger in `ConverterSafeR56` or coverage of runtime gates.
+- Historical Library `PhaseC33_R4_R56_P1_110_ScopedFailClosed_StaticPatch_20261011_055754_278_4bc64862.txt`: `ConverterSafeR56` under `C:\work\E2E\_C33_R4_FreshUUP_26200.9550`, 75 tools, 100 P0 static denied + 110 P1 static denied, pinned manifest `Evidence\C33_R4_R56_P1_110_StaticDenied_Authority.json` SHA `0EC8FBA9C112F2C017836B225DA42E765194FA71888AB790FFC02C5BCB465975`; R56 main `convert-UUP.cmd` SHA `D3EABE4CBB6C52AE5A9894D6844A47AC332513A45A78A68C6652FA89A828BAF0`. Same original historical evidence says **R56 UUP inputs NOT staged**, hive lease/mount lease NOT implemented, runtime scope not certified, converter execution authorization FALSE; R69 process broker DENY_ONLY, R77 0/18 stress gates.
+- **Next operator step:** R24 local read-only **cross-branch correlation** of R23-R2's 27 original source anchors with the existing R56 patched candidate, first validate frozen original hashes plus R56 manifest/main SHA, then identify whether each raw source statement survived verbatim in the patched files and show local candidate context. No action or runtime certification from static correlation. Do not waste space duplicating UUP payloads or recalculate all 188 content hashes.
+- Host-assisted servicing and mandatory operator-invoked nightly DISM/hive closure rules from Master §6.1A remain normative.
+
 ## Parallel runtime branch
 
 - C33-R4 converter/supervisor is a different line of development; latest status as recorded in handoff_4, not merged into a fully runtime-certified one-click converter.
@@ -212,7 +220,7 @@
 
 ## Next actions
 
-- R23 failed on untyped anchor array; R23-R1 then validated 16 main anchors but **FAIL_CLOSED** on PowerShell automatic `$Matches` collision before virtual anchors. Operator permits normal **host-assisted offline DISM and reg load/unload** with session-owned mounts/hives; shutdown triggers verified unmount/unload and cleanup, durable project logs in `C:\work\logs`, no reliance on host TEMP/system logs. **Next:** R23-R2 read-only 27-anchor revision with `$MutationHitCount` and exact SHA pins. No converter run; R69 DENY_ONLY, MAX_PRE STATIC_VERIFIED.
+- R23-R2 successfully completed the source trace (**27 anchors, 125 mutation refs, 61 caller refs**, frozen dual-source hashes PASS). Historical R56 static 210-site blocked candidate is already present, separate from the original inspected by R23-R2. **Next:** R24 read-only per-anchor cross-correlation with R56 and R56 frozen manifest/hashes; no new staging/clone, source download, converter execution, WIM/hive mutations. R69 DENY_ONLY and MAX_PRE STATIC_VERIFIED remain.
 - Before future mutating runtime work: full operator review, frozen source, disposable WIM SHA, present-image cross-build owner/topology gates, rollback, expected CBS delta and health/post-state.
 - NTLite and VirtualBox are not yet authorized stages.
 
