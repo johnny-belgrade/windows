@@ -319,6 +319,13 @@
 - **Next single operator step:** download/save this 8-KB-class R30 script to `C:\work\scripts`, SHA256 verify and AST parse under PS7 Admin, run once, return `C:\work\logs\BlueLite_R30_Real_D5_SelectedQueue_Closure.txt`. No network/download/converter/DISM/WIM/ISO changes. Operator allowed host temporary hardlinks; no loss of original source, log evidence remains persistent.
 - Do not repeat R20 SHA verification or D4 synthetics. G1 Phase A2 new-source zip/freezing already proved, awaiting D5 pipeline integration. G5 immutable WIM/MAX_PRE transaction future work. R15 MAX_PRE static verified only; C33 DENY_ONLY.
 
+## R30 local true 27 selected payload SHA PASS; 5 actionable first-wave D5 additions — 2026-10-13
+
+- Operator uploaded `C:\work\logs\BlueLite_R30_Real_D5_SelectedQueue_Closure.txt`: `R30=PASS_ACTIONABLE_REAL_SELECTED_QUEUE_CLOSURE_GAP`. Exact R29 27-record subset of 2798 PASS, **27/27 actual UUP payload hashes PASS**, `AggregatedMetadata.cab` confirmed present/3,160,773 bytes with R20 SHA PASS, 26 temporary NTFS hardlinks, 0 content copies. **Unchanged D5 strict resolver returned exit 1: `G4_OFFLINE_SELECTED_QUEUE_MISSING_PROVIDER_FILES=5`.** This is not a corrupt original package or dependency provider missing in the complete original UUP set. It is an observed **first-wave gap between D5's minimal Apps seed (27) and its required bundle-member/dependency selected queue**; normal Download could add providers with aria2, not yet runtime tested.
+- D5 original `BlueLite_ResolveAppDependencies.ps1` SHA256 `D9835FC164FDC2C6684DF44798E9F41EDFC9961F889B112BE27CD984441015FF`, verified from original D5 ZIP. Its `OfflineValidation` branch only reports an addition count, discarding names at throw site, though the existing `$events` list contains whether each originated from `ADD bundle member` or `CANDIDATE_PROVIDER_PAYLOAD`.
+- **Next single operator step:** candidate `BlueLite_R31_Exact_D5_Provider_Additions.ps1`, SHA256 `D45090B52754167B7F80D09C32E5384BE1883E42417B49EA8D3EB4A0894DBCA6`. Read-only original source and queues, stage temporary selected 26 AppX hardlinks with NO payload copies and temporary queue copy; run SHA-pinned D5 diagnostic **scratch-only copy** with exact one-site fail-closed throw instrumentation, enumerate the five missing packages and cause, verify each actual `out + digest` in original R28 queue and present 188-file UUP pool; append five to TEMP queue and stage additional temporary NTFS hardlinks; then rerun the **UNMODIFIED D5 resolver** in OfflineValidation against 32 actual entries. If closed, R31 PASS; else precise second-wave/actionable result. Cleanup all scratch code, copies and hardlinks in finally. **R31 code was generated and sha verified here, NOT YET PS7 runtime tested**.
+- Preserve D5, R15 originals, R28/R29 queues, and immutable source; no converter, DISM, WIM, ISO, NTLite or VM. Do not assume the five provider names before R31 log; do not start yet another general converter analysis or re-hash 9GB of R20 data. G1 proven 2026-10-05 ZIP freeze still needs D5 integration; G5 immutable WIM/MAX_PRE transaction unimplemented.
+
 ## Parallel runtime branch
 
 - C33-R4 converter/supervisor is a different line of development; latest status as recorded in handoff_4, not merged into a fully runtime-certified one-click converter.
@@ -326,9 +333,8 @@
 
 ## Next actions
 
-- **R29 PASS actual Apps pre-download filtering:** source queue 2798 → 27 (0.96%; 99.04% removed), all 5 staging seeds, zero selected AppX checksum mismatches. One false `AggregatedMetadata.cab` absence report was R29's extension-only indexing; **R20 confirms CAB exists**. **Next:** R30 run *unchanged D5 strict resolver* against actual 27 real selected records via temporary flat NTFS hardlinks to existing 26 AppX/MSIX payloads, verify 27/27 content hashes (including CAB), determine if another closure pass is required. No network or payload copying. Await original operator R30 log.
-- Preserve all frozen source/UUP evidence. Historical Phase A2 source acquisition is already proven, only D5 intake wiring remains. Converter C33 DENY_ONLY, R15 MAX_PRE static only, transactional immutable WIM G5 not yet performed.
-- NTLite and VirtualBox are not yet authorized stages.
+- **R30 real queue PASS 27/27 content SHA**, including metadata CAB; production D5 OfflineValidation stops on **five first-wave required bundle/member/provider additions** to the minimal 27-record seed, not source corruption. **Next operator single step:** R31 temporary diagnostic D5 copy to reveal exact five names, verify local payload+original 2798-entry queue identity, append to temporary selected queue, re-execute the **unchanged D5 strict resolver** to determine whether 32 records close. Only host TEMP links/small control files. Return `C:\work\logs\BlueLite_R31_Exact_D5_Provider_Additions.txt`.
+- Historical Phase A2 source freeze already proved, still needs generic D5 wiring. Real Download/resume and immutable WIM/MAX_PRE transactional run not yet certified. C33 converter remains DENY_ONLY; NTLite/VMBox later.
 
 ## Goals
 
