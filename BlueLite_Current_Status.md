@@ -137,6 +137,15 @@
 - Next step: run corrected **read-only** R17-R1 full archive inventory and integrity/entrypoint enumeration with no hardcoded equality of ZIP count to R15 audit count. Require complete report and, if material, the exact original ZIP for source review. No WIM mount/mutation or runtime certification.
 - MAX_PRE remains `STATIC_VERIFIED` only; `CONVERTER_RUNTIME_AUTHORIZED=false` and `PRE_ISO_MUTATION_RUNTIME_CERTIFIED=false`.
 
+## R17-R1 MAX_PRE archive fully reconciled and source inspected — 2026-10-13
+
+- Operator log `C:\work\logs\BlueLite_R17_R1_MAX_PRE_FullArchive_Inventory.txt`: `ARCHIVE_IDENTITY=PASS`, 55 ZIP files, 0 directory entries, 20 script files, `PHASE_R17_R1=PASS_READ_ONLY_INVENTORY`; SHA-256 `7D59DD0F653967717CC4B84D47C50A9DE2863F7EB3DD9EF09B0221B3E05E7BE8`. Initial R17 `EXPECTED_54_FILES_ACTUAL_55` was an **assistant-designed counting assumption**, not archive corruption.
+- Exact operator-provided ZIP parsed independently (archive bytes SHA matched): **54** entries listed in `SHA256SUMS.txt` and all 54 SHA-256 hashes verified. The **55th** ZIP entry is `SHA256SUMS.txt` itself, intentionally excluded from its own manifest. No other unlisted or missing files. This exactly reconciles prior R15 `R15_PACKAGE_SHA256=PASS_54_FILES` with R17 ZIP physical count 55. Package needs **no repacking**.
+- Inspected `START.cmd`, `BlueLite\BlueLite_UUP.cmd`, `BlueLite\BlueLite_VerifyPackage.ps1`, R15 audit, `BlueLite\BlueLite_PreDebloatWim.ps1`, and `BlueLite\BlueLite_RecallAIX_PreISO.ps1` inside the identified archive; **do not ask the operator to re-upload an archive already available in Library**. Entry chain: `START.cmd` verifies overlay manifest, then calls `BlueLite\BlueLite_UUP.cmd`, which invokes original UUP download/converter and patches converter to execute `BlueLite_PreDebloatWim.ps1` on `ISOFOLDER\sources\install.wim`. This is **not a read-only test**. MAX_PRE engine makes a disposable copy, then may replace/promote the WIM on successful transaction; R15 Recall module runs `-Apply` against mounted disposable WIM. Never run `START.cmd` or engine against the verified **post-C32** canonical E2E WIM without independent frozen-pristine source and disposable runtime authorization.
+- External references reviewed, as separate evidence categories: authoritative `BlueLite_Sources.md` UUP/DISM links; current upstream UUP dump `converter_windows` pin list (v127 2026-09-25); Microsoft Learn offline DISM/ScanHealth and repairs. Upstream current-version changes are **not** permission to substitute or redownload the operator-pinned UUP assets; retain source snapshot/manifest authority.
+- **Next operator command:** one read-only, scoped local candidate inventory to locate a true pre-MAX_PRE reconstructed WIM, if any. Output filenames and sizes are candidates **only**, not proof of pristine identity. No mounts, copies, re-export, downloads or modification.
+- `PRE_ISO_MUTATION_RUNTIME_CERTIFIED=false`; `CONVERTER_RUNTIME_AUTHORIZED=false`; R15 remains `STATIC_VERIFIED`, no disposable execution evidence.
+
 ## Parallel runtime branch
 
 - C33-R4 converter/supervisor is a different line of development; latest status as recorded in handoff_4, not merged into a fully runtime-certified one-click converter.
@@ -144,7 +153,7 @@
 
 ## Next actions
 
-- Canonical E2E WIM verified and C33-R4 R11 duplicate cleanup operator-confirmed PASS. **R17 MAX_PRE archive audit fail-closed on erroneous unproven 54-entry ZIP count assumption:** exact archived bytes SHA matched, but 55 physical ZIP files observed. Next action is **read-only R17-R1 entry-level ZIP inventory** and source review to reconcile R15's internal 54-audited-file statement. No converter, MAX_PRE runtime, WIM mutation or UUP download authorized.
+- Canonical post-C32 E2E WIM and C33-R4 R11 selective cleanup remain confirmed. R17-R1 archive audit now PASS and 55 ZIP files reconciled against 54 self-excluding manifest entries; full archive unchanged, entrypoint source inspected. **Next:** read-only scoped WIM/ESD candidate survey to find an untouched reconstructed source for subsequent disposable MAX_PRE testing. No mount, mutation, UUP download or runtime gate promotion authorized.
 - Before future mutating runtime work: full operator review, frozen source, disposable WIM SHA, present-image cross-build owner/topology gates, rollback, expected CBS delta and health/post-state.
 - NTLite and VirtualBox are not yet authorized stages.
 
