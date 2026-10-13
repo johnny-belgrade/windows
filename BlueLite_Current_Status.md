@@ -438,6 +438,14 @@
 - **Next ONE operator step:** save R42 PS1 under `C:\work\scripts`, verify exact SHA256 and PS7 AST, run with token `I_AUTHORIZE_R42_DISPOSABLE_DUAL_REFERENCE_BASE_WIM_EXPORT`, upload `C:\work\logs\BlueLite_R42_DualReference_Wimlib_BaseWIM_Export.txt`. Result even on successful WIM is **BASE ONLY — not fully reconstructed, not immutable final source nor authorized for MAX_PRE**. Full updates/FoD/AppX provisioning, health/pending/topology baseline and further staged converter reconciliation still necessary.
 - 26200.9550 and exact source ESD hashes are **regression test fixture**, not release-selector of universal Germanium D6; still need integration and dynamic fixture adoption. Existing canonical source `C:\work\extracted\install.wim` untouched.
 
+## 2026-10-13 R42 WIM and R44 disk cleanup verified; next R45 read-only V31 WIM
+
+- R42 operator PASS: independent Professional Index 1 base WIM 3,076,114,889 bytes, SHA256 D6672D7B199C430B3EA5CAAD79E584CDBC3315BB9F83989FAC35F3811914C102. wimlib verify PASS; no cumulative updates/FoD/AppX provisioning, R39 original converter remains blocked.
+- R43 source evidence showed complete independence of R36 188 UUP files, R41 70 references and R42 base image; V31 historic folder contained 9,014,325,093-byte installed WIM and 724,665,775-byte boot WIM.
+- R44 operator PASS: independently verified the old V31 188 UUP files against R37 by SHA256 (8,978,091,832 bytes) and removed only the historic duplicate V31 UUP folder; R37, R41, R42, old V31 install/boot images passed post-state.
+- Operator now has ~75GB free after additionally moving an unrelated backup to D:.
+- Next one action: R45 `BlueLite_R45_V31_ConvertedWIM_vs_R42_ReadOnly_Certification.ps1` SHA256 `CEC808DE75F261893B31F976B00663E19AA1B0AF9434BA9701D47642BEFA7C75`; compares WIM embedded edition/build/index metadata and runs native read-only wimlib verify plus SHA256 of V31 9GB WIM. R45 candidate NOT operator executed. No DISM/mount/registry/conversion or existing WIM mutation. Return `C:\work\logs\BlueLite_R45_V31_ConvertedWIM_vs_R42_ReadOnly_Certification.txt`. Any conclusion about update integration requires later offline package provenance; WIM info and verify alone do not certify update integration.
+
 ## Parallel runtime branch
 
 - C33-R4 converter/supervisor is a different line of development; latest status as recorded in handoff_4, not merged into a fully runtime-certified one-click converter.
@@ -445,8 +453,7 @@
 
 ## Next actions
 
-- **R41 operator PASS:** 70/70 real original CAB->ESD references staged (735,852,564 B), 78/78 input CAB source hashes, exact 6 update exclusions and 2 no-update.mum, manifest SHA pinned. **Next:** new separately authorized R42 disposable wimlib base export from original Professional image 3 using **two --ref glob groups** (R37 UUPs ESD plus R41 generated CAB reference ESDs) with actual 70/70 ESD content hashes, source identity, output index1, wimlib verify and SHA; report real missing resource stderr if export fails. Return R42 log; original converter R39 remains exit86 blocked.
-- Even R42 PASS means BASE WIM only, without integrated updates/FoD/AppX and not yet candidate for immutable source/MAX_PRE. Complete these gates, then pre-mutation baseline/health before MAX_PRE, NTLite/VMBox later.
+- R44 operator PASS verified historical 188 UUP duplicates reclaimed, preserving V31 install and boot WIM files and current R37/R41/R42. Next: R45 **read-only** V31 install.wim 9GB metadata/index/build/edition and actual native wimlib verify/hash compared with R42 base; return R45 report. Only after WIM integrity and identity can we select disposable source for update/provisioning verification.
 
 ## Goals
 
