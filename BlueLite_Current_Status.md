@@ -1,18 +1,21 @@
 # BlueLite v1.0 — Current Status
 
-**As of:** 2026-10-12
+**As of:** 2026-10-13
 
 ## Authority and publication
 
-- **GitHub published authoritative Master Strategy:** `BlueLite-Master_Germanium_Strategy_final.md` **v2.5**, 2026-10-12.
-- **Latest Strategy v2.5 commit:** `2484d64cfd0c42e716051739c738a0bebc841d1a` (internal Library evidence-review requirement in §4.1 and §30.1; predecessor governance commit `c0018db6fdc342fbff8a8be77bd2ced026a100b5`).
-- **Latest Strategy Git blob SHA:** `fab56d8772711861fc571a835cd6a4e17439073d`.
+- **GitHub published authoritative Master Strategy:** `BlueLite-Master_Germanium_Strategy_final.md` **v2.5.2**, 2026-10-13.
+- **Latest Strategy v2.5.2 commit:** `f810e71cf2602a253e81f24d6feae276d56215ea` (documentation-only correction of the closing version marker; v2.5.2 normative content unchanged).
+- **Historical Strategy v2.5 Library-policy commit:** `2484d64cfd0c42e716051739c738a0bebc841d1a` (internal Library evidence-review requirement in §4.1 and §30.1; predecessor governance commit `c0018db6fdc342fbff8a8be77bd2ced026a100b5`).
+- **Latest Strategy Git blob SHA:** `e4775a24fdc80c166723b950a89df4cb1c082aaf`.
+- **Historical post-Library-amendment v2.5 Git blob SHA:** `fab56d8772711861fc571a835cd6a4e17439073d` (not the current Master blob).
 - **Initial Strategy v2.5 publication commit:** `0de6de539dc311a0175e3904e3307bbeba4bad3c`.
 - **2026-10-12 Library policy amendment:** `2484d64cfd0c42e716051739c738a0bebc841d1a`; targeted clarification of evidence retrieval and successor workflow only, with no change to the v2.5 technical runtime authorization gates.
-- **Prior operator-prepared v2.5 Strategy SHA-256 (before the internal Library amendment):** `B2165E1C5D17E383287CD0AC2FFD20E1A36820954CE282478DC230B00E125416`. The current post-amendment GitHub content is identified by the latest commit/blob above; do not present the earlier SHA-256 as a hash of the modified file.
+- **Prior operator-prepared v2.5 Strategy SHA-256 (before the internal Library amendment):** `B2165E1C5D17E383287CD0AC2FFD20E1A36820954CE282478DC230B00E125416`. This is a historical SHA-256 and does not identify the current v2.5.2 Master; the latest commit and Git blob SHA above identify the current publication.
 - **Current Status first GitHub creation:** commit `3e820e30002629145f264eda7162c6d278f2d0c0`.
-- GitHub Contents write permission issue **resolved**; `update_file` succeeded after refreshed connection and a fresh remote read independently confirmed v2.5.
-- Canonical successor handoff: `BlueLite_v1.0_CANONICAL_SUCCESSOR_HANDOFF_4.md` (v4.4, synchronized with published v2.5). The historical HANDOFF_3 appendix remains frozen.
+- GitHub Contents write permission issue **resolved**; the original v2.5 publication was independently confirmed after refreshed connection (historical event).
+- Canonical historical successor handoff: `BlueLite_v1.0_CANONICAL_SUCCESSOR_HANDOFF_4.md` (v4.4, synchronized with the v2.5 checkpoint; authoritative Master is now v2.5.2). The historical HANDOFF_3 appendix remains frozen.
+- **2026-10-13 metadata synchronization:** Master footer and these authoritative version/commit/blob references reconciled to v2.5.2. No change to operator execution evidence, MAX_PRE certification, UUP/WIM status, runtime authorization or next-step gates.
 
 ## Mandatory successor synchronization contract
 
@@ -21,7 +24,7 @@
 - **After every operator-confirmed significant milestone:** update this same GitHub file, first rereading the latest blob SHA, merging verified progress, and independently refetching the post-commit content. A delivered script is not proof of execution.
 - **At productive session close / handoff:** ensure the latest milestone, certification tier, blockers, and one next operator-approved action are recorded here. No implied permission for UUP download or offline mutation.
 - **If GitHub write fails:** report `GITHUB STATUS NOT SYNCED`; keep a local candidate, never claim a remote update. No PAT/token disclosure in chat or repository.
-- Standing instruction source: Master Strategy v2.5, **§30.1**, and Handoff_4, **§0A.5**.
+- Standing instruction source: Master Strategy v2.5.2, **§30.1**, and historical Handoff_4, **§0A.5**.
 
 ## Source catalog maintenance — 2026-10-12
 
