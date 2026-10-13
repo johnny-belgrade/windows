@@ -15,11 +15,17 @@
 
 ## Newly identified, concrete gaps (not an invitation to redo prior studies)
 
-### G1. Real intake of a *new* selected UUP archive is missing in R26-D2/D3
+### G1. Existing UUP V3 Phase A2 acquisition is proved; integrating it into R26-D5 remains missing
 
 - R26-D2 assumes `C:\work\UUP_Source\<source>\BlueLite_SourceContract.json` and `BlueLite_Source_OriginalHashes.csv` already exist. Its dynamic source selector solves selection among **already frozen** sources only; it does not perform first-time source intake/freeze.
+- **Historical correction supported by primary Library evidence:** `UUP_V3_PhaseA2_AcquireSource_20261005_154849.txt` (2026-10-05), plus the original full PowerShell execution transcript in `5-ChatGPT(1).md`, already demonstrate **actual original UUPDump ZIP retrieval, checksum, pristine launcher, eleven-file manifest and valid SourceContract**. Do NOT write a brand-new general-purpose source ZIP acquisition algorithm or redo that exact freeze experiment. The still-missing part is **integration/reuse of this proven Phase A2 flow in the R26-D5 pipeline for each newly chosen 26200.xxxx**.
 - Previous RC1.2 `BlueLite_ResolveUUP.ps1` already parses **untouched** UUP Dump `uup_download_windows.cmd`, validates exact UUID against original URL, optional metadata, ConvertConfig and checkpoint, and writes `ResolvedUUP.json`. Reuse/adapt that *existing* source-intake work and add the fully pinned manifest/contract writer instead of inventing a new selector or hardcoding 26200.9550.
 - Preserve the unaltered original launcher; original source UUID/build are operator-chosen, never silently replaced by `latest`.
+
+### Proven local D5 acceptance / next novel runtime boundary (2026-10-13)
+
+- Original operator PS7 `BlueLite_R26_D5_Local_Gate.txt` shows `R26_D5_LOCAL_GATE=PASS`, 15/15 hashes, AST 10, two actual-UUP provider tests PASS, generic frozen-source Audit PASS. Fixture log confirms missing `Microsoft.UI.Xaml.2.8` fails closed. **No Internet download, converter or MAX_PRE was executed**. This is successful local downloader G4 draft validation, not full UUP conversion certification.
+- **Next non-duplicate test:** retrieve actual **Windows and Apps aria2 queue files only** from original frozen source endpoints, apply the existing SHA-pinned D5 production queue-identity module to *real external traffic*, preserve downloaded small queue texts under `C:\work\logs`, and record metadata; never fetch 9GB payload to retest known R20 SHA equivalence. This tests previously unproven source endpoint/network format compatibility (and may fail due to dated UUID/endpoint, a useful finding).
 
 ### G2. R26-D2's terminal Windows queue check uses the **same file** as active and original
 
