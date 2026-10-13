@@ -146,6 +146,16 @@
 - **Next operator command:** one read-only, scoped local candidate inventory to locate a true pre-MAX_PRE reconstructed WIM, if any. Output filenames and sizes are candidates **only**, not proof of pristine identity. No mounts, copies, re-export, downloads or modification.
 - `PRE_ISO_MUTATION_RUNTIME_CERTIFIED=false`; `CONVERTER_RUNTIME_AUTHORIZED=false`; R15 remains `STATIC_VERIFIED`, no disposable execution evidence.
 
+## R18 candidate inventory — operator-confirmed read-only (2026-10-13)
+
+- Operator-returned `C:\work\logs\BlueLite_R18_Prereconstruction_WIM_Candidate_Inventory.txt` ends `R18=PASS_READ_ONLY_CANDIDATE_INVENTORY`; `ACTIVE_WIM_MOUNTS=0`; frozen `C:\work\UUP_Source\26200.9550_cb4d2d02\BlueLite_SourceContract.json` exists; **no WIM SHA was calculated in R18**.
+- Searched `C:\work\extracted` (0), `C:\work\backup` (1), `C:\work\E2E` (4), `C:\work\UUP_Source` (0); total 5 WIMs.
+- Installation-image candidates: `C:\work\backup\C32_PreDAI_26200.9550_4DFAE177_install.wim` (8,969,940,385 bytes), and previously identified post-C32 E2E canonical `...\sources\install.wim` (9,014,325,093 bytes). The other 3 are `boot.wim` (724,665,775 bytes) and two `Edge.wim` UUP inputs (180,196,966 bytes each).
+- Original operator Library `PhaseC32_DAI_Canonical_ProductionApply_20261010_075810.txt` confirms the pre-DAI backup is **already debloated**, SHA `4DFAE1771DEA9E7212E8FBC32B99B35D9902E30ACE9A51AC8A34DCAFE3662522`. Original `PhaseC24_ResumePreISO_ExistingReconstructedWim_20261009_122954.txt` identifies older reconstructed candidate SHA `C628F88992D284284C3528E807F0BC408F1C51C497638743D5D8DF2E8B243078`, not found by this limited R18 WIM filename scan. Do not misidentify C32 backup as pristine UUP reconstruction.
+- R18 is an inventory of **only four listed roots and `*.wim`**; absence of a pristine WIM in these roots is not proof of nonexistence elsewhere or under a different format. Frozen source metadata and one or more existing UUP payload sets might permit controlled reconstruction **later**, but no download, converter runtime or reconstruction is authorized.
+- **Next operator step:** read-only R19 integrity/readiness inventory of exact frozen source contract and original-hash manifest, together with the existing staged 188-file UUP input directories and conversion tooling. No conversion, WIM mount, mutation or new source download. Preserve all evidence.
+- `MAX_PRE=STATIC_VERIFIED`, `PRE_ISO_MUTATION_RUNTIME_CERTIFIED=false`, `CONVERTER_RUNTIME_AUTHORIZED=false` unchanged.
+
 ## Parallel runtime branch
 
 - C33-R4 converter/supervisor is a different line of development; latest status as recorded in handoff_4, not merged into a fully runtime-certified one-click converter.
@@ -153,7 +163,7 @@
 
 ## Next actions
 
-- Canonical post-C32 E2E WIM and C33-R4 R11 selective cleanup remain confirmed. R17-R1 archive audit now PASS and 55 ZIP files reconciled against 54 self-excluding manifest entries; full archive unchanged, entrypoint source inspected. **Next:** read-only scoped WIM/ESD candidate survey to find an untouched reconstructed source for subsequent disposable MAX_PRE testing. No mount, mutation, UUP download or runtime gate promotion authorized.
+- R18 found **no confirmed pristine reconstructed install.wim** in its four searched roots: C32_PreDAI backup and post-C32 canonical are already modified, and other WIMs are boot/Edge. Frozen SourceContract exists. **Next:** R19 read-only source-contract / frozen manifest / staged UUP-payload readiness check, prior to any separately reviewed isolated reconstruction. Converter/MAX_PRE runtime gates and WIM protections unchanged.
 - Before future mutating runtime work: full operator review, frozen source, disposable WIM SHA, present-image cross-build owner/topology gates, rollback, expected CBS delta and health/post-state.
 - NTLite and VirtualBox are not yet authorized stages.
 
