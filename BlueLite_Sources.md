@@ -1,5 +1,7 @@
 # BlueLite Project Sources
 
+> **BlueLite execution / session contract (2026-10-13):** The operator uses their **normal local Windows host** for controlled offline `DISM` servicing and `reg load/unload` of verified offline hives. Only the offline image is the mutation target; transient mounts and registry aliases must be inventoried and released before shutdown. The operator's nightly clearing of host logs/TEMP/registry traces means these are **not** persistent sources of project evidence: preserve necessary reports in `C:\work\logs`. Exact rules: [Master Strategy §6.1A](BlueLite-Master_Germanium_Strategy_final.md#61a-controlled-host-assisted-offline-servicing-and-session-hygiene-2026-10-13), live checkpoint: [Current Status](BlueLite_Current_Status.md). This catalog remains a reference list; external sources **and** internal Library/original operator evidence must both be used.
+
 ## Bases & Image Building
 * [UUPdump](https://uupdump.net/) - Izvor za preuzimanje i generisanje originalnih Windows instalacionih ISO fajlova direktno preko UUP paketa.
 * [marcinmajsc/uup-dump-build-and-get-windows-iso](https://github.com/marcinmajsc/uup-dump-build-and-get-windows-iso) - Automatizacija UUP preuzimanja, generisanja Windows ISO fajlova i objave artefakata preko GitHub Actions; istraživačka referenca za BlueLite one-click UUP workflow.
