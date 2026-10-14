@@ -847,6 +847,12 @@
 - **Novel next engineering dependency:** existing Library/text prior operator evidence proves D6 full Download worked for frozen 26200.9550 (R35), and GitHub Current Status pins all source hashes, but the **complete original D6 source ZIP with all helper modules is not available to current sandbox from Library or uploads**. Do not invent patches to or invoke production main by guessing its exact branch/runtime contract, or repeat a 9GB download. Need exact byte-identical source-package intake before direct integration of R76/R77 into unchanged original D6 for future 26200 builds.
 - **ONE next operator step R78 DELIVERED_NOT_EXECUTED:** inline PS7 Admin command; read-only original `C:\work\scripts\BlueLite_DL_R26_D6_REVIEW.zip`, hash **must equal `80807FFFDE870084A3B37A3F773C058532B6FDA03400E12AE8A09BFE2FABBA79`**, check 14-entry ZIP archive and original main+SHA256 manifest exist, copy only this small archive byte-identically into **new** `C:\work\logs\BlueLite_R78_Original_D6_Source_For_Integration.zip` (no overwrite; if already present, require matching SHA), create `C:\work\logs\BlueLite_R78_Original_D6_Source_For_Integration.txt` including SHA and entries, never run CMD, original D6, network, DISM, WIM, converter/G5/MAX_PRE. Request user attach **ZIP plus TXT**, so next step can produce a real integrated generic downloader source change rather than yet another standalone source audit. If missing or mismatched archive, FAIL_CLOSED with precise console message. **No new Windows commands executed by assistant**.
 
+
+## R78 source ZIP visibility discrepancy — 2026-10-14
+
+- Operator R78 log reports PASS and original pinned 14-entry 30,896-byte D6 ZIP, SHA256 `80807FFFDE870084A3B37A3F773C058532B6FDA03400E12AE8A09BFE2FABBA79`. TXT received and independently hashed: 896 bytes SHA256 `2B435624D00EB34669F92179986F2713B9196E2BC3A349B88B7487C701130756`.
+- Operator cannot see copied ZIP in `C:\work\logs`. Actual current target existence is unconfirmed; must not claim it is present. Next step checks exact target path and safely recopies from SHA-pinned original `C:\work\scripts\BlueLite_DL_R26_D6_REVIEW.zip` only if missing. Original archive can also be uploaded directly without another copy. No D6 execution or download.
+
 ## Parallel runtime branch
 
 - C33-R4 converter/supervisor is a different line of development; latest status as recorded in handoff_4, not merged into a fully runtime-certified one-click converter.
