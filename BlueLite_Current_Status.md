@@ -17,6 +17,10 @@
 - Canonical historical successor handoff: `BlueLite_v1.0_CANONICAL_SUCCESSOR_HANDOFF_4.md` (v4.4, synchronized with the v2.5 checkpoint; authoritative Master is now v2.5.2). The historical HANDOFF_3 appendix remains frozen.
 - **2026-10-13 metadata synchronization:** Master footer and these authoritative version/commit/blob references reconciled to v2.5.2. No change to operator execution evidence, MAX_PRE certification, UUP/WIM status, runtime authorization or next-step gates.
 
+## 2026-10-14 R95 completion evidence
+
+R95 operator supplied three result files. Console: 655 bytes, SHA256 BF7C134735388898C3FDE88B82B6C6429483DBFC0A7EAE1A6F9D775244781F91. Result: 957 bytes, SHA256 6073DB0D7F9A12CE7F5AD3644C30048FDC8455947E88A39900ACD42B72909A49. CSV: 54887 bytes, SHA256 A9E12F317CC768EFAA5E6B1FEA4951C98423A5794AE1D28DFA22718F370E59E1; 189 unique entries, all PASS. Result markers: R95=EXECUTE_PASS_ONLY_SHA256_VERIFIED_REDUNDANT_COPIES_REMOVED, DELETE_EXECUTED=TRUE, R95_RETAINED_R36_R85_AND_ACTIVE_R91=PASS. Measured free disk bytes before 39805526016; after 49317355520; difference +9511829504 (8.8586 GiB). The 188 redundant UUP records represented 8978091832 bytes, and the isolated KB5043080 MSU record 533761740 bytes. Source C33 mirror and isolated copy now reported absent, retained R36/R85 and active R91 intact per operator log. No independent access to live machine; no new servicing, NTLite, VM or release certification claimed. Do not rerun R95 Execute. User requests full exact log paths in future instructions. R91 checkpoint servicing remains paused; next step not delivered in this exchange.
+
 ## 2026-10-14 R95 operator audit PASS; explicit fixed-log R95 Execute delivered
 
 - **Operator correction accepted:** always tell the operator the exact full paths of the files to send, not just a `R95_REPORT=` or wildcard/dated folder printed in PS output. All subsequent steps must provide deterministic full file paths (or copy the generated results to fixed named paths).
