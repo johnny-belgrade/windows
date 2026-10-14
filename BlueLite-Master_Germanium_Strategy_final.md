@@ -9,6 +9,19 @@
 
 ---
 
+## 0A. OBAVEZNI REDOSLED RADA / MANDATORY FOUR-STAGE ORDER
+
+Ovo je **obavezni prioritetni redosled BlueLite v1.0** za sve Germanium buildove. Naredna faza ne može zameniti niti zaobići nedovršenu prethodnu fazu. Servisiranje konkretnog builda (npr. 26200.9711/R91–R97) služi kao dokaz i integracioni deo univerzalnog procesa, a ne kao poseban cilj ili dozvola da se odustane od univerzalnog MAX_PRE.
+
+1. **Univerzalni UUP MAX_PRE.** Preuzimanje, rekonstrukcija, maksimalni bezbedno sertifikovani pre-ISO debloat i generisanje radnog WIM-a za bilo koji Germanium build.
+2. **Offline PowerShell MAX debloat.** GREEN/AMBER uklanjanja, CBS/WinSxS, AppX, sistemske komponente, integracije i provere zavisnosti.
+3. **NTLite Business.** Isključivo preostale intervencije koje prethodne faze nisu mogle da obave.
+4. **VM finalizacija.** Dodatne intervencije, testiranje, capture, Defender ON/OFF i finalni release.
+
+**Izvršni uslovi:** (a) NTLite je zabranjen pre završetka i potvrde offline PowerShell faze; (b) VM intervencije/capture slede tek nakon offline i NTLite faza; (c) nijedan prolaz na jednom test-build-u automatski ne potvrđuje univerzalni mehanizam; (d) sve offline operacije moraju čuvati zavisnosti, reproduktivnost, evidenciju i immutable source. **Pre svakog WIM mount/unmount koraka operatoru napisati bold upozorenje „ZATVORI TOTAL CMD“**, uključujući Explorer/alat prozore otvorene na mount direktorijumu. **Pri svakom traženju logova dati unapred pune, tačne lokalne putanje**, bez oslanjanja na njihovo traženje u PS izlazu. **Disk-space kontrola je deo životnog ciklusa workspace-a:** obezbediti dokaz o poreklu i hash-eve pre uklanjanja duplikata; ne brisati aktivni mount, jedinstvene originalne UUP/WIM izvore ili rollback dokaz bez eksplicitne autorizacije.
+
+---
+
 ## 0. DOCUMENT AUTHORITY, EVIDENCE CORPUS AND PURPOSE
 
 This v2.5.2 revision retains the full v2.4 operator-relay architecture and adds the canonical UUP MAX_PRE implementation principles, proof ladder, cross-build regression, observed-delta contracts, FBConan forensic lessons and operational manifest policy from the 2026-10-12 handoff. The historical four-chat evidence table below documents the earlier source corpus; later work is in the successor handoff.
