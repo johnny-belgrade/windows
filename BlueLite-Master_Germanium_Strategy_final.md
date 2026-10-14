@@ -59,6 +59,7 @@ The target envelope is:
 - Defender ON and Defender OFF final variants;
 - retained core user apps kept functional;
 - networking and the required VMware Workstation / VirtualBox host dependency floor preserved;
+- **end-user virtual-machine hosting remains supported:** after BlueLite installation, users can independently install supported third-party hypervisors (at minimum VMware Workstation and Oracle VirtualBox) and create, start and operate their own VMs on hardware with the necessary virtualization capabilities; neither hypervisor is preinstalled in the common image;
 - optional user content moved outside the permanent active OS whenever possible;
 - repeatable build process with logs, hashes, checkpoints and post-state certification.
 
@@ -1149,6 +1150,14 @@ The gate must verify:
 
 The protected list is intelligence, not an eternal hardcoded assumption. If a future Germanium build changes the VM-host dependency graph, delta discovery must update it before virtualization removals run.
 
+## 19.1 End-user VM-host capability — mandatory post-install contract
+
+The **installed BlueLite OS must remain capable of hosting user-created virtual machines**, not merely booting as a guest during our VirtualBox QA phase. On compatible x64 hardware with firmware virtualization enabled, the user must be able to install a supported third-party hypervisor **after first boot** (at minimum VMware Workstation and Oracle VirtualBox), install its signed host drivers/services and required networking adapters, create virtual disks and guests, and start, run, stop and restart those guests. **No VM software is permanently preinstalled** in the common base.
+
+Every virtualization debloat rule must preserve or permit normal installation of the required host interfaces and dependency providers: applicable VT-x/AMD-V and Windows hypervisor/WHP interfaces, kernel-mode driver installation and service registration, NAT/bridged/host-only virtual networking, virtual storage and host file I/O, and required Windows feature activation pathways. Preserve only dependencies proven necessary for this contract; do not retain the whole Hyper-V management stack by default. **Microsoft Hyper-V as an optional built-in hypervisor requires its own separately validated feature/edition contract; it is not implicitly guaranteed by third-party VM-host compatibility.**
+
+A reduction that breaks subsequent supported-hypervisor installation or guest execution is **VM_HOST_DEPENDENCY_BLOCKED**, not an acceptable debloat result. Certification requires an actual post-install VM-host test on suitable physical hardware (or a demonstrably nested-virtualization-capable equivalent), for **both Defender ON and Defender OFF**, covering hypervisor installation, host driver/network setup, guest boot, disk I/O, network operation, clean shutdown and a repeat run after host reboot. A first-boot test of BlueLite **inside** a VM alone does not establish this host contract. Where physical test hardware is unavailable, mark the contract **NOT_YET_RUNTIME_CERTIFIED** and do not report VM-host support as proven.
+
 ---
 
 # 20. VALIDATED INTELLIGENCE SNAPSHOT AS OF 2026-09-29
@@ -1538,6 +1547,7 @@ Functions:
 - Defender OFF test;
 - networking test;
 - VMware/VirtualBox host compatibility checks where applicable;
+- **separate installed-BlueLite-as-VM-host acceptance test** per §19.1 on virtualization-capable hardware, covering user-installed hypervisor, virtual drivers/networks and actual guest execution in both Defender branches; guest-only VirtualBox QA does not satisfy this test;
 - install next appropriate Germanium CU;
 - verify removed targets are not unexpectedly resurrected;
 - footprint measurement;
