@@ -1,13 +1,13 @@
 # BlueLite v1.0 — Current Status
 
-**As of:** 2026-10-13
+**As of:** 2026-10-14
 
 ## Authority and publication
 
 - **GitHub published authoritative Master Strategy:** `BlueLite-Master_Germanium_Strategy_final.md` **v2.5.2**, 2026-10-13.
-- **Latest Strategy v2.5.2 commit:** `f810e71cf2602a253e81f24d6feae276d56215ea` (documentation-only correction of the closing version marker; v2.5.2 normative content unchanged).
+- **Latest Strategy v2.5.2 commit:** `c889270225588afc39731105fbcf86a11713b343` (2026-10-14: adds the mandatory end-user VMware Workstation / VirtualBox *host* installation and guest-execution release contract, including both Defender branches). Historical closing-marker commit: `f810e71cf2602a253e81f24d6feae276d56215ea`.
 - **Historical Strategy v2.5 Library-policy commit:** `2484d64cfd0c42e716051739c738a0bebc841d1a` (internal Library evidence-review requirement in §4.1 and §30.1; predecessor governance commit `c0018db6fdc342fbff8a8be77bd2ced026a100b5`).
-- **Latest Strategy Git blob SHA:** `e4775a24fdc80c166723b950a89df4cb1c082aaf`.
+- **Latest Strategy Git blob SHA:** `60b05ee0ff80628e6168bb9c65acb4370aca1204` (verified 2026-10-14, branch main). Previous Master blob `e4775a24fdc80c166723b950a89df4cb1c082aaf` is historical and lacks the later VM-host acceptance addition.
 - **Historical post-Library-amendment v2.5 Git blob SHA:** `fab56d8772711861fc571a835cd6a4e17439073d` (not the current Master blob).
 - **Initial Strategy v2.5 publication commit:** `0de6de539dc311a0175e3904e3307bbeba4bad3c`.
 - **2026-10-12 Library policy amendment:** `2484d64cfd0c42e716051739c738a0bebc841d1a`; targeted clarification of evidence retrieval and successor workflow only, with no change to the v2.5 technical runtime authorization gates.
@@ -16,6 +16,14 @@
 - GitHub Contents write permission issue **resolved**; the original v2.5 publication was independently confirmed after refreshed connection (historical event).
 - Canonical historical successor handoff: `BlueLite_v1.0_CANONICAL_SUCCESSOR_HANDOFF_4.md` (v4.4, synchronized with the v2.5 checkpoint; authoritative Master is now v2.5.2). The historical HANDOFF_3 appendix remains frozen.
 - **2026-10-13 metadata synchronization:** Master footer and these authoritative version/commit/blob references reconciled to v2.5.2. No change to operator execution evidence, MAX_PRE certification, UUP/WIM status, runtime authorization or next-step gates.
+
+## 2026-10-14 successor four-file intake (current session; documentation-only)
+
+- GitHub connector read the **four actual files** at `johnny-belgrade/windows`, `main`: normative `BlueLite-Master_Germanium_Strategy_final.md` v2.5.2 (blob `60b05ee0ff80628e6168bb9c65acb4370aca1204`); operational `BlueLite_Current_Status.md` (pre-update blob `6b1118d61b71e7fe74975567bbd99ce2b45ad870`); `BlueLite_Sources.md` (blob `81bc348219da06c01e9bdcde74efbdb9eb19d5cf`, 51 external links); `BlueLite_UUP_Evidence_Reconciliation_20261013.md` (blob `3014e77a0111d952fa7d0cd26fb73259e55478fb`). The strategy's newer 2026-10-14 VM-host acceptance requirement is authoritative and the stale opening commit/blob labels were corrected in this documentation update.
+- Targeted internal Library review performed: `BlueLite_v1.0_CANONICAL_HANDOFF_10(1).md` (historical through R71 only), original `BlueLite_R93_R1_IsolatedCheckpoint_26200.9711_85096553.txt`, `BlueLite_R94_Disk_Analysis_and_R95_Cleanup_Scope.txt`, and source text `BlueLite_R95_VerifiedDuplicate_Cleanup.ps1`. This is a **targeted** review, not a claim to have loaded every Library artifact or independently rerun the R94 ZIP inventory. The R93-R1 operator log confirms isolated KB5043080 MSU installation; R94 inventory figures and candidates remain prior documented evidence, not freshly observed live disk state.
+- **CURRENT VERIFIED RECORD BOUNDARY:** latest operator-reported milestone is R94 workspace inventory (reported `R94_Inventory_Complete.zip` SHA-256 `C493631BB6288DB2A97972F7C4D328D3CBE11015BE240154C788F2848E059EB4`), followed by R95 `BlueLite_R95_VerifiedDuplicate_Cleanup.ps1` delivered as a **candidate**, not executed in this session. Its initial permitted action is `-Mode Audit` only after operator's explicit instruction and own PS7 preflight. `-Mode Execute`/any deletion is NOT authorized; neither is additional KB/LCU servicing without a new operator task.
+- Latest operator evidence **reports** R91 WIM Index 1 R/W mount `Status Ok`, checkpoint KB5043080 installed in the uncommitted disposable, and no later unmount/commit. This is not a real-time mount-table verification. Do not mutate or clean this active reported mount by assumption; next task must be set by the operator. No command/script was delivered for local execution in this four-file intake, and no UUP download, DISM/WIM mutation, host change, R95 audit/deletion, NTLite, VM test or certification-tier promotion occurred.
+- Governance reaffirmed: after **each** future delivered command/script and every operator-returned actual result, add a truth-labeled GitHub Current Status entry with source/script SHA and exact log path/result, using current blob-SHA compare-and-swap and a post-write independent fetch. Do not let the older bottom `## Next actions` R72/R73 subsection override the newer R94/R95 checkpoint.
 
 ## HANDOFF_10 — evidence cross-index, 36-day corpus (2026-10-13)
 
