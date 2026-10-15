@@ -2,6 +2,13 @@
 
 **As of:** 2026-10-15
 
+## 2026-10-15 R126-R2 operator PASS, R4 candidate committed
+
+- R126-R2 operator artifacts: report 4696 bytes SHA256 `6A83F48DDCA24F3DAEC08A7B37B04958574FE05A7D40991785AA9192D4689071`; console 5359 bytes SHA256 `8A2A0366E539AC08626F39F24DD79486DB96D41DA2CC99F29269EEB33C01DB70`; DISM trace 1272809 bytes SHA256 `2C51BE9C7A9932E81143814AE325807A121CEF254D1FB7422257D3E0021A73B4`.
+- Real Windows PS7 AST/source checks PASS; R125/R126 pins PASS; reused existing discarded candidate with unchanged R113 SHA. R113 SHA remains `639D446229860E5AB2D388383407DFF6A3137C10A5CC34182D98250396EE2FB5`.
+- R4: exact 4 AppInstaller roots, 740 files, 148137728 logical bytes removed from owned candidate; five staging AppX to four KEEP; scoped lifecycle keys processed; shared UI.Xaml/VCLibs providers preserved; CBS CheckHealth/ScanHealth CLEAN, pending 0; owned DISM unmount /Commit 0 and post zero mounts. Candidate `C:\work\G5\G5_26200_9711_86D3D9215219BE64\R126_R4_AppInstaller_Transactional\install.r4-transaction.wim`, 8989746572 bytes SHA256 `F03C8843B54C62994441B356C037960594D67130B9A725C0749511B5A7470A59`. STATUS R4_COMMITTED_CANDIDATE_NOT_RELEASE_CERTIFIED. No WIM/ISO compression savings claim.
+- R7 Language.Basic remains independent release dependency. Original 26200.9445 phase 163 observed DISM Install Size=0, tiny named WinSxS file surface; phase 335 native remove PASS, whereas current R115 26200.9711 permanent CBS refusal 0x800F0825. Do not rerun failed native operation; investigate only current build delta, then make explicit R7 policy decision and update R15 rule; no silently waived release gate. R15 MAX_PRE conversion/release remains blocked pending source integration and R7.
+
 ## 2026-10-15 R126 OPERATOR FAIL_CLOSED at AppInstaller scoped Staged children; R126-R1 corrected source DELIVERED_NOT_EXECUTED
 
 - **R126 real operator error and evidence:** exact uploaded `BlueLite_R126_R113_R4_AppInstaller_Transactional.txt` 2,450 bytes SHA256 `AA469617E2DA78CD2EDC884836620DA9C95AD80BD76DAF1D1DD2D08D5C2F2C78`; companion `BlueLite_R126_R113_R4_AppInstaller_DISM.log` 430,501 bytes SHA256 `6B75DF76FF17EE7A6F6A46274E50A3E21D512E530ED010E4966F8D5F064B9D4`; actual execution of original R126 source SHA256 `C99887909A363A718E3AF672FA1BFF51B59247099C5E12ED87F2BF9804CD8256`. Exact R125 pins passed, immutable R113 SHA `639D446229860E5AB2D388383407DFF6A3137C10A5CC34182D98250396EE2FB5` preserved pre/post, R126 cloned source once and mounted owned clone RW, PRE health CLEAN/pending=0; PRE five AppX, exact 4 physical AppInstaller roots 740 files / 148,137,728 B.
