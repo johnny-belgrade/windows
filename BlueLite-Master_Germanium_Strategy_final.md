@@ -655,70 +655,32 @@ The **primary** BlueLite build route is: frozen operator-selected UUP source →
 
 **Canonical operating invariant:** maximizing pre-ISO removal is an engine capability, not a justification for mutating an unproven CBS dependency graph.
 
-# 8. BUILD DISCOVERY AND DELTA MODEL
+# 8. DELTA-DRIVEN BUILD DISCOVERY — FAST PATH IS THE DEFAULT
 
-Every newly reconstructed Germanium `install.wim` begins with a minimal, read-only discovery pass **before any post-reconstruction BlueLite mutation is allowed**.
+## 8.1 Minimal release-time manifest, not a new forensic campaign
 
-This pre-mutation baseline is a release gate, not merely a reporting artifact. It establishes whether previously certified production contracts still match the current build before the pre-ISO engine is allowed to act.
+For a new operator-selected 26100/26200/26300 Germanium source, collect **only the data needed to resolve existing recipes**: UUP/source hash, resolved lineage, edition/language/architecture/index, update and pending state, AppX/PFN list, package/feature/capability state for configured targets, protected service/driver/network/VM floor, exact targets' dependency fingerprints, and compact component-store health. Reuse cached **verified unchanged** data where the artifact identity is identical. Log provenance of every reused datum.
 
-The baseline manifest must capture at least:
+Compare the manifest with certified recipe predicates, not merely with the last build number. Native target probes are exact; a full CBS/WinSxS/hardlink crawl is a **conditional deep audit**, not a mandatory new-CU tax.
 
-- source identity;
-- build/edition/index;
-- mount identity;
-- packages and states;
-- capabilities;
-- features;
-- provisioned AppX/MSIX;
-- relevant services/drivers;
-- component-store state;
-- pending servicing state;
-- relevant SOFTWARE/SYSTEM/COMPONENTS evidence;
-- known target component families;
-- known hardlink/projection contracts;
-- protected VM/network floor.
+## 8.2 Automatic classifications and decisions
 
-The new manifest is compared with the last certified Germanium baseline.
+| Classification | Production action | Required evidence |
+|---|---|---|
+| `ALREADY_ABSENT` / `UNCHANGED` | Skip or automatically use known rule | Current exact post/pre predicate, protected floor |
+| `VERSION_CHANGED` | Resolve current exact instance; run the same recipe | Same semantic owner/servicing/dependency fingerprint, updated identity |
+| `KNOWN_VARIANT` | Select pre-certified variant by topology predicate | Recorded alternate recipe and allowed post-delta |
+| `PERMANENT` / `PROTECTED` | Use prior validated fallback/disposition if explicitly available; otherwise targeted block | Exact CBS/AppX refusal and protected dependency mapping |
+| `UNKNOWN_TOPOLOGY` / `UNKNOWN_DEPENDENCY` | Quarantine ONLY affected target for forensic work | Small diff manifest; current source; no unintended mutation |
+| `NEW_TARGET` | Automatic categorization, then only necessary targeted research | Exact new identity and preflight |
 
-Target result:
+Final release gate remains absolute for declared mandatory removals and protected capabilities. Unrelated certified work need not be restarted after an isolated block. `FAIL_CLOSED` is a safety decision, not a demand for endless manual work.
 
-- `UNCHANGED`
-- `VERSION_CHANGED`
-- `TOPOLOGY_CHANGED`
-- `NEW`
-- `ABSENT`
+## 8.3 Cross-build regression and quick release
 
-Rules:
+The regression matrix must cover representative real builds **26100.x, 26200.x, 26300.x** (as image sources are available), including positive and deliberately negative fixtures. Regression code validates the engine, recipe variants and expected state. A new CU on unchanged topology runs **selective** current-image tests and an end-to-end acceptance suite; it does not redo full historical rule creation. Deep `ScanHealth`/new hardlink ownership proof is mandatory on newly researched high-impact topology, not automatically on every already-certified unchanged removal. Final release still needs its declared health/serviceability tests.
 
-### UNCHANGED
-Use the existing production rule after the current pre-production gate.
-
-### VERSION_CHANGED
-Resolve the new exact identities dynamically. If owner/dependency topology matches the certified contract, reuse the production rule.
-
-### TOPOLOGY_CHANGED
-Fail closed. Do not mutate. Send target to Intelligence research.
-
-### NEW
-Create a new intelligence candidate.
-
-### ABSENT
-Idempotent success/skip.
-
-No broad rule such as “remove every 26100.x package” is allowed.
-
-Version numbers are evidence used to resolve an instance of a logical target; they are not the target definition.
-
----
-
-## 8.1 CROSS-BUILD TOPOLOGY REGRESSION (REQUIRED)
-
-Use a machine-readable target-by-build matrix for 26200.9278, 26200.9445, 26200.9550 and later verified Germanium builds. Every entry must contain target family and exact identities; versions; CBS `CurrentState`, `Visibility`, owner count, owner identity and DWORD; protected parent/siblings; feature/capability/AppX and hardlink projections; anticipated servicing side effects; allowed CBS delta; physical post-state; and the actual health/pending result.
-
-- Classify `UNCHANGED`/`VERSION_CHANGED` only after **topology**, not just package basename/version, matches.
-- Wrong owner count or value, changed parent state, missing protected feature, altered language satellite or unsupported packaging => `TOPOLOGY_CHANGED`: no mutation, Intelligence research.
-- Historical successes on 26200.9445 do **not** authorize applying OneDrive, printing, FoDMetadata or Recall/AIX owner edits to 26200.9550 without its own exact gate.
-- Positive fixtures and intentionally invalid negative fixtures both belong in CI/static auditing. Keep build exceptions in Intelligence, not scattered engine branches.
+Generate machine-readable result per target: `source_identity`, `logical_id`, `resolved_exact_identity`, `topology_fingerprint`, `recipe_id/version`, `decision`, `post_state`, `expected_delta`, `observed_delta`, `protected_floor`, `time_ms`. A simple syntax/anchor PASS is never substituted for runtime behavior.
 
 # 9. TWO-DIMENSION CLASSIFICATION: REMOVAL CLASS + RELEASE DISPOSITION
 
@@ -795,76 +757,25 @@ For a newly discovered native target:
 
 A previously certified GREEN target on a new build can skip redundant deep forensics only when delta discovery proves topology unchanged.
 
-## 10.2 New AMBER rule — mandatory lifecycle
+## 10.2 New AMBER rule — one-time variant certification, repeatable production use
 
-1. **Canonical read-only discovery**
-   - exact identities;
-   - owners;
-   - deployments;
-   - components;
-   - physical payload;
-   - projections/hardlinks;
-   - protected parents/siblings.
+**Research mode: only when no valid known recipe matches**
 
-2. **Disposable preparation**
-   - canonical WIM must be unmounted or otherwise protected from accidental targeting;
-   - copy WIM;
-   - verify exact byte size and SHA-256;
-   - mount disposable RW;
-   - verify `Status=Ok`;
-   - verify pre-health.
+1. Read exact current target topology and prior historical proof, including failed methods, dependencies, hardlinks, registry/CBS owners and protected siblings.
+2. Create an owned, hash-verified disposable WIM only when mutation/rollback testing actually requires it. Name and record its retained-use classification. Never touch immutable operator source.
+3. Run the smallest preapproved metadata/native/physical operation with narrowly scoped backup/rollback and recorded exact identifiers. No wildcard expansion and no shared owner carve.
+4. Verify exact post-state, allowed observed CBS delta, retained dependencies, component-store health, pending=0 and `ScanHealth` for a new/high-impact CBS/WinSxS rule; negative self-tests are required to catch wrong owner/parent and failed DISM exits.
+5. Promote the successful variant into a data-driven, source-reviewed **universal engine recipe**; add machine-readable fixture(s), logical size/physical unique bytes and a state-transition contract. Do not publish an unproven carve as GREEN merely because directories disappeared.
+6. Release hive/mount handles and preserve operator-valued disposable image. Delete only if confirmed no longer needed or bit-identically reproducible and approved; preserve forensic and release receipts.
 
-3. **Controlled mutation**
-   - touch only allow-listed metadata/owners;
-   - unload hives before DISM servicing;
-   - invoke the smallest native servicing operation possible;
-   - no broad wildcard mutation.
+**Fast production mode: on another compatible Germanium build**
 
-4. **Independent post-mutation certification**
-   - target exact post-state;
-   - removed physical payload;
-   - protected parent/sibling state;
-   - runtime projections;
-   - capability/feature/package providers still operational where required;
-   - `pending=0`;
-   - `CheckHealth=CLEAN`;
-   - `ScanHealth=CLEAN`;
-   - protected VM/network floor;
-   - no unexpected feature drift.
+7. Dynamically select and validate the recipe by exact current-image predicates/fingerprint, not fixed build number.
+8. Execute the already reviewed recipe on the separately owned mutable candidate, check its expected post-state and run the predefined health/smoke gates. No full repeat of items 1–6 unless a predicate differs.
+9. If the current build changes the owner/CBS/AppX graph, block this target; append a **new variant**, not a new set of one-off build scripts.
+10. Promote only verified transaction results; retain immutable source, separately recorded checkpoints and source hashes.
 
-5. **Classification lock**
-   - record exact rule;
-   - record expected topology;
-   - record allowed servicing-driven side effects;
-   - record measured delta;
-   - hash report/evidence if part of release corpus.
-
-6. **Disposable cleanup**
-   - discard;
-   - unmount;
-   - delete;
-   - verify canonical still intact.
-
-7. **Canonical pre-production gate**
-   - re-resolve the current canonical target;
-   - require topology to match the certified contract exactly.
-
-8. **Canonical production apply**
-   - repeat the proven sequence only;
-   - backup required hives/metadata;
-   - no research logic added during production apply.
-
-9. **Independent canonical certification**
-   - same expected post-state;
-   - `pending=0`;
-   - `CheckHealth`;
-   - `ScanHealth` for AMBER/high-impact removals;
-   - all protected contracts pass.
-
-10. **Commit**
-    - only now may the canonical WIM be committed.
-
----
+This section supersedes earlier wording which made every AMBER recipe an automatic new full research cycle or unconditionally deleted every failed test WIM.
 
 ## 10.3 EVIDENCE LADDER — STATIC IS NOT RUNTIME
 
@@ -1083,27 +994,13 @@ Do not “debloat” the common base by amputating the entire Windows Update eng
 
 # 17. APPX / STORE / OPTIONAL APPLICATION POLICY
 
-The common base retains the currently defined top-level inbox set:
+**Differentiate STAGING, COMMON BASE and OPTIONAL PAYLOAD.** Staging has five required top-level AppX identities: `Microsoft.SecHealthUI`, `Microsoft.DesktopAppInstaller`, `Microsoft.WindowsCalculator`, `Microsoft.WindowsNotepad`, `Microsoft.Windows.Photos`. The desired common-base final keep set is **four** (all except DesktopAppInstaller); DesktopAppInstaller, Store, StorePurchaseApp and Services.Store.Engagement are release-forbidden as already specified by the current policy. Framework/runtime/VC dependencies are resolved automatically from actual manifests, not dropped by broad label.
 
-- SecHealthUI;
-- Calculator;
-- Notepad;
-- Photos.
+Historical **11 September Batch 18C-D/E** and **14 September phases 44–48 on 26200.9445** are explicit prior successful method evidence for DesktopAppInstaller despite native DISM error `15610 / 0x80073CFA`: narrowly scoped AppX application/staging/config lifecycle deprovisioning and preserved native `Deprovisioned` marker, followed by guarded physical WindowsApps removal only after proving each package root's unique hardlink owner, while keeping shared AppInstallerPrompt/WinRT/OneCore/PolicyManager support. For 26200.9445 Phase 48 removed **740 files / 148,137,728 bytes** with post `CheckHealth=CLEAN` and no pending packages. **Those details are historical topology-specific data, not hardcoded universal file-count requirements.**
 
-Framework dependencies are retained only if the actual current manifests require them.
+R119 26200.9711 read-only audit saw identical four roots and file/byte totals, but only **702 hardlink checks closed; 38 errors**. A production physical carve is **not authorized by counts alone**. Next improvement is a reusable owner-resolution method that handles WIM-mount reparse/hardlink reporting correctly and falls back to exact verified disallow/hold, not repeating another DISM refusal. This belongs in a universal AppX lifecycle recipe with topology predicates and new-variant regression. If an offline policy-based remove works for a certified target, it may replace lower-level handling; never assume an undocumented provider override.
 
-The following are not common-base requirements:
-
-- Microsoft Store;
-- StorePurchaseApp;
-- DesktopAppInstaller/winget;
-- optional user apps.
-
-The Store ecosystem is removed/deprovisioned through supported or certified methods. Do not use broad EndOfLife/Deleted-EndOfLife registry manipulation as a substitute for understanding package state. Do not use StateRepository SQLite surgery as normal production logic.
-
-Classic Windows Photo Viewer, Store reinstall, optional MSIX/AppX packages and user conveniences belong in the optional BlueLite payload when they do not need to be active OS dependencies.
-
----
+Do not use broad `EndOfLife` / `Deleted-EndOfLife` changes, global AppX registry deletes, or `StateRepository` SQLite surgery as generic substitutes for real package lifecycle. Optional Microsoft Store/MSIX/winget installation packages, classic Photo Viewer tools and end-user conveniences belong in post-install optional payload; no active Store provisioning is required in the common base.
 
 # 18. DEFENDER BRANCHING
 
@@ -1283,117 +1180,48 @@ FBConan / Windows X-Lite 25H2 Pro v2 (26200.7019) is a **reference end-state**, 
 
 **Experiment measurements:** distinguish (1) logical bytes, (2) hardlink-aware unique physical payload, (3) actual compressed NTFS allocated size, (4) WIM/ISO transport compressed bytes, (5) clean first-logon time. Hypothesis and observed result must be labeled separately. A `repairable` servicing graph is a research input, not a production PASS.
 
-# 22. CANONICAL PRODUCTION PIPELINE
+# 22. CANONICAL PRODUCTION PIPELINE — FOUR GERMANIUM-UNIVERSAL FACTORY STAGES
 
-The normal release pipeline is:
+The prior A–N investigation checklist is **not** a set of separate new-CU operator tasks. It becomes internal jobs of the four prebuilt stages, driven by the same manifest, job state and source-hash ledger. Each job is resumable and idempotent; timestamps and run IDs are evidence, not reason to rerun an already verified parent step.
 
-## PHASE A — SOURCE FREEZE
+## STAGE 1 — SOURCE/UUP/RECONSTRUCTION + PRE-ISO MAX_PRE FACTORY
 
-1. Operator selects/accepts exact UUP source.
-2. Capture source identity/hashes.
-3. Preserve original UUP launcher/config/list.
+Input: selected/frozen operator-approved UUP source, edition/index, language/arch, supported converter binary/version, standardized policy/profile/config, release configuration.
 
-## PHASE B — UUP RECONSTRUCTION + PRE-MUTATION DISCOVERY GATE
+1. Check source identity and cached downloads. Run source-native UUP download/conversion; preserve required Windows/FoD/delta/reference closure, apply supported source-side AppX selection and update options.
+2. Reconstruct WIM; separate immutable source, owned working image and target ISO. Dynamic build/lineage fingerprint determines applicable rules.
+3. Perform a small discovery manifest, auto-select known GREEN/AMBER recipes by current topology, apply maximum proven pre-ISO removals, record allow-listed deltas and pending/health receipts. Five staging apps / four final apps remain the current AppX contract.
+4. Write intermediate working WIM/checkpoint and detailed stage manifest; assemble **candidate** ISO where appropriate. It is **not** yet the RELEASE until downstream NTLite/VM certification.
+5. Record source hashes, downloads reuse, exact identities, removed/already-absent, known-variant, remaining targets, errors and measured efficiency.
 
-1. Apply supported AppX selection.
-2. Preserve full required Windows/reference/delta closure.
-3. Download/reconstruct.
-4. Integrate updates.
-5. Produce Professional `install.wim`.
-6. Initial health/pending gate.
-7. Capture the reconstructed **pre-mutation baseline manifest** defined in Section 8.
-8. Diff it against the last certified Germanium baseline and classify known targets as `UNCHANGED`, `VERSION_CHANGED`, `TOPOLOGY_CHANGED`, `NEW` or `ABSENT`.
-9. Block mutation for `TOPOLOGY_CHANGED` / unsafe `NEW` targets before any certified pre-ISO module can touch them.
+**Deliverables:** `Stage1_ReconstructedSource.wim` (logical output, path chosen by run manifest), `Stage1_MAXPRE_Working.wim`, selectable candidate ISO, `Stage1_Receipt.json` and rollback/source metadata. Working artifacts are retained according to operator-managed lifetime; these filenames describe roles rather than mandatory duplicate 9GB files.
 
-## PHASE C — PRE-ISO OFFLINE ENGINE
+## STAGE 2 — STANDALONE OFFLINE POWERSHELL MAX-DEBLOAT
 
-Run the **shared canonical MAX_PRE engine** for all already-certified GREEN/AMBER production modules safe and useful immediately after reconstruction **and whose current-build contract has passed the Phase B discovery/pre-production gates**.
+1. Read the Stage1 manifest and working WIM without new independent forensic copies unless needed for a risky new mutation.
+2. Use **exact same** recipes/policy modules; skip already completed targets; finish proven offline removals and integration/configuration not executed pre-ISO; apply remaining component store cleanup rules only when permitted.
+3. On changed target topology, automatically contain the block; process independently safe targets; research only the changed dependency and fold the result into global Intelligence.
+4. Prove common-base post-state, no unexpected pending, critical serviceability, retained optional restore payload, protected networking/storage/VM-host floor, Store release forbidden and native OS app keep set.
+5. Produce `Stage2_CommonBase.wim` or in-place approved candidate checkpoint, `Stage2_Receipt.json` and exact `NTLite_Handoff.json`.
 
-This phase may include:
+**Do not open NTLite until the known scriptable queue is exhausted or every remaining target has a documented KEEP/HANDOFF/RED disposition**. A new investigatory target does not block processing all unrelated known rules. High-risk handoff remains explicit.
 
-- native capability removals;
-- native standalone package removals;
-- already-certified portable AMBER modules;
-- AppX cleanup;
-- common offline policy/service work;
-- protected-floor validation.
+## STAGE 3 — NTLITE BUSINESS UNIVERSAL PRESET
 
-It must not contain unproven research carves.
+1. Compare actual NTLite component names and remaining Stage2 handoff entries against the **versioned Germanium preset** and conditional Component Intelligence mapping.
+2. Apply only approved handoff components/settings. Emit the exact preset used, NTLite version, source index, observed removals and changed dependencies. If no handoff exists, record `SKIPPED_NOT_NEEDED`.
+3. Independently certify post-NTLite output using the shared post-state/servicing floor. A portable module later proven outside NTLite migrates to Stage1/2 instead of remaining duplicated.
+4. Preserve common-base WIM, versioned XML preset and post-NTLite receipt.
 
-## PHASE D — POST-PRE-ISO RESIDUE + INTELLIGENCE MANIFEST
+## STAGE 4 — VM / FIRST-BOOT / ADMIN / TWEAKS / CAPTURE / RELEASE
 
-1. Build a machine-readable post-pre-ISO residue manifest.
-2. Diff it against the Phase B pre-mutation manifest and the last certified post-pre-ISO Germanium state.
-3. Verify the expected post-state and measured delta of every module executed in Phase C.
-4. Populate the Intelligence queue with unresolved `TOPOLOGY_CHANGED`, `NEW` and other realistic remaining offline candidates.
-5. Preserve the Phase B pre-mutation manifest and Phase D residue manifest as separate evidence artifacts; never overwrite one with the other.
+1. Start from the Stage3-certified candidate; snapshot/rollback before runtime changes and updates. Use parameterized unattended/OOBE and bootstrap scripts for **local administrator account** and optional user onboarding, with a secure per-release credential/set-up policy (no published hardcoded passwords, copied SID/SAM or blind inherited captured accounts).
+2. Apply only validated online-only tweaks/add-ons; keep a reversible log for every policy/service/user-profile change. Capture changes into a reproducible final image only after exact functional tests.
+3. Verify both Defender ON and OFF variants: fresh-new-user first-logon, Calculator/Notepad/Photos/SecHealthUI function, networking, Update Resume/re-pause, optional installer paths, storage/security protected floor, serviceability/reboot, package resurrection, CU test in snapshot, proper profile states and VM host functionality on appropriate physical hardware.
+4. Finalize capture/export/compression, image indexes, boot/setup architecture and distribution ISO; verify transport signatures/hashes and measure installed footprint after clean boot. Mark release only after the full matrix passes.
+5. Produce `Stage4_VM_Receipt.json`, branch-specific test results, captured WIM/ISO SHA-256, efficiency/time ledger and `Release_Manifest.json`. If tests fail, return a targeted defect to its originating stage and keep the reusable pipeline intact.
 
-## PHASE E — GREEN RESIDUE / INTELLIGENCE COMPLETION
-
-Use the **same** certified production modules only on targets not already removed in Phase C. Verify `ALREADY_ABSENT` idempotently; never run a second divergent post-ISO native engine.
-
-## PHASE F — PORTABLE AMBER RESIDUE / INTELLIGENCE COMPLETION
-
-Use the **same** certified portable AMBER rules only on newly proven/remaining targets whose present-build gates pass. Do not duplicate or replay completed Phase C AMBER operations.
-
-## PHASE G — INTELLIGENCE QUEUE EXHAUSTION
-
-For every remaining realistic offline candidate, produce one terminal disposition:
-
-- production rule;
-- keep/skip;
-- component-engine handoff;
-- RED hold.
-
-Do not open NTLite while a realistic offline production candidate remains unresolved.
-
-## PHASE H — COMMON BASE CERTIFICATION
-
-Read-only certification of:
-
-- mount/source identity;
-- `CheckHealth`;
-- pending = 0;
-- retained AppX/frameworks;
-- removed target post-states;
-- service/policy floor;
-- Windows Update pause/servicing floor;
-- Defender ON baseline;
-- component-store report;
-- protected VM/network floor;
-- no unexpected mutation.
-
-## PHASE I — SECONDARY COMPONENT ENGINE / NTLITE
-
-Only explicit `COMPONENT_ENGINE_HANDOFF` targets.
-
-## PHASE J — POST-COMPONENT-ENGINE RECERTIFICATION
-
-Repeat common-base certification and target-specific post-tests.
-
-## PHASE K — DEFENDER BRANCH
-
-Create Defender ON and Defender OFF derivatives from the certified common base.
-
-## PHASE L — FINAL CLEANUP / EXPORT / ISO
-
-1. component-store analysis;
-2. approved cleanup;
-3. commit;
-4. clean WIM export;
-5. hashes;
-6. branch artifacts;
-7. ISO assembly.
-
-## PHASE M — VIRTUALBOX ONLINE-ONLY FINISHING + VALIDATION
-
-Only after offline and NTLite/component-engine work is finished.
-
-## PHASE N — RELEASE
-
-A build becomes BlueLite RELEASE only when all required branch/serviceability/runtime gates pass.
-
----
+**Stage sequencing:** Stage1 → Stage2 → Stage3 → Stage4. An interim pre-ISO ISO is a distribution/candidate artifact, not an excuse to stop offline work; final release ISO uses final certified/captured images. No automatic VM work before prior stages. All stages are genuinely **Germanium-universal**, not merely connected by a universal shell.
 
 # 23. CANONICAL SCRIPT SET VS FORENSIC HISTORY
 
@@ -1482,44 +1310,20 @@ Certification output should include:
 
 ---
 
-# 25. NTLITE BUSINESS POLICY
+# 25. NTLITE BUSINESS — REPRODUCIBLE XML PRESETS, NOT AD-HOC CLICKING
 
-NTLite is a **secondary dependency-aware component engine**.
+NTLite Business is the operator's **only paid tool** and acts as a secondary offline component engine after reusable UUP/PowerShell processing. The accepted product is a **version-controlled, reusable XML preset family**, not a set of per-build screenshots or manual click lists. NTLite official documentation confirms presets contain saved choices in XML and can be loaded in GUI/command-line workflows: https://ntlite.com/docs/presets/ ; current command-line syntax must be checked against the operator-installed version using `ntlite.exe /?` and its official docs, never invented from another NTLite release.
 
-It is not:
+**Preset architecture**:
+- Common `Germanium_Base.xml` for logical cross-build rules and protected compatibility settings.
+- Optional platform/edition/Defender variants, merged/selected by manifest and **actual NTLite-visible component identity**, not by hardcoded cumulative-update version.
+- Machine-readable `NTLite_Handoff.json` generated by Stage2 specifies exactly which logical target remains, the mapped NTLite component identity, required dependencies and desired post-state.
+- Before apply: static XML validation, source index/edition and NTLite version compatibility, preview of intended removals, no unplanned side effects, exact snapshot/rollback.
+- After apply: actual exit/receipt, target-specific post-state and servicing revalidation. If preset-only action cannot be represented for that build, record a conditional handoff or target block, not guessed removal.
 
-- the first debloat tool;
-- a replacement for BlueLite intelligence;
-- an excuse to stop offline automation research;
-- a place to click additional removals “while we are there.”
+**No duplicate work:** component already absent in Stage1/2 must not be removed again in NTLite. No NTLite until Stage2 complete. Build-specific preset forks are exception records only when a proven schema/platform limitation requires them; no uncontrolled manual divergence. A reusable headless/hybrid GUI path is acceptable if NTLite version limitations demand it, but the steps and inputs remain explicit and automated wherever tool support permits.
 
-Before NTLite:
-
-- GREEN exhausted;
-- certified portable AMBER exhausted;
-- real Intelligence candidates analyzed;
-- common base certified;
-- rollback/checkpoint created;
-- exact handoff manifest generated.
-
-Each NTLite target must contain:
-
-- logical BlueLite target;
-- exact current NTLite-visible target name;
-- reason scripted path is not used;
-- desired post-state;
-- protected dependencies;
-- post-test.
-
-If no true residue exists, NTLite may be skipped.
-
-After NTLite, full common-base recertification is mandatory.
-
-If an NTLite action is later reproduced reliably by the BlueLite build-independent engine, it must migrate back into the scripted pipeline.
-
-The actual local NTLite version must be logged on each release. Historical project reference: Business 2025.8.10552; do not assume this remains the installed version forever.
-
----
+NTLite Unattended setup can write Windows answer-file content, but the NTLite XML preset and Microsoft's `unattend.xml` have distinct roles; do not confuse them. Reference: https://ntlite.com/docs/unattended/ .
 
 # 26. PACKAGING AND ARTIFACT POLICY
 
@@ -1553,39 +1357,17 @@ For each logical target/build, record baseline → expected → actual delta wit
 
 Historical physical target deltas on 26200.9445 were approximately: OneDrive Setup **196.71 MiB**; Search srchadmin wrapper **0.244 MiB**; FoDMetadata core **0.562 MiB**; LPD+LPR **0.242 MiB**. These are **historical** measurements, not promised new-build WIM/ISO reductions. Favor large reproducible wins while preserving cheap smaller certified removals and avoiding endless small checks with no new runtime evidence.
 
-# 27. VIRTUALBOX FINAL PHASE
+# 27. VMBOX / VIRTUALBOX — UNIVERSAL ONLINE FINALIZATION AND ADMIN ACCOUNT
 
-VirtualBox begins only after all realistic offline work and the secondary component-engine handoff are complete and recertified.
+This is **fourth, final** production stage. It is **not** a repeat of earlier component removal and not an improvised GUI tweak session.
 
-VM is not a repair shop for incomplete offline work.
+**Shared VM bootstrap contract**: a versioned PowerShell/cmd/reg package and parameterized Windows unattended first-boot/OOBE configuration, with protected user choice over local admin naming and credential creation (credentials never in a public repo or release logs). Profile-specific tweaks are declared in settings files and applied conditionally by edition/user/defender-state; use verified registry/service ownership and rollbacks. Default profile must preserve first-time OOBE user and app provisioning semantics; do not distribute a copied configured account's SID/SAM as universal admin creation. Captured existing-profile variants require separate approval and genuinely new-account regression.
 
-Functions:
+**Repeatable VM testing**: golden clean VM snapshot; machine-readable boot/user/app/network/service/Update/CBS/CU tests; both Defender branches; first-install footprint; optional MSIX/Store install user workflows; reboots; shutdown; and hash-verified image capture. Actual end-user VMware Workstation/VirtualBox HOST ability must be checked on physical virtualization-capable hardware (both branches), because running BlueLite **as a guest** is not evidence of successful host use.
 
-- first boot;
-- OOBE/local-account validation;
-- new user profile;
-- retained app/runtime test;
-- reboot/shutdown cycles;
-- Event/CBS sanity;
-- component-store health;
-- Windows Update Resume/Pause test;
-- Defender ON test;
-- Defender OFF test;
-- networking test;
-- VMware/VirtualBox host compatibility checks where applicable;
-- **separate installed-BlueLite-as-VM-host acceptance test** per §19.1 on virtualization-capable hardware, covering user-installed hypervisor, virtual drivers/networks and actual guest execution in both Defender branches; guest-only VirtualBox QA does not satisfy this test;
-- install next appropriate Germanium CU;
-- verify removed targets are not unexpectedly resurrected;
-- footprint measurement;
-- online-only finishing/integration.
+**Feedback path**: every online tweak that can be expressed reliably offline migrates back to Stage1/2; every VM-only procedure becomes a stable Stage4 script/answer-file recipe. New Germanium builds replay these tests and tweaks without repeating their design; changed dependencies lead only to targeted variant research.
 
-Use snapshot before CU/serviceability tests.
-
-If an online action proves deterministic and dependency-aware offline, migrate it back to the offline engine in the next revision.
-
-Release does not exist until both Defender branches pass the required VM validation.
-
----
+**Target timing**: standard release runs this prebuilt QA suite once per new compatible build and publishes only on PASS; it is a fixed cost, not a month of ad-hoc tests.
 
 # 28. OPTIONAL USER PAYLOAD
 
@@ -1606,68 +1388,88 @@ This keeps the common base small and prevents optional functionality from forcin
 
 ---
 
-# 29. NEW GERMANIUM BUILD — EXPECTED AUTOMATIC WORKFLOW
+# 29. A NEW GERMANIUM BUILD — MINIMAL-HUMAN FAST RELEASE RUNBOOK
 
-For each new Germanium build:
+### 29.1 Prepare once (engineering work, not repeated each CU)
 
-1. freeze exact source;
-2. reconstruct full dependency closure;
-3. apply supported source/AppX minimization;
-4. create reconstructed `install.wim`;
-5. run initial health/pending gate;
-6. generate the reconstructed **pre-mutation baseline/delta manifest**;
-7. resolve known logical targets dynamically and block unsafe `TOPOLOGY_CHANGED` / `NEW` mutation;
-8. execute only certified pre-ISO production modules whose current contracts match;
-9. run post-pre-ISO health/pending and expected-post-state gates;
-10. generate a separate post-pre-ISO residue/intelligence manifest;
-11. SKIP absent targets idempotently;
-12. automatically process remaining `UNCHANGED` / safe `VERSION_CHANGED` rules whose topology matches;
-13. research only the changed/new Intelligence queue;
-14. promote successful new methods into production rules;
-15. exhaust GREEN;
-16. exhaust portable AMBER;
-17. classify all remaining candidates;
-18. certify common base;
-19. send only true component-engine handoff targets to NTLite/secondary engine;
-20. recertify;
-21. branch Defender ON/OFF;
-22. cleanup/export/hash/ISO;
-23. VM online-only finishing and validation;
-24. CU/serviceability test;
-25. measure ISO/installed footprint;
-26. declare RELEASE only if all gates pass.
+Maintain versioned production engine modules, UUP converter overlay, XML/INI/JSON profiles, shared Component Intelligence and historical rule-success/failure index, cross-build fixtures, WIM artifact lineage map, install/Defender variants, NTLite XML preset, unattended/setup/admin scripts, VM/physical-host test harness and signing/hash/logging tools. Every confirmed research win is integrated into an automatic recipe, **not** archived only as another numbered script/log.
 
-The desired trend is that each new Germanium build needs fewer research steps than the previous one.
+### 29.2 Each new available UUP source (normal production)
 
----
+1. Operator selects source and desired profile; `START.cmd` freezes source hash/identity and reports anticipated capabilities.
+2. Tool confirms Germanium lineage (including 26300), supported converter configuration, caches/downloads/reconstruction closure and applies source AppX policy, reconstructs and integrates updates.
+3. Stage1 records tiny actual manifest, dynamically selects known rules and executes MAX_PRE automatically; no routine deep re-research.
+4. Stage2 finishes only required offline residue, idempotent known recipes and common-base QA.
+5. Stage3 applies the reusable NTLite XML preset to real handoff (or records skip).
+6. Stage4 executes existing VM/admin/tweak/bootstrap and branch QA, capture/export and final release.
+7. Report source/version, time elapsed, automated-rules reuse, exceptions, actual ISO/installed bytes, failure or PASS. Keep relevant intermediate/source images per retention policy.
 
-# 30. REQUIRED FUTURE REPOSITORY ARTIFACTS
+**Expected operator involvement**: initial source and release profile; review of truly novel canonical mutation or exceptional changed dependency; approval of high-impact irreversible/capture/credential/release decisions. Routine per-target PowerShell cut-and-paste is a **development workflow only**.
 
-The repository should progressively converge on the following canonical artifacts:
+### 29.3 Exception lane, not infinite loop
 
-```text
-BlueLite-Master_Germanium_Strategy_v2.1.md
-BlueLite_Sources.md
+New target/failure → automatically collect focused state and retrieve prior matching cases → classify dependency owner/protection and expected release impact → create a bounded, targeted research issue and reusable variant recipe if needed → negative/positive regression → merge into production → resume from checkpoint. Existing unchanged rules must remain auto-reusable.
+
+No universal system can guarantee a fixed ISO or instant release for every future OS revision. A truly new mandatory dependency may delay an individual release; it does **not** justify discarding automation and rebuilding the analysis from zero. Publishing under an unresolved mandatory release gate is forbidden. Maintain a release-candidate versus released distinction.
+
+### 29.4 Acceptance benchmark
+
+Record repeated end-to-end dry runs on at least one certified representative each from 26100, 26200 and 26300 (when sources and build conditions allow). Track median operator touches, automated rule coverage, unknown-dependency count, build wall time (separate network/download/CPU/VM portions), SHA reproducibility for identical inputs/toolchains and final serviceability. Target same-day/hours for **compatible known-topology** new sources once production artifacts exist; do not claim uploader competitors' private implementation or actual times without evidence.
+
+# 30. CANONICAL DELIVERABLES — VERSIONED REAL FILES, NOT HUNDREDS OF DEVELOPMENT SCRIPTS
+
+The repository must converge on a **small, runnable source-controlled production package**. This is a proposed logical layout (not a statement that all files already exist):
+
+~~~text
+BlueLite-Master_Germanium_Strategy_final.md
 BlueLite_Current_Status.md
-Component_Intelligence.*
-CrossBuild_Topology_Regression.*
-AMBER_Observed_Delta_Ledger.*
-Debloat_Efficiency_Ledger.*
-Production_Execution_Manifest.*
-Production_Hash_Manifest.*
-NTLite_Handoff_Manifest.*
-Release_Manifest.*
-Converter_Runtime_Certification.*
-MAX_PRE_Runtime_Certification.*
-```
+BlueLite_Sources.md
+production/
+  START.cmd                         # single operator entrypoint
+  Build-BlueLite.ps1                # orchestrator
+  Manifest.schema.json
+  config/
+    Germanium-Profile.json          # optional/keep/remove/branch policy
+    ConvertConfig.overlay.ini       # converter-native options
+    CustomAppsList.template.txt     # staging 5, build-resolved
+    offlineServicing.template.xml    # supported servicing answer file
+    autounattend.template.xml       # setup/OOBE/admin profile
+  engine/
+    Source-Resolve.psm1
+    UUP-Adapter.psm1
+    Image-Servicing.psm1
+    AppX-Lifecycle.psm1
+    CBS-ComponentOwner.psm1
+    Dependency-Gates.psm1
+    WIM-Transaction.psm1
+    Release-Certification.psm1
+  intelligence/
+    Component_Intelligence.json
+    Known_Rule_Success.json
+    Known_Rule_Failures.json
+    CrossBuild_Topology_Regression.json
+  ntlite/
+    Germanium_Base.xml
+    Handoff-Mapping.json
+  vm/
+    Bootstrap.ps1
+    Online-Tweaks.ps1
+    Admin-Account-Setup.ps1
+    VM-Tests.ps1
+    Capture-And-Validate.ps1
+  tests/
+    positive/
+    negative/
+    cross-build/
+  manifests/
+    Recipe_Hash_Manifest.json
+    Production_Execution_Manifest.schema.json
+    Release_Manifest.schema.json
+~~~ 
 
-The exact data format for machine-readable files may evolve, but their logical roles should remain stable.
+**Priority:** make existing R15/UUP-D6/R91–R119 logic and proven AMBER recipes into these **few actual reusable files**. Hash-controlled immutable historical scripts remain research sources; do not rename old source to “production” without factoring hardcoded paths, state and redundant gates. Each item is `PLANNED` until actual repo file and runnable tests exist. A document alone does not satisfy the Definition of Done.
 
-`Component_Intelligence` should become the durable repository of target rules so that chat memory is never required to reconstruct the project.
-
-`BlueLite_Current_Status.md` is a separately updated operational ledger with timestamp, exact build/source, active MAX_PRE archive/hash, last operator audit and token, current certification tier, converter/MUTATION runtime authorization, open dependency blockers and explicitly permitted next action. Keep the normative Master Strategy stable and versioned; do not turn it into a daily transcript. The legacy C33-R4 converter workstream and MAX_PRE R15-R1 module pipeline retain separate evidence and status.
-
----
+Every actual release has its own local run receipts (source, exact image, engine/recipe hashes, target decisions, native provider exit, health, pending, NTLite preset, VM test, output and SHA), indexed from GitHub Current Status rather than pasted there in full. Historical Library evidence, FBConan and uploader Build Info remain in evidence catalog with a flag for `OBSERVED` versus `INFERRED` or `UNTESTED`.
 
 ## 30.1 MANDATORY SUCCESSOR WORKFLOW — GITHUB CURRENT STATUS
 
