@@ -1,8 +1,8 @@
-# BlueLite v1.0 — MASTER GERMANIUM STRATEGY v4.0.0
+# BlueLite v1.0 — MASTER GERMANIUM STRATEGY v5.0.0
 
 **Status:** AUTHORITATIVE / UNIFIED PRODUCTION ARCHITECTURE — SUPERSEDES PREVIOUS MASTER REVISIONS  
 **Date:** 2026-10-15  
-**Scope:** Windows 11 **Germanium family**, including **26100.x (24H2), 26200.x (25H2), 26300.x (26H2)** and later family members confirmed through image lineage/dependency discovery; a numeric range alone does not certify an unknown OS branch  
+**Scope:** Windows 11 **Germanium family**, including **26200.x (25H2), 26300.x (26H2)** and later family members confirmed through image lineage/dependency discovery; a numeric range alone does not certify an unknown OS branch  
 **Project:** BlueLite v1.0  
 **Team:** Operator + ChatGPT; all commands execute locally with the operator  
 **Canonical historical evidence:** Library, predecessor sessions, GitHub `BlueLite_Current_Status.md`, and `BlueLite_Sources.md`  
@@ -12,6 +12,8 @@
 
 ## 0A. MASTER OPERATING CONTRACT — UNIVERSAL GERMANIUM FACTORY
 
+**AKTIVNI OBUHVAT OD v5.0.0:** Windows 11 **26200.x / 26300.x i naredne potvrđene Germanium linije**. Zastarela prethodna linija je isključena iz novih UUP/PowerShell/NTLite/VM proizvodnih profila, matrica regresije i istraživačkog backlog-a. Nasleđeni tehnički logovi i precizni identiteti komponenti ostaju neizmenjeni kao istorijska evidencija; njihov zapis ne vraća podršku zastareloj liniji.
+
 ### 0A.1 Šta je cilj, a šta nije
 
 **BlueLite nije četrdesetodnevni debloat jednog builda. BlueLite je reproduktibilna, unapred pripremljena proizvodna fabrika za čitavu Germanium familiju.** Nijedna sesija, broj eksperimenta ili novi CU ne sme ponovo otvoriti već rešene zadatke bez konkretno dokazanog novog uzroka. Željeni rezultat je proizvodni paket koji operator pokreće na novoizabranom UUP izvoru i dobija najmanji dokazan Windows image uz definisane funkcije, zaštitu zavisnosti, Defender ON/OFF varijante, logove i testove.
@@ -20,7 +22,7 @@
 
 ### 0A.2 ČETIRI SAMOSTALNO UNIVERZALNE FAZE — OBAVEZAN REDOSLED
 
-1. **GERMANIUM UUP MAX_PRE:** Jedan verzionisan wrapper i skup univerzalnih skripti/config/answer fajlova za operatorov izbor i zamrzavanje UUP izvora, rekonstrukciono bezbedno pre-download AppX filtriranje, updates, pravilno sklapanje WIM-a, **automatski maksimalni post-reconstruction/pre-ISO debloat**, eksport, ISO i hash manifest. Za isti logički target ne postoje odvojene proizvodne UUP skripte za 26100, 26200 ili 26300.
+1. **GERMANIUM UUP MAX_PRE:** Jedan verzionisan wrapper i skup univerzalnih skripti/config/answer fajlova za operatorov izbor i zamrzavanje UUP izvora, rekonstrukciono bezbedno pre-download AppX filtriranje, updates, pravilno sklapanje WIM-a, **automatski maksimalni post-reconstruction/pre-ISO debloat**, eksport, ISO i hash manifest. Za isti logički target ne postoje odvojene proizvodne UUP skripte za 26200, 26300 ili kasniji potvrđeni Germanium build.
 2. **GERMANIUM POWERSHELL OFFLINE MAX-DEBLOAT:** Verziona, samostalno primenljiva univerzalna PowerShell/DISM/offline-registry produkciona kolekcija. Koristi **iste** remove/keep/restore/intelligence module kao MAX_PRE; proverava ranije već izvršeno i obrađuje samo stvarni offline ostatak. CBS/WinSxS, feature/capability, package, AppX, servis, registry, integracije, optional/payload i dependency-gates su unapred automatizovani.
 3. **GERMANIUM NTLITE BUSINESS:** Jedan bazni, verzionisan i **ponovo primenljiv XML preset set** sa deklarativnim profilima i preciznim build-aware izuzecima. NTLite je za opravdan `COMPONENT_ENGINE_HANDOFF`, ne za ponavljanje PS faze. Profili su realno testirani na više Germanium izvora; NTLite može da obradi samo preostali deo koji je izričito planiran.
 4. **GERMANIUM VM/VMBOX FINALIZACIJA:** Jedan unapred pripremljen VM bootstrap/first-logon/post-setup profil za ostatak online debloat-a, tweaks, **administratorski nalog**, Defender varijante, user desktop instalere, capture, testove i release. Guest-only VM proba nije dokaz da instalirani BlueLite može biti VMware/VirtualBox host.
@@ -58,7 +60,7 @@ Zadržavaju se najstroži tehnički dobri delovi projekta: immutable originalni 
 
 ### 0A.6 DOKAZ UNIVERZALNOSTI I METRIKE
 
-Univerzalnost se dokazuje **matricom više stvarnih Germanium buildova**, uključujući 26100, 26200 i 26300 kad su im izvori dostupni, a ne proglasom na osnovu jednog uspešnog image-a. Proveriti source/config konverziju, baš isti proizvodni engine, AppX inventar, servisiranje, functional protected floor, NTLite profile compatibility, VM nalog/tweaks i oba Defender ogranka. Minimalni zahtev je automatizovana cross-build regresija sa pozitivnim/negativnim slučajevima; release odluka za konkretan build koristi brzi aktuelni run receipt i obavezni realni first-boot/servicing test.
+Univerzalnost se dokazuje **matricom više stvarnih Germanium buildova**, uključujući 26200 i 26300 i kasnije potvrđene buildove kad su im izvori dostupni, a ne proglasom na osnovu jednog uspešnog image-a. Proveriti source/config konverziju, baš isti proizvodni engine, AppX inventar, servisiranje, functional protected floor, NTLite profile compatibility, VM nalog/tweaks i oba Defender ogranka. Minimalni zahtev je automatizovana cross-build regresija sa pozitivnim/negativnim slučajevima; release odluka za konkretan build koristi brzi aktuelni run receipt i obavezni realni first-boot/servicing test.
 
 Meriti zasebno: vreme do prvog ispravnog ISO-a, broj ručnih operatorskih intervencija, broj pravila koja su `AUTO_REUSED`, broj zaista novih dependency slučajeva, procenat obavljenog offline debloat-a pre NTLite, ISO/WIM/installed footprint (sa razlikovanjem compressed/unique/logical), health, reinstalacione i CU testove. **Cilj proizvodnog režima je izdavanje novog poznato-kompatibilnog Germanium builda u satima nakon dostupnosti kompletnog UUP izvora**, a ne novi višenedeljni istraživački projekat. Ovo je performance cilj, a ne obećanje za dosad nepoznat slučaj.
 
@@ -72,7 +74,9 @@ Operator određuje cilj i vrši lokalne radnje; ChatGPT proučava postojeće dok
 
 ## 0. DOCUMENT AUTHORITY, EVIDENCE CORPUS AND PURPOSE
 
-This v4.0.0 revision retains the v3.0.0 prepared, reusable, delta-driven Germanium production architecture and clarifies only **disposable artifact deletion and evidence-first research reuse**. Disposable test images are temporary by default and are deleted after their analytical purpose has ended and sufficient evidence is preserved in the Library/project knowledge base. Images still needed for upcoming tests or containing irreplaceable findings are kept. Previously established technical rules remain unchanged. The historical four-chat evidence table documents the earlier source corpus; later work is in the successor handoff.
+**v5.0.0 policy precedence:** Active targets are exclusively 26200.x, 26300.x and later verified Germanium. Historical snapshots remain source records, not an obligation to regenerate old-build reports.
+
+This v5.0.0 revision retains the prepared, reusable, delta-driven Germanium production architecture, disposable cleanup and evidence-first research reuse contracts, and **limits ACTIVE production and acceptance to 26200.x (25H2), 26300.x (26H2), and later confirmed Germanium lines**. The retired branch is OUT OF SCOPE for new UUP, offline PowerShell, NTLite, VM, QA, and new analyses. Historical operator source logs and genuine servicing package identities remain unchanged factual evidence, not current production requirements.
 
 This document is the governing strategy for BlueLite. It is not a summary of one build and it is not a list of isolated tweaks. It consolidates the complete project logic developed through the four chronological BlueLite chat histories and replaces the earlier Master Strategy wherever this document is more specific.
 
@@ -479,9 +483,9 @@ Every command/sequence/script mutation intended for the canonical reusable deblo
 - Operator review is additional to, not a substitute for, disposable testing, topology/dependency validation, pre/post-state certification and rollback.
 - No phase number, previous static PASS, plugin availability or continuation of a past chat grants implicit execution authorization.
 
-## 6.3 GERMANIUM 26100 / 26200 / 26300 AND LATER FAMILY UNIVERSAL IMPLEMENTATION RULE
+## 6.3 GERMANIUM 26200 / 26300 AND LATER FAMILY UNIVERSAL IMPLEMENTATION RULE
 
-Normative §0A applies to **all four production phases**, not only to one PowerShell wrapper. The production code accepts an operator-selected Germanium source, discovers actual target identity/version/edition/language/PFN/CBS ownership, selects an already-certified method and runs it; no source-code patch for every CU or 26100/26200/26300 revision.
+Normative §0A applies to **all four production phases**, not only to one PowerShell wrapper. The production code accepts an operator-selected Germanium source, discovers actual target identity/version/edition/language/PFN/CBS ownership, selects an already-certified method and runs it; no source-code patch for every CU or 26200/26300 revision.
 
 - Keep source-specific values in declarative manifest/Component Intelligence, not proliferating release scripts named for a single build. Exact old build identifiers may appear in fixtures or proven exception records, never as a substitute for actual topology.
 - The source UUP/converter, standalone offline PowerShell, NTLite XML preset and VM setup must be **separately reusable**, and together idempotent. An external tool's XML can cover only the operations that tool actually supports; use PS/DISM/CBS, official UUP options and NTLite according to their real semantics.
@@ -490,7 +494,7 @@ Normative §0A applies to **all four production phases**, not only to one PowerS
 - Universal packaging is a **measurable deliverable**: named script/config/preset artifacts, a one-entry command, logs, minimal operator prompts, cross-build fixtures and runtime acceptance.
 - All source and runtime gates remain in §6.1/§6.2, §8, §10 and §31; apply them risk-proportionately and automatically. Do not use universal as an excuse for undocumented raw carve, nor dependency review as an excuse for a month of serial research.
 
-**Compatibility classification is topology-based, not hardcoded version-based.** When 26300 shares an identified recipe with 26100/26200, reuse it; when it differs, update Intelligence and validate only that changed recipe.
+**Compatibility classification is topology-based, not hardcoded version-based.** When 26300 shares an identified recipe with 26200 or another certified later build, reuse it; when it differs, update Intelligence and validate only that changed recipe.
 
 
 ---
@@ -590,7 +594,7 @@ The **primary** BlueLite build route is: frozen operator-selected UUP source →
 
 ## 8.1 Minimal release-time manifest, not a new forensic campaign
 
-For a new operator-selected 26100/26200/26300 Germanium source, collect **only the data needed to resolve existing recipes**: UUP/source hash, resolved lineage, edition/language/architecture/index, update and pending state, AppX/PFN list, package/feature/capability state for configured targets, protected service/driver/network/VM floor, exact targets' dependency fingerprints, and compact component-store health. Reuse cached **verified unchanged** data where the artifact identity is identical. Log provenance of every reused datum.
+For a new operator-selected 26200/26300 or later confirmed Germanium source, collect **only the data needed to resolve existing recipes**: UUP/source hash, resolved lineage, edition/language/architecture/index, update and pending state, AppX/PFN list, package/feature/capability state for configured targets, protected service/driver/network/VM floor, exact targets' dependency fingerprints, and compact component-store health. Reuse cached **verified unchanged** data where the artifact identity is identical. Log provenance of every reused datum.
 
 Compare the manifest with certified recipe predicates, not merely with the last build number. Native target probes are exact; a full CBS/WinSxS/hardlink crawl is a **conditional deep audit**, not a mandatory new-CU tax.
 
@@ -609,7 +613,7 @@ Final release gate remains absolute for declared mandatory removals and protecte
 
 ## 8.3 Cross-build regression and quick release
 
-The regression matrix must cover representative real builds **26100.x, 26200.x, 26300.x** (as image sources are available), including positive and deliberately negative fixtures. Regression code validates the engine, recipe variants and expected state. A new CU on unchanged topology runs **selective** current-image tests and an end-to-end acceptance suite; it does not redo full historical rule creation. Deep `ScanHealth`/new hardlink ownership proof is mandatory on newly researched high-impact topology, not automatically on every already-certified unchanged removal. Final release still needs its declared health/serviceability tests.
+The regression matrix must cover representative real builds **26200.x, 26300.x and later confirmed Germanium build lines** (as image sources are available), including positive and deliberately negative fixtures. Regression code validates the engine, recipe variants and expected state. A new CU on unchanged topology runs **selective** current-image tests and an end-to-end acceptance suite; it does not redo full historical rule creation. Deep `ScanHealth`/new hardlink ownership proof is mandatory on newly researched high-impact topology, not automatically on every already-certified unchanged removal. Final release still needs its declared health/serviceability tests.
 
 Generate machine-readable result per target: `source_identity`, `logical_id`, `resolved_exact_identity`, `topology_fingerprint`, `recipe_id/version`, `decision`, `post_state`, `expected_delta`, `observed_delta`, `protected_floor`, `time_ms`. A simple syntax/anchor PASS is never substituted for runtime behavior.
 
@@ -1334,7 +1338,7 @@ No universal system can guarantee a fixed ISO or instant release for every futur
 
 ### 29.4 Acceptance benchmark
 
-Record repeated end-to-end dry runs on at least one certified representative each from 26100, 26200 and 26300 (when sources and build conditions allow). Track median operator touches, automated rule coverage, unknown-dependency count, build wall time (separate network/download/CPU/VM portions), SHA reproducibility for identical inputs/toolchains and final serviceability. Target same-day/hours for **compatible known-topology** new sources once production artifacts exist; do not claim uploader competitors' private implementation or actual times without evidence.
+Record repeated end-to-end dry runs on at least one certified representative each from 26200 and 26300 (when sources and build conditions allow). Track median operator touches, automated rule coverage, unknown-dependency count, build wall time (separate network/download/CPU/VM portions), SHA reproducibility for identical inputs/toolchains and final serviceability. Target same-day/hours for **compatible known-topology** new sources once production artifacts exist; do not claim uploader competitors' private implementation or actual times without evidence.
 
 # 30. CANONICAL DELIVERABLES — VERSIONED REAL FILES, NOT HUNDREDS OF DEVELOPMENT SCRIPTS
 
@@ -1428,7 +1432,7 @@ The 3.5–5 GB ISO and 11–15 GB installed footprint are **measured engineering
 **BlueLite is a Germanium compiler and repeatable release factory**. All four stages must produce real reusable software/configuration assets; one universal controller wrapping per-build manual debloat is insufficient.
 
 ~~~text
-FROZEN SELECTED UUP (26100 / 26200 / 26300 / later verified Germanium)
+FROZEN SELECTED UUP (26200 / 26300 / later verified Germanium)
     + pinned source/config/INTELLIGENCE and known successful/failing recipes
     |
     v
@@ -1463,9 +1467,11 @@ The success metric is not the count of scripts, phases or retrieved logs. It is 
 
 # 33. CHANGE HISTORY AND AUTHORITY
 
+**v5.0.0 — 2026-10-15, operator-directed scope restriction.** Production, research backlog and acceptance are restricted to 26200.x/26300.x and later confirmed Germanium. The older line is retired; historic original logs and servicing identities are not falsified. All v4.0.0 disposable cleanup and evidence-first rules remain unchanged.
+
 **v4.0.0 — 2026-10-15, targeted disposable/evidence correction authorized by operator.** `Disposable` means a **temporary image to delete once no longer needed** for further tests or analyses; first ensure that decision-grade logs/results are actually accessible in Library/project knowledge base. Retain only images that future tests specifically require or whose unique evidence is not yet secured; clean exact owned scope after unmount/hive release and source protection. Before ANY new analysis, check complete available BlueLite evidence and run only investigations for objectively absent or insufficient prior data. All other v3.0.0 production architecture and technical policies unchanged.
 
-**v3.0.0 — 2026-10-15, substantive strategy reset authorized by operator.** Source and servicing evidence from v2.x are preserved; the former labor-intensive per-build development framing is superseded. Four **independently universal** stages explicitly cover 26100, 26200 and **26300** Germanium family lineage. Repeatable **FAST_RELEASE** with recipe/Component Intelligence reuse becomes the default. A new CU is not another long research project. New owner/dependency variant alone enters a bounded forensic lane, then becomes a certified automatic rule. Five AppX staging/four final distinction is retained, with prior 18C/44–48 success as candidate evidence and R119 hardlink gap flagged. Distinguish UUP converter INI/lists, Microsoft servicing/setup XML and NTLite XML; none is a universal magic remove script. NTLite Business becomes actual versioned portable preset, Stage4 includes repeatable admin account/VM tweaks, and expected artifacts are named. Operator-managed disposable WIMs are retained if useful. Cross-build quick acceptance and machine-readable source/health/footprint/time gates replace repeated redundant exhaustive forensics.
+**v3.0.0 — 2026-10-15, substantive strategy reset authorized by operator.** Source and servicing evidence from v2.x are preserved; the former labor-intensive per-build development framing is superseded. Four **independently universal** stages were designed for the wider historical family; **the active v5 production scope is 26200/26300 and later confirmed Germanium**. Repeatable **FAST_RELEASE** with recipe/Component Intelligence reuse becomes the default. A new CU is not another long research project. New owner/dependency variant alone enters a bounded forensic lane, then becomes a certified automatic rule. Five AppX staging/four final distinction is retained, with prior 18C/44–48 success as candidate evidence and R119 hardlink gap flagged. Distinguish UUP converter INI/lists, Microsoft servicing/setup XML and NTLite XML; none is a universal magic remove script. NTLite Business becomes actual versioned portable preset, Stage4 includes repeatable admin account/VM tweaks, and expected artifacts are named. Operator-managed disposable WIMs are retained if useful. Cross-build quick acceptance and machine-readable source/health/footprint/time gates replace repeated redundant exhaustive forensics.
 
 **v2.5.3 — 2026-10-15, historical intermediate.** Clarified four-stage order but left contradictory demands for near-constant new-build research. Replaced by v3.0.0.
 
@@ -1475,7 +1481,7 @@ The success metric is not the count of scripts, phases or retrieved logs. It is 
 
 ### 33.1 Technical source register — verified scope, not inferred capability
 
-- **Microsoft 26H2 enablement/servicing lineage:** https://support.microsoft.com/en-us/servicing/os/windows-11/2026/09/kb5121794-feature-update-to-windows-11-version-26h2 — 24H2/25H2/26H2 common servicing core. This confirms shared family relationship, **not** every package has the same ownership or that 26300 will always be bit-identical to 26100.
+- **Microsoft 26H2 enablement/servicing lineage:** https://support.microsoft.com/en-us/servicing/os/windows-11/2026/09/kb5121794-feature-update-to-windows-11-version-26h2 — shared servicing-lineage background; the active BlueLite release scope is 25H2/26H2 and newer confirmed Germanium. This confirms shared family relationship, **not** every package has the same ownership or that 26300 will always be bit-identical to 26200.
 - **UUP converter official source/readme:** https://github.com/abbodi1406/BatUtil/blob/master/uup-converter-wimlib/convert-UUP.cmd ; https://github.com/abbodi1406/BatUtil/blob/master/uup-converter-wimlib/ReadMe.html — converter-specific `ConvertConfig.ini`, `SkipApps`, `AppsLevel`, `CustomList`, `StubAppsFull`, optional `CustomAppsList*.txt`. Always inspect pinned local converter fork/version.
 - **UUP Dump custom app selection source:** https://git.uupdump.net/uup-dump/misc/src/commit/10915414f3d8103e43fbe1ea170f980a45048131/autodl_files/CustomAppsList.txt — illustrates select-app list and required `CustomList=1`; not a complete CBS removal mechanism.
 - **Microsoft DISM offline packages and unattended answer file:** https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/add-or-remove-packages-offline-using-dism?view=windows-11 — supported `/Add-Package` / `/Remove-Package` / `/Apply-Unattend` offlineServicing; dependency ordering and exact package identity. Does **not** claim arbitrary permanent packages can be removed by XML.
@@ -1488,4 +1494,4 @@ The success metric is not the count of scripts, phases or retrieved logs. It is 
 
 ---
 
-**End of BlueLite v1.0 — MASTER GERMANIUM STRATEGY v4.0.0**
+**End of BlueLite v1.0 — MASTER GERMANIUM STRATEGY v5.0.0**
