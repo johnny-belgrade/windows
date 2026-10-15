@@ -2,6 +2,12 @@
 
 **As of:** 2026-10-15
 
+## 2026-10-15 End-of-day operator mount/hive read-only check — CLEAN
+
+- **Actual operator Windows PS7 output reviewed:** `DISM /English /Get-MountedWimInfo` host DISM 10.0.26100.9549, **No mounted images found**; query of `HKLM\SYSTEM\CurrentControlSet\Control\hivelist` and `reg query HKLM` shows **no BlueLite/project temporary HKLM hives**. Standard host registry and active `\REGISTRY\WC\Silo*` mappings for Client.CBS and Notepad remain; these are normal active host state and must not be unloaded as BlueLite state. **BlueLite end-of-day check PASS**; shutdown acceptable for these scoped checks.
+- **Evidence limitation:** result provided as pasted PS output; **no saved operator TXT log and no independent SHA256**. Original read-only check command did not create a log. Do not misrepresent it as file-backed evidence.
+- **Operator's reinforced delivery rule:** every future Windows command/script must automatically create a uniquely named, specifically announced log under `C:\work\logs`, with the exact file path requested afterward; PS stdout should only be requested when necessary for an error or troubleshooting. No repeat of today's clean mount/hive check needed. R124-R1 **DELIVERED_NOT_EXECUTED**, deferred until operator resumes.
+
 ## 2026-10-15 R124-R1 independently authored read-only replacement DELIVERED_NOT_EXECUTED
 
 - Original historical R124 script is recorded as 9,577 B SHA256 `5AC26D8E3772E3280BC12829B0D7F173AF4D6E8455E63A2D72ED55A8504BCF11` but its actual source bytes were **not present** in GitHub or currently accessible supplied/Library attachments. **Do not claim source equivalence, pin-match or operator runtime.** The previously recorded original R124 is still DELIVERED_NOT_EXECUTED.
