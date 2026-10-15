@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Current Status
 
-**As of:** 2026-10-14
+**As of:** 2026-10-15
 
 ## 2026-10-15 R110-R1 source fix
 
@@ -30,9 +30,9 @@
 ## Authority and publication
 
 - **GitHub published authoritative Master Strategy:** `BlueLite-Master_Germanium_Strategy_final.md` **v2.5.2**, 2026-10-13.
-- **Latest Strategy v2.5.2 commit:** `c889270225588afc39731105fbcf86a11713b343` (2026-10-14: adds the mandatory end-user VMware Workstation / VirtualBox *host* installation and guest-execution release contract, including both Defender branches). Historical closing-marker commit: `f810e71cf2602a253e81f24d6feae276d56215ea`.
+- **Latest Strategy v2.5.2 commit:** `a02388fa3d86cd2820a8a94386667e8447120c16` (2026-10-14: adds initial mandatory §0A four-stage order: universal UUP MAX_PRE → offline PowerShell MAX debloat → NTLite Business residual → VM finalization; also bold TOTAL CMD mount/unmount warning, explicit full output paths, and disk-space lifecycle controls). **Prior Master commit:** `c889270225588afc39731105fbcf86a11713b343` (VMware Workstation / VirtualBox *host* installation and guest-execution release contract). Historical closing-marker commit: `f810e71cf2602a253e81f24d6feae276d56215ea`.
 - **Historical Strategy v2.5 Library-policy commit:** `2484d64cfd0c42e716051739c738a0bebc841d1a` (internal Library evidence-review requirement in §4.1 and §30.1; predecessor governance commit `c0018db6fdc342fbff8a8be77bd2ced026a100b5`).
-- **Latest Strategy Git blob SHA:** `60b05ee0ff80628e6168bb9c65acb4370aca1204` (verified 2026-10-14, branch main). Previous Master blob `e4775a24fdc80c166723b950a89df4cb1c082aaf` is historical and lacks the later VM-host acceptance addition.
+- **Latest Strategy Git blob SHA:** `b8798bfe3f38ea8b37a284e1b21a23b53a937977` (independently fetched 2026-10-15, branch `main`; includes initial §0A). **Prior Master blob** `60b05ee0ff80628e6168bb9c65acb4370aca1204` was current before §0A and is retained only as historical provenance. Earlier blob `e4775a24fdc80c166723b950a89df4cb1c082aaf` predates the VM-host acceptance addition.
 - **Historical post-Library-amendment v2.5 Git blob SHA:** `fab56d8772711861fc571a835cd6a4e17439073d` (not the current Master blob).
 - **Initial Strategy v2.5 publication commit:** `0de6de539dc311a0175e3904e3307bbeba4bad3c`.
 - **2026-10-12 Library policy amendment:** `2484d64cfd0c42e716051739c738a0bebc841d1a`; targeted clarification of evidence retrieval and successor workflow only, with no change to the v2.5 technical runtime authorization gates.
@@ -40,7 +40,8 @@
 - **Current Status first GitHub creation:** commit `3e820e30002629145f264eda7162c6d278f2d0c0`.
 - GitHub Contents write permission issue **resolved**; the original v2.5 publication was independently confirmed after refreshed connection (historical event).
 - Canonical historical successor handoff: `BlueLite_v1.0_CANONICAL_SUCCESSOR_HANDOFF_4.md` (v4.4, synchronized with the v2.5 checkpoint; authoritative Master is now v2.5.2). The historical HANDOFF_3 appendix remains frozen.
-- **2026-10-13 metadata synchronization:** Master footer and these authoritative version/commit/blob references reconciled to v2.5.2. No change to operator execution evidence, MAX_PRE certification, UUP/WIM status, runtime authorization or next-step gates.
+- **2026-10-13 metadata synchronization (historical):** Master footer and then-current version/commit/blob references reconciled to v2.5.2.
+- **2026-10-15 authority metadata correction:** Refetched authoritative `main` Master and reconciled this opening authority block to its latest §0A commit `a02388fa3d86cd2820a8a94386667e8447120c16` and blob `b8798bfe3f38ea8b37a284e1b21a23b53a937977`. Prior hashes/commits remain historical; existing later R97/§0A entry is retained. **Documentation-only:** no change to operator execution evidence, MAX_PRE certification, UUP/WIM state, R113 `DELIVERED_NOT_EXECUTED`, runtime authorization or next-step gates.
 
 ## 2026-10-14 R104 operator WIM integrity PASS; R105 UUP MAX_PRE source-lock package delivered
 
