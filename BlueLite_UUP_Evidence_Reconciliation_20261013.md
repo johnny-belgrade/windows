@@ -51,7 +51,7 @@
 
 ### G6. Build-family scope and order-of-stages mismatch
 
-- R26-D2 advertises `GERMANIUM_26100_OR_26200` but current Master requires **26200.xxxx** for production; R15 profile explicitly `AllowedBuildFamilies=26200`. D3 rejects 26100 at static engine selection. Align the downloader's production contract and distinguish 26100 only as reconstruction prerequisite/baseline context if needed.
+- **Superseded production scope note (2026-10-15):** R26-D2's broader historical family declaration is no longer authoritative. **MASTER v5.0.0 accepts only 26200.x, 26300.x and later verified Germanium**. R15's original certified profile remains restricted to its actually proven family until the new dependency rules are certified. A servicing-base version in a historical reconstruction log is not a supported UUP release target. Audit the build-policy module against the active policy, not an old static D2/D3 claim.
 - The pipeline is **UUP input → reconstruction/update → immutable WIM → disposable MAX_PRE → remaining offline PS/GREEN/AMBER/residue → NTLite → re-certification/branch → final export/ISO → VirtualBox**. An ISO made *before* offline PS finishing is not the canonical release order (the earlier assistant visual pipeline mislabeled it).
 
 ## What is already proved vs what must be developed
