@@ -369,93 +369,27 @@ Library review complements, but **does not supersede**, the normative Master Str
 
 ---
 
-# 5. CANONICAL LOCAL ENVIRONMENT — UPDATED 2026-09-29
+# 5. CANONICAL LOCAL ENVIRONMENT AND DYNAMIC WORKSPACE (2026-10-15)
 
-The old root:
+**Canonical root:** `C:\work`. The retired `C:\Users\Admin\Downloads\work` is historical evidence only, not a destination for new production scripts.
 
-`C:\Users\Admin\Downloads\work`
+**Current known local classes:** `C:\work\scripts` for operator-reviewed code, `C:\work\logs` for durable log/JSON outputs, `C:\work\backup` for checkpoints, `C:\work\UUP_Source` for frozen UUP inputs, `C:\work\E2E` for image runs, and `C:\work\G5` for UUP→MAX_PRE engineering. `C:\work\extracted\install.wim` / `C:\work\mount` were valid historical project paths, **not mandatory present source/mount paths**.
 
-is retired.
+**Production architecture:** every run receives or creates a source-bound run manifest containing `WorkspaceRoot`, `FrozenUUP`, `OriginalWimPath`, `WorkingWimPath`, `Index`, `MountDirectory`, `CheckpointDirectory`, `LogDirectory`, `RecipeManifestVersion` and `ReleaseOutput`. **Never hardcode the current revision, particular operator hostname, one R91/R113 disposable path or a single mount directory as universal input.** Preflight validates resolved path/index/hash and mount ownership against actual DISM inventory. All outputs are confined to owned work folders; source/reference/FBConan WIMs cannot collide with target mounts or hives.
 
-The canonical offline workspace is now:
+**Current 2026-10-15 engineering evidence (not permanent defaults):**
 
-```text
-C:\work
-```
+- Source baseline `C:\work\E2E\BlueLite_R91_OfflineServicing_26200.9711_85096553\install.wim`, expected SHA256 `86D3D9215219BE64B82BCA4A7F7BA6BAC250DD2F457FE483503DF3B81A12E977`.
+- Five-AppX provisioned R113 candidate under `C:\work\G5\G5_26200_9711_86D3D9215219BE64\R113_Offline_AppX_Transactional\install.appx-transaction.wim`, expected SHA256 `639D446229860E5AB2D388383407DFF6A3137C10A5CC34182D98250396EE2FB5`.
+- These concrete identities are **regression fixtures** for the new universal pipeline, not the blueprint's fixed working filenames. Refer to GitHub Current Status and fresh operator receipts for live runtime state; never assume a WIM is mounted because it was mounted in a previous chat.
 
-Required subpaths retain the old layout:
+## 5.1 Main workstation — development performance profile, not a source selector
 
-```text
-C:\work\
-├── extracted\
-│   └── install.wim
-├── mount\
-├── scripts\
-├── logs\
-└── backup\
-```
+Historical operator setup: ASUS / Intel Core i7-11700F / GTX 1050 / 16 GB DDR4 3200 MHz. This is capable of normal DISM/WIM processing but **production correctness and rule choice must not depend on this exact machine**.
 
-Canonical WIM:
+## 5.2 Secondary machine — lower-resource profile
 
-```text
-C:\work\extracted\install.wim
-```
-
-Canonical mount:
-
-```text
-C:\work\mount
-```
-
-Development/production scripts:
-
-```text
-C:\work\scripts
-```
-
-Logs:
-
-```text
-C:\work\logs
-```
-
-Backups/checkpoints:
-
-```text
-C:\work\backup
-```
-
-All future scripts must use the new root or derive paths from one root variable. No new canonical script should embed the retired Downloads path.
-
-Reference/forensic mounts such as FBConan remain physically and logically separate and must never be confused with `C:\work\mount`.
-
-## 5.1 Main workstation
-
-The main development workstation is now:
-
-- ASUS motherboard;
-- Intel Core **i7-11700F**;
-- NVIDIA **GTX 1050**;
-- **16 GB DDR4 3200 MHz** RAM.
-
-This is the primary machine for normal BlueLite development, DISM work, disposable WIM tests, hashing, comparison, compression and production runs.
-
-## 5.2 Test / backup machine
-
-The previous host becomes the test/backup machine:
-
-- AMD Ryzen 5 **4500U**;
-- **8 GB RAM**.
-
-On this machine:
-
-- run heavy DISM operations serially;
-- avoid unnecessary parallel scans;
-- avoid whole-binary regex operations when bounded/string-offset analysis is enough;
-- limit compression threads when required;
-- avoid running multiple large inventory/compression jobs concurrently.
-
-The engine should remain usable on both machines. Performance tuning must not change correctness.
+Historical Ryzen 4500U / 8 GB RAM. Optimize execution to remain correct under reduced memory: serial heavy image servicing, bounded parsing, limited compression threads. Performance heuristics are configurable, not build-specific removal logic. Do not impose recurring free-space query gates on the operator; scope and retain large project WIMs as §0A/§6.1A prescribes.
 
 ---
 
