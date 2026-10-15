@@ -1,4 +1,4 @@
-# BlueLite v1.0 — MASTER GERMANIUM STRATEGY v3.0.0
+# BlueLite v1.0 — MASTER GERMANIUM STRATEGY v4.0.0
 
 **Status:** AUTHORITATIVE / UNIFIED PRODUCTION ARCHITECTURE — SUPERSEDES PREVIOUS MASTER REVISIONS  
 **Date:** 2026-10-15  
@@ -52,7 +52,9 @@ Zadržavaju se najstroži tehnički dobri delovi projekta: immutable originalni 
 - Novonastala/visokorizična dependency varijanta: ciljano duboko istraživanje i disposable dokaz **jednom za novu varijantu**; rezultat postaje trajno univerzalno pravilo.
 - Razlikuj `rule validated`, `this-build verified` i `release certified`. Ni status ni XML sam po sebi ne garantuju rezultat.
 - Jednom kad je tekst mutation modula pregledan i potpisan za proizvodnu verziju, operator **ne mora ponovo pregledati isti neizmenjeni izvor za svaki novi CU**; novi/revidirani visoko-uticajni modul zahteva novi pregled.
-- Testne WIM kopije koje će biti korisne zadržati. Brisati samo sigurno nepotrebne ili bit-identično ponovljivo rekonstruisive kopije, uz owner/mount/hive/hash gate i operatorovu odluku. Nema rutinske local free-space provere.
+- **DISPOSABLE = PRIVREMENO, PO ZAVRŠETKU UPOTREBE OBRISATI.** Zadržati samo kopije koje su konkretno potrebne za sledeće testove/analize, imaju dokazanu jedinstvenu vrednost ili još nisu zamenjene potpunim analitičkim dokazima. Čim kopija nije potrebna za naredne korake, **obrisati je** posle potvrde da su potrebni logovi, manifesti, rezultati i zaključci sačuvani i dostupni u Library/projektnoj bazi; bit-identična ponovna izrada iz zaštićenog izvora dodatno opravdava brisanje. Ne gomilati WIM-ove i radne direktorijume „za svaki slučaj“. Pre brisanja proveriti tačno vlasništvo, aktivne mount/hive handle-ove, zaštićene izvore i opseg. Operator odobrava opšte pravilo, a za nejasan/nezamenljiv artefakt potrebna je posebna odluka. Nema rutinske local free-space provere.
+
+**ZABRANA DUPLIRANJA ANALIZA:** Pre *svake* nove analize prvo pretražiti celokupnu dostupnu BlueLite bazu (Library, prethodne sesije i logove, GitHub Status/Sources, postojeće izvode i Component Intelligence). Ako prethodni podaci **u potpunosti odgovaraju** traženom pitanju i identitetu/topologiji, koristiti ih bez nove analize. Ako delimično odgovaraju, raditi **samo nedostajuću ciljanu proveru** i dopuniti postojeći zapis. Potpuno novu analizu raditi samo kada nema relevantnog prethodnog dokaza ili je dokaz objektivno nedovoljan; ne svoditi različite buildove na isti state bez identitetske provere. Svaki novi rezultat odmah pretvoriti u pretraživ analitički log/recipe zapis da se postupak ne bi ponavljao.
 
 ### 0A.6 DOKAZ UNIVERZALNOSTI I METRIKE
 
@@ -70,7 +72,7 @@ Operator određuje cilj i vrši lokalne radnje; ChatGPT proučava postojeće dok
 
 ## 0. DOCUMENT AUTHORITY, EVIDENCE CORPUS AND PURPOSE
 
-This v3.0 revision preserves the dependency and servicing evidence accumulated through v2.x, but changes the governing method from repeated per-build forensics to **prepared, reusable, delta-driven production**. Section 0A governs all later sections where historical research wording seems to require unnecessary repetition or automatic deletion. The historical four-chat evidence table remains a source record; later work is in the successor handoff. The historical four-chat evidence table below documents the earlier source corpus; later work is in the successor handoff.
+This v4.0.0 revision retains the v3.0.0 prepared, reusable, delta-driven Germanium production architecture and clarifies only **disposable artifact deletion and evidence-first research reuse**. Disposable test images are temporary by default and are deleted after their analytical purpose has ended and sufficient evidence is preserved in the Library/project knowledge base. Images still needed for upcoming tests or containing irreplaceable findings are kept. Previously established technical rules remain unchanged. The historical four-chat evidence table documents the earlier source corpus; later work is in the successor handoff.
 
 This document is the governing strategy for BlueLite. It is not a summary of one build and it is not a list of isolated tweaks. It consolidates the complete project logic developed through the four chronological BlueLite chat histories and replaces the earlier Master Strategy wherever this document is more specific.
 
@@ -181,11 +183,11 @@ Research and routine production must not be confused:
 1. Discover and prove each NEW high-risk method on an owned, source-verified disposable; record complete pre/post dependency state and image health.
 2. Convert successful proof into an indexed, independently testable, versioned universal recipe with exact predicates and rollback/post-state.
 3. For an unchanged or compatible known build, **reuse** that recipe automatically; no repeat of exploratory steps, native failures, lengthy owner-map surveys, or per-build approval of unchanged code.
-4. When a genuinely novel dependency variant occurs, isolate its target, preserve logs and the useful forensic WIM, resolve once, and add the variant to Component Intelligence.
+4. When a genuinely novel dependency variant occurs, first exhaust relevant existing Library/knowledge-base results; analyze **only the missing evidence**, isolate the target and add the outcome to Component Intelligence. Preserve the forensic WIM only while it is needed for another test or remains the sole irreplaceable evidence.
 5. Release candidates still require current-image proof and functional gates. Fast path is **automation**, not suppression of verification.
-6. Operator-managed project disposable WIMs are persistent until demonstrably unnecessary or bit-identically reproducible and authorized for scoped deletion. Ephemeral mount/hive handles must always be released. Never automatically delete potentially useful evidence after a failed probe.
+6. **Disposable project WIMs are temporary by default.** After test/analysis completion, first verify that full decision-grade logs, identifiers, command/result/health data and references are present in the Library/project knowledge base; then **delete the now-unneeded owned disposable WIM and workdir**, even if their bit-identical recreation is not required for future work. Keep only copies actively necessary for upcoming tests/comparisons or whose unique evidence is not yet secured. Release mount/hive handles first; protect immutable source, checkpoints needed for rollback and unrelated files.
 
-This rule supersedes historical language elsewhere demanding automatic deletion or exhaustive new-build forensic re-certification of already-proven recipes.
+This rule means **delete disposable when finished and evidence-secured**, never delete an active or still-needed test artifact, and never repeat analysis already adequately evidenced in the project's knowledge base.
 
 ## 2.5 From destructive UUP queue pruning to reconstruction-safe staging
 
@@ -361,9 +363,9 @@ For every meaningful target, the intelligence record should retain the evidence 
 In addition to the public source catalog and GitHub governance files, **the operator's internal ChatGPT Library is a standing BlueLite research and evidence source**. It contains historical scripts, original operator logs, WIM/CBS/WinSxS and AppX inventories, reference-build `Build_info` records, forensic analyses, UUP helper materials and handoff documents. Its contents must not be overlooked in favor of reconstructing prior findings from memory or new web searches.
 
 - **At the start of every BlueLite successor session**, after retrieving the live GitHub Current Status and governing Master Strategy, perform a targeted Library search for the latest relevant BlueLite evidence, decisions and supporting source files. Read the actual matching artifacts when material to the current task; do not claim to have reviewed the entire Library from a search alone.
-- **Before new technical investigation, a dependency/removal decision, a revised production rule or a script proposal**, check the Library for original logs, prior tests, existing implementations and reference-build comparisons relevant to that specific target. Reuse independently verified findings where the current-image topology and certification scope permit it.
+- **Hard gate before ANY new analysis, dependency/removal decision, rule revision or script proposal:** first search available Library, prior BlueLite sessions, original operator logs, GitHub sources/Current Status and Component Intelligence for the exact target and source/topology. If sufficient trustworthy matching evidence exists, **do not rerun the analysis**. If only part is missing, collect **only the missing portion**. Start a new full analysis only when no existing evidence addresses the question or when its technical coverage is demonstrably inadequate. Document the specific gap that justified new work.
 - Treat Library entries as **evidence candidates and historical knowledge**, not automatically current execution state, a certified production rule or authorization to mutate a WIM. Validate relevant file contents, dates, version/build identity, exact command or script, hashes, original log results, and their consistency with the live GitHub status and current-image evidence. Prefer original operator output over secondary summaries when a discrepancy matters.
-- If Library search, a file or its full contents is inaccessible in the current session, state the specific evidence-access limitation and continue only from verifiable available material. Do not invent a file, assume the Library is fully indexed, or claim an unseen source was checked.
+- If Library search, a file or its full contents is inaccessible in the current session, state the specific evidence-access limitation and continue only from verifiable available material. Do not invent a file, assume the Library is fully indexed, or claim an unseen source was checked. **After each new test, record an analysis sufficient for future re-use**: source/build/edition/index/hash, exact script and command/hash, target identity/topology, before/after state, provider exit, health/pending, retained dependencies, result/decision and relevant raw log references. Make it available in Library/project knowledge base (and update indexed GitHub Intelligence/Status where applicable) **before deleting the corresponding disposable WIM**; do not claim a Library upload until actually verified.
 
 Library review complements, but **does not supersede**, the normative Master Strategy, the GitHub Current Status checkpoint, actual target-image evidence or BlueLite's operator-relay review and runtime certification gates.
 
@@ -452,7 +454,7 @@ Mandatory contract:
 **Two storage / lifetime classes must always be explicit:**
 
 1. **EPHEMERAL HOST-SESSION STATE**: `%SystemRoot%` (including Windows TEMP/logs), user/system `%TEMP%` and `%TMP%`, system-managed DISM scratch/logs/mount handles, any temporary `HKLM` offline-hive aliases and registry changes deliberately made as part of the scoped local workflow, transient process/helper files, and other incidental host changes. Writes are **allowed**, subject to the purpose, target, permissions, scope, and reversibility of the operation. The operator routinely clears system logs/TEMP/transient registry traces before shutdown. Never treat these locations as the only durable record, nor assume their contents survive a session. Do not interpret nightly cleanup as image rollback.
-2. **PERSISTENT / OPERATOR-MANAGED PROJECT STATE**: `C:\work` and its explicit subfolders, including `C:\work\scripts` (code), `C:\work\logs` (authoritative operator evidence), `C:\work\backup` (checkpoints), frozen UUP sources, WIMs, manifests, and owned workspace/disposable images under `C:\work\E2E`. These **may survive indefinitely across sessions** until the operator specifically decides to remove or replace them. "Disposable" project files are *not automatically deleted*. Every file deletion must follow scope/ownership and operator confirmation as required by the project.
+2. **PERSISTENT SOURCE / EVIDENCE vs DISPOSABLE WORK PRODUCT**: `C:\work` contains durable `scripts`, `logs`, `backup`, frozen UUP/WIM originals, needed checkpoints and manifests. **Disposable** WIM copies and their owned scratch folders are **temporary**, not a permanent project collection: retain them only while scheduled next tests/comparisons actually need them or until unique evidence is securely captured. When the test/analysis is complete and the relevant analytical logs are accessible in Library/project knowledge base, remove the exact disposable WIM/workdir with verified ownership, no live mount/hive references and source protection. This standing operator cleanup policy authorizes routine exact, predeclared disposal after evidence verification; seek a separate decision only if the artifact's purpose, need, ownership or reproducibility remains uncertain. Local reports alone are not proof that Library ingestion succeeded.
 
 **Execution and closeout contract:**
 
@@ -695,7 +697,7 @@ A previously certified GREEN target on a new build can skip redundant deep foren
 3. Run the smallest preapproved metadata/native/physical operation with narrowly scoped backup/rollback and recorded exact identifiers. No wildcard expansion and no shared owner carve.
 4. Verify exact post-state, allowed observed CBS delta, retained dependencies, component-store health, pending=0 and `ScanHealth` for a new/high-impact CBS/WinSxS rule; negative self-tests are required to catch wrong owner/parent and failed DISM exits.
 5. Promote the successful variant into a data-driven, source-reviewed **universal engine recipe**; add machine-readable fixture(s), logical size/physical unique bytes and a state-transition contract. Do not publish an unproven carve as GREEN merely because directories disappeared.
-6. Release hive/mount handles and preserve operator-valued disposable image. Delete only if confirmed no longer needed or bit-identically reproducible and approved; preserve forensic and release receipts.
+6. Release all owned hive/mount handles. **Delete the disposable WIM/workdir when this test no longer needs them**, after confirming sufficient original logs/analytical receipts are accessible in the Library/project knowledge base. Keep only artifacts specifically required for follow-up tests or otherwise uniquely evidentiary until ingested. Protect immutable source/rollback checkpoints and avoid broad path deletion.
 
 **Fast production mode: on another compatible Germanium build**
 
@@ -704,7 +706,7 @@ A previously certified GREEN target on a new build can skip redundant deep foren
 9. If the current build changes the owner/CBS/AppX graph, block this target; append a **new variant**, not a new set of one-off build scripts.
 10. Promote only verified transaction results; retain immutable source, separately recorded checkpoints and source hashes.
 
-This section supersedes earlier wording which made every AMBER recipe an automatic new full research cycle or unconditionally deleted every failed test WIM.
+This section forbids repeating adequately documented AMBER research and makes **post-evidence cleanup of finished disposable artifacts the default**; a failed probe is kept only when another concrete analysis needs that exact image or the evidence has not yet been preserved.
 
 ## 10.3 EVIDENCE LADDER — STATIC IS NOT RUNTIME
 
@@ -777,7 +779,7 @@ At formal certification points `Install Pending` / `Uninstall Pending` must be z
 
 ## 12.4 Failure is targeted, evidence retained
 
-Failed deep audit or unknown target does not automatically corrupt image or undo independent tasks; it blocks promotion of the candidate until required affected gates pass. Parser/report errors are tool defects, not evidence of WIM corruption. Logs and useful forensic copies persist according to §0A/§6.1A.
+Failed deep audit or unknown target does not automatically corrupt image or undo independent tasks; it blocks promotion of the candidate until required affected gates pass. Parser/report errors are tool defects, not evidence of WIM corruption. **Preserve sufficient original analytical logs in Library/project knowledge base and delete finished, unneeded disposable WIM copies**; keep a specific copy only while additional testing requires it.
 
 # 13. POWERSHELL / SCRIPT ENGINEERING STANDARD
 
@@ -1112,7 +1114,7 @@ Input: selected/frozen operator-approved UUP source, edition/index, language/arc
 4. Write intermediate working WIM/checkpoint and detailed stage manifest; assemble **candidate** ISO where appropriate. It is **not** yet the RELEASE until downstream NTLite/VM certification.
 5. Record source hashes, downloads reuse, exact identities, removed/already-absent, known-variant, remaining targets, errors and measured efficiency.
 
-**Deliverables:** `Stage1_ReconstructedSource.wim` (logical output, path chosen by run manifest), `Stage1_MAXPRE_Working.wim`, selectable candidate ISO, `Stage1_Receipt.json` and rollback/source metadata. Working artifacts are retained according to operator-managed lifetime; these filenames describe roles rather than mandatory duplicate 9GB files.
+**Deliverables:** `Stage1_ReconstructedSource.wim` (logical output, path chosen by run manifest), `Stage1_MAXPRE_Working.wim`, selectable candidate ISO, `Stage1_Receipt.json` and rollback/source metadata. These filenames denote logical roles rather than mandatory duplicate 9GB files. **Once no further test requires a disposable image, preserve adequate analytical evidence in Library/project database, then delete that working copy**; keep immutable source, required checkpoints and currently useful test candidates.
 
 ## STAGE 2 — STANDALONE OFFLINE POWERSHELL MAX-DEBLOAT
 
@@ -1461,6 +1463,8 @@ The success metric is not the count of scripts, phases or retrieved logs. It is 
 
 # 33. CHANGE HISTORY AND AUTHORITY
 
+**v4.0.0 — 2026-10-15, targeted disposable/evidence correction authorized by operator.** `Disposable` means a **temporary image to delete once no longer needed** for further tests or analyses; first ensure that decision-grade logs/results are actually accessible in Library/project knowledge base. Retain only images that future tests specifically require or whose unique evidence is not yet secured; clean exact owned scope after unmount/hive release and source protection. Before ANY new analysis, check complete available BlueLite evidence and run only investigations for objectively absent or insufficient prior data. All other v3.0.0 production architecture and technical policies unchanged.
+
 **v3.0.0 — 2026-10-15, substantive strategy reset authorized by operator.** Source and servicing evidence from v2.x are preserved; the former labor-intensive per-build development framing is superseded. Four **independently universal** stages explicitly cover 26100, 26200 and **26300** Germanium family lineage. Repeatable **FAST_RELEASE** with recipe/Component Intelligence reuse becomes the default. A new CU is not another long research project. New owner/dependency variant alone enters a bounded forensic lane, then becomes a certified automatic rule. Five AppX staging/four final distinction is retained, with prior 18C/44–48 success as candidate evidence and R119 hardlink gap flagged. Distinguish UUP converter INI/lists, Microsoft servicing/setup XML and NTLite XML; none is a universal magic remove script. NTLite Business becomes actual versioned portable preset, Stage4 includes repeatable admin account/VM tweaks, and expected artifacts are named. Operator-managed disposable WIMs are retained if useful. Cross-build quick acceptance and machine-readable source/health/footprint/time gates replace repeated redundant exhaustive forensics.
 
 **v2.5.3 — 2026-10-15, historical intermediate.** Clarified four-stage order but left contradictory demands for near-constant new-build research. Replaced by v3.0.0.
@@ -1484,4 +1488,4 @@ The success metric is not the count of scripts, phases or retrieved logs. It is 
 
 ---
 
-**End of BlueLite v1.0 — MASTER GERMANIUM STRATEGY v3.0.0**
+**End of BlueLite v1.0 — MASTER GERMANIUM STRATEGY v4.0.0**
