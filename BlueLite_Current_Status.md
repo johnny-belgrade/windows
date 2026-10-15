@@ -2,6 +2,10 @@
 
 **As of:** 2026-10-15
 
+## 2026-10-15 R113 source revalidated; operator delivery repeated
+
+- R113 remains DELIVERED_NOT_EXECUTED; no new runtime result. Original BlueLite_R113_Transactional_Offline_AppX_Provisioning.ps1: 15,681 bytes, verified SHA-256 4063B9EB5D9E0F650EF84D5BD3305FD26B61D1F2E9D112EEB68737D5DA173AB3. Identical source reissued with PS7 Admin SHA/AST wrapper and exact R113 log paths. R112 remains operator PASS; no change to R91/R106, authorization, provisioning status, MAX_PRE, ISO, NTLite or VM. The script mounts/unmounts an independent disposable WIM; operator must close Total Commander beforehand. Await actual R113 report before marking an execution result.
+
 ## 2026-10-15 R110-R1 source fix
 
 - R110 actual FAIL on bundle-member interpretation; report sha256 E5373840ABCA947C45066EEDFC92D992F2EB8EED7EB4C7C440714BC7ACB312D9. R84 inventory 129 PASS, R85 AppX physical entries 31, no project mount/hive active at start.
