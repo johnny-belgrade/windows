@@ -2,6 +2,11 @@
 
 **As of:** 2026-10-15
 
+## 2026-10-15 R127 scoped current-build R7 delta DELIVERED_NOT_EXECUTED
+
+- **One next step** (no repeated general audits): compare only previously known 26200.9445 Language.Basic data with actual 26200.9711 **R126-R2 committed R4 WIM**. Historical Phase 163: DISM capability Installed, Install Size 0 bytes, named servicing files 74,011 logical bytes, matching WinSxS Basic-prefix directories 2 files 1,230 bytes (names also include BasicDisplay/BasicRender not necessarily capability payload). Historical Phase 335: native capability removal success on 26200.9445, but R115 at 26200.9711 failed with permanent CBS 0x800F0825. No repeat of unsuccessful capability removal.
+- **R127 independently authored readonly script DELIVERED_NOT_EXECUTED** `BlueLite_R127_R7_LanguageBasic_9711_ReadOnly_Delta.ps1`, 10754 bytes SHA256 `78A1D2EE81D45968308E943130A46A055187DC0339B500D92E278E1FC0A21301`. Operator PS7 Admin, source SHA + PS7 AST first, then token `I_AUTHORIZE_R127_R7_9711_READ_ONLY_DELTA`; close Total Commander. Pins original R126-R2 full report SHA and committed candidate SHA, pins untouched R113; mounts **existing committed R4 candidate** Index1 **read-only `C:\BL127M`**, no new WIM copy. Collects DISM Get-CapabilityInfo, Get-Intl, target Basic package state and Client en-US language pack identity; direct named servicing/catalog/WinSxS manifest/directory logical byte surfaces, not absolute physical unique CBS bytes; owned /Discard; source hashes pre/post and DISM zero mounts. No registry edits, removal, native CBS mutation, network, host online, or component waiver. Logs `C:\work\logs\BlueLite_R127_R7_LanguageBasic_9711_ReadOnly_Delta.txt`, companion `C:\work\logs\BlueLite_R127_R7_LanguageBasic_9711_DISM.log`, optional PS7 transcript on launcher. Outcome informs R7 explicit production-rule decision; does not certify released ISO. **Operator Windows AST/runtime pending.**
+
 ## 2026-10-15 R126-R2 operator PASS, R4 candidate committed
 
 - R126-R2 operator artifacts: report 4696 bytes SHA256 `6A83F48DDCA24F3DAEC08A7B37B04958574FE05A7D40991785AA9192D4689071`; console 5359 bytes SHA256 `8A2A0366E539AC08626F39F24DD79486DB96D41DA2CC99F29269EEB33C01DB70`; DISM trace 1272809 bytes SHA256 `2C51BE9C7A9932E81143814AE325807A121CEF254D1FB7422257D3E0021A73B4`.
