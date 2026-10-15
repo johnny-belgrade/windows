@@ -2,6 +2,11 @@
 
 **As of:** 2026-10-14
 
+## 2026-10-15 R110-R1 source fix
+
+- R110 actual FAIL on bundle-member interpretation; report sha256 E5373840ABCA947C45066EEDFC92D992F2EB8EED7EB4C7C440714BC7ACB312D9. R84 inventory 129 PASS, R85 AppX physical entries 31, no project mount/hive active at start.
+- Corrected source-only R110-R1 delivered; sha256 27B495F98670BE024ECAA529C1B3FF1311F52631C9FE693C1E9A44A6437E275D. It checks that MSIX language packages listed in bundle manifest are embedded in that ZIP. No imaging activity authorized. Results pending operator.
+
 ## Authority and publication
 
 - **GitHub published authoritative Master Strategy:** `BlueLite-Master_Germanium_Strategy_final.md` **v2.5.2**, 2026-10-13.
