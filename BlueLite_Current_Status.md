@@ -2,6 +2,12 @@
 
 **As of:** 2026-10-15
 
+## 2026-10-15 R117-R1 operator PASS; all disposable cleanup targets absent
+
+- **R117-R1 OPERATOR_EXECUTED_PASS**, original `C:\work\logs\BlueLite_R117_R1_Disposable_Cleanup_Completion.txt`, **326 bytes**, SHA256 `C15BCBC4A18C2607DBE3E97582BDCECC5195D2CDA03796FE2B273CD3BC3D2AE7`. Original R117 3 directory deletions independently confirmed absent; R106 `install.disposable.wim` was `ALREADY_ABSENT`. PRE/POST DISM mounted WIM inventory 0 and project hives 0; PRE/POST protected R91 original and R113 AppX-seeded source WIM SHA256 PASS. Terminal `R117_R1=PASS_ALL_FOUR_DISPOSABLE_TARGETS_ABSENT`. The earlier R117 interrupted partial report remains historically accurate; **the composite R117 + R117-R1 cleanup objective is now fully completed**; do not rerun.
+- **Permanent working rule:** delete owned disposable large WIM and workdir immediately on completion/error, but only after exact ownership, mount/hive release and source protection checks; preserve source R91, useful R113 candidate, original R15 engine, diagnostics. Never query free local disk space.
+- Open native debloat blockers remain: R4 `Microsoft.DesktopAppInstaller` DISM Appx provider policy blocked HRESULT 0x80073CFA and R7 `Language.Basic~~~en-US~0.0.1.0` permanent CBS package removal blocked 0x800F0825. Neither R115 nor R116 produced successful BlueLite R15 promoted WIM. Next analysis should prioritize source-aware offline AppX removal policy and exact R7 exception without creating disposable images before justified, with cleanup in the same transaction.
+
 ## 2026-10-15 R117 operator partial cleanup — interrupted before completion; R117-R1 targeted verification pending
 
 - Operator uploaded **original R117 log**, 574 bytes, SHA256 **919D76AE9E4586A2A51C56CFB57B0BDDD72D38C8E8AEBE81114508EE063C75B0**, ending after third explicit deletion line. Evidence: protected R91+R113 image hashes PASS, six R115/R116 small logs pinned PASS, zero PRE DISM mounts / project hives PASS, exact target ownership PASS, logged deletion of ONLY `R116_AppInstaller_Native_Remove_Probe`, `R115_AppXSeeded_R15_Transactional`, `R15_Runtime_Transactional_Work`. The original log does **NOT** contain fourth deletion/absence (`install.disposable.wim` R106), final source-preserved gate, or `R117=PASS_SCOPED_DISPOSABLE_ARTIFACTS_REMOVED`. **Do not claim full R117 PASS or assume R106 deleted**. User reports may have inadvertently interrupted command, consistent with partial end-of-file; exact status on Windows must be verified.
