@@ -1,7 +1,7 @@
-# BlueLite v1.0 — MASTER GERMANIUM STRATEGY v2.5.2
+# BlueLite v1.0 — MASTER GERMANIUM STRATEGY v2.5.3
 
 **Status:** AUTHORITATIVE / SUPERSEDES PREVIOUS MASTER STRATEGY  
-**Date:** 2026-10-13  
+**Date:** 2026-10-15  
 **Scope:** Windows 11 Germanium family, current development lineage 26100.x / 26200.x  
 **Project:** BlueLite v1.0  
 **Team:** Johnny + ChatGPT  
@@ -9,22 +9,34 @@
 
 ---
 
-## 0A. OBAVEZNI REDOSLED RADA / MANDATORY FOUR-STAGE ORDER
+## 0A. OBAVEZUJUĆA GERMANIUM UNIVERZALNOST SVAKE FAZE / MANDATORY PER-STAGE UNIVERSALITY
 
-Ovo je **obavezni prioritetni redosled BlueLite v1.0** za sve Germanium buildove. Naredna faza ne može zameniti niti zaobići nedovršenu prethodnu fazu. Servisiranje konkretnog builda (npr. 26200.9711/R91–R97) služi kao dokaz i integracioni deo univerzalnog procesa, a ne kao poseban cilj ili dozvola da se odustane od univerzalnog MAX_PRE.
+**MASTER NALOG OPERATORA (2026-10-15): Univerzalnost nije samo redosled rada niti samo jedan univerzalni kontrolni skript. Svaka od ČETIRI faze mora zasebno imati Germanium-univerzalan, ponovljiv proizvodni postupak, sa odgovarajućim skriptama, profilima, pravilima, validacijom i izlaznim artefaktima.** Ovo je uslov za svaki Windows 11 Germanium build u projektno podržanoj familiji, uključujući linije `26100.x` i `26200.x`; pojedinačne CU revizije služe za testiranje i sertifikaciju, ne za razdvajanje proizvodne arhitekture.
 
-1. **Univerzalni UUP MAX_PRE.** Preuzimanje, rekonstrukcija, maksimalni bezbedno sertifikovani pre-ISO debloat i generisanje radnog WIM-a za bilo koji Germanium build.
-2. **Offline PowerShell MAX debloat.** GREEN/AMBER uklanjanja, CBS/WinSxS, AppX, sistemske komponente, integracije i provere zavisnosti.
-3. **NTLite Business.** Isključivo preostale intervencije koje prethodne faze nisu mogle da obave.
-4. **VM finalizacija.** Dodatne intervencije, testiranje, capture, Defender ON/OFF i finalni release.
+**Obavezan proizvodni redosled i univerzalni izlaz SVAKOG koraka:**
 
-**Izvršni uslovi:** (a) NTLite je zabranjen pre završetka i potvrde offline PowerShell faze; (b) VM intervencije/capture slede tek nakon offline i NTLite faza; (c) nijedan prolaz na jednom test-build-u automatski ne potvrđuje univerzalni mehanizam; (d) sve offline operacije moraju čuvati zavisnosti, reproduktivnost, evidenciju i immutable source. **Pre svakog WIM mount/unmount koraka operatoru napisati bold upozorenje „ZATVORI TOTAL CMD“**, uključujući Explorer/alat prozore otvorene na mount direktorijumu. **Pri svakom traženju logova dati unapred pune, tačne lokalne putanje**, bez oslanjanja na njihovo traženje u PS izlazu. **Disk-space kontrola je deo životnog ciklusa workspace-a:** obezbediti dokaz o poreklu i hash-eve pre uklanjanja duplikata; ne brisati aktivni mount, jedinstvene originalne UUP/WIM izvore ili rollback dokaz bez eksplicitne autorizacije.
+1. **FAZA I — GERMANIUM UNIVERZALNI UUP MAX_PRE:** univerzalna UUP skripta ili mali skup međusobno usklađenih skripti prihvata operatorov izbor izvora/builda, arhitekture, izdanja i jezika; dinamički otkriva UUP/AppX/FoD/delta/reconstruction zavisnosti; koristi postojeće sertifikovane pre-download opcije bez oštećenja rekonstrukcionog closure-a; rekonstruše originalni WIM; izvršava maksimalni dokazani **post-reconstruction / pre-ISO MAX_PRE debloat** na kontrolisanoj kopiji; proverava CBS/AppX/WinSxS i protected floor; predaje sledljiv izlaz. **Jedna verzija UUP motora mora važiti za sve podržane Germanium buildove.**
+2. **FAZA II — GERMANIUM UNIVERZALNI POWERSHELL OFFLINE MAX-DEBLOAT:** univerzalne, uređene PowerShell/DISM/offline-registry skripte primenjuju ostatak dokazivih GREEN i AMBER pravila: komponente, capability/feature/package, AppX, CBS/WinSxS, servisi, drajveri, integracije, optional/handoff paketi i proveru zavisnosti. One moraju koristiti **isti ENGINE + COMPONENT INTELLIGENCE + build discovery/topology gates** kao Faza I; moraju prepoznati već izvedene MAX_PRE intervencije i ne ponavljati ih. **Nema posebne proizvodne skripte za pojedinačne `26200.xxxx` ili `26100.xxxx` revizije.**
+3. **FAZA III — GERMANIUM UNIVERZALNI NTLITE BUSINESS DEBLOAT:** preostale, tačno klasifikovane `COMPONENT_ENGINE_HANDOFF` intervencije izvršavaju se kroz **univerzalnu, prenosivu i verzionisanu NTLite konfiguraciju/preset ili deterministički dokumentovan GUI postupak**, sa inventarom ciljnog builda, dokazanim zavisnostima i uslovnim pravilima. Faza III **nije** jednokratno ručno debloatovanje samo trenutno testiranog builda. Isti logički profil/pravila moraju važiti na svim podržanim Germanium buildovima, uz build-topology izuzetke opisane u Component Intelligence.
+4. **FAZA IV — GERMANIUM UNIVERZALNA VM/VMBOX FINALIZACIJA:** univerzalni postupak, skripte i validacioni ugovor za dodatni online debloat, system/user tweaks, **konfiguraciju administratorskog naloga**, servise, optional desktop instalere, zaštitu zavisnosti, Defender ON/OFF varijante, testiranje, generalizaciju/capture i finalni release. Podešavanje naloga i guest-specifičnih opcija mora biti konfigurabilno i prenosivo; odvojene test VM i hardverske karakteristike mogu aktivirati uslovne grane, ali **ne** opravdavaju po jedan nepovezan proizvodni postupak za svaki build.
+
+**Šta znači „Germanium univerzalno“ — zajednički izvršni ugovor sve četiri faze:**
+
+- **Jedan održavan proizvodni set po fazi, različiti podaci po buildu.** Engine/NTLite/VM pravila su ponovljiva i nezavisna od CU build broja. Samo source manifest, image inventory, resolved identities, Component Intelligence, dependency/topology izuzeci, odobrene opcije i test-rezultati smeju da se razlikuju po buildu. Jedan veliki skript sa unutra hardkodiranim revizijama **nije** univerzalnost.
+- **Dinamička rezolucija, bez slepog wildcards.** Na svakom novom Germanium buildu proveriti stvarni package/capability/feature/PFN/servicing owner, status, hardlink projekcije, protected dependencies, user/edition/language/architecture kontekst i pre/post stanje. `VERSION_CHANGED` uz istu dokazanu topologiju → isti proizvodni korak. `TOPOLOGY_CHANGED` ili novi permanent/protected status → `FAIL_CLOSED`, nova precizna Component Intelligence pravila i cross-build regresija, **ne** novi separatni build-only debloat skript.
+- **Svi koraci imaju iste semantičke ulazne/izlazne ugovore**, reproducibilne image/source identitete, hash-eve, logove, reversible checkpoints, idempotenciju i deklarisanu dispoziciju ciljeva (`PRODUCTION_RULE`, `KEEP_SKIP`, `COMPONENT_ENGINE_HANDOFF`, `RED_HOLD`). Uspeh jedne `26200.xxxx` ili `26100.xxxx` revizije **ne** predstavlja dokaz univerzalnosti. Certifikacija podrazumeva proveru na više odgovarajućih Germanium buildova sa nezavisnim post-state dokazima.
+- **Bez menjanja cilja kao prečice.** MAX_PRE i offline koraci se završavaju pre NTLite, NTLite pre VM; nema prebacivanja skriptabilnog debloata u NTLite/VM samo zato što konkretan build ima izmenjenu zavisnost. Ako neki target ima dokazano neuklonjivu zavisnost ili promenjenu CBS/AppX topologiju, evidentira se precizno, kvantifikuje njen uticaj i definiše uslovni postupak — bez izmišljanja `PASS`.
+- **Vernost prethodnim odlukama i tragovima.** Pre novog pokušaja proveriti MASTER, `BlueLite_Sources.md`, GitHub status, Library, prethodne sesije, prethodne neuspehe i uspešne probe. Nemoj ponavljati već dokazano neuspešnu komandu ili pitati operatora da prepriča odluku koja je dokumentovana. Postojeći AppX ugovor je **5 staging** (uključujući `Microsoft.DesktopAppInstaller`) / **4 final** (SecHealthUI, Calculator, Notepad, Photos); release-forbidden `DesktopAppInstaller` nije dozvoljen u finalu. Promene ovih ugovora zahtevaju eksplicitnu odluku operatora.
+- **Operator upravlja kopijama.** Reč `disposable` ne znači automatsko brisanje. Zadržati WIM-ove i probe potrebne za buduće testiranje/poređenje; obrisati samo ono što sigurno više nije potrebno ili što se može bit-identično reprodukovati iz zaštićenog izvora uz hash dokaz. Svako brisanje je usko ciljano, provereno i odobreno. **Ne izvršavati lokalne free-space upite kao rutinsku proveru niti kao gate bez novog zahteva operatora.**
+- **Jedan lokalni operatorski korak po poruci**, sa celom copy/paste spremnom komandom, očekivanim logovima i eksplicitnim rezultatima. Pre svakog mount/unmount koraka: **ZATVORI TOTAL CMD** i prozore na mount putanji. Novi high-impact mutation zahteva operatorov pregled kompletnog izvornog koda; immutable izvor ne sme biti promenjen bez definisane autorizacije.
+
+**Definicija završetka:** BlueLite v1.0 je univerzalni proizvod tek kada **UUP MAX_PRE skripte, standalone offline PowerShell skripte, NTLite debloat profil/postupak i VM debloat/tweaks/admin-account/release postupak** rade kao jedan reproduktibilan, višebuildski Germanium pipeline. Samo univerzalan raspored rada bez univerzalnog implementacionog rešenja u **svakoj** od četiri faze ne ispunjava MASTER.
 
 ---
 
 ## 0. DOCUMENT AUTHORITY, EVIDENCE CORPUS AND PURPOSE
 
-This v2.5.2 revision retains the full v2.4 operator-relay architecture and adds the canonical UUP MAX_PRE implementation principles, proof ladder, cross-build regression, observed-delta contracts, FBConan forensic lessons and operational manifest policy from the 2026-10-12 handoff. The historical four-chat evidence table below documents the earlier source corpus; later work is in the successor handoff.
+This v2.5.3 revision retains the v2.5.2 evidence and implementation framework and elevates a mandatory **per-stage Germanium universality contract** to §0A (UUP MAX_PRE, standalone offline PowerShell, NTLite Business, and VM debloat/tweaks/admin-account/release). It also harmonizes disposable image retention with the operator's explicit October 15 instruction. The historical four-chat evidence table below documents the earlier source corpus; later work is in the successor handoff. The historical four-chat evidence table below documents the earlier source corpus; later work is in the successor handoff.
 
 This document is the governing strategy for BlueLite. It is not a summary of one build and it is not a list of isolated tweaks. It consolidates the complete project logic developed through the four chronological BlueLite chat histories and replaces the earlier Master Strategy wherever this document is more specific.
 
@@ -138,7 +150,7 @@ The later histories established the durable AMBER pattern:
 4. mount disposable;
 5. perform one controlled mutation;
 6. independently certify disposable post-state;
-7. reject and delete disposable if any gate fails;
+7. reject as production if a gate fails; keep the forensic disposable if useful for further testing, comparison, or rollback, and delete only when no longer needed or bit-identically reproducible and explicitly cleared for scoped deletion;
 8. only then revalidate current canonical topology;
 9. apply the already proven method to canonical;
 10. independently certify canonical;
@@ -507,14 +519,14 @@ Every command/sequence/script mutation intended for the canonical reusable deblo
 - Operator review is additional to, not a substitute for, disposable testing, topology/dependency validation, pre/post-state certification and rollback.
 - No phase number, previous static PASS, plugin availability or continuation of a past chat grants implicit execution authorization.
 
-## 6.3 26200.xxxx UNIVERSAL SCRIPT MANDATE
+## 6.3 GERMANIUM 26100.x / 26200.x UNIVERSAL SCRIPT MANDATE
 
-The primary production objective is a **universal BlueLite transformation engine for the Windows 11 Germanium 26200.xxxx lineage**, not a collection of one-off scripts tied to individual cumulative-update revisions.
+The primary production objective is a **universal BlueLite transformation engine for the Windows 11 Germanium 26100.x and 26200.x lineages**, not a collection of one-off scripts tied to individual cumulative-update revisions.
 
 Mandatory rules:
 
 1. Canonical production scripts must target logical components and resolve exact package/capability/feature/AppX/component identities dynamically from the current image wherever technically possible.
-2. Exact build revisions such as `26200.9445`, `26200.9550` or later `26200.xxxx` values may appear in evidence, logs, test matrices, hashes and Component Intelligence records, but must not become the defining selector of a production rule unless Microsoft introduces a proven build-specific topology exception.
+2. Exact build revisions such as `26200.9445`, `26200.9550` or later `26100.x` / `26200.x` values may appear in evidence, logs, test matrices, hashes and Component Intelligence records, but must not become the defining selector of a production rule unless Microsoft introduces a proven build-specific topology exception.
 3. A `VERSION_CHANGED` target with unchanged certified topology should reuse the same production rule after dynamic resolution and current-build gates.
 4. A `TOPOLOGY_CHANGED` target must fail closed and return to Component Intelligence research; the engine must never broaden a selector or guess a replacement merely to keep a script running.
 5. Build-specific exceptions belong in Component Intelligence and evidence, not in proliferating per-build scripts such as `26200.9445.ps1`, `26200.9550.ps1`, etc.
@@ -527,10 +539,12 @@ Mandatory rules:
            +
    BUILD DISCOVERY / TOPOLOGY GATES
            =
-   reusable 26200.xxxx production pipeline
+   reusable Germanium 26100.x / 26200.x four-stage production pipeline
    ```
 
-7. Whenever a new 26200.xxxx build can be handled by updating intelligence data while keeping engine logic unchanged, that is the preferred result and evidence that the architecture is working as intended.
+7. Whenever a new Germanium 26100.x / 26200.x build can be handled by updating intelligence data while keeping engine logic unchanged, that is the preferred result and evidence that the architecture is working as intended.
+
+8. This mandate applies equally to **UUP MAX_PRE**, **standalone offline PowerShell**, **NTLite Business reusable profiles**, and **VM finalization including administrator account and tweaks**. Do not certify the full pipeline universal if only the orchestration shell is portable. See overriding §0A per-stage contract.
 
 ---
 
