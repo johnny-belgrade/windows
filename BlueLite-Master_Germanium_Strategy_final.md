@@ -202,18 +202,13 @@ This distinction is fundamental:
 
 > **download/reconstruction dependency ≠ final-OS dependency**
 
-## 2.6 From “NTLite next” to “NTLite only after the Intelligence queue is exhausted”
+## 2.6 NTLite only for proven scripted residue — not a research hostage
 
-A premature transition to NTLite was explicitly rejected during the later work.
+NTLite is the third factory stage, after usable UUP/PowerShell offline modules. This does **not** authorize stopping scripted research prematurely, but neither does it demand months of exhaustive investigation into every hypothetical component before using a prepared NTLite profile.
 
-Completing the currently known AMBER list does not authorize opening NTLite. Before handoff, every realistic remaining offline candidate must end in one of four terminal dispositions:
+Each known/relevant target receives one terminal classification: `PRODUCTION_RULE`, `KEEP_SKIP`, `COMPONENT_ENGINE_HANDOFF`, or `RED_HOLD`. For **known and implementable scripted** cases, automate and finish first. Known NTLite-only cases pass with an explicit receipt. Unknown target dependencies become scoped issues; a mandatory release condition may block only the affected release candidate, **not the implementation of all other proven recipes or the ability to run a repeatable pipeline**.
 
-- `PRODUCTION_RULE`
-- `KEEP_SKIP`
-- `COMPONENT_ENGINE_HANDOFF`
-- `RED_HOLD`
-
-Only `COMPONENT_ENGINE_HANDOFF` items belong in the normal secondary component-engine queue.
+Never treat a “fail-closed” dependency as permission to skip a mandatory target, but never turn a finished production rule into another ChatGPT-driven month of tests. When native offline solution becomes proven, migrate that rule from NTLite back to Stage1/2 and update the XML preset.
 
 ## 2.7 From global inventory assumptions to target-specific evidence
 
@@ -504,7 +499,7 @@ BlueLite uses an explicit operator-relay execution model. ChatGPT designs, revie
 Mandatory contract:
 
 1. The live Windows installation is the **HOST**, never the target of ordinary BlueLite offline-image mutation.
-2. Normal image mutation is permitted only against an explicitly verified offline image under the canonical `C:\work` workspace, normally source `C:\work\extracted\install.wim`, Index 1, mount `C:\work\mount`, or a verified transaction-scoped disposable derivative.
+2. Normal image mutation is permitted only against an explicitly verified offline image under the canonical `C:\work` workspace, with **paths determined by the current source/work manifest** (historical examples include `C:\work\extracted\install.wim` and `C:\work\G5\...\R113_Offline_AppX_Transactional\install.appx-transaction.wim`), verified Index and transaction-scoped mount. Never treat a historical path as universally current.
 3. Debloat targets the verified **offline image**, not the active Windows installation. Native tooling may create/write temporary host `%SystemRoot%`, logs, TEMP, HKLM/offline-hive aliases and ancillary host-side state as required; such writes are allowed under §6.1A. Do not silently turn them into unreviewed durable configuration changes to the live OS; `/Online` debloat requires a separately approved scope.
 4. ChatGPT does not directly execute commands on the workstation, browse its filesystem, control its processes, create persistent remote access or use remote-control plugins for the BlueLite workflow.
 5. If a separate live-host administration task is explicitly requested, treat it as a separate scope; the operator executes the complete supplied command locally.
@@ -788,7 +783,7 @@ Every module, wrapper and complete release records the highest proven tier, with
 
 Two **independent** workflow gates are mandatory: `CONVERTER_RUNTIME_AUTHORIZED` and `PRE_ISO_MUTATION_RUNTIME_CERTIFIED`. Neither is set by a static AST/hash PASS in the other workstream.
 
-**Operational baseline on 2026-10-12:** MAX_PRE `v2.0-R15-R1` has static PASS (`R15_PACKAGE_SHA256=PASS_54_FILES`, `PHASE_UUP_R15=PASS_STATIC_PORTABLE_RECALL_AIX_PHASE77_PRE_ISO_REVIEW_NO_DOWNLOAD_OR_WIM_MUTATION`). `R15_UUP_DOWNLOAD=NOT_RUN`, `R15_WIM_MUTATION=NOT_RUN`; `R15_PRODUCTION_STATUS=REVIEW_CANDIDATE_NOT_RUNTIME_CERTIFIED`. Legacy C33-R4 converter/supervisor is a different workstream. Neither is automatically released for an end-to-end mutation.
+**Historical tier note:** on 2026-10-12 MAX_PRE `v2.0-R15-R1` was only statically verified. This is NOT current operational status: on 2026-10-15 real R113 five-AppX provisioning completed and R115 actually invoked original R15, but ended fail-closed on `Language.Basic` permanent CBS refusal `0x800F0825`, with additional DesktopAppInstaller release-forbidden residue; R116 native DISM `0x80073CFA` confirmed policy refusal; R119 R113 readonly topology passed but hardlink closure was incomplete (702 closed, 38 errors). No promoted R15 production RELEASE resulted from these trials. The live `BlueLite_Current_Status.md` and operator logs, not this historical date snapshot, determine present state.
 
 ## 10.4 AMBER PRE/POST CBS OBSERVED-DELTA TRANSACTION
 
@@ -832,34 +827,23 @@ The contract must specify:
 
 ---
 
-# 12. HEALTH STANDARD
+# 12. HEALTH STANDARD — AUTOMATED, RISK-PROPORTIONAL CERTIFICATION
 
-## 12.1 `CheckHealth`
+## 12.1 Routine current-build release gates
 
-Required:
+A production run checks actual source/lineage, installed package/AppX/feature post-state, protected dependency floor, zero unintended pending servicing, and `CheckHealth` at meaningful candidate/branch boundaries. Native DISM exit is interpreted together with actual post-state, never alone. Record output in machine-readable receipts.
 
-- before canonical mutation;
-- after meaningful canonical mutation;
-- in certification boundaries;
-- after cleanup/export transitions where applicable.
+## 12.2 `ScanHealth` / deep CBS proof
 
-## 12.2 `ScanHealth`
+A full `ScanHealth` is required when a new **high-impact/AMBER/physical CBS** recipe is first certified, when an unknown owner graph/observed CBS delta is changed, after surprising corruption, and at defined final serviceability certification points. A matching known variant with a previously proven method may use its **predefined cheaper target-specific predicate checks during individual operations** and defer its full image scan to the normal release acceptance suite. **Do not make every minor, unchanged subtarget trigger an independent ScanHealth**; still never skip final required image-health evidence. First-time Sense-style carve remains rejected unless ScanHealth/CBS evidence is clean.
 
-Mandatory for:
+## 12.3 Pending and runtime serviceability
 
-- certification of every new AMBER rule;
-- any raw/component-level experiment;
-- any method that changes CBS owner relationships;
-- any removal whose physical footprint is large or servicing topology is non-trivial;
-- canonical AMBER production apply unless a later strategy revision explicitly proves a cheaper equivalent gate.
+At formal certification points `Install Pending` / `Uninstall Pending` must be zero unless intentionally in a documented servicing transaction. Before release, require appropriate `CheckHealth/ScanHealth`, current-image target post-states, both Defender branch tests, a valid CU servicing path (using snapshot/rollback), no unexpected resurrection, networking and end-user VM-host capability according to §19.
 
-Sense proved why `CheckHealth` alone is not enough for first-time carve certification.
+## 12.4 Failure is targeted, evidence retained
 
-## 12.3 Pending servicing
-
-`Install Pending` / `Uninstall Pending` count must be zero at all formal certification gates unless a specific, intentionally pending servicing transaction is itself the object of the test.
-
----
+Failed deep audit or unknown target does not automatically corrupt image or undo independent tasks; it blocks promotion of the candidate until required affected gates pass. Parser/report errors are tool defects, not evidence of WIM corruption. Logs and useful forensic copies persist according to §0A/§6.1A.
 
 # 13. POWERSHELL / SCRIPT ENGINEERING STANDARD
 
@@ -1487,122 +1471,83 @@ Every actual release has its own local run receipts (source, exact image, engine
 
 ---
 
-# 31. RELEASE GATES
+# 31. RELEASE GATES — FAIL CLOSED WITHOUT RESEARCH LOOPS
 
-A release is blocked if any of the following is true:
+Every **final release** requires:
 
-- source identity is ambiguous;
-- mount identity is ambiguous;
-- unexpected pending servicing exists;
-- `CheckHealth` is not clean;
-- required `ScanHealth` gate is not clean;
-- a protected dependency is missing;
-- an AMBER topology differs from the certified contract;
-- a production script hash/parser/static audit is invalid;
-- static auditor self-test or a mandatory negative fixture did not fail as designed;
-- the converter and MAX_PRE runtime authorizations have not both passed for integrated mutation;
-- a STATIC_VERIFIED module is mislabeled runtime/current-build/release certified;
-- the present-build owner graph disagrees with the cross-build topology regression contract;
-- an AMBER observed CBS delta is unexplained or has not been checked before commit;
-- a RED target was mutated without new proof;
-- an unclassified realistic offline candidate remains while NTLite handoff is being attempted;
-- NTLite performed an unplanned target operation;
-- post-NTLite recertification fails;
-- Defender branch validation fails;
-- Windows Update Resume/Pause contract fails;
-- CU serviceability validation fails;
-- final artifact hashes are missing.
+1. Frozen exact source and pinned converter/engine/config/preset versions; recognized Germanium lineage including 26300 support, edition/index, protected immutable original.
+2. A complete Stage1→Stage4 receipt chain with target decisions. Previously known recipes dynamically reused; affected genuinely changed targets get explicit exception disposition, never fake green.
+3. Required AppX contract: staging five, final four, release-forbidden Store family absent (or a new operator-approved policy replacing this rule); services/network/storage/VM-host protected floor, Windows Update Resume and long Pause requirement, optional user payload boundaries.
+4. Offline and post-NTLite healthy CBS/serviceability state, no unexplained pending servicing, target-specific post-state and expected/observed change, `CheckHealth` and defined `ScanHealth` acceptance, no unexplained AMBER owner drift or mismatched source hash.
+5. Both Defender branches and VM/admin account bootstrap, clean-new-user, functional app/network, rollback/reboot and CU checks on representative required setups. Guest-only VirtualBox QA does not establish installed BlueLite's ability to host VMware/VirtualBox on suitable hardware.
+6. Final WIM/ISO artifacts SHA-256, measured compressed transport size versus logical/physical installed footprint, reproducible lineage and correct Defender branch labels.
+7. Source-reviewed production mutation code and signed-off preset version; static and negative fixtures; no unauthorized on-the-fly change to a critical release target.
 
-Fail-closed behavior is a feature of BlueLite, not a defect.
+**Automatic outcome states**: `RELEASE_PASS`; `RELEASE_BLOCKED_TARGET_DEPENDENCY`; `RELEASE_BLOCKED_SERVICEABILITY`; `RELEASE_BLOCKED_RUNTIME`; `RELEASE_BLOCKED_SOURCE`. Scope each failure with exact owner and next action. A blocked release must not silently ship; however **do not restart source download, known-rule engineering or unrelated finished stages because one target changed**. Rebuild/resume only jobs whose input/dependency fingerprints became invalid.
 
----
+The 3.5–5 GB ISO and 11–15 GB installed footprint are **measured engineering targets**, not permitted excuses to mutilate shared CBS ownership or misrepresent solid compression as removed Windows payload. If the build exceeds them, report exact dependency and size cost, alternative optionalization and why it remains.
 
-# 32. MAIN RULE
+# 32. MAIN RULE — BUILD FACTORY, NOT MONTH-LONG RESEARCH
 
-The project is not trying to create one small `26200.x` image.
+**BlueLite is a Germanium compiler and repeatable release factory**. All four stages must produce real reusable software/configuration assets; one universal controller wrapping per-build manual debloat is insufficient.
 
-It is building a **BlueLite compiler for Windows 11 Germanium**.
+~~~text
+FROZEN SELECTED UUP (26100 / 26200 / 26300 / later verified Germanium)
+    + pinned source/config/INTELLIGENCE and known successful/failing recipes
+    |
+    v
+STAGE 1: UUP CONVERTER + PRE-ISO MAX_PRE
+    supported AppX/INI + validated offlineServicing XML + universal PS
+    |
+    v
+STAGE 2: STANDALONE POWERSHELL OFFLINE RESIDUE
+    SAME RULES, dynamic targeting, idempotent and dependency-aware
+    |
+    v
+STAGE 3: NTLITE BUSINESS
+    versioned reusable XML preset applied ONLY to actual handoff
+    |
+    v
+STAGE 4: VM / OOBE / ADMIN / ONLINE-ONLY TWEAKS / QA / CAPTURE
+    universal bootstrap, Defender branches, CU tests, final ISO
+    |
+    v
+RELEASE + MANIFEST + SHA + MEASURED ISO/INSTALLED FOOTPRINT
+~~~
 
-Canonical conceptual pipeline:
+At each stage:
+`KNOWN_VALID_RULE` → apply automatically → certify compactly → continue.
+`KNOWN_VARIANT` → select recorded recipe by topology → continue.
+`ALREADY_ABSENT` → skip idempotently.
+`UNKNOWN_DEPENDENCY` → isolate the affected target → deep-diagnose **once** → turn outcome into a known rule; withhold release only when the unresolved dependency violates a mandatory gate.
 
-```text
-USER-SELECTED UUP SOURCE
-    ↓
-SOURCE FREEZE
-    ↓
-FULL RECONSTRUCTION CLOSURE
-    ↓
-SUPPORTED APPX/SOURCE MINIMIZATION
-    ↓
-RECONSTRUCTED install.wim
-    ↓
-PRE-MUTATION BASELINE + DELTA / TOPOLOGY GATE
-    ↓
-CERTIFIED PRE-ISO OFFLINE MODULES
-    ↓
-POST-PRE-ISO RESIDUE + INTELLIGENCE MANIFEST
-    ↓
-GREEN PRODUCTION RULES
-    ↓
-PORTABLE AMBER PRODUCTION RULES
-    ↓
-INTELLIGENCE QUEUE EXHAUSTION
-    ↓
-COMMON-BASE CERTIFICATION
-    ↓
-SECONDARY COMPONENT ENGINE / NTLITE
-ONLY FOR TRUE HANDOFF RESIDUE
-    ↓
-RECERTIFICATION
-    ↓
-DEFENDER ON / DEFENDER OFF BRANCH
-    ↓
-CLEANUP / EXPORT / HASH / ISO
-    ↓
-VIRTUALBOX ONLINE-ONLY FINISHING + VALIDATION
-    ↓
-CU / SERVICEABILITY TEST
-    ↓
-BLUELITE RELEASE
-```
+> **Sredi jednom, zatim ponavljaj proizvodnju; za novi build istražuj samo stvarno nove zavisnosti.**
 
-The highest-level invariant is:
-
-> **If BlueLite can prove and reproduce a dependency-aware operation offline, that operation belongs in the BlueLite engine — not permanently in NTLite, not permanently in VM, and not in manual chat history.**
-
-Every new investigation must reduce future manual work.
-
----
+The success metric is not the count of scripts, phases or retrieved logs. It is how many **finished Germanium releases** can be produced from available verified UUP sources with **minimal operator intervention** and accurate serviceability/functional evidence.
 
 # 33. CHANGE HISTORY AND AUTHORITY
 
-The normative line is v2.1 (technical dependency and virtualization-floor corrections), v2.2 (retired remote-transport draft), v2.3 (universal 26200.xxxx scripts and mandatory operator preview), **v2.4** (explicit operator-relay execution instead of remote host control, preserving the same offline mutation constraints), and **v2.5** (the present UUP MAX_PRE implementation and forensic/regression corrections). Any v2.3 remote execution wording is superseded by Section 6.1 above; a successor MUST NOT reintroduce RDC host control as ordinary BlueLite operation.
+**v3.0.0 — 2026-10-15, substantive strategy reset authorized by operator.** Source and servicing evidence from v2.x are preserved; the former labor-intensive per-build development framing is superseded. Four **independently universal** stages explicitly cover 26100, 26200 and **26300** Germanium family lineage. Repeatable **FAST_RELEASE** with recipe/Component Intelligence reuse becomes the default. A new CU is not another long research project. New owner/dependency variant alone enters a bounded forensic lane, then becomes a certified automatic rule. Five AppX staging/four final distinction is retained, with prior 18C/44–48 success as candidate evidence and R119 hardlink gap flagged. Distinguish UUP converter INI/lists, Microsoft servicing/setup XML and NTLite XML; none is a universal magic remove script. NTLite Business becomes actual versioned portable preset, Stage4 includes repeatable admin account/VM tweaks, and expected artifacts are named. Operator-managed disposable WIMs are retained if useful. Cross-build quick acceptance and machine-readable source/health/footprint/time gates replace repeated redundant exhaustive forensics.
 
-## v2.4 governance retained
+**v2.5.3 — 2026-10-15, historical intermediate.** Clarified four-stage order but left contradictory demands for near-constant new-build research. Replaced by v3.0.0.
 
-- Canonical workspace `C:\work`; main workstation ASUS i7-11700F / GTX 1050 / 16 GB RAM; Ryzen 4500U / 8 GB secondary machine.
-- Universal **26200.xxxx** engine with dynamic exact identity, topology classification and build-specific intelligence records.
-- Operator-local PowerShell 7 Admin execution, one step per response; ChatGPT never performs remote host mutation.
-- Full operator review of every new/changed canonical mutation command; read-only certifications do not mutate.
-- Pre-UUP source/AppX selection distinct from post-reconstruction/pre-ISO WIM debloat; no destructive delta/FoD queue pruning.
-- Disposable AMBER proof → current-build pre-production gate → independent post-state + ScanHealth before commit.
-- NTLite only after the completed scripted offline cycle, dependency classification and common-base certification; VirtualBox last.
+**v2.5.2 / v2.5 — 2026-10-12 to 13, retained technical evidence.** Reconstruction-safe UUP MAX_PRE, R10–R15 AMBER observed-delta, failure fixtures, Sense/OneDrive/FoDMetadata/Recall/AIX and user-controlled local writes, FBConan comparisons, distinction of logical bytes/compression/actual removal, immutable source and servicing floor.
 
-## v2.5 changes — 12 October 2026
+**v2.4 and earlier — retained governance/evidence where technically valid.** Operator-relay-only Windows PS7 Admin execution in development, current project file authority, read-only initial audits, source REVIEW for new mutation, post-state not filename, NTLite and VM after offline work. Any old language that forces rewriting per-build production code, automatic disposal of useful WIMs, hardcoded 26200-only scope, or open-ended manual forensics is superseded by §0A, §8, §22 and §29.
 
-1. UUP MAX_PRE is the primary, reconstruction-safe **pre-ISO** offline execution path and shares its production modules with standalone work; later GREEN/AMBER phases process residue idempotently, not duplicate removals.
-2. Four proof tiers: `STATIC_VERIFIED`, `DISPOSABLE_RUNTIME_VERIFIED`, `CURRENT_BUILD_CERTIFIED`, `RELEASE_CERTIFIED`.
-3. Cross-build machine-readable topology regression fixtures and negative drift checks, especially for 26200.9445 versus 26200.9550.
-4. Universal AMBER before/after observed-delta contract and transaction-level rollback, based on R10–R15.
-5. Mandatory negative fixtures, static-auditor self-test, strict PowerShell interpolation/owner parsing, PS7 versus 5.1 execution distinctions.
-6. FBConan forensic methodology: two-index solid WIM, XPRESS8K, captured Admin RID 1000 versus fresh Default profile, separate new-user first-logon benchmarking.
-7. ~190 MB Disk Cleanup residual is a hypothesis to investigate, **not** proven to be WinSxS Backup; FBConan `repairable` health is not a clean servicing reference.
-8. Independent `CONVERTER_RUNTIME_AUTHORIZED` and `PRE_ISO_MUTATION_RUNTIME_CERTIFIED` execution permissions; C33-R4 and MAX_PRE statuses are independent.
-9. Debloat efficiency ledger separates unique physical NTFS bytes, compressed allocated size, logical bytes and WIM/ISO transport savings.
-10. `BlueLite_Current_Status.md` and machine-readable regression/health/footprint records separate fast-changing execution state from normative strategy.
+### 33.1 Technical source register — verified scope, not inferred capability
 
-**2026-10-12 boundary:** operator-confirmed MAX_PRE R15-R1 is `STATIC_VERIFIED` only: 54/54, no download, no WIM mutation. A disposable runtime trial requires renewed operator review and explicit authorization. See `BlueLite_v1.0_CANONICAL_SUCCESSOR_HANDOFF_4.md` for detailed operational continuity.
+- **Microsoft 26H2 enablement/servicing lineage:** https://support.microsoft.com/en-us/servicing/os/windows-11/2026/09/kb5121794-feature-update-to-windows-11-version-26h2 — 24H2/25H2/26H2 common servicing core. This confirms shared family relationship, **not** every package has the same ownership or that 26300 will always be bit-identical to 26100.
+- **UUP converter official source/readme:** https://github.com/abbodi1406/BatUtil/blob/master/uup-converter-wimlib/convert-UUP.cmd ; https://github.com/abbodi1406/BatUtil/blob/master/uup-converter-wimlib/ReadMe.html — converter-specific `ConvertConfig.ini`, `SkipApps`, `AppsLevel`, `CustomList`, `StubAppsFull`, optional `CustomAppsList*.txt`. Always inspect pinned local converter fork/version.
+- **UUP Dump custom app selection source:** https://git.uupdump.net/uup-dump/misc/src/commit/10915414f3d8103e43fbe1ea170f980a45048131/autodl_files/CustomAppsList.txt — illustrates select-app list and required `CustomList=1`; not a complete CBS removal mechanism.
+- **Microsoft DISM offline packages and unattended answer file:** https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/add-or-remove-packages-offline-using-dism?view=windows-11 — supported `/Add-Package` / `/Remove-Package` / `/Apply-Unattend` offlineServicing; dependency ordering and exact package identity. Does **not** claim arbitrary permanent packages can be removed by XML.
+- **NTLite official Presets and Unattended docs:** https://ntlite.com/docs/presets/ ; https://ntlite.com/docs/unattended/ — reusable NTLite XML presets, tool-controlled unattended setup and CLI reuse; verify applicable Business version.
+- **Microsoft policy-based inbox app removal:** https://learn.microsoft.com/en-us/windows/configuration/policy-based-inbox-app-removal/policy-based-inbox-app-removal — edition/management restrictions (managed Enterprise/Education) and runtime provisioning timing, so **not a universal offline replacement** for supported AppX operations across all BlueLite editions.
+- **Project authoritative sources:** https://github.com/johnny-belgrade/windows/blob/main/BlueLite_Sources.md ; historical Library reports, `FBConan-BUILD_INFO-v3.txt`, 18C–18E, Phase44, Phase46-HOTFIX2, Phase47, Phase48, R113/R115/R116/R118/R119. These are operator-supplied evidence; descriptions of another uploader's own private scripts, tooling and publishing speed are **unverified inference** unless independently demonstrated.
+
+**Source precedence:** Current operator evidence for the exact source and target > official provider semantics > previously certified matching-topology BlueLite recipe > reliable third-party implementation > reference build end-state. A new external tip produces a candidate recipe, not an approved mutation.
+
 
 ---
 
-**End of BlueLite v1.0 — MASTER GERMANIUM STRATEGY v2.5.2**
+**End of BlueLite v1.0 — MASTER GERMANIUM STRATEGY v3.0.0**
