@@ -2,6 +2,13 @@
 
 **As of:** 2026-10-15
 
+## 2026-10-15 R131-R2 recovery confirmed and R131-R3 delivered
+
+- Operator recovery PASS: R131-R2 exact read-only mount discarded successfully, DISM exit 0, zero remaining mounts, source R113 SHA unchanged. Recovery report: `BlueLite_R131_R2_OwnedMount_Recovery.txt` 927 B, SHA256 `86ED8381AE7B0087EE81D09815C5F6FBDD4AC6AF0123623A2DB58879A1B41C33`.
+- Root cause: `mount` local assignment shadowed script-scoped `Mount` path (PowerShell case-insensitive), producing PSCustomObject type errors in verification and cleanup. R131-R3 fixes that assignment, adds a typed identity guard and regression tests.
+- New R131-R3 archive 193628 B SHA256 `8C18F26E2AD96FBCC34B01D85589B05EEC7821D0AA434F37B46B71DEDCDE4A20`. 60 unchanged archive members; changed inventory source SHA256 `06633ECC706CF88910AD71FB75372D724E652BC07ADBF38919624D407FCC75CF` and SHA manifest. Static ZIP CRC and 61 file integrity checks PASS; Windows SelfTest NOT YET RUN. Expected 6 positive + 5 negative tests.
+- Next only operator step: verify/extract R131-R3 ZIP into a new scripts folder and invoke included Stage1 controller `SelfTest`. Unique log `C:\work\logs\BlueLite_R131_R3_MAX_PRE_Inventory_Integration_SelfTest.txt`. No WIM, native DISM, online changes or network during selftest. No native CapturePlan until Windows PASS.
+
 ## 2026-10-15 R131-R2 native CapturePlan FAIL_CLOSED due PSCustomObject TrimEnd; owned mount recovery pending
 
 - Operator R131-R2 PS7 `CapturePlan` on original frozen R113 26200.9711 WIM: entrypoint/contract SHA PASS, bundle 61/61 PASS, `PRE_ZERO_DISM_MOUNTS=PASS`; DISM log shows **successful readonly `/Mount-Image` Index1 to `C:\BL131M`**, only mount, no native unmount line. After mount: `Method invocation failed because [System.Management.Automation.PSCustomObject] does not contain a method named 'TrimEnd'`; subsequent finally reports `R131_OWNED_MOUNT_RELEASE_FAILED` with same exception and `R131_POST_MOUNT_DRIFT`. Inventory/plan not generated. New problem is source PowerShell object-shape handling in mount identity parser, not evidence of WIM modification or CBS dependency drift. **R131-R2 native CapturePlan FAIL_CLOSED, no runtime certification.** Evidence primary `BlueLite_R131_R2_26200_9711_Capture.txt`, console `BlueLite_R131_R2_CapturePlan_Console.txt`, native `BlueLite_R131_R2_26200_9711_Capture.DISM.log` uploaded.
