@@ -2,6 +2,11 @@
 
 **As of:** 2026-10-15
 
+## 2026-10-15 R114 operator PASS; local free-space probes retired by operator directive
+
+- **R114 actual Windows PS7 operator PASS**, original `C:\work\logs\BlueLite_R114_R113_to_R15_Handoff_ReadOnly.txt`, **590 bytes**, SHA-256 `F8422B98C5454F0BFBFC6174D76EB5E7A7A03B0B088E6A2C677A9425BAC31E1C`. Transcript evidence: R113 five native provisioned families receipt PASS, R91/R106/R113 committed candidate hashes PASS, original R15 engine SHA and 19 contract arguments PASS, PRE=0 mounted DISM WIMs and 0 project hives, R113 candidate bytes 8,942,803,126, terminal `R114=PASS_R113_TO_NATIVE_R15_TRANSACTION_HANDOFF_READ_ONLY`. No R15 executed, cloned or mounted in R114.
+- **Operator instruction, effective now:** do NOT run any new local disk free-space queries or add free-space threshold/check to future BlueLite operator steps; R114 historical capacity lines are merely preserved original evidence. Scope future R115 to separate transaction-owned AppX-provisioned candidate copy, exact original SHA-pinned native R15 engine/arguments and unique outputs; NEVER rerun R109 or R113 and do not mutate R91, R106, or R113 original sources. R114 is OPERATOR_EXECUTED_PASS; R15 native debloat after R113 provision remains NOT_EXECUTED.
+
 ## 2026-10-15 R114 R113-AppX-seeded native R15 transaction handoff read-only gate delivered
 
 - **R114 DELIVERED_NOT_EXECUTED, no Windows operator result yet.** New `BlueLite_R114_R113_to_R15_Handoff_ReadOnly.ps1` (7,464 bytes; SHA-256 `44D2B024E8BF98E18090C4AD16918C2186B04178363838B0E38667F8E5B92CF8`) delivered for `C:\work\scripts`. Run only after PS7 Admin SHA/AST checks with authorization `I_AUTHORIZE_R114_R113_TO_R15_READ_ONLY_HANDOFF`. Exact output: `C:\work\logs\BlueLite_R114_R113_to_R15_Handoff_ReadOnly.txt`. Script statically reviewed, not certified as PS7 runtime until operator execution.
