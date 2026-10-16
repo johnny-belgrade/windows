@@ -2,6 +2,10 @@
 
 **As of:** 2026-10-16
 
+## 2026-10-16 operator correction: no 26300 UUP acquisition; C work ZIP inventory authorized
+
+- Operator confirmed **NO Windows 11 26H2 / 26300 build has ever been downloaded** in this project; 26300 remains formal targeted Germanium family and static script/parser tests only, NOT a missing Library runtime report and NOT a previously attempted UUP source. Do not request or infer 26300 runtime evidence from nonexistent downloads.
+- Operator accepted `BlueLite_Germanium_UUP_MAX_PRE_Analiza_2026-10-16.md` and explicitly requested exactly one PS7 Admin **READ-ONLY `C:\work` inventory** operator command, packaged report ZIP in established `C:\work\scripts` directory. No cleanup/deletion of existing files authorized. The scan may write only a small newly owned temporary report workspace and resulting ZIP; avoid any WIM/ISO copying, full-file hashing or unnecessary multi-GB log. Follow-up: operator uploads ZIP, triage path-level duplicate/backup candidates before asking approval to delete.
 ## 2026-10-16 operator-approved UUP MAX_PRE deep comparative research; C work inventory next
 
 - Operator explicitly approved strategic pivot away from further R7 micro-experiments to generalized Germanium Stage1/MAX_PRE research; demanded no unnecessary multi-GB local files, followed by serious read-only `C:\work` (>100 GB operator-estimated) inventory and later authorized cleanup. No R143/new WIM copy/mount and no local command provided in this research turn; R7 remains `RED_HOLD`/`MUTATION=NOT_AUTHORIZED`, report-only.
