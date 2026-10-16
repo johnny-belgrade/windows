@@ -1,18 +1,18 @@
-# BlueLite v1.0 — MASTER GERMANIUM STRATEGY v5.0.0
+# BlueLite v1.0 — MASTER GERMANIUM STRATEGY v6.0.0
 
 **Status:** AUTHORITATIVE / UNIFIED PRODUCTION ARCHITECTURE — SUPERSEDES PREVIOUS MASTER REVISIONS  
-**Date:** 2026-10-15  
-**Scope:** Windows 11 **Germanium family**, including **26200.x (25H2), 26300.x (26H2)** and later family members confirmed through image lineage/dependency discovery; a numeric range alone does not certify an unknown OS branch  
+**Date:** 2026-10-16  
+**Scope:** PRIMARY Windows 11 26H2 GA / 26300.x; SECONDARY 26200.x solely historic/regression/Component Intelligence; shared 26100 servicing reference; future Germanium branches only after operator decision and lineage verification.  
 **Project:** BlueLite v1.0  
 **Team:** Operator + ChatGPT; all commands execute locally with the operator  
 **Canonical historical evidence:** Library, predecessor sessions, GitHub `BlueLite_Current_Status.md`, and `BlueLite_Sources.md`  
-**Production goal:** **Prepare once → build repeatedly → inspect only actual deltas → release quickly after predefined acceptance tests.**
+**Production goal:** **26300 GA FIRST → prepare once → build repeatedly → inspect only actual deltas → release quickly after predefined acceptance tests.**
 
 ---
 
 ## 0A. MASTER OPERATING CONTRACT — UNIVERSAL GERMANIUM FACTORY
 
-**AKTIVNI OBUHVAT OD v5.0.0:** Windows 11 **26200.x / 26300.x i naredne potvrđene Germanium linije**. Zastarela prethodna linija je isključena iz novih UUP/PowerShell/NTLite/VM proizvodnih profila, matrica regresije i istraživačkog backlog-a. Nasleđeni tehnički logovi i precizni identiteti komponenti ostaju neizmenjeni kao istorijska evidencija; njihov zapis ne vraća podršku zastareloj liniji.
+**PRIMARNI OBUHVAT OD v6.0.0: Windows 11 26H2 / 26300.x GA.** Prethodni 25H2 / 26200.x materijal ostaje za regresiju i već potvrđene recepte; nije drugi tekući proizvodni ili istraživački front. Sledeće Germanium linije zahtevaju novi dokaz i odobrenje. Zastarela prethodna linija je isključena iz novih UUP/PowerShell/NTLite/VM proizvodnih profila, matrica regresije i istraživačkog backlog-a. Nasleđeni tehnički logovi i precizni identiteti komponenti ostaju neizmenjeni kao istorijska evidencija; njihov zapis ne vraća podršku zastareloj liniji.
 
 ### 0A.1 Šta je cilj, a šta nije
 
@@ -72,11 +72,46 @@ Operator određuje cilj i vrši lokalne radnje; ChatGPT proučava postojeće dok
 
 ---
 
+## 0B. v6.0.0 — ČVRSTA STRATEŠKA ODLUKA: 26H2 / 26300 GA FIRST (2026-10-16)
+
+**OPERATOR APPROVED / EFFECTIVE IMMEDIATELY.** Završavamo 45-dnevni razvoj usmeren na 25H2; **26300.x / 26H2 GA je primarni i jedini novi proizvodni/release cilj**. Kao početnu reviziju biramo **26300.9711 / KB5127648**, odnosno noviju potvrđenu GA reviziju ako je operator izabere. **26200.x ostaje istorijska, dokazna i regresiona baza**, ne aktivni paralelni release. R7/26200 i dalji inventar diska se ne nastavljaju rutinski. Reč "latest" nikada nije zamena za operatorov stvarno izabrani i SHA-zamrznuti UUP.
+
+### 0B.1 Zvanično potvrđena zajednička servisna osnova
+
+**Microsoft je zvanično potvrdio da Windows 11 26H2 (26300), 25H2 (26200) i 24H2 (26100) dele ZAJEDNIČKI CORE OS, ISTI SKUP OSNOVNIH SISTEMSKIH FAJLOVA i ISTU SERVICING BRANCH/FOUNDATION. KB5121794 je enablement package koji aktivira uspavane 26H2 funkcije na kompatibilnim 24H2/25H2 sistemima; KB5127648 od 13. oktobra 2026. servisira buildove 26300.9711, 26200.9711 i 26100.9711. Ovo je ČVRSTA MICROSOFT-OVA PLATFORMSKA ČINJENICA, ali NE dokazuje da su svi CBS/AppX/FoD owner grafovi, raspored komponenti ili rezultati uklanjanja identični na 26300.**
+
+**Microsoft izvori:** [26H2 IT Pro guide](https://learn.microsoft.com/en-us/windows/whats-new/whats-new-windows-11-version-26h2); [KB5121794 common core/EKB](https://support.microsoft.com/en-gb/servicing/os/windows-11/2026/09/kb5121794-feature-update-to-windows-11-version-26h2); [KB5127648 three build revisions](https://support.microsoft.com/en-us/servicing/os/windows-11/2026/10/kb5127648-windows-11-24h2-25h2-26h2-security-update); [26H2 GA Release Health](https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-26H2). 26H2 je u **General Availability kanalu od 2026-09-29**. In-place enablement na podržanom 24H2/25H2 uređaju i izgradnja čistog 26300 install.wim image-a iz originalnog UUP izvora su dva zasebna scenarija.
+
+### 0B.2 Jasna granica prenosa dokaza na novi cilj
+
+1. **MICROSOFT_VERIFIED_PLATFORM:** core OS/sistemski fajlovi i zajednička servisna grana su dokazani. Isti LCU u tri izdanja je potvrđen.
+2. **26200_OBSERVED:** stari 26200/.9278/.9445/.9550/.9711 Timeline, UUP, CBS, R15–R142, R100, AMBER/GREEN, AppX i WinSxS rezultati su referentni recepti i fixtures. Nisu dokazi da se određena 26300 komponenta može ukloniti.
+3. **26300_STATIC_ONLY:** R122 univerzalni parser i 26200/26300 policy fixture testovi dokazuju samo statičko prihvatanje druge linije.
+4. **26300_RUNTIME=PENDING / RELEASE=NOT_CERTIFIED:** **nikada do sada nismo preuzeli nijedan 26300 UUP build**. Ne postoji 26300 original WIM, MAX_PRE post-state, NTLite runtime, VM ili release PASS; nijedna sesija ne sme proizvesti takvu tvrdnju bez novog operatorovog loga.
+
+### 0B.3 NOVA PRIMARNA PROIZVODNA PUTANJA
+
+1. Operator bira zvanični GA **26300.x UUP**, poželjno trenutno 26300.9711: amd64, en-US, Professional i install.wim po odabranoj konfiguraciji; NetFx3 ostaje OFF ako korisnik ne zatraži drugačije. Zamrzavaju se originalni UUPDump ZIP, launcher, URL/UUID, converter, config/list, checksum i source manifest. Nikakav automatski fallback na 26200.
+2. Ponovo koristiti postojeće Phase A2, R26-D6, R15/R113/R120 i prethodne converter-native selektore. Prvo proveriti male Windows/Apps queue metapodatke, nezavisni originalni queue checksum, signed URL expiry i manifest-based AppX dependency closure. Tek zatim operator odobrava veliki source download; **ne duplirati stare GB dokazne materijale**.
+3. **PRE_DOWNLOAD:** bezbedno filtriranje nepotrebnih AppX/MSIX; pet obaveznih staging aplikacija i stvarne framework/flat bundle reference ostaju. **WINDOWS RECONSTRUCTION:** nikad destruktivno filtrirati referentni/delta/FoD/ESD/LCU/SSU/DU/EKB Windows queue samo zato što se komponenta kasnije želi ukloniti. SkipEdge=1, SkipWinRE i cleanup konvertera tumače se prema TAČNO pinovanoj verziji originalnog convertera. SkipEdge ne dokazuje da Edge.wim sme da se preskoči pri download-u.
+4. Izvorni rekonstruisani **26300 install.wim je immutable**. Na njegovoj posebno vlasnički izdvojenoj izvedenici pokrenuti MAX_PRE POST-RECONSTRUCTION/PRE-ISO sa build-resolved recipes, CBS/feature/FoD/AppX/pending/health i zaštićenim VM/network/servicing floor. R7 CBS 0x800F0825 i R4 DesktopAppInstaller 0x80073CFA iz 26200 su **poznati failure potpisi**, ne automatski 26300 outcome; proveriti 26300 stvarno stanje.
+5. Dalje samo STAGE2 standalone PowerShell offline residue, STAGE3 NTLite Business portable preset i STAGE4 VMBox/admin/Defender ON/OFF + finalni WIM/ISO i footprint. Postojeći ISO 3.5–5 GB, install footprint 11–15 GB i Store/Windows Update/4-final AppX ugovor ostaju ciljevi i gate-ovi, a ne tvrdnje da su dostignuti.
+
+### 0B.4 Prostor, putanje, zadržavanje i završena A02 akcija
+
+A01 je potvrdio 227/227 istorijskih 26200 UUP source/stage SHA parova. A02 je **uspešno obrisao SAMO bit-identični R132 disposable WIM** (8,942,803,126 logičkih bajtova, 8.329 GiB). Dostupan prostor na C: porastao je sa 183,384,150,016 na 192,326,991,872 B, odnosno 8,942,841,856 B. R113 original je zadržan, DISM mountovi i aliasi nula. **Operator je zaustavio dalje čišćenje/inventar:** fokus je 26300 Stage1, bez ponovljenih velikih izvora i rada bez zatvorenog lifecycle-a. Skripte idu u C:\work\scripts; izveštaji/CSV/ZIP u C:\work\logs; primarni source immutable, disposable samo po potrebi.
+
+### 0B.5 Precedencija i sledeća dozvoljena radnja
+
+**V6.0.0 ima prednost nad svim starijim rečenicama koje navode 26200 i 26300 kao ravnopravne aktivne ciljeve.** Recepti su univerzalni unutar potvrđene zajedničke servisne grane, ali izvršenje sertifikujemo nezavisno na ciljnom WIM-u. **Jedina sledeća proizvodna radnja:** prvi stvarni operatorov **26300 GA UUP source izbor/freeze i mali Windows+Apps queue/metadata gate**, bez ranije preuzetog 26300 sadržaja i bez automatskog dugog download-a. [Detaljna UUP matrica](BlueLite_UUP_Evidence_Reconciliation_20261013.md) i [operativni status](BlueLite_Current_Status.md) važe zajedno sa ovim Master-om.
+
+---
+
 ## 0. DOCUMENT AUTHORITY, EVIDENCE CORPUS AND PURPOSE
 
-**v5.0.0 policy precedence:** Active targets are exclusively 26200.x, 26300.x and later verified Germanium. Historical snapshots remain source records, not an obligation to regenerate old-build reports.
+**v6.0.0 precedence:** Primary=26300 GA; 26200 historical/regression-only. Microsoft shared core/servicing fact and target-specific servicing proof are separately mandatory. All older equal-priority production language is superseded by §0B.
 
-This v5.0.0 revision retains the prepared, reusable, delta-driven Germanium production architecture, disposable cleanup and evidence-first research reuse contracts, and **limits ACTIVE production and acceptance to 26200.x (25H2), 26300.x (26H2), and later confirmed Germanium lines**. The retired branch is OUT OF SCOPE for new UUP, offline PowerShell, NTLite, VM, QA, and new analyses. Historical operator source logs and genuine servicing package identities remain unchanged factual evidence, not current production requirements.
+This v6.0.0 revision retains the prepared, reusable, delta-driven Germanium production architecture, disposable cleanup and evidence-first research reuse contracts, and **sets PRIMARY production/acceptance to 26300.x (26H2 GA)**. 26200.x is a historical/regression fixture, not a parallel release; future branches require operator acceptance and image lineage proof. The retired branch is OUT OF SCOPE for new UUP, offline PowerShell, NTLite, VM, QA, and new analyses. Historical operator source logs and genuine servicing package identities remain unchanged factual evidence, not current production requirements.
 
 This document is the governing strategy for BlueLite. It is not a summary of one build and it is not a list of isolated tweaks. It consolidates the complete project logic developed through the four chronological BlueLite chat histories and replaces the earlier Master Strategy wherever this document is more specific.
 
@@ -485,7 +520,7 @@ Every command/sequence/script mutation intended for the canonical reusable deblo
 
 ## 6.3 GERMANIUM 26200 / 26300 AND LATER FAMILY UNIVERSAL IMPLEMENTATION RULE
 
-Normative §0A applies to **all four production phases**, not only to one PowerShell wrapper. The production code accepts an operator-selected Germanium source, discovers actual target identity/version/edition/language/PFN/CBS ownership, selects an already-certified method and runs it; no source-code patch for every CU or 26200/26300 revision.
+Normative §0A and **v6.0.0 primary-target §0B** apply to **all four production phases**, not only to one PowerShell wrapper. Microsoft confirms common 26100/26200/26300 system core and servicing branch, allowing cross-version reuse of rules with independently verified current-image ownership. The production code accepts an operator-selected Germanium source, discovers actual target identity/version/edition/language/PFN/CBS ownership, selects an already-certified method and runs it; no source-code patch for every CU or 26200/26300 revision.
 
 - Keep source-specific values in declarative manifest/Component Intelligence, not proliferating release scripts named for a single build. Exact old build identifiers may appear in fixtures or proven exception records, never as a substitute for actual topology.
 - The source UUP/converter, standalone offline PowerShell, NTLite XML preset and VM setup must be **separately reusable**, and together idempotent. An external tool's XML can cover only the operations that tool actually supports; use PS/DISM/CBS, official UUP options and NTLite according to their real semantics.
@@ -503,7 +538,7 @@ Normative §0A applies to **all four production phases**, not only to one PowerS
 
 ## 7.1 Source authority
 
-The canonical release source is the **exact UUP Dump source/archive selected by the operator**.
+The canonical release source is the **exact UUP Dump source/archive selected by the operator**, now obligatorily 26H2 GA/26300.x for NEW production. Prefer current 26300.9711/KB5127648 as of 2026-10-16 but never assume source availability, preexisting download or fixed UUID.
 
 BlueLite must capture and log:
 
@@ -532,6 +567,8 @@ BlueLite works as a wrapper/overlay:
 - run post-run audit.
 
 ## 7.3 Reconstruction closure is sacred
+
+**26300 adaptation:** The officially identical shared core/servicing branch across 26100/26200/26300 supports reuse of reconstruction mechanics but **NOT 26200 package-name hardcoding, unverified 26300 CompDB differences or Windows source queue pruning**. Current 26300 original queues, delta references, EKB/LCU, installed capability and CBS/package identities must be verified.
 
 Do not destructively filter the Windows/reference/delta/FoD input queue just because a component is unwanted in the final OS.
 
@@ -1318,7 +1355,7 @@ This keeps the common base small and prevents optional functionality from forcin
 
 Maintain versioned production engine modules, UUP converter overlay, XML/INI/JSON profiles, shared Component Intelligence and historical rule-success/failure index, cross-build fixtures, WIM artifact lineage map, install/Defender variants, NTLite XML preset, unattended/setup/admin scripts, VM/physical-host test harness and signing/hash/logging tools. Every confirmed research win is integrated into an automatic recipe, **not** archived only as another numbered script/log.
 
-### 29.2 Each new available UUP source (normal production)
+### 29.2 Each new available UUP source (v6.0.0: 26300 GA first)
 
 1. Operator selects source and desired profile; `START.cmd` freezes source hash/identity and reports anticipated capabilities.
 2. Tool confirms Germanium lineage (including 26300), supported converter configuration, caches/downloads/reconstruction closure and applies source AppX policy, reconstructs and integrates updates.
@@ -1338,7 +1375,7 @@ No universal system can guarantee a fixed ISO or instant release for every futur
 
 ### 29.4 Acceptance benchmark
 
-Record repeated end-to-end dry runs on at least one certified representative each from 26200 and 26300 (when sources and build conditions allow). Track median operator touches, automated rule coverage, unknown-dependency count, build wall time (separate network/download/CPU/VM portions), SHA reproducibility for identical inputs/toolchains and final serviceability. Target same-day/hours for **compatible known-topology** new sources once production artifacts exist; do not claim uploader competitors' private implementation or actual times without evidence.
+Record repeated end-to-end dry runs **first on actual 26300 GA**, while using existing 26200 receipts and fixtures for regression/known-rule comparison rather than requiring a new parallel 25H2 release. No 26300 run has yet occurred. Track median operator touches, automated rule coverage, unknown-dependency count, build wall time (separate network/download/CPU/VM portions), SHA reproducibility for identical inputs/toolchains and final serviceability. Target same-day/hours for **compatible known-topology** new sources once production artifacts exist; do not claim uploader competitors' private implementation or actual times without evidence.
 
 # 30. CANONICAL DELIVERABLES — VERSIONED REAL FILES, NOT HUNDREDS OF DEVELOPMENT SCRIPTS
 
@@ -1348,6 +1385,7 @@ The repository must converge on a **small, runnable source-controlled production
 BlueLite-Master_Germanium_Strategy_final.md
 BlueLite_Current_Status.md
 BlueLite_Sources.md
+BlueLite_UUP_Evidence_Reconciliation_20261013.md
 production/
   START.cmd                         # single operator entrypoint
   Build-BlueLite.ps1                # orchestrator
@@ -1432,7 +1470,7 @@ The 3.5–5 GB ISO and 11–15 GB installed footprint are **measured engineering
 **BlueLite is a Germanium compiler and repeatable release factory**. All four stages must produce real reusable software/configuration assets; one universal controller wrapping per-build manual debloat is insufficient.
 
 ~~~text
-FROZEN SELECTED UUP (26200 / 26300 / later verified Germanium)
+FROZEN OPERATOR-SELECTED UUP (26300 GA PRIMARY; 26200 historical regression)
     + pinned source/config/INTELLIGENCE and known successful/failing recipes
     |
     v
@@ -1467,6 +1505,8 @@ The success metric is not the count of scripts, phases or retrieved logs. It is 
 
 # 33. CHANGE HISTORY AND AUTHORITY
 
+**v6.0.0 — 2026-10-16, operator-approved 26300 FIRST strategic pivot.** Windows 11 26H2 GA / 26300.x is the sole active new production target; 26200.x is historical/regression and 26100.x common-servicing reference. Microsoft je zvanično potvrdio da Windows 11 26H2 (26300), 25H2 (26200) i 24H2 (26100) dele ZAJEDNIČKI CORE OS, ISTI SKUP OSNOVNIH SISTEMSKIH FAJLOVA i ISTU SERVICING BRANCH/FOUNDATION. KB5121794 je enablement package koji aktivira uspavane 26H2 funkcije na kompatibilnim 24H2/25H2 sistemima; KB5127648 od 13. oktobra 2026. servisira buildove 26300.9711, 26200.9711 i 26100.9711. Ovo je ČVRSTA MICROSOFT-OVA PLATFORMSKA ČINJENICA, ali NE dokazuje da su svi CBS/AppX/FoD owner grafovi, raspored komponenti ili rezultati uklanjanja identični na 26300. One new original 26300 UUP source/queue gate is next; no 26300 UUP has previously been acquired. A02 R132 exact duplicate deletion PASS, 8.329 GiB C: regained; no continued disk-cleanup project. All earlier Germanium 4-stage, immutable WIM, AppX, Defender, NTLite, VM and dependency/certification requirements remain effective.
+
 **v5.0.0 — 2026-10-15, operator-directed scope restriction.** Production, research backlog and acceptance are restricted to 26200.x/26300.x and later confirmed Germanium. The older line is retired; historic original logs and servicing identities are not falsified. All v4.0.0 disposable cleanup and evidence-first rules remain unchanged.
 
 **v4.0.0 — 2026-10-15, targeted disposable/evidence correction authorized by operator.** `Disposable` means a **temporary image to delete once no longer needed** for further tests or analyses; first ensure that decision-grade logs/results are actually accessible in Library/project knowledge base. Retain only images that future tests specifically require or whose unique evidence is not yet secured; clean exact owned scope after unmount/hive release and source protection. Before ANY new analysis, check complete available BlueLite evidence and run only investigations for objectively absent or insufficient prior data. All other v3.0.0 production architecture and technical policies unchanged.
@@ -1481,6 +1521,7 @@ The success metric is not the count of scripts, phases or retrieved logs. It is 
 
 ### 33.1 Technical source register — verified scope, not inferred capability
 
+- **Verified 26H2/25H2/24H2 shared core/servicing foundation:** [Microsoft IT Pro](https://learn.microsoft.com/en-us/windows/whats-new/whats-new-windows-11-version-26h2), [KB5121794 identical core OS/system files + EKB](https://support.microsoft.com/en-gb/servicing/os/windows-11/2026/09/kb5121794-feature-update-to-windows-11-version-26h2), [26H2 GA Release Health 2026-09-29](https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-26H2), [2026-10-13 KB5127648 for 26300.9711 / 26200.9711 / 26100.9711](https://support.microsoft.com/en-us/servicing/os/windows-11/2026/10/kb5127648-windows-11-24h2-25h2-26h2-security-update). This is a **strong platform fact**, not per-image CBS/AppX debloat certification.
 - **Microsoft 26H2 enablement/servicing lineage:** https://support.microsoft.com/en-us/servicing/os/windows-11/2026/09/kb5121794-feature-update-to-windows-11-version-26h2 — shared servicing-lineage background; the active BlueLite release scope is 25H2/26H2 and newer confirmed Germanium. This confirms shared family relationship, **not** every package has the same ownership or that 26300 will always be bit-identical to 26200.
 - **UUP converter official source/readme:** https://github.com/abbodi1406/BatUtil/blob/master/uup-converter-wimlib/convert-UUP.cmd ; https://github.com/abbodi1406/BatUtil/blob/master/uup-converter-wimlib/ReadMe.html — converter-specific `ConvertConfig.ini`, `SkipApps`, `AppsLevel`, `CustomList`, `StubAppsFull`, optional `CustomAppsList*.txt`. Always inspect pinned local converter fork/version.
 - **UUP Dump custom app selection source:** https://git.uupdump.net/uup-dump/misc/src/commit/10915414f3d8103e43fbe1ea170f980a45048131/autodl_files/CustomAppsList.txt — illustrates select-app list and required `CustomList=1`; not a complete CBS removal mechanism.
