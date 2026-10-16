@@ -2,6 +2,12 @@
 
 **As of:** 2026-10-16
 
+## 2026-10-16 R135 R7 child identity operator PASS; scoped child metadata next
+
+- Operator supplied `C:\work\logs\BlueLite_R135_R7_CBS_ChildIdentity_26200_9711.txt` (131,925 bytes; SHA256 CBA95EB9C846A24BA8274CE4BC1FF7016CEC8DF8201CA0D55233EB21B2916428; Windows PS7.6.7 Admin, 2026-10-16 10:48:32–10:51:06 +02:00). Prior R134 log and R113/R133 WIM SHA verification PASS; 10 exact MUM files match R134 hashes and byte counts; R133 Index1 mounted /ReadOnly, owner-verified /Discard PASS; post DISM zero mounts, source and candidate hashes preserved. End marker `R135=PASS_READONLY_CHILD_GRAPH_CAPTURED_NOT_RELEASE_CERTIFIED`. No mutation.
+- Basic MUM inventory 7 (2 wrappers, 3 amd64, 2 wow64), en-US Client LP MUM 3. Basic child records 22, all `contained=false; integrate=hidden`, eight distinct Basic child base identities: amd64 WordBreaking, WordBreaking-Legacy, Hyphenation-Dictionaries, Spelling-Dictionaries, TextPrediction-Dictionaries; wow64 Basic child, WordBreaking, WordBreaking-Legacy. Client LP child records 615, of which 90 false-contained; 206 unique LP base identities. Direct Basic-vs-LP base identity intersection 0 among only these 10 MUM files. This does NOT certify global CBS owner graph, active child-package state or payload ownership.
+- R7 Language.Basic en-US remains Installed per R127/R133 and native CBS permanent refusal 0x800F0825 remains. `R135_R7_OWNER_GRAPH=NOT_YET_CERTIFIED;R135_R7_MUTATION=NOT_AUTHORIZED`. No KEEP_SKIP or release waiver.
+- Next one investigation: scoped, registry-free read-only R136 exact CBS servicing .mum and owning-package references for the eight R135 Basic child families; inspect current relevant identities/version availability, link parent/child package metadata and distinguish protected owners when evidenced. Report not-found/unknown, not assumed absent. No R4 repeat, no registry/physical carve, no native R7 remove, no NTLite/VM. /ReadOnly and owner-verified /Discard, zero mounts and hashes unchanged.
 ## 2026-10-16 08:13 +02:00 — operator shutdown mount/hive PASS (read-only, restart checkpoint)
 
 - Operator supplied original PowerShell 7.6.7 (Admin) transcript `C:\work\logs\BlueLite_Shutdown_MountHive_Check_20261016.txt` (uploaded artifact SHA256 `684C30E8D0A78EE1DCFD44CEBA4DD35A691D31EDFF2E0F582A6956AB6A01B603`). Timestamp `2026-10-16T08:13:26+02:00` to transcript end 08:13:27.
