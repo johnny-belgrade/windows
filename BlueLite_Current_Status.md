@@ -2,6 +2,13 @@
 
 **As of:** 2026-10-16
 
+## 2026-10-16 — Operator APPROVED 26300 Stage1 hybrid plan and fixed UUP Dump profile
+
+- **OPERATOR APPROVAL:** Hybrid implementation selected: reuse prior RC1.2/Phase A2/R26-D5/D6/R15/G5 recipes and incremental verifiable development steps, converge to ONE reusable Germanium Stage1 MAX_PRE pipeline. Search Library original UUP Review variants/logs and Sources links before proposing any new review/converter/debloat code; no duplication of already documented analysis.
+- **EXACT FIRST SOURCE:** Operator specifies Windows 11 26H2 GA **26300.9711**, x64, en-US, Professional ONLY; UUP Dump option **Download and convert to ISO**, **Include updates=ON**, **Run component cleanup=ON**, **.NET Framework 3.5=OFF**, **install.wim**. Operator confirms these UI choices are invariant for their source ZIPs. This approved UUP input profile does not itself certify a downloaded ZIP, a converter's ResetBase semantics, or any runtime.
+- **STRICT STORAGE / DISPOSABLE CONTRACT:** No accumulating WIM clones or new series of UUP Review archives. Keep only required immutable original/source and currently necessary working candidate; use scoped disposable artifacts and delete as soon as tested/evidence-preserved and no mount/hive handles remain. A03 historical deletion PASS remains. Preserve scripts and logs, reuse Library source evidence. Source ZIP intake must not automatically download multi-GB UUP payloads, launch conversion, mount WIM, or mutate running Windows.
+- **NEXT ONE OPERATOR STEP:** obtain/present the original 26300.9711 UUP Dump ZIP for source freeze, leaving launcher/converter/metadata untouched; then Phase A2-derived small SHA/UUID/config gate and independent queues. **26300_SOURCE=NOT_FROZEN; 26300_STAGE1=NOT_RUN; 26300_MAX_PRE=NOT_RUN; 26300_RELEASE=NOT_CERTIFIED.** No WIM copies or executable local commands issued in this decision checkpoint.
+
 ## 2026-10-16 — A03 PASS + 26300 Stage1 approach proposed (NO runtime)
 
 - Original operator A03 transcript PASS: 54/54 exact large 26200 files removed; 78.311 GiB C: regained; R133 SHA PASS; zero mounts/hives; small scripts/logs protected. Do not assume removed older source images are present.
