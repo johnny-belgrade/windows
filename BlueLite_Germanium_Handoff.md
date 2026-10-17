@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.11 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-17 (S36 actual script-array fail-closed HOLD, no target mutation; S36-R1 corrected disposable test planned)  
+**Verzija dokumenta:** 1.5.12 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-17 (S36 original source-array HOLD; exact corrected S36-R1 SHA-pinned disposable lifecycle command DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -950,6 +950,37 @@ Common base **Defender ON** dok ne prođe certificirana zajednička baza; nakon 
 - **Actual HOLD cause (script-side, NOT new 26300 dependency evidence):** S36 source `development/BlueLite_Stage1_S36_26300.9711_AppInstaller_LifecycleDisposable.ps1` commit `5f4c464c9ced829c027e5f774cbc93fb9c013f84`, SHA256 `0944C3E3CB81FDC69803D976D3860379170F34F1EB356FAF2BADC2D6D334743B`, had four string concatenation expressions under `$provider=@(...)`; Windows PowerShell 7 runtime evaluated them as **one space-joined path** instead of four separate registry paths. Both native console and parsed JSON captured a `PRE_PROVIDER` record with that one malformed path `Staged\UI.Xaml... Config\UI.Xaml... Staged\VCLibs... Config\VCLibs...`, `Exists=false`, so deliberate exception `FAIL_CLOSED=PROVIDER_KEY_ABSENT=<joined path>`. **No deprovision marker created, none of the five AppInstaller target keys deleted**; no real AppX POST 10→9 tested, no physical carve. The S35 separate provider proof remains valid; do not infer true provider absence from joined-string bug.
 - **Actual clean rollback/evidence:** emergency `reg.exe unload` exit0, `DISM /Unmount-Image /Discard` exit0, RW mount released True, evidence JSON written, owned disposable cloned WIM deleted=True, S31 original WIM SHA unchanged=True. Terminal `RESULT=HOLD_S36_9711_APPINSTALLER_DISPOSABLE_LIFECYCLE`, `FULL_R4_PHYSICAL_REMOVAL=NOT_RUN`, `ORIGINAL_WIM_MUTATION=NOT_RUN`, `R133_DIRECT_PRODUCTION_AUTHORITY=NOT_GRANTED`. No component store mutation applied to immutable image.
 - **Needed S36-R1 replacement, planned at first documentation upsert:** new source/paths and logs, SHA-pin **these TWO exact original S36 artifacts and all old S35/S34/S33 + S31 WIM**; use **four literal, complete, individually comma-delimited provider paths**, and **preflight `provider.Count=4` and exact allowed set** before clone/mount. Reproduce exact owned disposable 10→9 lifecycle-only experiment with S35 provider protected keys and canonical AppInstaller four own roots, always `/Discard`, delete clone after mount released. Never reuse `C:\BL36M` or existing S36 outputs, never mutate original WIM, never physical carve/COMMIT. Require actual operator run to claim R1 PASS.
+
+### 8.26 S36-R1 — EXACT SOURCE + ONE DELIVERED COMMAND, operator NOT_RUN (2026-10-17)
+
+**Current endpoint:** S31 COMMITTED PASS; S32 READONLY PASS; S33 native owner 740/740 PASS; S34 historical 26200 6-child predicate HOLD on 26300; S35 read-only independent provider-family Staged/manifest PASS; S36 disposable script source-array error **HOLD before AppInstaller mutation, clone discarded/deleted, original unchanged**; **S36-R1 DELIVERED_NOT_RUN**, no production R4 authorization.
+
+- **Immutable repaired source (GitHub independently fetched at pinned commit and main, byte-identical):** `development/BlueLite_Stage1_S36R1_26300.9711_AppInstaller_LifecycleDisposable.ps1` Git full commit **`2b3c19a0965c6ec86e7a07acdd5e9c148a418a79`**, Git blob SHA1 **`6cce59581cd03927fb4b01370357f74219a97fd3`**, SHA256 **`BDF970490AB6C4A01FA0553B47628A255AB397CB7F830BCB6A8C39DA03EB4206`**, 16,582 ASCII bytes, 326 lines. Source SHA calculated with independent self-tested SHA256 implementation; no Windows native AST/runtime PASS claimed.
+- **One complete PowerShell 7 Admin operator command** (close Total Commander/Explorer views of `C:\work\E2E` and `C:\BL36R1M` first):
+
+```powershell
+& {
+    $ErrorActionPreference = 'Stop'
+    $dest = 'C:\work\scripts\BlueLite_Stage1_S36R1_26300.9711_AppInstaller_LifecycleDisposable.ps1'
+    $url = 'https://raw.githubusercontent.com/johnny-belgrade/windows/2b3c19a0965c6ec86e7a07acdd5e9c148a418a79/development/BlueLite_Stage1_S36R1_26300.9711_AppInstaller_LifecycleDisposable.ps1'
+    $expected = 'BDF970490AB6C4A01FA0553B47628A255AB397CB7F830BCB6A8C39DA03EB4206'
+    if (-not (Test-Path -LiteralPath 'C:\work\scripts' -PathType Container)) { throw 'BLUELITE_SCRIPTS_DIR_MISSING' }
+    if (Test-Path -LiteralPath $dest) { throw 'S36R1_LOCAL_SCRIPT_EXISTS_NO_OVERWRITE' }
+    Invoke-WebRequest -Uri $url -OutFile $dest -ErrorAction Stop
+    $got = (Get-FileHash -LiteralPath $dest -Algorithm SHA256).Hash
+    if ($got -cne $expected) {
+        Remove-Item -LiteralPath $dest -Force
+        throw "S36R1_PINNED_SOURCE_SHA_MISMATCH=$got"
+    }
+    Write-Host "S36R1_SOURCE_SHA256=PASS;$got"
+    & (Join-Path $PSHOME 'pwsh.exe') -NoProfile -ExecutionPolicy Bypass -File $dest
+}
+```
+
+- **What changed from S36:** `$provider` is now a **static exact array of FOUR individually quoted complete registry relative paths**, not `$prefix+...` expressions. Preflight requires `provider.Count=4`, unique paths, strict expected path pattern, **and exact four matching S35 original pinned Provider RegistryRoots** (exists=true), with log `S36R1_PROVIDER_LIST=PASS_4_EXACT_SOURCE_S35_KEYS`, **BEFORE cloning or mounting**. Also pins original S36 `LifecycleDisposable.txt` SHA256 `344DF85A1FC90D204ABCD34880378A7CBD75800F357EBACBA36EC2ED3BB8B650` and `LifecycleEvidence.json` SHA256 `798F7FE8104782C9CF4C3857F884E6BFEBBDE04677F75034A8D4F67663C51E35` and requires the original clone rollback/source unchanged proof anchors. Retains all original S35/S34/S33 and immutable S31 hashes.
+- **Fresh owned scope, avoiding original S36 paths:** `C:\work\E2E\BlueLite_Stage1_S36R1_26300.9711_DisposableLifecycle\install.disposable.wim`, RW mount **`C:\BL36R1M`**, report `C:\work\logs\BlueLite_Stage1_S36R1_26300.9711_AppInstaller_LifecycleDisposable.txt`, JSON `C:\work\logs\BlueLite_Stage1_S36R1_26300.9711_AppInstaller_LifecycleEvidence.json`. 12 GiB free gate, owned clone SHA pin, RW 5-field proof, AppInstaller exact 5 registry keys and empty deprovision leaf; two framework provider Staged/Config branches checked and preserved; expected native DISM AppX **10→9** with four selected application keeps and five provider packages still provisioned. Four AppInstaller physical roots/740 files intentionally remain throughout. CBS CheckHealth CLEAN/pending=0. **Always unload hive, DISM /Discard, delete owned test clone and re-hash immutable S31**. No physical deletion, NTLite, original WIM mutation or /Commit, no new build or release certification from test alone. Never run prior S36 script again.
+- **Request from operator:** actual main report and JSON above. Expected genuine disposable lifecycle terminal `PASS_S36R1_9711_R4_LIFECYCLE_TEST_ALWAYS_DISCARDED`, or fail-closed `HOLD_S36R1_9711_APPINSTALLER_DISPOSABLE_LIFECYCLE`; a PASS must have real native 10→9 and post-clean/rollback/unchanged source. **`S36R1=DELIVERED_NOT_RUN` now.** Next operator report must trigger mandatory §0R first Current/Handoff/Registry updates, one next executable step, then Handoff second write/readback. Master and old duplicate sections unchanged.
+
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
