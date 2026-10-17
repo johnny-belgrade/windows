@@ -376,5 +376,263 @@
     "notes": {
       "type": "string"
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "DOWNLOAD_APPS_ONLY"
+          }
+        },
+        "required": [
+          "mode"
+        ]
+      },
+      "then": {
+        "allOf": [
+          {
+            "properties": {
+              "gates": {
+                "properties": {
+                  "operator_authorized_transfer": {
+                    "const": true
+                  }
+                },
+                "required": [
+                  "operator_authorized_transfer"
+                ]
+              }
+            },
+            "required": [
+              "gates"
+            ]
+          },
+          {
+            "properties": {
+              "gates": {
+                "properties": {
+                  "apps_content_identity_match": {
+                    "const": true
+                  }
+                },
+                "required": [
+                  "apps_content_identity_match"
+                ]
+              }
+            },
+            "required": [
+              "gates"
+            ]
+          }
+        ],
+        "required": [
+          "queues"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "DOWNLOAD_WINDOWS_FULL"
+          }
+        },
+        "required": [
+          "mode"
+        ]
+      },
+      "then": {
+        "allOf": [
+          {
+            "properties": {
+              "gates": {
+                "properties": {
+                  "operator_authorized_transfer": {
+                    "const": true
+                  }
+                },
+                "required": [
+                  "operator_authorized_transfer"
+                ]
+              }
+            },
+            "required": [
+              "gates"
+            ]
+          },
+          {
+            "properties": {
+              "gates": {
+                "properties": {
+                  "windows_content_identity_match": {
+                    "const": true
+                  }
+                },
+                "required": [
+                  "windows_content_identity_match"
+                ]
+              }
+            },
+            "required": [
+              "gates"
+            ]
+          }
+        ],
+        "required": [
+          "queues"
+        ],
+        "properties": {
+          "queues": {
+            "required": [
+              "original_windows_count",
+              "windows_content_identity_sha256"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "CONVERT"
+          }
+        },
+        "required": [
+          "mode"
+        ]
+      },
+      "then": {
+        "allOf": [
+          {
+            "properties": {
+              "gates": {
+                "properties": {
+                  "converter_runtime_authorized": {
+                    "const": true
+                  }
+                },
+                "required": [
+                  "converter_runtime_authorized"
+                ]
+              }
+            },
+            "required": [
+              "gates"
+            ]
+          }
+        ],
+        "required": [
+          "queues"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "MAX_PRE"
+          }
+        },
+        "required": [
+          "mode"
+        ]
+      },
+      "then": {
+        "allOf": [
+          {
+            "properties": {
+              "gates": {
+                "properties": {
+                  "operator_authorized_mutation": {
+                    "const": true
+                  }
+                },
+                "required": [
+                  "operator_authorized_mutation"
+                ]
+              }
+            },
+            "required": [
+              "gates"
+            ]
+          },
+          {
+            "properties": {
+              "gates": {
+                "properties": {
+                  "image_ownership_verified": {
+                    "const": true
+                  }
+                },
+                "required": [
+                  "image_ownership_verified"
+                ]
+              }
+            },
+            "required": [
+              "gates"
+            ]
+          }
+        ],
+        "required": [
+          "image"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "OFFLINE_RESIDUE"
+          }
+        },
+        "required": [
+          "mode"
+        ]
+      },
+      "then": {
+        "allOf": [
+          {
+            "properties": {
+              "gates": {
+                "properties": {
+                  "operator_authorized_mutation": {
+                    "const": true
+                  }
+                },
+                "required": [
+                  "operator_authorized_mutation"
+                ]
+              }
+            },
+            "required": [
+              "gates"
+            ]
+          },
+          {
+            "properties": {
+              "gates": {
+                "properties": {
+                  "image_ownership_verified": {
+                    "const": true
+                  }
+                },
+                "required": [
+                  "image_ownership_verified"
+                ]
+              }
+            },
+            "required": [
+              "gates"
+            ]
+          }
+        ],
+        "required": [
+          "image"
+        ]
+      }
+    }
+  ]
 }
