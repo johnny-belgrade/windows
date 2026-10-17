@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.2.0 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-17 (archive + contracts + proof reconciliation)  
+**Verzija dokumenta:** 1.3.0 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-17 (single entrypoint + Master acceptance + successors)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -10,6 +10,24 @@
 **Historijski UUP dokazni indeks:** [`BlueLite_UUP_Evidence_Reconciliation_20261013.md`](BlueLite_UUP_Evidence_Reconciliation_20261013.md).  
 **Celokupan spoljašnji katalog:** [`BlueLite_Sources.md`](BlueLite_Sources.md).  
 **Repo:** <https://github.com/johnny-belgrade/windows>; branch `main`.
+
+## 0. JEDINI POČETNI LINK ZA SVE NAREDNE BLUELITE SESIJE
+
+**Operator treba u novoj sesiji da pošalje SAMO link na ovaj Handoff na `main`:** https://github.com/johnny-belgrade/windows/blob/main/BlueLite_Germanium_Handoff.md . Asistent mora sam pronaći, otvoriti, proveriti i koristiti sve dole navedene autoritete i izvore. Operator ne treba ponovo dostavljati Master, Current ili istoriju razgovora. **Jedan početni link NE znači jedan jedini dokument za čitanje; Handoff je ulaz i operativni vodič, Master je normativni autoritet, Current je stvarno poslednje stanje.** Link sam po sebi ne dokazuje da je sadržaj dostupan ili pročitan; pristup treba stvarno potvrditi, inače prijaviti ograničenje.
+
+**Obavezni redosled za naslednika PRE bilo kakve lokalne komande ili nove analize:**
+
+1. **UČITAJ OVDE:** aktuelni Handoff `main`, utvrdi verziju i čitaj §0, početna obavezna pravila, §12B i završnu kontrolnu listu. Proveri repo root/`production/` strukturu, ne oslanjaj se na sećanje stare sesije.
+2. **MASTER OBAVEZAN:** sam pročitaj [`BlueLite-Master_Germanium_Strategy_final.md`](BlueLite-Master_Germanium_Strategy_final.md) i **prihvati/primenjuj njegovu važeću strategiju** kao normativnu (26300 GA first, četiri faze, max-debloat i dependency granice, Defender ON/OFF, Store, Update Pause, VM HOST, release gates, operatorova kontrola). Ne prepisuj cilj niti uvodi nova pravila. Ako postoji tačna kontradikcija ili tehnička prepreka, dokumentuj izvor i obrati se operatoru, bez tajnog nadjačavanja Master-a.
+3. **CURRENT OBAVEZAN:** sam pročitaj aktuelni [`BlueLite_Current_Status.md`](BlueLite_Current_Status.md) od vrha, proveri posljednji *operator-confirmed* checkpoint, log, SHA, razliku `DELIVERED` / `STATIC` / `NATIVE` / `RELEASE` i jedan sledeći dozvoljeni korak. Handoff snapshot ne nadjačava noviji Current niti originalni operator log.
+4. **OSTALI IZVORI I LIBRARY OBAVEZNI, CILJANO:** otvori [`BlueLite_UUP_Evidence_Reconciliation_20261013.md`](BlueLite_UUP_Evidence_Reconciliation_20261013.md), [`BlueLite_Sources.md`](BlueLite_Sources.md), [`production/contracts/README.md`](production/contracts/README.md), relevantne tri šeme i [`production/intelligence/BlueLite_RecipeRegistry.json`](production/intelligence/BlueLite_RecipeRegistry.json). Pre nove dependency odluke pretraži i stvarno pročitaj relevantne originalne Library logove/skripte, arhivski Current i `ChatsGPT_15.md` samo kada treba. Ne preuzimaj opet niti dupliciraj već adekvatan dokaz za odgovarajući identitet i topologiju.
+5. **LOCAL HOST STATE JE ZA PROVERU, NE PRETPOSTAVKU:** uzmi tačne trenutne operatorske source/ZIP/module SHA, putanje `C:\work`, source-bound manifest, WIM index/mount/hives iz poslednjeg dokaza. Gde je potrebno daj samo jednu read-only PS7 Admin preflight komandu. `S06_APPS_ONLY_PASS` ili `S09_STATIC_PASS` nije Full Windows/download/converter/MAX_PRE/release potvrda.
+6. **IZVRŠAVANJE/ISPORUKA:** jedna potpuna, copy/paste PowerShell 7 **Admin** komanda po poruci, sa očekivanim output-om i tačno imenovanim logom; operator jedini izvršava lokalno, asistent analizira dokaz. Bez mutacije live OS-a; offline WIM samo uz source/hash/index/mount/dependency/rollback preflight; Total Commander/Explorer zatvoriti pre mount/unmount; uredan hive/mount closeout. Nema nenajavljenog Full download-a, NTLite pre offline faze ili VM pre NTLite.
+7. **UPIS JE OBAVEZA, NE OPCIJA:** za svaki stvarni PASS/FAIL/HOLD nakon operatorovog loga ažuriraj `BlueLite_Current_Status.md`; za novi potvrđeni komponentni recipe/owner/variant uz to `production/intelligence/BlueLite_RecipeRegistry.json`; Handoff/Contracts/Sources/Master samo po tačnim uslovima iz §12B. `fetch current SHA → merge → update → independent full read-back → prijavi commit`. Ako remote upis ne uspe, izričito `GITHUB_WRITE_BLOCKED`, bez lažne tvrdnje o uspehu.
+
+**Kratka poruka operatora za novu sesiju:** „Nastavi BlueLite v1.0. Polazni i jedini link je [Handoff](https://github.com/johnny-belgrade/windows/blob/main/BlueLite_Germanium_Handoff.md). Sam pročitaj njegovim redom Master (obavezna strategija), najnoviji Current i relevantne repo/Library izvore; primeni sva pravila timskog rada i upisa na GitHub. Prvo usaglasi poslednji dokaz, pa daj jednu sledeću potpunu komandu.”
+
+---
 
 > **OBAVEZNO ZA SVAKOG NAREDNOG CHATGPT NASLEDNIKA — PRE BILO KAKVOG KODA ILI KOMANDE**
 >
@@ -403,7 +421,7 @@ Posle svakog materijalnog operatorom potvrđenog milestone-a, asistent **MORA** 
 
 ## 14. Kompaktni „Never forget“ za naslednika
 
-1. **Master FIRST; Current TOP; Handoff; UUP Evidence; Sources; Library FIRST.** Nijedna nova analiza ili komanda pre toga.
+1. **JEDINI BOOTSTRAP LINK Handoff → Master FIRST normative → Current TOP live → UUP Evidence → Sources → contracts/intelligence → relevant Library.** §0 je kanonski redosled; nijedna nova analiza ili komanda pre njega.
 2. **26300 GA PRIMARY**; 26200 historical regression, 26100 servicing core; ne hardkodirati 26300.9711 kao večno aktivan build.
 3. `C:\work` canonical; PS7 Admin; **jedna kompletna komanda**, tačan log, lokalno operator jedini izvršava; **offline WIM**, Total Commander/Explorer zatvoreni pre mount/unmount.
 4. Originalni UUP ZIP, immutable WIM, originalni queue fingerprint i već provereni payload nisu potrošna staging putanja; **transport URL jeste**. Osvežava se JIT sa `out+checksum` identitetom; **S06 26300 ovo stvarno potvrđuje**.
@@ -416,4 +434,4 @@ Posle svakog materijalnog operatorom potvrđenog milestone-a, asistent **MORA** 
 
 ---
 
-**Održavanje:** ovaj dokument je stabilan operativni ugovor i precizna mapa istorijskog znanja. Nove izvršne rezultate dodavati u **Current**, ne ponovno u ogromne `Chats*.md` transkripte. Kada se trajno promeni arhitektura ili istorijska matrica prenosivosti, revidirati handoff uz SHA/commit i obrazloženje; promena norme ide u Master. **`ChatsGPT_15.md` je već nezavisno arhiviran i provereno čitljiv na `archive/chatsgpt15-20261017`; njegovo uklanjanje isključivo sa `main` može biti zasebna tačno autorizovana akcija.** Očuvati archive branch i originalnu Library evidenciju; bez njihove provere ne brisati jedinstvene izvore.
+**Održavanje:** ovaj dokument je stabilan jedini početni link, ali nije zamena za normativni Master ili živi Current. Nove izvršne rezultate dodavati u **Current**, ne opet u `Chats*.md` transkripte. Kada se trajno promeni arhitektura ili matrica prenosivosti, revidirati Handoff uz SHA/commit; promena norme ide u Master. **`ChatsGPT_15.md` je već uklonjen sa `main` i sačuvan na `archive/chatsgpt15-20261017`; kompletni raniji Current je arhiviran na `archive/current-status-precompact-20261017`.** Očuvati originalne Library dokaze i arhivske grane.
