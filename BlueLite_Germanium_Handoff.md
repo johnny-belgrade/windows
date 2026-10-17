@@ -1,12 +1,12 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.3.2 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-17 (impact-first PRE_MAX/offline priority; S13 audit-only evidence)  
+**Verzija dokumenta:** 1.4.0 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-17 (potvrđeni S01–S22 native dokazi; S23 komanda već kopirana, nije izvršena)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
 **Vlasnik cilja i lokalnog izvršavanja:** operator; **inženjerski saradnik:** ChatGPT.  
 **Normativna osnova:** [`BlueLite-Master_Germanium_Strategy_final.md`](BlueLite-Master_Germanium_Strategy_final.md), v6.0.0.  
-**Živi kompaktni dnevnik:** [`BlueLite_Current_Status.md`](BlueLite_Current_Status.md). **Puna istorijska arhiva (pre kompaktovanja):** [Current archive](https://github.com/johnny-belgrade/windows/blob/archive/current-status-precompact-20261017/BlueLite_Current_Status.md), blob `c8dafcf9f45f8652ef4b5fbcee0a3e9293989b2c`.  
+**Živi kompaktni dnevnik:** [`BlueLite_Current_Status.md`](BlueLite_Current_Status.md). **Hronološki izvršni dnevnik komandi/rezultata S01–S22:** [`BlueLite_26300_Stage1_Execution_Chronology_20261016-17.md`](BlueLite_26300_Stage1_Execution_Chronology_20261016-17.md). **Puna istorijska arhiva (pre kompaktovanja):** [Current archive](https://github.com/johnny-belgrade/windows/blob/archive/current-status-precompact-20261017/BlueLite_Current_Status.md), blob `c8dafcf9f45f8652ef4b5fbcee0a3e9293989b2c`.  
 **Historijski UUP dokazni indeks:** [`BlueLite_UUP_Evidence_Reconciliation_20261013.md`](BlueLite_UUP_Evidence_Reconciliation_20261013.md).  
 **Celokupan spoljašnji katalog:** [`BlueLite_Sources.md`](BlueLite_Sources.md).  
 **Repo:** <https://github.com/johnny-belgrade/windows>; branch `main`.
@@ -185,9 +185,9 @@ Za **sledeći** 26300 izvor URL se **dinamički izvodi iz njegovog originalnog l
 
 **Relevantne reference:** [Current S02–S06](BlueLite_Current_Status.md), [Evidence G2/G3/G4](BlueLite_UUP_Evidence_Reconciliation_20261013.md#g2-r26-d2s-terminal-windows-queue-check-uses-the-same-file-as-active-and-original), originalni Library `BlueLite_R28_Real_UUPDump_QueueProbe.ps1`, `BlueLite_R33_Real_Aria2_Transport_Smoke.ps1` + `.txt`, `BlueLite_R26_D6_Germanium_Source_Audit.txt`, originalni D6 ZIP, S05 i S06 review ZIP; <https://aria2.github.io/manual/en/html/aria2c.html>. **Nikad ne mešati originalni source ZIP, već preuzeti payload i privremeni HTTP URL.**
 
-## 6. Trenutni PRIMARY 26300.9711 — već potvrđeno S01–S06 (snapshot 2026-10-17)
+## 6. Istorijski snapshot S01–S06 (superseded aktuelnim §6.2)
 
-**Uvek prvo proveri Current za noviji status, pa tek onda ovaj snapshot.** Početne stare UUP Evidence tvrdnje `26300_UUP_EVER_DOWNLOADED=NO` bile su **tačne na 2026-10-16 pre S01**, sada su **superseded**: *kontrolni ZIP i stvarni AppsOnly payload jesu pribavljeni*, dok puni Windows UUP, v127 conversion i MAX_PRE **nisu izvršeni**.
+**Ovo je istorijsko stanje pre S07 — ne trenutni STOP.** Tada je već bio pribavljen originalni ZIP i stvarni S06 AppsOnly cache; Full Windows/v127 WIM nisu još postojali. **S16 Full, S21 konverzija i S22 originalni WIM baseline od tada stvarno imaju PASS.** Poslednji checkpoint je §6.2 i vrh Current-a.
 
 | Faza | Pravi dokaz i podaci | Završna klasifikacija |
 |---|---|---|
@@ -211,11 +211,25 @@ Za **sledeći** 26300 izvor URL se **dinamički izvodi iz njegovog originalnog l
 - `C:\work\logs\BlueLite_Stage1_S05_26300.9711_D6_Audit.txt`; `...S05_26300.9711_D6_Adapter.json`; S01–S04 receipt-i analogno.
 - **Dodatni report za granularni G4 provider graf**, ako je potreban pri serijskom runtime certificiranju: `C:\work\E2E\BlueLite_Stage1_S06_26300_9711_2b22470a\Queues\ResolveAppDependencies.log`. Ovaj zasebni log nije bio dostavljen uz dva završna S06 fajla: ne pretvarati 32−27=5 u izmišljenu listu tačno pet zasebnih framework identiteta.
 
-**D6 log još sadrži** `DRAFT_NOT_RUNTIME_CERTIFIED=TRUE` / `DRAFT_DOWNLOAD_PATH_NOT_RUNTIME_CERTIFIED=TRUE`, što se odnosi na **celi** istorijski downloader / konverzioni lanac, a ne poništava ograničeni **stvarni S06 AppsOnly PASS**. Full 26300 Windows `Download` mode ostao je namerno zabranjen u S06. **Nema 26300 install.wim, final ISO, NTLite ili VM runtime rezultata.**
+**S06 log istorijski** sadrži `DRAFT_NOT_RUNTIME_CERTIFIED=TRUE`; on nije bio dokaz Full Windows download-a. S06 Full branch je tada bio zabranjen. **Kasniji S15/S16 Full i S21/S22 WIM imaju stvaran, nezavisan PASS.** Final ISO, MAX_PRE, NTLite i VM i dalje nemaju runtime PASS.
 
 ### 6.1 Konkretni postojeći fajlovi — ne praviti ih ponovo
 
 Na operatorskom hostu `C:\work\scripts` nalaze se prethodno dostavljeni S04/S05/S06 skript paketi; njihove hashove i tačnu verziju proveriti pre poziva. Za S06 ZIP: `BlueLite_Stage1_S06_26300_G4_AppsOnly.zip` (16 ZIP članova, 14 u SHA manifestu) sadrži modifikovani **D6 main**, originalne D4/strict G4/filter/verify/module fajlove, `BlueLite_Stage1_S06_26300_AppsOnly.ps1`, README, manifest. S05 ZIP analogno sadrži adapter i pozitivne/negativne fixture-e; originalni D6 review ZIP je na operatorskom hostu i u Library. **Ne pisati novi downloader, resolver ili URL-renewer od nule** bez specifičnog dokaza da taj modul ne može da podrži sledeću izmenu.
+
+### 6.2 AKTUELNI 26300.x CHECKPOINT — S01–S22, 17. oktobar 2026.
+
+**Za preciznu hronologiju, izvršne komande, konkretne putanje, SHA-256, greške i korekcije:** [BlueLite_26300_Stage1_Execution_Chronology_20261016-17.md](BlueLite_26300_Stage1_Execution_Chronology_20261016-17.md). To je centralni datirani dokazni indeks; Current na vrhu ima prvenstvo pri narednom koraku. Istorijski S01–S06 deo iznad ostaje radi provenijencije, ne kao trenutno stanje.
+
+1. **S01–S06:** 26300.9711 originalni ZIP i source frozen, Windows 98 + Apps 2798 originalnih queue zapisa. Originalni S02 parser FAIL-CLOSED i prvi S03 URL 404 ispravljeni, v127 SHA verified, S04 SourceContract v1 PASS; S06 stvarni AppsOnly **27 seed → 32 dependency-closed SHA-verified fajla, 115.765.780 B**, G4 PASS. Nije bilo slepog sečenja Windows/FoD/Delta izvora.
+2. **S07–S14:** native Full source/code/G4 proof, S09 AST+6 neg fixtures, S10 Apps cache 32/32 offline G4, S11–S13 drugi 26300.9807 UUID/v128m source/audit ONLY, S14 negativnih Full pre-transfer gate-ova 5/5 PASS. Nije pokrenut 9807 GB download ni konverter.
+3. **S15–S16:** S15 A01 wrapper HOLD pre mreže zbog PowerShell string sidra, R1 ispravljen; S15-R1 A02 native D6 **Download EXIT 0**, 98 Windows i ponovna upotreba 32 S06 AppX bez re-download-a. Wrapper pogrešno zahteva 130 fizičkih datoteka pa beleži HOLD; S16 nezavisno proverava **98 + 32 − 1 isti AggregatedMetadata.cab = 129 fajlova**, tačno **8.992.976.071 B**, sva SHA i source checksum PASS. **Combined S15 native D6 + S16 = Full UUP CERTIFIED**; A02 istorijski HOLD ostaje originalan.
+4. **S17–S20-R2:** stvarno raspakovan pinned v127, pregledan stvarni `convert-UUP.cmd` (v127), odvojeni PRE-ISO profil `AutoStart=1, AddUpdates=1, Cleanup=0, ResetBase=0, NetFx3=0, SkipISO=1, SkipWinRE=1, SkipEdge=1, CustomList=1, SkipApps=0` sa pet staging aplikacija. S20 jednom kopirao originalnih 129 UUP fajlova + toolchain; S20 HOLD = v127 placeholder `UUPs\.README` 134 B. R1 samo identifikovao, R2 sačuvao placeholder izvan `UUPs`, promovisao **izolovani owned workspace** sa 129/129, bez još jednog kopiranja 9 GB.
+5. **S21 STVARNA WIM REKONSTRUKCIJA PASS:** v127 `convert-UUP.cmd` iz `C:\work\E2E\BlueLite_Stage1_S20_26300.9711_ConverterWorkspace` je izvršen i završio exit0; integrisani updates, pet staging AppX i dependency frameworks. Izgrađen jedan `install.wim` u `...\ConverterWorkspace\26300.9711.261009-2244.26H2_GE_RELEASE_SVC_PROD1_CLIENTPRO_OEMRET_X64FRE_EN-US\sources\install.wim`. **Fizički 8.969.178.010 B**, SHA `587B1A065B85ED08FE5D9E71E60D5E3B1406B5FEF061FFC2E8F0267425DBB228`; Index1 Windows 11 Pro. Bez ISO; original WIM **immutable**. S21 console native output je bio skriven zbog redirekcije — buduće skripte moraju pokazivati glavne faze uživo.
+6. **S22 READONLY WIM BASELINE PASS:** DISM stvarno dokazuje `10.0.26300.9711`/x64/en-US/Pro, 180.859 fajlova i 46.544 direktorijuma, logički WIM `30.827.019.416 B` (**nije instalirani footprint**). ReadOnly mount, 7 logičkih grupa (WinSxS `20.685.661.238 B`, System32 `4.338.472.669 B` uz 2 scan greške, SystemApps `1.462.030.403 B`, SysWOW64 `1.063.484.460 B`, DriverStore `496.365.021 B`, WindowsApps `283.245.842 B`, servicing/Packages `121.889.031 B`); `/Unmount-Image /Discard` PASS, **no mounted images**. WinSxS/logički folderi se hardlinkovima/preklapanjem dele: ovo **nisu** fizički oslobađajući GB.
+7. **STOP/ONE NEXT:** operatoru je kompletna **S23** PS7 Admin komanda **već predata i kopirana**; još **nema S23 operator loga**, ne izmišljati PASS. S23 prvo stvara jednu SHA-proverenu **owned mutable** WIM kopiju u `C:\work\E2E\BlueLite_Stage1_S23_26300.9711_MUTABLE\install.wim`, zatim `DISM /Image:<owned ReadOnly mount> /Get-Packages`, `/Get-Capabilities`, `/Get-Features`, `/Get-ProvisionedAppxPackages`, pa dismount `/Discard`; četiri native loga i glavni `C:\work\logs\BlueLite_Stage1_S23_26300.9711_MUTABLE_Inventory.txt`. **Ne nuditi novu komandu dok ne stigne operaterski S23 rezultat.**
+
+**Operatorsko trajno pravilo:** PS7 Admin, **jedna kompletna komanda**, dugotrajne native operacije sa **numerisanim vidljivim glavnim koracima i relevantnim progress-om na konzoli uz log**, bez nepotrebnog `Read-Host` odobrenja već datog u razgovoru. Zatvoriti Total Commander/Explorer pre mount/unmount; ne mutirati live host; rollback/mount/hive closeout. **R133 26200** jedini stari fizički regresioni WIM privremeno zadržati; izvorni 26300 ZIP/UUP/immutable WIM zaštićeni. Priority **impact-first NETO fizički reclaim**, ne beskrajni lov na sitne pakete. MAX_PRE, Stage2, NTLite, VM, Defender ON/OFF, final ISO 3,5–5 GB, footprint 11–15 GB i release još nisu potvrđeni.
 
 ## 7. Dokazna mapa istorijske 26200 baze koju MORAMO da prenesemo, ali provereno
 
@@ -447,12 +461,12 @@ Posle svakog materijalnog operatorom potvrđenog milestone-a, asistent **MORA** 
 2. **26300 GA PRIMARY**; 26200 historical regression, 26100 servicing core; ne hardkodirati 26300.9711 kao večno aktivan build.
 3. `C:\work` canonical; PS7 Admin; **jedna kompletna komanda**, tačan log, lokalno operator jedini izvršava; **offline WIM**, Total Commander/Explorer zatvoreni pre mount/unmount.
 4. Originalni UUP ZIP, immutable WIM, originalni queue fingerprint i već provereni payload nisu potrošna staging putanja; **transport URL jeste**. Osvežava se JIT sa `out+checksum` identitetom; **S06 26300 ovo stvarno potvrđuje**.
-5. **Stage1 S01–S06 actual PASS do AppsOnly 32/32 / 115765780 B**. **No full Windows payload, no v127 converter, no 26300 WIM/ISO, no MAX_PRE**, iako S03 converter arhiv SHA PASS.
+5. **Actuelno S01–S22 runtime:** S06 AppsOnly 32/32, S16 Full UUP 129/129 verifikovanih fizičkih fajlova, S21 v127 `install.wim` i S22 read-only 26300.9711 image PASS. **S23 je dat operatoru, ali rezultat još nije dostavljen. MAX_PRE/NTLite/VM/ISO/footprint/release nisu sertifikovani.** §6.2 i hronološki dnevnik imaju detalje.
 6. Stari R15/R133/18C/44–48, R7/R142, Sense itd. **biblioteka certifikovanih ili odbijenih varijanti**, ne blanket dozvole za 26300. G4 provider dependency engine već postoji.
 7. Final staging **5** ≠ common-base keep **4**; Store/AppInstaller final absent; policy strogo prati manifest. Windows Update pauza do 2100 uz Resume; Defender common ON pa razgranati; VM **HOST** floor.
 8. Zadržati servicing-consistent CBS/WinSxS; ne rezati fizički shared/persistent WinSxS bez owner i health/pending testa. „Repairable“ je gate failure, ne prihvatljiv shortcut.
 9. `Current` je **jedan centralni živi dnevnik rada**: nakon svakog potvrđenog operatorovog koraka upis+read-back. Izvršen operatorov log nadjačava ranije `DELIVERED`, ali ne proglašava nepotvrđene faze uspešnim.
-10. **Operator je zatražio nastavak kroz samo jednu sledeću READ_ONLY S07 komandu**, nakon repo arhiviranja; **full Windows UUP download/converter/MAX_PRE nisu odobreni** time. Nakon S07 stvarnog loga nastaviti Full queue source-adapter/G4 detalj/v127/MAX_PRE zavisnosti po jednom koraku, bez vraćanja na stare analize.
+10. **Operator je već kopirao kompletnu S23 komandu.** Tačno jedna sledeća očekivana radnja je obrada operatorskog `BlueLite_Stage1_S23_26300.9711_MUTABLE_Inventory.txt` plus četiri native inventara, ne novi download, konverter ili dupliranje S23 skripte. Zatim tek prvi build-resolved high-impact MAX_PRE target.
 
 ---
 
