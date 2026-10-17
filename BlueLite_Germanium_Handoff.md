@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.5 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-17 (S33 actual 740/740 AppInstaller owner PASS; S34 AppX lifecycle read-only registry analysis pending)  
+**Verzija dokumenta:** 1.5.6 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-17 (S33 actual native 740/740 PASS, exact S34 copied-hive read-only registry gate DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -831,6 +831,36 @@ Common base **Defender ON** dok ne prođe certificirana zajednička baza; nakon 
 - **Closeout:** readonly `DISM_DISCARD_EXIT=0`, owned mount released, `S31_WIM_SHA256_UNCHANGED=True`, no WIM or registry mutation. Terminal literal `RESULT=PASS_S33_9711_READONLY_APPINSTALLER_NATIVE_OWNER_740`. `OFFLINE_APPX_REGISTRY_LIFECYCLE=NOT_TESTED` and `APPINSTALLER_REMOVAL_AUTHORITY=NOT_GRANTED`; physical/logical compressed savings not measured. No AppX deprovision/carve/NTLite/VM/release.
 - **Historical Library comparison:** 26200.9711 original `BlueLite_R125_R113_AppInstaller_ShortMount_OwnerGate.txt` is source-verified native 740/740 owner PASS. `BlueLite_R126_R2_R113_R4_AppInstaller_Transactional.ps1` defines **exact** 5 AppX offline registry prestate keys `Applications\Microsoft.DesktopAppInstaller_2024.401.617.0_neutral_~_8wekyb3d8bbwe`, `Config\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe`, `Staged\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe` with 4 package roots + 2 provider association child keys `Microsoft.UI.Xaml.2.8_8.2310.30001.0_x64__8wekyb3d8bbwe`, `Microsoft.VCLibs.140.00.UWPDesktop_14.0.30704.0_x64__8wekyb3d8bbwe`, `WOW6432Node\...\Config\family`, `CapabilityAccessManager\...\broadFilesystemAccess\Apps\family`, and expects `Deprovisioned\family` ABSENT before deprovision. `BlueLite_R132_to_R133_Marker_RegistryAPI.diff` proves need to inspect empty leaf via Windows Registry API rather than guessing from `reg query /s`. All values/owners and roots must be rediscovered on CURRENT 26300 WIM; do not infer registry state from 740/740.
 - **ONE NEXT = S34 (NOT_DELIVERED at this first update):** readonly S31 WIM mount, copy *only* offline SOFTWARE hive for external read-only inspection through temporary HKLM alias (clean unload), enumerate exact target AppxAllUserStore/Config/Staged/Applications/WowConfig/BroadFS/Deprovisioned keys and six Staged children, distinguish target-scoped provider associations from provider-owned keys, verify five selected staged apps and framework providers, close with /Discard and hash proof. Emit only source-bound gate; no WIM clone, AppX mutation, registry changes on WIM, ACL, WinSxS carve or R133 promotion. Precise S34 source and output names to be pinned in §8.20 only after creating/checking reviewed code. Runtime `S34=NOT_RUN`.
+
+### 8.20 S34 EXACT DELIVERED NEXT STEP — read-only offline AppX registry prestate, PINNED (17.10.2026)
+
+**Status: `S34=DELIVERED_NOT_RUN`; current `S33=NATIVE_OPERATOR_PASS`.** No S34 log yet, no removal. S34 is the **narrow next dependency** after S33 native 740/740 owner proof.
+
+- **GitHub source EXACT reviewed and fetched/read-back:** `development/BlueLite_Stage1_S34_26300.9711_AppInstaller_RegistryTopologyReadOnly.ps1`, immutable full commit `7c1b2e0fe16a1ee700e12e464a31980cf55ee2fd`, Git blob SHA1 `defc2f4b29291c981a8fecb92ec0a9bbd73b9408`, SHA256 **`48D009F60576667FF704BBCF110CEF97674EE3A463122BBE3D507953C9EF7478`**, 11,387 ASCII bytes; source matches independent Contents API readback; no claim of live PowerShell AST or execution.
+- **One complete PowerShell 7 Admin operator command, no manual edits** (first close Total Commander and Explorer windows at `C:\BL34M` and `C:\work\E2E`):
+
+```powershell
+& {
+    $ErrorActionPreference = 'Stop'
+    $dest = 'C:\work\scripts\BlueLite_Stage1_S34_26300.9711_AppInstaller_RegistryTopologyReadOnly.ps1'
+    $url = 'https://raw.githubusercontent.com/johnny-belgrade/windows/7c1b2e0fe16a1ee700e12e464a31980cf55ee2fd/development/BlueLite_Stage1_S34_26300.9711_AppInstaller_RegistryTopologyReadOnly.ps1'
+    $expected = '48D009F60576667FF704BBCF110CEF97674EE3A463122BBE3D507953C9EF7478'
+    if (-not (Test-Path -LiteralPath 'C:\work\scripts' -PathType Container)) { throw 'BLUELITE_SCRIPTS_MISSING' }
+    if (Test-Path -LiteralPath $dest) { throw 'S34_LOCAL_SCRIPT_ALREADY_EXISTS_NO_OVERWRITE' }
+    Invoke-WebRequest -Uri $url -OutFile $dest -ErrorAction Stop
+    $hash = (Get-FileHash -LiteralPath $dest -Algorithm SHA256).Hash
+    if ($hash -cne $expected) {
+        Remove-Item -LiteralPath $dest -Force
+        throw "S34_SOURCE_PIN_FAILED=$hash"
+    }
+    Write-Host "S34_PINNED_SOURCE=PASS;$hash"
+    & (Join-Path $PSHOME 'pwsh.exe') -NoProfile -ExecutionPolicy Bypass -File $dest
+}
+```
+
+- **Execution contract (only this):** S34 pins S33 original 1282-B `...NativeOwnerGate.txt` SHA `FDA524744AB0626DD7155DDA71490B365ED3C51E6770C1884470ADF4565A69BA`, S32 main `...ReadOnlyGate.txt` SHA `0F8501CAE72CEDBE7450E0F4025F6E6E22C3564EBEC3751E03149BB6A750D5E2`, S31 committed current WIM 6,509,216,853 B SHA `F52389FA66F8B60D56661C8786EC99409FB95447403B3C6FCBB94121EF8E340B`; no preexisting DISM mounts. Mounts `C:\BL34M` **ReadOnly**, checks five fields and exact 10 AppX provisions (five staging + five shared providers). Copies exclusively **offline SOFTWARE hive** into own disposable `C:\work\logs\BlueLite_Stage1_S34_26300.9711_RegistryAudit` under a temp unique `HKLM\BL34_<PID>` namespace, reads with .NET `Registry.LocalMachine.OpenSubKey(..., false)`. This temporary alias points only to copied OFFLINE image hive, not host SOFTWARE. No writes to original Windows registry/configuration or image. Enforces **EXACT** prestate: `Applications\bundle`, `Config\family`, `Staged\family`, `WOW6432Node\Config\family`, `broadFilesystemAccess\Apps\family` present, `Deprovisioned\family` absent; `Staged` six children exactly: four S32 package roots and two R126 observed DesktopAppInstaller-scoped provider association keys. Any variation is `HOLD` and retained as a scoped variant discovery, **not a forced rewrite**. Captures names/child counts/registry snapshot JSON, not secret user data values. Unloads temporary hive, deletes its owned disposable SOFTWARE copy, read-only `/Discard`, verifies WIM SHA unchanged. Source has no WIM/CBS/AppX, ACL or original hive mutation. R133 mutation remains `NOT_AUTHORIZED` even on S34 PASS.
+- **Send ONLY the original main report** `C:\work\logs\BlueLite_Stage1_S34_26300.9711_AppInstaller_RegistryTopologyReadOnly.txt` and original JSON `C:\work\logs\BlueLite_Stage1_S34_26300.9711_AppInstaller_RegistrySnapshot.json` if created. Terminal anticipated `PASS_S34_9711_APPINSTALLER_REGISTRY_PRESTATE_READONLY` **or** `HOLD_S34_APPINSTALLER_REGISTRY_TOPOLOGY_READONLY`; no false PASS. If a handle blocks unload, report exact `HIVE_UNLOAD_ERROR` and existing mount/alias, do not force unmount.
+- **Endpoint:** `S31=COMMITTED_PASS`, `S32=READONLY_PASS`, `S33=READONLY_NATIVE_OWNER_PASS`, `S34=DELIVERED_NOT_RUN`, `APPINSTALLER_26300_R133_APPLY=NOT_AUTHORIZED`. GitHub Handoff, Current and RecipeRegistry now independently updated per §0R; legacy cleanup postponed, Master unchanged.
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
