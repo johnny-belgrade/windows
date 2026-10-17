@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.3 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-17 (S32 actual read-only AppInstaller 740-file gate PASS; S33 native owner closure research planned)  
+**Verzija dokumenta:** 1.5.4 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-17 (S32 native 740-file audit PASS, S33 SHA-pinned hardlink owner-gate DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -795,6 +795,34 @@ Common base **Defender ON** dok ne prođe certificirana zajednička baza; nakon 
 - **Four AppInstaller roots (exact identity and contents):** `Microsoft.DesktopAppInstaller_1.21.10121.0_neutral_split.scale-100_8wekyb3d8bbwe` 28 files/36,084 B; `...neutral_split.scale-125...` 28/39,330 B; `Microsoft.DesktopAppInstaller_1.21.10121.0_x64__8wekyb3d8bbwe` 681/148,010,477 B; `Microsoft.DesktopAppInstaller_2024.401.617.0_neutral_~_8wekyb3d8bbwe` 3/51,837 B. **Total 740 files/148,137,728 B logical=~141.275 MiB**. **Every one 740 entries** `ReparsePoint=True`, attributes `Archive, SparseFile, ReparsePoint`. This exactly matches historic 26200.9711 R125/R133 four-root counts and logical byte totals, plus literal root revisions. It **does not prove** hardlink exclusivity, unique reclaimable bytes, package owner/registry state or AppInstaller lifecycle/removal. All four are current 26300 inventory not 26200 copied values.
 - **Library original R125/R133 cross-check:** R125 original `BlueLite_R125_R113_AppInstaller_ShortMount_OwnerGate.txt` independently states `R125_OWNER_CLOSURE=PASS_740_OF_740_SHORT_MOUNT_NO_EXTERNAL_LINKS` and `NATIVE_ERRORS_0` on 26200.9711; R133 original `BlueLite_R133_R4_26200_9711_Transaction.txt` has `R130_NATIVE_HARDLINK_OWNER=PASS_740`, 4 original roots and 4 final keeps after R4 transaction, physical roots absent/CBS clean/commit. `BlueLite_R126_R2_R113_R4_AppInstaller_Transactional.ps1` and `BlueLite_R132_to_R133_Marker_RegistryAPI.diff` original Library source confirm exact offline lifecycle/marker dependency and native owner gate. **No permission to reuse hardcoded SID/owner links or mutate 26300 yet**.
 - **CURRENT NEXT S33 (separate delivery, NOT_RUN):** source/hash pinned S32 logs + committed S31 WIM; a single **SHORT-PATH RO mount**, validate all 740 CSV-derived identities and current four roots and run **native hardlink owner test on each exact file**, classify unique owned/multiple/foreign/native-error. DISM `/Discard` and verify S31 WIM SHA unchanged. No WIM clone, no SOFTWARE hive/reg writes, no DISM AppX remove, ACL grant or raw directory removal. `PASS` only if all 740 have exact internal ownership / no foreign or malformed output. R133 AppInstaller mutation needs separate 26300 offline registry lifecycle owner gate and observed-delta proof afterward.
+
+### 8.18 S33 EXACT DELIVERED NEXT STEP — pinned read-only native AppInstaller owner gate (17.10.2026)
+
+**STATUS = `DELIVERED_NOT_RUN`, NOT NATIVE PASS.** S32 original log/CSV verified; no S33 runtime report exists yet. S33 is a targeted successor of 26200 R125 short-mount hardlink owner test, NOT production R133 mutator.
+
+- **Reviewed stored source:** `development/BlueLite_Stage1_S33_26300.9711_AppInstaller_NativeOwnerGate.ps1` GitHub full exact commit `1028a56e3398f6f05015bcc0d7f1dcce9afbf0e2`, Git blob SHA1 `9ac5c68e671cacdba31563686e0cac5e0b76665f`, SHA256 **`F04CAB0409A76606B4137EB66A5AD48A48A7CC2938C3FD129539A56C8CB60552`** (9,473 ASCII bytes). Original source preserved on GitHub, full byte readback confirmed. No assertion of native PowerShell AST or operator execution. This is **one exact script**, no local editing.
+- **Operator's complete PS7 Admin command** (close Total Commander and Explorer windows using `C:\work\E2E` or `C:\BL33M` before running):
+
+```powershell
+& {
+    $ErrorActionPreference = 'Stop'
+    $dest = 'C:\work\scripts\BlueLite_Stage1_S33_26300.9711_AppInstaller_NativeOwnerGate.ps1'
+    $url = 'https://raw.githubusercontent.com/johnny-belgrade/windows/1028a56e3398f6f05015bcc0d7f1dcce9afbf0e2/development/BlueLite_Stage1_S33_26300.9711_AppInstaller_NativeOwnerGate.ps1'
+    $expected = 'F04CAB0409A76606B4137EB66A5AD48A48A7CC2938C3FD129539A56C8CB60552'
+    if (-not (Test-Path -LiteralPath 'C:\work\scripts' -PathType Container)) { throw 'SCRIPT_DIR_MISSING' }
+    if (Test-Path -LiteralPath $dest) { throw 'S33_SCRIPT_EXISTS_NO_OVERWRITE' }
+    Invoke-WebRequest -Uri $url -OutFile $dest -ErrorAction Stop
+    $hash = (Get-FileHash -LiteralPath $dest -Algorithm SHA256).Hash
+    if ($hash -cne $expected) { Remove-Item -LiteralPath $dest -Force; throw "S33_DOWNLOAD_HASH_MISMATCH=$hash" }
+    Write-Host "S33_SOURCE_SHA256=PASS;$hash"
+    & (Join-Path $PSHOME 'pwsh.exe') -NoProfile -ExecutionPolicy Bypass -File $dest
+}
+```
+
+- **Exact S33 operations:** fail-closed pin S32 main 3,275 B SHA `0F8501CAE72CEDBE7450E0F4025F6E6E22C3564EBEC3751E03149BB6A750D5E2`, S32 CSV 133,484 B SHA `5828C1540CC39B06CB73DB00C5D4604752A2D3BF9BB0039A7C11F005DB8B5B95`, S31 WIM 6,509,216,853 B SHA `F52389FA66F8B60D56661C8786EC99409FB95447403B3C6FCBB94121EF8E340B`; independently check exact four AppInstaller root counts/sizes, 740 unique CSV file paths, 740 reported reparse/sparse states. Require no preexisting DISM WIM mounts. Create only owned **short** `C:\BL33M` ReadOnly mount to work around earlier long-path `fsutil` difficulties; prove all five mount identity fields. Per exact CSV target file call native `fsutil hardlink list`, demand exactly one resolved link path equal to the file under owned mount; any multiple, foreign or native error records a bounded `HOLD` and anomalies CSV. Always attempt `/Unmount-Image /Discard`, verify mount release and original S31 WIM SHA. S33 does **not** load any offline hive, grant ACL, remove AppX, change WIM, or promote R133, and native fsutil list is not physical byte reclaim measurement.
+- **Outputs**: always primary `C:\work\logs\BlueLite_Stage1_S33_26300.9711_AppInstaller_NativeOwnerGate.txt`; if anomalies, accompanying `C:\work\logs\BlueLite_Stage1_S33_26300.9711_AppInstaller_OwnerAnomalies.csv`. Terminal successful narrow status `PASS_S33_9711_READONLY_APPINSTALLER_NATIVE_OWNER_740`, otherwise `HOLD_S33_READONLY_APPINSTALLER_NATIVE_OWNER`, with exact reason. **No automatic S34 or R133 mutation from S33 PASS**; next stage separate operator-reviewed 26300 offline registry/manifest dependency gate first.
+- **Session endpoint:** `S31=COMMITTED_PASS`, `S32=NATIVE_READONLY_PASS`, `S33=DELIVERED_NOT_RUN`, `APPINSTALLER_R133_26300_MUTATION=NOT_AUTHORIZED`. Complete code and log paths frozen in this Handoff per §0R. Do not change Master. Legacy duplicate Handoff cleanup explicitly deferred by operator.
+
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
