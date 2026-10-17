@@ -2,6 +2,7 @@
 
 **As of:** 2026-10-17
 
+- **S29 package enumeration safeguard (historical Phase342/342-R1):** 26200 had 3 OneDrive neutral production targets + 2 servicing satellites; its `/Get-Packages` aggregate output FAILED to show all 5 family rows even though separate `/Get-PackageInfo` on each target succeeded. For 26300 enumerate matching servicing `.mum` identities and query individually; retain `/Get-Packages` only as pending overview, NOT a five-row family-count gate. The five count is 26200 historical, NOT a 26300 assumption. See Library `ChatGPT-4-25H2 26200.xxxx-20260929-1524.md`, Phase342/R1, and Handoff §8.12.
 ## 2026-10-17 — S28 REAL native GREEN removals 26300 COMMITTED PASS; S29 OneDrive AMBER read-only build resolver next
 
 - **Four real user-uploaded S28 logs and hashes:** `C:\work\logs\BlueLite_Stage1_S28_26300.9711_Native_GreenCapabilities.txt` 29,629 B SHA `7E54D4C1C51A65509F9C1294E0F18E01A230332CBD28CA24A854ECE1C7A0B5FC`; `..._Remove_DirectX.txt` 1,841 B SHA `4AF545B1BD4A4306E4A4AB820258B63103815ACB56AC4DC35F6168B264257BE9`; `..._Remove_LA57.txt` 2,686 B SHA `D8F67F03E28E3DA80EF824C9ADA613BC3724AC4DC2AF045074070CAD64B3ED40`; `..._PostHealth.txt` 192 B SHA `C1449EAD5504408A9BAA9E9AA576F6AE9C725C21732BB9455E59E708580B2717`.
