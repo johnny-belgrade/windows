@@ -176,9 +176,7 @@
             "retained dependencies present",
             "health clean"
           ],
-          "tested_builds": [
-            "26200.x"
-          ],
+          "tested_builds": [],
           "evidence_refs": [
             "BlueLite_Current_Status.md Edge WebView FoD"
           ]
@@ -201,7 +199,7 @@
           "scope": "Historical disposition; verify exact 26300 topology before mutation"
         }
       ],
-      "notes": "Standalone WebView shared-owner residue is a separate COMPONENT_ENGINE_HANDOFF."
+      "notes": "Standalone WebView shared-owner residue is a separate COMPONENT_ENGINE_HANDOFF. Exact historical source build identities must be re-read from matching operator logs; the x-series label is not an exact tested build."
     },
     {
       "recipe_id": "BL.CBS.OneDrive.NeutralSequence",
@@ -235,9 +233,7 @@
             "only documented servicing satellites change",
             "pending=0"
           ],
-          "tested_builds": [
-            "26200.x"
-          ],
+          "tested_builds": [],
           "evidence_refs": [
             "BlueLite_Current_Status.md OneDrive AMBER"
           ]
@@ -265,7 +261,7 @@
           "scope": "Historical disposition; verify exact 26300 topology before mutation"
         }
       ],
-      "notes": "Order current neutral -> WOW64 neutral -> old staged neutral; OneDriveBackup residue is separate HANDOFF."
+      "notes": "Order current neutral -> WOW64 neutral -> old staged neutral; OneDriveBackup residue is separate HANDOFF. Exact historical source build identities must be re-read from matching operator logs; the x-series label is not an exact tested build."
     },
     {
       "recipe_id": "BL.CBS.Sense",
