@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.1 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-17 (operator-mandated post-report documentation protocol; S31 real 26300 OneDrive AMBER COMMIT and clean ScanHealth)  
+**Verzija dokumenta:** 1.5.2 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-17 (mandatory report-first/two-write protocol; verified S31 AMBER COMMIT; S32 exact read-only operator command DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -760,6 +760,33 @@ Common base **Defender ON** dok ne prođe certificirana zajednička baza; nakon 
 - **Novi verified S31 target:** `C:\work\E2E\BlueLite_Stage1_S31_26300.9711_OneDriveAMBER\install.wim`, 6,509,216,853 B, SHA256 `F52389FA66F8B60D56661C8786EC99409FB95447403B3C6FCBB94121EF8E340B`. S31 container grew 41,731,722 B versus prior S28 due to WIM commit semantics; **ne zaključivati payload/ISO/installed byte savings** pre grouped export+scope proof. S21, S26, R133 nisu dirani; `ResetBase`, NTLite, VM nisu izvršeni.
 - **Dokazna granica:** S31 operatorov wrapper proverava protected *parent* ključeve pre lokalnih CBS koraka, ali originalni dostavljeni summary log ne sadrži nezavisan kompletan post-commit owner/parent dump. Ne tvrditi da je takav audit posebno urađen. Library 26200 Phase343/342-R2 i S29/S30 26300 poklapaju se u provereno relevantnoj topologiji; registry treba dodati `26300.9711` kao stvarno izvedenu variant evidenciju, ali ne otvarati automatsku `runtime_execution_allowed=true` bez kanonskog reviewed engine module SHA i negativnih fixtures.
 - **NEXT S32 (naredna zasebna isporuka, još NOT_RUN):** primarno jedan **read-only post-commit preflight i AppInstaller/R133 owner-topology gate** na HASH-pinned S31 WIM; bez re-download-a, novog CBS cleanup-a, OneDrive ponovnog uklanjanja, NTLite, VM ili ISO. Precizan izvršni kod/putanja i log treba da budu dopisani pre nego što se operatoru preda sledeća komanda, prema §0R.
+
+### 8.16 S32 — tačno predat sledeći PS7 Admin korak, `DELIVERED_NOT_RUN` (17.10.2026)
+
+- **Izvor komande je trajan i verzionisan**: `development/BlueLite_Stage1_S32_26300.9711_AppInstaller_ReadOnlyGate.ps1` na GitHub `main`, **pinovani commit** `5fee7286cb389802182efeb4434771f8c67108b7` (nije promenljivi `main` raw ref), **Git blob SHA1** `4336353dbce67eea60c8d31ca5ff7fe3dcb19346`, **source SHA256** `021BB724FD99942C02125F0635FD1AD34F150196F8F6739C571819C7E95B28E2` (11,330 bytes, 230 lines + trailing LF). Kôd je iz GitHub Contents izvora nezavisno pročitan posle upisa; bez tvrdnje da je izvršen ili da je PowerShell parser testiran na operatorskom hostu.
+- **Jedan kompletan operatorski PowerShell 7 Admin copy/paste korak** (zahtev za zatvorenim Total Commander-om i Explorer prozorima na potencijalnom mount direktorijumu pre pokretanja). Ovo preuzima **isključivo pinovani mali, open-source S32 izvor**, SHA256 ga proverava, upisuje ga samo u odobreni `C:\work\scripts`, zatim pokreće u podređenom PS7 procesu; bez automatskog UUP download-a, DISM debloat mutacije ili upotrebe NTLite:
+ 
+```powershell
+& {
+    $ErrorActionPreference = 'Stop'
+    $dest = 'C:\work\scripts\BlueLite_Stage1_S32_26300.9711_AppInstaller_ReadOnlyGate.ps1'
+    $url = 'https://raw.githubusercontent.com/johnny-belgrade/windows/5fee7286cb389802182efeb4434771f8c67108b7/development/BlueLite_Stage1_S32_26300.9711_AppInstaller_ReadOnlyGate.ps1'
+    $expected = '021BB724FD99942C02125F0635FD1AD34F150196F8F6739C571819C7E95B28E2'
+    if (-not (Test-Path -LiteralPath 'C:\work\scripts' -PathType Container)) { throw 'BLUELITE_SCRIPTS_DIR_MISSING' }
+    if (Test-Path -LiteralPath $dest) { throw 'S32_LOCAL_SCRIPT_ALREADY_EXISTS_NO_OVERWRITE' }
+    Invoke-WebRequest -Uri $url -OutFile $dest -ErrorAction Stop
+    $got = (Get-FileHash -LiteralPath $dest -Algorithm SHA256).Hash
+    if ($got -cne $expected) {
+        Remove-Item -LiteralPath $dest -Force
+        throw "S32_PINNED_SOURCE_SHA_MISMATCH=$got"
+    }
+    Write-Host "S32_SCRIPT_SOURCE_SHA256=PASS;$got"
+    & (Join-Path $PSHOME 'pwsh.exe') -NoProfile -ExecutionPolicy Bypass -File $dest
+}
+```
+- **Izvršni ugovor:** S31 committed WIM `C:\work\E2E\BlueLite_Stage1_S31_26300.9711_OneDriveAMBER\install.wim` 6,509,216,853 B / SHA256 `F52389FA66F8B60D56661C8786EC99409FB95447403B3C6FCBB94121EF8E340B`; exact S31 report/Scan SHA; none already mounted. Jedan **RO** mount i /Discard; pet OneDrive post-commit native non-resolving 0x800f0805 + no Setup payload + CheckHealth CLEAN; pet UUP staging AppX identities provisioned, Store absent; četiri tačna DesktopAppInstaller WindowsApps roots i target-local per-file logical size/reparse inventory CSV. **NEMA** novih CBS registry edit-a, OneDrive removing, AppX removing, cleanup, large WIM copy, hardlink-owner certifikacije ili finalnog ISO-a. S32 samo prikuplja dokaz potrebne 26300/R133 varijante; `HARDLINK_OWNER_CLOSURE=NOT_CERTIFIED` je eksplicitno stanje.
+- **Tačno očekivani output:** pošalji **samo** `C:\work\logs\BlueLite_Stage1_S32_26300.9711_AppInstaller_ReadOnlyGate.txt` **i** `C:\work\logs\BlueLite_Stage1_S32_26300.9711_AppInstaller_PhysicalInventory.csv` ako je kreiran. Rezultat `PASS_S32_9711_READONLY_APPINSTALLER_PREOWNER_GATE` znači samo read-only gate, ne dozvolu za fizički AppInstaller carve. Ako izvor ili GitHub nisu dostupni ili kontrola FAIL, korak je HOLD bez WIM mutacije, a narednu odluku donosimo nakon originalnog operatorovog output-a.
+- **STANJE U TRENUTKU UPISA:** `S31=NATIVE_OPERATOR_PASS`; `S32=DELIVERED_NOT_RUN`; `NEXT_OPERATOR_STEP=S32`; `STAGE1_FULL_ENGINE/NTLITE/VM/RELEASE=NOT_CERTIFIED`. Posle korisnikovog S32 report-a obavezno ponoviti §0R **prvo analiza i dvostruki GitHub upis, tek potom sledeći korak**.
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
