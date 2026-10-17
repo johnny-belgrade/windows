@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "registry_revision": "2026-10-17-s31-onedrive-26300-native-variant-r2",
-  "status": "DOCUMENTED_VARIANT_S31_NATIVE_PROVEN_NO_AUTOMATIC_26300_MUTATION_AUTHORITY",
+  "registry_revision": "2026-10-17-s32-appinstaller-26300-physical-candidate-r3",
+  "status": "DOCUMENTED_S31_NATIVE_AND_S32_READONLY_CANDIDATE_NO_AUTO_MUTATION",
   "scope": "Germanium 26300-first; 26200 historical topology references",
   "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
   "execution_rule": "All entries have runtime_execution_allowed=false until exact operator-reviewed engine_module SHA, current build topology predicates, disposable proof and release gates are supplied. Registry is not executable code.",
@@ -46,6 +46,72 @@
             "BlueLite_R133_R4_26200_9711_Transaction.txt",
             "BlueLite_R133_R4_PostCommit_ReadOnly.txt"
           ]
+        },
+        {
+          "variant_id": "26300.9711-S32-fourroot-candidate",
+          "source_family": "Germanium",
+          "supported_lineage": [
+            "26300.x"
+          ],
+          "topology_status": "UNKNOWN_DEPENDENCY",
+          "exact_selectors": [
+            {
+              "kind": "APPX_PFN",
+              "identity": "Microsoft.DesktopAppInstaller_8wekyb3d8bbwe"
+            },
+            {
+              "kind": "FILE",
+              "identity": "Program Files\\WindowsApps\\Microsoft.DesktopAppInstaller_1.21.10121.0_neutral_split.scale-100_8wekyb3d8bbwe"
+            },
+            {
+              "kind": "FILE",
+              "identity": "Program Files\\WindowsApps\\Microsoft.DesktopAppInstaller_1.21.10121.0_neutral_split.scale-125_8wekyb3d8bbwe"
+            },
+            {
+              "kind": "FILE",
+              "identity": "Program Files\\WindowsApps\\Microsoft.DesktopAppInstaller_1.21.10121.0_x64__8wekyb3d8bbwe"
+            },
+            {
+              "kind": "FILE",
+              "identity": "Program Files\\WindowsApps\\Microsoft.DesktopAppInstaller_2024.401.617.0_neutral_~_8wekyb3d8bbwe"
+            }
+          ],
+          "required_predicates": [
+            {
+              "kind": "SOURCE",
+              "target": "one S31 26300.9711 immutable-for-read-only WIM",
+              "expected": "6509216853 B SHA256 F52389FA66F8B60D56661C8786EC99409FB95447403B3C6FCBB94121EF8E340B; RO DISM mount /Discard; no pending; CheckHealth CLEAN"
+            },
+            {
+              "kind": "APPX",
+              "target": "provisioned DesktopAppInstaller and exact 4 roots",
+              "expected": "DISM AppX names 10 including five staging keep/apps; four roots exact files counts [28,28,681,3], logical bytes [36084,39330,148010477,51837], 740 files, total 148137728 B, reparse/sparse all 740",
+              "evidence_ref": "BlueLite_Stage1_S32_26300.9711_AppInstaller_PhysicalInventory.csv SHA256 5828C1540CC39B06CB73DB00C5D4604752A2D3BF9BB0039A7C11F005DB8B5B95"
+            },
+            {
+              "kind": "UNRESOLVED",
+              "target": "native 26300.9711 hardlink owner closure and exact offline AppX marker/provider registry owner state",
+              "expected": "NOT_TESTED in S32; historical 26200 R125 native 740/740 and R133 transaction do not authorize current 26300 mutation"
+            }
+          ],
+          "expected_post_state": [
+            "S32 read-only WIM SHA unchanged and mount /Discard released (PASS)",
+            "Current S32 only inventories 740 reparse/sparse projected files; hardlink ownership, unique physical savings, AppX lifecycle/removal NOT CERTIFIED",
+            "Future R4 controlled removal requires own disposable 26300 mutation, post 4 keep AppX, 0 AppInstaller roots, protected providers, CBS CLEAN/pending0 and post-commit read-only proof"
+          ],
+          "allowed_delta": [
+            "S32 read-only audit: no WIM/CBS/AppX/registry mutation and source WIM SHA unchanged"
+          ],
+          "tested_builds": [
+            "26300.9711"
+          ],
+          "evidence_refs": [
+            "C:\\work\\logs\\BlueLite_Stage1_S32_26300.9711_AppInstaller_ReadOnlyGate.txt SHA256 0F8501CAE72CEDBE7450E0F4025F6E6E22C3564EBEC3751E03149BB6A750D5E2",
+            "C:\\work\\logs\\BlueLite_Stage1_S32_26300.9711_AppInstaller_PhysicalInventory.csv SHA256 5828C1540CC39B06CB73DB00C5D4604752A2D3BF9BB0039A7C11F005DB8B5B95",
+            "BlueLite_R125_R113_AppInstaller_ShortMount_OwnerGate.txt (historic 26200)",
+            "BlueLite_R133_R4_26200_9711_Transaction.txt (historic 26200)",
+            "BlueLite_Germanium_Handoff.md §8.17"
+          ]
         }
       ],
       "protected_floor": [
@@ -77,9 +143,21 @@
           "source_kind": "OPERATOR_LOG",
           "reference": "BlueLite_R133_R4_PostCommit_ReadOnly.txt",
           "scope": "Historical 26200.9711 verified R4 post-commit"
+        },
+        {
+          "source_kind": "OPERATOR_LOG",
+          "reference": "BlueLite_Stage1_S32_26300.9711_AppInstaller_ReadOnlyGate.txt",
+          "sha256": "0F8501CAE72CEDBE7450E0F4025F6E6E22C3564EBEC3751E03149BB6A750D5E2",
+          "scope": "Actual S32 26300.9711 WIM post-commit RO gate: 4 exact DesktopAppInstaller roots and five staging AppX; no deletion or owner certification."
+        },
+        {
+          "source_kind": "OPERATOR_LOG",
+          "reference": "BlueLite_Stage1_S32_26300.9711_AppInstaller_PhysicalInventory.csv",
+          "sha256": "5828C1540CC39B06CB73DB00C5D4604752A2D3BF9BB0039A7C11F005DB8B5B95",
+          "scope": "Exact S32 CSV 740 root-relative unique files, 148137728 B logical all reparse/sparse; not unique reclaim or hardlink closure."
         }
       ],
-      "notes": "Historical 740-file number and explicit SID/root versions are not 26300 predicates.",
+      "notes": "Historical 740-file number and explicit SID/root versions are not 26300 predicates. S32 26300.9711 physical four-root/740-row/topology matches historical 26200 R125/R133, but native hardlink owner closure and offline AppX registry lifecycle are UNKNOWN_DEPENDENCY. Do not auto-run R133. S33 next RO hardlink gate. ",
       "contract_version": "1.0.0"
     },
     {
