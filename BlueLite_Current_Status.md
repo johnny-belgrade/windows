@@ -2,6 +2,8 @@
 
 **As of:** 2026-10-17
 
+- **FIRST-WRITE SYNC:** S35 Handoff v1.5.9 actual read-only PASS recorded commit `b435027662772b205f682bb37a826933f598e3dc`; RecipeRegistry provider self-Staged evidence commit `9271e5066465b33e3cf2e5c84cf6474f5bf2cb32`. S36 next proposed on OWNED DISPOSABLE RW cloned 26300 WIM: exact target family AppX registry lifecycle-only transaction and compare TEN to NINE (four app keeps plus five framework providers); preserve four target WindowsApps payload roots, **always /Discard the test mount**, remove disposable clone only once released; **no committed half-state or physical carve**. S36 source not yet delivered at this checkpoint.
+
 ## 2026-10-17 — S35 original operator PASS: AppInstaller two providers in OWN Staged branches / manifest dependencies confirmed on 26300.9711
 
 - **Original operator-uploaded files independently byte-checked (container + parsed JSON):** `BlueLite_Stage1_S35_26300.9711_AppInstaller_ProviderTopologyReadOnly.txt` **3,042 B / 49 lines** SHA256 **`B7B50189034A636B62A47627D6B14F5217AC752F995BD75BAC9533EF9B752DCD`**; `BlueLite_Stage1_S35_26300.9711_AppInstaller_ProviderSnapshot.json` **3,797 B / 93 lines** SHA256 **`6C280CB28E146CA1B49847457B1B072B4F9E1AAFDD441D5FBA82F243082A3727`**. Snapshot contains 10 provisioned DisplayNames and 10 exact PackageNames, 5 inspected RegistryRoots, 2 exact manifest PackageDependency entries.
