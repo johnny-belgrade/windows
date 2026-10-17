@@ -265,6 +265,55 @@
           }
         }
       }
+    },
+    {
+      "if": {
+        "properties": {
+          "result": {
+            "const": "PASS_SCOPED"
+          }
+        },
+        "required": [
+          "result"
+        ]
+      },
+      "then": {
+        "properties": {
+          "operator_executed": {
+            "const": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "result": {
+            "const": "RELEASE_CERTIFIED"
+          }
+        },
+        "required": [
+          "result"
+        ]
+      },
+      "then": {
+        "properties": {
+          "health": {
+            "const": "CLEAN"
+          },
+          "pending_count": {
+            "const": 0
+          },
+          "protected_floor": {
+            "const": "PASS"
+          }
+        },
+        "required": [
+          "health",
+          "pending_count",
+          "protected_floor"
+        ]
+      }
     }
   ]
 }
