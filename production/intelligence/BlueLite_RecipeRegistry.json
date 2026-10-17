@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "registry_revision": "2026-10-17-initial-historical-index-r1",
-  "status": "DOCUMENTED_ONLY_NO_26300_MUTATION_AUTHORITY",
+  "registry_revision": "2026-10-17-s31-onedrive-26300-native-variant-r2",
+  "status": "DOCUMENTED_VARIANT_S31_NATIVE_PROVEN_NO_AUTOMATIC_26300_MUTATION_AUTHORITY",
   "scope": "Germanium 26300-first; 26200 historical topology references",
   "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
   "execution_rule": "All entries have runtime_execution_allowed=false until exact operator-reviewed engine_module SHA, current build topology predicates, disposable proof and release gates are supplied. Registry is not executable code.",
@@ -240,6 +240,77 @@
           "evidence_refs": [
             "BlueLite_Current_Status.md OneDrive AMBER"
           ]
+        },
+        {
+          "variant_id": "26300.9711-s31-native-amber",
+          "source_family": "Germanium",
+          "supported_lineage": [
+            "26300.x"
+          ],
+          "topology_status": "KNOWN_MATCHING",
+          "exact_selectors": [
+            {
+              "kind": "CBS_PACKAGE",
+              "identity": "Microsoft-Windows-OneDrive-Setup-Package~31bf3856ad364e35~amd64~~10.0.26100.8521"
+            },
+            {
+              "kind": "CBS_PACKAGE",
+              "identity": "Microsoft-Windows-OneDrive-Setup-WOW64-Package~31bf3856ad364e35~amd64~~10.0.26100.1"
+            },
+            {
+              "kind": "CBS_PACKAGE",
+              "identity": "Microsoft-Windows-OneDrive-Setup-Package~31bf3856ad364e35~amd64~~10.0.26100.1"
+            },
+            {
+              "kind": "CBS_PACKAGE",
+              "identity": "Microsoft-Windows-OneDrive-Setup-Package~31bf3856ad364e35~amd64~en-US~10.0.26100.1"
+            },
+            {
+              "kind": "CBS_PACKAGE",
+              "identity": "Microsoft-Windows-OneDrive-Setup-WOW64-Package~31bf3856ad364e35~amd64~en-US~10.0.26100.1"
+            }
+          ],
+          "required_predicates": [
+            {
+              "kind": "SOURCE",
+              "target": "S28 26300.9711 Index1 owned source clone",
+              "expected": "6,467,485,131 B SHA256 32A913A01FC1CE26B213128888448B0BCFD0DFCAE8C8E9F57E5A2F42576DFABA"
+            },
+            {
+              "kind": "CBS",
+              "target": "three exact child neutral packages and all five satellite/parent owner contracts",
+              "expected": "S30 actual 5/5 contract: current+WOW64 Installed CurrentState=0x70 Visibility=2, old Staged=0x40 Visibility=2; one precise LTSB parent DWORD=0x30070 or 0x30040; both en-US satellites Installed, no new owner; parent keys present",
+              "evidence_ref": "BlueLite_Stage1_S30_26300.9711_OneDrive_CBSOwnerGate.txt SHA256 B523BF002926C22B978E9F915883D6428F4BA875682117C2D01F36CC0BFBF7BA"
+            },
+            {
+              "kind": "CBS",
+              "target": "only target child registry Visibility/Owners, followed by native DISM removal",
+              "expected": "current neutral -> WOW64 neutral -> old staged neutral; unload offline SOFTWARE hive between each child transition and DISM /Remove-Package",
+              "evidence_ref": "BlueLite_Stage1_S31_26300.9711_OneDrive_AMBER_Apply.txt SHA256 0BEE37DAD57F111F878EAF37C5EFB9B0B59BF68C4B7ED638F067008603C20DF6"
+            }
+          ],
+          "expected_post_state": [
+            "three neutral native /Remove-Package return exit 0",
+            "all five exact OneDrive-Setup and WOW64/en-US package identities non-resolving 0x800f0805 (signed -2146498555)",
+            "System32 OneDriveSetup.exe absent; amd64_microsoft-windows-onedrive-setup_ WinSxS dirs absent; OneDriveBackup retained separate",
+            "pending no unexpected; CheckHealth CLEAN; ScanHealth native CLEAN; owned S31 /Commit and mount release PASS; S28 source hash unchanged"
+          ],
+          "allowed_delta": [
+            "only each of three exact child package Visibility 2->1 and its single Owners subkey deleted before native removal",
+            "two en-US satellite removal as native servicing consequence, never direct key removal",
+            "S31 WIM changed from 6467485131 B clone to 6509216853 B appended container, after hash F52389FA66F8B60D56661C8786EC99409FB95447403B3C6FCBB94121EF8E340B; no inferred physical savings",
+            "No authorized edits to LTSB parent package keys, OneDriveBackup or other CBS children"
+          ],
+          "tested_builds": [
+            "26300.9711"
+          ],
+          "evidence_refs": [
+            "C:\\work\\logs\\BlueLite_Stage1_S29_26300.9711_OneDrive_TopologyGate.txt",
+            "C:\\work\\logs\\BlueLite_Stage1_S30_26300.9711_OneDrive_CBSOwnerGate.txt",
+            "C:\\work\\logs\\BlueLite_Stage1_S31_26300.9711_OneDrive_AMBER_Apply.txt SHA256 0BEE37DAD57F111F878EAF37C5EFB9B0B59BF68C4B7ED638F067008603C20DF6",
+            "C:\\work\\logs\\BlueLite_Stage1_S31_26300.9711_POST_SCANHEALTH.txt SHA256 1E02D1A863874ACB0C9B0CB6FA6010F7C42449F79481BDE90EC656A49E9DF3AB",
+            "BlueLite_Germanium_Handoff.md §8.15"
+          ]
         }
       ],
       "protected_floor": [
@@ -262,9 +333,21 @@
           "source_kind": "MASTER",
           "reference": "BlueLite-Master_Germanium_Strategy_final.md §20",
           "scope": "Historical disposition; verify exact 26300 topology before mutation"
+        },
+        {
+          "source_kind": "OPERATOR_LOG",
+          "reference": "BlueLite_Stage1_S31_26300.9711_OneDrive_AMBER_Apply.txt",
+          "sha256": "0BEE37DAD57F111F878EAF37C5EFB9B0B59BF68C4B7ED638F067008603C20DF6",
+          "scope": "Native S31 26300.9711 exact owner-only AMBER transaction, three package removes, five non-resolving, CheckHealth and commit success."
+        },
+        {
+          "source_kind": "OPERATOR_LOG",
+          "reference": "BlueLite_Stage1_S31_26300.9711_POST_SCANHEALTH.txt",
+          "sha256": "1E02D1A863874ACB0C9B0CB6FA6010F7C42449F79481BDE90EC656A49E9DF3AB",
+          "scope": "Real in-mount native DISM ScanHealth exit0 and no component store corruption detected."
         }
       ],
-      "notes": "Order current neutral -> WOW64 neutral -> old staged neutral; OneDriveBackup residue is separate HANDOFF. Exact historical source build identities must be re-read from matching operator logs; the x-series label is not an exact tested build.",
+      "notes": "Order current neutral -> WOW64 neutral -> old staged neutral; OneDriveBackup residue is separate HANDOFF. Exact historical source build identities must be re-read from matching operator logs; the x-series label is not an exact tested build. S31 actual 26300.9711 variant committed and scanned clean. This is an operator-run proof only; runtime_execution_allowed stays false pending canonical reviewed engine module hash/negative fixtures and independent post-commit protected owner inventory. Never invoke removal on new topology from registry alone.",
       "contract_version": "1.0.0"
     },
     {
