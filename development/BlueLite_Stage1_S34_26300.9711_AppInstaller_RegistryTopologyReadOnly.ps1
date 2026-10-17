@@ -114,8 +114,8 @@
   $ec=[int]$LASTEXITCODE
   Note "COPIED_SOFTWARE_UNLOAD_EXIT=$ec"
   if($ec -ne 0){throw "COPIED_SOFTWARE_UNLOAD_FAILED=$ec;$($lines -join ' | ')"}
-  $script:loaded=$false
  }
+
  try{
   Note 'STAGE=S34_26300_9711_APPINSTALLER_REGISTRY_PRESTATE'
   Note 'MODE=READONLY_WIM_COPIED_SOFTWARE_READONLY_REGISTRY_API'
@@ -225,7 +225,7 @@
    Note "REGISTRY_SNAPSHOT=$snapshot"
   }catch{Note "SNAPSHOT_ERROR=$($_.Exception.Message)";$gate=$false}
   try{
-   if($loaded){UnloadCopy}
+   if($loaded){UnloadCopy; $loaded=$false}
   }catch{Note "HIVE_UNLOAD_ERROR=$($_.Exception.Message)";$gate=$false}
   try{
    if(-not $loaded -and [IO.File]::Exists($shadow)){
