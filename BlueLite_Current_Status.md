@@ -2,6 +2,14 @@
 
 **As of:** 2026-10-17
 
+## 2026-10-17 — S09 Full 26300 D6 cache-reuse candidate CREATED (STATIC PACKAGE; operator validation PENDING)
+
+- **Delivered artifact (candidate, NOT operator runtime):** `BlueLite_Stage1_S09_26300_FullAdapter_StaticReview.zip` (42,388 B), SHA256 `6C40FDAD345FD41177AB810B8DA6DD2331A80569AD0ECA1EEF06D02AB4256520`; 16 ZIP members including reviewed full D6 source, source diff, README, 11 unmodified inherited S06 modules/policy files and PS7 static test. ZIP member CRC and SHA256SUMS_S09 14/14 verified in isolated local generation environment. **Not yet native PS7 AST tested on operator Windows.**
+- **Change identity:** sole modified D6 main SHA256 `90C31F7C7967B5132602E77AF983D6B855ED04E336DEF5EAE120335BEC05C756` (S06 original `F80259BE397BB5541B204D840D8D071BB4A768899AA97C5A1B5662BEF0E5CFD6`); S09 new static gate SHA256 `46C0FAC4B7FA3C0211193C1824F8C933B16CE1BCF208ABC36D666F7E1EECF76B`. Full old/new module diff included as `S09_D6_vs_S06.diff`. No S06 files overwritten.
+- **Designed 26300 Full delta:** same exact frozen 98 Windows/2798 Apps S02 identity JIT, manual distinct authorization, pin exact S06 receipt and 32 file bytes, import S06 AppX cache into new owned Full E2E target with checksum reverify (including resume existing matching files), rebase 32 AppX transport to active signed queue, execute original strict G4 in **OFFLINE validation mode**, no AppX redownload; only after all passes would the existing 98-record Full Windows aria2 transfer be reachable. Original converter and WIM NOT invoked. **This is design, not tested execution.**
+- **ONE NEXT STEP for operator:** copy S09 ZIP into `C:\work\scripts`, SHA-verify, extract under new `C:\work\scripts\BlueLite_Stage1_S09_26300_FullAdapter_StaticReview`, execute **only** `BlueLite_Stage1_S09_26300_FullAdapter_StaticGate.ps1` with PS7 Admin; collect `C:\work\logs\BlueLite_Stage1_S09_26300.9711_FullAdapter_StaticGate.txt`. This tests 14 member SHA, PowerShell AST, scoped source order and six deliberately corrupted source text fixtures; it performs **no** D6 execution, HTTP, aria2, converter, WIM or registry mutation.
+- **Scope remains:** `S08=ACTUAL_PASS`, `S09=DELIVERED_STATIC_PENDING`, `26300_FULL_WINDOWS=NOT_RUN`, `CONVERTER=NOT_RUN`, `MAX_PRE=NOT_RUN`, `RELEASE=NOT_CERTIFIED`. Do not authorize large transfer from a static PASS alone.
+
 ## 2026-10-17 — S08 ACTUAL OPERATOR PASS: exact D6 source + 26300 G4 provider closure; S09 static Full adapter review NEXT
 
 - **Operator evidence:** `C:\work\logs\BlueLite_Stage1_S08_26300.9711_D6_FullSourceIntake.txt` uploaded (SHA256 `4691D355B87B86D8A4AA9FAC0C10436DFB9665580D655F415003A69A561C844F`), `...FullSourceIntake.zip` SHA256 `5934FEFAC41040248DEDA901F64548E6CD7F0B1A1B5DDB227DFAB5F4BEADD3CA`, size 39,693 B. Real operator footer `RESULT=PASS_S08_FULL_SOURCE_INTAKE`; four ZIP sources checked against exact expected SHA with binary archive independent readback; no network/servicing.
