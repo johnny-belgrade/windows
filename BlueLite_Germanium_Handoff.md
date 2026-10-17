@@ -292,7 +292,7 @@ Common base **Defender ON** dok ne prođe certificirana zajednička baza; nakon 
 
 ## 11. Šta sledi za 26300 — logičko-hronološki, NE kao odmah odobrene komande
 
-**Trenutna pauza:** operator je nakon S06 zatražio analizu, upis u Current i pauzu; sledeći zahtev je **ovaj handoff**, ne autorizacija punog Windows UUP download-a. Novi naslednik mora čitati poslednji Current i sačekati operatorovu novu jasnu osnovu/cilj. Ovo je tehnička **mapa narednih dependency gate-ova**, ne spisak komandi koje treba odmah poslati.
+**Aktuelno od 2026-10-17:** operator je izričito tražio **nastavak sa jednom narednom komandom nakon arhiviranja Current-a**. Time je dozvoljen samo ciljani **S07 source-only READ_ONLY preflight**. Prethodna pauza i dalje važi za **puni Windows UUP download, konverziju, offline WIM mutaciju i ostale nepregledane faze**; za njih zahtevati novu jasnu autorizaciju. Novi naslednik uvek čita poslednji Current i stvarni operatorski S07 log pre bilo čega drugog. Ovo je tehnička **mapa narednih dependency gate-ova**, ne spisak komandi koje treba odmah poslati.
 
 1. **P0 — evidence continuity:** Potvrdi da su S01–S06 logovi i SHA, script ZIP i tačni 26300 source root očuvani; ako konkretan novi posao zahteva svih 32 G4 identiteta, pribavi baš `E2E\...\Queues\ResolveAppDependencies.log`, a ne ponavljaj S06 AppsOnly download samo radi toga.
 2. **P1 — source-bound full Windows queue approval:** Iskoristi postojeći D6/S06 i D4/JIT identitetski renewal, proširi/otključaj *posebnu* FULL granu samo posle izvornog pregleda i neg fixture testova; 98/98 Windows full manifest locked, potrebni originalni servicing/delta/ESD/FoD/edition inputi, AppX 32 closed, explicit `FrozenRoot`, exact source SHA, resume/no overwrite, free capacity samo kad je stvarno potreban veliki download. Potencijalni veliki Windows transfer zahteva operatorski jasan korak. **Ne** skidaj ponovo 26200 R100 gigabajte.
@@ -352,7 +352,7 @@ Samo compiler/schema PASS bez vezivanja aktuelnog izvora ne sme postati legalna 
 ### 12A.3 Instrukcije narednom ChatGPT-u (bez čekanja na stari chat)
 
 - Prvo otvori actual **Master → Handoff → top Current → UUP Evidence → Sources → `production/contracts/README.md` i recipe registry**, pa relevantne originalne Library logove. Iza svakog PASS navedi dokazni sloj, za 26300 posebno odvoji `S06_APPS_ONLY=PASS` od `FULL_WINDOWS/CONVERTER/MAX_PRE=NOT_RUN`.
-- Za započeti novi `run_id` prvo na operatorskom hostu identifikuj **postojeći** freeze/S06 sadržaj (ne novi masovni inventory) i izaberi **jedan** naredni korak. Nema nenajavljenog full Windows download-a, WIM mutacije ni NTLite; operatorska pauza ostaje važeća dok je operator ne opozove.
+- Za započeti novi `run_id` prvo na operatorskom hostu identifikuj **postojeći** freeze/S06 sadržaj (ne novi masovni inventory) i izaberi **jedan** naredni korak. Nema nenajavljenog full Windows download-a, WIM mutacije ni NTLite. Operatorovo odobrenje S07 **read-only** pregleda ne odobrava zasebne download/converter/mutation poslove.
 - Ako se traži stara originalna skripta koja nije prikazana u Handoff-u, čitaj pinovanu arhivu `ChatsGPT_15.md` na `archive/chatsgpt15-20261017` ili originalnu Library datoteku, **ne obnavljaj je po sećanju**.
 - Prilikom greške razlikuj `FAIL_CLOSED` ugovora, partial downloaded payload, native provider refusal i `REPAIRABLE` health. Ne briši disposable dok je potreban jedinstveni dokaz; ne čuvaj nepotrebne WIM duplikate.
 - Dokumentacioni commit/JSON schema/rule-index ne menja operatorsko pravo izvršavanja. `release` ostaje NOT_CERTIFIED dok Master testovi nisu stvarno izvršeni.
@@ -361,7 +361,7 @@ Samo compiler/schema PASS bez vezivanja aktuelnog izvora ne sme postati legalna 
 
 **Provereno:** `ChatsGPT_15.md` (1.165.578 B, Git blob `8f05055288a19880f8caec230b2b5da1c26d90fc`) čitljiv je preko Contents API na **[arhivskoj grani](https://github.com/johnny-belgrade/windows/blob/archive/chatsgpt15-20261017/ChatsGPT_15.md)** koja pokazuje na commit `d7be78707cc099806770fed51a8c295af8164062`. `ChatsGPT.md` bez sufiksa je drugi, ranije **obrisan** fajl (commit `c49da5f`), pa je njegov 404 očekivan.
 
-**Pre uklanjanja `ChatsGPT_15.md` samo sa `main`** zahtevaj nezavisan read-back arhivske grane i proveren blob SHA, kontinuitet Master/Handoff/Current/registry linkova i dostupnost relevantnih originalnih operator logova u Library. Zatim je dozvoljeno ukloniti **samo taj jedan exact path** sa `main`, uz poslednji live blob SHA kao optimistic concurrency gate. **Ne brisati arhivsku granu, source logove, originalni operator ZIP ili R133**. Posle eventualnog brisanja proveri `main` file absence i ARCHIVE file presence/hash, te dodaj u Current novi dokumentacioni checkpoint. Time brisanje aktivnog fajla ne znači gubitak arhive niti tvrdnju da se u Handoff-u nalaze svih 29.299 redova.
+**IZVRŠENO I PONOVO PROVERENO 2026-10-17:** operator je obrisao `ChatsGPT_15.md` sa **aktivnog `main`**; root Contents inventar ga **više ne sadrži**, a arhivska grana i originalni Git blob imaju neizmenjen, čitljiv tekst. Ovo je zabeleženo u Current-u. **Ne brisati arhivsku granu, originalne operator logove, UUP ZIP, R133 WIM niti arhivu starog Current-a.** Ne tvrditi da je Git istorija globalno izbrisana ili da novi Handoff reprodukuje svih 29.299 redova. Ako treba stare doslovne komande, ciljano čitaj pinovanu arhivu.
 
 ---
 
@@ -412,7 +412,7 @@ Posle svakog materijalnog operatorom potvrđenog milestone-a, asistent **MORA** 
 7. Final staging **5** ≠ common-base keep **4**; Store/AppInstaller final absent; policy strogo prati manifest. Windows Update pauza do 2100 uz Resume; Defender common ON pa razgranati; VM **HOST** floor.
 8. Zadržati servicing-consistent CBS/WinSxS; ne rezati fizički shared/persistent WinSxS bez owner i health/pending testa. „Repairable“ je gate failure, ne prihvatljiv shortcut.
 9. `Current` je **jedan centralni živi dnevnik rada**: nakon svakog potvrđenog operatorovog koraka upis+read-back. Izvršen operatorov log nadjačava ranije `DELIVERED`, ali ne proglašava nepotvrđene faze uspešnim.
-10. **Trenutno postoji operatorska pauza.** Nema nove naredbe/download-a dok operator ne postavi sledeći zadatak. Kad nastavi sa 26300, sledeće su ciljane preostale Full UUP/G4 provider detalj/v127/MAX_PRE zavisnosti, jedna po jedna, bez vraćanja na stare analize.
+10. **Operator je zatražio nastavak kroz samo jednu sledeću READ_ONLY S07 komandu**, nakon repo arhiviranja; **full Windows UUP download/converter/MAX_PRE nisu odobreni** time. Nakon S07 stvarnog loga nastaviti Full queue source-adapter/G4 detalj/v127/MAX_PRE zavisnosti po jednom koraku, bez vraćanja na stare analize.
 
 ---
 
