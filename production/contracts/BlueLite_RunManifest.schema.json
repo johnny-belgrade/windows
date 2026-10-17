@@ -1,0 +1,380 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/johnny-belgrade/windows/main/production/contracts/BlueLite_RunManifest.schema.json",
+  "title": "BlueLite source-bound build run manifest — contract v1",
+  "description": "Design-time validation schema. Passing validation does not authorize transfer, conversion, WIM mutation or release.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "run_id",
+    "created_utc",
+    "mode",
+    "source",
+    "workspace",
+    "tools",
+    "gates"
+  ],
+  "properties": {
+    "contract_version": {
+      "const": "1.0.0"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 180
+    },
+    "created_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "mode": {
+      "enum": [
+        "SOURCE_ONLY",
+        "DOWNLOAD_APPS_ONLY",
+        "DOWNLOAD_WINDOWS_FULL",
+        "CONVERT",
+        "MAX_PRE",
+        "OFFLINE_RESIDUE",
+        "NTLITE_HANDOFF",
+        "VM_RELEASE"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "family",
+        "build",
+        "architecture",
+        "language",
+        "edition",
+        "uuid",
+        "original_zip_path",
+        "original_zip_sha256",
+        "frozen_root",
+        "source_contract_path",
+        "source_contract_sha256"
+      ],
+      "properties": {
+        "family": {
+          "const": "Germanium"
+        },
+        "build": {
+          "type": "string",
+          "pattern": "^\\d{5}\\.\\d+$"
+        },
+        "architecture": {
+          "enum": [
+            "amd64"
+          ]
+        },
+        "language": {
+          "type": "string",
+          "minLength": 2
+        },
+        "edition": {
+          "type": "string",
+          "minLength": 2
+        },
+        "uuid": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "original_zip_path": {
+          "type": "string",
+          "minLength": 3
+        },
+        "original_zip_sha256": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "frozen_root": {
+          "type": "string",
+          "minLength": 3
+        },
+        "source_contract_path": {
+          "type": "string",
+          "minLength": 3
+        },
+        "source_contract_sha256": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "original_control_manifest_sha256": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        }
+      }
+    },
+    "workspace": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "workspace_root",
+        "script_root",
+        "log_root",
+        "checkpoint_root",
+        "owned_run_root"
+      ],
+      "properties": {
+        "workspace_root": {
+          "type": "string",
+          "minLength": 3
+        },
+        "script_root": {
+          "type": "string",
+          "minLength": 3
+        },
+        "log_root": {
+          "type": "string",
+          "minLength": 3
+        },
+        "checkpoint_root": {
+          "type": "string",
+          "minLength": 3
+        },
+        "owned_run_root": {
+          "type": "string",
+          "minLength": 3
+        },
+        "mount_directory": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "release_output": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "queues": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "original_windows_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "original_apps_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "windows_content_identity_sha256": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "apps_content_identity_sha256": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "windows_queue_file_sha256": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "apps_queue_file_sha256": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "renewed_windows_queue_file_sha256": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "renewed_apps_queue_file_sha256": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "apps_closed_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "apps_closed_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "apps_closure_report": {
+          "type": "string"
+        }
+      }
+    },
+    "tools": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "aria2_executable_path",
+        "aria2_sha256",
+        "converter_archive_path",
+        "converter_sha256",
+        "converter_version"
+      ],
+      "properties": {
+        "aria2_executable_path": {
+          "type": "string"
+        },
+        "aria2_sha256": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "converter_archive_path": {
+          "type": "string"
+        },
+        "converter_sha256": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "converter_version": {
+          "type": "string"
+        },
+        "converter_executed": {
+          "type": "boolean"
+        },
+        "powershell_version": {
+          "type": "string"
+        },
+        "dism_version": {
+          "type": "string"
+        }
+      }
+    },
+    "image": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "original_wim_path",
+        "original_wim_sha256",
+        "working_wim_path",
+        "index"
+      ],
+      "properties": {
+        "original_wim_path": {
+          "type": "string",
+          "minLength": 3
+        },
+        "original_wim_sha256": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "working_wim_path": {
+          "type": "string",
+          "minLength": 3
+        },
+        "working_wim_sha256_before": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "working_wim_sha256_after": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "index": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "mount_directory": {
+          "type": "string"
+        },
+        "health": {
+          "enum": [
+            "NOT_RUN",
+            "CLEAN",
+            "REPAIRABLE",
+            "UNKNOWN"
+          ]
+        },
+        "pending_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "recipe_manifest_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "gates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "operator_authorized_transfer",
+        "operator_authorized_mutation",
+        "source_identity_verified",
+        "source_original_unchanged"
+      ],
+      "properties": {
+        "operator_authorized_transfer": {
+          "type": "boolean"
+        },
+        "operator_authorized_mutation": {
+          "type": "boolean"
+        },
+        "source_identity_verified": {
+          "type": "boolean"
+        },
+        "source_original_unchanged": {
+          "type": "boolean"
+        },
+        "windows_content_identity_match": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "apps_content_identity_match": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "image_ownership_verified": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "mount_and_hives_verified": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "converter_runtime_authorized": {
+          "type": "boolean"
+        },
+        "pre_iso_mutation_runtime_certified": {
+          "type": "boolean"
+        }
+      }
+    },
+    "stage_results": {
+      "type": "object",
+      "additionalProperties": {
+        "enum": [
+          "NOT_RUN",
+          "DELIVERED_NOT_RUN",
+          "STATIC_VERIFIED",
+          "PASS_SCOPED",
+          "HOLD",
+          "FAIL_CLOSED",
+          "THIS_BUILD_CERTIFIED",
+          "RELEASE_CERTIFIED"
+        ]
+      }
+    },
+    "evidence_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
