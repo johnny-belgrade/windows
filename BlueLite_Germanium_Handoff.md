@@ -1,12 +1,12 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.1.0 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-17 (archive + contracts + proof reconciliation)  
+**Verzija dokumenta:** 1.2.0 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-17 (archive + contracts + proof reconciliation)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
 **Vlasnik cilja i lokalnog izvršavanja:** operator; **inženjerski saradnik:** ChatGPT.  
 **Normativna osnova:** [`BlueLite-Master_Germanium_Strategy_final.md`](BlueLite-Master_Germanium_Strategy_final.md), v6.0.0.  
-**Živi dnevnik i tačka nastavka:** [`BlueLite_Current_Status.md`](BlueLite_Current_Status.md).  
+**Živi kompaktni dnevnik:** [`BlueLite_Current_Status.md`](BlueLite_Current_Status.md). **Puna istorijska arhiva (pre kompaktovanja):** [Current archive](https://github.com/johnny-belgrade/windows/blob/archive/current-status-precompact-20261017/BlueLite_Current_Status.md), blob `c8dafcf9f45f8652ef4b5fbcee0a3e9293989b2c`.  
 **Historijski UUP dokazni indeks:** [`BlueLite_UUP_Evidence_Reconciliation_20261013.md`](BlueLite_UUP_Evidence_Reconciliation_20261013.md).  
 **Celokupan spoljašnji katalog:** [`BlueLite_Sources.md`](BlueLite_Sources.md).  
 **Repo:** <https://github.com/johnny-belgrade/windows>; branch `main`.
@@ -39,7 +39,8 @@ Svi potrebni alati osim operatorskog NTLite Business treba da budu besplatni i l
 | Izvor | Uloga | Obavezna radnja naslednika |
 |---|---|---|
 | [`Master Strategy v6.0.0`](BlueLite-Master_Germanium_Strategy_final.md) | **Normativni autoritet**; §§0A,0B,2–10,14–19,20,22,26–31 | Proveri poslednju verziju; sve nove recepte i izuzetke uskladi sa njom |
-| [`Current Status`](BlueLite_Current_Status.md) | **Stvarni živi poslednji checkpoint**; log S01–S06 i stara R1–R142 istorija | Čitaj od vrha; proveri razlike i status nove sesije; nakon PASS upiši samo dodatnu dnevničku stavku |
+| [`Current Status`](BlueLite_Current_Status.md) | **Živi sažeti operativni checkpoint S01–S06 i svi novi operator run-ovi** | Čitaj od vrha; posle svakog pravog milestone-a dopiši kratku novu stavku |
+| [Current archive](https://github.com/johnny-belgrade/windows/blob/archive/current-status-precompact-20261017/BlueLite_Current_Status.md) | **Puni prethodni Current, svih 128 checkpoint-a**, pinovani blob `c8dafcf9f45f8652ef4b5fbcee0a3e9293989b2c` | Traži konkretan R/A/S istorijski dokaz samo kada je potreban; ova grana je immutable |
 | [`UUP Evidence`](BlueLite_UUP_Evidence_Reconciliation_20261013.md) | 26200 transport/CompDB/dependency/MAX_PRE komparativni dokaz; §G1–G6 | Prenesi algoritam, **ne** 26200 output state/veličine; zastarelo „26300 još nije pribavljen“ prevaziđeno S01–S06 |
 | [`Sources`](BlueLite_Sources.md) | Index **svih** spoljašnjih istraživačkih veza | Pregledaj ceo katalog; koristi i verifikuj kategorije primenljive na cilj, uklj. upstream kod |
 | Interna Library `/BlueLite_v1.0`, `/BL_UUP`, `/BlueLite_MASTER`, `/UUP_PreBuild`, raniji handoff-i i razgovori | Originalni `*.ps1`, `*.zip`, logovi, CBS/WinSxS, `Timeline*`, reference uploadera | Targeted complete search i otvaranje materijalnih fajlova; ne tvrdi da je 700+ stavki pregledano ako nije |
@@ -364,13 +365,39 @@ Samo compiler/schema PASS bez vezivanja aktuelnog izvora ne sme postati legalna 
 
 ---
 
+## 12B. TRAJNA OBAVEZA UPISA ZA SVAKOG NASLEDNIKA — DOCUMENT WRITE MATRIX
+
+Posle svakog materijalnog operatorom potvrđenog milestone-a, asistent **MORA** objaviti tačan izvor, hash, rezultat i dokazni nivo u odgovarajućem GitHub dokumentu ili izričito prijaviti `GITHUB_WRITE_BLOCKED` i dostaviti ceo patch. Operator izvršava sve lokalne komande; ChatGPT jedini priprema/proverava repo izmene prema ovim pravilima. Kod konflikta obavezno novi fetch i merge, nikada force overwrite.
+
+| Dokument | Tačan trenutak obaveznog upisa | Ograničenje |
+|---|---|---|
+| [Current](BlueLite_Current_Status.md) | **SVAKI** stvarno potvrđen operator checkpoint, čak i `FAIL_CLOSED`/`HOLD`, preuzimanje novog izvora, promenjen SHA, završen test, repo dokumentacioni milestone | Jedna kratka reverse-chronological stavka: source UUID/build, hashes, literal log, output tier, scope, status, jedan next step; bez celega transkripta |
+| [RecipeRegistry](production/intelligence/BlueLite_RecipeRegistry.json) | **SVAKI** novi ili promenjeni potvrđeni target, dependency, topology-variant, owner, predicate, allowed delta, rollback, fixture i disposition; promenu upari sa Current checkpoint-om | Stare varijante sačuvati; `runtime_execution_allowed=true` tek uz module SHA, operatorov native post-state, potrebne negative fixtures i važeće 26300 topology gate-ove |
+| [RunManifest / Recipe / ResultReceipt schemas](production/contracts/README.md) | Samo kada se **FORMAT UGOVORA** menja, uz verziju i positive/negative fixtures, engine compatibility i Git commit | Nema šeme po CU-u ili običnoj runtime stavci |
+| [Handoff](BlueLite_Germanium_Handoff.md) | Nova trajna arhitektura, promena rasporeda dokaza, univerzalno pravilo prenosa, kritični correction ili novi model procesa | Revidirati verziju; ne pisati svaki log S-koraka |
+| [Master](BlueLite-Master_Germanium_Strategy_final.md) | Operator-odobren NOVI TRAJNI cilj, policy, redosled faza ili release gate | Ne upisivati dnevne rezultate u normativnu strategiju |
+| [Sources](BlueLite_Sources.md) | Nova otvorena/proverena tehnička referenca kada je materijalna za target | Dokumentacija nije sama runtime removal dozvola |
+| [UUP Evidence](BlueLite_UUP_Evidence_Reconciliation_20261013.md) | Samo stvarni datirani istorijski correction/addendum potreban za prenos dokaza | Ne menjati retroaktivno tadašnji S/R status |
+| [Current historical archive](https://github.com/johnny-belgrade/windows/blob/archive/current-status-precompact-20261017/BlueLite_Current_Status.md) i [ChatsGPT_15 archive](https://github.com/johnny-belgrade/windows/blob/archive/chatsgpt15-20261017/ChatsGPT_15.md) | Nikada rutinski; ove arhivske grane su IMMUTABLE | Ne brisati grane i ne force-push; nove arhive dobijaju nove snapshot grane |
+
+**Dvojni update:** svaki novi stvarni component recipe/dependency zaključak obavezno ažurira i `production/intelligence/BlueLite_RecipeRegistry.json` (tačni predikati/fixture) **i** `BlueLite_Current_Status.md` (stvarni operaterski log i next). Ako recipe nije promenjen, običan S-korak menja samo Current. Dizajn/predlog bez runtime-a ostaje neautorizovan `DOCUMENTED_ONLY` / `STATIC_VERIFIED`, bez pretvaranja u `THIS_BUILD_CERTIFIED`.
+
+**Obavezan write protokol:** FETCH aktuelni Git blob SHA → proveri originalni operator log i target → merge bez gubitka tuđih unosa → UPDATE sa expected SHA → nezavisni FETCH identičnog path/ref → uporedi ceo sadržaj/ključne hashove i prijavi commit. Na `409`, `403` ili konektor grešku nema tvrdnje da je upis izvršen: ostavi ceo lokalni patch, status `GITHUB_WRITE_BLOCKED` i sledeći asistent to razrešava pre nove materijalne mutation komande.
+
+### 12B.1 Current arhiva i kompaktni aktivni dnevnik
+
+**Stari kompletni Current** je pre kompaktovanja sačuvan na grani [`archive/current-status-precompact-20261017`](https://github.com/johnny-belgrade/windows/blob/archive/current-status-precompact-20261017/BlueLite_Current_Status.md), snapshot commit `2074da336f9d7e057e17ab996bf628ed4ec7c170`, Git blob `c8dafcf9f45f8652ef4b5fbcee0a3e9293989b2c` (**670.982 UTF-8 B**, 128 checkpoint-a). Provereno je da su pre-kraćenja arhivski i aktivni dokument imali identične byte/line sadržaje. Arhiva zadržava stare R1–R142/A01/A02, uključujući istorijski popravljeni S05 red; nije izbrisan nijedan originalni operator log.
+
+**Live Current** nakon kompakcije mora da zadrži aktivni 26300 UUP/Stage1 S01–S06, A03/strategijski pivot i sve novije operator/gov checkpoint-e, sa linkom ka kompletnom arhivskom blob-u. Naredni asistent koristi live Current kao mali `NEXT` dnevnik; arhivu čita samo za konkretnu već poznatu zavisnost. Ovo ne podrazumeva nikakvu novu lokalnu DISM/WIM/UUP radnju.
+
+---
 ## 13. BlueLite Sources i offline dokazni inventar: kako tražiti bez ponavljanja
 
 **Najbrži način pre nove analize:**
 
 - Za source/UUP: pretraži `UUP_V3_PhaseA2`, `R26-D4`, `R26-D5`, `R26-D6`, `R28`, `R33`, `R84`, `R100`, `S01..S06`, RC1.2, `Final_UUP/`, `UUP_PreBuild/Drafts`, `Timeline*`, `CustomAppsList`, `ConvertConfig`, `AppxManifest`, `CompDB`.
 - Za MAX_PRE/offline: `R15-R1`, `R49 G5`, `R105`, `R107`, `R113`, `R115–R116`, `R119`, `R120–R133`, `338`, `339`, `342`, `18C`, `44–48`, `Search`, `OneDrive`, `FoDMetadata`, `Language.Basic`, `R134–R142`, `Sense`, `WinSxS`, `COMPONENTS`, `Release05`.
-- Za fragmentovane nekadašnje sesije: Library `9-ChatGPT.md`, `10-ChatGPT.md`, `11-ChatGPT.md`, `11-13-ChatGPT.md`, `12-ChatGPT.md`, historijske `ChatGPT-1-25H2 26200.9278-20260929-1529.md`, `ChatGPT-2-25H2 26200.xxxx-20260929-1528.md`, `ChatGPT-3-25H2 26200.xxxx-20260929-1527.md`, `ChatGPT-4-25H2 26200.xxxx-20260929-1524.md`, canonical handoff `BlueLite_v1.0_CANONICAL_HANDOFF_10*.md`; proveri Library dostupnost pre poziva. Raniji `ChatsGPT.md` ima dokumentovan **delete** na `main` (commit `c49da5f`); čitljivi `ChatsGPT_15.md` je dodatno sačuvan na grani `archive/chatsgpt15-20261017`. Inventariši aktivni `main` i arhivsku granu umesto da pogrešno tumačiš 404 kao problem konektora. **Ne zamenjuj missing original novim fikcionim transkriptom**.
+- Za punu staru Current istoriju prvo koristi `archive/current-status-precompact-20261017` branch; za fragmentovane nekadašnje sesije: Library `9-ChatGPT.md`, `10-ChatGPT.md`, `11-ChatGPT.md`, `11-13-ChatGPT.md`, `12-ChatGPT.md`, historijske `ChatGPT-1-25H2 26200.9278-20260929-1529.md`, `ChatGPT-2-25H2 26200.xxxx-20260929-1528.md`, `ChatGPT-3-25H2 26200.xxxx-20260929-1527.md`, `ChatGPT-4-25H2 26200.xxxx-20260929-1524.md`, canonical handoff `BlueLite_v1.0_CANONICAL_HANDOFF_10*.md`; proveri Library dostupnost pre poziva. Raniji `ChatsGPT.md` ima dokumentovan **delete** na `main` (commit `c49da5f`); čitljivi `ChatsGPT_15.md` je dodatno sačuvan na grani `archive/chatsgpt15-20261017`. Inventariši aktivni `main` i arhivsku granu umesto da pogrešno tumačiš 404 kao problem konektora. **Ne zamenjuj missing original novim fikcionim transkriptom**.
 - Za reference drugih custom autora: `FBConan-BUILD_INFO.txt`, `FBConan-BUILD_INFO-v3.txt`, `Extreme-11-26H2-Removed.txt`; MDL/TeamOS/NTLite/MSMG poređenja; reference *end-state*, ne neproverena potvrda skraćenog postupka. Dodatne specifikacije po build-u samo ako doprinose konkretnom target-u.
 - **Pretraži relevantnu Library stvarno**, ne samo naslove: `files.search` → `files.read/find` opseg, pa originalni CSV/ZIP/script kad je potreban za patch. Ako ZIP file bytes nisu dostupni (historijski prethodnik dobio `not authorized raw-byte materialization path`), zatraži od operatora **samo taj** manji konkretan ZIP, kao uspešno za originalni D6 ~30,896 B. Nikada ne tvrdi da je nedostupan ZIP otvoren. Ako je mnogo dostupnih dokaza, čitaj reprezentativne originalne PASS i FAIL logove uz sažetak u UUP Evidence, a ne svaki redundantni duplikat.
 
