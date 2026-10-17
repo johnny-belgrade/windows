@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.3.0 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-17 (single entrypoint + Master acceptance + successors)  
+**Verzija dokumenta:** 1.3.1 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-17 (preferred original UUP + source-bound BlueLite overlay affirmed)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -115,6 +115,16 @@ Ne zavisi od nedostupnih privatnih međukoraka. Prenosi **javno obrazloženje in
 `C:\work` je projektni prostor; `TEMP`, DISM host log, HKLM `reg load` alias i drugi privremeni host resursi su legitimni, **ephemeral**. Ne pokušavaj da ukloniš sve host TEMP upise: zabrana se odnosi na nedozvoljenu debloat mutaciju **aktivnog Windows-a**, ne na privremene servising poslove. Kada operator kaže da gasi računar: zatvori Total Commander/Explorer, oslobodi postojeće owned hives, pregledaj `DISM /Get-MountedWimInfo`, po odluci pravilno /Commit ili /Discard, bez nasumičnog `/Cleanup-Wim` na tuđe montaže. Disposable se briše **tek kad su jedinstveni dokaz i Library/project arhiva provereno očuvani**; nikad automatski obrisati original, backup ili nedovršen jedinstveni dokaz. Ne pokreći svaki dan opštu proveru slobodnog prostora bez konkretnog storage razloga.
 
 ## 4. Inženjerska arhitektura — hibridni UUP model koji se pokazao ispravnim
+
+### 4.0 Operatorski potvrđen PRIMARNI PRAVAC: originalni UUP Dump ZIP + BlueLite overlay (ne alternativni downloader od nule)
+
+**Ovo je OBAVEZUJUĆI PREFERIRANI proizvodni pravac do dokaza da za konkretan build nešto mora drugačije**, ne usputna istorijska beleška. Operator ga je ponovo eksplicitno potvrdio 2026-10-17. Njegov temelj je **normativni Master §7.2** (`Do not rewrite the original UUP launcher`) i §§7.4–7.6. Naslednik u novoj sesiji MORA krenuti od originalne operatorom izabrane UUP Dump ZIP arhive, zamrznuti SHA+UUID+edition/language/config/converter iz **te konkretne arhive**, zatim upotrebiti **postojeći** BlueLite source-bound wrapper/overlay i proverene D4/G3 URL-renewal, G4 AppX provider-closure, immutable reconstructed WIM/MAX_PRE korake. Ne pisati drugi downloader/URL-renewer/G4 resolver dok relevantni prethodni mehanizam nije pregledan i konkretna nedovoljnost dokazana. Jedan `START.cmd` je ciljni proizvodni interfejs, ne zamena za preflight i eksplicitne operatorove autorizacije.
+
+**Originalni trag od 2026-10-03:** Library `5-ChatGPT(1).md`, `5-ChatGPT.md` i `BlueLite_v1.0_CANONICAL_SUCCESSOR_HANDOFF_2-10.md` dokumentuju prvobitni `BlueLite_UUP_MAX_PRE_v2.0` overlay: raspakovati originalni UUP ZIP u namenski radni direktorijum, dodati BlueLite skripte/`START.cmd` **preko radne kopije**, ne originalne arhive. To je istorijska implementaciona osnova, **NE automatski odobren runtime za novi 26300.x**; kasniji D4/D5/D6 i 2026-10-17 S06–S10 zaštitni mehanizmi imaju prednost pri integraciji. Prepisivanje sadržaja mora ostati ograničeno na owned staging/profilne fajlove, sa diff/hash kontrolom; originalni launcher i ZIP kao dokaz ostaju neizmenjeni.
+
+**Izrazita univerzalnost:** 26300.9711 koristi UUID `2b22470a-8b6f-498f-9c88-66f7b9fb56b1` i verifikovanu v127 toolchain arhivu; nezavisni **26300.9807** koristi UUID `687d1ced-aab1-4cd5-ad05-705189769731`, zamrznuti izvor `C:\work\UUP_Source\26300.9807_687d1ced` i u svom originalnom ZIP-u deklarisani **v128m** SHA256 `1597F39D614529843DCADF630ED6DD4543C955EA703B6B0D1FDBE65AA078A5F1`. Native S11 operatorov PASS nije dokaz postojanja/izvršavanja v128m; `BlueLite_S11_SourceContract.json` je zaseban source-specific contract, **ne zamenjuje** 9711 S04 contract. Varijabilni Microsoft signed URL je samo kratkotrajni transport: dozvoljena je JIT obnova samo uz identični source-specific `out+checksum` original queue ledger, bez tihog prenosa 9711 98/2798 brojeva ili 32 AppX SHA u 9807. Ako converter menja podržane INI opcije, prvo se testira source-bound compatibility/profile, nikad zamena globalnog konvertera bez hash i dependency gate-a.
+
+**Izvršni zaključak:** zadržati 26300.9711 kao već potvrđenu aktivnu S01–S10 bazu; 26300.9807 zasad sekundarni source-only universality fixture sa S11 native PASS. Dalji S12 proverava samo stvarne **razlike** originalnog 9711/9807 sadržaja i S09 source adapter hardcoding pre bilo kog novog 9807 queue/network/download. Ne nuditi slepi `START.cmd` iz 3. oktobra niti pokretati UUP konverziju kao cenu dokaza univerzalnosti.
 
 ### 4.1 Pre-download minimalni izbor + puna reconstruction closure + veliki offline rez
 
