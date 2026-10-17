@@ -290,5 +290,70 @@
     "notes": {
       "type": "string"
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "runtime_execution_allowed": {
+            "const": true
+          }
+        },
+        "required": [
+          "runtime_execution_allowed"
+        ]
+      },
+      "then": {
+        "required": [
+          "engine_module",
+          "required_checks",
+          "rollback"
+        ],
+        "properties": {
+          "certification": {
+            "enum": [
+              "DISPOSABLE_RUNTIME_VERIFIED",
+              "CURRENT_BUILD_CERTIFIED",
+              "RELEASE_CERTIFIED"
+            ]
+          },
+          "disposition": {
+            "const": "PRODUCTION_RULE"
+          },
+          "removal_class": {
+            "enum": [
+              "GREEN",
+              "AMBER"
+            ]
+          },
+          "required_checks": {
+            "minItems": 4
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "disposition": {
+            "enum": [
+              "RED_HOLD",
+              "COMPONENT_ENGINE_HANDOFF",
+              "KEEP_SKIP"
+            ]
+          }
+        },
+        "required": [
+          "disposition"
+        ]
+      },
+      "then": {
+        "properties": {
+          "runtime_execution_allowed": {
+            "const": false
+          }
+        }
+      }
+    }
+  ]
 }
