@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.9 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-17 (S35 actual provider-manifest/own-Staged READONLY PASS; S36 controlled disposable AppX lifecycle-only experiment planned)  
+**Verzija dokumenta:** 1.5.10 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-17 (S35 native provider-manifest PASS; exact S36 SHA-pinned disposable AppX lifecycle-only test DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -910,6 +910,38 @@ Common base **Defender ON** dok ne prođe certificirana zajednička baza; nakon 
 - **Finalization:** `COPIED_HIVE_UNLOAD_EXIT=0`, disposable hive deleted, `DISM_DISCARD_EXIT=0`, mount released=True, source WIM SHA unchanged=True; `RESULT=PASS_S35_9711_APPINSTALLER_PROVIDER_DISCOVERY_READONLY`; `PROVIDER_OWNER_SEMANTICS=NOT_CERTIFIED`, `APPINSTALLER_R133_REMOVAL_AUTHORITY=NOT_GRANTED`, image/registry mutation NOT_RUN. S34 six-child historical gate stays **known rejected**, current 26300 four-child root self-provider branch is **runtime read-only observed known topology**.
 - **CRITICAL 26300 versus historic 26200 R133 AppX counts:** S35 independently enumerated **TEN** provisioned AppX = five staging (DesktopAppInstaller+SecHealthUI/Calculator/Notepad/Photos) **plus five framework packages**. R133 original `R133_...Transaction.txt` says `PRE_APPX=PASS_5`, `POST_APPX=PASS_4` for historical 26200 test. For CURRENT 26300 any correct R4 removal should expect TEN→**NINE** (four selected apps plus five retained framework providers), **NOT** a direct 5→4 transplant. Confirm intact all five provider package IDs and four keeps, not just total count; any change outside R4 is dependency drift.
 - **PROPOSED S36 at first doc write:** on **owned disposable clone** of S31 WIM (immutable S31 source hash verified), first exact 4-root/740-owner and S34 prestate gate, then confined **AppInstaller five target registry leaf/subtree lifecycle** and empty `Deprovisioned\family` marker using RegistryAPI semantics as R133; unload offline SOFTWARE before DISM, require target provisioned absence + EXACT nine preserved provider/keep packages + four physical roots still present, CheckHealth/pending0. **Always /Discard test mount, retain original source unchanged; no physical carve, ACL operations, AppX provider deletion or commit of partial state.** If scope mismatch, `HOLD` and discard. Full R4 transaction including physical removal would be separately authorized only after actual disposable lifecycle proof. Next single command/source to be pinned in §8.24 second write, not yet run.
+
+### 8.24 S36 — exact pinned operator deliverable, RW **disposable clone** lifecycle ONLY, ALWAYS DISCARDED (2026-10-17)
+
+**Status: `S36=DELIVERED_NOT_RUN`; no S36 execution or PASS to claim.** The S35 native report is PASS for read-only provider discovery. For CURRENT 26300 AppInstaller removal, S36 is an isolated experiment: target-specific registry lifecycle **on a separately cloned WIM** only. It intentionally does not remove physical AppInstaller roots and NEVER commits an image in this step.
+
+- **Source on immutable GitHub commit** `development/BlueLite_Stage1_S36_26300.9711_AppInstaller_LifecycleDisposable.ps1` exact commit **`5f4c464c9ced829c027e5f774cbc93fb9c013f84`**, Git blob **`914340ee2e68e95cdca15e146ca6a3e2e0da912d`**, exact ASCII 14,803 bytes/305 lines, SHA256 **`0944C3E3CB81FDC69803D976D3860379170F34F1EB356FAF2BADC2D6D334743B`**. GitHub source refetched/readback, and SHA256 independently computed with selftested SHA256 implementation. PowerShell native execution/AST on Windows not performed; any runtime error is HOLD + discard.
+- **Exact ONE COMPLETE PowerShell 7 Admin command, no local edits** (before running close Total Commander/Explorer on `C:\work\E2E` and `C:\BL36M`):
+
+```powershell
+& {
+    $ErrorActionPreference = 'Stop'
+    $dest = 'C:\work\scripts\BlueLite_Stage1_S36_26300.9711_AppInstaller_LifecycleDisposable.ps1'
+    $url = 'https://raw.githubusercontent.com/johnny-belgrade/windows/5f4c464c9ced829c027e5f774cbc93fb9c013f84/development/BlueLite_Stage1_S36_26300.9711_AppInstaller_LifecycleDisposable.ps1'
+    $expected = '0944C3E3CB81FDC69803D976D3860379170F34F1EB356FAF2BADC2D6D334743B'
+    if (-not (Test-Path -LiteralPath 'C:\work\scripts' -PathType Container)) { throw 'BLUELITE_SCRIPTS_DIR_MISSING' }
+    if (Test-Path -LiteralPath $dest) { throw 'S36_LOCAL_SCRIPT_ALREADY_EXISTS_NO_OVERWRITE' }
+    Invoke-WebRequest -Uri $url -OutFile $dest -ErrorAction Stop
+    $got = (Get-FileHash -LiteralPath $dest -Algorithm SHA256).Hash
+    if ($got -cne $expected) {
+        Remove-Item -LiteralPath $dest -Force
+        throw "S36_PINNED_SOURCE_HASH_MISMATCH=$got"
+    }
+    Write-Host "S36_SOURCE_SHA256=PASS;$got"
+    & (Join-Path $PSHOME 'pwsh.exe') -NoProfile -ExecutionPolicy Bypass -File $dest
+}
+```
+
+- **Precise source/source-evidence preflight:** pin SHA S35 main `B7B50189034A636B62A47627D6B14F5217AC752F995BD75BAC9533EF9B752DCD`, S35 JSON `6C280CB28E146CA1B49847457B1B072B4F9E1AAFDD441D5FBA82F243082A3727`, S34 original report `09B30C9308BEC3371AF11180476E4A4F73D7A1C7F3B42E48E0962BB19F85980B`, S33 original report `FDA524744AB0626DD7155DDA71490B365ED3C51E6770C1884470ADF4565A69BA`, committed S31 source `C:\work\E2E\BlueLite_Stage1_S31_26300.9711_OneDriveAMBER\install.wim` 6,509,216,853 B and SHA `F52389FA66F8B60D56661C8786EC99409FB95447403B3C6FCBB94121EF8E340B`. Preflight no preexisting DISM WIM mounts or alias; requires 12 GiB free. Copy WIM only to **owned disposable** `C:\work\E2E\BlueLite_Stage1_S36_26300.9711_DisposableLifecycle\install.disposable.wim` with same SHA; mounted RW to **`C:\BL36M`** with five-field owner check.
+- **PRE and exact change:** DISM CheckHealth CLEAN, PRE AppX **exact TEN package IDs** from S35 (four keeps, AppInstaller bundle and FIVE independent framework provider package IDs); verify four physical roots 740 file count and 148,137,728 logical B. Load **ONLY mounted disposable candidate SOFTWARE** hive under unique temp `HKLM\BL36SOFT_<PID>` alias; exact prestate from S34 five present target scopes (Applications, Config, Staged exactly four own roots, WOW config, broadFS) and Deprovisioned target absent; independently read four provider Staged/Config keys. Then create **empty RegistryAPI-inspected Deprovisioned leaf** and delete **only those five target exact keys** with native reg.exe, no provider key deletion, no SID wildcard, no broader AppX. Verify all five target keys absent, empty marker present, provider subtree children/value names unchanged. Unload offline SOFTWARE before native DISM query.
+- **POST and ALWAYS rollback:** native `Get-ProvisionedAppxPackages` must show **exact NINE remaining identities**, not historic R133's 4: four protected Apps plus five shared providers. All AppInstaller four roots **must still be present** because this is lifecycle-only test; CheckHealth CLEAN and no CBS pending. Regardless of PASS/HOLD: unload any owned hive and DISM `/Unmount-Image /Discard`, **never /Commit**, delete only owned disposable clone WIM after release, preserve forensic log/JSON; verify immutable S31 source SHA unchanged. Any mismatch stops mutation and exits `HOLD`. `PASS` for S36 is only a **transient verified 10→9 lifecycle** that is discarded; production physical R4 and direct R133 execution still NOT AUTHORIZED. Script performs **offline image mutation only on owned clone**, not live Windows software or original source.
+- **Operator outputs to upload:** `C:\work\logs\BlueLite_Stage1_S36_26300.9711_AppInstaller_LifecycleDisposable.txt` and `C:\work\logs\BlueLite_Stage1_S36_26300.9711_AppInstaller_LifecycleEvidence.json` if created. Expected narrow success `RESULT=PASS_S36_9711_R4_LIFECYCLE_TEST_ALWAYS_DISCARDED`, otherwise `RESULT=HOLD_S36_9711_APPINSTALLER_DISPOSABLE_LIFECYCLE`; analyze exact failure and rollback/release markers before future step.
+- **Release boundary:** S31 COMMITTED_PASS, S32 RO_PASS, S33 OWNER_740_PASS, S34 HISTORIC_SIX_CHILD_HOLD, S35 PROVIDER_DISCOVERY_PASS, S36 DELIVERED_NOT_RUN. Next **full** AppInstaller physical transaction requires separately reviewed owned disposable **R4 exact 4-root/740-file carve**, CheckHealth/ScanHealth, native post-state, protected providers and commit verification; do not shortcut any stage. Master remains unchanged; legacy Handoff duplicate cleanup still deferred.
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
