@@ -1,0 +1,392 @@
+{
+  "schema_version": "1.0.0",
+  "registry_revision": "2026-10-17-initial-historical-index",
+  "status": "DOCUMENTED_ONLY_NO_26300_MUTATION_AUTHORITY",
+  "scope": "Germanium 26300-first; 26200 historical topology references",
+  "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
+  "execution_rule": "All entries have runtime_execution_allowed=false until exact operator-reviewed engine_module SHA, current build topology predicates, disposable proof and release gates are supplied. Registry is not executable code.",
+  "recipes": [
+    {
+      "recipe_id": "BL.APPX.DesktopAppInstaller.ExactLifecycle",
+      "logical_target": "DesktopAppInstaller four WindowsApps roots",
+      "aliases": [
+        "R4",
+        "DesktopAppInstaller"
+      ],
+      "phase": "STAGE1_MAX_PRE",
+      "removal_class": "AMBER",
+      "disposition": "PRODUCTION_RULE",
+      "certification": "HISTORICAL_REFERENCE",
+      "runtime_execution_allowed": false,
+      "variants": [
+        {
+          "variant_id": "26200.9711-R133",
+          "source_family": "Germanium",
+          "supported_lineage": [
+            "26200.x"
+          ],
+          "topology_status": "KNOWN_BUT_NOT_TESTED_ON_26300",
+          "required_predicates": [
+            {
+              "kind": "AppX",
+              "target": "exact installed AppInstaller family and four roots",
+              "expected": "independent owner closure and permitted lifecycle state"
+            }
+          ],
+          "expected_post_state": [
+            "four top-level keep apps",
+            "AppInstaller roots absent",
+            "CBS CLEAN",
+            "pending=0"
+          ],
+          "tested_builds": [
+            "26200.9711"
+          ],
+          "evidence_refs": [
+            "BlueLite_R133_R4_26200_9711_Transaction.txt",
+            "BlueLite_R133_R4_PostCommit_ReadOnly.txt"
+          ]
+        }
+      ],
+      "protected_floor": [
+        "SecHealthUI",
+        "Calculator",
+        "Notepad",
+        "Photos",
+        "shared AppInstallerPrompt/WinRT/OneCore"
+      ],
+      "required_checks": [
+        "SOURCE_SHA",
+        "EXACT_TOPOLOGY",
+        "DEPENDENCY_GRAPH",
+        "APPX_MANIFEST_CLOSURE",
+        "PROTECTED_FLOOR",
+        "CHECKHEALTH",
+        "PENDING_ZERO",
+        "INDEPENDENT_POST_COMMIT",
+        "NEGATIVE_FIXTURES"
+      ],
+      "rollback": "Discard only owned disposable candidate on unexpected delta; protect immutable WIM.",
+      "evidence": [
+        {
+          "source_kind": "MASTER",
+          "reference": "BlueLite-Master_Germanium_Strategy_final.md §17",
+          "scope": "Historical disposition; verify exact 26300 topology before mutation"
+        },
+        {
+          "source_kind": "OPERATOR_LOG",
+          "reference": "BlueLite_R133_R4_PostCommit_ReadOnly.txt",
+          "scope": "Historical 26200.9711 verified R4 post-commit"
+        }
+      ],
+      "notes": "Historical 740-file number and explicit SID/root versions are not 26300 predicates."
+    },
+    {
+      "recipe_id": "BL.FOD.LanguageBasic.enUS",
+      "logical_target": "Language.Basic~~~en-US",
+      "aliases": [
+        "R7",
+        "LanguageFeatures-Basic"
+      ],
+      "phase": "STAGE1_MAX_PRE",
+      "removal_class": "RED",
+      "disposition": "RED_HOLD",
+      "certification": "HISTORICAL_REFERENCE",
+      "runtime_execution_allowed": false,
+      "variants": [
+        {
+          "variant_id": "26200.9711-R115-R142",
+          "source_family": "Germanium",
+          "supported_lineage": [
+            "26200.x"
+          ],
+          "topology_status": "KNOWN_REJECTED",
+          "required_predicates": [
+            {
+              "kind": "CBS",
+              "target": "Language.Basic FoD package ownership and state",
+              "expected": "26200.9711 native remove rejected 0x800F0825"
+            }
+          ],
+          "expected_post_state": [
+            "no unverified carve",
+            "Client Language Pack kept"
+          ],
+          "tested_builds": [
+            "26200.9711"
+          ],
+          "evidence_refs": [
+            "BlueLite_R127_R7_LanguageBasic_9711_ReadOnly_Delta.txt",
+            "BlueLite_R142_R7_COMPONENTS_Structure_26200_9711.txt"
+          ]
+        }
+      ],
+      "protected_floor": [
+        "en-US Client Language Pack",
+        "Servicing capability providers"
+      ],
+      "required_checks": [
+        "EXACT_TOPOLOGY",
+        "DEPENDENCY_GRAPH",
+        "PROTECTED_FLOOR"
+      ],
+      "rollback": "No mutation while RED_HOLD.",
+      "evidence": [
+        {
+          "source_kind": "MASTER",
+          "reference": "BlueLite-Master_Germanium_Strategy_final.md §20",
+          "scope": "Historical disposition; verify exact 26300 topology before mutation"
+        },
+        {
+          "source_kind": "CURRENT_STATUS",
+          "reference": "BlueLite_Current_Status.md R115/R142",
+          "scope": "26200 R7 blocker and historical analysis"
+        }
+      ],
+      "notes": "Earlier 26200.9445 capability variant is not the same as 26200.9711 R7 payload."
+    },
+    {
+      "recipe_id": "BL.FOD.EdgeWebView2",
+      "logical_target": "Edge WebView FoD capability",
+      "aliases": [
+        "Edge.WebView"
+      ],
+      "phase": "STAGE1_MAX_PRE",
+      "removal_class": "GREEN",
+      "disposition": "PRODUCTION_RULE",
+      "certification": "HISTORICAL_REFERENCE",
+      "runtime_execution_allowed": false,
+      "variants": [
+        {
+          "variant_id": "26200-native",
+          "source_family": "Germanium",
+          "supported_lineage": [
+            "26200.x"
+          ],
+          "topology_status": "KNOWN_BUT_NOT_TESTED_ON_26300",
+          "required_predicates": [
+            {
+              "kind": "DISM",
+              "target": "exact Edge WebView capability",
+              "expected": "registered removable native capability; protected siblings known"
+            }
+          ],
+          "expected_post_state": [
+            "named capability removed by native servicing",
+            "retained dependencies present",
+            "health clean"
+          ],
+          "tested_builds": [
+            "26200.x"
+          ],
+          "evidence_refs": [
+            "BlueLite_Current_Status.md Edge WebView FoD"
+          ]
+        }
+      ],
+      "protected_floor": [
+        "shared WebView and servicing providers"
+      ],
+      "required_checks": [
+        "EXACT_TOPOLOGY",
+        "PROTECTED_FLOOR",
+        "CHECKHEALTH",
+        "PENDING_ZERO"
+      ],
+      "rollback": "Discard owned disposable on unexpected post-state.",
+      "evidence": [
+        {
+          "source_kind": "MASTER",
+          "reference": "BlueLite-Master_Germanium_Strategy_final.md §20",
+          "scope": "Historical disposition; verify exact 26300 topology before mutation"
+        }
+      ],
+      "notes": "Standalone WebView shared-owner residue is a separate COMPONENT_ENGINE_HANDOFF."
+    },
+    {
+      "recipe_id": "BL.CBS.OneDrive.NeutralSequence",
+      "logical_target": "OneDrive setup neutral package sequence",
+      "aliases": [
+        "OneDrive WOW64",
+        "OneDrive current neutral"
+      ],
+      "phase": "STAGE1_MAX_PRE",
+      "removal_class": "AMBER",
+      "disposition": "PRODUCTION_RULE",
+      "certification": "HISTORICAL_REFERENCE",
+      "runtime_execution_allowed": false,
+      "variants": [
+        {
+          "variant_id": "26200-proven-sequence",
+          "source_family": "Germanium",
+          "supported_lineage": [
+            "26200.x"
+          ],
+          "topology_status": "KNOWN_BUT_NOT_TESTED_ON_26300",
+          "required_predicates": [
+            {
+              "kind": "CBS",
+              "target": "exact current neutral, WOW64 neutral and old staged owners",
+              "expected": "certified strict ordering and owner delta present"
+            }
+          ],
+          "expected_post_state": [
+            "servicing neutral package targets removed",
+            "only documented servicing satellites change",
+            "pending=0"
+          ],
+          "tested_builds": [
+            "26200.x"
+          ],
+          "evidence_refs": [
+            "BlueLite_Current_Status.md OneDrive AMBER"
+          ]
+        }
+      ],
+      "protected_floor": [
+        "servicing current layer",
+        "shared package owners"
+      ],
+      "required_checks": [
+        "SOURCE_SHA",
+        "EXACT_TOPOLOGY",
+        "DEPENDENCY_GRAPH",
+        "CBS_OBSERVED_DELTA",
+        "PROTECTED_FLOOR",
+        "CHECKHEALTH",
+        "SCANHEALTH",
+        "PENDING_ZERO"
+      ],
+      "rollback": "Discard owned disposable after unexpected CBS delta.",
+      "evidence": [
+        {
+          "source_kind": "MASTER",
+          "reference": "BlueLite-Master_Germanium_Strategy_final.md §20",
+          "scope": "Historical disposition; verify exact 26300 topology before mutation"
+        }
+      ],
+      "notes": "Order current neutral -> WOW64 neutral -> old staged neutral; OneDriveBackup residue is separate HANDOFF."
+    },
+    {
+      "recipe_id": "BL.CBS.Sense",
+      "logical_target": "Sense Defender servicing payload",
+      "aliases": [
+        "Sense",
+        "Microsoft Defender for Endpoint Sense"
+      ],
+      "phase": "CROSS_STAGE",
+      "removal_class": "RED",
+      "disposition": "COMPONENT_ENGINE_HANDOFF",
+      "certification": "HISTORICAL_REFERENCE",
+      "runtime_execution_allowed": false,
+      "variants": [
+        {
+          "variant_id": "26200-sense-repairable",
+          "source_family": "Germanium",
+          "supported_lineage": [
+            "26200.x"
+          ],
+          "topology_status": "KNOWN_REJECTED",
+          "required_predicates": [
+            {
+              "kind": "CBS",
+              "target": "Sense installed metadata vs payload",
+              "expected": "raw carve yields ScanHealth Repairable"
+            }
+          ],
+          "expected_post_state": [
+            "do not remove Sense via raw payload deletion"
+          ],
+          "tested_builds": [
+            "26200.x"
+          ],
+          "evidence_refs": [
+            "BlueLite Current Sense carve ScanHealth"
+          ]
+        }
+      ],
+      "protected_floor": [
+        "CBS component-store coherence",
+        "Defender ON common base"
+      ],
+      "required_checks": [
+        "EXACT_TOPOLOGY",
+        "DEPENDENCY_GRAPH",
+        "CBS_OBSERVED_DELTA",
+        "PROTECTED_FLOOR",
+        "SCANHEALTH"
+      ],
+      "rollback": "No raw carve in production; separately certify tool-side outcome and both Defender branches.",
+      "evidence": [
+        {
+          "source_kind": "MASTER",
+          "reference": "BlueLite-Master_Germanium_Strategy_final.md §2.3",
+          "scope": "Historical disposition; verify exact 26300 topology before mutation"
+        },
+        {
+          "source_kind": "MASTER",
+          "reference": "BlueLite-Master_Germanium_Strategy_final.md §20",
+          "scope": "Historical disposition; verify exact 26300 topology before mutation"
+        }
+      ],
+      "notes": "Tool handoff is not permission for blind NTLite deletion of unknown graph."
+    },
+    {
+      "recipe_id": "BL.CBS.FoDMetadata.Superseded",
+      "logical_target": "Superseded FoDMetadata package",
+      "aliases": [
+        "FoDMetadata"
+      ],
+      "phase": "STAGE1_MAX_PRE",
+      "removal_class": "GREEN",
+      "disposition": "PRODUCTION_RULE",
+      "certification": "HISTORICAL_REFERENCE",
+      "runtime_execution_allowed": false,
+      "variants": [
+        {
+          "variant_id": "26200.9278-339",
+          "source_family": "Germanium",
+          "supported_lineage": [
+            "26200.x"
+          ],
+          "topology_status": "KNOWN_BUT_NOT_TESTED_ON_26300",
+          "required_predicates": [
+            {
+              "kind": "CBS",
+              "target": "exact superseded FoDMetadata package",
+              "expected": "superseded, native provider removable"
+            }
+          ],
+          "expected_post_state": [
+            "selected superseded package absent",
+            "current FoDMetadata layer preserved"
+          ],
+          "tested_builds": [
+            "26200.9278"
+          ],
+          "evidence_refs": [
+            "339-R1-Canonical-FodMetadata-Superseded-Native-Production-Removal.txt"
+          ]
+        }
+      ],
+      "protected_floor": [
+        "current FoDMetadata servicing layer"
+      ],
+      "required_checks": [
+        "EXACT_TOPOLOGY",
+        "PROTECTED_FLOOR",
+        "CHECKHEALTH",
+        "PENDING_ZERO"
+      ],
+      "rollback": "Discard only owned candidate if native servicing post-state unexpected.",
+      "evidence": [
+        {
+          "source_kind": "MASTER",
+          "reference": "BlueLite-Master_Germanium_Strategy_final.md §20",
+          "scope": "Historical disposition; verify exact 26300 topology before mutation"
+        }
+      ],
+      "notes": "Old wrapper and current layer have different dispositions."
+    }
+  ]
+}
