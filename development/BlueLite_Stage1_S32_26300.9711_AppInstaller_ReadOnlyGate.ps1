@@ -67,8 +67,8 @@
         }
         return $false
     }
-    function Dism([string]$label,[string[]]$args) {
-        $lines=@(& $dism @args 2>&1 | ForEach-Object { [string]$_ })
+    function Dism([string]$label,[string[]]$arguments) {
+        $lines=@(& $dism @arguments 2>&1 | ForEach-Object { [string]$_ })
         $code=[int]$LASTEXITCODE
         $out=$lines -join [Environment]::NewLine
         Note "DISM_$label=$code"
