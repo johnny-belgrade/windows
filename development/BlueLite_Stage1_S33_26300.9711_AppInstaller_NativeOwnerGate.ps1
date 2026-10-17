@@ -80,7 +80,7 @@
    if($csv[0].PSObject.Properties.Name -cnotcontains $col){throw "CSV_COLUMN_MISSING=$col"}
   }
   $expectedRoots=@($roots | ForEach-Object {$_.N})
-  $seen=[Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
+  $seen=[System.Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
   [long]$total=0
   foreach($r in $csv){
    if($expectedRoots -cnotcontains $r.Root -or
