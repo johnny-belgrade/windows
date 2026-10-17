@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.7 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-17 (S34 actual registry HOLD: 26300 AppInstaller four own Staged children, not historical six; focused S35 provider discovery planned)  
+**Verzija dokumenta:** 1.5.8 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-17 (S34 operator registry variant HOLD; exact S35 provider discovery read-only step DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -871,6 +871,36 @@ Common base **Defender ON** dok ne prođe certificirana zajednička baza; nakon 
 - **Actual terminating evidence:** `ERROR=STAGED_SIX_CHILD_VARIANT_DRIFT=ACTUAL_4;MISSING_...`, `RESULT=HOLD_S34_APPINSTALLER_REGISTRY_TOPOLOGY_READONLY`; registry JSON saved, **COPIED_SOFTWARE_UNLOAD_EXIT=0**, **DISPOSABLE_HIVE_COPY_REMOVED=PASS**, DISM `/Discard` EXIT0, mount released and WIM SHA unchanged. `APPINSTALLER_R133_MUTATION_AUTHORITY=NOT_GRANTED`. No mandatory WIM rollback needed because S34 was read-only.
 - **Meaning:** S34 is a *proper scoped cross-build variant HOLD*, not evidence that R133 can be run and not permission for broad search/Carve. At registry contract level, `26200-six-child` exact predicate is **KNOWN_REJECTED** on this 26300 WIM; new `26300-four-child` is **KNOWN_MATCHING for its directly observed AppInstaller Staged physical/topological slice**, but the overall removable AppX lifecycle and provider registration remain **UNKNOWN_DEPENDENCY** and `runtime_execution_allowed=false`. Only a targeted 26300 predicate/recipe variant is permitted later.
 - **ONE NEXT S35, not yet delivered at first GitHub upsert:** PIN S34 originals + S31 WIM; short read-only WIM; copy SOFTWARE hive (temp HKLM alias to copied offline hive) and enumerate **two named provider family Staged roots**, exact target AppInstaller 4-child Staged root, optional provider Config/Applications paths, and **AppInstaller x64 AppxManifest PackageDependency names**; additionally DISM current provisioned exact provider package identities. Scoped snapshot JSON, no write/removal, unload copied hive, /Discard, WIM hash unchanged. S35 source+SHA/command and expected logs to be added as second Handoff write; no S35 PASS before operator result.
+
+### 8.22 S35 — EXACT DELIVERED PROVIDER-DISCOVERY READONLY SCRIPT, NOT_RUN (17.10.2026)
+
+**State at delivery:** S31 `COMMITTED_PASS`; S32 `READONLY_PASS`; S33 `NATIVE_OWNER_740_PASS`; S34 `HOLD_4_STAGED_CHILD_CROSS_BUILD_VARIANT`; **S35 `DELIVERED_NOT_RUN`**. No AppInstaller 26300 mutation authority.
+
+- **Reviewed pinned S35 source** `development/BlueLite_Stage1_S35_26300.9711_AppInstaller_ProviderTopologyReadOnly.ps1` at immutable commit **`f3b41bb6b9b3e49c09e1a0e747c522f4dc23f968`**, Git blob SHA1 **`d3eb3d5917d39970ee18997f0aeb1bd2bfd99a48`**, source **SHA256 `6B6FD52D7529EDEC37AF754C6809E0A7EB212E6F9ED448EF48E09F1FD0FA7978`** (12,369 ASCII bytes, GitHub exact readback PASS). No separate PowerShell AST or native execution certificate yet. Full script is available at the pinned commit, never execute moving `main` version unpinned.
+- **Exactly one complete PS7 Admin command** (first close Total Commander/Explorer touching `C:\work\E2E` and `C:\BL35M`):
+
+```powershell
+& {
+    $ErrorActionPreference = 'Stop'
+    $dest = 'C:\work\scripts\BlueLite_Stage1_S35_26300.9711_AppInstaller_ProviderTopologyReadOnly.ps1'
+    $url = 'https://raw.githubusercontent.com/johnny-belgrade/windows/f3b41bb6b9b3e49c09e1a0e747c522f4dc23f968/development/BlueLite_Stage1_S35_26300.9711_AppInstaller_ProviderTopologyReadOnly.ps1'
+    $expected = '6B6FD52D7529EDEC37AF754C6809E0A7EB212E6F9ED448EF48E09F1FD0FA7978'
+    if (-not (Test-Path -LiteralPath 'C:\work\scripts' -PathType Container)) { throw 'SCRIPTS_DIR_MISSING' }
+    if (Test-Path -LiteralPath $dest) { throw 'S35_LOCAL_SCRIPT_ALREADY_EXISTS' }
+    Invoke-WebRequest -Uri $url -OutFile $dest -ErrorAction Stop
+    $actual = (Get-FileHash -LiteralPath $dest -Algorithm SHA256).Hash
+    if ($actual -cne $expected) {
+        Remove-Item -LiteralPath $dest -Force
+        throw "S35_SOURCE_SHA256_MISMATCH=$actual"
+    }
+    Write-Host "S35_PINNED_SOURCE_SHA256=PASS;$actual"
+    & (Join-Path $PSHOME 'pwsh.exe') -NoProfile -ExecutionPolicy Bypass -File $dest
+}
+```
+
+- **Executable intent/contract:** pins immutable S31 26300.9711 WIM SHA `F52389FA66F8B60D56661C8786EC99409FB95447403B3C6FCBB94121EF8E340B`, S34 uploaded HOLD main SHA `09B30C9308BEC3371AF11180476E4A4F73D7A1C7F3B42E48E0962BB19F85980B`, snapshot JSON SHA `CD08E2CAD6AF97B2E9DD4BAFBEE28582F366C9B8FCE9AA3F15522C529AA6E0AF`, S33 main SHA `FDA524744AB0626DD7155DDA71490B365ED3C51E6770C1884470ADF4565A69BA`. Verifies actual old four-child `Staged` JSON and fail-closed WIM/no existing mount, creates `C:\BL35M` read-only WIM mount with exact owner five fields. DISM /Get-ProvisionedAppxPackages verifies **10 total** with DesktopAppInstaller + explicitly both `Microsoft.UI.Xaml.2.8` and `Microsoft.VCLibs.140.00.UWPDesktop` retained; emits actual scoped provider package names without invented versions. Reads *only current AppInstaller x64* `AppxManifest.xml` and collects PackageDependency names/minimum versions/publishers. Makes own disposable copy of mounted image `Windows\System32\config\SOFTWARE`, loads TEMP `HKLM\BL35SOFT_<PID>` alias pointed at **that copied offline hive**, scoped .NET read-only inspection `Staged\AppInstaller family` (must still be exactly four own packages), each of **two named provider Staged and Config family** branches, records names/counts in JSON. Does not infer provider owner semantics from existence or from manifest alone. Attempts to unload copied hive, remove its temporary bin and read-only DISM `/Discard`, verifies source WIM SHA unchanged. No original offline registry writes, no live OS changes except transient handle on copied hive, no AppX/WinSxS/ACL/CBS remove and no R133 promotion. Unknown provider placement is **discovery**, not permission for fallback six-child key creation.
+- **Request originals from operator:** `C:\work\logs\BlueLite_Stage1_S35_26300.9711_AppInstaller_ProviderTopologyReadOnly.txt` and `C:\work\logs\BlueLite_Stage1_S35_26300.9711_AppInstaller_ProviderSnapshot.json` if created. Narrow success `PASS_S35_9711_APPINSTALLER_PROVIDER_DISCOVERY_READONLY` only means completed data collection with unmodified WIM, **`PROVIDER_OWNER_SEMANTICS=NOT_CERTIFIED` and `APPINSTALLER_R133_REMOVAL_AUTHORITY=NOT_GRANTED` still explicit**; `HOLD_S35_APPINSTALLER_PROVIDER_DISCOVERY_READONLY` means inspect original errors before another command.
+- **Mandatory later sequencing §0R:** on receipt of S35 report, deeply analyze original files → update Current/Handoff and registry if new evidence, independent readbacks → issue one next operator step → second Handoff write/readback to save that **new** delivered/not-run endpoint. Master changes remain operator-only, cleanup of old Handoff duplicate sections deferred.
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
