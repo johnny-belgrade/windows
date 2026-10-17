@@ -1,0 +1,270 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/johnny-belgrade/windows/main/production/contracts/BlueLite_ResultReceipt.schema.json",
+  "title": "BlueLite operator-run evidence receipt contract v1",
+  "description": "A structured wrapper around actual evidence, never a substitute for the raw log, independent post-state or operator approval.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "run_id",
+    "checkpoint_utc",
+    "phase",
+    "source_build",
+    "source_contract_sha256",
+    "script_path",
+    "script_sha256",
+    "operator_executed",
+    "result",
+    "evidence_tier",
+    "mutation_performed",
+    "raw_evidence_paths",
+    "next_action_authorized"
+  ],
+  "properties": {
+    "contract_version": {
+      "const": "1.0.0"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 8
+    },
+    "checkpoint_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "phase": {
+      "enum": [
+        "SOURCE_FREEZE",
+        "QUEUE_GATE",
+        "APPS_ONLY",
+        "WINDOWS_FULL",
+        "CONVERTER",
+        "MAX_PRE",
+        "OFFLINE",
+        "NTLITE",
+        "VM",
+        "RELEASE",
+        "DOCUMENTATION"
+      ]
+    },
+    "source_build": {
+      "type": "string",
+      "pattern": "^\\d{5}\\.\\d+$"
+    },
+    "source_contract_sha256": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "script_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "script_sha256": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "operator_executed": {
+      "type": "boolean"
+    },
+    "mutation_performed": {
+      "type": "boolean"
+    },
+    "result": {
+      "enum": [
+        "PROPOSED",
+        "DELIVERED_NOT_RUN",
+        "STATIC_VERIFIED",
+        "PASS_SCOPED",
+        "HOLD",
+        "FAIL_CLOSED",
+        "THIS_BUILD_CERTIFIED",
+        "RELEASE_CERTIFIED"
+      ]
+    },
+    "evidence_tier": {
+      "enum": [
+        "DOCUMENTED",
+        "STATIC",
+        "NATIVE_SOURCE_ONLY",
+        "DISPOSABLE_RUNTIME",
+        "CURRENT_BUILD",
+        "RELEASE"
+      ]
+    },
+    "raw_evidence_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "native_exit_code": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "image_before_sha256": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "image_after_sha256": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "health": {
+      "enum": [
+        "NOT_RUN",
+        "CLEAN",
+        "REPAIRABLE",
+        "UNKNOWN"
+      ]
+    },
+    "pending_count": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "protected_floor": {
+      "enum": [
+        "NOT_RUN",
+        "PASS",
+        "HOLD",
+        "FAIL_CLOSED"
+      ]
+    },
+    "recipe_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "recipe_id",
+          "decision"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "recipe_id": {
+            "type": "string"
+          },
+          "decision": {
+            "enum": [
+              "FAST_PATH_REUSED",
+              "KNOWN_VARIANT_APPLIED",
+              "ALREADY_ABSENT",
+              "KEEP_SKIP",
+              "NEEDS_NTLITE_HANDOFF",
+              "TARGET_BLOCKED_NEW_DEPENDENCY",
+              "FAIL_CLOSED"
+            ]
+          },
+          "post_state": {
+            "type": "string"
+          },
+          "evidence_path": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "independent_post_state_verified": {
+      "type": "boolean"
+    },
+    "release_tests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "next_action_authorized": {
+      "type": "boolean"
+    },
+    "next_action": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "result": {
+            "const": "RELEASE_CERTIFIED"
+          }
+        },
+        "required": [
+          "result"
+        ]
+      },
+      "then": {
+        "properties": {
+          "evidence_tier": {
+            "const": "RELEASE"
+          },
+          "operator_executed": {
+            "const": true
+          },
+          "independent_post_state_verified": {
+            "const": true
+          }
+        },
+        "required": [
+          "release_tests",
+          "independent_post_state_verified"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mutation_performed": {
+            "const": true
+          }
+        },
+        "required": [
+          "mutation_performed"
+        ]
+      },
+      "then": {
+        "required": [
+          "image_before_sha256",
+          "image_after_sha256",
+          "independent_post_state_verified"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "result": {
+            "const": "DELIVERED_NOT_RUN"
+          }
+        },
+        "required": [
+          "result"
+        ]
+      },
+      "then": {
+        "properties": {
+          "operator_executed": {
+            "const": false
+          },
+          "mutation_performed": {
+            "const": false
+          }
+        }
+      }
+    }
+  ]
+}
