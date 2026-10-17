@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "registry_revision": "2026-10-17-s32-appinstaller-26300-physical-candidate-r3",
-  "status": "DOCUMENTED_S31_NATIVE_AND_S32_READONLY_CANDIDATE_NO_AUTO_MUTATION",
+  "registry_revision": "2026-10-17-s33-appinstaller-26300-owner-proven-lifecycle-pending-r4",
+  "status": "S31_ONEDRIVE_NATIVE_S32_APPX_PHYSICAL_S33_OWNER_PASS_S34_LIFECYCLE_PENDING_NO_AUTOMUTATION",
   "scope": "Germanium 26300-first; 26200 historical topology references",
   "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
   "execution_rule": "All entries have runtime_execution_allowed=false until exact operator-reviewed engine_module SHA, current build topology predicates, disposable proof and release gates are supplied. Registry is not executable code.",
@@ -92,12 +92,19 @@
               "kind": "UNRESOLVED",
               "target": "native 26300.9711 hardlink owner closure and exact offline AppX marker/provider registry owner state",
               "expected": "NOT_TESTED in S32; historical 26200 R125 native 740/740 and R133 transaction do not authorize current 26300 mutation"
+            },
+            {
+              "kind": "NATIVE",
+              "target": "exact 740 S32 CSV-derived AppInstaller file links on S31 26300.9711 short RO mount",
+              "expected": "S33 native fsutil hardlink list returned exactly one own path for all 740; owner anomaly count zero; no external links; NO registry lifecycle certification",
+              "evidence_ref": "BlueLite_Stage1_S33_26300.9711_AppInstaller_NativeOwnerGate.txt SHA256 FDA524744AB0626DD7155DDA71490B365ED3C51E6770C1884470ADF4565A69BA"
             }
           ],
           "expected_post_state": [
             "S32 read-only WIM SHA unchanged and mount /Discard released (PASS)",
             "Current S32 only inventories 740 reparse/sparse projected files; hardlink ownership, unique physical savings, AppX lifecycle/removal NOT CERTIFIED",
-            "Future R4 controlled removal requires own disposable 26300 mutation, post 4 keep AppX, 0 AppInstaller roots, protected providers, CBS CLEAN/pending0 and post-commit read-only proof"
+            "Future R4 controlled removal requires own disposable 26300 mutation, post 4 keep AppX, 0 AppInstaller roots, protected providers, CBS CLEAN/pending0 and post-commit read-only proof",
+            "S33 actual native RO owner check PASS 740/740 with zero anomalies, /Discard exit0 and WIM hash unchanged; offline AppX registry remains UNKNOWN_DEPENDENCY"
           ],
           "allowed_delta": [
             "S32 read-only audit: no WIM/CBS/AppX/registry mutation and source WIM SHA unchanged"
@@ -110,7 +117,8 @@
             "C:\\work\\logs\\BlueLite_Stage1_S32_26300.9711_AppInstaller_PhysicalInventory.csv SHA256 5828C1540CC39B06CB73DB00C5D4604752A2D3BF9BB0039A7C11F005DB8B5B95",
             "BlueLite_R125_R113_AppInstaller_ShortMount_OwnerGate.txt (historic 26200)",
             "BlueLite_R133_R4_26200_9711_Transaction.txt (historic 26200)",
-            "BlueLite_Germanium_Handoff.md §8.17"
+            "BlueLite_Germanium_Handoff.md §8.17",
+            "C:\\work\\logs\\BlueLite_Stage1_S33_26300.9711_AppInstaller_NativeOwnerGate.txt SHA256 FDA524744AB0626DD7155DDA71490B365ED3C51E6770C1884470ADF4565A69BA"
           ]
         }
       ],
@@ -155,9 +163,15 @@
           "reference": "BlueLite_Stage1_S32_26300.9711_AppInstaller_PhysicalInventory.csv",
           "sha256": "5828C1540CC39B06CB73DB00C5D4604752A2D3BF9BB0039A7C11F005DB8B5B95",
           "scope": "Exact S32 CSV 740 root-relative unique files, 148137728 B logical all reparse/sparse; not unique reclaim or hardlink closure."
+        },
+        {
+          "source_kind": "OPERATOR_LOG",
+          "reference": "BlueLite_Stage1_S33_26300.9711_AppInstaller_NativeOwnerGate.txt",
+          "sha256": "FDA524744AB0626DD7155DDA71490B365ED3C51E6770C1884470ADF4565A69BA",
+          "scope": "26300.9711 S33 exact 740 current hardlink own paths via fsutil, no external links, RO WIM /Discard and SHA unchanged; registry lifecycle not tested."
         }
       ],
-      "notes": "Historical 740-file number and explicit SID/root versions are not 26300 predicates. S32 26300.9711 physical four-root/740-row/topology matches historical 26200 R125/R133, but native hardlink owner closure and offline AppX registry lifecycle are UNKNOWN_DEPENDENCY. Do not auto-run R133. S33 next RO hardlink gate. ",
+      "notes": "Historical 740-file number and explicit SID/root versions are not 26300 predicates. S32 26300.9711 physical four-root/740-row/topology matches historical 26200 R125/R133, but native hardlink owner closure and offline AppX registry lifecycle are UNKNOWN_DEPENDENCY. Do not auto-run R133. S33 next RO hardlink gate.  S33 26300.9711 exact native 740/740 owner closure now OPERATOR_PASS, but `UNKNOWN_DEPENDENCY` retained for 26300 AppX registry lifecycle/association/provider owners; R133 mutation NOT AUTHORIZED. S34 registry read-only gate next.",
       "contract_version": "1.0.0"
     },
     {
