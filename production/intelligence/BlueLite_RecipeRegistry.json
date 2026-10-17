@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "registry_revision": "2026-10-17-s34-appinstaller-26300-registry-four-child-variant-hold-r5",
-  "status": "S34_NATIVE_READONLY_FOUR_CHILD_STAGED_VARIANT_HOLD_S35_PROVIDER_DISCOVERY_PENDING_NO_APPX_MUTATION",
+  "registry_revision": "2026-10-17-s35-appinstaller-26300-provider-self-staged-manifest-pass-r6",
+  "status": "S35_NATIVE_READONLY_PROVIDER_TOPOLOGY_PASS_R4_LIFECYCLE_DISPOSABLE_UNTESTED_NO_AUTO_MUTATION",
   "scope": "Germanium 26300-first; 26200 historical topology references",
   "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
   "execution_rule": "All entries have runtime_execution_allowed=false until exact operator-reviewed engine_module SHA, current build topology predicates, disposable proof and release gates are supplied. Registry is not executable code.",
@@ -104,6 +104,12 @@
               "target": "26300.9711 AppxAllUserStore\\Staged\\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe",
               "expected": "S34 actual 4 exact own roots, no two historical 26200 R133 Staged provider association children; 5 target-scoped prestate keys present and Deprovisioned absent",
               "evidence_ref": "BlueLite_Stage1_S34_26300.9711_AppInstaller_RegistrySnapshot.json SHA256 CD08E2CAD6AF97B2E9DD4BAFBEE28582F366C9B8FCE9AA3F15522C529AA6E0AF"
+            },
+            {
+              "kind": "APPX_MANIFEST_AND_PROVIDER_SELF_STAGED",
+              "target": "26300 AppInstaller x64 AppxManifest PackageDependency + two independent provider Staged/Config roots",
+              "expected": "exact two PackageDependencies Microsoft.UI.Xaml.2.8 min 8.2310.30001.0 and Microsoft.VCLibs.140.00.UWPDesktop min 14.0.30704.0; exact matching provisioned packages; provider-family Staged each has its own single package child and Config SetupPhase; AppInstaller Staged remains exactly four own children, not historical six",
+              "evidence_ref": "BlueLite_Stage1_S35_26300.9711_AppInstaller_ProviderSnapshot.json SHA256 6C280CB28E146CA1B49847457B1B072B4F9E1AAFDD441D5FBA82F243082A3727"
             }
           ],
           "expected_post_state": [
@@ -111,7 +117,8 @@
             "Current S32 only inventories 740 reparse/sparse projected files; hardlink ownership, unique physical savings, AppX lifecycle/removal NOT CERTIFIED",
             "Future R4 controlled removal requires own disposable 26300 mutation, post 4 keep AppX, 0 AppInstaller roots, protected providers, CBS CLEAN/pending0 and post-commit read-only proof",
             "S33 actual native RO owner check PASS 740/740 with zero anomalies, /Discard exit0 and WIM hash unchanged; offline AppX registry remains UNKNOWN_DEPENDENCY",
-            "S34 actual read-only HOLD because exact 26300 4-child AppInstaller Staged differs from 26200 R133 six-child variant; no mutation, copied hive unloaded, RO mount /Discard exit0, source WIM SHA unchanged"
+            "S34 actual read-only HOLD because exact 26300 4-child AppInstaller Staged differs from 26200 R133 six-child variant; no mutation, copied hive unloaded, RO mount /Discard exit0, source WIM SHA unchanged",
+            "S35 actual native read-only provider Staged/Config own-family branches and matching manifest dependencies; unchanged S31 original WIM SHA, zero registry image writes. R4 removal not run; current 26300 total provisioned=10, desired R4-only after removal=9 with 4 selected AppX keeps + 5 framework providers."
           ],
           "allowed_delta": [
             "S32 read-only audit: no WIM/CBS/AppX/registry mutation and source WIM SHA unchanged"
@@ -127,7 +134,9 @@
             "BlueLite_Germanium_Handoff.md §8.17",
             "C:\\work\\logs\\BlueLite_Stage1_S33_26300.9711_AppInstaller_NativeOwnerGate.txt SHA256 FDA524744AB0626DD7155DDA71490B365ED3C51E6770C1884470ADF4565A69BA",
             "C:\\work\\logs\\BlueLite_Stage1_S34_26300.9711_AppInstaller_RegistryTopologyReadOnly.txt SHA256 09B30C9308BEC3371AF11180476E4A4F73D7A1C7F3B42E48E0962BB19F85980B",
-            "C:\\work\\logs\\BlueLite_Stage1_S34_26300.9711_AppInstaller_RegistrySnapshot.json SHA256 CD08E2CAD6AF97B2E9DD4BAFBEE28582F366C9B8FCE9AA3F15522C529AA6E0AF"
+            "C:\\work\\logs\\BlueLite_Stage1_S34_26300.9711_AppInstaller_RegistrySnapshot.json SHA256 CD08E2CAD6AF97B2E9DD4BAFBEE28582F366C9B8FCE9AA3F15522C529AA6E0AF",
+            "BlueLite_Stage1_S35_26300.9711_AppInstaller_ProviderTopologyReadOnly.txt SHA256 B7B50189034A636B62A47627D6B14F5217AC752F995BD75BAC9533EF9B752DCD",
+            "BlueLite_Stage1_S35_26300.9711_AppInstaller_ProviderSnapshot.json SHA256 6C280CB28E146CA1B49847457B1B072B4F9E1AAFDD441D5FBA82F243082A3727"
           ]
         }
       ],
@@ -190,9 +199,21 @@
           "reference": "BlueLite_Stage1_S34_26300.9711_AppInstaller_RegistrySnapshot.json",
           "sha256": "CD08E2CAD6AF97B2E9DD4BAFBEE28582F366C9B8FCE9AA3F15522C529AA6E0AF",
           "scope": "Observed 6 scoped registry branches: 5 present, Deprovisioned absent, target Staged exactly 4 own roots, historical 2 provider-association children absent from this target subtree only."
+        },
+        {
+          "source_kind": "OPERATOR_LOG",
+          "reference": "BlueLite_Stage1_S35_26300.9711_AppInstaller_ProviderTopologyReadOnly.txt",
+          "sha256": "B7B50189034A636B62A47627D6B14F5217AC752F995BD75BAC9533EF9B752DCD",
+          "scope": "Actual 26300 S35 provider own-family Staged/Config read-only source and AppInstaller x64 PackageDependency exact matches, no mutation."
+        },
+        {
+          "source_kind": "OPERATOR_LOG",
+          "reference": "BlueLite_Stage1_S35_26300.9711_AppInstaller_ProviderSnapshot.json",
+          "sha256": "6C280CB28E146CA1B49847457B1B072B4F9E1AAFDD441D5FBA82F243082A3727",
+          "scope": "Exact 10 provisioned AppX names/identities, 4 AppInstaller children, two provider own Staged+Config roots and two explicit manifest dependencies."
         }
       ],
-      "notes": "Historical 740-file number and explicit SID/root versions are not 26300 predicates. S32 26300.9711 physical four-root/740-row/topology matches historical 26200 R125/R133, but native hardlink owner closure and offline AppX registry lifecycle are UNKNOWN_DEPENDENCY. Do not auto-run R133. S33 next RO hardlink gate.  S33 26300.9711 exact native 740/740 owner closure now OPERATOR_PASS, but `UNKNOWN_DEPENDENCY` retained for 26300 AppX registry lifecycle/association/provider owners; R133 mutation NOT AUTHORIZED. S34 registry read-only gate next. S34 native 26300 read-only registry contract: AppInstaller Staged EXACT 4 own roots, historic R133 six-child predicate REJECTED ON 26300. Other AppInstaller target keys present; Deprovisioned absent. Provider separate ownership/unlinked semantic still UNKNOWN_DEPENDENCY; S35 provider discovery next. Do not add missing registry keys by hand or auto-run R133.",
+      "notes": "Historical 740-file number and explicit SID/root versions are not 26300 predicates. S32 26300.9711 physical four-root/740-row/topology matches historical 26200 R125/R133, but native hardlink owner closure and offline AppX registry lifecycle are UNKNOWN_DEPENDENCY. Do not auto-run R133. S33 next RO hardlink gate.  S33 26300.9711 exact native 740/740 owner closure now OPERATOR_PASS, but `UNKNOWN_DEPENDENCY` retained for 26300 AppX registry lifecycle/association/provider owners; R133 mutation NOT AUTHORIZED. S34 registry read-only gate next. S34 native 26300 read-only registry contract: AppInstaller Staged EXACT 4 own roots, historic R133 six-child predicate REJECTED ON 26300. Other AppInstaller target keys present; Deprovisioned absent. Provider separate ownership/unlinked semantic still UNKNOWN_DEPENDENCY; S35 provider discovery next. Do not add missing registry keys by hand or auto-run R133. S35: two historical provider-association package IDs belong to their own family Staged roots on 26300 (not target AppInstaller Staged), manifest explicitly depends on them, frameworks KEEP. Pre R4 AppX 10; post R4 ONLY should be 9 preserving 4 apps+5 frameworks; history 5->4 does not generalize. Operator observed read-only PASS only, no mutation. Scope status still UNKNOWN_DEPENDENCY for lifecycle transition and safe R4 application.",
       "contract_version": "1.0.0"
     },
     {
