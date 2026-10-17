@@ -1,0 +1,294 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/johnny-belgrade/windows/main/production/contracts/BlueLite_Recipe.schema.json",
+  "title": "BlueLite dependency-aware component recipe contract v1",
+  "description": "Data contract only: a registry row or schema-valid recipe is never executable authorization.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "recipe_id",
+    "logical_target",
+    "phase",
+    "removal_class",
+    "disposition",
+    "certification",
+    "variants",
+    "protected_floor",
+    "evidence",
+    "runtime_execution_allowed"
+  ],
+  "properties": {
+    "contract_version": {
+      "const": "1.0.0"
+    },
+    "recipe_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]+$"
+    },
+    "logical_target": {
+      "type": "string",
+      "minLength": 3
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "phase": {
+      "enum": [
+        "STAGE1_MAX_PRE",
+        "STAGE2_OFFLINE",
+        "STAGE3_NTLITE",
+        "STAGE4_VM",
+        "CROSS_STAGE"
+      ]
+    },
+    "removal_class": {
+      "enum": [
+        "GREEN",
+        "AMBER",
+        "RED",
+        "NOT_APPLICABLE"
+      ]
+    },
+    "disposition": {
+      "enum": [
+        "PRODUCTION_RULE",
+        "KEEP_SKIP",
+        "COMPONENT_ENGINE_HANDOFF",
+        "RED_HOLD"
+      ]
+    },
+    "certification": {
+      "enum": [
+        "HISTORICAL_REFERENCE",
+        "STATIC_VERIFIED",
+        "DISPOSABLE_RUNTIME_VERIFIED",
+        "CURRENT_BUILD_CERTIFIED",
+        "RELEASE_CERTIFIED"
+      ]
+    },
+    "runtime_execution_allowed": {
+      "type": "boolean"
+    },
+    "variants": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "variant_id",
+          "source_family",
+          "supported_lineage",
+          "topology_status",
+          "required_predicates",
+          "expected_post_state"
+        ],
+        "properties": {
+          "variant_id": {
+            "type": "string"
+          },
+          "source_family": {
+            "const": "Germanium"
+          },
+          "supported_lineage": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "topology_status": {
+            "enum": [
+              "KNOWN_MATCHING",
+              "KNOWN_BUT_NOT_TESTED_ON_26300",
+              "UNKNOWN_DEPENDENCY",
+              "KNOWN_REJECTED",
+              "EXPECTED_ABSENT"
+            ]
+          },
+          "exact_selectors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "kind",
+                "identity"
+              ],
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "CBS_PACKAGE",
+                    "CBS_COMPONENT",
+                    "CAPABILITY",
+                    "FEATURE",
+                    "APPX_PFN",
+                    "SERVICE",
+                    "DRIVER",
+                    "REGISTRY",
+                    "FILE"
+                  ]
+                },
+                "identity": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "required_predicates": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "kind",
+                "target",
+                "expected"
+              ],
+              "properties": {
+                "kind": {
+                  "type": "string"
+                },
+                "target": {
+                  "type": "string"
+                },
+                "expected": {
+                  "type": "string"
+                },
+                "evidence_ref": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "expected_post_state": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "allowed_delta": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tested_builds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "protected_floor": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "engine_module": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "entrypoint": {
+          "type": "string"
+        },
+        "reviewed_utc": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "required_checks": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "SOURCE_SHA",
+          "EXACT_TOPOLOGY",
+          "DEPENDENCY_GRAPH",
+          "APPX_MANIFEST_CLOSURE",
+          "CBS_OBSERVED_DELTA",
+          "PROTECTED_FLOOR",
+          "CHECKHEALTH",
+          "SCANHEALTH",
+          "PENDING_ZERO",
+          "INDEPENDENT_POST_COMMIT",
+          "NEGATIVE_FIXTURES"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "rollback": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_kind",
+          "reference",
+          "scope"
+        ],
+        "properties": {
+          "source_kind": {
+            "enum": [
+              "OPERATOR_LOG",
+              "LIBRARY_FILE",
+              "CURRENT_STATUS",
+              "MASTER",
+              "GITHUB_SOURCE",
+              "MICROSOFT",
+              "EXTERNAL_REFERENCE"
+            ]
+          },
+          "reference": {
+            "type": "string"
+          },
+          "scope": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[A-Fa-f0-9]{64}$"
+          }
+        }
+      }
+    },
+    "measured_savings_bytes": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
