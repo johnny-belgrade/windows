@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.0.0 · **Izrađeno:** 2026-10-17  
+**Verzija dokumenta:** 1.1.0 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-17 (archive + contracts + proof reconciliation)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -46,7 +46,11 @@ Svi potrebni alati osim operatorskog NTLite Business treba da budu besplatni i l
 | Originalni operatorski izvršni `*.json` / `*.txt` / DISM | Da li se nešto **stvarno desilo** | Poveži izvor SHA, target, naredbu, post-state, exit, zdravlje, pending |
 | Git commit, blob SHA i exact source ZIP | Identitet objavljenog kod-a | Koristi konkretan SHA/commit, ne filename sam za sebe |
 
-**Važna granica pristupa u ovoj izradi:** GitHub connector je uspešno otvorio i proverio **četiri aktuelna root governance dokumenta** (Master, Current, Sources, UUP Evidence). Istorijski repo commit **[`c49da5f`](https://github.com/johnny-belgrade/windows/commit/c49da5f259d366f544b1900b9775dd82f84b457b)** navodi `ChatsGPT.md`, ali direktni `fetch_file(ChatsGPT.md, main)` i pokušaj na tom commitu trenutno su vratili `404`. Zato ne tvrdimo da je taj transkript u ovom radu pročitan iz repoa. Umesto izmišljanja njegovog sadržaja, za istorijsku osnovu korišćeni su živi **Current**, Master, UUP Evidence, ranije dostupni Library transcripti (`9-ChatGPT.md`, `10-ChatGPT.md`, `11-ChatGPT.md`, `11-13-ChatGPT.md`, stare `ChatGPT-1…4` izvozne reference) i **originalni operatorski logovi**. Pre brisanja repo `Chats*.md` operator mora da proveri stvarni spisak i jedinstvene informacije, i sačuva lokalnu kopiju/git reviziju; ako je sadašnji transkript još dostupan pod drugim imenom, naredni naslednik ga ciljano pretražuje. **Nijedno nedostupno poglavlje nije označeno kao pročitano.**
+**KOREKCIJA PRISTUPA — 2026-10-17, ponovna provera preko reconnectovanog GitHub konektora:** prethodni HTTP 404 se odnosio na **drugi fajl**, `ChatsGPT.md`, a ne na `ChatsGPT_15.md`. Commit [`c49da5f`](https://github.com/johnny-belgrade/windows/commit/c49da5f259d366f544b1900b9775dd82f84b457b) je **brisanje** `ChatsGPT.md` sa `main` (20.313 obrisanih redova); izvor pre brisanja ostaje u Git istoriji na parent commitu `b87c4297ce58b4a43abab954641f20b2c569a2e5`. Zato je 404 očekivan; nema dokaza o problemu R/W autorizacije ili oštećenom fajlu.
+
+**`ChatsGPT_15.md` STVARNO PRISTUPAČAN:** prebrojano 29.299 redova sa ugrađenim `ChatsGPT_14.md`, `15-ChatGPT.md`, starijim canonical handoff-ima i završnim A03/NetFx3 zapisom; Git blob **`8f05055288a19880f8caec230b2b5da1c26d90fc`**, GitHub veličina **1.165.578 B**. Kompletan tekst uspešno je pročitan preko GitHub Contents API, uključujući završetak, ne samo naslov. Za dugotrajno očuvanje otvorena je i **nezavisno pročitana** grana [`archive/chatsgpt15-20261017`](https://github.com/johnny-belgrade/windows/blob/archive/chatsgpt15-20261017/ChatsGPT_15.md), pinovana na commit **`d7be78707cc099806770fed51a8c295af8164062`**. Brisanje fajla sa `main`, ako operator odluči, **ne briše sadržaj sa te grane**, dok god se sama grana ne obriše ili nasilno ne prepiše istorija. Ovaj HANDOFF nije transkript od 29.299 redova; služi kao **operativni indeks**, dok arhivska grana i Library ostaju detaljni izvori za stare jedinstvene komande i output-e. Ne briši arhivsku granu radi „čišćenja“ aktivnog `main`.
+
+**Tačan rezultat za naslednika:** `ChatsGPT.md` na sadašnjem `main` = **ABSENT_BY_HISTORICAL_DELETE**, `ChatsGPT_15.md` na arhivskoj grani = **READABLE_VERIFIED**; novi `production/contracts/` i `production/intelligence/` su objavljeni kao deklarativni ugovori. Ne ponavljaj nedokazanu tvrdnju da se `ChatsGPT_15.md` ne može otvoriti.
 
 ### 2.1 Kako koristiti „thinking“ iz ranijeg rada
 
@@ -80,11 +84,11 @@ Ne zavisi od nedostupnih privatnih međukoraka. Prenosi **javno obrazloženje in
 | `C:\work\UUP_Source\26200.9711_85096553` | Stari 26200.9711 frozen fixture — zadržati |
 | `C:\work\UUP_Source\_download\26200.9711_85096553_original_uupdump.zip` | Originalni 26200 kontrolni ZIP u istorijskoj posebnoj putanji |
 | `C:\work\E2E\BlueLite_Stage1_S06_26300_9711_2b22470a` | S06 **postojeći** 26300 AppX-only verified payload i queue/Policy; ne prepisivati niti ponavljati download slepo |
-| `C:\work\G5\G5_26200_9711_86D3D9215219BE64\R113_Offline_AppX_Transactional\install.appx-transaction.wim` | Istorijska zaštićena pet-AppX izvorna WIM regresija (R113), ne trenutni 26300 image |
+| `C:\work\G5\G5_26200_9711_86D3D9215219BE64\R113_Offline_AppX_Transactional\install.appx-transaction.wim` | **ISTORIJSKA OBRISANA PUTANJA (A03)**; R113 logovi i izvorna topologija su dokaz, ali ovaj WIM nije retained niti sme biti pretpostavljen kao prisutan |
 | `C:\work\E2E\BlueLite_R91_OfflineServicing_26200.9711_85096553\install.wim` | 26200 R91 servicing base fixture; ne računaj da je aktivno montiran |
 | `C:\work\extracted\install.wim`, `C:\work\mount`, stari `mount_FBConan` | Raniji primeri, **ne** univerzalni defaults; nikada mount bez dinamičkog `Get-MountedWimInfo` i izvornog manifesta |
 
-**Owned artefakti:** svaki run manifest mora uključiti `WorkspaceRoot/FrozenUUP/OriginalWimPath/WorkingWimPath/Index/MountDirectory/CheckpointDirectory/LogDirectory/RecipeManifestVersion/ReleaseOutput`. Validirati da je cilj tačno owned; štititi izvore, R113/R133 i tuđe mount-ove. Za dnevnike koristiti datumski/step-specifična imena koja ne gaze ranije PASS. Za read-only mount koristiti `/Discard`, za novu mutaciju `/Commit` tek kad su pre/post/health/pending gates PASS. Offline registry hive alias-e unload i verifikovati **pre** unmount.
+**Owned artefakti:** svaki run manifest mora uključiti `WorkspaceRoot/FrozenUUP/OriginalWimPath/WorkingWimPath/Index/MountDirectory/CheckpointDirectory/LogDirectory/RecipeManifestVersion/ReleaseOutput`. Validirati da je cilj tačno owned; štititi stvarne immutable izvore, **sačuvani R133** i tuđe mount-ove; **R113 je A03 obrisan**. Za dnevnike koristiti datumski/step-specifična imena koja ne gaze ranije PASS. Za read-only mount koristiti `/Discard`, za novu mutaciju `/Commit` tek kad su pre/post/health/pending gates PASS. Offline registry hive alias-e unload i verifikovati **pre** unmount.
 
 ### 3.1 Životni vek podataka i restart
 
@@ -188,7 +192,7 @@ Na operatorskom hostu `C:\work\scripts` nalaze se prethodno dostavljeni S04/S05/
 
 ### 7.2 R133 i AppInstaller — izdvojena važna offline debloat referenca
 
-R113 source 26200.9711 pet provisioned Apps je očuvan kao protected baseline. Na R133 **owned disposable** kandidatu tačno R4 AppInstaller (četiri fizička WindowsApps package root-a) prošao je jednu **native post-commit** transakciju: prije `APPX=5`, **740 hardlink owner** dokaza, exact offline registry marker leaf (0 children / 0 values), pravilan hive unload i lifecycle; posle `APPX=4`, **nula** AppInstaller roots, CBS `CLEAN`, pending `0`, unmount `/Commit`, sve mount/hive reference oslobođene. Kandidat SHA `7B94D33551A69942FB41EB90B073E86143D61677AE348ED71D215EB03E8B875B`. Zasebna `BlueLite_R133_R4_PostCommit_ReadOnly.txt` potvrdila je iste četiri keep apps i nula root-a, R7 i dalje **installed/block**. **`R133_RELEASE=NOT_CERTIFIED`; R4 PASS samo za disposable izvor/topologiju**.
+R113 izvorni 26200.9711 WIM sa pet provisioned AppX aplikacija **bio je istorijski protected baseline, ali je njegov veliki WIM obrisan u operatorski potvrđenom A03 (54/54)**. Ostaju izvorni R113 logovi/identiteti i kodni dokazi u Library/Current; **jedini A03 sačuvani veliki regresioni WIM jeste R133**. Ne tražiti R113 po stare putanje, ne rekreirati WIM samo radi već sačuvanog dokaza. Na R133 **owned disposable** kandidatu tačno R4 AppInstaller (četiri fizička WindowsApps package root-a) prošao je jednu **native post-commit** transakciju: prije `APPX=5`, **740 hardlink owner** dokaza, exact offline registry marker leaf (0 children / 0 values), pravilan hive unload i lifecycle; posle `APPX=4`, **nula** AppInstaller roots, CBS `CLEAN`, pending `0`, unmount `/Commit`, sve mount/hive reference oslobođene. Kandidat SHA `7B94D33551A69942FB41EB90B073E86143D61677AE348ED71D215EB03E8B875B`. Zasebna `BlueLite_R133_R4_PostCommit_ReadOnly.txt` potvrdila je iste četiri keep apps i nula root-a, R7 i dalje **installed/block**. **`R133_RELEASE=NOT_CERTIFIED`; R4 PASS samo za disposable izvor/topologiju**.
 
 Originalni relevantni Library fajlovi: `BlueLite_R133_R4_26200_9711_Console.txt`, `BlueLite_R133_R4_26200_9711_Transaction.txt`, `BlueLite_R133_R4_PostCommit_ReadOnly.txt`; izvorne skripte `BlueLite_R126_R2_R113_R4_AppInstaller_Transactional.ps1`, `BlueLite_R125_R113_AppInstaller_ShortMount_OwnerGate.ps1`, `BlueLite_R4_Transactional_R130.ps1`, `BlueLite_R132_to_R133_Marker_RegistryAPI.diff`. Master §17 čuva još ranije 26200.9445 **Batch 18C-D/E / Phase 44–48**, kad je native AppInstaller removal odbio `15610/0x80073CFA`, a egzaktan lifecycle + guarded unique physical removal uklonio 740 fajlova / 148,137,728 B, bez CBS/pending problema. **NIKADA** ne primenjuj R133 hardkodovane root verzije ili SID na 26300: otkrij stvarne package families, SIDs, offline AppX policy i link ownership. Ne briši globalni `EndOfLife/Deleted-EndOfLife` ili SQLite `StateRepository` radi prečice.
 
@@ -315,13 +319,57 @@ next_one_operator_step: '<jedna odobrena ili eksplicitno pending radnja>'
 
 Naravno `null`/`NOT_RUN` ostavljati pošteno kada podatak još ne postoji. **Dnevnik je sažet indeks ka logu**, ne zamena za originalni raw DISM ili AppX manifest. Treba čuvati SHA i source verziju i po mogućstvu GitHub commit za svaki review ZIP. Na početku sledeće sesije successor vidi samo **četiri stvari** za nastavak: normativni Master, ovaj handoff, najnoviji Current checkpoint, konkretnu pripadajuću log/datoteku. Library i Sources se pretražuju pre novog rizika.
 
+## 12A. PRODUCTION DATA CONTRACTS — stvarni fajlovi, ne samo YAML predlog
+
+Od 2026-10-17 postoje verzionisani, čitljivi **deklarativni artefakti** koji omogućuju dosledan interfejs budućeg engine-a. Njihova JSON Schema validnost je **samo statička provera oblika**, nikada dokaz da je native kod pokrenut ili image sertifikovan. Ne izmišljati implementaciju engine-a koja nije objavljena.
+
+| Tačan GitHub fajl | Namena | Trenutni dokazni status |
+|---|---|---|
+| [`production/contracts/BlueLite_RunManifest.schema.json`](production/contracts/BlueLite_RunManifest.schema.json) | Jedan `run_id`, zamrznuti ZIP i SourceContract, Windows/Apps identity ledger, konverter i aria2 hash, owned putanje, immutable original i disposable WIM, explicit operator gate-ovi | `CONTRACT_DESIGN_ONLY` |
+| [`production/contracts/BlueLite_Recipe.schema.json`](production/contracts/BlueLite_Recipe.schema.json) | Logički target + build/topology varijante, exact selector, predikati, protected floor, expected post-state, tested builds, rollback, evidence i `engine_module` SHA | `CONTRACT_DESIGN_ONLY` |
+| [`production/contracts/BlueLite_ResultReceipt.schema.json`](production/contracts/BlueLite_ResultReceipt.schema.json) | Tačan source/script SHA, operator execution, `result` i `evidence_tier`, native exit, health/pending, raw paths, branch/post-state i sledeća autorizacija | `CONTRACT_DESIGN_ONLY` |
+| [`production/intelligence/BlueLite_RecipeRegistry.json`](production/intelligence/BlueLite_RecipeRegistry.json) | Pretraživ početni indeks šest poznatih logičkih target-a sa istorijskim predikatima i dokaznim referencama | `HISTORICAL_REFERENCE` i **`runtime_execution_allowed=false`** za svaki |
+| [`production/contracts/README.md`](production/contracts/README.md) | Pravila veze između ova tri ugovora i Master-a | dokumentacija |
+
+### 12A.1 Kako izgleda isti run kroz sve četiri faze
+
+1. **SOURCE:** originalni ZIP/UUID/build/source contract SHA je immutable. S02 Windows/Apps *content fingerprint* nije SHA raw queue fajla koji sadrži promenljive signed URL-ove.
+2. **TRANSPORT:** D4/D6 re-issue proverava `out + hash_algorithm + payload_hash` protiv originalnog identiteta; u run manifestu se odvojeno čuvaju originalni i renewed raw queue SHA. Pet top-level AppX **nije** isto što i broj transportnih zapisa: S06 primer je 27 seed → 32 verified files.
+3. **CONVERTER:** v127 SHA ≠ v127 runtime PASS. Prvi stvarni `install.wim` dobija zaseban immutable source hash i Index; `WorkingWimPath` mora biti druga owned putanja. Operatorova potvrda download-a **ne dozvoljava** WIM mutation.
+4. **MAX_PRE / OFFLINE:** isti `recipe_id + variant_id` i isti protected-floor/expected-delta contract koriste Stage1 i Stage2. Stage2 vraća `ALREADY_ABSENT` samo posle verifikovanog trenutnog post-state-a; `UNKNOWN_DEPENDENCY` izoluje target i blokira potreban release gate.
+5. **NTLITE/VM:** samo evidentirani `COMPONENT_ENGINE_HANDOFF`; finalne Defender ON/OFF, VM **HOST**, update Resume/Pause, servisiranje, footprint i hash testove nikakva validna JSON šema ne zamenjuje.
+
+Za svaki stvarni operatorov korak zapisati `SourceContractSHA + ScriptSHA + exact log + true result + evidence tier` u Current, a detaljan rezultat u `C:\work\logs`. `STATIC_VERIFIED` nije `CURRENT_BUILD_CERTIFIED`. Ako isti script/model nema preslikane stvarne logove i testove, izveštaj sme navesti samo `CONTRACT_DESIGN_ONLY`.
+
+### 12A.2 Recipe promotion — šta tačno znači „univerzalno“
+
+Početni machine-readable registry je **indeks za pretragu**, ne izvršni set i ne menja postojeće certified 26200 logove. Pre prebacivanja `runtime_execution_allowed` na `true` moraju postojati: pregledan stvarni module tekst i SHA, `exact_selectors`, pozitivni i negativni fixtures, dokaz odgovarajuće **aktuelne 26300 topologije**, diskretna disposable transakcija gde je potrebna, native pre/post/pending/health i konkretan rollback. Bez svih potrebnih dokaza registry ostaje istorijski `false`.
+
+Samo compiler/schema PASS bez vezivanja aktuelnog izvora ne sme postati legalna mutation autorizacija. Greška prilikom review/parsiranja modela **nije** CBS repairability. Ako promena zavisnosti nije pokrivena, kreira se **novi `variant_id`**, ne nova per-build produkciona skripta i ne niz istih starih R-testova.
+
+### 12A.3 Instrukcije narednom ChatGPT-u (bez čekanja na stari chat)
+
+- Prvo otvori actual **Master → Handoff → top Current → UUP Evidence → Sources → `production/contracts/README.md` i recipe registry**, pa relevantne originalne Library logove. Iza svakog PASS navedi dokazni sloj, za 26300 posebno odvoji `S06_APPS_ONLY=PASS` od `FULL_WINDOWS/CONVERTER/MAX_PRE=NOT_RUN`.
+- Za započeti novi `run_id` prvo na operatorskom hostu identifikuj **postojeći** freeze/S06 sadržaj (ne novi masovni inventory) i izaberi **jedan** naredni korak. Nema nenajavljenog full Windows download-a, WIM mutacije ni NTLite; operatorska pauza ostaje važeća dok je operator ne opozove.
+- Ako se traži stara originalna skripta koja nije prikazana u Handoff-u, čitaj pinovanu arhivu `ChatsGPT_15.md` na `archive/chatsgpt15-20261017` ili originalnu Library datoteku, **ne obnavljaj je po sećanju**.
+- Prilikom greške razlikuj `FAIL_CLOSED` ugovora, partial downloaded payload, native provider refusal i `REPAIRABLE` health. Ne briši disposable dok je potreban jedinstveni dokaz; ne čuvaj nepotrebne WIM duplikate.
+- Dokumentacioni commit/JSON schema/rule-index ne menja operatorsko pravo izvršavanja. `release` ostaje NOT_CERTIFIED dok Master testovi nisu stvarno izvršeni.
+
+### 12A.4 Arhivski ugovor za uklanjanje ogromnog razgovora sa `main`
+
+**Provereno:** `ChatsGPT_15.md` (1.165.578 B, Git blob `8f05055288a19880f8caec230b2b5da1c26d90fc`) čitljiv je preko Contents API na **[arhivskoj grani](https://github.com/johnny-belgrade/windows/blob/archive/chatsgpt15-20261017/ChatsGPT_15.md)** koja pokazuje na commit `d7be78707cc099806770fed51a8c295af8164062`. `ChatsGPT.md` bez sufiksa je drugi, ranije **obrisan** fajl (commit `c49da5f`), pa je njegov 404 očekivan.
+
+**Pre uklanjanja `ChatsGPT_15.md` samo sa `main`** zahtevaj nezavisan read-back arhivske grane i proveren blob SHA, kontinuitet Master/Handoff/Current/registry linkova i dostupnost relevantnih originalnih operator logova u Library. Zatim je dozvoljeno ukloniti **samo taj jedan exact path** sa `main`, uz poslednji live blob SHA kao optimistic concurrency gate. **Ne brisati arhivsku granu, source logove, originalni operator ZIP ili R133**. Posle eventualnog brisanja proveri `main` file absence i ARCHIVE file presence/hash, te dodaj u Current novi dokumentacioni checkpoint. Time brisanje aktivnog fajla ne znači gubitak arhive niti tvrdnju da se u Handoff-u nalaze svih 29.299 redova.
+
+---
+
 ## 13. BlueLite Sources i offline dokazni inventar: kako tražiti bez ponavljanja
 
 **Najbrži način pre nove analize:**
 
 - Za source/UUP: pretraži `UUP_V3_PhaseA2`, `R26-D4`, `R26-D5`, `R26-D6`, `R28`, `R33`, `R84`, `R100`, `S01..S06`, RC1.2, `Final_UUP/`, `UUP_PreBuild/Drafts`, `Timeline*`, `CustomAppsList`, `ConvertConfig`, `AppxManifest`, `CompDB`.
 - Za MAX_PRE/offline: `R15-R1`, `R49 G5`, `R105`, `R107`, `R113`, `R115–R116`, `R119`, `R120–R133`, `338`, `339`, `342`, `18C`, `44–48`, `Search`, `OneDrive`, `FoDMetadata`, `Language.Basic`, `R134–R142`, `Sense`, `WinSxS`, `COMPONENTS`, `Release05`.
-- Za fragmentovane nekadašnje sesije: Library `9-ChatGPT.md`, `10-ChatGPT.md`, `11-ChatGPT.md`, `11-13-ChatGPT.md`, `12-ChatGPT.md`, historijske `ChatGPT-1-25H2 26200.9278-20260929-1529.md`, `ChatGPT-2-25H2 26200.xxxx-20260929-1528.md`, `ChatGPT-3-25H2 26200.xxxx-20260929-1527.md`, `ChatGPT-4-25H2 26200.xxxx-20260929-1524.md`, canonical handoff `BlueLite_v1.0_CANONICAL_HANDOFF_10*.md`; proveri Library dostupnost pre poziva. Tačni najnoviji repo `Chats*.md` nazivi se moraju inventarisati, jer ranije pokušani `ChatsGPT.md` na `main` nije bio čitljiv. **Ne zamenjuj missing original novim fikcionim transkriptom**.
+- Za fragmentovane nekadašnje sesije: Library `9-ChatGPT.md`, `10-ChatGPT.md`, `11-ChatGPT.md`, `11-13-ChatGPT.md`, `12-ChatGPT.md`, historijske `ChatGPT-1-25H2 26200.9278-20260929-1529.md`, `ChatGPT-2-25H2 26200.xxxx-20260929-1528.md`, `ChatGPT-3-25H2 26200.xxxx-20260929-1527.md`, `ChatGPT-4-25H2 26200.xxxx-20260929-1524.md`, canonical handoff `BlueLite_v1.0_CANONICAL_HANDOFF_10*.md`; proveri Library dostupnost pre poziva. Raniji `ChatsGPT.md` ima dokumentovan **delete** na `main` (commit `c49da5f`); čitljivi `ChatsGPT_15.md` je dodatno sačuvan na grani `archive/chatsgpt15-20261017`. Inventariši aktivni `main` i arhivsku granu umesto da pogrešno tumačiš 404 kao problem konektora. **Ne zamenjuj missing original novim fikcionim transkriptom**.
 - Za reference drugih custom autora: `FBConan-BUILD_INFO.txt`, `FBConan-BUILD_INFO-v3.txt`, `Extreme-11-26H2-Removed.txt`; MDL/TeamOS/NTLite/MSMG poređenja; reference *end-state*, ne neproverena potvrda skraćenog postupka. Dodatne specifikacije po build-u samo ako doprinose konkretnom target-u.
 - **Pretraži relevantnu Library stvarno**, ne samo naslove: `files.search` → `files.read/find` opseg, pa originalni CSV/ZIP/script kad je potreban za patch. Ako ZIP file bytes nisu dostupni (historijski prethodnik dobio `not authorized raw-byte materialization path`), zatraži od operatora **samo taj** manji konkretan ZIP, kao uspešno za originalni D6 ~30,896 B. Nikada ne tvrdi da je nedostupan ZIP otvoren. Ako je mnogo dostupnih dokaza, čitaj reprezentativne originalne PASS i FAIL logove uz sažetak u UUP Evidence, a ne svaki redundantni duplikat.
 
@@ -340,4 +388,4 @@ Naravno `null`/`NOT_RUN` ostavljati pošteno kada podatak još ne postoji. **Dne
 
 ---
 
-**Održavanje:** ovaj dokument je stabilan operativni ugovor i precizna mapa istorijskog znanja. Nove izvršne rezultate dodavati u **Current**, ne ponovno u ogromne `Chats*.md` transkripte. Kada se trajno promeni arhitektura ili istorijska matrica prenosivosti, revidirati handoff uz SHA/commit i obrazloženje; promena norme ide u Master. **Brisanje starih repo `Chats*.md` dozvoliti tek kada su svi jedinstveni primarni dokazi lokalno/git-istorijski očuvani**, a korisnik potvrdi da ovaj handoff omogućava neprekinut nastavak.
+**Održavanje:** ovaj dokument je stabilan operativni ugovor i precizna mapa istorijskog znanja. Nove izvršne rezultate dodavati u **Current**, ne ponovno u ogromne `Chats*.md` transkripte. Kada se trajno promeni arhitektura ili istorijska matrica prenosivosti, revidirati handoff uz SHA/commit i obrazloženje; promena norme ide u Master. **`ChatsGPT_15.md` je već nezavisno arhiviran i provereno čitljiv na `archive/chatsgpt15-20261017`; njegovo uklanjanje isključivo sa `main` može biti zasebna tačno autorizovana akcija.** Očuvati archive branch i originalnu Library evidenciju; bez njihove provere ne brisati jedinstvene izvore.
