@@ -80,11 +80,12 @@
    elseif($xKind -eq 'FILE' -and $xBytes -ne $yBytes){$diff='SIZE_MISMATCH'}
    if($null -ne $x -and ($x.Attributes -band [IO.FileAttributes]::ReparsePoint) -ne 0){$diff+=';ORIGINAL_REPARSE'}
    if($null -ne $y -and ($y.Attributes -band [IO.FileAttributes]::ReparsePoint) -ne 0){$diff+=';STAGED_REPARSE'}
+   $xAttr=if($null -eq $x){''}else{[string]$x.Attributes}
+   $yAttr=if($null -eq $y){''}else{[string]$y.Attributes}
    $rows.Add([pscustomobject]@{
     Name=$name;OriginalKind=$xKind;StagedKind=$yKind;
     OriginalBytes=$xBytes;StagedBytes=$yBytes;
-    OriginalAttributes=if($null -eq $x){''}else{[string]$x.Attributes};
-    StagedAttributes=if($null -eq $y){''}else{[string]$y.Attributes};
+    OriginalAttributes=$xAttr;StagedAttributes=$yAttr;
     ShapeClassification=$diff
    })
   }
