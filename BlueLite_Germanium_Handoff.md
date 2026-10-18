@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.15 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S36-R2 original native 26300 exact AppX lifecycle 10→9 disposable PASS; full R4 next separately gated)  
+**Verzija dokumenta:** 1.5.16 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S36-R2 actual lifecycle 10-to-9 PASS; exact S37 full disposable four-root candidate source DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1032,6 +1032,43 @@ Common base **Defender ON** dok ne prođe certificirana zajednička baza; nakon 
 - **New validated 26300 facts / historical difference:** 26200 R133 mutation expects six AppInstaller-family Staged children and PRE AppX5→POST4; CURRENT 26300 *proves* four exact AppInstaller-family children and provider self-family keys, 10→9 provisioned package identities on owned disposable RW clone. Registry lifecycle alone is now **OPERATOR VERIFIED ON 26300**; physical four-root removal, ACL ownership operations, full combined transaction, ScanHealth/post-commit verification **remain NOT_TESTED**. R133 old executor is NOT directly reusable on 26300; build and test 26300 exact-variant workflow only.
 - **Next S37 (NOT_DELIVERED at this first write):** design separately SHA-pinned fully disposable 26300 R4 end-to-end transaction on a fresh owned clone of immutable S31, exact 5-key lifecycle + empty marker + protected provider branches + **physical four root/740 file removal** with native owner and ACL exact scoped gate, post AppX exact9 and CBS CheckHealth/ScanHealth, commit only after precommit gates and final source hash verification; promotion is candidate-for-review only, not release. Maintain full rollback on every error before commit and never touch original WIM/host OS. If final mutation cannot be safely proven, prefer read-only S37 scoped physical carve preflight. Full source/one command and names must appear in Handoff second-write only after reviewed; do not invent S37 PASS.
 
+
+### 8.30 S37 EXACT source+one SHA-pinned command — OWNED disposable full R4 physical candidate DELIVERED_NOT_RUN (2026-10-18)
+
+- **Source full immutable pinned GitHub commit** `b84ed74144b402d2c63d02511aedb4f2b1e0bce0`, path `development/BlueLite_Stage1_S37_26300.9711_AppInstaller_FullR4Candidate.ps1`; verified against current GitHub `main` as identical text/blob SHA1 **`368c69b9a234ee08ee577fafc549a742923ac587`**, SHA256 **`89C15A0BA5093436FCC31C002B5F50D1EF51BB524BDB599ED184CEDD4BB65CDD`**, **24,634 ASCII B / 460 lines**. SHA256 independently computed from exact GitHub source using an `abc`-self-tested pure SHA256 implementation. No Windows native execution, parser or result certified yet. R4 direct old R133 26200 executor still NOT authorized on 26300.
+- **ONE exact PowerShell 7 Admin command to deliver:**
+
+```powershell
+& {
+    $ErrorActionPreference = 'Stop'
+    $dest = 'C:\work\scripts\BlueLite_Stage1_S37_26300.9711_AppInstaller_FullR4Candidate.ps1'
+    $url = 'https://raw.githubusercontent.com/johnny-belgrade/windows/b84ed74144b402d2c63d02511aedb4f2b1e0bce0/development/BlueLite_Stage1_S37_26300.9711_AppInstaller_FullR4Candidate.ps1'
+    $expected = '89C15A0BA5093436FCC31C002B5F50D1EF51BB524BDB599ED184CEDD4BB65CDD'
+    if (-not (Test-Path -LiteralPath 'C:\work\scripts' -PathType Container)) { throw 'SCRIPTS_DIR_MISSING' }
+    if (Test-Path -LiteralPath $dest) { throw 'S37_SOURCE_ALREADY_EXISTS_NO_OVERWRITE' }
+    Invoke-WebRequest -Uri $url -OutFile $dest -ErrorAction Stop
+    $actual = (Get-FileHash -LiteralPath $dest -Algorithm SHA256).Hash
+    if ($actual -cne $expected) {
+        Remove-Item -LiteralPath $dest -Force
+        throw "S37_SOURCE_SHA256_MISMATCH=$actual"
+    }
+    Write-Host "S37_SOURCE_SHA256=PASS;$actual"
+    $tokens = $null
+    $parserErrors = $null
+    [void][System.Management.Automation.Language.Parser]::ParseFile($dest, [ref]$tokens, [ref]$parserErrors)
+    if (@($parserErrors).Count -ne 0) {
+        $parserErrors | ForEach-Object { Write-Host $_.ToString() }
+        throw 'S37_PS7_PARSER_ERRORS_NO_EXECUTION'
+    }
+    Write-Host 'S37_PS7_PARSER=PASS'
+    & (Join-Path $PSHOME 'pwsh.exe') -NoProfile -ExecutionPolicy Bypass -File $dest
+}
+```
+
+- **Scope/logic:** Close Total Commander/Explorer targeting `C:\work\E2E` and `C:\BL37M`. Source pins immutable S31 WIM `F52389FA66F8B60D56661C8786EC99409FB95447403B3C6FCBB94121EF8E340B`; previous S36-R2 actual main `A8BCC29A6F575C477033D8FE5EA25F669CBA6672CC46888E3F5569EAAA649233`, original JSON `CD6606F5D7FA0BD6FE526B550474917801823A1E6D418F9771DF103689D54AED`; S36-R1/S36/S35/S34/S33 pins, S32 physical CSV SHA `5828C1540CC39B06CB73DB00C5D4604752A2D3BF9BB0039A7C11F005DB8B5B95`. No existing DISM mounts, 12 GiB C: free. Copies immutable S31 WIM to NEW owned candidate `C:\work\E2E\BlueLite_Stage1_S37_26300.9711_FullR4Candidate\install.disposable.wim` hash identical before RW mount to **`C:\BL37M`** five-field owner gate. Parent WIM never mounted RW. Reuses exact S36-R2 offline registry AppInstaller five-scope lifecycle with true empty marker RegistryAPI normalization (zero children/values), provider family Staged/Config preserved, DISM exact APPX10→9, four physical AppInstaller WindowsApps roots still intact. Then pins S32 CSV exact 740, repeats native `fsutil hardlink list` of every current candidate projected file and requires exactly one SAME projected path each with unchanged logical length and reparse attributes; fail-closed on any duplicate/file drift/foreign path. Backs up only the four named target directory ACLs into `C:\work\logs\BlueLite_Stage1_S37_26300.9711_ACL_Evidence`, grants Administrators ACL on those exact candidate trees only, `cmd.exe rd /s /q` on those four literals only, verifies zero target WindowsApps directories; confirms native post-carve exact nine AppX, DISM `ScanHealth` and `CheckHealth` clean and `Get-Packages` no pending. **No broad ACL or deletion and no shared provider root deletion.**
+- **Commit boundary:** If any preceding test throws, script unloads disposable mounted SOFTWARE hive, DISM **/Discard** owned `C:\BL37M` and deletes only the owned cloned WIM; original protected S31 WIM SHA remains unchanged. If all explicit precommit tests pass, performs DISM **/Commit on the OWNED DISPOSABLE CLONE ONLY**, retains the resulting WIM and prints its SHA256/size, unmounts it and confirms source SHA unchanged. This would be a **committed candidate only**, NOT release certificate; independent post-commit S38 would be required. Registry provider `runtime_execution_allowed=false` for universal R4 until later gates. Candidate must not be confused with immutable S31 original or earlier S31 staged release.
+- **Outputs** upload main `C:\work\logs\BlueLite_Stage1_S37_26300.9711_AppInstaller_FullR4Candidate.txt` and JSON `C:\work\logs\BlueLite_Stage1_S37_26300.9711_AppInstaller_FullR4Evidence.json` (if present), plus anomaly CSV `C:\work\logs\BlueLite_Stage1_S37_26300.9711_OwnerAnomalies.csv` if generated. ACL evidence is local forensic output, not requested unless needed. Full success terminal literal `RESULT=PASS_S37_9711_R4_DISPOSABLE_CANDIDATE_COMMITTED_NOT_RELEASE`; else `HOLD_S37_9711_R4_FULL_CANDIDATE`. **S37=DELIVERED_NOT_RUN**; never present as successful until original report uploaded.
+- **Documents:** Handoff v1.5.15 actual S36-R2 first proof commit `0842c6b6f94f21810f9211af21285a4e7e4fd08a`. Current first proof commit `02226f254a9c2b69a2900ffc595a3a5e240a3d4e`. RecipeRegistry remained at prior revision because connector update was blocked. Master unchanged. Later independent post-commit audit should also examine residual AppRepository references/linked payload beyond four WindowsApps target roots; absence was not independently proved in S37 source. This is a remaining dependency gate for release, NOT grounds for claim of complete R4 lifecycle beyond stated tests.
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
