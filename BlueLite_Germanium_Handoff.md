@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.45 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (source-bound MAX_PRE controller DELIVERED_NOT_RUN; parser for PS1 and JSON registry corrected)  
+**Verzija dokumenta:** 1.5.46 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (SourceBound actual HOLD due FileInfo.Parent bug; R1 fix pending)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1563,6 +1563,13 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - **Actual source-bound contract:** uses immutable original 26300.9711 SourceContract existing path and exact SHA **08C05398AD37DB6FE0A58714D7F31B7C02A52CC91AFE3779402DB9CD1B2FEDEA**; source parent S31 WIM path, 6,509,216,853 B and declared prior verified SHA F52389FA... (WIM SHA **not read again**); planned owned working WIM is only a *path declaration*, not copied or created; actual recipe registry r12 six candidate records evaluated by build lineage using tested reusable core, with `AutoExecute=false`, no plan-authorized mutation. Produces separate `plan_version=1.0.0` plan and canonical `BlueLite_ResultReceipt.schema.json`-shaped `STATIC_VERIFIED/STATIC` receipt, `next_action_authorized=false`, logs identity and recipe decisions. The engine and controller are now real files but this test is still **planning-level**, NOT MAX_PRE runtime mutation, image health or independent servicing/VM/release proof.
 - **Required original report:** `C:\work\logs\BlueLite_MAXPRE_SourceBoundPlan_26300.9711.txt`. Additional local machine-readable outputs: `C:\work\logs\BlueLite_MAXPRE_SourceBoundPlan_26300.9711.json` and `C:\work\logs\BlueLite_MAXPRE_SourceBoundReceipt_26300.9711.json`; no overwrite. Expected terminal `PASS_MAXPRE_SOURCEBOUND_PRODUCTION_PLAN_STATIC_NO_IMAGE_TOUCH` or fail-closed. **Operator NOT RUN** at this checkpoint. After next actual evidence, first Current+Handoff updates, then design the build-independent owned disposable transaction dispatcher and real Stage1 MAX_PRE target wiring, without staging/storage forensics or 9GB copies merely to test software.
 - S43 final cleanup PASS and core negative tests PASS retained. Normative Master v6.0.0 and RecipeRegistry r12 not modified.
+
+
+### 8.59 MAX_PRE SourceBound ORIGINAL HOLD — FileInfo.Parent implementation error (2026-10-18 FIRST §0R)
+
+- Original operator `BlueLite_MAXPRE_SourceBoundPlan_26300.9711.txt` **683 B / 8 CRLF rows / SHA256 B33ECB86277057E30450DD66D7EB3A3066E4E29B9FA990DE580E0D3BA3FD451E**, 10:32:12. Existing engine, r12 registry and frozen 9711 SourceContract full hashes all PASS. Next `Assert-BlueLiteOwnedPath` throws `The property 'Parent' cannot be found on this object.`, terminal `HOLD_MAXPRE_SOURCEBOUND_PLAN_ONLY`. Local PS7 caller controller line 155 throws expected fail-closed. No JSON plan/receipt produced by execution, no mount/DISM/WIM hash/mutation. This is **script defect**, not current Windows target-state dependency.
+- Root cause in authentic source `production/engine/BlueLite.MaxPre.Core.psm1` method: `Get-Item` on `C:\work\E2E\...\install.wim` and frozen JSON contract returns `FileInfo`; ownership ancestor loop blindly reads `.Parent` (DirectoryInfo-only), whereas files expose `.Directory`. Fix needs both object kinds, keeping reparse/owner fail-closed logic. Add focused regression for file+directory input and keep original code reachable from immutable commit, original log immutable.
+- FIRST §0R checkpoint: corrected production module, R1 controller and ONE revised no-edit command NOT YET DELIVERED. R1 must use distinct `..._R1` report, plan and receipt filenames with no overwriting original 683-B HOLD log. Preserve currently verified 26300 source, S31/S37, r12 and normative Master. No WIM copying/mounting or unrelated analyses.
 
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
