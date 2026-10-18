@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.46 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (SourceBound actual HOLD due FileInfo.Parent bug; R1 fix pending)  
+**Verzija dokumenta:** 1.5.47 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (SourceBound original HOLD; R1 ancestry hotfix and SHA-pinned operator retry DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1570,6 +1570,43 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - Original operator `BlueLite_MAXPRE_SourceBoundPlan_26300.9711.txt` **683 B / 8 CRLF rows / SHA256 B33ECB86277057E30450DD66D7EB3A3066E4E29B9FA990DE580E0D3BA3FD451E**, 10:32:12. Existing engine, r12 registry and frozen 9711 SourceContract full hashes all PASS. Next `Assert-BlueLiteOwnedPath` throws `The property 'Parent' cannot be found on this object.`, terminal `HOLD_MAXPRE_SOURCEBOUND_PLAN_ONLY`. Local PS7 caller controller line 155 throws expected fail-closed. No JSON plan/receipt produced by execution, no mount/DISM/WIM hash/mutation. This is **script defect**, not current Windows target-state dependency.
 - Root cause in authentic source `production/engine/BlueLite.MaxPre.Core.psm1` method: `Get-Item` on `C:\work\E2E\...\install.wim` and frozen JSON contract returns `FileInfo`; ownership ancestor loop blindly reads `.Parent` (DirectoryInfo-only), whereas files expose `.Directory`. Fix needs both object kinds, keeping reparse/owner fail-closed logic. Add focused regression for file+directory input and keep original code reachable from immutable commit, original log immutable.
 - FIRST §0R checkpoint: corrected production module, R1 controller and ONE revised no-edit command NOT YET DELIVERED. R1 must use distinct `..._R1` report, plan and receipt filenames with no overwriting original 683-B HOLD log. Preserve currently verified 26300 source, S31/S37, r12 and normative Master. No WIM copying/mounting or unrelated analyses.
+
+
+### 8.60 MAX_PRE SourceBound R1 software correction and one controlled retry DELIVERED_NOT_RUN (2026-10-18 SECOND §0R)
+
+- Latest genuine operator checkpoint still **original SourceBound HOLD** (`BlueLite_MAXPRE_SourceBoundPlan_26300.9711.txt`, 683 B SHA256 `B33ECB86277057E30450DD66D7EB3A3066E4E29B9FA990DE580E0D3BA3FD451E`); all Core/r12/SourceContract hash pins PASS. `FileInfo.Parent` is a PowerShell software defect; original source/receipt MUST NOT be rewritten.
+- Production canonical `production/engine/BlueLite.MaxPre.Core.psm1` patched v0.1.1, immutable commit **38102914df23a33a24dd0be0b89185e2e8f211f8**, blob `7e0fc84d6edf9db0748fd81409995f98d74955ee`, SHA256 **609C8FD727E553249640B68E30CD6B7BF740C7CE26372276A2DE75405D9EA404** (7513 ASCII B/199 lines). New ancestry loop uses **`FileInfo.Directory`** or **`DirectoryInfo.Parent`**, validates nearest existing parent for nonexistent owned working output, stops at authorized `C:\work` and rejects reparse boundaries; does not change native DISM or mutation ban. The original v0.1 core SHA and commit remain pinned, not rewritten.
+- `production/controller/BlueLite.MaxPre.SourceBoundPlan.R1.ps1` new immutable commit **9c86a3c8f855ff51065b8c27390f99920724c14a**, blob `52b960848e2cc77f9c691d8d019fe2e70017f6b8`, SHA256 **FD4A27AE66BF69ED5F0DABD3D730D4C3A38C96FD3DF581C8776A287E855A4881** (7875 ASCII B/159 lines). R1 controller asserts original WIM file+source JSON file+log directory+planned owned (not created) working-WIM path; writes `PATH_ANCESTRY_FILEINFO_DIRECTORYINFO_WORKING_DECLARATION=PASS` once those gates succeed. Its **three NEW output paths** are `C:\work\logs\BlueLite_MAXPRE_SourceBoundPlan_R1_26300.9711.txt`, `C:\work\logs\BlueLite_MAXPRE_SourceBoundPlan_R1_26300.9711.json`, `C:\work\logs\BlueLite_MAXPRE_SourceBoundReceipt_R1_26300.9711.json`. They refuse overwrite; historic original HOLD unchanged.
+- Exact operator script `production/launchers/BlueLite.MaxPre.SourceBound.R1.Operator.ps1`, immutable commit **3a87e892493738c2c293451afafe12e5fd8c9147**, blob `a04054fe0c07d787aa603bef7e202d7753164076`, SHA256 **AA95F6BDFE69CF0CB49A63D7E99F11ABAD4D2D74B904D3C3B325997D688ADA75** (4713 ASCII B/77 lines). GitHub immutable/main contents independently identical. Launcher's own source/AST verified; it requires PS7 Admin, hashes original HOLD and previous core, pins retained r12, downloads only two small R1 code files under new C:\work\scripts names with SHA and AST gates, performs FileInfo+DirectoryInfo+missing planned-output path regression, then invokes R1 controller in pwsh with exact 9711 SourceContract and S31 metadata identifiers. No 6.5GB WIM hashing, no clone/mount/DISM/image mutation.
+- **Exactly one PS7 Admin operator command; source/loader unchanged:**
+
+```powershell
+& {
+    $ErrorActionPreference = 'Stop'
+    $script = 'C:\work\scripts\BlueLite.MaxPre.SourceBound.R1.Operator.ps1'
+    $url = 'https://raw.githubusercontent.com/johnny-belgrade/windows/3a87e892493738c2c293451afafe12e5fd8c9147/production/launchers/BlueLite.MaxPre.SourceBound.R1.Operator.ps1'
+    $expected = 'AA95F6BDFE69CF0CB49A63D7E99F11ABAD4D2D74B904D3C3B325997D688ADA75'
+    if ($PSVersionTable.PSVersion.Major -ne 7) { throw 'BL_PS7_REQUIRED' }
+    if (Test-Path -LiteralPath $script) { throw 'BL_R1_LAUNCHER_EXISTS_NO_OVERWRITE' }
+    Invoke-WebRequest -Uri $url -OutFile $script -ErrorAction Stop
+    $actual = (Get-FileHash -LiteralPath $script -Algorithm SHA256).Hash
+    if ($actual -cne $expected) {
+        Remove-Item -LiteralPath $script -Force
+        throw "BL_R1_LAUNCHER_SHA_MISMATCH=$actual"
+    }
+    $tokens = $null
+    $parseErrors = $null
+    [void][System.Management.Automation.Language.Parser]::ParseFile($script,[ref]$tokens,[ref]$parseErrors)
+    if (@($parseErrors).Count -ne 0) {
+        $parseErrors | ForEach-Object { Write-Host $_.ToString() }
+        throw 'BL_R1_LAUNCHER_PARSER_FAILED'
+    }
+    Write-Host "BL_R1_LAUNCHER_SHA_AND_AST=PASS;$actual"
+    & (Join-Path $PSHOME 'pwsh.exe') -NoProfile -ExecutionPolicy Bypass -File $script
+}
+```
+
+- The test has **NOT** been run by operator. Expected `PASS_MAXPRE_SOURCEBOUND_PRODUCTION_PLAN_STATIC_NO_IMAGE_TOUCH` is planning receipt only, no production removal/release certification. Request original R1 TXT and both R1 JSONs **if created**; if fail before JSON, TXT+console output suffice. Next after actual runtime feedback is the real reusable MAX_PRE mutation dispatcher, no storage or converter research. Master v6.0.0 and RecipeRegistry r12 unchanged.
 
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
