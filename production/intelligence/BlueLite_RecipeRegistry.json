@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "registry_revision": "2026-10-18-s37-webview-r4-nine-parents-history-26200-native-r16",
+  "registry_revision": "2026-10-18-s37-webview-r5r1-hidden-exact-capability-native-pass-r17",
   "status": "S37_COMMITTED_CANDIDATE_INDEPENDENT_S38R3_POSTCOMMIT_PASS_NOT_RELEASED",
   "scope": "Germanium 26300-first; 26200 historical topology references",
   "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
@@ -428,7 +428,7 @@
           "supported_lineage": [
             "26300.x"
           ],
-          "topology_status": "UNKNOWN_DEPENDENCY",
+          "topology_status": "NATIVE_READONLY_IDENTITY_VERIFIED",
           "exact_selectors": [
             {
               "kind": "CBS_COMPONENT",
@@ -524,6 +524,12 @@
               "target": "26200.9445 exact hidden Edge.Webview2.Platform~~~~ capability",
               "expected": "Original Library 142 detects hidden capability despite zero /Get-Capabilities list; 145 disposable /Remove-Capability native exit0, post Not Present and 3 FoD packages removed, health/pending clean; 148 classifies FoD native Green vs WebView2Standalone shared-component engine handoff; 318 underlying DISM success but final wrapper Count failure. On 26300 do exact native /Get-CapabilityInfo before any owned mutation.",
               "evidence_ref": "Library: 142-HOTFIX1-EdgeWebView-FOD-Wrapper-Capability-Contract.txt;145-EdgeWebView-Native-Remove-Capability-Probe.txt;148-EdgeWebView-Classification-and-BL144-Cleanup.txt;318-Canonical-EdgeWebView-Native-Production-Removal.txt"
+            },
+            {
+              "kind": "HIDDEN_NATIVE_CAPABILITY",
+              "target": "Edge.Webview2.Platform~~~~",
+              "expected": "On protected 26300.9711 S37 exact /Get-CapabilityInfo returns State Installed, native Install Size 559.24 MB reported (not freed bytes); direct FoD .1 Staged/.9711 Installed both declare exact capability; wrapper .9711 Installed blank capability; source S37 SHA pinned, zero native mounts pre/post, RO /Discard; no native removal performed",
+              "evidence_ref": "BlueLite_MAXPRE_WebViewEdge_26300.9711_HiddenCapability_R5R1.txt SHA256 C9E371715EC961FA8FC89D2CBFD96D6E908FDB705931446ADAB9BB45248BA49E"
             }
           ],
           "expected_post_state": [
@@ -544,7 +550,8 @@
             "BlueLite_MAXPRE_WebViewEdge_26300.9711_CBSRegistration_R3.txt SHA256 ED642AB518824526775BD9E46D9AC404418EDF2D21D37609AB023E46F7BD674F",
             "BlueLite_MAXPRE_WebViewEdge_26300.9711_CBSRegistration_R3.csv SHA256 0998C6FFB7A9875C5F1A194982AD114D64B16FE48466860756B626F1317927AF",
             "BlueLite_MAXPRE_WebViewEdge_26300.9711_CBSParentGate_R4.txt SHA256 E0C661061D64E3C85258CDE34B69D42A5A29D9C4F61CAFA4F910FBC4BFF44848",
-            "BlueLite_MAXPRE_WebViewEdge_26300.9711_CBSParents_R4.csv SHA256 CBA75A6D4778CC34FD1C19A6A256C52B69DC3C059F040E4DA9A7FBEEAF80650F"
+            "BlueLite_MAXPRE_WebViewEdge_26300.9711_CBSParents_R4.csv SHA256 CBA75A6D4778CC34FD1C19A6A256C52B69DC3C059F040E4DA9A7FBEEAF80650F",
+            "BlueLite_MAXPRE_WebViewEdge_26300.9711_HiddenCapability_R5R1.txt SHA256 C9E371715EC961FA8FC89D2CBFD96D6E908FDB705931446ADAB9BB45248BA49E"
           ]
         }
       ],
