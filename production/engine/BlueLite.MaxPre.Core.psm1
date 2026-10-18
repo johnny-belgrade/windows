@@ -1,4 +1,4 @@
-# BlueLite MAX_PRE | reusable offline-only runtime core | v0.1
+# BlueLite MAX_PRE | reusable offline-only runtime core | v0.1.1
 # No implicit mutation, source copying, WIM mounting, or recipe authorization.
 Set-StrictMode -Version Latest
 $ErrorActionPreference='Stop'
@@ -20,14 +20,35 @@ function Assert-BlueLiteOwnedPath {
  }
  $base=Get-Item -LiteralPath $root -Force -ErrorAction Stop
  if(-not $base.PSIsContainer){throw 'BL_OWNER_NOT_DIRECTORY'}
- $cursor=if(Test-Path -LiteralPath $full){Get-Item -LiteralPath $full -Force -ErrorAction Stop}else{$base}
+ # Resolve nearest existing ancestor so non-existent working output paths cannot
+ # bypass a reparse-point parent. A FileInfo has Directory, not Parent.
+ $ancestor=$full
+ while(-not (Test-Path -LiteralPath $ancestor)){
+  $next=[IO.Path]::GetDirectoryName($ancestor)
+  if([string]::IsNullOrWhiteSpace($next) -or $next -eq $ancestor){
+   throw 'BL_NO_EXISTING_PATH_ANCESTOR'
+  }
+  $ancestor=$next
+ }
+ $cursor=Get-Item -LiteralPath $ancestor -Force -ErrorAction Stop
+ $rootReached=$false
  while($null -ne $cursor){
   if(($cursor.Attributes -band [IO.FileAttributes]::ReparsePoint) -ne 0){
    throw ('BL_REPARSE_PATH='+$cursor.FullName)
   }
-  if($cursor.FullName.TrimEnd('\','/') -ieq $root){break}
-  $cursor=$cursor.Parent
+  if($cursor.FullName.TrimEnd('\','/') -ieq $root){
+   $rootReached=$true
+   break
+  }
+  if($cursor -is [IO.FileInfo]){
+   $cursor=$cursor.Directory
+  }elseif($cursor -is [IO.DirectoryInfo]){
+   $cursor=$cursor.Parent
+  }else{
+   throw 'BL_UNRECOGNIZED_PATH_ITEM_TYPE'
+  }
  }
+ if(-not $rootReached){throw 'BL_OWNER_ANCESTRY_NOT_REACHED'}
  if($MustExist){
   $x=Get-Item -LiteralPath $full -Force -ErrorAction Stop
   if($Directory -and -not $x.PSIsContainer){throw 'BL_EXPECTED_DIRECTORY'}
