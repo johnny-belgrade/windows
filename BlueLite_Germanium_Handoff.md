@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.16 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S36-R2 actual lifecycle 10-to-9 PASS; exact S37 full disposable four-root candidate source DELIVERED_NOT_RUN)  
+**Verzija dokumenta:** 1.5.17 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S36-R2 actual lifecycle 10-to-9 PASS; exact S37 full disposable four-root candidate source DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
