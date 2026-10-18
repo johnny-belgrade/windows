@@ -33,6 +33,28 @@
   Pin 'D6_129_SOURCE_LEDGER' 'C:\work\E2E\BlueLite_DL_R26_D6_26300.9711_2b22470a\Queues\UUP_DownloadFile_SHA256.csv' 'A8A205E554C8A5958E6D0CB725AED99383D6BEC752FF64A7D66F5A5DF9609898' -1
   Pin '9807_ORIGINAL_ZIP' 'C:\work\26300.9807-UUP\26300.9807_amd64_en-us_professional_687d1ced_convert.zip' '83203A6E79E62579A7D64204120BCECC111FE114C614AB1DBFAE032BB02DE7B7' 8218
   Pin '9807_FROZEN_CONTRACT' 'C:\work\UUP_Source\26300.9807_687d1ced\BlueLite_S11_SourceContract.json' '9D9DCD4FD8190863F1591679574879D3B652D2FE6DED176EEFED0C204D947D11' -1
+  Pin 'S31_KEEP' 'C:\work\E2E\BlueLite_Stage1_S31_26300.9711_OneDriveAMBER\install.wim' 'F52389FA66F8B60D56661C8786EC99409FB95447403B3C6FCBB94121EF8E340B' 6509216853
+  Pin 'S37_KEEP' 'C:\work\E2E\BlueLite_Stage1_S37_26300.9711_FullR4Candidate\install.disposable.wim' 'A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F' 6551362129
+  $dism=Join-Path $env:SystemRoot 'System32\dism.exe'
+  $raw=@(& $dism /English /Get-MountedWimInfo 2>&1|ForEach-Object {[string]$_})
+  $dismExit=[int]$LASTEXITCODE
+  $native=$raw -join [Environment]::NewLine
+  if($dismExit -ne 0 -or -not $native.Contains('No mounted images found.') -or
+     -not $native.Contains('The operation completed successfully.') -or
+     $native.Contains('DISM.exe [dism_options]') -or
+     @($raw|Where-Object {$_ -match '^\s*Mount Dir\s*:'}).Count -ne 0){
+   throw 'S42_ACTIVE_OR_UNPROVEN_DISM_MOUNT'
+  }
+  $reg=Join-Path $env:SystemRoot 'System32\reg.exe'
+  $rawHive=@(& $reg query 'HKLM\SYSTEM\CurrentControlSet\Control\hivelist' 2>&1|ForEach-Object {[string]$_})
+  $regExit=[int]$LASTEXITCODE
+  $bl=@($rawHive|Where-Object {$_ -match '(?i)^\s*\\REGISTRY\\MACHINE\\(BL[0-9]|BlueLite|FB[0-9])'})
+  if($regExit -ne 0 -or $bl.Count -gt 0){throw 'S42_BLUE_HIVE_BUSY'}
+  Note 'NO_MOUNTS_NO_BLUE_HIVES=PASS'
+  foreach($dir in @($origin,$duplicate)){
+   $d=Get-Item -LiteralPath $dir -Force -ErrorAction Stop
+   if(($d.Attributes -band [IO.FileAttributes]::ReparsePoint) -ne 0){throw 'S42_REPARSE_ROOT'}
+  }
   $a=@(Get-ChildItem -LiteralPath $origin -File -Force -ErrorAction Stop)
   $b=@(Get-ChildItem -LiteralPath $duplicate -File -Force -ErrorAction Stop)
   $da=@(Get-ChildItem -LiteralPath $origin -Directory -Force)
