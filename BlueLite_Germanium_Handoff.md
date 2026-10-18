@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.33 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S42 actual operator HOLD at UUP 129-file shape; S42D targeted diagnostic not yet delivered)  
+**Verzija dokumenta:** 1.5.34 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S42 actual HOLD; S42D exact SHA-pinned metadata diagnostic DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1409,6 +1409,47 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - Operator supplied original `BlueLite_Storage_S42_26300.9711_UUPPairs.txt`: 668 B / 13 CRLF rows, SHA256 `5C83E45CD28B493B0F0853F9028E547479118D56542CC52C4A70B67E683DFACB`, times 09:28:59–09:29:18. S42 was genuinely run; final `RESULT=HOLD_S42_UUP_PAIR_READONLY`, `FAIL_CLOSED=UUP_129_FILE_SHAPE_MISMATCH`.
 - Source code at `development/BlueLite_Storage_S42_26300.9711_UUPPairAudit_ReadOnly.ps1` makes four-part strict shape gate: both UUP root immediate file counts equal exactly 129, each immediate directory count zero. Actual counts **not printed** by S42 before failure; missing proof must be obtained narrowly. DO NOT assume a hidden/README file or delete any unexpected item. S42 produced no pair CSV/full content comparison. S41 report, S16 report, D6 129 ledger, 9807 source ZIP+contract, S31/S37 protected WIM hashes, native mount/hive zero all reported PASS, so do not repeat them as new 9GB forensic tasks.
 - All S42 changes were only small local log writes; DELETE/DOWNLOAD/CONVERTER=NOT_RUN, WIM untampered according to hashed preflight. No S43 cleanup authorization, original 9711 UUP and staged converter inputs both protected while source-shape discrepancy unresolved. 9807 GB download deferred. Next **one** S42D read-only source-shape/filename/size/reparse classification; S42D at FIRST update is only identified, NOT YET DELIVERED. Master and RecipeRegistry r12 unchanged.
+
+
+### 8.48 S42D exact diagnostic delivered after S42 HOLD — ONE PS7 Admin step (2026-10-18; SECOND §0R checkpoint)
+
+- **Operator result remains S42 ACTUAL HOLD**, original SHA256 `5C83E45CD28B493B0F0853F9028E547479118D56542CC52C4A70B67E683DFACB`. No new operator execution evidence since S42. S42D is `DELIVERED_NOT_RUN`; a GitHub script or this loader does not imply a native PASS.
+- Full source: `development/BlueLite_Storage_S42D_26300.9711_UUPShapeDiagnostic_ReadOnly.ps1`, pinned immutable commit **cd5ff8660a664e8c74e778fd525f183da590c562**, Git blob **1e05cf7f241ad6a958c5adee7ec4fbd9438f473e**, SHA256 **30730C4447B00EDDAD0FFB2B477D7823B47DB1D55DA54C67E8CDB49B67CFAC07**, **5366 ASCII bytes / 111 lines**. GitHub main and pinned source content read-back exact; PS7 AST runtime parser is part of the one operator command and NOT YET RUN.
+- **Exact one-step no-edit PowerShell 7 Admin loader, source-review required before operator execution:**
+
+```powershell
+& {
+    $ErrorActionPreference = 'Stop'
+    $dest = 'C:\work\scripts\BlueLite_Storage_S42D_26300.9711_UUPShapeDiagnostic_ReadOnly.ps1'
+    $url = 'https://raw.githubusercontent.com/johnny-belgrade/windows/cd5ff8660a664e8c74e778fd525f183da590c562/development/BlueLite_Storage_S42D_26300.9711_UUPShapeDiagnostic_ReadOnly.ps1'
+    $expected = '30730C4447B00EDDAD0FFB2B477D7823B47DB1D55DA54C67E8CDB49B67CFAC07'
+    if ($PSVersionTable.PSVersion.Major -ne 7) { throw 'PS7_REQUIRED' }
+    if (-not (Test-Path -LiteralPath 'C:\work\scripts' -PathType Container)) { throw 'SCRIPTS_DIR_MISSING' }
+    if (Test-Path -LiteralPath $dest) { throw 'S42D_LOCAL_SOURCE_EXISTS_NO_OVERWRITE' }
+    Invoke-WebRequest -Uri $url -OutFile $dest -ErrorAction Stop
+    $actual = (Get-FileHash -LiteralPath $dest -Algorithm SHA256).Hash
+    if ($actual -cne $expected) {
+        Remove-Item -LiteralPath $dest -Force
+        throw "S42D_PIN_SHA_MISMATCH=$actual"
+    }
+    Write-Host "S42D_PIN_SHA=PASS;$actual"
+    $tokens = $null
+    $parseErrors = $null
+    [void][System.Management.Automation.Language.Parser]::ParseFile($dest,[ref]$tokens,[ref]$parseErrors)
+    if (@($parseErrors).Count -ne 0) {
+        $parseErrors | ForEach-Object { Write-Host $_.ToString() }
+        throw 'S42D_PS7_PARSE_ERRORS_NO_EXECUTION'
+    }
+    Write-Host 'S42D_PS7_PARSER=PASS'
+    & (Join-Path $PSHOME 'pwsh.exe') -NoProfile -ExecutionPolicy Bypass -File $dest
+}
+```
+
+- **Scope / allowed writes:** only downloader of a SMALL immutable ~5.4 KB reviewed PS source to `C:\work\scripts` and two small report files in `C:\work\logs`. No 26300.9807 or 26300.9711 UUP payload network transfer, no conversion, no UUP deletion, no re-download of 9GB, no WIM clone/mount/mutation/cleanup. Script pins original 668-B S42 HOLD report SHA, checks PS7 Admin, disallows existing report and script overwrite, verifies no reparse-point ancestors to both exact `C:\work\E2E\...\UUPs` roots; lists immediate file/directory counts, total immediate file bytes, all filenames, size and reparse/attribute variations into CSV and logs differences. **It does NOT compare file SHA256 pairs** and cannot authorize S43 delete. If S42's four-part shape somehow becomes 129/129 and 0/0, report that observed change without treating original HOLD as erased.
+- **Expected operator uploads:**
+  - `C:\work\logs\BlueLite_Storage_S42D_26300.9711_UUPShape.txt`
+  - `C:\work\logs\BlueLite_Storage_S42D_26300.9711_UUPShape.csv`
+- Terminal `PASS_S42D_SHAPE_DIAGNOSTIC_CAPTURED_ONLY` indicates successful *metadata diagnosis only*; `HOLD_S42D_READONLY_DIAGNOSTIC` means failed gate. Do NOT run S42/S43 without analyzing S42D original text/CSV and writing BOTH Current+Handoff first. Master v6.0.0 unchanged, RecipeRegistry r12 unchanged.
 
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
