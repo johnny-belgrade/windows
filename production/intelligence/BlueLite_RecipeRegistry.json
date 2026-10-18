@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "registry_revision": "2026-10-18-s37-committed-candidate-pending-postcommit-r8",
-  "status": "S37_OPERATOR_COMMITTED_CANDIDATE_PASS_S38_READONLY_PENDING",
+  "registry_revision": "2026-10-18-s37-actual-committed-candidate-pass-s38-pending-r9",
+  "status": "S37_NATIVE_CANDIDATE_COMMITTED_PASS_S38_INDEPENDENT_POSTCOMMIT_PENDING_NO_AUTOEXEC",
   "scope": "Germanium 26300-first; 26200 historical topology references",
   "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
   "execution_rule": "All entries have runtime_execution_allowed=false until exact operator-reviewed engine_module SHA, current build topology predicates, disposable proof and release gates are supplied. Registry is not executable code.",
@@ -119,7 +119,8 @@
             "S33 actual native RO owner check PASS 740/740 with zero anomalies, /Discard exit0 and WIM hash unchanged; offline AppX registry remains UNKNOWN_DEPENDENCY",
             "S34 actual read-only HOLD because exact 26300 4-child AppInstaller Staged differs from 26200 R133 six-child variant; no mutation, copied hive unloaded, RO mount /Discard exit0, source WIM SHA unchanged",
             "S35 actual native read-only provider Staged/Config own-family branches and matching manifest dependencies; unchanged S31 original WIM SHA, zero registry image writes. R4 removal not run; current 26300 total provisioned=10, desired R4-only after removal=9 with 4 selected AppX keeps + 5 framework providers.",
-            "S36 attempted owned disposable R4 lifecycle-only but FAIL_CLOSED before target mutation: malformed joined provider list, not a provider topology failure; initial 10 exact AppX/4 own roots PASS, no marker, no target delete, clone /Discard and deletion, original WIM unchanged. No S36 lifecycle authority."
+            "S36 attempted owned disposable R4 lifecycle-only but FAIL_CLOSED before target mutation: malformed joined provider list, not a provider topology failure; initial 10 exact AppX/4 own roots PASS, no marker, no target delete, clone /Discard and deletion, original WIM unchanged. No S36 lifecycle authority.",
+            "S37 26300 original operator native full four-root candidate committed PASS: 9 exact provisioned AppX, 740 owner audits, four target roots absent, CBS health clean, retained clone WIM SHA A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F; original S31 SHA unchanged. Independent postcommit S38 and AppRepository residuals not yet verified."
           ],
           "allowed_delta": [
             "S32 read-only audit: no WIM/CBS/AppX/registry mutation and source WIM SHA unchanged"
@@ -139,7 +140,9 @@
             "BlueLite_Stage1_S35_26300.9711_AppInstaller_ProviderTopologyReadOnly.txt SHA256 B7B50189034A636B62A47627D6B14F5217AC752F995BD75BAC9533EF9B752DCD",
             "BlueLite_Stage1_S35_26300.9711_AppInstaller_ProviderSnapshot.json SHA256 6C280CB28E146CA1B49847457B1B072B4F9E1AAFDD441D5FBA82F243082A3727",
             "BlueLite_Stage1_S36_26300.9711_AppInstaller_LifecycleDisposable.txt SHA256 344DF85A1FC90D204ABCD34880378A7CBD75800F357EBACBA36EC2ED3BB8B650",
-            "BlueLite_Stage1_S36_26300.9711_AppInstaller_LifecycleEvidence.json SHA256 798F7FE8104782C9CF4C3857F884E6BFEBBDE04677F75034A8D4F67663C51E35"
+            "BlueLite_Stage1_S36_26300.9711_AppInstaller_LifecycleEvidence.json SHA256 798F7FE8104782C9CF4C3857F884E6BFEBBDE04677F75034A8D4F67663C51E35",
+            "BlueLite_Stage1_S37_26300.9711_AppInstaller_FullR4Candidate.txt SHA256 069174FC422357D9A12DD64CB9B8EB2C9BD2C947E44C5360F0565DC9E7C808F7",
+            "BlueLite_Stage1_S37_26300.9711_AppInstaller_FullR4Evidence.json SHA256 22C4968E0B7238CADF8614D96E6A70A3F1466495E466BA79FD68B74469980AF4"
           ]
         }
       ],
@@ -228,7 +231,7 @@
           "scope": "Actual exact 7 PRE registry snapshot entries, NativeLifecyclePassed=false, PRE_PROVIDER single joined path; no 10->9 poststate."
         }
       ],
-      "notes": "Historical 740-file number and explicit SID/root versions are not 26300 predicates. S32 26300.9711 physical four-root/740-row/topology matches historical 26200 R125/R133, but native hardlink owner closure and offline AppX registry lifecycle are UNKNOWN_DEPENDENCY. Do not auto-run R133. S33 next RO hardlink gate.  S33 26300.9711 exact native 740/740 owner closure now OPERATOR_PASS, but `UNKNOWN_DEPENDENCY` retained for 26300 AppX registry lifecycle/association/provider owners; R133 mutation NOT AUTHORIZED. S34 registry read-only gate next. S34 native 26300 read-only registry contract: AppInstaller Staged EXACT 4 own roots, historic R133 six-child predicate REJECTED ON 26300. Other AppInstaller target keys present; Deprovisioned absent. Provider separate ownership/unlinked semantic still UNKNOWN_DEPENDENCY; S35 provider discovery next. Do not add missing registry keys by hand or auto-run R133. S35: two historical provider-association package IDs belong to their own family Staged roots on 26300 (not target AppInstaller Staged), manifest explicitly depends on them, frameworks KEEP. Pre R4 AppX 10; post R4 ONLY should be 9 preserving 4 apps+5 frameworks; history 5->4 does not generalize. Operator observed read-only PASS only, no mutation. Scope status still UNKNOWN_DEPENDENCY for lifecycle transition and safe R4 application. S36 26300 disposable lifecycle native attempt FAIL_CLOSED at malformed provider list one joined path: after PRE exact 10 AppX/4-root/5 target scopes, before marker or deletions; owner clone /Discarded + removed, source WIM SHA unchanged. Source defect, not dependency variant, S35 provider proof stands; use corrected unique S36-R1 four explicit literal paths. R4 runtime mutation still NOT_AUTHORIZED.",
+      "notes": "Historical 740-file number and explicit SID/root versions are not 26300 predicates. S32 26300.9711 physical four-root/740-row/topology matches historical 26200 R125/R133, but native hardlink owner closure and offline AppX registry lifecycle are UNKNOWN_DEPENDENCY. Do not auto-run R133. S33 next RO hardlink gate.  S33 26300.9711 exact native 740/740 owner closure now OPERATOR_PASS, but `UNKNOWN_DEPENDENCY` retained for 26300 AppX registry lifecycle/association/provider owners; R133 mutation NOT AUTHORIZED. S34 registry read-only gate next. S34 native 26300 read-only registry contract: AppInstaller Staged EXACT 4 own roots, historic R133 six-child predicate REJECTED ON 26300. Other AppInstaller target keys present; Deprovisioned absent. Provider separate ownership/unlinked semantic still UNKNOWN_DEPENDENCY; S35 provider discovery next. Do not add missing registry keys by hand or auto-run R133. S35: two historical provider-association package IDs belong to their own family Staged roots on 26300 (not target AppInstaller Staged), manifest explicitly depends on them, frameworks KEEP. Pre R4 AppX 10; post R4 ONLY should be 9 preserving 4 apps+5 frameworks; history 5->4 does not generalize. Operator observed read-only PASS only, no mutation. Scope status still UNKNOWN_DEPENDENCY for lifecycle transition and safe R4 application. S36 26300 disposable lifecycle native attempt FAIL_CLOSED at malformed provider list one joined path: after PRE exact 10 AppX/4-root/5 target scopes, before marker or deletions; owner clone /Discarded + removed, source WIM SHA unchanged. Source defect, not dependency variant, S35 provider proof stands; use corrected unique S36-R1 four explicit literal paths. R4 runtime mutation still NOT_AUTHORIZED. S37 current 26300 exact disposable full R4 candidate committed per original operator logs on 2026-10-18; S38 readonly audit pending. NO universal recipe execution approval.",
       "contract_version": "1.0.0"
     },
     {
