@@ -17,7 +17,8 @@
  $pins=$false;$noMount=$false;$noBlueHives=$false;$scanOK=$false
  $images=@('.wim','.esd','.swm','.iso','.vhd','.vhdx','.ffu','.vdi','.vmdk')
  if($PSVersionTable.PSVersion.Major -ne 7){throw 'PS7_REQUIRED'}
- if(-not [Security.Principal.WindowsPrincipal]::new([Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)){throw 'ADMIN_REQUIRED'}
+ $admin=[Security.Principal.WindowsPrincipal]::new([Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+ if(-not $admin){throw 'ADMIN_REQUIRED'}
  if(-not(Test-Path -LiteralPath $root -PathType Container) -or -not(Test-Path -LiteralPath $logs -PathType Container)){throw 'C_WORK_OR_LOGS_MISSING'}
  foreach($p in @($report,$csv)){if(Test-Path -LiteralPath $p){throw ('S40_OUTPUT_ALREADY_EXISTS='+$p)}}
  [IO.File]::WriteAllText($report,'',$utf8)
