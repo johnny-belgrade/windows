@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.47 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (SourceBound original HOLD; R1 ancestry hotfix and SHA-pinned operator retry DELIVERED_NOT_RUN)  
+**Verzija dokumenta:** 1.5.48 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (SourceBound R1 original TXT+plan+receipt ACTUAL PASS; transaction engine next)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1607,6 +1607,13 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 ```
 
 - The test has **NOT** been run by operator. Expected `PASS_MAXPRE_SOURCEBOUND_PRODUCTION_PLAN_STATIC_NO_IMAGE_TOUCH` is planning receipt only, no production removal/release certification. Request original R1 TXT and both R1 JSONs **if created**; if fail before JSON, TXT+console output suffice. Next after actual runtime feedback is the real reusable MAX_PRE mutation dispatcher, no storage or converter research. Master v6.0.0 and RecipeRegistry r12 unchanged.
+
+
+### 8.61 MAX_PRE SourceBound R1 genuine operator PASS, three original artifacts (2026-10-18 FIRST §0R checkpoint)
+
+- Original R1 output trio byte-read, JSON parsed and independently hashed: `BlueLite_MAXPRE_SourceBoundPlan_R1_26300.9711.txt` **1622 B/18 CRLF lines**, SHA256 `90224401F84840BD6A9F5EFF2C6E8E48424E8E8F26C95B93117325C9A3F34FA1`; R1 plan JSON **2670 B**, SHA256 `A46C7BE0B4A1F6E2BF5889B22A80404FB788D0E2A5927AE2F3EB4BB4114C6E0F`; R1 ResultReceipt JSON **2648 B**, SHA256 `F9656A7594797F04F7F3B96A89C551BBEE544946754B60D665D8F7778FAA17D9`. 10:53:16. Terminal `PASS_MAXPRE_SOURCEBOUND_PRODUCTION_PLAN_STATIC_NO_IMAGE_TOUCH`. R1 corrected FileInfo/DirectoryInfo/missing-owned-path ancestry gate PASS, core/registry/source SHA pins PASS.
+- Plan and receipt `run_id=BL-26300.9711-20261018T085316328Z` identical; six entries content equal; 6/6 `AutoExecute=false`. Only 26300-specific selected registry recipe is S31 OneDrive `26300.9711-s31-native-amber`, still runtime disabled. Others: AppInstaller current registry topology flag NO_CERTIFIED_BUILD_TOPOLOGY (planner conservatism; independent S38R3 26300 postcommit PASS evidence retained), LanguageBasic RED_HOLD, EdgeWebView and FoDMetadata no matching certified rule, Sense component-engine handoff. No recipe automatically promoted or allowed to run. `ResultReceipt.result=STATIC_VERIFIED`, `evidence_tier=STATIC`, `mutation_performed=false`, `independent_post_state_verified=false`, `next_action_authorized=false`.
+- SHA-verified frozen SourceContract; WIM original path stat only 6,509,216,853 B; original immutable S31 SHA prior declared, **not recomputed**. No WIM copy, mount, native DISM, CBS/WinSxS/AppX mutation, health or servicing verification in the R1 run. Previous S0 683-B HOLD log untouched; R1 static planning gate closed. **Next one concrete production engineering step:** reusable stateful transaction/authorization/evidence engine (dry-run/negative fixtures, no current WIM heavy IO), then controlled MAX_PRE debloat mutations only after verified gates and operator authorization; **NOT YET DELIVERED** at FIRST checkpoint. No UUP staging forensics. Master and RecipeRegistry r12 unchanged.
 
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
