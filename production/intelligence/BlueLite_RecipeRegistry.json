@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "registry_revision": "2026-10-17-s36-appinstaller-disposable-hold-provider-source-array-r7",
-  "status": "S36_DISPOSABLE_SOURCE_ARRAY_FAIL_CLOSED_PRE_MUTATION_S36R1_PENDING_NO_APPX_MUTATION",
+  "registry_revision": "2026-10-18-s37-committed-candidate-pending-postcommit-r8",
+  "status": "S37_OPERATOR_COMMITTED_CANDIDATE_PASS_S38_READONLY_PENDING",
   "scope": "Germanium 26300-first; 26200 historical topology references",
   "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
   "execution_rule": "All entries have runtime_execution_allowed=false until exact operator-reviewed engine_module SHA, current build topology predicates, disposable proof and release gates are supplied. Registry is not executable code.",
