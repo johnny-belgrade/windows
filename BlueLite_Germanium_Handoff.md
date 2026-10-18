@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.68 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (R5R1 actual hidden WebView native readonly PASS; disposable removal test next; §0L Library regression policy)  
+**Verzija dokumenta:** 1.5.69 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (WebView R5R1 actual native readonly PASS; R6 owned disposable native removal DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1968,6 +1968,57 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - Original `BlueLite_MAXPRE_WebViewEdge_26300.9711_HiddenCapability_R5R1.txt` **2037 B /26 CRLF lines**, SHA256 **C9E371715EC961FA8FC89D2CBFD96D6E908FDB705931446ADAB9BB45248BA49E** independently byte-hashed; original loader/source commit `841276114d8c6a250b14a10ff495a1305e0f1ecd`, reviewed SHA **F38EADA5BA5D7BEBDF9D795DA9140F68D9FF772CA01D2D88220565EF1C501439**. Original R3/R4/R5 HOLD original receipt pins all PASS. Protected S37 WIM SHA A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F PASS. Native mount table 0/0 pre/post exactly one `No mounted images found.` marker and zero mount rows; /ReadOnly native mount /Discard, empty mountdir removed PASS. Genuine terminal **`PASS_S37_R5R1_EXACT_HIDDEN_EDGE_WEBVIEW_CAPABILITY_NATIVE_READONLY`**. No mutation.
 - Exact native capability **`Edge.Webview2.Platform~~~~` Installed**, `Install Size: 559.24 MB` Microsoft DISM metadata (NOT measured reclaimable/physical bytes), Download Size 0. Exact three FoD native package descriptions: wrapper 10.0.26100.9711 Installed, blank capability; child baseline .1 Staged and child current .9711 Installed, both `Capability Identity: Edge.Webview2.Platform~~~~`. This matches *family of package states and hidden direct native capability identity* proven historically in Library 26200.9445 original `142-HOTFIX1` (MUM/hidden state), `145` (disposable native /Remove-Capability and health/pending), `148` (classification/protected WebView2Standalone), `318` (native action PASS but wrapper `.Count` error). This evidence confirms 26300 **identity + native query**, not yet current build native removal/health/unique savings.
 - At FIRST §0R the next code is NOT DELIVERED: plan **one deliberately bounded named disposable WIM clone** of exact S37 for `DISM /Remove-Capability /CapabilityName:Edge.Webview2.Platform~~~~`, guarded with source and log SHA, file-system capacity, exact CBS protected parent states and immutable source. Do not edit S37. Native pre/post capability/packages, CheckHealth and ScanHealth, pending=0, CBS parent preservation, proper /Commit or /Discard, measured before/after image size and scoped reparse logical metadata (not false freed-byte claims). If test fails, fail closed and preserve decision-grade logs without claiming native success. Registry r17 target proof `NATIVE_READONLY_IDENTITY_VERIFIED`, execution disabled, Master v6 unchanged. §0L requires targeted Library + externally verified references before code.
+
+### 8.82 R6 26300 exact hidden Edge.Webview2 native removal on OWNED DISPOSABLE — DELIVERED_NOT_RUN (2026-10-18 SECOND §0R)
+
+- Latest ACTUAL is R5R1 read-only native PASS, original 2037B SHA C9E371715EC961FA8FC89D2CBFD96D6E908FDB705931446ADAB9BB45248BA49E. Protected original S37 WIM SHA A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F, 6,551,362,129B. On 26300 the exact hidden capability Edge.Webview2.Platform~~~~ is native Installed; child baseline .1 Staged and current .9711 Installed, wrapper .9711 Installed. The DISM metadata size 559.24 MB is NOT verified reclaimed bytes. Existing nine protected parent CBS states come from original R4. Library 26200 originals 142 (hidden capability), 145 (native disposable removal + clean health), 148 (standalone residue protected as component-engine handoff), and 318 (native action successful but later wrapper Count error), reused under Handoff §0L. Microsoft native support validated in https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/dism-capabilities-package-servicing-command-line-options and https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/dism-operating-system-package-servicing-command-line-options .
+- Reviewed R6 immutable GitHub source production/targets/BlueLite.MaxPre.WebView26300.NativeRemove.R6.ps1, pinned commit cea390d037eeaed819788ae42eb0ccd8e780ab36, Git blob ecfefca0821d358d9c9671f0310adda0b718d3f7, SHA256 6B2A70F87760FB374DA23A4B23615BDDFA9509F453DDB42DAC63183BC588B26E, 12,207 ASCII B /258 newline-split rows, exact main independent readback PASS; hash function crosschecked against known R5R1 source SHA. PS7 parser AST is a required OPERATOR loader gate and is not claimed locally executed by assistant.
+- Exclusive owned disposable directory C:\work\E2E\BlueLite_Stage1_S39_26300.9711_WebView_FOD_Native_R6, clone install.webview-disposable.wim, mount subfolder, log C:\work\logs\BlueLite_MAXPRE_WebViewEdge_26300.9711_NativeRemoval_R6.txt. Source/receipt SHA and no-overwrite, >=15GiB free on host C, no mounts/project hive aliases. Clone exactly 6,551,362,129B S37 SHA before native RW mount. Pre capability Installed, three FoD package states, nine parent states, pending0 and CheckHealth CLEAN. Perform one native /Remove-Capability /CapabilityName:Edge.Webview2.Platform~~~~ against clone only. Verify capability Not Present, exactly three FoD packages unresolvable 0x800f0805, nine parent states preserved, pending0 and CheckHealth+ScanHealth CLEAN. ONLY then /Unmount-Image /Commit and post-zero mounts+protected source full SHA proof; otherwise fail-closed and attempt owned /Discard, retain clone/log for diagnosis. Committed cloned WIM hash/bytes measured and retained, not blindly deleted; this does NOT provide independent fresh postcommit remount, WIM repack/compressed ISO/unique saving, runtime/new-user/serviceability or release certificate.
+- Expected RESULT=PASS_S37_R6_NATIVE_WEBVIEW_DISPOSABLE_PRECOMMIT_POSTSTATE_AND_COMMIT_ONLY applies only if operator actually executes and reports complete native evidence; currently DELIVERED_NOT_RUN. Master v6 unchanged, RecipeRegistry r17 native identity known but runtime_execution_allowed=false until after actual verification. One exact PS7 Admin SHA/AST-guarded loader (close mount-folder Total Commander/Explorer first):
+
+```powershell
+& {
+ $ErrorActionPreference='Stop'
+ if($PSVersionTable.PSVersion.Major -ne 7){throw 'BL_PS7_REQUIRED'}
+ $pr=[Security.Principal.WindowsPrincipal]::new([Security.Principal.WindowsIdentity]::GetCurrent())
+ if(-not $pr.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)){throw 'BL_ADMIN_REQUIRED'}
+ $sha='6B2A70F87760FB374DA23A4B23615BDDFA9509F453DDB42DAC63183BC588B26E'
+ $commit='cea390d037eeaed819788ae42eb0ccd8e780ab36'
+ $name='BlueLite.MaxPre.WebView26300.NativeRemove.R6.ps1'
+ $dir='C:\work\scripts'
+ $script=Join-Path $dir $name
+ $url="https://raw.githubusercontent.com/johnny-belgrade/windows/$commit/production/targets/$name"
+ if(-not(Test-Path -LiteralPath $dir -PathType Container)){throw 'BL_SCRIPTS_DIRECTORY_MISSING'}
+ if(-not(Test-Path -LiteralPath $script)){
+  $tmp=$script+'.download.'+[guid]::NewGuid().ToString('N')
+  try{
+   Invoke-WebRequest -Uri $url -OutFile $tmp -ErrorAction Stop
+   if((Get-Item -LiteralPath $tmp).Length -ne 12207 -or
+      (Get-FileHash -LiteralPath $tmp -Algorithm SHA256).Hash -cne $sha){
+    throw 'BL_R6_REMOTE_SOURCE_PIN_MISMATCH'
+   }
+   Move-Item -LiteralPath $tmp -Destination $script -ErrorAction Stop
+  }finally{
+   if(Test-Path -LiteralPath $tmp){Remove-Item -LiteralPath $tmp -Force}
+  }
+ }
+ if((Get-Item -LiteralPath $script).Length -ne 12207 -or
+    (Get-FileHash -LiteralPath $script -Algorithm SHA256).Hash -cne $sha){
+  throw 'BL_R6_LOCAL_SOURCE_PIN_MISMATCH'
+ }
+ $tokens=$null;$parseErrors=$null
+ $null=[System.Management.Automation.Language.Parser]::ParseFile(
+  $script,[ref]$tokens,[ref]$parseErrors
+ )
+ if(@($parseErrors).Count -ne 0){
+  throw ('BL_R6_PS7_AST_PARSE_FAILED='+($parseErrors -join '; '))
+ }
+ Write-Host ('R6_SOURCE_SHA256=PASS;'+$sha)
+ Write-Host 'R6_PS7_AST=PASS'
+ Write-Host 'R6_MODE=OWNED_DISPOSABLE_NATIVE_EDGE_WEBVIEW_FOD_REMOVE_GUARDED'
+ & $script
+}
+```
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
