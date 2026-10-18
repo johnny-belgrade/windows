@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "registry_revision": "2026-10-18-s37-webview-r1-readonly-owner-metadata-r13",
+  "registry_revision": "2026-10-18-s37-webview-r2-servicing-names-r14",
   "status": "S37_COMMITTED_CANDIDATE_INDEPENDENT_S38R3_POSTCOMMIT_PASS_NOT_RELEASED",
   "scope": "Germanium 26300-first; 26200 historical topology references",
   "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
@@ -456,6 +456,18 @@
               "kind": "UNRESOLVED",
               "target": "exact 26300 CBS package/manifest/component owner references and protected WebView consumer dependencies",
               "expected": "R1 name-only DISM capability Browser.InternetExplorer~~~~0.0.11.0 and zero direct package matches do not resolve Edge/WebView servicing ownership; no native remove/health/pending/physical savings proof"
+            },
+            {
+              "kind": "CBS_PACKAGE_FILENAME_METADATA",
+              "target": "existing 8 Edge/WebView-related MUM candidates under S37 Windows\\servicing\\Packages",
+              "expected": "R2 exact 8 reparse-flagged MUM filenames present: 3 Edge-WebView-FOD (wrapper + two package versions); 3 OneCore-Edge-WebRuntime (two neutral plus en-US); 2 EdgeDevToolsClient; all ContentRead=False; native name list Edge/WebView 0/0; no registered CBS package, owner or dependency inference",
+              "evidence_ref": "BlueLite_MAXPRE_WebViewEdge_26300.9711_ServicingMetadata_R2.csv SHA256 3965B7B66C6841F99A375160534BB976DB3EE82CF76E8AE8BA57EAF5E0F0745E"
+            },
+            {
+              "kind": "COMPONENT_MANIFEST_METADATA",
+              "target": "two exact WinSxS amd64_microsoft-edge-webview manifests and Catalog path checks",
+              "expected": "R2 version 10.0.26100.1 present reparse flag length 8625; version 10.0.26100.9711 present reparse flag length 27624; same exact Catalog directory path targets absent, not proof all catalogs missing; no manifest content opened",
+              "evidence_ref": "BlueLite_MAXPRE_WebViewEdge_26300.9711_ServicingOwners_R2.txt SHA256 BA43886C7111B8DA9AA7A5A8CAEAB968D4AC48BE76BECD48B7F37FCB1271DE1E"
             }
           ],
           "expected_post_state": [
@@ -470,7 +482,9 @@
           ],
           "evidence_refs": [
             "BlueLite_MAXPRE_WebViewEdge_26300.9711_TargetGate_R1.txt SHA256 29535E0700CCCD229D2792A8CAB6E895130BC19DE8A33CA783AF0CE9F52DCB22",
-            "BlueLite_MAXPRE_WebViewEdge_26300.9711_Owners_R1.csv SHA256 896ADB7044F7D77C234F1C898D4956C143289C1DEAB58D0099454570CB3417FA"
+            "BlueLite_MAXPRE_WebViewEdge_26300.9711_Owners_R1.csv SHA256 896ADB7044F7D77C234F1C898D4956C143289C1DEAB58D0099454570CB3417FA",
+            "BlueLite_MAXPRE_WebViewEdge_26300.9711_ServicingOwners_R2.txt SHA256 BA43886C7111B8DA9AA7A5A8CAEAB968D4AC48BE76BECD48B7F37FCB1271DE1E",
+            "BlueLite_MAXPRE_WebViewEdge_26300.9711_ServicingMetadata_R2.csv SHA256 3965B7B66C6841F99A375160534BB976DB3EE82CF76E8AE8BA57EAF5E0F0745E"
           ]
         }
       ],
