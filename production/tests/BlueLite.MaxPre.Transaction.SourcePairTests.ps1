@@ -86,6 +86,11 @@ param(
   MustReject 'MUTATION_ALL_CALLER_SWITCHES_FORCED_DENIED' {
    Assert-BlueLiteMaxPreMutationGate -Transaction $transaction -OperatorAuthorization -RecipeAuthorization -ImageOwnership -NativeHealthVerified
   } 'BL_TX_NATIVE_MUTATION_DISPATCHER_NOT_YET_CERTIFIED'
+  $caseVariant=($plan|ConvertTo-Json -Depth 80|ConvertFrom-Json -Depth 80)
+  $caseVariant.planned_working_wim_path=([string]$plan.original_wim_path).ToUpperInvariant()
+  MustReject 'CASE_INSENSITIVE_WIM_ALIAS' {
+   Assert-BlueLitePlanReceiptPair -Plan $caseVariant -Receipt $receipt
+  } 'BL_TX_ORIGINAL_WORKING_ALIAS'
   $record=[ordered]@{
    transaction=$transaction
    evidence_pair_hashes=[ordered]@{
