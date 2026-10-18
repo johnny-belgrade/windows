@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.27 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S38R3 independently verified postcommit PASS; storage disposable evidence-first inventory/cleanup prioritized)  
+**Verzija dokumenta:** 1.5.28 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S38R3 native postcommit PASS; SHA-pinned S40 safe storage inventory DELIVERED_NOT_RUN for disposable cleanup)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1282,6 +1282,39 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - **KEEP until new deliberate decision:** S31 original baseline C:\work\E2E\BlueLite_Stage1_S31_26300.9711_OneDriveAMBER\install.wim, **6,509,216,853 bytes**, SHA256 **F52389FA66F8B60D56661C8786EC99409FB95447403B3C6FCBB94121EF8E340B**; S37 independent audited current candidate C:\work\E2E\BlueLite_Stage1_S37_26300.9711_FullR4Candidate\install.disposable.wim, **6,551,362,129 bytes**, SHA256 **A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F** (despite filename "disposable", **currently required** for next integration/certification). Also check explicitly protected original UUP, scripts/logs/receipts and any truly required regression fixture. Never assume C:\work entire E2E folder may be deleted: inspect actual inventory and manifest.
 - **ONE NEXT PHASE FIRST checkpoint, NOT DELIVERED:** No new WIM clone or disposable test. Perform bounded **READ-ONLY storage and mount/hive inventory** for C:\work: all image/archive large files and exact sizes/paths; grouped storage consumers; active mounted WIM records, temporary BlueLite hives; verify both protected WIM SHA; inspect inherited old images incl C:\work\G5 R133 regression and UUP/working image ownership. Produce one compact disk report + CSV under C:\work\logs, without touching original files. Then classify exact DELETE ELIGIBLE vs KEEP/HOLD based on actually listed sizes/hashes and retained evidence. Following step (separate operator command, after inventory) remove only explicitly preapproved exact owned files with fail-closed hash+mount+dependency preconditions; NEVER remove report/log folders or S31/S37. S38R3 original report triggers §0R first docs checkpoint here, then next step source and command with Handoff second-write. Recipe Registry updated for verified native postcommit proof, runtime permission remains false. Master immutable.
 
+### 8.42 S40 READ-ONLY C:\work storage and disposal inventory — ONE SHA-pinned command DELIVERED_NOT_RUN
+
+- Exact GitHub source development/BlueLite_Storage_S40_26300.9711_InventoryReadOnly.ps1, immutable commit **4bf8a8ba7a361a7eb353e0f4f9e954ab251df1c9**, Git blob SHA1 **a3e31e3b3ba487365c18e5df9369c5a39aff13bb**, **SHA256 B7502B6DA1827250EFB6CB008A2456306261F713F2BC6BE5827B675E4717B4AF**, 6,826 ASCII bytes/120 lines. Two independently fetched copies (immutable commit and main) identical; digest independently computed using abc self-tested SHA256 implementation. **Source not yet run on Windows, no operator PASS claimed.**
+- **Exactly one PS7 Admin operator command** (no edits):
+```powershell
+& {
+    $ErrorActionPreference = 'Stop'
+    $dest = 'C:\work\scripts\BlueLite_Storage_S40_26300.9711_InventoryReadOnly.ps1'
+    $url = 'https://raw.githubusercontent.com/johnny-belgrade/windows/4bf8a8ba7a361a7eb353e0f4f9e954ab251df1c9/development/BlueLite_Storage_S40_26300.9711_InventoryReadOnly.ps1'
+    $expected = 'B7502B6DA1827250EFB6CB008A2456306261F713F2BC6BE5827B675E4717B4AF'
+    if (-not (Test-Path -LiteralPath 'C:\work\scripts' -PathType Container)) { throw 'SCRIPTS_DIR_MISSING' }
+    if (Test-Path -LiteralPath $dest) { throw 'S40_SOURCE_EXISTS_NO_OVERWRITE' }
+    Invoke-WebRequest -Uri $url -OutFile $dest -ErrorAction Stop
+    $got = (Get-FileHash -LiteralPath $dest -Algorithm SHA256).Hash
+    if ($got -cne $expected) {
+        Remove-Item -LiteralPath $dest -Force
+        throw "S40_SOURCE_HASH_MISMATCH=$got"
+    }
+    Write-Host "S40_SOURCE_SHA256=PASS;$got"
+    $tokens = $null
+    $parserErrors = $null
+    [void][System.Management.Automation.Language.Parser]::ParseFile($dest,[ref]$tokens,[ref]$parserErrors)
+    if (@($parserErrors).Count -ne 0) {
+        $parserErrors | ForEach-Object { Write-Host $_.ToString() }
+        throw 'S40_POWERSHELL_PARSER_ERRORS_NO_EXECUTION'
+    }
+    Write-Host 'S40_POWERSHELL_PARSER=PASS'
+    & (Join-Path $PSHOME 'pwsh.exe') -NoProfile -ExecutionPolicy Bypass -File $dest
+}
+```
+
+- Run scans FILE METADATA under C:\work (does not copy any WIM or delete anything), native DISM /Get-MountedWimInfo actual stdout and user-scope BL/FB registry hivelist aliases. Pins original S38R3 main report SHA **E8DF9623888B6AECA976FDEEAC19FB04324A57F4D91A649D92247B479943BD08** (6159B), JSON SHA **9F1AF74B8C9F6B21E136B40D33109E5B20043869DE74109010A558D25CEE63BA** (4101B), S31 WIM SHA F52389FA66F8B60D56661C8786EC99409FB95447403B3C6FCBB94121EF8E340B 6509216853 B and S37 WIM SHA A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F 6551362129 B. Reports C: free/total and total C:\work *logical* file bytes, top 40 storage-stage groups, all WIM/ESD/SWM/ISO/VHD/VHDX/FFU/VDI/VMDK and any file >=1 GiB with exact path, size and timestamp. Records incomplete scans and mount/hive occupancy as HOLD. Flags S31 and S37 explicitly PROTECTED_KEEP and historical R133/UUP as REVIEW, **never DELETE on substring alone**. Any other currently required source has KEEP authority from Master, but is not guessed from filename. No mutation of originals, WIM copies, mount/unmount, hive load/unload, deletes, or permanent registry changes.
+- Operator upload **TWO original outputs:** C:\work\logs\BlueLite_Storage_S40_26300.9711_ReadOnlyInventory.txt and C:\work\logs\BlueLite_Storage_S40_26300.9711_ImageAndLargeFiles.csv (if created). Literal `PASS_S40_READONLY_INVENTORY_READY_TO_CLASSIFY` or `HOLD_S40_READONLY_STORAGE_INVENTORY`, only inventory. **S40 DELIVERED_NOT_RUN**. Next phase after actual file inventory: identify exact owned obsolete disposable WIM/ESD/ISO/etc with existing evidence and no future requirement, verify hashes before actual deletion and keep truly required S31/S37 + source/UUP/regression fixtures. Do not delete C:\work\logs, scripts or protected images, and do not create 100GB replacement backups. Recipe Registry r12 contains S38R3 PASS and runtime disabled; Master unchanged.
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
 1. **UUP queue prune** Windows/FoD/ESD reference pre converter closure → 26200 wimlib exit **55**. Ne ponavljati destruktivno filtriranje jer fajl deluje opciono.
