@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.34 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S42 actual HOLD; S42D exact SHA-pinned metadata diagnostic DELIVERED_NOT_RUN)  
+**Verzija dokumenta:** 1.5.35 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S42D actual metadata PASS; S42E layout-aware pair hashing not yet delivered)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1450,6 +1450,14 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
   - `C:\work\logs\BlueLite_Storage_S42D_26300.9711_UUPShape.txt`
   - `C:\work\logs\BlueLite_Storage_S42D_26300.9711_UUPShape.csv`
 - Terminal `PASS_S42D_SHAPE_DIAGNOSTIC_CAPTURED_ONLY` indicates successful *metadata diagnosis only*; `HOLD_S42D_READONLY_DIAGNOSTIC` means failed gate. Do NOT run S42/S43 without analyzing S42D original text/CSV and writing BOTH Current+Handoff first. Master v6.0.0 unchanged, RecipeRegistry r12 unchanged.
+
+
+### 8.49 S42D ACTUAL operator PASS: S42 expected flat UUP directory contradicted by post-v127 layout (2026-10-18; FIRST §0R checkpoint)
+
+- Original operator reports `BlueLite_Storage_S42D_26300.9711_UUPShape.txt` 4,754 B/47 CRLF lines SHA256 **781C39101645F7FDACD602A49C9CD0C331B15033FACECF476191EE0B4EEECB65** and `BlueLite_Storage_S42D_26300.9711_UUPShape.csv` 16,933 B/133 data rows SHA256 **C1E7A0E51B17E12EF6F253AF473C6583B38E1ECE6332D1616935C66FC0010FFF**. Both fully loaded and compared in this session, not only wrapper text. Output terminal `PASS_S42D_SHAPE_DIAGNOSTIC_CAPTURED_ONLY` is **METADATA PASS**, not full SHA certification or cleanup permission.
+- Authoritative D6 original root: exactly 129 immediate files, 0 dirs, 8,992,976,071 B. Converter S20 output `UUPs` root: 101 immediate files, 1 child `Apps` dir (NOT YET INVENTORIED), 8,921,878,233 B. Union by immediate basename: 98 common same-sized files but content SHA **not** compared; 31 D6-only AppX/MSIX names **112,616,297 B**; 3 extra stage-only FILES: `_AppsFilesList.csv` **313,375 B**, `Windows11.0-KB5043113-x64_inout.cab` **20,094,087 B**, `Windows11.0-KB5127647-x64_inout.cab` **21,110,997 B**; plus `Apps` dir. S42's old `staged root 129 files/no dirs` assertion was structurally wrong after actual v127 converter S21. Original S20 pre-conversion flat 129 copy remains proven historically; no re-copy allowed.
+- **Interpretation boundary:** 31 apparent original-only names could be inside `Apps` (reasonable hypothesis), but S42D does not enumerate that child. Converter-generated metadata and inout files are not eligible for deletion by a UUP duplicate test, irrespective of optionality. No WIM/Stage1 state change; do not infer source corruption, stage byte-for-byte duplication or footprint saving. `S42=HOLD` remains historically valid; `S42D=DIAGNOSTIC PASS` identifies gate error. Next **S42E** one bounded read-only layout-aware content inventory and per-file SHA certification, with exact 31-app reparenting check and 98 root copies; first checkpoint **NOT YET DELIVERED**.
+- S31 source, S37 independently audited candidate, frozen 26300.9807 ZIP/contract and original 9711 D6 remain KEEP. No Full 9807 download. RecipeRegistry r12/AppX and Master v6.0.0 unchanged.
 
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
