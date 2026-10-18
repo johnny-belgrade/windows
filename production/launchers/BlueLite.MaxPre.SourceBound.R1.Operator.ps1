@@ -35,7 +35,7 @@
    throw ('BL_R1_SOURCE_SHA_MISMATCH='+$entry.Path+';'+$hash)
   }
   $tokens=$null;$errorsFound=$null
-  [void][Management.Automation.Language.Parser]::ParseFile($entry.Path,[ref]$tokens,[ref]$errorsFound)
+  [void][System.Management.Automation.Language.Parser]::ParseFile($entry.Path,[ref]$tokens,[ref]$errorsFound)
   if(@($errorsFound).Count -ne 0){
    $errorsFound|ForEach-Object {Write-Host $_.ToString()}
    throw ('BL_R1_AST_FAILED='+$entry.Path)
