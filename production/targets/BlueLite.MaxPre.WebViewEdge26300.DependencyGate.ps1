@@ -34,6 +34,7 @@
   return $all
  }
  $mounted=$false
+ $mountAttempted=$false
  $created=$false
  $result='HOLD_WEBVIEW_EDGE_TARGET_GATE_READONLY'
  try{
@@ -62,6 +63,7 @@
   Note 'DISM_MOUNTS_AND_BLUE_HIVES_ZERO=PASS'
   [void][IO.Directory]::CreateDirectory($mount)
   $created=$true
+  $mountAttempted=$true
   $mountedOutput=NativeDism 'READONLY_MOUNT' @('/English','/Mount-Image',('/ImageFile:'+$image),'/Index:1',('/MountDir:'+$mount),'/ReadOnly')
   $mounted=$true
   Note 'S37_NATIVE_READONLY_MOUNT=PASS'
@@ -123,13 +125,24 @@
  }catch{
   Note ('FAIL_CLOSED='+$_.Exception.Message)
  }finally{
-  if($mounted){
+  if($mountAttempted){
    try{
-    $unmount=NativeDism 'READONLY_DISCARD' @('/English','/Unmount-Image',('/MountDir:'+$mount),'/Discard')
+    $mountInfo=@(& (Join-Path $env:SystemRoot 'System32\dism.exe') /English /Get-MountedWimInfo 2>&1 |
+     ForEach-Object {[string]$_}) -join [Environment]::NewLine
+    $ownedMountListed=$mountInfo.Contains($mount)
+    if($mounted -or $ownedMountListed){
+     $null=NativeDism 'READONLY_DISCARD' @('/English','/Unmount-Image',('/MountDir:'+$mount),'/Discard')
+     Note 'READONLY_UNMOUNT_DISCARD=PASS'
+    }
+    $after=NativeDism 'POST_UNMOUNT_TABLE' @('/English','/Get-MountedWimInfo')
+    if(-not $after.Contains('No mounted images found.')){
+     throw 'BL_POST_UNMOUNT_NONZERO_MOUNTS'
+    }
     $mounted=$false
-    Note 'READONLY_UNMOUNT_DISCARD=PASS'
+    Note 'POST_UNMOUNT_ZERO_MOUNTS=PASS'
    }catch{
-    Note ('CRITICAL_UNMOUNT_FAILURE='+$_.Exception.Message)
+    $mounted=$true
+    Note ('CRITICAL_UNMOUNT_VERIFICATION_FAILURE='+$_.Exception.Message)
     $result='HOLD_WEBVIEW_EDGE_UNMOUNT_MANUAL_HANDLE_REVIEW'
    }
   }
