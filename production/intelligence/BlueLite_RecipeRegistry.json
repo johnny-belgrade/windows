@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "registry_revision": "2026-10-18-s37-actual-committed-candidate-pass-s38-pending-r9",
-  "status": "S37_NATIVE_CANDIDATE_COMMITTED_PASS_S38_INDEPENDENT_POSTCOMMIT_PENDING_NO_AUTOEXEC",
+  "registry_revision": "2026-10-18-s38r2-readonly-mount-info-empty-hold-evidence-backfill-r10",
+  "status": "S37_COMMITTED_CANDIDATE_S38R2_OWNER_GATE_HOLD_NO_POSTCOMMIT_CERTIFICATE",
   "scope": "Germanium 26300-first; 26200 historical topology references",
   "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
   "execution_rule": "All entries have runtime_execution_allowed=false until exact operator-reviewed engine_module SHA, current build topology predicates, disposable proof and release gates are supplied. Registry is not executable code.",
@@ -120,7 +120,8 @@
             "S34 actual read-only HOLD because exact 26300 4-child AppInstaller Staged differs from 26200 R133 six-child variant; no mutation, copied hive unloaded, RO mount /Discard exit0, source WIM SHA unchanged",
             "S35 actual native read-only provider Staged/Config own-family branches and matching manifest dependencies; unchanged S31 original WIM SHA, zero registry image writes. R4 removal not run; current 26300 total provisioned=10, desired R4-only after removal=9 with 4 selected AppX keeps + 5 framework providers.",
             "S36 attempted owned disposable R4 lifecycle-only but FAIL_CLOSED before target mutation: malformed joined provider list, not a provider topology failure; initial 10 exact AppX/4 own roots PASS, no marker, no target delete, clone /Discard and deletion, original WIM unchanged. No S36 lifecycle authority.",
-            "S37 26300 original operator native full four-root candidate committed PASS: 9 exact provisioned AppX, 740 owner audits, four target roots absent, CBS health clean, retained clone WIM SHA A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F; original S31 SHA unchanged. Independent postcommit S38 and AppRepository residuals not yet verified."
+            "S37 26300 original operator native full four-root candidate committed PASS: 9 exact provisioned AppX, 740 owner audits, four target roots absent, CBS health clean, retained clone WIM SHA A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F; original S31 SHA unchanged. Independent postcommit S38 and AppRepository residuals not yet verified.",
+            "S38R2 actual independent read-only retry HOLD: DISM readonly mount exit0, raw mount info zero entries, native Discard exit0, candidate/source hashes unchanged. No AppX/registry/AppRepository/CBS postcommit proof and no release. Ownership inspection dependency remains outstanding."
           ],
           "allowed_delta": [
             "S32 read-only audit: no WIM/CBS/AppX/registry mutation and source WIM SHA unchanged"
@@ -142,7 +143,16 @@
             "BlueLite_Stage1_S36_26300.9711_AppInstaller_LifecycleDisposable.txt SHA256 344DF85A1FC90D204ABCD34880378A7CBD75800F357EBACBA36EC2ED3BB8B650",
             "BlueLite_Stage1_S36_26300.9711_AppInstaller_LifecycleEvidence.json SHA256 798F7FE8104782C9CF4C3857F884E6BFEBBDE04677F75034A8D4F67663C51E35",
             "BlueLite_Stage1_S37_26300.9711_AppInstaller_FullR4Candidate.txt SHA256 069174FC422357D9A12DD64CB9B8EB2C9BD2C947E44C5360F0565DC9E7C808F7",
-            "BlueLite_Stage1_S37_26300.9711_AppInstaller_FullR4Evidence.json SHA256 22C4968E0B7238CADF8614D96E6A70A3F1466495E466BA79FD68B74469980AF4"
+            "BlueLite_Stage1_S37_26300.9711_AppInstaller_FullR4Evidence.json SHA256 22C4968E0B7238CADF8614D96E6A70A3F1466495E466BA79FD68B74469980AF4",
+            "BlueLite_Stage1_S36R1_26300.9711_AppInstaller_LifecycleDisposable.txt SHA256 2DCCF677E2B94E0D5952BE4FB15E517310679B28510BBCA1D37E42ADFAB8F3FF",
+            "BlueLite_Stage1_S36R1_26300.9711_AppInstaller_LifecycleEvidence.json SHA256 3D765C7345A7E8EAAE7C50D4208EE26512C7B6EFFDA02D67E561F4FB8C666E18",
+            "BlueLite_Stage1_S36R2_26300.9711_AppInstaller_LifecycleDisposable.txt SHA256 A8BCC29A6F575C477033D8FE5EA25F669CBA6672CC46888E3F5569EAAA649233",
+            "BlueLite_Stage1_S36R2_26300.9711_AppInstaller_LifecycleEvidence.json SHA256 CD6606F5D7FA0BD6FE526B550474917801823A1E6D418F9771DF103689D54AED",
+            "BlueLite_Stage1_S37_26300.9711_AppInstaller_FullR4Candidate.txt SHA256 069174FC422357D9A12DD64CB9B8EB2C9BD2C947E44C5360F0565DC9E7C808F7",
+            "BlueLite_Stage1_S37_26300.9711_AppInstaller_FullR4Evidence.json SHA256 22C4968E0B7238CADF8614D96E6A70A3F1466495E466BA79FD68B74469980AF4",
+            "BlueLite_Stage1_S38D_26300.9711_MountIdentity_ReadOnlyDiagnostic.txt SHA256 2421B2B4069701EB882BC38A66931F58104C410EBCA8ED9EB589B69EAF7115E0",
+            "BlueLite_Stage1_S38R2_26300.9711_AppInstaller_PostCommitReadOnly.txt SHA256 CA875A819DF3EFBC749F614DFB5199713A37DB5DAC3C993D0D5BF857404D0E84",
+            "BlueLite_Stage1_S38R2_26300.9711_AppInstaller_PostCommitSnapshot.json SHA256 C448B39978DF02E965237805FED1682C5C2C6D4138DA8361D789AB9CF479BB96"
           ]
         }
       ],
@@ -229,9 +239,63 @@
           "reference": "BlueLite_Stage1_S36_26300.9711_AppInstaller_LifecycleEvidence.json",
           "sha256": "798F7FE8104782C9CF4C3857F884E6BFEBBDE04677F75034A8D4F67663C51E35",
           "scope": "Actual exact 7 PRE registry snapshot entries, NativeLifecyclePassed=false, PRE_PROVIDER single joined path; no 10->9 poststate."
+        },
+        {
+          "source_kind": "OPERATOR_LOG",
+          "reference": "BlueLite_Stage1_S36R1_26300.9711_AppInstaller_LifecycleDisposable.txt",
+          "sha256": "2DCCF677E2B94E0D5952BE4FB15E517310679B28510BBCA1D37E42ADFAB8F3FF",
+          "scope": "S36R1 actual disposable PRE: provider keys four PASS; marker reg add creates unnamed default, stopped prior to five target registry deletion; clone discarded."
+        },
+        {
+          "source_kind": "OPERATOR_LOG",
+          "reference": "BlueLite_Stage1_S36R1_26300.9711_AppInstaller_LifecycleEvidence.json",
+          "sha256": "3D765C7345A7E8EAAE7C50D4208EE26512C7B6EFFDA02D67E561F4FB8C666E18",
+          "scope": "S36R1 actual JSON confirmed marker default value present; no lifecycle passed."
+        },
+        {
+          "source_kind": "OPERATOR_LOG",
+          "reference": "BlueLite_Stage1_S36R2_26300.9711_AppInstaller_LifecycleDisposable.txt",
+          "sha256": "A8BCC29A6F575C477033D8FE5EA25F669CBA6672CC46888E3F5569EAAA649233",
+          "scope": "S36R2 actual disposable registry lifecycle PASS: protected 10-to-9 AppX, empty deprovision marker, five target exact keys removed; all four physical roots still present; /Discard."
+        },
+        {
+          "source_kind": "OPERATOR_LOG",
+          "reference": "BlueLite_Stage1_S36R2_26300.9711_AppInstaller_LifecycleEvidence.json",
+          "sha256": "CD6606F5D7FA0BD6FE526B550474917801823A1E6D418F9771DF103689D54AED",
+          "scope": "S36R2 source JSON: NativeLifecyclePassed=true, 22 inspected registry snapshots; copied image discarded, original unchanged."
+        },
+        {
+          "source_kind": "OPERATOR_LOG",
+          "reference": "BlueLite_Stage1_S37_26300.9711_AppInstaller_FullR4Candidate.txt",
+          "sha256": "069174FC422357D9A12DD64CB9B8EB2C9BD2C947E44C5360F0565DC9E7C808F7",
+          "scope": "S37 actual owned-clone full R4 physical candidate commit PASS: protected 9 AppX, 740 hardlink checks, 4 exact WindowsApps roots removed; candidate SHA pinned, not release-certified."
+        },
+        {
+          "source_kind": "OPERATOR_LOG",
+          "reference": "BlueLite_Stage1_S37_26300.9711_AppInstaller_FullR4Evidence.json",
+          "sha256": "22C4968E0B7238CADF8614D96E6A70A3F1466495E466BA79FD68B74469980AF4",
+          "scope": "S37 actual precommit and candidate evidence JSON: physical R4 passed and only separate owned clone committed."
+        },
+        {
+          "source_kind": "OPERATOR_LOG",
+          "reference": "BlueLite_Stage1_S38D_26300.9711_MountIdentity_ReadOnlyDiagnostic.txt",
+          "sha256": "2421B2B4069701EB882BC38A66931F58104C410EBCA8ED9EB589B69EAF7115E0",
+          "scope": "S38D diagnostic: raw DISM zero mount records, BlueLite hive aliases zero; untracked plain C:\\BL38M directory; no new AppX post-state evidence."
+        },
+        {
+          "source_kind": "OPERATOR_LOG",
+          "reference": "BlueLite_Stage1_S38R2_26300.9711_AppInstaller_PostCommitReadOnly.txt",
+          "sha256": "CA875A819DF3EFBC749F614DFB5199713A37DB5DAC3C993D0D5BF857404D0E84",
+          "scope": "S38R2 repeat RO mount command exit0 and native /Discard exit0, but immediate raw DISM Get-MountedWimInfo says No mounted images found; audit stopped before AppX/registry/physical inspection; original and candidate SHA unchanged."
+        },
+        {
+          "source_kind": "OPERATOR_LOG",
+          "reference": "BlueLite_Stage1_S38R2_26300.9711_AppInstaller_PostCommitSnapshot.json",
+          "sha256": "C448B39978DF02E965237805FED1682C5C2C6D4138DA8361D789AB9CF479BB96",
+          "scope": "S38R2 audit JSON: ReadonlyAuditSucceeded=false, empty registries and AppRepository arrays reflect NOT SCANNED, FinalReleaseCertificateGranted=false."
         }
       ],
-      "notes": "Historical 740-file number and explicit SID/root versions are not 26300 predicates. S32 26300.9711 physical four-root/740-row/topology matches historical 26200 R125/R133, but native hardlink owner closure and offline AppX registry lifecycle are UNKNOWN_DEPENDENCY. Do not auto-run R133. S33 next RO hardlink gate.  S33 26300.9711 exact native 740/740 owner closure now OPERATOR_PASS, but `UNKNOWN_DEPENDENCY` retained for 26300 AppX registry lifecycle/association/provider owners; R133 mutation NOT AUTHORIZED. S34 registry read-only gate next. S34 native 26300 read-only registry contract: AppInstaller Staged EXACT 4 own roots, historic R133 six-child predicate REJECTED ON 26300. Other AppInstaller target keys present; Deprovisioned absent. Provider separate ownership/unlinked semantic still UNKNOWN_DEPENDENCY; S35 provider discovery next. Do not add missing registry keys by hand or auto-run R133. S35: two historical provider-association package IDs belong to their own family Staged roots on 26300 (not target AppInstaller Staged), manifest explicitly depends on them, frameworks KEEP. Pre R4 AppX 10; post R4 ONLY should be 9 preserving 4 apps+5 frameworks; history 5->4 does not generalize. Operator observed read-only PASS only, no mutation. Scope status still UNKNOWN_DEPENDENCY for lifecycle transition and safe R4 application. S36 26300 disposable lifecycle native attempt FAIL_CLOSED at malformed provider list one joined path: after PRE exact 10 AppX/4-root/5 target scopes, before marker or deletions; owner clone /Discarded + removed, source WIM SHA unchanged. Source defect, not dependency variant, S35 provider proof stands; use corrected unique S36-R1 four explicit literal paths. R4 runtime mutation still NOT_AUTHORIZED. S37 current 26300 exact disposable full R4 candidate committed per original operator logs on 2026-10-18; S38 readonly audit pending. NO universal recipe execution approval.",
+      "notes": "Historical 740-file number and explicit SID/root versions are not 26300 predicates. S32 26300.9711 physical four-root/740-row/topology matches historical 26200 R125/R133, but native hardlink owner closure and offline AppX registry lifecycle are UNKNOWN_DEPENDENCY. Do not auto-run R133. S33 next RO hardlink gate.  S33 26300.9711 exact native 740/740 owner closure now OPERATOR_PASS, but `UNKNOWN_DEPENDENCY` retained for 26300 AppX registry lifecycle/association/provider owners; R133 mutation NOT AUTHORIZED. S34 registry read-only gate next. S34 native 26300 read-only registry contract: AppInstaller Staged EXACT 4 own roots, historic R133 six-child predicate REJECTED ON 26300. Other AppInstaller target keys present; Deprovisioned absent. Provider separate ownership/unlinked semantic still UNKNOWN_DEPENDENCY; S35 provider discovery next. Do not add missing registry keys by hand or auto-run R133. S35: two historical provider-association package IDs belong to their own family Staged roots on 26300 (not target AppInstaller Staged), manifest explicitly depends on them, frameworks KEEP. Pre R4 AppX 10; post R4 ONLY should be 9 preserving 4 apps+5 frameworks; history 5->4 does not generalize. Operator observed read-only PASS only, no mutation. Scope status still UNKNOWN_DEPENDENCY for lifecycle transition and safe R4 application. S36 26300 disposable lifecycle native attempt FAIL_CLOSED at malformed provider list one joined path: after PRE exact 10 AppX/4-root/5 target scopes, before marker or deletions; owner clone /Discarded + removed, source WIM SHA unchanged. Source defect, not dependency variant, S35 provider proof stands; use corrected unique S36-R1 four explicit literal paths. R4 runtime mutation still NOT_AUTHORIZED. S37 current 26300 exact disposable full R4 candidate committed per original operator logs on 2026-10-18; S38 readonly audit pending. NO universal recipe execution approval. 2026-10-18 ledger sync: S36R1 marker default HOLD before deletion; S36R2 actual disposable AppX 10-to-9 lifecycle PASS; S37 owned clone physical R4 COMMITTED CANDIDATE (not release); S38D raw DISM zero mounts/zero BlueLite hives, leftover short folder; S38R2 original raw DISM no mounts immediately after /Mount-Image exit0, /Discard exit0, AppX/registry/AppRepository/CBS postcommit UNTESTED. Do not use raw mount table as evidence of image payload absence. Recipe execution remains disabled.",
       "contract_version": "1.0.0"
     },
     {
