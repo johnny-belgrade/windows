@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.62 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (WebView S37 R3 ACTUAL native package registration PASS; 9-parent gate next)  
+**Verzija dokumenta:** 1.5.63 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (WebView S37 R3 ACTUAL PASS; R4 nine external CBS parent gate DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1781,6 +1781,57 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - Operator-original TXT **28,421 B /179 CRLF lines** SHA256 **ED642AB518824526775BD9E46D9AC404418EDF2D21D37609AB023E46F7BD674F**, CSV **1,405 B / 9 CRLF lines, 8 original rows** SHA256 **0998C6FFB7A9875C5F1A194982AD114D64B16FE48466860756B626F1317927AF**. Independent bytes and CSV/TXT row integrity PASS. Source code `production/targets/BlueLite.MaxPre.WebViewEdge26300.CBSRegistration.R3.ps1` pinned SHA256 **0125EB6B1B392974701C42AFA781C0C090BFFA59B9F7D64D625140B88DEA9B00**, commit `725539a04e10a3f5ab4391c857ff855f2cd81540`, was operator-run. True terminal `PASS_WEBVIEW_EDGE_S37_R3_EIGHT_EXACT_CBS_REGISTRATION_READONLY_ONLY`; prior R2 original TXT/CSV pins PASS, S37 WIM SHA A599CF... full PASS, native /ReadOnly, copied SOFTWARE (76,808,192B, SHA D913FC14F2A3759C64B93D504A1CD5871586E29FF1F3743BF274139C5316FBBC), transient hive unload+copy delete and /Discard/zero mounts all PASS; protected S31/S37 unchanged.
 - **Actual state by family:** 8/8 `DISM /Get-PackageInfo` exact native exit=0 and 8/8 CBS exact `CurrentState`/Visibility keys. FoD Wrapper .9711 **Installed/0x70, Vis2**, RollupFix .9711.1.30 owner `0x30070`; FoD child .9711 **Installed/0x70 Vis1**, owner FoD Wrapper .9711 `0x40070`; old FoD child .1 **Staged/0x40 Vis1** self-owner `0x20040`. OneCore WebRuntime neutral .9549 **Installed Vis2**, owner Runlevel-Win4 neutral .9711 `0x30070`; older .1591 **Staged Vis2**, owner Runlevel-Win4 .1742 `0x30040`; en-US satellite .1 **Installed Vis2**, Runlevel-Win4 en-US .1591 `0x30040` and .9549 `0x30070` owners. DevToolsClient .8737 **Installed Vis2**, two Desktop-Required owner identities ClientOnly .9278 / SharedWithServer .9711 `0x30070`; older .1150 **Staged Vis2**, two Desktop-Required .1150 owners `0x30040`. **5 Installed /3 Staged, 11 REG_DWORD owner values**; `OwnersSubkeys=0` refers to nested key enumeration only, not absence of owner values. 9 unique *external* parents (1 RollupFix, 4 Runlevel-Win4, 4 DesktopRequired) and two FoD internal/self links. R2 broad DISM list zero hits is not absence: exact R3 DISM resolves all eight.
 - **Engineering inference vs proof:** package-level direct owner links now observed. However parent CBS states and `COMPONENTS` component references are NOT certified; no direct package removal or release authorized, owner modifications to RollupFix/Runlevel-Win4/Desktop-Required are explicitly out of scope. Historical R1 reparse-length 1.4GB != saved physical bytes. RecipeRegistry r15 variant `UNKNOWN_DEPENDENCY` + runtime false; Master v6 unchanged. **NEXT at FIRST checkpoint**: one read-only exact nine EXTERNAL parent CBS native/registry test on retained S37; code/command not yet delivered.
+
+### 8.76 R4 nine exact external CBS parent state gate — source pinned and DELIVERED_NOT_RUN (2026-10-18 SECOND §0R)
+
+- R3 original is latest **ACTUAL native 8/8 DISM/CBS PASS**, `BlueLite_MAXPRE_WebViewEdge_26300.9711_CBSRegistration_R3.txt` **28421 B SHA256 ED642AB518824526775BD9E46D9AC404418EDF2D21D37609AB023E46F7BD674F**, CSV **1405 B SHA256 0998C6FFB7A9875C5F1A194982AD114D64B16FE48466860756B626F1317927AF**. True native image /ReadOnly and clean /Discard, temporary copied SOFTWARE load/unload and removal verified. No mutation/release claim.
+- New reviewed source `production/targets/BlueLite.MaxPre.WebViewEdge26300.CBSParents.R4.ps1`, pinned immutable commit **403d5f76e65afc2c56d2e91b9ca45d29d9a7f97a**, Git blob **7eeda844f2acfafdd05ab839f27a723ae835dbf6**, SHA256 **6E3E137046786034A58AB8C929A16F9B6EB556A604E250BC4A7E42BB2C1BD47F**, **11,749 ASCII bytes / 239 newline-split lines**, GitHub main exact-content readback PASS. Source SHA256 cross-check algorithm against original R3 source PASS. No local PS7 execution claimed. New source is **data-driven** from SHA-pinned original R3 direct `REG_RAW=...;parent REG_DWORD 0x...` edges, asserts exactly 9 distinct external parents (RollupFix 1, Runlevel-Win4 4, Desktop-Required 4) instead of permanent per-build parent IDs. Only 9 exact parent CBS `CurrentState/Visibility` registry status and DISM `/Get-PackageInfo` queries, with status recorded even if a parent resolves negative. This is a constrained confirmation of actual parent registration, not a complete WinSxS COMPONENTS graph.
+- Source gates original R3 28,421/1,405-byte SHA pins, 8 exact native packages and 11 owner values; existing S37 WIM whole hash **A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F**; zero DISM mounts and project hive aliases. Native S37 `/ReadOnly` mount only `C:\work\MWV26300R4`. Temporary copied offline SOFTWARE `C:\work\logs\BlueLite_MAXPRE_WebViewEdge_26300.9711_SOFTWARE_Copy_R4.dat` verified against R3 76,808,192 B / SHA **D913FC14F2A3759C64B93D504A1CD5871586E29FF1F3743BF274139C5316FBBC**, transient host `HKLM\BLWEBR4` load/unload + copy deletion, native `/Discard`, post-zero mounts and owned empty dir cleanup; cleanup failure = HOLD. No source WIM copy, no servicing removals, no host OS debloat, no CBS protected-parent edits. Prevent overwriting source, mount or report files.
+- Exactly ONE delivered operator PS7 Admin code block (close Total Commander and mount-folder Explorer first):
+
+```powershell
+& {
+ $ErrorActionPreference='Stop'
+ if($PSVersionTable.PSVersion.Major -ne 7){throw 'BL_PS7_REQUIRED'}
+ $admin=[Security.Principal.WindowsPrincipal]::new([Security.Principal.WindowsIdentity]::GetCurrent())
+ if(-not $admin.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)){throw 'BL_ADMIN_REQUIRED'}
+ $sha='6E3E137046786034A58AB8C929A16F9B6EB556A604E250BC4A7E42BB2C1BD47F'
+ $commit='403d5f76e65afc2c56d2e91b9ca45d29d9a7f97a'
+ $name='BlueLite.MaxPre.WebViewEdge26300.CBSParents.R4.ps1'
+ $dir='C:\work\scripts'
+ $path=Join-Path $dir $name
+ $url="https://raw.githubusercontent.com/johnny-belgrade/windows/$commit/production/targets/$name"
+ if(-not(Test-Path -LiteralPath $dir -PathType Container)){throw 'BL_SCRIPTS_ROOT_MISSING'}
+ if(-not(Test-Path -LiteralPath $path)){
+  $tmp=$path+'.download.'+[guid]::NewGuid().ToString('N')
+  try{
+   Invoke-WebRequest -Uri $url -OutFile $tmp -ErrorAction Stop
+   if((Get-Item -LiteralPath $tmp).Length -ne 11749 -or
+       (Get-FileHash -LiteralPath $tmp -Algorithm SHA256).Hash -cne $sha){
+    throw 'BL_R4_DOWNLOADED_SOURCE_SHA_OR_SIZE_MISMATCH'
+   }
+   Move-Item -LiteralPath $tmp -Destination $path -ErrorAction Stop
+  }finally{
+   if(Test-Path -LiteralPath $tmp){Remove-Item -LiteralPath $tmp -Force}
+  }
+ }
+ if((Get-Item -LiteralPath $path).Length -ne 11749 -or
+    (Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash -cne $sha){
+  throw 'BL_R4_LOCAL_SOURCE_SHA_OR_SIZE_MISMATCH'
+ }
+ $tokens=$null;$parseErrors=$null
+ $null=[System.Management.Automation.Language.Parser]::ParseFile(
+  $path,[ref]$tokens,[ref]$parseErrors
+ )
+ if(@($parseErrors).Count -ne 0){throw ('BL_R4_PS7_AST_ERRORS='+($parseErrors -join '; '))}
+ Write-Host ('PIN_R4_SOURCE_SHA=PASS;'+$sha)
+ Write-Host 'PIN_R4_PS7_AST=PASS'
+ Write-Host 'R4_ONLY_EXACT_NINE_PARENTS_FROM_PINNED_R3_READONLY'
+ & $path
+}
+```
+
+- Expected original TXT `C:\work\logs\BlueLite_MAXPRE_WebViewEdge_26300.9711_CBSParentGate_R4.txt` and CSV `C:\work\logs\BlueLite_MAXPRE_WebViewEdge_26300.9711_CBSParents_R4.csv` if all nine queried; terminal `PASS_WEBVIEW_S37_R4_NINE_PARENT_NATIVE_CBS_READONLY_ONLY` is **EXPECTED / NOT EXECUTED**, not release certification or physical savings. NEXT operator executes only pinned R4 PS7 Admin block and uploads unmodified original reports, then §0R analysis → two GitHub checkpoints. Registry r15 `UNKNOWN_DEPENDENCY` flags false; Master v6 and original protected S31/S37 unchanged.
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
