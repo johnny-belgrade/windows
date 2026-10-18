@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.36 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S42D actual metadata PASS; S42E pin-verified layout-aware SHA audit DELIVERED_NOT_RUN)  
+**Verzija dokumenta:** 1.5.37 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S42E ACTUAL HOLD: Apps 1 immediate file/51 directories; S42F NOT YET DELIVERED)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1467,6 +1467,12 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - **Precise contract:** read-only verify S42/S42D receipts; native no DISM mounts/no BL hive aliases; deny reparse roots/files; original 129 flat files, S20 post-v127 root 101 files plus `Apps` single directory containing exactly 31 flat files; 98 same-named source root files plus 31 names inside `Apps`; pin three distinct converter extras `_AppsFilesList.csv` and two `*_inout.cab` sizes but DO NOT delete. Before ~18GB full read SHA256 pair audit, require all exact byte totals/names/sizes/owners. No UUP download, converter, WIM image copy/mount/mutation, cleanup or S43 deletion. Any unexpected topology/HASH mismatch HOLD fail closed; keep D6 UUP originals and all staged payload/converter-generated files.
 - **Outputs to upload:** `C:\work\logs\BlueLite_Storage_S42E_26300.9711_LayoutAwarePairs.txt` plus `C:\work\logs\BlueLite_Storage_S42E_26300.9711_LayoutAwarePairs.csv` if produced. Expected outcome `PASS_S42E_LAYOUT_AWARE_129_UUP_PAIRS_SHA256_IDENTICAL_READONLY` for independent content proof, or `HOLD_S42E_LAYOUT_AWARE_PAIRS_READONLY`. Neither permits deletion without a distinct, reviewable S43 action following actual evidence analysis, first Current+Handoff GitHub write. Protected S31/S37, 9807 frozen source, G5 and operator logs retained.
 - **Status:** `DELIVERED_NOT_RUN`. Master v6.0.0 and RecipeRegistry r12 unchanged. Handoff may record pinned source/review SHA instead of repeating its 190 lines; exact one-command PS7 Admin loader presented in operator message.
+
+
+### 8.51 S42E actual HOLD — Apps structure 1 file / 51 folders (2026-10-18; FIRST §0R checkpoint)
+
+- Operator's true `BlueLite_Storage_S42E_26300.9711_LayoutAwarePairs.txt` is 595 B / 11 CRLF rows, SHA256 **1D03588CFA978231B3599DC0CE8FE4C5AEDA71A22FF10BC42841848C1BCBD545**. 09:49:19 original report confirms S42/S42D report SHA pins PASS, native zero mounts/hives PASS, source 129 files/0 directories, staged root 101/1, but staged `UUPs\Apps` **1 immediate file, 51 immediate directories**, not 31 flat files. `FAIL_CLOSED=S42E_EXPECTED_CONVERTER_LAYOUT_CHANGED`, terminal `HOLD_S42E_LAYOUT_AWARE_PAIRS_READONLY`. File not modified; `S43_DELETION=NOT_AUTHORIZED_AND_NOT_RUN`; no download/converter/WIM actions.
+- **No S42E CSV exists**; this is an expected STOP *before* `Export-Csv`, not a lost upload or CSV writing bug. The prior assumption that the 31 original app package files are present as same-name flat files under Apps is refuted; their actual physical disposition is unknown. Post-v127 converter may unpack apps into folders; confirm rather than infer. No flat 129 SHA pair proof. Do NOT retry S42E or duplicate UUP download/conversion. Continue one read-only Apps tree-topology/classification audit **S42F not yet delivered at FIRST checkpoint**, preserving original 129 UUP, generated Apps, converter-generated extras, boot.wim, S31/S37/G5. No S43 delete. Master/RecipeRegistry unchanged.
 
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
