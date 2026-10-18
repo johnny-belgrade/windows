@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.57 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S37 WebView RO original HOLD; reparse-aware R1 DELIVERED_NOT_RUN)  
+**Verzija dokumenta:** 1.5.58 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (WebView S37 R1 actual native RO PASS; servicing-owner next pending)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1708,6 +1708,13 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - New non-overwriting original artifacts `C:\work\logs\BlueLite_MAXPRE_WebViewEdge_26300.9711_TargetGate_R1.txt` and `C:\work\logs\BlueLite_MAXPRE_WebViewEdge_26300.9711_Owners_R1.csv`. Native /Discard + post-zero mount proof, cleanup owned EMPTY mount folder. No WIM clone or mutation; previous HOLD SHA verified before run. **Expected** `PASS_WEBVIEW_EDGE_S37_R1_REPARSE_AWARE_DISCOVERY_ONLY` but **operator NOT RUN**. If fails before export, request TXT/console only. Do not infer servicing package absent from zero name matches, and do not authorize direct WinSxS deletion. No high-payload recipe can be enabled until actual 26300 ownership/dependency result.
 - One complete immutable SHA/AST-pinned PS7 Admin loader delivered in operator reply after successful §0R second Current update. Master v6.0.0 and Registry r12 unchanged. S31/S37 image KEEP due development value.
 
+
+### 8.71 WebView S37 R1 ACTUAL operator PASS — reparse-aware scoped WinSxS owner proof (2026-10-18 FIRST §0R)
+
+- Operator originals independently byte-hashed: TXT `BlueLite_MAXPRE_WebViewEdge_26300.9711_TargetGate_R1.txt` **6619 B/47 CRLF lines**, SHA256 **29535E0700CCCD229D2792A8CAB6E895130BC19DE8A33CA783AF0CE9F52DCB22**; CSV `BlueLite_MAXPRE_WebViewEdge_26300.9711_Owners_R1.csv` **3462 B/22 CRLF lines/21 rows**, SHA256 **896ADB7044F7D77C234F1C898D4956C143289C1DEAB58D0099454570CB3417FA**. Parent S37 HOLD exact hash passed; prior source `production/targets/BlueLite.MaxPre.WebViewEdge26300.DependencyGate.R1.ps1` SHA **2176D00FEDDD5014D220853F36BBF9CB633CC977EA90B3D489A495026F96791D** at commit `7f0857f5b668ce8130bfaae52867893b63bac7a2`. Protected S37 original WIM SHA `A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F` operator pin PASS.
+- **TRUE NATIVE READONLY target result:** exact terminal `PASS_WEBVIEW_EDGE_S37_R1_REPARSE_AWARE_DISCOVERY_ONLY`; zero initial DISM mounts/BlueLite hives, native /ReadOnly success; successful /Discard, post-zero and owned empty mount cleanup. No clone/WIM mutation. Independent CSV aggregate 21 actual WinSxS name matches, **2** specific `amd64_microsoft-edge-webview` dirs versions `10.0.26100.1` + `10.0.26100.9711` with **718** reparse-file entries **1,396,271,668 B** length metadata; **19** broad textual names, total **754/754** files reparse-flagged, **1,413,442,338 B** metadata lengths, **140** nested directories, 0 reparse directories followed. Mount-WIM reparse attributes do not imply CBS corruption or physical freespace. S27 940,205,314 B 3 owner historical S26 *scope differs*, no subtractions allowed.
+- Native capability string only IE Browser; `PACKAGE_MATCH_LINES=0`; two checked `Program Files (x86)\Microsoft` Edge runtime paths absent, `EDGE_SYSTEMAPPS_MATCHES=1`. Negative name scan is **NOT** servicing ownership or removable package evidence. Health/pending and independent postcommit not run in this test. `BL.FOD.EdgeWebView2` new proven 26300.9711 R1 *inventory-only* variant `UNKNOWN_DEPENDENCY`, `runtime_execution_allowed=false`; no direct WinSxS carve, recipe activation, asserted 1.4GB space reduction or release. S31/S37 KEEP; original raw logs immutable.
+- **Next engineering direction at FIRST §0R:** one narrowly scoped reusable read-only ownership/dependency resolver of exact current S37 Edge/WebView CBS/WinSxS metadata rather than recrawling payload, on existing protected S37. New source/command **NOT YET DELIVERED**, to be pinned at SECOND §0R. Master v6 unchanged.
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
