@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.17 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S36-R2 actual lifecycle 10-to-9 PASS; exact S37 full disposable four-root candidate source DELIVERED_NOT_RUN)  
+**Verzija dokumenta:** 1.5.18 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S36-R2 actual lifecycle 10-to-9 PASS; exact S37 full disposable four-root candidate source DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1073,6 +1073,42 @@ Common base **Defender ON** dok ne prođe certificirana zajednička baza; nakon 
 ### 8.31 S37 originalni operator izveštaj, 2026-10-18
 
 S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WIM nije izmenjen. Sledeći korak je samo S38 nezavisni read-only post-commit audit. Detalji i SHA256 originalnih dokaza nalaze se u Current Status (2026-10-18).
+
+### 8.32 S38 exact independent read-only post-commit audit — DELIVERED_NOT_RUN (2026-10-18)
+
+- Source: `development/BlueLite_Stage1_S38_26300.9711_AppInstaller_PostCommitReadOnly.ps1`; immutable commit **`887eb3d114b03cfc7fc50b660a017b902c757a38`**; Git blob `d4907cea4fb22012530c8b88df41115a18cbde2c`; source SHA256 **`97921BBDE6CAB58EDAFEFBB4898D8DF59F33E03B76E2F81B79BE5E0D4D89AF86`**, 15,272 ASCII B, 298 lines. Immutable/ref main independent byte-for-byte source readback verified. Windows PS7 runtime execution not claimed.
+- The only next operation is SHA-pinned download+PowerShell Parser.ParseFile (must be 0 errors), then run S38 as a **read-only audit**. Close Total Commander/Explorer on `C:\BL38M` and `C:\work\E2E`. No NTLite/VM, AppX mutation, registry changes to original WIM, /Commit or release.
+- Exact pinned committed candidate `C:\work\E2E\BlueLite_Stage1_S37_26300.9711_FullR4Candidate\install.disposable.wim` 6,551,362,129 B SHA256 `A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F`; original S31 SHA256 `F52389FA66F8B60D56661C8786EC99409FB95447403B3C6FCBB94121EF8E340B`. Pins original S37 report SHA256 `069174FC422357D9A12DD64CB9B8EB2C9BD2C947E44C5360F0565DC9E7C808F7` and JSON SHA256 `22C4968E0B7238CADF8614D96E6A70A3F1466495E466BA79FD68B74469980AF4`; verifies S37 actual COMMIT and original-source guard.
+- Read-only WIM mount `C:\BL38M` with exact 5-field owner; DISM exact **9** provisioned identities versus S37 JSON; four AppInstaller WindowsApps roots absent. Inventory `C:\BL38M\ProgramData\Microsoft\Windows\AppRepository` filenames only for residual DesktopAppInstaller names, record any matches **without assuming zero means all references absent**. Copies *offline mounted WIM* SOFTWARE hive into own disposable file under `C:\work\logs\BlueLite_Stage1_S38_26300.9711_Audit`, temporary HKLM alias points at copy, read-only RegistryAPI checks five target keys absent, empty Deprovisioned marker present, 4 independent framework provider Staged/Config paths unchanged compared to S37; clean unload+copy removal. DISM CheckHealth+ScanHealth and package pending scan, read-only WIM /Discard, source and candidate full SHA pins rechecked. Even S38 PASS is scope-limited, NOT final release certification.
+- **One full PowerShell 7 Admin operator command:**
+```powershell
+& {
+    $ErrorActionPreference = 'Stop'
+    $dest = 'C:\work\scripts\BlueLite_Stage1_S38_26300.9711_AppInstaller_PostCommitReadOnly.ps1'
+    $url = 'https://raw.githubusercontent.com/johnny-belgrade/windows/887eb3d114b03cfc7fc50b660a017b902c757a38/development/BlueLite_Stage1_S38_26300.9711_AppInstaller_PostCommitReadOnly.ps1'
+    $expected = '97921BBDE6CAB58EDAFEFBB4898D8DF59F33E03B76E2F81B79BE5E0D4D89AF86'
+    if (-not (Test-Path -LiteralPath 'C:\work\scripts' -PathType Container)) { throw 'S38_SCRIPT_DIR_MISSING' }
+    if (Test-Path -LiteralPath $dest) { throw 'S38_SOURCE_EXISTS_NO_OVERWRITE' }
+    Invoke-WebRequest -Uri $url -OutFile $dest -ErrorAction Stop
+    $got = (Get-FileHash -LiteralPath $dest -Algorithm SHA256).Hash
+    if ($got -cne $expected) {
+        Remove-Item -LiteralPath $dest -Force
+        throw "S38_SOURCE_SHA256_DRIFT=$got"
+    }
+    Write-Host "S38_SOURCE_PIN=PASS;$got"
+    $tokens=$null
+    $parserErrors=$null
+    [void][System.Management.Automation.Language.Parser]::ParseFile($dest,[ref]$tokens,[ref]$parserErrors)
+    if (@($parserErrors).Count -gt 0) {
+        $parserErrors | ForEach-Object { Write-Host $_.ToString() }
+        throw 'S38_POWERSHELL_PARSER_HOLD'
+    }
+    Write-Host 'S38_POWERSHELL_PARSER=PASS'
+    & (Join-Path $PSHOME 'pwsh.exe') -NoProfile -ExecutionPolicy Bypass -File $dest
+}
+```
+- Requested operator originals: `C:\work\logs\BlueLite_Stage1_S38_26300.9711_AppInstaller_PostCommitReadOnly.txt`; `C:\work\logs\BlueLite_Stage1_S38_26300.9711_AppInstaller_PostCommitSnapshot.json`; optional `C:\work\logs\BlueLite_Stage1_S38_26300.9711_AppInstaller_AppRepositoryResiduals.csv` if emitted. Only terminal `PASS_S38_9711_APPINSTALLER_INDEPENDENT_POSTCOMMIT_READONLY` signals scope-limited audit PASS. Any failure `HOLD_S38_9711_R4_POSTCOMMIT_READONLY` should be reviewed without modifying WIM.
+- **Endpoint:** S37 original operator FULL R4 *committed disposable candidate* PASS with original immutable S31 WIM unchanged; S38 **DELIVERED_NOT_RUN**. RecipeRegistry auto-execution must remain disabled. Legacy cleanup deferred and Master unchanged.
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
