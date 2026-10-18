@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.31 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S40 actual inventory PASS; S41 four-file SHA guarded deletion script pinned DELIVERED_NOT_RUN)  
+**Verzija dokumenta:** 1.5.32 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S40 actual inventory PASS; S41 four-file SHA guarded deletion script pinned DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1368,6 +1368,41 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - Exactly four old 26300 WIM ancestor FILES removed: S23 9,016,114,092 B SHA BF5646DEB600AD63B43FBD73070169AB2B29F5C65E1F643914D9B83C08627ABA, S20 first converted WIM 8,969,178,010 B SHA 587B1A065B85ED08FE5D9E71E60D5E3B1406B5FEF061FFC2E8F0267425DBB228, S28 checkpoint 6,467,485,131 B SHA 32A913A01FC1CE26B213128888448B0BCFD0DFCAE8C8E9F57E5A2F42576DFABA, S26 export 6,423,868,607 B SHA 8A79773464E6F2CDDDD67ACA5DC59F8BB9C82A73F1F5C995B1. All four current target SHA checked before any deletion and all exact individual path removals confirmed (no recursion). **LOGICAL total 30,876,645,840 B = 28.756 GiB; observed C: FREE delta +24,571,539,456 B = +22.884 GiB**, from free 212,001,030,144 to 236,572,569,600 B. Do not attribute discrepancy to specific storage mechanism without physical allocated/hardlink evidence. Terminal **RESULT=PASS_S41_EXACT_FOUR_SUPERSEDED_WIM_FILES_REMOVED**. No S41 retry.
 - **User's decision delegated:** 26300.9807 full UUP DOWNLOAD **DEFERRED**. Original source ZIP 8218B SHA 83203A6E79E62579A7D64204120BCECC111FE114C614AB1DBFAE032BB02DE7B7, frozen S11 UUP root `C:\work\UUP_Source\26300.9807_687d1ced`, contract SHA 9D9DCD4FD8190863F1591679574879D3B652D2FE6DED176EEFED0C204D947D11, UUID 687d1ced-aab1-4cd5-ad05-705189769731. S12 static 7/11 identical, 4/11 changed, config 9 keys same; S13 native `-Mode Audit` source bridge PASS, NO 9807 Windows/Apps binary download or converter execution. New ZIP **declares** v128m converter SHA 1597F39D614529843DCADF630ED6DD4543C955EA703B6B0D1FDBE65AA078A5F1, does NOT prove local archive/execution. 9711 v127 stays pinned for its verified reconstruction; do not substitute v128m to 9711 or use 9711 toolchain blindly on 9807. Microsoft Windows Insider published 26300.9807 as **Release Preview on 2026-10-16, KB5127936**; do not label the new build GA based on that. A real second-build payload regression is eventually necessary to substantiate binary-level universality, but only **after** Germanium source-bound engine and offline MAX_PRE recipe are consolidated and stable dependency contracts accepted; choose freshest appropriate supported build then, possibly 9807. Near-term separate goal: relieve C: duplicate staged original 9711 UUP ~8.99GB, and assess old G5 26200 fixture separately, with zero re-download.
 - **FIRST §0R checkpoint, next one step not yet delivered:** S42 read-only check S20 staged 129 UUP duplicate content vs authoritative `C:\work\E2E\BlueLite_DL_R26_D6_26300.9711_2b22470a\UUPs`, all per-name full SHA256 (or pinned CSV SHA manifest), frozen 9807 ZIP/contract metadata presence, active mounts/hives, S31/S37 integrity. No deletion or image copy or new network transfer. Then distinct strictly scoped S43 candidate purge only staged duplicate `UUPs` after proof, preserving original authoritative UUP/convert toolchain/boot.wim and G5. Master unchanged. Recipe Registry AppX r12 runtime disabled; S41 storage event does not alter AppX recipe.
+
+### 8.46 S42 read-only duplicate UUP sha audit + frozen 9807 source validation — exact command DELIVERED_NOT_RUN
+
+- Chosen course: **NO full 26300.9807 UUP payload download, no v128m converter download/execution, and no second WIM while universal pipeline build 9711 is still being consolidated**. S11/S12/S13 already independently proved source UUID/version bridge and converter source version drift; source ZIP 9807 exists and stays frozen. A future cross-build full 9807-or-later payload test is required before asserting binary-level universality, scheduled only when source-bound adapters/dependencies and Stage1 pipeline are ready. Microsoft published KB5127936 26300.9807 in Release Preview Oct 16, not proof of GA. v127 stays 9711-specific pinned; 9807 frozen zip declares v128m, no automatic converter swap.
+- S42 source GitHub path `development/BlueLite_Storage_S42_26300.9711_UUPPairAudit_ReadOnly.ps1`, exact immutable commit **31acfc413a968556a9927a5dbb9495b35fc1ea67**, Git blob **05f489241ff728d0440453864cf458eb36e048e7**, SHA256 **A35350523056CB68330746126060ADE59DEB3062F3FA2A002F27237E78B0ACA0**, **5974 ASCII bytes / 98 lines**; pinned-commit and current-main refetched byte-identical, independent abc-self-tested digest; native PS7 execution NOT YET done.
+- **ONE exact PS7 Admin no-edit operator command**:
+```powershell
+& {
+    $ErrorActionPreference = 'Stop'
+    $dest = 'C:\work\scripts\BlueLite_Storage_S42_26300.9711_UUPPairAudit_ReadOnly.ps1'
+    $url = 'https://raw.githubusercontent.com/johnny-belgrade/windows/31acfc413a968556a9927a5dbb9495b35fc1ea67/development/BlueLite_Storage_S42_26300.9711_UUPPairAudit_ReadOnly.ps1'
+    $expected = 'A35350523056CB68330746126060ADE59DEB3062F3FA2A002F27237E78B0ACA0'
+    if (-not (Test-Path -LiteralPath 'C:\work\scripts' -PathType Container)) { throw 'SCRIPTS_DIR_MISSING' }
+    if (Test-Path -LiteralPath $dest) { throw 'S42_LOCAL_SOURCE_EXISTS_NO_OVERWRITE' }
+    Invoke-WebRequest -Uri $url -OutFile $dest -ErrorAction Stop
+    $hash = (Get-FileHash -LiteralPath $dest -Algorithm SHA256).Hash
+    if ($hash -cne $expected) {
+        Remove-Item -LiteralPath $dest -Force
+        throw "S42_PIN_SHA_MISMATCH=$hash"
+    }
+    Write-Host "S42_PIN_SHA=PASS;$hash"
+    $tokens = $null
+    $parseErrors = $null
+    [void][System.Management.Automation.Language.Parser]::ParseFile($dest,[ref]$tokens,[ref]$parseErrors)
+    if (@($parseErrors).Count -ne 0) {
+        $parseErrors | ForEach-Object { Write-Host $_.ToString() }
+        throw 'S42_PS7_PARSE_ERRORS_NO_EXECUTION'
+    }
+    Write-Host 'S42_PS7_PARSER=PASS'
+    & (Join-Path $PSHOME 'pwsh.exe') -NoProfile -ExecutionPolicy Bypass -File $dest
+}
+```
+
+- S42 pins S41 actual report SHA EB142796E30F6C7A8A110AC196A6EEA2EE51CCEA17D13ED8B354D3DF79B0F670; original S16 UUP audit SHA C1F793FDE7B7BA63BF0CAC7F10799C9816FE27FEB6798416F61E2BE186993E3D; original D6 129-row SHA ledger SHA A8A205E554C8A5958E6D0CB725AED99383D6BEC752FF64A7D66F5A5DF9609898; original 9807 ZIP 8218B SHA 83203A6E79E62579A7D64204120BCECC111FE114C614AB1DBFAE032BB02DE7B7 and frozen S11 source contract SHA 9D9DCD4FD8190863F1591679574879D3B652D2FE6DED176EEFED0C204D947D11; S31/S37 protected WIM SHA/bytes. Requires actual DISM mounted image table0 and BlueLite hive aliases0. Compares 129 immediate files, zero dirs, exact filenames and full native SHA256+bytes of TWO source directories: authoritative `C:\work\E2E\BlueLite_DL_R26_D6_26300.9711_2b22470a\UUPs` and staged converter duplicate `C:\work\E2E\BlueLite_Stage1_S20_26300.9711_ConverterWorkspace\UUPs` (8,992,976,071 B each expected). No network/download, no image clone, no delete, no native converter, no VM/NTLite. This is a READ-ONLY verification for potential subsequent exact S43 cleanup, NOT deletion authority by itself.
+- S42 original expected outputs to upload: `C:\work\logs\BlueLite_Storage_S42_26300.9711_UUPPairs.txt` and `C:\work\logs\BlueLite_Storage_S42_26300.9711_UUPPairs.csv` if generated; terminal `PASS_S42_129_UUP_PAIRS_BIT_IDENTICAL_READONLY` or `HOLD_S42_UUP_PAIR_READONLY`. **S42 DELIVERED_NOT_RUN**. After actual S42 proof, separate deletion may remove ONLY staged duplicate source inputs while keeping converter source, boot.wim, S31/S37, original D6 UUP, G5, all logs/recipes. Master immutable, AppX Recipe Registry r12 unchanged.
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
