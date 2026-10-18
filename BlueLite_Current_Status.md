@@ -1,6 +1,14 @@
 # BlueLite v1.0 — Current Status
 
-**As of:** 2026-10-17
+**As of:** 2026-10-18
+
+## 2026-10-18 — S36-R1 operator native disposable HOLD at Deprovisioned unnamed default (SOURCE SEMANTICS), no target key deletion
+
+- **Operator actual uploaded originals parsed/hashed:** `BlueLite_Stage1_S36R1_26300.9711_AppInstaller_LifecycleDisposable.txt` 2,425 B/48 CRLF lines, SHA256 **`2DCCF677E2B94E0D5952BE4FB15E517310679B28510BBCA1D37E42ADFAB8F3FF`**; `BlueLite_Stage1_S36R1_26300.9711_AppInstaller_LifecycleEvidence.json` 4,690 B/125 lines, SHA256 **`3D765C7345A7E8EAAE7C50D4208EE26512C7B6EFFDA02D67E561F4FB8C666E18`**, 11 actual registry entries, `NativeLifecyclePassed=false`.
+- S36-R1 successfully pinned S36 failure originals, S35/S34/S33 + original S31 WIM; `S36R1_PROVIDER_LIST=PASS_4_EXACT_SOURCE_S35_KEYS` proves previous concatenation defect corrected. Disposable copy/RW `C:\BL36R1M` mount 5-field PASS; PRE CBS CheckHealth exit0; PRE native AppX **10 exact identities**; PRE physical four AppInstaller roots/740 files/148,137,728 B logical PASS; five exact AppInstaller offline AppX target registry scopes all present, Deprovisioned absent; **four provider Staged/Config keys present separately** (correct first-stage S35 dependency topology).
+- `reg.exe add <target deprovisioned family> /f` exit0, RegistryAPI audit shows `REG_CREATED_MARKER;EXISTS=True;CHILDREN=0;VALUES=1` — JSON sole value name `""` (unnamed default). `FAIL_CLOSED=NEW_MARKER_NOT_EMPTY_REGISTRY_API`. **Stop BEFORE ALL five target registry deletions**; no POST AppX transition performed. Uploaded evidence has value name only, **not its type/data**. Correct S36-R2 only if default value is proven empty `REG_SZ`; exact targeted offline `reg delete /ve /f` then registry API must show empty leaf. Otherwise HOLD and discard.
+- **Rollback PASS:** copied WIM SOFTWARE hive `NATIVE_EMERGENCY_UNLOAD_EXIT=0`, `NATIVE_DISCARD_EXIT=0`, mount released=True, disposable WIM deleted=True, original S31 WIM SHA unchanged=True. `RESULT=HOLD_S36R1_9711_APPINSTALLER_DISPOSABLE_LIFECYCLE`, `NativeLifecyclePassed=false`. No original WIM edits, no physical carve, no production R133 authority. Historical R126/R133 source explicitly handles this incidental empty/default `REG_SZ` and RegistryAPI marker emptiness.
+- **NEXT S36-R2 first doc checkpoint:** Handoff v1.5.13 §8.27 commit `a09f4f5f8ccd3bbaf978e2e6f57531ec894a1c84`; prepare new immutable source, independent names/paths, pins original S36-R1 log/JSON, preserves all previous proof and rollback; normalize only truly empty unnamed marker and continue cloned-only AppX 10→9 lifecycle test; **no physical removal and ALWAYS /Discard**. Do not mark S36-R2 run until operator reports.
 
 ## 2026-10-17 — S36 real operator FAIL-CLOSED HOLD before R4 lifecycle mutation; exact S36-R1 source-array correction next
 
