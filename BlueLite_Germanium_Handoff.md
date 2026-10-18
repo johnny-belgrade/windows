@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.64 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (WebView S37 R4 ACTUAL native PASS; hidden Edge.Webview2.Platform 26200 fast-path recovered)  
+**Verzija dokumenta:** 1.5.65 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (WebView R4 ACTUAL PASS; exact hidden capability R5 DELIVERED_NOT_RUN via Library native fast-path)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1838,6 +1838,55 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - Original R4 TXT `BlueLite_MAXPRE_WebViewEdge_26300.9711_CBSParentGate_R4.txt` **4897B /39 CRLF** SHA256 **E0C661061D64E3C85258CDE34B69D42A5A29D9C4F61CAFA4F910FBC4BFF44848**; CSV `BlueLite_MAXPRE_WebViewEdge_26300.9711_CBSParents_R4.csv` **2565B/10 CRLF, 9 data rows** SHA256 **CBA75A6D4778CC34FD1C19A6A256C52B69DC3C059F040E4DA9A7FBEEAF80650F**. Original uploaded bytes hashed independently; 9/9 CSV identities match TXT paired PARENT/EDGE records, exact 9 parent native DISM query exit=0 and corresponding offline copied SOFTWARE CBS key query exit=0. 5 current `0x70` (RollupFix installed, 2 Runlevel current installed, 2 Desktop-Required Enabled) /4 older `0x40` (2 Runlevel staged, 2 Desktop-Required Disabled), 9 owner DWORDs consistent. Previous R3 SHA pins, S37 WIM full SHA, copied SOFTWARE SHA all PASS, native /ReadOnly, copied hive unload/cleanup, /Discard, post-zero mounts PASS. True terminal `PASS_WEBVIEW_S37_R4_NINE_PARENT_NATIVE_CBS_READONLY_ONLY`, immutable S37. No component-owner graph, no actual removal or unique space evidence.
 - **Required LIBRARY cross-check (original evidence, not a guess):** `142-HOTFIX1-EdgeWebView-FOD-Wrapper-Capability-Contract.txt` on **26200.9445** shows hidden `Edge.Webview2.Platform~~~~` package capability: broad /Get-Capabilities returns zero even while exact /Get-CapabilityInfo works; FoD current child/wrapper/RollupFix/old baseline CBS owners parallel 26300 R3; 3 MUM declarations include hidden capability, parent/assembly details. `145-EdgeWebView-Native-Remove-Capability-Probe.txt` shows actual disposable native capability removal exit0, capability Not Present, three FoD packages removed, ScanHealth clean, pending 0; historical WinSxS ~1191.06 MiB **NOT** applicable as predicted 26300 savings. `148-EdgeWebView-Classification-and-BL144-Cleanup.txt` classifies FoD native `PRODUCTION_RULE`, WebView2Standalone shared component metadata `COMPONENT_ENGINE_HANDOFF`, forbids deleting protected broad parents and raw carve. `318-Canonical-EdgeWebView-Native-Production-Removal.txt` native DISM removal and poststate success but wrapper **FAILURE** due scalar `Count` — reuse underlying native method, not uncorrected wrapper. Master/BlueLite_Sources Microsoft capability command docs corroborate exact `/Get-CapabilityInfo` and `/Remove-Capability`. The R1–R4 broad initial package name queries missing Edge packages were not proof absence; direct R3 proved all 8 registered.
 - **NEXT ONE action at FIRST §0R:** source-pinned read-only S37 exact `Edge.Webview2.Platform~~~~` capability state and exact updated FoD child `Capability Identity` without recrawling WinSxS, then if genuine current 26300 topology matches 26200 certificate design one **OWNED, MUTABLE disposable test**, not protected S37 modification; the new R5 code and operator command have **NOT YET BEEN DELIVERED**. RecipeRegistry r16 `UNKNOWN_DEPENDENCY`, `runtime_execution_allowed=false`; full CBS COMPONENTS graph optional separate for WebView2Standalone; no premature NTLite handoff. Preserve original operator logs and S31/S37 WIM, Master v6 unchanged.
+
+### 8.78 S37 exact hidden Edge.Webview2.Platform R5 — reviewed source + one PS7 command DELIVERED_NOT_RUN (2026-10-18 SECOND §0R)
+
+- **Latest actual R4**: Original R4 TXT 4897B SHA **E0C661061D64E3C85258CDE34B69D42A5A29D9C4F61CAFA4F910FBC4BFF44848**, CSV 2565B SHA **CBA75A6D4778CC34FD1C19A6A256C52B69DC3C059F040E4DA9A7FBEEAF80650F**, genuine read-only native nine-parent R4 PASS (5 current, 4 historical CBS states), no mutation. Historical Library `142-HOTFIX1`, `145`, `148` actual 26200.9445 successful `Edge.Webview2.Platform~~~~` native route, while 318 wrapper had later scalar Count error; no fictional 26300 capability state or savings. Sources/Microsoft DISM capability options authorize exact `/Get-CapabilityInfo` on offline mounted image. 26200 success is regression evidence, not automatic 26300 removal permit.
+- New reviewed `production/targets/BlueLite.MaxPre.WebView26300.HiddenCapability.R5.ps1`, immutable commit **9baab4a5a63e4199b2f1741819068d2dd13ae460**, Git blob **6369c30891acf20fab3522d82c6b05b465808912**, SHA256 **5597E66302DE84F469A5290279D571639CBF9A236A8CB02AF0B097FAFBB33853**, 8551 ASCII bytes, 164 newline-split lines, independent main exact readback PASS and SHA implementation verified against published R4. This is only scoped evidence probe, not a native removal script.
+- R5 PS7 Admin source pinned loader verifies local/remote SHA256 and byte count, PS7 AST parser; source verifies original unmodified R3 CSV (1405B), R4 TXT (4897B), R4 CSV (2565B), 8 native CBS FoD/R3 records, 3 exact FoD packages 2 Installed/1 Staged, 9 current parent results, original retained S37 WIM whole SHA **A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F** and zero mount/project hives. Native S37 `/ReadOnly` owned `C:\work\MWV26300R5` and exact `DISM /Image:<mount> /Get-CapabilityInfo /CapabilityName:Edge.Webview2.Platform~~~~`; require matching identity `Installed`, gather displayed native state/sizes. For each of three FoD packages use `/Get-PackageInfo /PackageName` **exact** capture `Capability Identity` and `State`; both actual FoD child identities must declare same capability (wrapper may have none). Native `/Discard`, post-zero mounts, delete ONLY empty owned mount dir; any mismatch = HOLD, keep original evidence and no source mutation. No disposable WIM copy, no registry hive changes, no raw WinSxS carve, no health or release claims. Original expected **one** TXT `C:\work\logs\BlueLite_MAXPRE_WebViewEdge_26300.9711_HiddenCapability_R5.txt`; expected terminal `PASS_S37_R5_EXACT_HIDDEN_EDGE_WEBVIEW_CAPABILITY_NATIVE_READONLY` is **NOT RUN**. Following actual R5 positive evidence, evaluate narrow owned disposable native `/Remove-Capability` test and poststate only through authorized lifecycle.
+- **One complete exact operator copy/paste PS7 Admin step (close Total Commander and Explorer mount windows):**
+
+```powershell
+& {
+ $ErrorActionPreference='Stop'
+ if($PSVersionTable.PSVersion.Major -ne 7){throw 'BL_PS7_REQUIRED'}
+ $pr=[Security.Principal.WindowsPrincipal]::new([Security.Principal.WindowsIdentity]::GetCurrent())
+ if(-not $pr.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)){throw 'BL_ADMIN_REQUIRED'}
+ $sha='5597E66302DE84F469A5290279D571639CBF9A236A8CB02AF0B097FAFBB33853'
+ $commit='9baab4a5a63e4199b2f1741819068d2dd13ae460'
+ $name='BlueLite.MaxPre.WebView26300.HiddenCapability.R5.ps1'
+ $folder='C:\work\scripts'
+ $path=Join-Path $folder $name
+ $url="https://raw.githubusercontent.com/johnny-belgrade/windows/$commit/production/targets/$name"
+ if(-not(Test-Path -LiteralPath $folder -PathType Container)){throw 'BL_SCRIPTS_DIR_MISSING'}
+ if(-not(Test-Path -LiteralPath $path)){
+  $temp=$path+'.download.'+[guid]::NewGuid().ToString('N')
+  try {
+   Invoke-WebRequest -Uri $url -OutFile $temp -ErrorAction Stop
+   if((Get-Item -LiteralPath $temp).Length -ne 8551 -or
+      (Get-FileHash -LiteralPath $temp -Algorithm SHA256).Hash -cne $sha){
+    throw 'BL_R5_REMOTE_SOURCE_PIN_MISMATCH'
+   }
+   Move-Item -LiteralPath $temp -Destination $path -ErrorAction Stop
+  }finally{
+   if(Test-Path -LiteralPath $temp){Remove-Item -LiteralPath $temp -Force}
+  }
+ }
+ if((Get-Item -LiteralPath $path).Length -ne 8551 -or
+    (Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash -cne $sha){
+  throw 'BL_R5_LOCAL_SOURCE_PIN_MISMATCH'
+ }
+ $tokens=$null;$errors=$null
+ $null=[System.Management.Automation.Language.Parser]::ParseFile($path,[ref]$tokens,[ref]$errors)
+ if(@($errors).Count -ne 0){throw ('BL_R5_PS7_PARSER_FAIL='+($errors -join '; '))}
+ Write-Host ('R5_SOURCE_SHA256=PASS;'+$sha)
+ Write-Host 'R5_PS7_AST=PASS'
+ Write-Host 'R5_TARGET=EXACT_HIDDEN_EDGE_WEBVIEW_CAPABILITY_NATIVE_READONLY'
+ & $path
+}
+```
+
+- This source/command is recorded at SECOND §0R only, not executed. Current Status top = R4 actual PASS; Current NEXT = R5 DELIVERED_NOT_RUN; RecipeRegistry r16 remains `UNKNOWN_DEPENDENCY` and `runtime_execution_allowed=false`, S31/S37 protected, Master v6 unchanged. Operator uploads original R5 TXT if it exists; next assistant session follows §0R before further work.
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
