@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "registry_revision": "2026-10-18-s37-webview-r5r1-hidden-exact-capability-native-pass-r17",
+  "registry_revision": "2026-10-18-s39-webview-r6-preremove-hold-r4-state-parser-r18",
   "status": "S37_COMMITTED_CANDIDATE_INDEPENDENT_S38R3_POSTCOMMIT_PASS_NOT_RELEASED",
   "scope": "Germanium 26300-first; 26200 historical topology references",
   "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
@@ -530,6 +530,18 @@
               "target": "Edge.Webview2.Platform~~~~",
               "expected": "On protected 26300.9711 S37 exact /Get-CapabilityInfo returns State Installed, native Install Size 559.24 MB reported (not freed bytes); direct FoD .1 Staged/.9711 Installed both declare exact capability; wrapper .9711 Installed blank capability; source S37 SHA pinned, zero native mounts pre/post, RO /Discard; no native removal performed",
               "evidence_ref": "BlueLite_MAXPRE_WebViewEdge_26300.9711_HiddenCapability_R5R1.txt SHA256 C9E371715EC961FA8FC89D2CBFD96D6E908FDB705931446ADAB9BB45248BA49E"
+            },
+            {
+              "kind": "R4_DismState_CAPTURE_ADAPTER_CAUTION",
+              "target": "9 direct external protected parent /Get-PackageInfo records in original R4",
+              "expected": "R4 reads every State line and stores the LAST, meaning 4 Desktop-Required DismState Disabled/Enabled values can be feature-list state rather than package state. Trust separately recorded CBSCurrentState old 0x40/new 0x70; native package expectation 0x40->Staged 0x70->Installed must be independently verified for all nine PRE/POST; never silently conflate package and feature.",
+              "evidence_ref": "R4 source production/targets/BlueLite.MaxPre.WebViewEdge26300.CBSParents.R4.ps1; R6 original NativeRemoval_R6.txt SHA256 722C6F6DDE1E5AE290385D1EA0D5DB080E89F60A733D4D3B5436EFAEC712C776"
+            },
+            {
+              "kind": "DISPOSABLE_NATIVE_REMOVAL_EXECUTION_HOLD",
+              "target": "R6 exact owned disposable native removal on S39 with first parent probe before change",
+              "expected": "R6 original: clone SHA matched source, RW mounted, installed hidden capability and exact three FoD native package preconditions PASS; first protected parent 26100.1150 native Staged versus historical R4 DismState Disabled triggers pre-remove wrapper HOLD; native Remove-Capability was NOT invoked; /Discard and post-zero mounts PASS. Reuse only SHA-verified owned clone; no physical savings or release proof.",
+              "evidence_ref": "BlueLite_MAXPRE_WebViewEdge_26300.9711_NativeRemoval_R6.txt SHA256 722C6F6DDE1E5AE290385D1EA0D5DB080E89F60A733D4D3B5436EFAEC712C776"
             }
           ],
           "expected_post_state": [
@@ -551,7 +563,8 @@
             "BlueLite_MAXPRE_WebViewEdge_26300.9711_CBSRegistration_R3.csv SHA256 0998C6FFB7A9875C5F1A194982AD114D64B16FE48466860756B626F1317927AF",
             "BlueLite_MAXPRE_WebViewEdge_26300.9711_CBSParentGate_R4.txt SHA256 E0C661061D64E3C85258CDE34B69D42A5A29D9C4F61CAFA4F910FBC4BFF44848",
             "BlueLite_MAXPRE_WebViewEdge_26300.9711_CBSParents_R4.csv SHA256 CBA75A6D4778CC34FD1C19A6A256C52B69DC3C059F040E4DA9A7FBEEAF80650F",
-            "BlueLite_MAXPRE_WebViewEdge_26300.9711_HiddenCapability_R5R1.txt SHA256 C9E371715EC961FA8FC89D2CBFD96D6E908FDB705931446ADAB9BB45248BA49E"
+            "BlueLite_MAXPRE_WebViewEdge_26300.9711_HiddenCapability_R5R1.txt SHA256 C9E371715EC961FA8FC89D2CBFD96D6E908FDB705931446ADAB9BB45248BA49E",
+            "BlueLite_MAXPRE_WebViewEdge_26300.9711_NativeRemoval_R6.txt SHA256 722C6F6DDE1E5AE290385D1EA0D5DB080E89F60A733D4D3B5436EFAEC712C776"
           ]
         }
       ],
