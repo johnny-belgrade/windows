@@ -1070,6 +1070,10 @@ Common base **Defender ON** dok ne prođe certificirana zajednička baza; nakon 
 - **Outputs** upload main `C:\work\logs\BlueLite_Stage1_S37_26300.9711_AppInstaller_FullR4Candidate.txt` and JSON `C:\work\logs\BlueLite_Stage1_S37_26300.9711_AppInstaller_FullR4Evidence.json` (if present), plus anomaly CSV `C:\work\logs\BlueLite_Stage1_S37_26300.9711_OwnerAnomalies.csv` if generated. ACL evidence is local forensic output, not requested unless needed. Full success terminal literal `RESULT=PASS_S37_9711_R4_DISPOSABLE_CANDIDATE_COMMITTED_NOT_RELEASE`; else `HOLD_S37_9711_R4_FULL_CANDIDATE`. **S37=DELIVERED_NOT_RUN**; never present as successful until original report uploaded.
 - **Documents:** Handoff v1.5.15 actual S36-R2 first proof commit `0842c6b6f94f21810f9211af21285a4e7e4fd08a`. Current first proof commit `02226f254a9c2b69a2900ffc595a3a5e240a3d4e`. RecipeRegistry remained at prior revision because connector update was blocked. Master unchanged. Later independent post-commit audit should also examine residual AppRepository references/linked payload beyond four WindowsApps target roots; absence was not independently proved in S37 source. This is a remaining dependency gate for release, NOT grounds for claim of complete R4 lifecycle beyond stated tests.
 
+### 8.31 S37 originalni operator izveštaj, 2026-10-18
+
+S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WIM nije izmenjen. Sledeći korak je samo S38 nezavisni read-only post-commit audit. Detalji i SHA256 originalnih dokaza nalaze se u Current Status (2026-10-18).
+
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
 1. **UUP queue prune** Windows/FoD/ESD reference pre converter closure → 26200 wimlib exit **55**. Ne ponavljati destruktivno filtriranje jer fajl deluje opciono.
