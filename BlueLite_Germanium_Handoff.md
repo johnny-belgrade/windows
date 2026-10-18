@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.29 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S40 actual read-only inventory PASS; S41 exact four superseded WIM cleanup pending)  
+**Verzija dokumenta:** 1.5.30 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S40 actual inventory PASS; S41 four-file SHA guarded deletion script pinned DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1325,6 +1325,41 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
   4. S26 optimized export WIM C:\work\E2E\BlueLite_Stage1_S26_26300.9711_FreshExport\install.wim, **6,423,868,607 B**, SHA256 **8A79773464E6F2CDDDD67ACA5DC59F8BB9CBA41E36D5CBB9C82A73F1F5C995B1**, native S26 log retained.
 - Four-file logical total **30,876,645,840 bytes (~28.76 GiB)**; actually freed NTFS space must be observed post-deletion, not assumed from logical bytes. Explicit KEEP: S31 source WIM 6,509,216,853B SHA F52389FA66F8B60D56661C8786EC99409FB95447403B3C6FCBB94121EF8E340B, S37 independently audited current candidate 6,551,362,129B SHA A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F; all small logs/receipts/scripts/JSON/CSV; original 26300 UUP source and converter configs. Do NOT delete entire S20 workspace: staged UUP files ~8.99GB and boot.wim need separately checked against original UUP/ISO plans. Hold the historical G5 26200 R133 one-of-kind regression WIM 8,989,749,806 B for an explicit future keep/delete decision, not within this allowlist.
 - At FIRST §0R checkpoint S41 was NOT DELIVERED: next create SHA-pinned exact script proving unchanged S40 original log/CSV, four retained native provenance logs, four target on-disk SHA256+bytes, source and current candidate SHA, genuine no mounted WIM and no BlueLite registry hive aliases; then delete only exact four file literals, no wildcards, no recursive deletion and no new WIM copies. Preflight fail => delete nothing. Write native report under C:\work\logs and measure real C: free delta. Master untouched. After operator S41 proof, process original UUP/staged source duplication as separate precise step.
+
+### 8.44 S41 — SHA-pinned EXACT FOUR superseded WIM file deletion script + ONE operator command, DELIVERED_NOT_RUN
+
+- Independently reviewed source development/BlueLite_Storage_S41_26300.9711_ExactFourWimDeletion.ps1 at pinned immutable GitHub commit **789cbd7faccccfe6257c4ae492942ab8d4d6e9a3**, Git blob SHA1 **2ccdaca1a12bb156016b17d1dca2106370a7e344**, SHA256 **A79E1BE58E6F64FD048CC5FD4AF828ED15FDDA87F2617B36C02F66A2FB3CDEB5**, 10,727 ASCII B/171 lines; content independently refetched equal from immutable commit and main; SHA256 self-tested. Source is NOT claimed executed/parsed natively; true runtime result requires uploaded S41 report.
+- ONE exact PowerShell 7 Admin command, no edits (close Total Commander/Explorer browsing the four target WIMs):
+```powershell
+& {
+    $ErrorActionPreference = 'Stop'
+    $dest = 'C:\work\scripts\BlueLite_Storage_S41_26300.9711_ExactFourWimDeletion.ps1'
+    $url = 'https://raw.githubusercontent.com/johnny-belgrade/windows/789cbd7faccccfe6257c4ae492942ab8d4d6e9a3/development/BlueLite_Storage_S41_26300.9711_ExactFourWimDeletion.ps1'
+    $expected = 'A79E1BE58E6F64FD048CC5FD4AF828ED15FDDA87F2617B36C02F66A2FB3CDEB5'
+    if (-not (Test-Path -LiteralPath 'C:\work\scripts' -PathType Container)) { throw 'SCRIPTS_DIR_MISSING' }
+    if (Test-Path -LiteralPath $dest) { throw 'S41_LOCAL_SCRIPT_ALREADY_EXISTS_NO_OVERWRITE' }
+    Invoke-WebRequest -Uri $url -OutFile $dest -ErrorAction Stop
+    $actual = (Get-FileHash -LiteralPath $dest -Algorithm SHA256).Hash
+    if ($actual -cne $expected) {
+        Remove-Item -LiteralPath $dest -Force
+        throw "S41_SOURCE_SHA256_MISMATCH=$actual"
+    }
+    Write-Host "S41_PINNED_SOURCE=PASS;$actual"
+    $tokens = $null
+    $parseErrors = $null
+    [void][System.Management.Automation.Language.Parser]::ParseFile($dest,[ref]$tokens,[ref]$parseErrors)
+    if (@($parseErrors).Count -ne 0) {
+        $parseErrors | ForEach-Object { Write-Host $_.ToString() }
+        throw 'S41_PS7_PARSER_ERRORS_NO_DELETION'
+    }
+    Write-Host 'S41_PS7_PARSER=PASS'
+    & (Join-Path $PSHOME 'pwsh.exe') -NoProfile -ExecutionPolicy Bypass -File $dest
+}
+```
+
+- Scope: pin original operator S40 main log SHA A78017708CD4959998857B7DAA65FC863DC9D8F4B86774071694B18F6CA0588C (30438B), CSV SHA 3AA43372C5ECA93C3C14C1B970D3C918DDD002C3CD3B901A0F73D0BC1704D8AB (71640B) and exact 279 entries; pin original S21,S25R1,S26,S28,S31, and S38R3 native reports/JSON; require independent S38R3 ReadonlyAuditSucceeded=true with nine packages and 10 inspected registry entries. Pin protected S31 and S37 on disk full bytes/SHA, verify G5 R133 reference still exists with expected bytes and 26300 original UUP directory exists. Native DISM Get-MountedWimInfo real command says exactly 0 mounts, BL/FB hivelist aliases0.
+- Before FIRST removal, require each of **four exact literal paths in Handoff §8.43** matches one S40 original CSV row, its expected bytes and SHA256, not a reparse point nor under any reparse ancestor, within exact allowed Stage1 workspace. Require allowlist count4 and total bytes 30,876,645,840. Only then Remove-Item -LiteralPath -Force *file only*, no -Recurse and no wildcards. Every successfully removed file recorded with full exact path and size; on failure classify partial stage, do not claim full PASS. Measure pre/post physical C: free delta; rehash S31/S37. Preserve S20 staged UUP/boot.wim, 26300 original UUP, G5 historical regression WIM, all logs/scripts/JSON/CSV and unrelated files. No new large backup image, no NTLite.
+- Output ONE operator file: C:\work\logs\BlueLite_Storage_S41_26300.9711_ExactFourWimDeletion.txt. Terminal PASS_S41_EXACT_FOUR_SUPERSEDED_WIM_FILES_REMOVED or HOLD_S41_EXACT_FOUR_WIM_DELETION. **S41 DELIVERED_NOT_RUN**. Do not delete any further WIM/UUP until report and disk delta independently analyzed and documented; next isolate S20 duplicate UUP workspace vs authoritative input and G5 regression need. Master unchanged, RecipeRegistry remains AppX r12 runtime-disabled; storage mutation policy is Handoff/Current not AppX recipe.
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
