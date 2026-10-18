@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.21 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S38D actual read-only: zero DISM mounts/hives, C:\BL38M empty untracked; S38R1 pending independent audit)  
+**Verzija dokumenta:** 1.5.22 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S38D actual no mounted images/hives; S38R2 corrected RO auditor pinned DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1155,6 +1155,36 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - **Native hivelist:** `HIVELIST_EXIT=0`, `BLUELITE_HIVE_ALIAS_COUNT=0`. No BlueLite test hives observed. **Terminal actual** `RESULT=HOLD_S38D_UNTRACKED_MOUNT_DIRECTORY_NO_ACTION`; this is a diagnostic-specific HOLD for a leftover directory, **not a mounted WIM or a failed S37 commit**. Diagnostic performed no DISM mount/unmount/discard, no reg load/unload, no WIM change.
 - **Key inference limit:** original S38 owner failure remains unexplained: original S38 failed on 5-field parsing immediately after reported mount exit0 but did not capture raw table. S38D only observed later global zero mounted images. **Neither proves what the DISM table said at the moment of original failure.** Candidate S37 still pinned and committed; S38 post-commit AppX/registry/AppRepository/CBS checks have never run successfully. `FINAL_RELEASE_CERTIFICATE=NOT_GRANTED`.
 - **Next one step S38R1 (at this FIRST documentation checkpoint NOT DELIVERED):** independent candidate post-commit auditor using NEW `C:\BL38R1M` and fresh log/JSON/copy paths. Pin S38D original + S38 original + S37 originals and both WIM SHA. On owned RO mount emit full RAW DISM table and parsed values immediately, then exact five-field check; if mismatched HOLD with forensic lines preserved, controlled attempt to `/Unmount /Discard` only for the script-created short RO mount and record native exit. If matched, continue exactly scoped AppX9 / physical root zero / AppRepository filename inventory / copied offline SOFTWARE registry poststate / provider-preservation / CBS audits, then unload copied hive, /Discard, verify both hashes. No candidate/source mutations or other directory cleanup. Second Handoff write to pin exact source and SHA-gated one command. RecipeRegistry remains unchanged because this is operator housekeeping and no new AppX topology/mutation evidence. Master unchanged.
+
+### 8.36 S38R2 CORRECTED SOURCE AND ONE SHA-PINNED OPERATOR COMMAND, DELIVERED_NOT_RUN
+
+- **Original S38D actual:** zero mounted images and zero BlueLite hives, old C:\BL38M plain untracked directory. No live image/hive cleanup needed. Source S38-R1 draft (commit `0568de8d9317c026fdadaae260956f03b816046d`) was **NEVER DELIVERED and NEVER RUN**; independent fetch revealed duplicate audit sections, so **REJECTED / DO NOT EXECUTE**. This is an authoring defect, not a new 26300 dependency. Original prior S38 script also read-only only and held at owner five-field gate; no AppX postcommit audited yet.
+- **Exact corrected immutable GitHub source:** `development/BlueLite_Stage1_S38R2_26300.9711_AppInstaller_PostCommitReadOnly.ps1` at commit **`4aa98a7b556a32b5c795d979c1c74af8573af00e`**, Git blob SHA1 **`42355f5ea3bd947739475ae0d62f09d55797792e`**, source SHA256 **`5144B2735E601927E321417959498D7F85185AADE4582FE9F3DD70D46338D213`**, **16,890 ASCII bytes/321 lines**. Immutable commit and main source independently re-fetched equal; SHA256 calculated from exact source via `abc` self-tested algorithm. Verified 1 each of 3/7,4/7,5/7,6/7,7/7 audit sections and single mount-table/native-discard flow. No Windows runtime execution claimed.
+- **ONE FULL PS7 Admin command to deliver (no edits):
+
+```powershell
+& {
+    $ErrorActionPreference = 'Stop'
+    $dest = 'C:\work\scripts\BlueLite_Stage1_S38R2_26300.9711_AppInstaller_PostCommitReadOnly.ps1'
+    $url = 'https://raw.githubusercontent.com/johnny-belgrade/windows/4aa98a7b556a32b5c795d979c1c74af8573af00e/development/BlueLite_Stage1_S38R2_26300.9711_AppInstaller_PostCommitReadOnly.ps1'
+    $expected = '5144B2735E601927E321417959498D7F85185AADE4582FE9F3DD70D46338D213'
+    if (-not (Test-Path -LiteralPath 'C:\work\scripts' -PathType Container)) { throw 'SCRIPTS_DIR_MISSING' }
+    if (Test-Path -LiteralPath $dest) { throw 'S38R2_SOURCE_ALREADY_EXISTS_NO_OVERWRITE' }
+    Invoke-WebRequest -Uri $url -OutFile $dest -ErrorAction Stop
+    $actual = (Get-FileHash -LiteralPath $dest -Algorithm SHA256).Hash
+    if ($actual -cne $expected) { Remove-Item -LiteralPath $dest -Force; throw "S38R2_SOURCE_SHA256_MISMATCH=$actual" }
+    Write-Host "S38R2_SOURCE_SHA256=PASS;$actual"
+    $tokens = $null
+    $parserErrors = $null
+    [void][System.Management.Automation.Language.Parser]::ParseFile($dest,[ref]$tokens,[ref]$parserErrors)
+    if (@($parserErrors).Count -ne 0) { $parserErrors | ForEach-Object { Write-Host $_.ToString() }; throw 'S38R2_POWERSHELL_PARSER_ERRORS_NO_EXECUTION' }
+    Write-Host 'S38R2_POWERSHELL_PARSER=PASS'
+    & (Join-Path $PSHOME 'pwsh.exe') -NoProfile -ExecutionPolicy Bypass -File $dest
+}
+```
+
+- **Scope:** new owned `C:\BL38R2M` RO mount, evidence folder `C:\work\logs\BlueLite_Stage1_S38R2_26300.9711_Audit`, temporary loaded hive alias points to copied OFFLINE SOFTWARE only; old C:\BL38M untouched. Preflight pins S38D original report SHA **2421B2B4069701EB882BC38A66931F58104C410EBCA8ED9EB589B69EAF7115E0**, S38 main SHA **72FDD4417C3C87C634A1CF2E83C2C28B70134061FFD729FCCF37CFB236034C61** and S38 JSON SHA **3115F5FAB64F9232C2F9CD3D8E8E266D88442440D0F65712019F95B6F297B072**, original S37 main/JSON and both S31/S37 WIM exact SHA and size. No active WIM mount at preflight and new short path must not preexist. After RO mount log complete **RAW** `/Get-MountedWimInfo` lines, each parsed five-field value, owner field count. On mismatch STOP and attempt exact script-owned `/Unmount-Image /Discard` with native exit log, never commit, no original image changes. On owner PASS proceed independent provisioned AppX exact 9, zero AppInstaller WindowsApps roots, focused AppRepository filename residual inventory (does not pretend zero unless measured), offline copied SOFTWARE five target scopes absent/empty Deprovisioned marker/four provider branches preserved; CBS CheckHealth/ScanHealth/pending0. Native `/Discard` must succeed for terminal PASS and original/candidate SHA unchanged.
+- **Expected outputs to upload:** `C:\work\logs\BlueLite_Stage1_S38R2_26300.9711_AppInstaller_PostCommitReadOnly.txt` and `C:\work\logs\BlueLite_Stage1_S38R2_26300.9711_AppInstaller_PostCommitSnapshot.json`; plus `C:\work\logs\BlueLite_Stage1_S38R2_26300.9711_AppInstaller_AppRepositoryResiduals.csv` only if created. Terminal `PASS_S38R2_9711_APPINSTALLER_INDEPENDENT_POSTCOMMIT_READONLY` or `HOLD_S38R2_9711_R4_POSTCOMMIT_READONLY`. A PASS means **read-only postcommit gate**, not final release certificate; AppRepository filename hits separately reviewed. **S38-R2 DELIVERED_NOT_RUN**. Next original operator logs trigger §0R first evidence documents/readback, then one next step and second Handoff checkpoint. Master unchanged; RecipeRegistry remains runtime-disabled and no new mutation evidence from S38D.
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
