@@ -71,8 +71,10 @@
   [long]$reparse=0
   [long]$manifests=0
   foreach($entry in $entries){
-   $tree=if($entry.PSIsContainer){@(Get-ChildItem -LiteralPath $entry.FullName -Force -Recurse -ErrorAction Stop)}else{@()}
-   $all=@($entry)+@($tree)
+   $all=@($entry)
+   if($entry.PSIsContainer){
+    $all+=@(Get-ChildItem -LiteralPath $entry.FullName -Force -Recurse -ErrorAction Stop)
+   }
    $fileCount=0
    $dirCount=0
    [long]$bytes=0
