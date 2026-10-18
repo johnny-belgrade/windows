@@ -1,4 +1,8 @@
 # BlueLite v1.0 — Current Status
+## 2026-10-18 — S37 actual committed candidate (NOT RELEASE)
+
+Native operator log SHA256 `069174FC422357D9A12DD64CB9B8EB2C9BD2C947E44C5360F0565DC9E7C808F7`, JSON SHA256 `22C4968E0B7238CADF8614D96E6A70A3F1466495E466BA79FD68B74469980AF4`. S37 operator RESULT=PASS_S37_9711_R4_DISPOSABLE_CANDIDATE_COMMITTED_NOT_RELEASE. Candidate `C:\work\E2E\BlueLite_Stage1_S37_26300.9711_FullR4Candidate\install.disposable.wim`, reported size 6,551,362,129 B SHA256 `A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F`; original S31 SHA unchanged. PASS AppX 10 to 9, 740 file owner checks, 4 target payload roots absent, ScanHealth and CheckHealth exit0, COMMIT exit0. Postcommit S38 independent readonly audit PENDING; NO RELEASE. Candidate is 42,145,276 B larger than original S31 compressed WIM. Original report/JSON uploaded and byte hashed.
+
 
 **As of:** 2026-10-18
 
