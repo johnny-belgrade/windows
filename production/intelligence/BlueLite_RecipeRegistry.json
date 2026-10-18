@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "registry_revision": "2026-10-18-s37-webview-r3-eight-cbs-package-parent-r15",
+  "registry_revision": "2026-10-18-s37-webview-r4-nine-parents-history-26200-native-r16",
   "status": "S37_COMMITTED_CANDIDATE_INDEPENDENT_S38R3_POSTCOMMIT_PASS_NOT_RELEASED",
   "scope": "Germanium 26300-first; 26200 historical topology references",
   "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
@@ -512,6 +512,18 @@
               "target": "exact nine external parent identities and FoD self-wrapper internal package owner links",
               "expected": "FoD .9711 installed child->installed wrapper->RollupFix .9711.1.30; OneCore installed neutral .9549 and en-US .1->Runlevel-Win4 parent links; DevTools .8737->ClientOnly and SharedWithServer Desktop-Required parents; staged predecessor owner values retained; parent status and component graph not yet proven",
               "evidence_ref": "BlueLite_MAXPRE_WebViewEdge_26300.9711_CBSRegistration_R3.txt SHA256 ED642AB518824526775BD9E46D9AC404418EDF2D21D37609AB023E46F7BD674F"
+            },
+            {
+              "kind": "CBS_PARENT_NATIVE_REGISTERED",
+              "target": "nine exact external 26300 package parents from R3: RollupFix 1, Runlevel-Win4 4, Desktop-Required 4",
+              "expected": "R4 original S37 9/9 CBS key RegQueryExit=0 and DISM exact PackageInfo exit0. CurrentState 0x70 five, 0x40 four; native states Installed3 Enabled2 Staged2 Disabled2. No protected parent mutation; component owner graph not proven.",
+              "evidence_ref": "BlueLite_MAXPRE_WebViewEdge_26300.9711_CBSParents_R4.csv SHA256 CBA75A6D4778CC34FD1C19A6A256C52B69DC3C059F040E4DA9A7FBEEAF80650F"
+            },
+            {
+              "kind": "HISTORICAL_NATIVE_RECIPE_REFERENCE",
+              "target": "26200.9445 exact hidden Edge.Webview2.Platform~~~~ capability",
+              "expected": "Original Library 142 detects hidden capability despite zero /Get-Capabilities list; 145 disposable /Remove-Capability native exit0, post Not Present and 3 FoD packages removed, health/pending clean; 148 classifies FoD native Green vs WebView2Standalone shared-component engine handoff; 318 underlying DISM success but final wrapper Count failure. On 26300 do exact native /Get-CapabilityInfo before any owned mutation.",
+              "evidence_ref": "Library: 142-HOTFIX1-EdgeWebView-FOD-Wrapper-Capability-Contract.txt;145-EdgeWebView-Native-Remove-Capability-Probe.txt;148-EdgeWebView-Classification-and-BL144-Cleanup.txt;318-Canonical-EdgeWebView-Native-Production-Removal.txt"
             }
           ],
           "expected_post_state": [
@@ -530,7 +542,9 @@
             "BlueLite_MAXPRE_WebViewEdge_26300.9711_ServicingOwners_R2.txt SHA256 BA43886C7111B8DA9AA7A5A8CAEAB968D4AC48BE76BECD48B7F37FCB1271DE1E",
             "BlueLite_MAXPRE_WebViewEdge_26300.9711_ServicingMetadata_R2.csv SHA256 3965B7B66C6841F99A375160534BB976DB3EE82CF76E8AE8BA57EAF5E0F0745E",
             "BlueLite_MAXPRE_WebViewEdge_26300.9711_CBSRegistration_R3.txt SHA256 ED642AB518824526775BD9E46D9AC404418EDF2D21D37609AB023E46F7BD674F",
-            "BlueLite_MAXPRE_WebViewEdge_26300.9711_CBSRegistration_R3.csv SHA256 0998C6FFB7A9875C5F1A194982AD114D64B16FE48466860756B626F1317927AF"
+            "BlueLite_MAXPRE_WebViewEdge_26300.9711_CBSRegistration_R3.csv SHA256 0998C6FFB7A9875C5F1A194982AD114D64B16FE48466860756B626F1317927AF",
+            "BlueLite_MAXPRE_WebViewEdge_26300.9711_CBSParentGate_R4.txt SHA256 E0C661061D64E3C85258CDE34B69D42A5A29D9C4F61CAFA4F910FBC4BFF44848",
+            "BlueLite_MAXPRE_WebViewEdge_26300.9711_CBSParents_R4.csv SHA256 CBA75A6D4778CC34FD1C19A6A256C52B69DC3C059F040E4DA9A7FBEEAF80650F"
           ]
         }
       ],
