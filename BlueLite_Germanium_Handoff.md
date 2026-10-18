@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.72 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (WebView S39 R6R1 ACTUAL native Remove-Capability and /Commit PASS; independent postcommit audit pending)  
+**Verzija dokumenta:** 1.5.73 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (R6R1 S39 native Remove-Capability/Commit ACTUAL PASS; R7 independent postcommit read-only DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -2083,6 +2083,55 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - Exact hidden capability `Edge.Webview2.Platform~~~~` **Installed before**; native `/Remove-Capability` on only existing owned S39 RW clone **exit=0/completed**, **Not Present after**. Three exact FoD identities (wrapper .9711, baseline .1, child .9711) `/Get-PackageInfo` negative exit `-2146498555` (0x800f0805) after remove. Exactly nine protected parent package identities stable PRE/POST and five Installed CBS0x70/four Staged CBS0x40; R4 four Desktop-Required feature-state shadows correctly excluded from package-state interpretation. Native PRE/POST Pending0 (no pending.xml), PRE CheckHealth CLEAN, POST CheckHealth+ScanHealth CLEAN. Native /Commit of owned S39 PASS, post DISM zero mounts, owned empty mountdir removed PASS. Terminal actual `PASS_S39_R6R1_NATIVE_WEBVIEW_DISPOSABLE_PRECOMMIT_POSTSTATE_AND_COMMIT_ONLY` — do not overclaim **postcommit** remount/VM/release.
 - Measurement scope: S39 disposable before `6,551,362,129` B, committed after `6,595,075,169` B = **+43,713,040 B (+41.688 MiB)** WIM container; post SHA **32AD747CD86052BDF6226A25B92A7B051E9946B3D43A591D1EFFD99B265AEBED**; stored under `C:\work\E2E\BlueLite_Stage1_S39_26300.9711_WebView_FOD_Native_R6\install.webview-disposable.wim`. Positive WIM size difference is not failure of native removal, and no actual physical unique-byte savings are certified without proper measurement/recompression. Protected S31/S37 original unchanged; WebView2Standalone separately remains servicing-aware residual protected dependency per Library 148. Registry r19 must keep 26300 variant runtime execution **disabled** pending at least independent postcommit+reproducible parent/CBS/physical measurement.
 - Next exact ONE source/command at FIRST §0R NOT YET DELIVERED: original-SHA pinned native `/ReadOnly` mount on this **already committed** S39, independent native capability Not Present, three exact FoD `0x800f0805`, same nine native package parents, pending0/health, protected original S37 unchanged; scoped two WinSxS family metadata comparison only if safe, never raw carve or new clone. No direct modification, and retain clone. Mandatory Handoff §0L Library 142/145/148 + Microsoft native capabilities docs before further engineering.
+
+### 8.86 R7 S39 postcommit independent native READ-ONLY audit — source pinned and DELIVERED_NOT_RUN (2026-10-18 SECOND §0R)
+
+- Last operator ACTUAL: S39 R6R1 native `/Remove-Capability` + `/Commit` PASS in original 6,860B/64CRLF SHA **673E04082074A027BFE9C597737E0D28070B1DA7D957534A9939B56DC199D72D**; `Edge.Webview2.Platform~~~~` Not Present, exact 3 FoD packages no longer registered `0x800f0805`, 9 protected parent packages unchanged, pre/post pending0, pre CheckHealth clean and post CheckHealth+ScanHealth clean, native /Commit, post-zero mounts and protected S37 SHA PASS. S39 committed WIM SHA **32AD747CD86052BDF6226A25B92A7B051E9946B3D43A591D1EFFD99B265AEBED**, 6,595,075,169B; original protected S37 SHA **A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F**, 6,551,362,129B. WIM container grew 43,713,040B; per official Microsoft [DISM /Export-Image](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/dism-image-management-command-line-options-s14?view=windows-11), unnecessary appended servicing resources may increase image size until export. This is not evidence of payload failure nor unique space saving.
+- New reviewed `production/targets/BlueLite.MaxPre.WebView26300.PostCommitR7.ps1`, immutable commit **ca61dd9d9e5784c9c48d2d978de90db1ec751d52**, Git blob **af9f15033dececccefaa0ae076403b8d8cbf2d58**, full SHA256 **473E46E6D8F0BE73F6E7541D3F7944F9409A9A8FB945354A519BDF377FE1809B**, **12,478 ASCII bytes /259 newline-split lines**; independent full GitHub content readback PASS and SHA algorithm crosschecked on R6R1 original pinned source. The operator loader performs PS7 Admin, full local/download SHA+bytes/AST Parser gate; ChatGPT has not run PowerShell on host.
+- Source preflight SHA-pins original R6R1 TXT 6860B, R4 parent CSV 2565B, R3 CBS CSV 1405B, protected original S37 WIM source 6551362129B, committed S39 6595075169B; verifies directory normal/no-reparse/exact one owned WIM, zero native mounts/hives and unique owned mount `C:\work\MWV26300R7` + report `C:\work\logs\BlueLite_MAXPRE_WebViewEdge_26300.9711_PostCommit_R7.txt`. Mount S39 **/ReadOnly** only, repeat independent exact native `/Get-CapabilityInfo` Not Present, 3 exact FoD packages `0x800f0805`, exact nine protected parents native package state derived from CSV CBS 0x40=>Staged / 0x70=>Installed; native pending0/pending.xml False, `/CheckHealth` clean. Record targeted WinSxS component directory count `amd64_microsoft-edge-webview_*` ONLY as metadata, not claimed physical bytes. Native /Discard, zero mounts, owned empty directory cleanup, full post hashes of S39 and S37. No copy, no servicing operation, no modifying protected images. Windows DISM read-only mount and /Discard supported in official Microsoft documentation https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/dism-image-management-command-line-options-s14?view=windows-11 ; exact capability information https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/dism-capabilities-package-servicing-command-line-options .
+- Scoped terminal `PASS_S39_R7_WEBVIEW_INDEPENDENT_POSTCOMMIT_READONLY_ONLY` is **POSSIBLE/NOT EXECUTED**. Even a future PASS will not certify VM, ISO size, physical unique saved bytes, all CBS COMPONENTS or release. RecipeRegistry r19 is still `runtime_execution_allowed=false`; Master v6 untouched, §0L Library regression and §0R double checkpoint mandatory. Exactly **ONE** full PS7 Admin operator block follows (close Explorer/Total Commander mount windows first):
+
+```powershell
+& {
+ $ErrorActionPreference='Stop'
+ if($PSVersionTable.PSVersion.Major -ne 7){throw 'BL_PS7_REQUIRED'}
+ $admin=[Security.Principal.WindowsPrincipal]::new([Security.Principal.WindowsIdentity]::GetCurrent())
+ if(-not $admin.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)){throw 'BL_ADMIN_REQUIRED'}
+ $sha='473E46E6D8F0BE73F6E7541D3F7944F9409A9A8FB945354A519BDF377FE1809B'
+ $commit='ca61dd9d9e5784c9c48d2d978de90db1ec751d52'
+ $name='BlueLite.MaxPre.WebView26300.PostCommitR7.ps1'
+ $dir='C:\work\scripts'
+ $file=Join-Path $dir $name
+ $url="https://raw.githubusercontent.com/johnny-belgrade/windows/$commit/production/targets/$name"
+ if(-not(Test-Path -LiteralPath $dir -PathType Container)){throw 'BL_SCRIPTS_ROOT_MISSING'}
+ if(-not(Test-Path -LiteralPath $file)){
+  $temp=$file+'.download.'+[guid]::NewGuid().ToString('N')
+  try{
+   Invoke-WebRequest -Uri $url -OutFile $temp -ErrorAction Stop
+   if((Get-Item -LiteralPath $temp).Length -ne 12478 -or
+      (Get-FileHash -LiteralPath $temp -Algorithm SHA256).Hash -cne $sha){
+    throw 'BL_R7_REMOTE_PIN_SHA_OR_SIZE_MISMATCH'
+   }
+   Move-Item -LiteralPath $temp -Destination $file -ErrorAction Stop
+  }finally{
+   if(Test-Path -LiteralPath $temp){Remove-Item -LiteralPath $temp -Force}
+  }
+ }
+ if((Get-Item -LiteralPath $file).Length -ne 12478 -or
+    (Get-FileHash -LiteralPath $file -Algorithm SHA256).Hash -cne $sha){
+  throw 'BL_R7_LOCAL_PIN_SHA_OR_SIZE_MISMATCH'
+ }
+ $tokens=$null;$errors=$null
+ $null=[System.Management.Automation.Language.Parser]::ParseFile(
+  $file,[ref]$tokens,[ref]$errors
+ )
+ if(@($errors).Count -ne 0){throw ('BL_R7_PS7_AST_PARSE_FAILED='+($errors -join '; '))}
+ Write-Host ('R7_SOURCE_SHA256=PASS;'+$sha)
+ Write-Host 'R7_PS7_AST=PASS'
+ Write-Host 'R7_MODE=OWNED_S39_COMMITTED_READONLY_POSTCOMMIT_AUDIT'
+ & $file
+}
+```
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
