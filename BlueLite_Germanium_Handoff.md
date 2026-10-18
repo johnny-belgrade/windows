@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.25 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S39 actual 99-line DISM HELP from automatic args collision; previous S38/S38R2 mount/discard success claims corrected; S38R3 fix pending)  
+**Verzija dokumenta:** 1.5.26 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S39 actual PowerShell args collision corrected, S38R3 true-native RO audit DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1236,6 +1236,42 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - **Independent physical corroboration:** in created owned `C:\BL39M`, `MOUNT_ROOT_CHILD_COUNT=0`, all tested `Windows`, offline SOFTWARE, `ntoskrnl.exe`, Program Files/WindowsApps `EXISTS=False`, confirming *nothing was mounted into that directory*. No image changes possible from DISM HELP invocations; direct SHA256 postcheck S31/S37 unchanged=True. Terminal `PASS_S39_9711_MOUNT_PLANE_EVIDENCE_COLLECTED_READONLY` is ONLY evidence-collected, NOT real mount, discard, postcommit audit, or release.
 - **Same wrapper defect retroactively confirmed** in pinned original S38 commit `887eb3d114b03cfc7fc50b660a017b902c757a38` and S38R2 commit `4aa98a7b556a32b5c795d979c1c74af8573af00e`: `function NativeDism([string]$label,[string[]]$args){ & $dism @args ... }`. Their log markers `DISM_MOUNT_RO_EXIT=0` and `DISM_DISCARD_RO_EXIT=0` **were previously interpreted as true native operations**, but in fact this wrapper executed dism.exe HELP. Correct those historical interpretations, without changing original evidence files. Their separate `MountTable` function executes literal direct DISM command and correctly showed no mounted images. S37 earlier `Run([string]$label,[string]$program,[string[]]$arguments)` has no `$args` collision and S37 candidate COMMIT evidence remains a separate valid track. The latest proof does NOT certify S37 postcommit state or release.
 - **Next one step planned, NOT_DELIVERED at first documentation write:** S38R3 pinned RO postcommit auditor derived minimally from verified S38R2, rename formal native function parameter **`$arguments`**, splat `@arguments`, add exact `DISM Mount-Image` operation stdout guard against generic HELP, require real 5-field mounted image identity before AppX/registry/CBS audit, and fail closed without a destructive cleanup. Fresh distinct `C:\BL38R3M` mount/report/JSON; explicitly pin this original S39 and all S38R2/S37 originals, S31/S37 WIM identity. Always use true owned `/Unmount-Image /Discard`, capture native exit, original/candidate SHA. No registry mutations, no commit. Upsert exact pinned source/command in §8.40 second Handoff checkpoint and Current Status with `DELIVERED_NOT_RUN` only after file inspection. RecipeRegistry r10 should record corrected script-side dependency and maintain `runtime_execution_allowed=false`. Master unchanged.
+
+### 8.40 S38R3 corrected TRUE native DISM readonly postcommit audit — exact SHA-pinned command, DELIVERED_NOT_RUN (2026-10-18)
+
+- Source development/BlueLite_Stage1_S38R3_26300.9711_AppInstaller_PostCommitReadOnly.ps1, immutable commit **70bc14f5f742c7a8cdeacdfe64d04450c1a213f9**, Git blob **e8b700760862c9dfa1817331c7a3793ed5270d21**, **SHA256 9DF67B88C0B194EC3D1F7020E0B1CBB3E9AD9ED2B7080216950A6A1A2EC2DC51**, **18321 ASCII B/341 lines**. Source at commit vs main byte-identical, self-tested SHA256. No native operator execution or parser PASS claimed. Earlier S38R1 draft was rejected before operator delivery.
+- Root fix: original S38/S38R2 NativeDism formal parameter $args was PowerShell automatic variable collision; S38R3 explicitly uses [string[]]$arguments and native call @arguments. Guards nonempty argument count, actual native DISM operation textual confirmation, rejects 99-line generic help even at Exit0. Requires actual mounted offline SOFTWARE file and five-field RO mount identity BEFORE postcommit audit.
+- Only read-only access to S37 COMMITTED candidate; fresh C:\BL38R3M. Pins S39 original log SHA **45B201A672F76C4548376F630F637BFDE118C72E824BB8A5966A1AF5602C57ED**, S38D original, S38 originals and S37 original evidence, protected S31+S37 WIM SHAs. Independent AppX9, physical AppInstaller four-root absence, scoped AppRepository filenames, copy-only offline SOFTWARE registry target+provider topology and CBS CheckHealth/ScanHealth/pending, always real exact owned /Discard, unchanged WIM hashes. No /Commit, deletion, physical carve or live host OS registry changes. Final release certificate is NOT granted by S38R3.
+- **ONE exact operator PowerShell 7 Admin loader; close Total Commander/Explorer on WIM paths:**
+
+```powershell
+& {
+    $ErrorActionPreference = 'Stop'
+    $dest = 'C:\work\scripts\BlueLite_Stage1_S38R3_26300.9711_AppInstaller_PostCommitReadOnly.ps1'
+    $url = 'https://raw.githubusercontent.com/johnny-belgrade/windows/70bc14f5f742c7a8cdeacdfe64d04450c1a213f9/development/BlueLite_Stage1_S38R3_26300.9711_AppInstaller_PostCommitReadOnly.ps1'
+    $expected = '9DF67B88C0B194EC3D1F7020E0B1CBB3E9AD9ED2B7080216950A6A1A2EC2DC51'
+    if (-not (Test-Path -LiteralPath 'C:\work\scripts' -PathType Container)) { throw 'SCRIPTS_DIR_MISSING' }
+    if (Test-Path -LiteralPath $dest) { throw 'S38R3_LOCAL_SOURCE_ALREADY_EXISTS_NO_OVERWRITE' }
+    Invoke-WebRequest -Uri $url -OutFile $dest -ErrorAction Stop
+    $actual = (Get-FileHash -LiteralPath $dest -Algorithm SHA256).Hash
+    if ($actual -cne $expected) {
+        Remove-Item -LiteralPath $dest -Force
+        throw "S38R3_SOURCE_SHA256_MISMATCH=$actual"
+    }
+    Write-Host "S38R3_SOURCE_SHA256=PASS;$actual"
+    $tokens = $null
+    $parserErrors = $null
+    [void][System.Management.Automation.Language.Parser]::ParseFile($dest,[ref]$tokens,[ref]$parserErrors)
+    if (@($parserErrors).Count -ne 0) {
+        $parserErrors | ForEach-Object { Write-Host $_.ToString() }
+        throw 'S38R3_PS7_PARSER_ERRORS_NO_EXECUTION'
+    }
+    Write-Host 'S38R3_PS7_PARSER=PASS'
+    & (Join-Path $PSHOME 'pwsh.exe') -NoProfile -ExecutionPolicy Bypass -File $dest
+}
+```
+
+- Upload originals if generated: C:\work\logs\BlueLite_Stage1_S38R3_26300.9711_AppInstaller_PostCommitReadOnly.txt; C:\work\logs\BlueLite_Stage1_S38R3_26300.9711_AppInstaller_PostCommitSnapshot.json; and C:\work\logs\BlueLite_Stage1_S38R3_26300.9711_AppInstaller_AppRepositoryResiduals.csv only if created. Narrow PASS_S38R3_9711_APPINSTALLER_INDEPENDENT_POSTCOMMIT_READONLY or HOLD_S38R3_9711_R4_POSTCOMMIT_READONLY; any AppRepository hits require review. This remains candidate-only, no final release. **S38R3 DELIVERED_NOT_RUN.** RecipeRegistry r11 runtime_execution_allowed=false. Master unchanged.
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
