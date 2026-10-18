@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.43 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (MAX_PRE core native static+negative tests ACTUAL PASS; 26300 controller next)  
+**Verzija dokumenta:** 1.5.44 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (core negative tests ACTUAL PASS; source-bound MAX_PRE controller DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1521,6 +1521,43 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - Operator original `BlueLite_MAXPRE_Core_ContractTests.txt` is **1,174 B, 16 CRLF rows**, SHA256 **D5DFC91E0E4E142012B976534F4C585A00E425DA230FBC9ED7B29D4DD17C7431**, one 10:22:11 run. `PASS_MAXPRE_CORE_STATIC_AND_NEGATIVE_TESTS_NO_IMAGE_TOUCH` genuine operator output. Five public functions import PASS, exact DISM contract and mutation classification PASS, all negative /Online/mount/unlisted selector/original=work alias PASS, current 26300 fixture recipe selection/26200 exclusion/RED_HOLD PASS `AUTOEXEC=0`, forced mutation flags rejected `BL_MUTATION_TRANSACTION_ENGINE_NOT_YET_CERTIFIED`. No DISM-native call, WIM clone/mount, user OS modification or disposable created.
 - **Certification boundary:** first production software module/negative fixtures valid for tested behavior only; neither mounted-image / CBS/AppX runtime removal, protected-floor proof, transaction, receipt nor VM/release certification exists from this test. Core mutation remains blocked. This closes the initial module test; no repetition, no further staging housekeeping.
 - Next **one** concrete MAX_PRE engineering deliverable to create source-bound controller/receipt wiring against the actual 26300 recipe registry and manifest, rather than another exploratory WIM report. FIRST §0R update: **not delivered yet**. S43 cleanup and operator static PASS recorded. Master v6.0.0 and RecipeRegistry r12 unchanged.
+
+
+### 8.58 Source-bound MAX_PRE production controller DELIVERED_NOT_RUN (2026-10-18; SECOND §0R checkpoint)
+
+- First genuinely source-bound production controller exists: `production/controller/BlueLite.MaxPre.SourceBoundPlan.ps1`, immutable commit **92b1c1e16fc3709e986373c72e059ad611cae5c3**, blob **d186963bbe383086c878e093abd83d4f48753836**, SHA256 **D2600FC982013FE1EF7E3546E1B07C5B2D2A6F521AA59E4734F7994527BE305E**, 7722 ASCII B/157 lines. GitHub pinned commit and `main` exact readback matched. Actual RecipeRegistry r12 blob **4da882c024892a527c1d9626acf58383f87e1a36**, byte-exact SHA256 **6DE22CCAFF6A202A4FB79BFF745EEE6CB33E4C80EDFF57F076E07574336CDFDB** (42188 UTF-8 B) from same immutable commit. Existing tested core SHA256 **821E9EEC836C4DA73CEA7B97B04C6806FA0084A7C4AB504592709CD7CA869403** reused, not recopied or overwritten.
+- **One complete operator PS7 Admin SHA/AST-checked loader** (local 26300.9711 concrete binding, no edit needed). It downloads only small controller+registry source, rejects overwrite and hash/AST mismatch, verifies pre-existing tested module and invokes production planning:
+
+```powershell
+& {
+ $ErrorActionPreference='Stop'
+ if($PSVersionTable.PSVersion.Major -ne 7){throw 'PS7_REQUIRED'}
+ $root='C:\work\scripts'
+ $core=Join-Path $root 'BlueLite.MaxPre.Core.psm1'
+ $ctl=Join-Path $root 'BlueLite.MaxPre.SourceBoundPlan.ps1'
+ $reg=Join-Path $root 'BlueLite_RecipeRegistry_r12.json'
+ $coreHash='821E9EEC836C4DA73CEA7B97B04C6806FA0084A7C4AB504592709CD7CA869403'
+ $registryHash='6DE22CCAFF6A202A4FB79BFF745EEE6CB33E4C80EDFF57F076E07574336CDFDB'
+ $toGet=@(
+  @{Path=$ctl;Hash='D2600FC982013FE1EF7E3546E1B07C5B2D2A6F521AA59E4734F7994527BE305E';Url='https://raw.githubusercontent.com/johnny-belgrade/windows/92b1c1e16fc3709e986373c72e059ad611cae5c3/production/controller/BlueLite.MaxPre.SourceBoundPlan.ps1'},
+  @{Path=$reg;Hash=$registryHash;Url='https://raw.githubusercontent.com/johnny-belgrade/windows/92b1c1e16fc3709e986373c72e059ad611cae5c3/production/intelligence/BlueLite_RecipeRegistry.json'}
+ )
+ if((Get-FileHash -LiteralPath $core -Algorithm SHA256).Hash -cne $coreHash){throw 'BL_CORE_SHA_DRIFT'}
+ foreach($e in $toGet){
+  if(Test-Path -LiteralPath $e.Path){throw ('BL_LOCAL_SOURCE_EXISTS='+$e.Path)}
+  Invoke-WebRequest -Uri $e.Url -OutFile $e.Path -ErrorAction Stop
+  if((Get-FileHash -LiteralPath $e.Path -Algorithm SHA256).Hash -cne $e.Hash){Remove-Item -LiteralPath $e.Path -Force;throw ('BL_SHA_DRIFT='+$e.Path)}
+  $tokens=$null;$errorsFound=$null
+  [void][System.Management.Automation.Language.Parser]::ParseFile($e.Path,[ref]$tokens,[ref]$errorsFound)
+  if(@($errorsFound).Count -ne 0){throw ('BL_PARSER_ERROR='+$e.Path)}
+ }
+ & (Join-Path $PSHOME 'pwsh.exe') -NoProfile -ExecutionPolicy Bypass -File $ctl -Build '26300.9711' -CoreModulePath $core -RegistryPath $reg -SourceContractPath 'C:\work\UUP_Source\26300.9711_2b22470a\BlueLite_SourceContract.json' -OriginalWimPath 'C:\work\E2E\BlueLite_Stage1_S31_26300.9711_OneDriveAMBER\install.wim' -WorkingWimPath 'C:\work\E2E\BlueLite_MAXPRE_26300.9711_owned\install.working.wim' -ExpectedCoreSHA256 $coreHash -ExpectedRegistrySHA256 $registryHash -ExpectedSourceContractSHA256 '08C05398AD37DB6FE0A58714D7F31B7C02A52CC91AFE3779402DB9CD1B2FEDEA' -DeclaredOriginalWimSHA256 'F52389FA66F8B60D56661C8786EC99409FB95447403B3C6FCBB94121EF8E340B' -ExpectedOriginalWimBytes 6509216853
+}
+```
+
+- **Actual source-bound contract:** uses immutable original 26300.9711 SourceContract existing path and exact SHA **08C05398AD37DB6FE0A58714D7F31B7C02A52CC91AFE3779402DB9CD1B2FEDEA**; source parent S31 WIM path, 6,509,216,853 B and declared prior verified SHA F52389FA... (WIM SHA **not read again**); planned owned working WIM is only a *path declaration*, not copied or created; actual recipe registry r12 six candidate records evaluated by build lineage using tested reusable core, with `AutoExecute=false`, no plan-authorized mutation. Produces separate `plan_version=1.0.0` plan and canonical `BlueLite_ResultReceipt.schema.json`-shaped `STATIC_VERIFIED/STATIC` receipt, `next_action_authorized=false`, logs identity and recipe decisions. The engine and controller are now real files but this test is still **planning-level**, NOT MAX_PRE runtime mutation, image health or independent servicing/VM/release proof.
+- **Required original report:** `C:\work\logs\BlueLite_MAXPRE_SourceBoundPlan_26300.9711.txt`. Additional local machine-readable outputs: `C:\work\logs\BlueLite_MAXPRE_SourceBoundPlan_26300.9711.json` and `C:\work\logs\BlueLite_MAXPRE_SourceBoundReceipt_26300.9711.json`; no overwrite. Expected terminal `PASS_MAXPRE_SOURCEBOUND_PRODUCTION_PLAN_STATIC_NO_IMAGE_TOUCH` or fail-closed. **Operator NOT RUN** at this checkpoint. After next actual evidence, first Current+Handoff updates, then design the build-independent owned disposable transaction dispatcher and real Stage1 MAX_PRE target wiring, without staging/storage forensics or 9GB copies merely to test software.
+- S43 final cleanup PASS and core negative tests PASS retained. Normative Master v6.0.0 and RecipeRegistry r12 not modified.
 
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
