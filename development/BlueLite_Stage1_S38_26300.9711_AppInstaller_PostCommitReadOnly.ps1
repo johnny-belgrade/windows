@@ -173,7 +173,8 @@
    ForEach-Object {
     $repoObjects++
     if($_.Name.IndexOf('DesktopAppInstaller',[StringComparison]::OrdinalIgnoreCase) -ge 0){
-      $residual.Add([pscustomobject]@{Scope='APPREPOSITORY_FILENAME';Path=$_.FullName.Substring($mount.Length);Type=if($_.PSIsContainer){'Directory'}else{'File'}})
+      $kind=if($_.PSIsContainer){'Directory'}else{'File'}
+      $residual.Add([pscustomobject]@{Scope='APPREPOSITORY_FILENAME';Path=$_.FullName.Substring($mount.Length);Type=$kind})
     }
    }
   Note ('APPREPOSITORY_ITEMS_ENUMERATED='+$repoObjects)
@@ -253,11 +254,13 @@
    Note ('OWNED_READONLY_MOUNT_RELEASED='+$released)
   }catch{Note ('S38_RO_DISCARD_ERROR='+$_.Exception.Message)}
   try{
+   $kept=@()
+   if($null -ne $s37){$kept=@($s37.PackageKeepSet)}
    $data=[pscustomobject]@{
     Stage='S38';Scope='INDEPENDENT_COMMITTED_CANDIDATE_READONLY'
     CandidateWim=$candidate;CandidateSHA256=$candidateSHA;CandidateSize=$candidateSize
     OriginalWim=$source;OriginalSHA256=$sourceSHA
-    ExpectedNinePackages=if($null -ne $s37){@($s37.PackageKeepSet)}else{@()}
+    ExpectedNinePackages=$kept
     InspectedOfflineRegistry=@($scopes.ToArray())
     AppRepositoryFilenameMatches=@($residual.ToArray())
     ReadonlyAuditSucceeded=$auditOK
