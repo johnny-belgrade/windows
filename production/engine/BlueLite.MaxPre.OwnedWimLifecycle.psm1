@@ -58,11 +58,14 @@ function New-BlueLiteOwnedWimLifecycle {
     [string]$Plan.source_contract_sha256){
   throw 'BL_LIFECYCLE_SOURCE_CONTRACT_HASH_DRIFT'
  }
+ $imageFamily=$build.Split('.')[0]
+ $indexField='dism_index_one_germanium_'+$imageFamily
+ $indexProperty=$NativeReceipt.PSObject.Properties[$indexField]
  if([string]$Transaction.transaction_status -cne 'PREFLIGHT_ONLY_MUTATION_BLOCKED' -or
     [string]$NativeReceipt.result -cne 'PASS_MAXPRE_NATIVE_OWNED_PREFLIGHT_READONLY' -or
     $NativeReceipt.dism_zero_mounted_images -cne $true -or
     $NativeReceipt.blue_offline_hive_aliases_zero -cne $true -or
-    $NativeReceipt.dism_index_one_germanium_26300 -cne $true){
+    $null -eq $indexProperty -or $indexProperty.Value -cne $true){
   throw 'BL_LIFECYCLE_NATIVE_OR_TX_PRECONDITIONS_NOT_PROVEN'
  }
  $recipes=@($Plan.recipes)
@@ -106,6 +109,8 @@ function New-BlueLiteOwnedWimLifecycle {
     $Transaction.working_wim_created -cne $false){
   $blocking.Add('WORKING_WIM_CREATION_STATE_NOT_CLEAR')
  }
+ $lifecycleState='PREPARE_ELIGIBLE_REQUIRES_OPERATOR_CONFIRMATION'
+ if($blocking.Count -gt 0){$lifecycleState='BLOCKED_BEFORE_PREPARE'}
  return [pscustomobject]@{
   contract='BlueLite.MAX_PRE.OwnedWimLifecycle.v0.1'
   source_run_id=$id
@@ -121,7 +126,7 @@ function New-BlueLiteOwnedWimLifecycle {
   working_wim_created=$false
   native_mount_performed=$false
   mutations_performed=0
-  lifecycle_state=if($blocking.Count -gt 0){'BLOCKED_BEFORE_PREPARE'}else{'PREPARE_ELIGIBLE_REQUIRES_OPERATOR_CONFIRMATION'}
+  lifecycle_state=$lifecycleState
  }
 }
 
