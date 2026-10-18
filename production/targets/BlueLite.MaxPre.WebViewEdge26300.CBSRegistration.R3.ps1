@@ -47,7 +47,7 @@
   throw 'BL_R2_EIGHT_NAME_TOPOLOGY_CHANGED'
  }
  $preAlias=@(& $reg query $alias 2>&1|ForEach-Object {[string]$_})
- if([int]$LASTEXITCODE -eq 0){throw 'BL_TRANSIENT_HIVE_ALIAS_ALREADY_PRESENT'}
+ if([int]$LASTEXITCODE -ne 1){throw 'BL_TRANSIENT_HIVE_ALIAS_NOT_PROVEN_ABSENT'}
  [IO.File]::WriteAllText($log,'',$utf8)
  function Note([string]$t){
   Write-Host $t
@@ -100,8 +100,8 @@
   if($sw.PSIsContainer -or $sw.Length -le 0 -or $sw.Length -gt 1073741824L){
    throw 'BL_OFFLINE_SOFTWARE_METADATA_INVALID'
   }
-  Copy-Item -LiteralPath $offlineSoftware -Destination $copy -ErrorAction Stop
   $copied=$true
+  Copy-Item -LiteralPath $offlineSoftware -Destination $copy -ErrorAction Stop
   if((Get-Item -LiteralPath $copy).Length -ne $sw.Length){throw 'BL_COPIED_SOFTWARE_SIZE_MISMATCH'}
   Note ('COPIED_OFFLINE_SOFTWARE_BYTES='+$sw.Length)
   Note ('COPIED_SOFTWARE_SHA256='+(Get-FileHash -LiteralPath $copy -Algorithm SHA256).Hash)
@@ -179,7 +179,9 @@
   }
   if($copied -and -not $hiveLoaded){
    try{
-    Remove-Item -LiteralPath $copy -Force -ErrorAction Stop
+    if(Test-Path -LiteralPath $copy){
+     Remove-Item -LiteralPath $copy -Force -ErrorAction Stop
+    }
     Note 'OWNED_TEMP_SOFTWARE_COPY_REMOVED=PASS'
    }catch{
     $result='HOLD_R3_TEMP_HIVE_COPY_CLEANUP'
