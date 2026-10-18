@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.44 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (core negative tests ACTUAL PASS; source-bound MAX_PRE controller DELIVERED_NOT_RUN)  
+**Verzija dokumenta:** 1.5.45 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (source-bound MAX_PRE controller DELIVERED_NOT_RUN; parser for PS1 and JSON registry corrected)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1526,7 +1526,7 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 ### 8.58 Source-bound MAX_PRE production controller DELIVERED_NOT_RUN (2026-10-18; SECOND §0R checkpoint)
 
 - First genuinely source-bound production controller exists: `production/controller/BlueLite.MaxPre.SourceBoundPlan.ps1`, immutable commit **92b1c1e16fc3709e986373c72e059ad611cae5c3**, blob **d186963bbe383086c878e093abd83d4f48753836**, SHA256 **D2600FC982013FE1EF7E3546E1B07C5B2D2A6F521AA59E4734F7994527BE305E**, 7722 ASCII B/157 lines. GitHub pinned commit and `main` exact readback matched. Actual RecipeRegistry r12 blob **4da882c024892a527c1d9626acf58383f87e1a36**, byte-exact SHA256 **6DE22CCAFF6A202A4FB79BFF745EEE6CB33E4C80EDFF57F076E07574336CDFDB** (42188 UTF-8 B) from same immutable commit. Existing tested core SHA256 **821E9EEC836C4DA73CEA7B97B04C6806FA0084A7C4AB504592709CD7CA869403** reused, not recopied or overwritten.
-- **One complete operator PS7 Admin SHA/AST-checked loader** (local 26300.9711 concrete binding, no edit needed). It downloads only small controller+registry source, rejects overwrite and hash/AST mismatch, verifies pre-existing tested module and invokes production planning:
+- **One complete operator PS7 Admin SHA/AST+JSON-checked loader** (local 26300.9711 concrete binding, no edit needed). It downloads only small controller+registry source, rejects overwrite and SHA mismatch; parses PowerShell source with AST and registry as JSON, verifies pre-existing tested module and invokes production planning:
 
 ```powershell
 & {
@@ -1547,9 +1547,14 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
   if(Test-Path -LiteralPath $e.Path){throw ('BL_LOCAL_SOURCE_EXISTS='+$e.Path)}
   Invoke-WebRequest -Uri $e.Url -OutFile $e.Path -ErrorAction Stop
   if((Get-FileHash -LiteralPath $e.Path -Algorithm SHA256).Hash -cne $e.Hash){Remove-Item -LiteralPath $e.Path -Force;throw ('BL_SHA_DRIFT='+$e.Path)}
-  $tokens=$null;$errorsFound=$null
-  [void][System.Management.Automation.Language.Parser]::ParseFile($e.Path,[ref]$tokens,[ref]$errorsFound)
-  if(@($errorsFound).Count -ne 0){throw ('BL_PARSER_ERROR='+$e.Path)}
+  if($e.Path.EndsWith('.ps1',[StringComparison]::OrdinalIgnoreCase)){
+   $tokens=$null;$errorsFound=$null
+   [void][System.Management.Automation.Language.Parser]::ParseFile($e.Path,[ref]$tokens,[ref]$errorsFound)
+   if(@($errorsFound).Count -ne 0){throw ('BL_PARSER_ERROR='+$e.Path)}
+  }else{
+   $record=Get-Content -LiteralPath $e.Path -Raw | ConvertFrom-Json -Depth 100
+   if($null -eq $record -or $null -eq $record.recipes){throw 'BL_REGISTRY_JSON_NOT_RECOGNIZED'}
+  }
  }
  & (Join-Path $PSHOME 'pwsh.exe') -NoProfile -ExecutionPolicy Bypass -File $ctl -Build '26300.9711' -CoreModulePath $core -RegistryPath $reg -SourceContractPath 'C:\work\UUP_Source\26300.9711_2b22470a\BlueLite_SourceContract.json' -OriginalWimPath 'C:\work\E2E\BlueLite_Stage1_S31_26300.9711_OneDriveAMBER\install.wim' -WorkingWimPath 'C:\work\E2E\BlueLite_MAXPRE_26300.9711_owned\install.working.wim' -ExpectedCoreSHA256 $coreHash -ExpectedRegistrySHA256 $registryHash -ExpectedSourceContractSHA256 '08C05398AD37DB6FE0A58714D7F31B7C02A52CC91AFE3779402DB9CD1B2FEDEA' -DeclaredOriginalWimSHA256 'F52389FA66F8B60D56661C8786EC99409FB95447403B3C6FCBB94121EF8E340B' -ExpectedOriginalWimBytes 6509216853
 }
