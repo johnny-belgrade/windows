@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.42 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S43 ACTUAL PASS; MAX_PRE core+contract tests DELIVERED_NOT_RUN)  
+**Verzija dokumenta:** 1.5.43 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (MAX_PRE core native static+negative tests ACTUAL PASS; 26300 controller next)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1514,6 +1514,13 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - Static/negative tests `production/tests/BlueLite.MaxPre.Core.ContractTests.ps1`: **immutable commit c2830336ce6770c7cc0a3c61154778257e0dfc34**, blob `f498ef3eda70be8e6c58ec780e1faf0787de3e94`, SHA256 **66031FDC2053CEF891B220D3023D66AF9505FC1BC42412B1320F542BB7AEB06F**, 5102 ASCII B/106 lines. Main/immutable source exact read-back confirmed for both. No locally claimed PS7 runtime result. Test runner imports core, tests positive read-only contract and negative /Online, unapproved DISM flags, source/working same-path, historical-vs-current variant, runtime disabled, forced removal deny. Does not open any WIM or invoke native DISM.
 - ONE complete operator PS7 Admin loader delivered in next response: downloads only two pinned small source files to `C:\work\scripts\BlueLite.MaxPre.Core.psm1` and `C:\work\scripts\BlueLite.MaxPre.Core.ContractTests.ps1`; refuses overwrite; independently verifies both SHA256 and PS7 AST parse zero errors; then runs test file with `-ModulePath` pointing to module. Exact raw URLs use respective immutable commit+GitHub path above; no image clone/mount/mutation. One required original report: **`C:\work\logs\BlueLite_MAXPRE_Core_ContractTests.txt`**. Expected result `PASS_MAXPRE_CORE_STATIC_AND_NEGATIVE_TESTS_NO_IMAGE_TOUCH`; not actual operator outcome yet. Nothing in this step is a release certification or MAX_PRE debloat mutation.
 - Next after actual operator test report is **developing controlled MAX_PRE transaction+recipe execution/receipt integration**, not new storage forensics; preserve disposable policy. S43 remains actual PASS, module/test **DELIVERED_NOT_RUN**. Master v6.0.0 and RecipeRegistry r12 unchanged.
+
+
+### 8.57 MAX_PRE core genuine PS7 operator-test ACTUAL PASS (2026-10-18; FIRST §0R checkpoint)
+
+- Operator original `BlueLite_MAXPRE_Core_ContractTests.txt` is **1,174 B, 16 CRLF rows**, SHA256 **D5DFC91E0E4E142012B976534F4C585A00E425DA230FBC9ED7B29D4DD17C7431**, one 10:22:11 run. `PASS_MAXPRE_CORE_STATIC_AND_NEGATIVE_TESTS_NO_IMAGE_TOUCH` genuine operator output. Five public functions import PASS, exact DISM contract and mutation classification PASS, all negative /Online/mount/unlisted selector/original=work alias PASS, current 26300 fixture recipe selection/26200 exclusion/RED_HOLD PASS `AUTOEXEC=0`, forced mutation flags rejected `BL_MUTATION_TRANSACTION_ENGINE_NOT_YET_CERTIFIED`. No DISM-native call, WIM clone/mount, user OS modification or disposable created.
+- **Certification boundary:** first production software module/negative fixtures valid for tested behavior only; neither mounted-image / CBS/AppX runtime removal, protected-floor proof, transaction, receipt nor VM/release certification exists from this test. Core mutation remains blocked. This closes the initial module test; no repetition, no further staging housekeeping.
+- Next **one** concrete MAX_PRE engineering deliverable to create source-bound controller/receipt wiring against the actual 26300 recipe registry and manifest, rather than another exploratory WIM report. FIRST §0R update: **not delivered yet**. S43 cleanup and operator static PASS recorded. Master v6.0.0 and RecipeRegistry r12 unchanged.
 
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
