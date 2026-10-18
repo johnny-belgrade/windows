@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.60 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (WebView S37 R2 actual native readonly PASS; CBS registration R3 pending)  
+**Verzija dokumenta:** 1.5.61 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (WebView S37 R2 ACTUAL PASS; R3 CBS registration DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1728,6 +1728,53 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - Original operator `BlueLite_MAXPRE_WebViewEdge_26300.9711_ServicingOwners_R2.txt` **2893 B/33 CRLF**, SHA256 **BA43886C7111B8DA9AA7A5A8CAEAB968D4AC48BE76BECD48B7F37FCB1271DE1E**; `BlueLite_MAXPRE_WebViewEdge_26300.9711_ServicingMetadata_R2.csv` **1949 B/13 CRLF /12 rows**, SHA256 **3965B7B66C6841F99A375160534BB976DB3EE82CF76E8AE8BA57EAF5E0F0745E**, both independently byte-read, hashed and 12 records reconciled with text. Source `production/targets/BlueLite.MaxPre.WebViewEdge26300.ServicingOwners.R2.ps1` SHA **4BEC844EDCD837E15DA073EBE0EF3A2F39B11667BB9AFAEDF0EB9754200A6AB3**, source commit **2802cb30f31a8e6f53537b0deb6aa3ebdc94fafc**. Previously delivered R2 now ACTUALLY RUN, genuine `PASS_WEBVIEW_EDGE_S37_R2_SERVICING_METADATA_READONLY_ONLY`, source S37 full SHA pin PASS, original R1 text/CSV hashes PASS, native RO mount, /Discard, post-zero mounts, empty mountdir cleanup all PASS. Neither report is release evidence.
 - R2 adds 2 exact `amd64_microsoft-edge-webview` 10.0.26100.1 and .9711 **present reparse-flagged component manifests**; 2 candidate matching `WinSxS\Catalogs\...cat` paths absent (do NOT infer catalog globally absent); 8 present reparse-flagged MUM filename candidates grouped **3 Edge-WebView-FOD** (wrapper .9711 + package .1/.9711), **3 OneCore-Edge-WebRuntime** (amd64 .1591/.9549 + en-US .1), **2 EdgeDevToolsClient** (.1150/.8737). Actual MUM content was deliberately not dereferenced (`ContentRead=False`); exact registered CBS package/state/dependency/owners NOT proven. `DISM_WEBVIEW_EDGE_*_IDENTITIES=0` for standard listing is only negative *name matching*, not proof absence/eligibility.
 - Prohibition: no raw WinSxS carve, no fabricated 1.4GB saving, no CBS/COMPONENTS edit, no recipe activation. `BL.FOD.EdgeWebView2` 26300 S37 R1/R2 candidate in registry r14 remains `UNKNOWN_DEPENDENCY`, runtime flag false. NEXT at FIRST checkpoint: one new **read-only exact 8-package CBS/native registration** resolver against existing S37 (not repetitive broad payload inventory), source/command NOT YET DELIVERED. S31/S37 keep; Master v6 unchanged.
+
+### 8.74 R3 exact CBS registration read-only — one PS7 Admin SHA-pinned loader DELIVERED_NOT_RUN (2026-10-18 SECOND §0R)
+
+- Source: `production/targets/BlueLite.MaxPre.WebViewEdge26300.CBSRegistration.R3.ps1`, immutable pinned REVIEW commit **725539a04e10a3f5ab4391c857ff855f2cd81540**, Git blob **11d9cd0e2e30bf5a841c0430144f0dce0b75508a**, whole-source SHA256 **0125EB6B1B392974701C42AFA781C0C090BFFA59B9F7D64D625140B88DEA9B00**, 11,050 ASCII B /225 newline-split lines. Actual GitHub `main` refetch byte-exact PASS. Initial pre-release source commit `c1f0b20803a07e0ef542ec682fc5de8af832fd54` was superseded by preflight cleanup correction before ANY operator delivery; use **only pinned review commit**. No new recipe activation.
+- Scope: one targeted current-S37 native read-only mount of protected WIM SHA `A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F` at `C:\work\MWV26300R3`; preflight no mounts / BL hives and exact original R2 2893 B TXT/1949 B CSV SHA identities + 8-MUM R2 topology; native `DISM /Get-PackageInfo /PackageName` for those 8 only. A **copy** of the offline SOFTWARE hive into unique `C:\work\logs\BlueLite_MAXPRE_WebViewEdge_26300.9711_SOFTWARE_Copy_R3.dat` is loaded under transient host `HKLM\BLWEBR3` exclusively for eight exact CBS Packages registry-key and Owners-subkey read queries, unloaded and deleted. Host alias/temp writes are temporary permitted offline operations; **the live Windows install is never the target**. Exact cleanup: reg unload + owned copied-hive removal, RO WIM /Discard, zero native mounts and only owned empty mountdir removal; otherwise explicit HOLD and preserve evidence; no mutation/copy of whole WIM, direct WinSxS carve, COMPONENTS writes or per-package remove. If native DISM fails to resolve an exact package, record exit/error; MUM filename existence or query failure cannot certify CBS absence/removability. Health/pending/owner graph certification still pending separate decisions.
+- Expected reports when *operator actually runs* `C:\work\logs\BlueLite_MAXPRE_WebViewEdge_26300.9711_CBSRegistration_R3.txt` and `C:\work\logs\BlueLite_MAXPRE_WebViewEdge_26300.9711_CBSRegistration_R3.csv` if full inventory succeeds; potential terminal `PASS_WEBVIEW_EDGE_S37_R3_EIGHT_EXACT_CBS_REGISTRATION_READONLY_ONLY` **NOT RUN**. Operator closes Total Commander and Explorer mount windows before execution. **One exact copy/paste PS7 Admin command** (the only currently delivered operator step):
+
+```powershell
+& {
+ $ErrorActionPreference='Stop'
+ if($PSVersionTable.PSVersion.Major -ne 7){throw 'BL_PS7_REQUIRED'}
+ $principal=[Security.Principal.WindowsPrincipal]::new([Security.Principal.WindowsIdentity]::GetCurrent())
+ if(-not $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)){throw 'BL_ADMIN_REQUIRED'}
+ $sha='0125EB6B1B392974701C42AFA781C0C090BFFA59B9F7D64D625140B88DEA9B00'
+ $commit='725539a04e10a3f5ab4391c857ff855f2cd81540'
+ $name='BlueLite.MaxPre.WebViewEdge26300.CBSRegistration.R3.ps1'
+ $path=Join-Path 'C:\work\scripts' $name
+ $url="https://raw.githubusercontent.com/johnny-belgrade/windows/$commit/production/targets/$name"
+ if(-not(Test-Path -LiteralPath 'C:\work\scripts' -PathType Container)){throw 'BL_SCRIPT_ROOT_MISSING'}
+ if(-not(Test-Path -LiteralPath $path)){
+  $temp=$path+'.download.'+[guid]::NewGuid().ToString('N')
+  try{
+   Invoke-WebRequest -Uri $url -OutFile $temp -ErrorAction Stop
+   if((Get-Item -LiteralPath $temp).Length -ne 11050 -or
+      (Get-FileHash -LiteralPath $temp -Algorithm SHA256).Hash -cne $sha){
+    throw 'BL_R3_REMOTE_SOURCE_PIN_MISMATCH'
+   }
+   Move-Item -LiteralPath $temp -Destination $path -ErrorAction Stop
+  }finally{
+   if(Test-Path -LiteralPath $temp){Remove-Item -LiteralPath $temp -Force}
+  }
+ }
+ if((Get-Item -LiteralPath $path).Length -ne 11050 -or
+    (Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash -cne $sha){
+  throw 'BL_R3_LOCAL_SOURCE_PIN_MISMATCH'
+ }
+ $tokens=$null;$errors=$null
+ $null=[System.Management.Automation.Language.Parser]::ParseFile($path,[ref]$tokens,[ref]$errors)
+ if(@($errors).Count -ne 0){throw ('BL_R3_AST_PARSE_FAILED='+($errors -join '; '))}
+ Write-Host ('PIN_R3_SHA256=PASS;'+$sha)
+ Write-Host 'PIN_R3_PS7_AST=PASS'
+ Write-Host 'R3_MODE=OWNED_S37_READONLY_8_CBS_PACKAGE_NATIVE_AND_COPIED_SOFTWARE'
+ & $path
+}
+```
+
+- Latest operator-confirmed actual is R2 `PASS_WEBVIEW_EDGE_S37_R2_SERVICING_METADATA_READONLY_ONLY`. RecipeRegistry revision r14 stays `UNKNOWN_DEPENDENCY` and `runtime_execution_allowed=false`; Master v6.0.0 unchanged. NEXT: execute pinned R3 and upload new native TXT+CSV if generated, then perform §0R analysis and mandatory first/second writes before any next step.
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
