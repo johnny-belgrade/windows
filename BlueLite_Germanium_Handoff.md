@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.71 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (R6 pre-remove ACTUAL HOLD; strict CBS package-state R6R1 on existing S39 disposable DELIVERED_NOT_RUN)  
+**Verzija dokumenta:** 1.5.72 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (WebView S39 R6R1 ACTUAL native Remove-Capability and /Commit PASS; independent postcommit audit pending)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -2076,6 +2076,13 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
  & $file
 }
 ```
+
+### 8.85 26300 WebView S39 R6R1 ACTUAL native /Remove-Capability and /Commit PASS — postcommit independent audit pending (2026-10-18 FIRST §0R)
+
+- Operator-original `C:\work\logs\BlueLite_MAXPRE_WebViewEdge_26300.9711_NativeRemoval_R6R1.txt` **6,860 bytes / 64 CRLF records**, SHA256 **673E04082074A027BFE9C597737E0D28070B1DA7D957534A9939B56DC199D72D**, independently hashed/reconciled. Original operator R6R1 SHA+PS7 AST loader PASS; immutable published source commit `6a111e74052852938409f04a25cd3b594fe5f10f` SHA256 **4F26ABE83EF5969C6A3E721FFD42871A707FD1CA065D205E50B7FC510EEEDDC3**. Existing exact S39 owned disposable SHA matched protected S37 source before RW mount. S37 original WIM SHA **A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F** protected PRE/POST; all previous original R3/R4/R5R1/R6 HOLD receipt SHA gates PASS.
+- Exact hidden capability `Edge.Webview2.Platform~~~~` **Installed before**; native `/Remove-Capability` on only existing owned S39 RW clone **exit=0/completed**, **Not Present after**. Three exact FoD identities (wrapper .9711, baseline .1, child .9711) `/Get-PackageInfo` negative exit `-2146498555` (0x800f0805) after remove. Exactly nine protected parent package identities stable PRE/POST and five Installed CBS0x70/four Staged CBS0x40; R4 four Desktop-Required feature-state shadows correctly excluded from package-state interpretation. Native PRE/POST Pending0 (no pending.xml), PRE CheckHealth CLEAN, POST CheckHealth+ScanHealth CLEAN. Native /Commit of owned S39 PASS, post DISM zero mounts, owned empty mountdir removed PASS. Terminal actual `PASS_S39_R6R1_NATIVE_WEBVIEW_DISPOSABLE_PRECOMMIT_POSTSTATE_AND_COMMIT_ONLY` — do not overclaim **postcommit** remount/VM/release.
+- Measurement scope: S39 disposable before `6,551,362,129` B, committed after `6,595,075,169` B = **+43,713,040 B (+41.688 MiB)** WIM container; post SHA **32AD747CD86052BDF6226A25B92A7B051E9946B3D43A591D1EFFD99B265AEBED**; stored under `C:\work\E2E\BlueLite_Stage1_S39_26300.9711_WebView_FOD_Native_R6\install.webview-disposable.wim`. Positive WIM size difference is not failure of native removal, and no actual physical unique-byte savings are certified without proper measurement/recompression. Protected S31/S37 original unchanged; WebView2Standalone separately remains servicing-aware residual protected dependency per Library 148. Registry r19 must keep 26300 variant runtime execution **disabled** pending at least independent postcommit+reproducible parent/CBS/physical measurement.
+- Next exact ONE source/command at FIRST §0R NOT YET DELIVERED: original-SHA pinned native `/ReadOnly` mount on this **already committed** S39, independent native capability Not Present, three exact FoD `0x800f0805`, same nine native package parents, pending0/health, protected original S37 unchanged; scoped two WinSxS family metadata comparison only if safe, never raw carve or new clone. No direct modification, and retain clone. Mandatory Handoff §0L Library 142/145/148 + Microsoft native capabilities docs before further engineering.
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
