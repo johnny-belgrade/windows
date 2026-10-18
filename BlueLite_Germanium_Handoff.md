@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.61 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (WebView S37 R2 ACTUAL PASS; R3 CBS registration DELIVERED_NOT_RUN)  
+**Verzija dokumenta:** 1.5.62 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (WebView S37 R3 ACTUAL native package registration PASS; 9-parent gate next)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1775,6 +1775,12 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 ```
 
 - Latest operator-confirmed actual is R2 `PASS_WEBVIEW_EDGE_S37_R2_SERVICING_METADATA_READONLY_ONLY`. RecipeRegistry revision r14 stays `UNKNOWN_DEPENDENCY` and `runtime_execution_allowed=false`; Master v6.0.0 unchanged. NEXT: execute pinned R3 and upload new native TXT+CSV if generated, then perform §0R analysis and mandatory first/second writes before any next step.
+
+### 8.75 S37 WebView/Edge R3 — 8/8 exact native CBS registrations ACTUAL PASS (2026-10-18 FIRST §0R)
+
+- Operator-original TXT **28,421 B /179 CRLF lines** SHA256 **ED642AB518824526775BD9E46D9AC404418EDF2D21D37609AB023E46F7BD674F**, CSV **1,405 B / 9 CRLF lines, 8 original rows** SHA256 **0998C6FFB7A9875C5F1A194982AD114D64B16FE48466860756B626F1317927AF**. Independent bytes and CSV/TXT row integrity PASS. Source code `production/targets/BlueLite.MaxPre.WebViewEdge26300.CBSRegistration.R3.ps1` pinned SHA256 **0125EB6B1B392974701C42AFA781C0C090BFFA59B9F7D64D625140B88DEA9B00**, commit `725539a04e10a3f5ab4391c857ff855f2cd81540`, was operator-run. True terminal `PASS_WEBVIEW_EDGE_S37_R3_EIGHT_EXACT_CBS_REGISTRATION_READONLY_ONLY`; prior R2 original TXT/CSV pins PASS, S37 WIM SHA A599CF... full PASS, native /ReadOnly, copied SOFTWARE (76,808,192B, SHA D913FC14F2A3759C64B93D504A1CD5871586E29FF1F3743BF274139C5316FBBC), transient hive unload+copy delete and /Discard/zero mounts all PASS; protected S31/S37 unchanged.
+- **Actual state by family:** 8/8 `DISM /Get-PackageInfo` exact native exit=0 and 8/8 CBS exact `CurrentState`/Visibility keys. FoD Wrapper .9711 **Installed/0x70, Vis2**, RollupFix .9711.1.30 owner `0x30070`; FoD child .9711 **Installed/0x70 Vis1**, owner FoD Wrapper .9711 `0x40070`; old FoD child .1 **Staged/0x40 Vis1** self-owner `0x20040`. OneCore WebRuntime neutral .9549 **Installed Vis2**, owner Runlevel-Win4 neutral .9711 `0x30070`; older .1591 **Staged Vis2**, owner Runlevel-Win4 .1742 `0x30040`; en-US satellite .1 **Installed Vis2**, Runlevel-Win4 en-US .1591 `0x30040` and .9549 `0x30070` owners. DevToolsClient .8737 **Installed Vis2**, two Desktop-Required owner identities ClientOnly .9278 / SharedWithServer .9711 `0x30070`; older .1150 **Staged Vis2**, two Desktop-Required .1150 owners `0x30040`. **5 Installed /3 Staged, 11 REG_DWORD owner values**; `OwnersSubkeys=0` refers to nested key enumeration only, not absence of owner values. 9 unique *external* parents (1 RollupFix, 4 Runlevel-Win4, 4 DesktopRequired) and two FoD internal/self links. R2 broad DISM list zero hits is not absence: exact R3 DISM resolves all eight.
+- **Engineering inference vs proof:** package-level direct owner links now observed. However parent CBS states and `COMPONENTS` component references are NOT certified; no direct package removal or release authorized, owner modifications to RollupFix/Runlevel-Win4/Desktop-Required are explicitly out of scope. Historical R1 reparse-length 1.4GB != saved physical bytes. RecipeRegistry r15 variant `UNKNOWN_DEPENDENCY` + runtime false; Master v6 unchanged. **NEXT at FIRST checkpoint**: one read-only exact nine EXTERNAL parent CBS native/registry test on retained S37; code/command not yet delivered.
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
