@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.48 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (SourceBound R1 original TXT+plan+receipt ACTUAL PASS; transaction engine next)  
+**Verzija dokumenta:** 1.5.49 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (SourceBound R1 ACTUAL PASS; MAX_PRE transaction module+negative tests DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1614,6 +1614,35 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - Original R1 output trio byte-read, JSON parsed and independently hashed: `BlueLite_MAXPRE_SourceBoundPlan_R1_26300.9711.txt` **1622 B/18 CRLF lines**, SHA256 `90224401F84840BD6A9F5EFF2C6E8E48424E8E8F26C95B93117325C9A3F34FA1`; R1 plan JSON **2670 B**, SHA256 `A46C7BE0B4A1F6E2BF5889B22A80404FB788D0E2A5927AE2F3EB4BB4114C6E0F`; R1 ResultReceipt JSON **2648 B**, SHA256 `F9656A7594797F04F7F3B96A89C551BBEE544946754B60D665D8F7778FAA17D9`. 10:53:16. Terminal `PASS_MAXPRE_SOURCEBOUND_PRODUCTION_PLAN_STATIC_NO_IMAGE_TOUCH`. R1 corrected FileInfo/DirectoryInfo/missing-owned-path ancestry gate PASS, core/registry/source SHA pins PASS.
 - Plan and receipt `run_id=BL-26300.9711-20261018T085316328Z` identical; six entries content equal; 6/6 `AutoExecute=false`. Only 26300-specific selected registry recipe is S31 OneDrive `26300.9711-s31-native-amber`, still runtime disabled. Others: AppInstaller current registry topology flag NO_CERTIFIED_BUILD_TOPOLOGY (planner conservatism; independent S38R3 26300 postcommit PASS evidence retained), LanguageBasic RED_HOLD, EdgeWebView and FoDMetadata no matching certified rule, Sense component-engine handoff. No recipe automatically promoted or allowed to run. `ResultReceipt.result=STATIC_VERIFIED`, `evidence_tier=STATIC`, `mutation_performed=false`, `independent_post_state_verified=false`, `next_action_authorized=false`.
 - SHA-verified frozen SourceContract; WIM original path stat only 6,509,216,853 B; original immutable S31 SHA prior declared, **not recomputed**. No WIM copy, mount, native DISM, CBS/WinSxS/AppX mutation, health or servicing verification in the R1 run. Previous S0 683-B HOLD log untouched; R1 static planning gate closed. **Next one concrete production engineering step:** reusable stateful transaction/authorization/evidence engine (dry-run/negative fixtures, no current WIM heavy IO), then controlled MAX_PRE debloat mutations only after verified gates and operator authorization; **NOT YET DELIVERED** at FIRST checkpoint. No UUP staging forensics. Master and RecipeRegistry r12 unchanged.
+
+
+### 8.62 Universal MAX_PRE transaction code DELIVERED_NOT_RUN (2026-10-18 SECOND §0R)
+
+- Last operator ACTUAL is SourceBound R1 STATIC PASS (§8.61), three original SHA-verified artifacts. **No transaction test yet run, no WIM mutation.**
+- `production/engine/BlueLite.MaxPre.Transaction.psm1` immutable commit **83cf7bce276d8a75d7d1a1828f6e8bdc9b4bb19b**, blob `7ca05c8ae87f356a4f7c17a28f43b7fdc99c10af`, SHA256 **6F1784D350D4983F4C3AE29328D518613944FF8BA56C1F1566ADD48459A6389F** (5964 ASCII B/156 lines): reusable plan/receipt cross-identity + exact recipe agreement, case-insensitive source/work alias, per-recipe authorization blocker, typed transaction object, fail-closed native-mutation gate even if all caller authorization switches forced. Not a certified native transaction executor.
+- `production/tests/BlueLite.MaxPre.Transaction.SourcePairTests.ps1` commit **ca9d0d8353087331f5a8ca35e7a73228bfe5d5e9**, blob `9341f61af803a4751c21391dbc4091f021f70894`, SHA256 **8C443961136CDD6F5921491FB09B58268109E0EDD242F595BE8A15F59391810C** (6012 ASCII B/122 lines). Uses ORIGINAL operator R1 plan JSON SHA **A46C7BE0B4A1F6E2BF5889B22A80404FB788D0E2A5927AE2F3EB4BB4114C6E0F** and receipt JSON SHA **F9656A7594797F04F7F3B96A89C551BBEE544946754B60D665D8F7778FAA17D9**. Six current recipe gates, forged run/authorization/autoeXec, case-insensitive WIM aliases, forced mutation negative fixtures. No image read/mount/DISM. Expected static gate PASS only, not MAX_PRE servicing PASS.
+- Single fully pinned operator launcher `production/launchers/BlueLite.MaxPre.Transaction.Operator.ps1`, immutable commit **41b84cfa77a2bcc707e5de42931d678acf093d9f**, blob `ffa5da4f014595edafd5adf53f6596e9f93493c2`, SHA256 **43A62D8A57BF7B07ED5EB7E460D3C8AF3DE8C642FD4F69947CFFC390256AE2FD** (2757 ASCII B/57 lines). The launcher SHA-pins the operator R1 evidence, downloads ONLY two reviewed small GitHub code files with immutable URL/SHA/AST gates (no overwrite) and runs the test. Main/pinned sources independently re-read identical. **Exact one operator PS7 Admin bootstrap:**
+
+```powershell
+& {
+    $ErrorActionPreference='Stop'
+    $dest='C:\work\scripts\BlueLite.MaxPre.Transaction.Operator.ps1'
+    $url='https://raw.githubusercontent.com/johnny-belgrade/windows/41b84cfa77a2bcc707e5de42931d678acf093d9f/production/launchers/BlueLite.MaxPre.Transaction.Operator.ps1'
+    $expected='43A62D8A57BF7B07ED5EB7E460D3C8AF3DE8C642FD4F69947CFFC390256AE2FD'
+    if($PSVersionTable.PSVersion.Major -ne 7){throw 'BL_PS7_REQUIRED'}
+    if(Test-Path -LiteralPath $dest){throw 'BL_TX_LAUNCHER_EXISTS_NO_OVERWRITE'}
+    Invoke-WebRequest -Uri $url -OutFile $dest -ErrorAction Stop
+    $sha=(Get-FileHash -LiteralPath $dest -Algorithm SHA256).Hash
+    if($sha -cne $expected){Remove-Item -LiteralPath $dest -Force;throw "BL_TX_LAUNCHER_SHA_MISMATCH=$sha"}
+    $tokens=$null;$errorsFound=$null
+    [void][System.Management.Automation.Language.Parser]::ParseFile($dest,[ref]$tokens,[ref]$errorsFound)
+    if(@($errorsFound).Count -ne 0){throw 'BL_TX_LAUNCHER_PS7_PARSER_FAILURE'}
+    Write-Host "BL_TX_LAUNCHER_SHA_AND_AST=PASS;$sha"
+    & (Join-Path $PSHOME 'pwsh.exe') -NoProfile -ExecutionPolicy Bypass -File $dest
+}
+```
+
+- Upload operator originals **`C:\work\logs\BlueLite_MAXPRE_TransactionGate_26300.9711.txt`** and **`C:\work\logs\BlueLite_MAXPRE_TransactionGate_26300.9711.json`** if generated; expected software-only `PASS_MAXPRE_TRANSACTION_GATE_STATIC_NEGATIVE_TESTS_NO_IMAGE_TOUCH`. No new disposable, mount, WIM copy, UUP work or mutation. Native owner-bound MAX_PRE mutation dispatcher is the next production feature **only after actual test report**. Master v6.0.0 and RecipeRegistry r12 unchanged. **DELIVERED_NOT_RUN.**
 
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
