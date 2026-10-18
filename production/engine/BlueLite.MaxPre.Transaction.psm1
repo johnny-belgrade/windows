@@ -37,7 +37,7 @@ function Assert-BlueLitePlanReceiptPair {
     $Plan.original_wim_sha256_verified_this_run -cne $false){
   throw 'BL_TX_UNEXPECTED_RUNTIME_OR_MUTATION_CLAIM'
  }
- if([string]$Plan.original_wim_path -ceq [string]$Plan.planned_working_wim_path -or
+ if([string]::Equals([string]$Plan.original_wim_path,[string]$Plan.planned_working_wim_path,[StringComparison]::OrdinalIgnoreCase) -or
     $Plan.original_working_distinct -cne $true){
   throw 'BL_TX_ORIGINAL_WORKING_ALIAS'
  }
