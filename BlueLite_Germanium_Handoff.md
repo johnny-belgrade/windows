@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.32 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S40 actual inventory PASS; S41 four-file SHA guarded deletion script pinned DELIVERED_NOT_RUN)  
+**Verzija dokumenta:** 1.5.33 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S42 actual operator HOLD at UUP 129-file shape; S42D targeted diagnostic not yet delivered)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1403,6 +1403,13 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 
 - S42 pins S41 actual report SHA EB142796E30F6C7A8A110AC196A6EEA2EE51CCEA17D13ED8B354D3DF79B0F670; original S16 UUP audit SHA C1F793FDE7B7BA63BF0CAC7F10799C9816FE27FEB6798416F61E2BE186993E3D; original D6 129-row SHA ledger SHA A8A205E554C8A5958E6D0CB725AED99383D6BEC752FF64A7D66F5A5DF9609898; original 9807 ZIP 8218B SHA 83203A6E79E62579A7D64204120BCECC111FE114C614AB1DBFAE032BB02DE7B7 and frozen S11 source contract SHA 9D9DCD4FD8190863F1591679574879D3B652D2FE6DED176EEFED0C204D947D11; S31/S37 protected WIM SHA/bytes. Requires actual DISM mounted image table0 and BlueLite hive aliases0. Compares 129 immediate files, zero dirs, exact filenames and full native SHA256+bytes of TWO source directories: authoritative `C:\work\E2E\BlueLite_DL_R26_D6_26300.9711_2b22470a\UUPs` and staged converter duplicate `C:\work\E2E\BlueLite_Stage1_S20_26300.9711_ConverterWorkspace\UUPs` (8,992,976,071 B each expected). No network/download, no image clone, no delete, no native converter, no VM/NTLite. This is a READ-ONLY verification for potential subsequent exact S43 cleanup, NOT deletion authority by itself.
 - S42 original expected outputs to upload: `C:\work\logs\BlueLite_Storage_S42_26300.9711_UUPPairs.txt` and `C:\work\logs\BlueLite_Storage_S42_26300.9711_UUPPairs.csv` if generated; terminal `PASS_S42_129_UUP_PAIRS_BIT_IDENTICAL_READONLY` or `HOLD_S42_UUP_PAIR_READONLY`. **S42 DELIVERED_NOT_RUN**. After actual S42 proof, separate deletion may remove ONLY staged duplicate source inputs while keeping converter source, boot.wim, S31/S37, original D6 UUP, G5, all logs/recipes. Master immutable, AppX Recipe Registry r12 unchanged.
+
+### 8.47 S42 actual operator HOLD — 129-file shape mismatch (2026-10-18; FIRST §0R checkpoint)
+
+- Operator supplied original `BlueLite_Storage_S42_26300.9711_UUPPairs.txt`: 668 B / 13 CRLF rows, SHA256 `5C83E45CD28B493B0F0853F9028E547479118D56542CC52C4A70B67E683DFACB`, times 09:28:59–09:29:18. S42 was genuinely run; final `RESULT=HOLD_S42_UUP_PAIR_READONLY`, `FAIL_CLOSED=UUP_129_FILE_SHAPE_MISMATCH`.
+- Source code at `development/BlueLite_Storage_S42_26300.9711_UUPPairAudit_ReadOnly.ps1` makes four-part strict shape gate: both UUP root immediate file counts equal exactly 129, each immediate directory count zero. Actual counts **not printed** by S42 before failure; missing proof must be obtained narrowly. DO NOT assume a hidden/README file or delete any unexpected item. S42 produced no pair CSV/full content comparison. S41 report, S16 report, D6 129 ledger, 9807 source ZIP+contract, S31/S37 protected WIM hashes, native mount/hive zero all reported PASS, so do not repeat them as new 9GB forensic tasks.
+- All S42 changes were only small local log writes; DELETE/DOWNLOAD/CONVERTER=NOT_RUN, WIM untampered according to hashed preflight. No S43 cleanup authorization, original 9711 UUP and staged converter inputs both protected while source-shape discrepancy unresolved. 9807 GB download deferred. Next **one** S42D read-only source-shape/filename/size/reparse classification; S42D at FIRST update is only identified, NOT YET DELIVERED. Master and RecipeRegistry r12 unchanged.
+
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
