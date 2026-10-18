@@ -103,6 +103,13 @@
    @('S38R3_NATIVE','BlueLite_Stage1_S38R3_26300.9711_AppInstaller_PostCommitReadOnly.txt','E8DF9623888B6AECA976FDEEAC19FB04324A57F4D91A649D92247B479943BD08',6159)
   )
   foreach($e in $evidence){Pin ([string]$e[0]) (Join-Path $logs $e[1]) ([string]$e[2]) ([long]$e[3])}
+  $s38json=Join-Path $logs 'BlueLite_Stage1_S38R3_26300.9711_AppInstaller_PostCommitSnapshot.json'
+  Pin 'S38R3_NATIVE_JSON' $s38json '9F1AF74B8C9F6B21E136B40D33109E5B20043869DE74109010A558D25CEE63BA' 4101
+  $s38state=Get-Content -LiteralPath $s38json -Raw -Encoding utf8 | ConvertFrom-Json
+  if(-not $s38state.ReadonlyAuditSucceeded -or $s38state.FinalReleaseCertificateGranted -or
+     @($s38state.ExpectedNinePackages).Count -ne 9 -or
+     @($s38state.InspectedOfflineRegistry).Count -ne 10){throw 'INDEPENDENT_S38R3_POSTCOMMIT_EVIDENCE_NOT_PASS'}
+  Note 'S38R3_POSTCOMMIT_SNAPSHOT=PASS_VERIFIED_NOT_RELEASE'
   Note '[2/4] PROTECTED WIMS, UUP/G5, ACTIVE MOUNT/HIVE GATES'
   Pin 'IMMUTABLE_S31_KEEP' $s31 'F52389FA66F8B60D56661C8786EC99409FB95447403B3C6FCBB94121EF8E340B' 6509216853
   Pin 'CURRENT_S37_KEEP' $s37 'A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F' 6551362129
