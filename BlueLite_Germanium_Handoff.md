@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.19 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S38 original operator READONLY HOLD at mount-owner check; S38-DIAG pending)  
+**Verzija dokumenta:** 1.5.20 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S38 original read-only mount owner HOLD; S38D exact no-change mount/hive diagnostic DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1117,6 +1117,35 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - **Critical closeout nuance:** reported OWNED_READONLY_MOUNT_RELEASED=True but there was **no logged native DISM /Discard /Unmount exit**. Source S38 owned-mount check inferred release by no matching Mount Dir in DISM /Get-MountedWimInfo, the same table whose owner parsing had just failed. Raw DISM table and owner field values were not logged. Cannot claim unmount occurred, or infer why the owner gate failed. Source+candidate final SHA unchanged=True; terminal RESULT=HOLD_S38_9711_R4_POSTCOMMIT_READONLY.
 - **Tier:** S37 COMMITTED CANDIDATE PASS remains, but S38 independent postcommit verification is **NOT TESTED**. No release, no new mutation, no source/candidate integrity drift in observed hashes. Need first resolve mount metadata/stranded mount handle dependency.
 - **ONE NEXT (FIRST documentation write; code not delivered yet):** strictly readonly S38 diagnostic collecting unmodified raw DISM /Get-MountedWimInfo, parsed Mount Dir/Image File/Index/RW/Status, existence/access of C:\BL38M and main target dir, read-only HKLM HiveList output limited to BlueLite temporary aliases. Pin S38 original main/JSON and S37 candidate+S31 SHA. **NO** mount, unmount, reg unload/load, cleanup, deletion or changes. Store exact code/hash and operator command in §8.34 with second Handoff write, S38-DIAG DELIVERED_NOT_RUN. Re-run postcommit S38 only after diagnostic. Master unchanged.
+
+### 8.34 S38D EXACT PINNED ONE OPERATOR STEP — read-only DISM mount/hive diagnostics DELIVERED_NOT_RUN
+
+- Exact GitHub source at immutable commit **2ffa6344868ae68378fea74a99590b2761e7ec96**, path development/BlueLite_Stage1_S38D_26300.9711_MountIdentity_ReadOnlyDiagnostic.ps1; blob SHA1 **c3ec34b8737d4de6c915cf1e6185b32e10a9ad21**, SHA256 **E1E11A2FF3C695237217B56D544D9FC07BC77B44E39155300B6E757B830FA864**, 6072 ASCII B/118 lines; verified equal source at moving main and immutable pinned commit; SHA256 independently computed with self-tested implementation. Not executed/parsed on operator Windows host. DO NOT call it PASS before operator reports.
+- Operator copy-paste PS7 Admin (ONE command, no edits):
+
+```powershell
+& {
+    $ErrorActionPreference = 'Stop'
+    $dest = 'C:\work\scripts\BlueLite_Stage1_S38D_26300.9711_MountIdentity_ReadOnlyDiagnostic.ps1'
+    $url = 'https://raw.githubusercontent.com/johnny-belgrade/windows/2ffa6344868ae68378fea74a99590b2761e7ec96/development/BlueLite_Stage1_S38D_26300.9711_MountIdentity_ReadOnlyDiagnostic.ps1'
+    $expected = 'E1E11A2FF3C695237217B56D544D9FC07BC77B44E39155300B6E757B830FA864'
+    if (-not (Test-Path -LiteralPath 'C:\work\scripts' -PathType Container)) { throw 'SCRIPTS_DIR_MISSING' }
+    if (Test-Path -LiteralPath $dest) { throw 'S38D_LOCAL_SCRIPT_EXISTS_NO_OVERWRITE' }
+    Invoke-WebRequest -Uri $url -OutFile $dest -ErrorAction Stop
+    $got = (Get-FileHash -LiteralPath $dest -Algorithm SHA256).Hash
+    if ($got -cne $expected) { Remove-Item -LiteralPath $dest -Force; throw "S38D_PINNED_SOURCE_HASH_FAILED=$got" }
+    Write-Host "S38D_SOURCE_SHA256=PASS;$got"
+    $tokens = $null
+    $errors = $null
+    [void][System.Management.Automation.Language.Parser]::ParseFile($dest, [ref]$tokens, [ref]$errors)
+    if (@($errors).Count -ne 0) { $errors | ForEach-Object { Write-Host $_.ToString() }; throw 'S38D_PARSER_HOLD_NO_EXECUTION' }
+    Write-Host 'S38D_POWERSHELL_PARSER=PASS'
+    & (Join-Path $PSHOME 'pwsh.exe') -NoProfile -ExecutionPolicy Bypass -File $dest
+}
+```
+
+- Script checks exact original S38 report SHA 72FDD4417C3C87C634A1CF2E83C2C28B70134061FFD729FCCF37CFB236034C61 and JSON SHA 3115F5FAB64F9232C2F9CD3D8E8E266D88442440D0F65712019F95B6F297B072, protected S31 SHA F52389FA66F8B60D56661C8786EC99409FB95447403B3C6FCBB94121EF8E340B, S37 committed WIM 6551362129 B SHA A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F. Collects raw untouched DISM /Get-MountedWimInfo lines + 5 parsed fields, C:\BL38M exists/attribute and 3 scoped child path presence checks, readonly Registry HiveList identifying possible BlueLite temporary aliases. **NO mount, unload, unmount, /Discard, cleanup, data mutation, folder removal or registry changes.** If C:\BL38M exists with no tracked mount, outcome HOLD and manually determine stale directory. Do not run S38R1 before diagnostic.
+- Request ONE original log: C:\work\logs\BlueLite_Stage1_S38D_26300.9711_MountIdentity_ReadOnlyDiagnostic.txt. Terminal status is scoped diagnostic PASS only if no mounted images, no BL temporary alias, no BL38M dir; otherwise scoped HOLD. In any outcome candidate remains uncertified, no release. S38D **DELIVERED_NOT_RUN**. GitHub second documentation write + Current sync both independently read back. RecipeRegistry unchanged because mount owner / source logging problem did not change AppX recipe topology or runtime permission. Master unchanged.
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
