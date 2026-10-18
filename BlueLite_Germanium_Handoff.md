@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.67 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (R5 original premount HOLD; R5R1 wrapper fix DELIVERED_NOT_RUN; §0L Library regression policy)  
+**Verzija dokumenta:** 1.5.68 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (R5R1 actual hidden WebView native readonly PASS; disposable removal test next; §0L Library regression policy)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1962,6 +1962,12 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 ```
 
 - **Final state**: R5 original actual HOLD; R5R1 DELIVERED_NOT_RUN; Registry r16 runtime=false; Master v6 untouched; protected S31/S37 unchanged; §0L regression policy permanently required. Following operator report → §0R mandatory first/second GitHub writes and only THEN next operator step.
+
+### 8.81 S37 R5R1 exact hidden capability ACTUAL native readonly PASS (2026-10-18 FIRST §0R)
+
+- Original `BlueLite_MAXPRE_WebViewEdge_26300.9711_HiddenCapability_R5R1.txt` **2037 B /26 CRLF lines**, SHA256 **C9E371715EC961FA8FC89D2CBFD96D6E908FDB705931446ADAB9BB45248BA49E** independently byte-hashed; original loader/source commit `841276114d8c6a250b14a10ff495a1305e0f1ecd`, reviewed SHA **F38EADA5BA5D7BEBDF9D795DA9140F68D9FF772CA01D2D88220565EF1C501439**. Original R3/R4/R5 HOLD original receipt pins all PASS. Protected S37 WIM SHA A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F PASS. Native mount table 0/0 pre/post exactly one `No mounted images found.` marker and zero mount rows; /ReadOnly native mount /Discard, empty mountdir removed PASS. Genuine terminal **`PASS_S37_R5R1_EXACT_HIDDEN_EDGE_WEBVIEW_CAPABILITY_NATIVE_READONLY`**. No mutation.
+- Exact native capability **`Edge.Webview2.Platform~~~~` Installed**, `Install Size: 559.24 MB` Microsoft DISM metadata (NOT measured reclaimable/physical bytes), Download Size 0. Exact three FoD native package descriptions: wrapper 10.0.26100.9711 Installed, blank capability; child baseline .1 Staged and child current .9711 Installed, both `Capability Identity: Edge.Webview2.Platform~~~~`. This matches *family of package states and hidden direct native capability identity* proven historically in Library 26200.9445 original `142-HOTFIX1` (MUM/hidden state), `145` (disposable native /Remove-Capability and health/pending), `148` (classification/protected WebView2Standalone), `318` (native action PASS but wrapper `.Count` error). This evidence confirms 26300 **identity + native query**, not yet current build native removal/health/unique savings.
+- At FIRST §0R the next code is NOT DELIVERED: plan **one deliberately bounded named disposable WIM clone** of exact S37 for `DISM /Remove-Capability /CapabilityName:Edge.Webview2.Platform~~~~`, guarded with source and log SHA, file-system capacity, exact CBS protected parent states and immutable source. Do not edit S37. Native pre/post capability/packages, CheckHealth and ScanHealth, pending=0, CBS parent preservation, proper /Commit or /Discard, measured before/after image size and scoped reparse logical metadata (not false freed-byte claims). If test fails, fail closed and preserve decision-grade logs without claiming native success. Registry r17 target proof `NATIVE_READONLY_IDENTITY_VERIFIED`, execution disabled, Master v6 unchanged. §0L requires targeted Library + externally verified references before code.
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
