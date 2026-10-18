@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.65 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (WebView R4 ACTUAL PASS; exact hidden capability R5 DELIVERED_NOT_RUN via Library native fast-path)  
+**Verzija dokumenta:** 1.5.66 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (R5 premount native exit0 wrapper HOLD; mandatory Library regression/external-source policy §0L)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -10,6 +10,24 @@
 **Historijski UUP dokazni indeks:** [`BlueLite_UUP_Evidence_Reconciliation_20261013.md`](BlueLite_UUP_Evidence_Reconciliation_20261013.md).  
 **Celokupan spoljašnji katalog:** [`BlueLite_Sources.md`](BlueLite_Sources.md).  
 **Repo:** <https://github.com/johnny-belgrade/windows>; branch `main`.
+
+## 0L. OBAVEZNA POLITIKA PONOVNE UPOTREBE LIBRARY/REGRESIONIH DOKAZA I SPOLJAŠNJIH IZVORA — PRE SVAKOG NOVOG PROBE-A (2026-10-18)
+
+**AUTORITET: Master v6 §0A.4–0A.5 i §4.1; ovo je operativni postupak, ne nova izmena Master strategije.** **26300.x je jedini aktivni proizvodni front**; 26200.x je obavezna baza prethodno proverenih rešenja/regresionih slučajeva, a 26100.x servisna osnova. Odgovarajući 26200 log se **mora ciljano pronaći i stvarno pročitati PRE dizajniranja nove 26300 analize/skripte**. Sama naznaka u pretrazi ili Handoff-u nije dovoljan pregled izvora. Nijedan prethodni build nema pravo automatskog izvršavanja na novom build-u.
+
+**Redosled provere ZA SVAKI ciljani komponentni slučaj:**
+
+1. **Kreni od postojećeg znanja:** najnoviji operator-original TXT/CSV/JSON + SHA, Current od vrha, Master normativno, relevantni Handoff/archived Current, RecipeRegistry (varijante/negativni fixtures), UUP Evidence/Chronology, **Library originalni logovi i PS1 skripte** (uključujući 26200 rad i prethodne `Phase`/R/S slučajeve), Build_info drugih autora kao krajnji uzori. Pretraži dovoljno široko po logičkom targetu, aliasu, FoD/Capability/package/CBS identitetu i ranijem FAIL potpisu; pronađeni materijal *otvori*, ne pretpostavljaj rezultate.
+2. **Prati kompletan katalog `BlueLite_Sources.md`:** identifikuj i otvori *sve stvarno relevantne* zvanične i besplatne upstream reference za taj target, ne samo Microsoft; prema potrebi Microsoft Learn/KB/servicing/DISM, UUP Dump/abbodi1406/wimlib, GitHub upstream, PowerShell/reg/Win32, NTLite dokumentaciju, MSMG/MDL/WinCert/ElevenForum i druga dostupna stručna iskustva. Evidentiraj **tačan URL/reviziju/datum provere i šta izvor zaista podržava**. Ne tvrdi da je URL proveravan ako nije; vendor/community primer nije automatski dokaz o aktuelnom WIM-u ili ovlašćenje za mutaciju.
+3. **Napravi eksplicitnu decision matricu:** `ALREADY_PROVEN_SAME_TOPOLOGY` → *reuse/fast path*, `KNOWN_VARIANT` → minimalni source-bound identity/delta check, `NEW_OR_DIFFERENT_DEPENDENCY` → samo dokazivo nedostajući podgraf, `KNOWN_FAILURE` → ne ponavljaj odbijenu operaciju, `COMPONENT_ENGINE_HANDOFF` → sačuvaj za treću fazu po kriterijumu. Poredi izvor/build/edition/index/hash, package/capability identity, CBS state/Visibility/Owners i zaštićene siblinge, a zatim projected/unique fizički efekat. **Ne prenositi** 26200 identitete/verzije, per-image Installed/Staged, WinSxS logičke veličine, hardlink saved bytes ili release/health status na 26300 bez svežeg odgovarajućeg dokaza.
+4. **Napravi samo jednu potrebnu novu proveru** (ako nešto ostaje nedokazano), uz audit native `exit code` i *stvarnog output-shape*, PowerShell wrapper/AST/array semantics, source pin, zero mounts/hives, owned offline mount i cleanup. **Wrapper HOLD uz native exit=0 nije CBS/OS neuspeh.** Kod negativnog native listinga proveri stari exact-name/hidden-capability recept pre novih owner/WinSxS forenzika. Potvrđen cilj → kasnije strogo izdvojen disposable mutation test i nezavisni native servicing/postcommit + pending/health/functional dokazi. U produkciju ide **engine + topology predicate/recipe/fixtures**, ne novi per-build skript za isti target.
+5. **Evidence ledger upis pre sledeće komande:** originalne Library nazive i dokazanu semantiku, aktuelni operatorski log+SHA, poređenje/topology fingerprint, korišćene spoljašnje reference, granice dokazivanja/negative evidence, status i jedinstveni **NEXT** odmah unesi u Current/Handoff/RecipeRegistry po §0R. Ne proglasiti `PASS` za isporučen kod ili neizvršeni lokalni korak.
+
+**Konkretan obavezni primer — Edge/WebView:** originalni Library `142-HOTFIX1-EdgeWebView-FOD-Wrapper-Capability-Contract.txt` dokazuje da je na 26200.9445 exact `Edge.Webview2.Platform~~~~` capability skriven u širokoj listi `/Get-Capabilities`; `145-EdgeWebView-Native-Remove-Capability-Probe.txt` i `148-EdgeWebView-Classification-and-BL144-Cleanup.txt` dokazuju uspešan native disposable `/Remove-Capability`, post absent/health/pending i odvojeni WebView2Standalone `COMPONENT_ENGINE_HANDOFF`. `318-Canonical-EdgeWebView-Native-Production-Removal.txt` ima DISM native success, ali **izričit kasniji PowerShell `.Count` FAILURE**, nije puni script PASS. Ovaj 26200 dokaz *automatski usmerava* 26300 samo na exact `/Get-CapabilityInfo` pozitivnu proveru, ne autorizuje direktan 26300 removal. Aktuelni R1–R4 26300 CBS paketi/9 roditelja su originalni dokazi. R5 na 26300 **HOLD pre mounta** zbog wrapper pravila `The operation completed successfully.` uz DISM return code 0 — dokaz da legacy output-shape/PowerShell adapter mora biti deo regresione metodologije. Zato R5R1 radi minimalnu opravku, a ne nova ponavljanja čitave vlasničke analize.
+
+**Politika izvora je već bila prisutna** u `§0R`, uvodnoj kontrolnoj listi, `§0`, `§2` i Master §0A.4; ovaj `§0L` je **njena ranije nedovoljno istaknuta, strogo primenljiva i proverljiva implementacija na početku Handoff-a**. Nastavak §0R dvostrukog GitHub upisa ima prvenstvo za redosled rada.
+
+---
 
 ## 0R. OBAVEZNI REPORT → ANALIZA → GITHUB UPIS → NOVI KORAK → DRUGI HANDOFF UPIS (17.10.2026)
 
@@ -1887,6 +1905,12 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 ```
 
 - This source/command is recorded at SECOND §0R only, not executed. Current Status top = R4 actual PASS; Current NEXT = R5 DELIVERED_NOT_RUN; RecipeRegistry r16 remains `UNKNOWN_DEPENDENCY` and `runtime_execution_allowed=false`, S31/S37 protected, Master v6 unchanged. Operator uploads original R5 TXT if it exists; next assistant session follows §0R before further work.
+
+### 8.79 S37 hidden Edge.Webview2 R5 ACTUAL premount HOLD — native exit 0, wrapper sentinel wrong (2026-10-18 FIRST §0R)
+
+- Original operator log `C:\work\logs\BlueLite_MAXPRE_WebViewEdge_26300.9711_HiddenCapability_R5.txt`, **826 B /9 CRLF** SHA256 **A0E2A0BC18FBAF6F7876F68F8B0D35C1A1CE3308A579730DB1599CD83CFF78ED**, independently byte hashed. Delivered loader SHA/AST passed; receipt R3/R4 hashes passed; S37 retained WIM SHA **A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F** passed.
+- Actual script `production/targets/BlueLite.MaxPre.WebView26300.HiddenCapability.R5.ps1` pinned SHA256 **5597E66302DE84F469A5290279D571639CBF9A236A8CB02AF0B097FAFBB33853**, commit `9baab4a5a63e4199b2f1741819068d2dd13ae460`, contained `Native` helper requiring BOTH DISM exit 0 and English completion sentence for *all* invocations including `/Get-MountedWimInfo`. Operator result `FAIL_CLOSED=BL_R5_DISM_ZERO_MOUNTS_PRE_FAILED=0` proves DISM returned numeric exit=0 and **wrapper** rejected its output shape. The actual DISM stdout was not logged; no claim the native list displayed zero mounts is supported by this original. Source aborted before owned mount dir creation and before `/Get-CapabilityInfo`, no image operation or CBS mutation. Final `HOLD_R5_HIDDEN_CAPABILITY`; last genuine native target PASS = R4. Status is not `ABSENT`, `NONREMOVABLE` or release PASS.
+- **Read-only next R5R1 scope, FIRST checkpoint (NOT YET DELIVERED):** retain original R5 log immutable and SHA-pin it, use new source/report/mount identities; classify `/Get-MountedWimInfo` by exit=0 AND exact empty-mount marker vs actual mount-row detection, **without global generic completion-sentinel**; continue exact `Edge.Webview2.Platform~~~~` native query and three FoD package links if true no-mount state; use native `/Discard`+zero mounts. This is a correction to adapter for old Windows DISM behavior, NOT reopening R1–R4 inventory. §0L permanently prioritizes Library exact prior 26200 native success (142/145/148) and relevant Sources external docs before adding scripts. Master v6 unchanged, Registry r16 runtime=false unchanged.
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
