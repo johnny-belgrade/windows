@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.23 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S38R2 actual readonly owner HOLD with RAW DISM proof, confirmed native discard; previously blocked RecipeRegistry evidence backfilled)  
+**Verzija dokumenta:** 1.5.24 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S38R2 native owner HOLD and DISM discard PASS, blocked evidence reconciled, S39 diagnostic DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1193,6 +1193,41 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - **Closeout now NATIVE VERIFIED:** script-issued owned `/Unmount-Image /Discard` **EXIT=0** (unlike original S38); post-discard RAW DISM table again `No mounted images found.`; `S38R2_NATIVE_DISCARD_CONFIRMED=True`, `OWNED_READONLY_MOUNT_RELEASED=True`; source and candidate WIM SHA unchanged=True. Terminal **`RESULT=HOLD_S38R2_9711_R4_POSTCOMMIT_READONLY`**, zero target image mutations, no release certificate.
 - **Recovered earlier GitHub-blocked evidence:** after user GitHub reconnect, `production/intelligence/BlueLite_RecipeRegistry.json` successfully backfilled **9** S36R1/S36R2/S37/S38D/S38R2 original evidence entries, commit **`1b402e919e8c70704da837836bdc3146720f1b76`**, registry revision `2026-10-18-s38r2-readonly-mount-info-empty-hold-evidence-backfill-r10`; readback bytes/sha verified. Preserved `runtime_execution_allowed=false`, no recipe promotion. Earlier Current and Handoff changes had already been saved; Master remains untouched.
 - **NEXT limited to read-only S39 mount-plane diagnosis, not delivered at first write:** fresh uniquely owned short RO mount; log complete native `/Mount-Image` stdout, immediately both `/Get-MountedWimInfo` and `/Get-MountedImageInfo` raw metadata and exact physical `Windows\System32\config\SOFTWARE`, `Program Files\WindowsApps` path status before any unmount; optionally DISM offline read-only Get-CurrentEdition only if files demonstrably present. Always issue exact /Discard of owned short mount, log exit and post-mount status; pin S38R2 two originals and source/candidate WIM SHA. No registry load/writes/removal/commit or unowned mount cleanup. Use evidence to determine whether S38R3 full independent audit can proceed; do not bypass owner gate on assumption.
+
+### 8.38 S39 — exact SHA-pinned one-step read-only mount-plane diagnostic (18.10.2026)
+
+- Source development/BlueLite_Stage1_S39_26300.9711_MountPlane_ReadOnlyDiagnostic.ps1. Pinned commit **51eba70489f6a42dadd844127e42d602a8651c73**, Git blob SHA1 d63df4a9af414e0a2d90bb10f2c9d24da3c51a02, SHA256 **D351DF87D80E23FE1ED25185122276254A1DAFA06A98F53972A311058C0B2906**; **6142 ASCII bytes/120 lines**. GitHub pinned ref and main identical; source digest self-tested. No Windows native execution result available.
+- Exactly one full PS7 Admin operator command (close TC/Explorer touching WIM directories):
+
+```powershell
+& {
+    $ErrorActionPreference = 'Stop'
+    $dest = 'C:\work\scripts\BlueLite_Stage1_S39_26300.9711_MountPlane_ReadOnlyDiagnostic.ps1'
+    $url = 'https://raw.githubusercontent.com/johnny-belgrade/windows/51eba70489f6a42dadd844127e42d602a8651c73/development/BlueLite_Stage1_S39_26300.9711_MountPlane_ReadOnlyDiagnostic.ps1'
+    $expected = 'D351DF87D80E23FE1ED25185122276254A1DAFA06A98F53972A311058C0B2906'
+    if (-not (Test-Path -LiteralPath 'C:\work\scripts' -PathType Container)) { throw 'SCRIPTS_DIR_MISSING' }
+    if (Test-Path -LiteralPath $dest) { throw 'S39_SCRIPT_ALREADY_EXISTS_NO_OVERWRITE' }
+    Invoke-WebRequest -Uri $url -OutFile $dest -ErrorAction Stop
+    $actual = (Get-FileHash -LiteralPath $dest -Algorithm SHA256).Hash
+    if ($actual -cne $expected) {
+        Remove-Item -LiteralPath $dest -Force
+        throw "S39_SOURCE_SHA256_MISMATCH=$actual"
+    }
+    Write-Host "S39_SOURCE_SHA256=PASS;$actual"
+    $tokens = $null
+    $parserErrors = $null
+    [void][System.Management.Automation.Language.Parser]::ParseFile($dest,[ref]$tokens,[ref]$parserErrors)
+    if (@($parserErrors).Count -ne 0) {
+        $parserErrors | ForEach-Object { Write-Host $_.ToString() }
+        throw 'S39_PS7_PARSER_HOLD_NO_EXECUTION'
+    }
+    Write-Host 'S39_PS7_PARSER=PASS'
+    & (Join-Path $PSHOME 'pwsh.exe') -NoProfile -ExecutionPolicy Bypass -File $dest
+}
+```
+
+- S39 pins actual S38R2 original log SHA CA875A819DF3EFBC749F614DFB5199713A37DB5DAC3C993D0D5BF857404D0E84 and JSON SHA C448B39978DF02E965237805FED1682C5C2C6D4138DA8361D789AB9CF479BB96, immutable S31 original SHA F52389FA66F8B60D56661C8786EC99409FB95447403B3C6FCBB94121EF8E340B, and S37 candidate 6,551,362,129B SHA A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F. New exact owned C:\BL39M read-only mount; logs full native RO mount stdout/exit, both DISM Get-MountedWimInfo and Get-MountedImageInfo raw stdout/exit, actual mounted root and Windows file existence before discard, exact owned read-only /Discard stdout/exit, post-discard DISM table and WIM SHA checks. No registry mutation/load/unload, AppX deletion, full R4, commit, unowned folder cleanup, or NTLite.
+- Upload one original report: C:\work\logs\BlueLite_Stage1_S39_26300.9711_MountPlane_ReadOnlyDiagnostic.txt. Expected diagnostic-only result PASS_S39_9711_MOUNT_PLANE_EVIDENCE_COLLECTED_READONLY or HOLD_S39_9711_MOUNT_PLANE_READONLY_DIAGNOSTIC. Success means evidence collection, NOT AppX/CBS/registry postcommit PASS. Master unchanged; RecipeRegistry v r10 backfilled at commit 1b402e919e8c70704da837836bdc3146720f1b76, runtime_execution_allowed=false. **S39 DELIVERED_NOT_RUN**.
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
