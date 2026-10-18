@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "registry_revision": "2026-10-18-s38r3-true-native-postcommit-verified-storage-retention-r12",
+  "registry_revision": "2026-10-18-s37-webview-r1-readonly-owner-metadata-r13",
   "status": "S37_COMMITTED_CANDIDATE_INDEPENDENT_S38R3_POSTCOMMIT_PASS_NOT_RELEASED",
   "scope": "Germanium 26300-first; 26200 historical topology references",
   "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
@@ -420,6 +420,57 @@
           "tested_builds": [],
           "evidence_refs": [
             "BlueLite_Current_Status.md Edge WebView FoD"
+          ]
+        },
+        {
+          "variant_id": "26300.9711-s37-r1-reparse-owner-metadata",
+          "source_family": "Germanium",
+          "supported_lineage": [
+            "26300.x"
+          ],
+          "topology_status": "UNKNOWN_DEPENDENCY",
+          "exact_selectors": [
+            {
+              "kind": "CBS_COMPONENT",
+              "identity": "amd64_microsoft-edge-webview_31bf3856ad364e35_10.0.26100.1_none_8fe1c356f34a19ca"
+            },
+            {
+              "kind": "CBS_COMPONENT",
+              "identity": "amd64_microsoft-edge-webview_31bf3856ad364e35_10.0.26100.9711_none_2e9083253adbaceb"
+            }
+          ],
+          "required_predicates": [
+            {
+              "kind": "SOURCE",
+              "target": "existing retained S37 WIM index1",
+              "expected": "SHA256 A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F; read-only /Discard, zero mount/hives",
+              "evidence_ref": "BlueLite_MAXPRE_WebViewEdge_26300.9711_TargetGate_R1.txt SHA256 29535E0700CCCD229D2792A8CAB6E895130BC19DE8A33CA783AF0CE9F52DCB22"
+            },
+            {
+              "kind": "WINSXS_OWNER_METADATA",
+              "target": "two exact amd64_microsoft-edge-webview owners; 19 broad-name-only neighbors",
+              "expected": "2 exact owners: 170+548=718 reparse-file metadata entries; 559182247+837089421=1396271668 B; all 21 groups total 754/754 reparse-file flags 1413442338 B metadata; zero reparse dirs traversed; no unique or reclaimable byte claim",
+              "evidence_ref": "BlueLite_MAXPRE_WebViewEdge_26300.9711_Owners_R1.csv SHA256 896ADB7044F7D77C234F1C898D4956C143289C1DEAB58D0099454570CB3417FA"
+            },
+            {
+              "kind": "UNRESOLVED",
+              "target": "exact 26300 CBS package/manifest/component owner references and protected WebView consumer dependencies",
+              "expected": "R1 name-only DISM capability Browser.InternetExplorer~~~~0.0.11.0 and zero direct package matches do not resolve Edge/WebView servicing ownership; no native remove/health/pending/physical savings proof"
+            }
+          ],
+          "expected_post_state": [
+            "R1 scoped readonly discovery and /Discard PASS; 0 post-mounts",
+            "No mutation or recipe authorization; CBS dependency target remains UNKNOWN_DEPENDENCY"
+          ],
+          "allowed_delta": [
+            "R1 original report and CSV only; no image mutation"
+          ],
+          "tested_builds": [
+            "26300.9711"
+          ],
+          "evidence_refs": [
+            "BlueLite_MAXPRE_WebViewEdge_26300.9711_TargetGate_R1.txt SHA256 29535E0700CCCD229D2792A8CAB6E895130BC19DE8A33CA783AF0CE9F52DCB22",
+            "BlueLite_MAXPRE_WebViewEdge_26300.9711_Owners_R1.csv SHA256 896ADB7044F7D77C234F1C898D4956C143289C1DEAB58D0099454570CB3417FA"
           ]
         }
       ],
