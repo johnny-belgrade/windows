@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "registry_revision": "2026-10-18-s39-webview-r6-preremove-hold-r4-state-parser-r18",
+  "registry_revision": "2026-10-18-s39-webview-r6r1-native-remove-commit-pass-r19",
   "status": "S37_COMMITTED_CANDIDATE_INDEPENDENT_S38R3_POSTCOMMIT_PASS_NOT_RELEASED",
   "scope": "Germanium 26300-first; 26200 historical topology references",
   "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
@@ -428,7 +428,7 @@
           "supported_lineage": [
             "26300.x"
           ],
-          "topology_status": "NATIVE_READONLY_IDENTITY_VERIFIED",
+          "topology_status": "NATIVE_DISPOSABLE_COMMIT_PASS_POSTCOMMIT_AUDIT_PENDING",
           "exact_selectors": [
             {
               "kind": "CBS_COMPONENT",
@@ -542,6 +542,18 @@
               "target": "R6 exact owned disposable native removal on S39 with first parent probe before change",
               "expected": "R6 original: clone SHA matched source, RW mounted, installed hidden capability and exact three FoD native package preconditions PASS; first protected parent 26100.1150 native Staged versus historical R4 DismState Disabled triggers pre-remove wrapper HOLD; native Remove-Capability was NOT invoked; /Discard and post-zero mounts PASS. Reuse only SHA-verified owned clone; no physical savings or release proof.",
               "evidence_ref": "BlueLite_MAXPRE_WebViewEdge_26300.9711_NativeRemoval_R6.txt SHA256 722C6F6DDE1E5AE290385D1EA0D5DB080E89F60A733D4D3B5436EFAEC712C776"
+            },
+            {
+              "kind": "NATIVE_DISPOSABLE_REMOVAL_COMMITTED",
+              "target": "S39 owned clone 26300.9711 exact Edge.Webview2.Platform~~~~ native DISM /Remove-Capability on 2026-10-18",
+              "expected": "Native /Remove-Capability exit0; capability Not Present; exact 3 FoD packages negative 0x800f0805; all nine protected package states unchanged (5 Installed 4 Staged); pending0+pending.xml false; pre CheckHealth clean, post CheckHealth+ScanHealth clean; own WIM /Commit and post-zero mounts PASS; S37 source hash intact. POSTCOMMIT separate readonly certification NOT DONE.",
+              "evidence_ref": "BlueLite_MAXPRE_WebViewEdge_26300.9711_NativeRemoval_R6R1.txt SHA256 673E04082074A027BFE9C597737E0D28070B1DA7D957534A9939B56DC199D72D"
+            },
+            {
+              "kind": "WIM_CONTAINER_DELTA_METADATA_ONLY",
+              "target": "S39 disposable WIM after native WebView capability removal + commit",
+              "expected": "PRE 6551362129B POST 6595075169B (delta +43713040B/+41.688MiB) and POST_SHA256 32AD747CD86052BDF6226A25B92A7B051E9946B3D43A591D1EFFD99B265AEBED; WIM grow alone neither proves nor disproves reclaimed physical payload; no ISO/installed footprint measurement.",
+              "evidence_ref": "BlueLite_MAXPRE_WebViewEdge_26300.9711_NativeRemoval_R6R1.txt SHA256 673E04082074A027BFE9C597737E0D28070B1DA7D957534A9939B56DC199D72D"
             }
           ],
           "expected_post_state": [
@@ -564,7 +576,8 @@
             "BlueLite_MAXPRE_WebViewEdge_26300.9711_CBSParentGate_R4.txt SHA256 E0C661061D64E3C85258CDE34B69D42A5A29D9C4F61CAFA4F910FBC4BFF44848",
             "BlueLite_MAXPRE_WebViewEdge_26300.9711_CBSParents_R4.csv SHA256 CBA75A6D4778CC34FD1C19A6A256C52B69DC3C059F040E4DA9A7FBEEAF80650F",
             "BlueLite_MAXPRE_WebViewEdge_26300.9711_HiddenCapability_R5R1.txt SHA256 C9E371715EC961FA8FC89D2CBFD96D6E908FDB705931446ADAB9BB45248BA49E",
-            "BlueLite_MAXPRE_WebViewEdge_26300.9711_NativeRemoval_R6.txt SHA256 722C6F6DDE1E5AE290385D1EA0D5DB080E89F60A733D4D3B5436EFAEC712C776"
+            "BlueLite_MAXPRE_WebViewEdge_26300.9711_NativeRemoval_R6.txt SHA256 722C6F6DDE1E5AE290385D1EA0D5DB080E89F60A733D4D3B5436EFAEC712C776",
+            "BlueLite_MAXPRE_WebViewEdge_26300.9711_NativeRemoval_R6R1.txt SHA256 673E04082074A027BFE9C597737E0D28070B1DA7D957534A9939B56DC199D72D"
           ]
         }
       ],
