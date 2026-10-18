@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.49 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (SourceBound R1 ACTUAL PASS; MAX_PRE transaction module+negative tests DELIVERED_NOT_RUN)  
+**Verzija dokumenta:** 1.5.50 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (Transaction Gate ACTUAL PASS; native owned-image preflight next)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1643,6 +1643,13 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 ```
 
 - Upload operator originals **`C:\work\logs\BlueLite_MAXPRE_TransactionGate_26300.9711.txt`** and **`C:\work\logs\BlueLite_MAXPRE_TransactionGate_26300.9711.json`** if generated; expected software-only `PASS_MAXPRE_TRANSACTION_GATE_STATIC_NEGATIVE_TESTS_NO_IMAGE_TOUCH`. No new disposable, mount, WIM copy, UUP work or mutation. Native owner-bound MAX_PRE mutation dispatcher is the next production feature **only after actual test report**. Master v6.0.0 and RecipeRegistry r12 unchanged. **DELIVERED_NOT_RUN.**
+
+
+### 8.63 MAX_PRE Transaction Gate — operator ACTUAL PASS (2026-10-18)
+
+- 11:08:08 original TXT `BlueLite_MAXPRE_TransactionGate_26300.9711.txt`, 2226 B, SHA256 `163C77FA92D1D4C357AE5151BF3EE0595D4DA6E667848D175834B7AC20301E60`; original JSON 3331 B SHA256 `59C3EDCE3CD99E57CC3780BD6AAED2AAAC671A087EA3F1CF9F2726329ED94399`. `PASS_MAXPRE_TRANSACTION_GATE_STATIC_NEGATIVE_TESTS_NO_IMAGE_TOUCH`, 6/6 blocked recipes, 6/6 negative cases (run identity, authorization, AutoExecute, default and forced mutation, case-insensitive WIM alias). No WIM access, DISM, mounts, native servicing or mutation.
+- The software transaction state is `PREFLIGHT_ONLY_MUTATION_BLOCKED`, `transaction_authorized=false`; this is not MAX_PRE runtime/debloat or release certification. Do not overwrite R1 evidence, alter RecipeRegistry r12, or repeat S42–S43 housekeeping.
+- Next: build a native read-only owned-image runtime preflight, then certified transaction implementation with explicit operator authorization and disposal lifecycle. At this FIRST checkpoint **next code NOT DELIVERED**. Master v6.0.0 unchanged.
 
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
