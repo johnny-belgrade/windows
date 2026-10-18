@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.66 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (R5 premount native exit0 wrapper HOLD; mandatory Library regression/external-source policy §0L)  
+**Verzija dokumenta:** 1.5.67 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (R5 original premount HOLD; R5R1 wrapper fix DELIVERED_NOT_RUN; §0L Library regression policy)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1911,6 +1911,57 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - Original operator log `C:\work\logs\BlueLite_MAXPRE_WebViewEdge_26300.9711_HiddenCapability_R5.txt`, **826 B /9 CRLF** SHA256 **A0E2A0BC18FBAF6F7876F68F8B0D35C1A1CE3308A579730DB1599CD83CFF78ED**, independently byte hashed. Delivered loader SHA/AST passed; receipt R3/R4 hashes passed; S37 retained WIM SHA **A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F** passed.
 - Actual script `production/targets/BlueLite.MaxPre.WebView26300.HiddenCapability.R5.ps1` pinned SHA256 **5597E66302DE84F469A5290279D571639CBF9A236A8CB02AF0B097FAFBB33853**, commit `9baab4a5a63e4199b2f1741819068d2dd13ae460`, contained `Native` helper requiring BOTH DISM exit 0 and English completion sentence for *all* invocations including `/Get-MountedWimInfo`. Operator result `FAIL_CLOSED=BL_R5_DISM_ZERO_MOUNTS_PRE_FAILED=0` proves DISM returned numeric exit=0 and **wrapper** rejected its output shape. The actual DISM stdout was not logged; no claim the native list displayed zero mounts is supported by this original. Source aborted before owned mount dir creation and before `/Get-CapabilityInfo`, no image operation or CBS mutation. Final `HOLD_R5_HIDDEN_CAPABILITY`; last genuine native target PASS = R4. Status is not `ABSENT`, `NONREMOVABLE` or release PASS.
 - **Read-only next R5R1 scope, FIRST checkpoint (NOT YET DELIVERED):** retain original R5 log immutable and SHA-pin it, use new source/report/mount identities; classify `/Get-MountedWimInfo` by exit=0 AND exact empty-mount marker vs actual mount-row detection, **without global generic completion-sentinel**; continue exact `Edge.Webview2.Platform~~~~` native query and three FoD package links if true no-mount state; use native `/Discard`+zero mounts. This is a correction to adapter for old Windows DISM behavior, NOT reopening R1–R4 inventory. §0L permanently prioritizes Library exact prior 26200 native success (142/145/148) and relevant Sources external docs before adding scripts. Master v6 unchanged, Registry r16 runtime=false unchanged.
+
+### 8.80 R5R1 corrected source and exactly one original-log-bounded PS7 Admin run — DELIVERED_NOT_RUN (2026-10-18 SECOND §0R)
+
+- **Historical and actual evidence:** 26200 original Library 142/145/148 verified hidden `Edge.Webview2.Platform~~~~` and later successful native capability removal on disposable; R5 original on retained 26300 S37 **actual HOLD before mount** original **826B SHA A0E2A0BC18FBAF6F7876F68F8B0D35C1A1CE3308A579730DB1599CD83CFF78ED**, native metadata command exit0, generic wrapper sentinel missing. Exact raw stdout NOT recorded, so no claim of known zero-mount output or actual capability. Last positive 26300 native topology = R4.
+- Corrected immutable reviewed source `production/targets/BlueLite.MaxPre.WebView26300.HiddenCapability.R5R1.ps1`, FINAL commit **841276114d8c6a250b14a10ff495a1305e0f1ecd**, Git blob **db40d09576f6c64dc3078ac48f51455fe789828d**, whole SHA256 **F38EADA5BA5D7BEBDF9D795DA9140F68D9FF772CA01D2D88220565EF1C501439**, **9,461 ASCII B, 179 newline-split lines**, independently main fetch exact PASS and original R5 source SHA cross-check PASS. Early unpublished-for-operator commit `a54fa9279b6699051bba47d1800e45208c935a31` contained a string-substitution build issue and was superseded by corrected source; **DO NOT USE old commit**. Changes vs R5: new nonreserved `$dismArguments` param instead of PowerShell automatic `$args`; mount-table `exit=0 + exact No mounted images found marker exactly once + no Mount Dir rows` check independent of generic success English text; log mount classified stage and raw stdout on ambiguity. Native actual image mount/capability/package calls still enforce correct exit, no error and expected completion sentinel. The automatic-variable collision is a credible code-level cause but original stdout absent, so do not claim a uniquely proven precise root cause; both defects are corrected by reviewed source. Official PowerShell docs: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.6 and Microsoft DISM `Get-MountedImageInfo`: https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/dism-image-management-command-line-options-s14?view=windows-11 ; native exact capability docs: https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/dism-capabilities-package-servicing-command-line-options . Relevant GitHub `BlueLite_Sources.md` plus Library 142/145/148/318 evidence reused per §0L.
+- Loader preflight immutable source 9461B/SHA+PS7 AST, Admin, local no-overwrite, pins original R3 CBSRegistration CSV 1405B, original R4 TXT 4897B/CSV 2565B, original R5 HOLD TXT 826B, protected S37 WIM 6551362129B/SHA A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F, original 8 CBS +9 external parents. Native zero-mount alias gate before any mount; only owned readonly mount `C:\work\MWV26300R5R1`, `/Get-CapabilityInfo /CapabilityName:Edge.Webview2.Platform~~~~` and exact 3 FoD native package capability links, then `/Discard`, native zero mounts, delete empty owned folder. Source does NOT clone or modify WIM, does not load offline hive or remove any package. New original report ONLY `C:\work\logs\BlueLite_MAXPRE_WebViewEdge_26300.9711_HiddenCapability_R5R1.txt`. Expected possible `PASS_S37_R5R1_EXACT_HIDDEN_EDGE_WEBVIEW_CAPABILITY_NATIVE_READONLY` **NOT EXECUTED**. If stage fails, analyze exact fail evidence and do not proclaim hidden capability absence.
+- **Exactly ONE operator PS7 Admin copy/paste command**; close Total Commander and Explorer mount-directory windows before execution:
+
+```powershell
+& {
+ $ErrorActionPreference='Stop'
+ if($PSVersionTable.PSVersion.Major -ne 7){throw 'BL_PS7_REQUIRED'}
+ $admin=[Security.Principal.WindowsPrincipal]::new([Security.Principal.WindowsIdentity]::GetCurrent())
+ if(-not $admin.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)){throw 'BL_ADMIN_REQUIRED'}
+ $sha='F38EADA5BA5D7BEBDF9D795DA9140F68D9FF772CA01D2D88220565EF1C501439'
+ $commit='841276114d8c6a250b14a10ff495a1305e0f1ecd'
+ $name='BlueLite.MaxPre.WebView26300.HiddenCapability.R5R1.ps1'
+ $folder='C:\work\scripts'
+ $path=Join-Path $folder $name
+ $url="https://raw.githubusercontent.com/johnny-belgrade/windows/$commit/production/targets/$name"
+ if(-not(Test-Path -LiteralPath $folder -PathType Container)){throw 'BL_SCRIPTS_DIR_MISSING'}
+ if(-not(Test-Path -LiteralPath $path)){
+  $temp=$path+'.download.'+[guid]::NewGuid().ToString('N')
+  try {
+   Invoke-WebRequest -Uri $url -OutFile $temp -ErrorAction Stop
+   if((Get-Item -LiteralPath $temp).Length -ne 9461 -or
+      (Get-FileHash -LiteralPath $temp -Algorithm SHA256).Hash -cne $sha){
+    throw 'BL_R5R1_REMOTE_SOURCE_PIN_MISMATCH'
+   }
+   Move-Item -LiteralPath $temp -Destination $path -ErrorAction Stop
+  }finally{
+   if(Test-Path -LiteralPath $temp){Remove-Item -LiteralPath $temp -Force}
+  }
+ }
+ if((Get-Item -LiteralPath $path).Length -ne 9461 -or
+    (Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash -cne $sha){
+  throw 'BL_R5R1_LOCAL_SOURCE_PIN_MISMATCH'
+ }
+ $tokens=$null;$errors=$null
+ $null=[System.Management.Automation.Language.Parser]::ParseFile(
+  $path,[ref]$tokens,[ref]$errors
+ )
+ if(@($errors).Count -ne 0){throw ('BL_R5R1_PS7_AST_FAILED='+($errors -join '; '))}
+ Write-Host ('R5R1_SOURCE_SHA256=PASS;'+$sha)
+ Write-Host 'R5R1_PS7_AST=PASS'
+ Write-Host 'R5R1_TARGET=READONLY_26300_HIDDEN_WEBVIEW_EXACT_CAPABILITY'
+ & $path
+}
+```
+
+- **Final state**: R5 original actual HOLD; R5R1 DELIVERED_NOT_RUN; Registry r16 runtime=false; Master v6 untouched; protected S31/S37 unchanged; §0L regression policy permanently required. Following operator report → §0R mandatory first/second GitHub writes and only THEN next operator step.
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
