@@ -106,9 +106,13 @@ function Invoke-BlueLiteOfflineDism {
   [switch]$RecipeRuntimeAllowed
  )
  $contract=Test-BlueLiteDismCommand -Arguments $Arguments
- if($contract.IsMutation -and
-   (-not $OperatorAuthorizedMutation -or -not $RecipeRuntimeAllowed)){
-  throw 'BL_MUTATION_NOT_AUTHORIZED_BY_OPERATOR_AND_RECIPE'
+ if($contract.IsMutation){
+  if(-not $OperatorAuthorizedMutation -or -not $RecipeRuntimeAllowed){
+   throw 'BL_MUTATION_NOT_AUTHORIZED_BY_OPERATOR_AND_RECIPE'
+  }
+  # The production dispatcher/transaction/evidence module is not yet certified.
+  # A caller-provided switch alone cannot authorize removal.
+  throw 'BL_MUTATION_TRANSACTION_ENGINE_NOT_YET_CERTIFIED'
  }
  $mount=Assert-BlueLiteOwnedPath -Path $MountDir -OwnerRoot $OwnerRoot -MustExist -Directory
  $dism=Join-Path $env:SystemRoot 'System32\dism.exe'
