@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.18 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S36-R2 actual lifecycle 10-to-9 PASS; exact S37 full disposable four-root candidate source DELIVERED_NOT_RUN)  
+**Verzija dokumenta:** 1.5.19 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S38 original operator READONLY HOLD at mount-owner check; S38-DIAG pending)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -1109,6 +1109,14 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 ```
 - Requested operator originals: `C:\work\logs\BlueLite_Stage1_S38_26300.9711_AppInstaller_PostCommitReadOnly.txt`; `C:\work\logs\BlueLite_Stage1_S38_26300.9711_AppInstaller_PostCommitSnapshot.json`; optional `C:\work\logs\BlueLite_Stage1_S38_26300.9711_AppInstaller_AppRepositoryResiduals.csv` if emitted. Only terminal `PASS_S38_9711_APPINSTALLER_INDEPENDENT_POSTCOMMIT_READONLY` signals scope-limited audit PASS. Any failure `HOLD_S38_9711_R4_POSTCOMMIT_READONLY` should be reviewed without modifying WIM.
 - **Endpoint:** S37 original operator FULL R4 *committed disposable candidate* PASS with original immutable S31 WIM unchanged; S38 **DELIVERED_NOT_RUN**. RecipeRegistry auto-execution must remain disabled. Legacy cleanup deferred and Master unchanged.
+
+### 8.33 S38 actual operator HOLD before postcommit read-only checks (18.10.2026, 07:38–07:39)
+
+- **Original report:** BlueLite_Stage1_S38_26300.9711_AppInstaller_PostCommitReadOnly.txt, 997 bytes / 18 CRLF lines, SHA256 **72FDD4417C3C87C634A1CF2E83C2C28B70134061FFD729FCCF37CFB236034C61**. **Original JSON:** BlueLite_Stage1_S38_26300.9711_AppInstaller_PostCommitSnapshot.json, 1311 bytes / 24 lines, SHA256 **3115F5FAB64F9232C2F9CD3D8E8E266D88442440D0F65712019F95B6F297B072**. JSON parsed: ReadonlyAuditSucceeded=false, FinalReleaseCertificateGranted=false, InspectedOfflineRegistry=[], AppRepositoryFilenameMatches=[]. Empty arrays mean **NOT SCANNED**, not zero residuals.
+- **Preflight PASS:** pinned S37 original log+JSON, S31 source WIM SHA and S37 committed candidate WIM SHA A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F (6551362129 B); initial DISM readonly mount /ReadOnly exit0 to C:\BL38M. Immediately next 5-field owner gate failed with FAIL_CLOSED=S38_READONLY_MOUNT_OWNER_NOT_PROVEN. No AppX/CBS/registry/AppRepository inspection executed.
+- **Critical closeout nuance:** reported OWNED_READONLY_MOUNT_RELEASED=True but there was **no logged native DISM /Discard /Unmount exit**. Source S38 owned-mount check inferred release by no matching Mount Dir in DISM /Get-MountedWimInfo, the same table whose owner parsing had just failed. Raw DISM table and owner field values were not logged. Cannot claim unmount occurred, or infer why the owner gate failed. Source+candidate final SHA unchanged=True; terminal RESULT=HOLD_S38_9711_R4_POSTCOMMIT_READONLY.
+- **Tier:** S37 COMMITTED CANDIDATE PASS remains, but S38 independent postcommit verification is **NOT TESTED**. No release, no new mutation, no source/candidate integrity drift in observed hashes. Need first resolve mount metadata/stranded mount handle dependency.
+- **ONE NEXT (FIRST documentation write; code not delivered yet):** strictly readonly S38 diagnostic collecting unmodified raw DISM /Get-MountedWimInfo, parsed Mount Dir/Image File/Index/RW/Status, existence/access of C:\BL38M and main target dir, read-only HKLM HiveList output limited to BlueLite temporary aliases. Pin S38 original main/JSON and S37 candidate+S31 SHA. **NO** mount, unmount, reg unload/load, cleanup, deletion or changes. Store exact code/hash and operator command in §8.34 with second Handoff write, S38-DIAG DELIVERED_NOT_RUN. Re-run postcommit S38 only after diagnostic. Master unchanged.
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
