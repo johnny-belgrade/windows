@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.70 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (R6 ACTUAL pre-remove HOLD due R4 feature-vs-package State parser; R6R1 owned clone reuse planned)  
+**Verzija dokumenta:** 1.5.71 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (R6 pre-remove ACTUAL HOLD; strict CBS package-state R6R1 on existing S39 disposable DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -2025,6 +2025,57 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - Original R6 operator TXT **1525 bytes, 21 CRLF lines**, SHA256 **722C6F6DDE1E5AE290385D1EA0D5DB080E89F60A733D4D3B5436EFAEC712C776**, independently byte hashed. R6 source SHA **6B2A70F87760FB374DA23A4B23615BDDFA9509F453DDB42DAC63183BC588B26E**, commit `cea390d037eeaed819788ae42eb0ccd8e780ab36`, operator SHA/AST loader PASS. Protected S37 SHA **A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F**, R3/R4/R5R1 pins PASS. S39 owned clone was created+hashed equal source, RW mounted; native capability Installed and all 3 expected FoD package native states queried. First R4 external parent Desktop-Required ClientOnly removable 26100.1150 native package `State: Staged`; R4 CSV `DismState=Disabled`. R6 exact `BL_R6_PROTECTED_PARENT_STATE_DRIFT_PRE` triggered. No removal invoked, no commit. Native disposable mount /Discard PASS, post-zero mounts and empty mountdir removed PASS. Existing S39 owned clone retained but SHA NOT retested after discard; new script must validate hash/size and exact location. Last actual WebView native removal status **NOT TESTED**, do not treat this HOLD as package being removable/nonremovable.
 - Root cause demonstrated directly in original R4 source `production/targets/BlueLite.MaxPre.WebViewEdge26300.CBSParents.R4.ps1`: during each `DISM /Get-PackageInfo` it iterates every line matching `State :` and **overwrites** `$nativeState` with final match, which can be nested Windows optional feature State `Disabled/Enabled` rather than first package State `Staged/Installed`. R4 exact CBS registry data were separately captured: old branch CBS 0x40, current CBS 0x70. 4 Desktop-Required feature-state overlays are not valid package-state predicates; 1 known actual R6 package-state `Staged` matches old CBS 0x40. Corrected all-nine parent gate MUST derive strict expectation `0x40=>Staged`, `0x70=>Installed` from original SHA-pinned R4 CSV and compare to actual native first package state; log original reported `DismState` as feature overlay without modifying historical logs. No blanket `Disabled` equals `Staged` substitution. Microsoft Learn `Take Inventory of an Image or Component Using DISM` explicitly documents these separate State fields: https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/take-inventory-of-an-image-or-component-using-dism . Native removal uses official Microsoft `/Remove-Capability`: https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/dism-capabilities-package-servicing-command-line-options . 26200 original Library 142/145/148 native WebView hidden FoD route remains candidate.
 - **NEXT FIRST §0R**: one named versioned R6R1 source and PS7 Admin loader, NOT YET DELIVERED. Reuse owned S39 clone *only after exact 6551362129B SHA matches protected S37 source*, empty owned mount dir and zero native mounts/hives. No duplicate 6.55GB clone. PRE/POST verify nine parent true package State using CBS-derived expectations, FoD capability exact, pending, health, and native removal only after preflight; fail closed/owned /Discard on error; log source hash and observable after state. No change to Master v6/ protected S31/S37, Registry r18 removal runtime=false.
+
+### 8.84 R6R1 reused S39 clone, correct strict CBS-parent **package** State, native removal only on owned disposable — DELIVERED_NOT_RUN (2026-10-18 SECOND §0R)
+
+- Last ACTUAL R6 pre-mutation HOLD: original 1525B/21 CRLF, SHA **722C6F6DDE1E5AE290385D1EA0D5DB080E89F60A733D4D3B5436EFAEC712C776**; S37 and original R3/R4/R5R1 pins PASS, existing S39 clone SHA equals S37 BEFORE old RW mount, exact three FoD native states PASS; first Desktop-Required historical parent package actually Staged vs original R4 last-feature-state Disabled; native `/Remove-Capability` NEVER executed. Owned S39 `/Discard` PASS, post-zero mounts and empty mountdir deletion PASS; retained clone after discard requires a new SHA pin before reuse. R4 source R4 `foreach State` last-match overwrite is confirmed, R4 `CBSCurrentState` remains independently recorded as exact registry `0x40`/ `0x70`. Official Microsoft distinction feature Disabled/Enabled versus package Staged/Installed: https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/take-inventory-of-an-image-or-component-using-dism ; native `/Remove-Capability`: https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/dism-capabilities-package-servicing-command-line-options . Historic original Library 142/145/148 native method remains relevant under §0L.
+- Immutable reviewed R6R1 source `production/targets/BlueLite.MaxPre.WebView26300.NativeRemove.R6R1.ps1`, commit **6a111e74052852938409f04a25cd3b594fe5f10f**, Git blob **6fc9fe25d47277e4d9acfec2edcc06b88763c2eb**, source SHA256 **4F26ABE83EF5969C6A3E721FFD42871A707FD1CA065D205E50B7FC510EEEDDC3**, 14226 ASCII bytes/292 newline-split rows, independent exact GitHub readback PASS; SHA algorithm crosscheck on published R6 source PASS. PS7 Admin AST and source hash checked by operator loader; no assistant local execution. Source pins original R3, R4, R5R1 and original R6 HOLD TXT byte/hash; full SHA verifies protected S37 and **retained S39 disposable**, exact byte length and no-reparse owned single-WIM directory; reject if original S39 clone was deleted or changed. Only owned S39 WIM is targeted RW, no second 6.55GB clone, no live-host changes, no protected parent modification. Pre zero mounts/hives, >=8GiB free, exact FoD capability Installed and FoD three package states, native 9 parents `CBS 0x40=>Staged/0x70=>Installed` (R4 last feature-state overridden value logged but **not** treated as package); pre pending=0 CheckHealth clean. One native `/Remove-Capability /CapabilityName:Edge.Webview2.Platform~~~~`. After: capability Not Present, 3 exact FoD nonresolve `0x800f0805`, nine protected parent native package states unchanged, pending=0, CheckHealth+ScanHealth clean. All gates PASS -> native owned `/Commit`, after zero mounts, hash protected S37 and preserved owned clone hash/bytes; any failure -> HOLD and /Discard attempt. Postcommit independent native RO, real unique savings and VM/release remain pending; no blanket R6R1 production promotion.
+- Original expected `C:\work\logs\BlueLite_MAXPRE_WebViewEdge_26300.9711_NativeRemoval_R6R1.txt`; expected scoped `PASS_S39_R6R1_NATIVE_WEBVIEW_DISPOSABLE_PRECOMMIT_POSTSTATE_AND_COMMIT_ONLY` **DELIVERED_NOT_RUN**. Registry r18 `runtime_execution_allowed=false`; Master v6 and protected S31/S37 unchanged. Exactly ONE PS7 Admin operator command below; close Explorer/Total Commander mount windows before run:
+
+```powershell
+& {
+ $ErrorActionPreference='Stop'
+ if($PSVersionTable.PSVersion.Major -ne 7){throw 'BL_PS7_REQUIRED'}
+ $principal=[Security.Principal.WindowsPrincipal]::new([Security.Principal.WindowsIdentity]::GetCurrent())
+ if(-not $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)){throw 'BL_ADMIN_REQUIRED'}
+ $sha='4F26ABE83EF5969C6A3E721FFD42871A707FD1CA065D205E50B7FC510EEEDDC3'
+ $commit='6a111e74052852938409f04a25cd3b594fe5f10f'
+ $name='BlueLite.MaxPre.WebView26300.NativeRemove.R6R1.ps1'
+ $dir='C:\work\scripts'
+ $file=Join-Path $dir $name
+ $url="https://raw.githubusercontent.com/johnny-belgrade/windows/$commit/production/targets/$name"
+ if(-not(Test-Path -LiteralPath $dir -PathType Container)){throw 'BL_PS7_SCRIPTS_DIRECTORY_MISSING'}
+ if(-not(Test-Path -LiteralPath $file)){
+  $temp=$file+'.download.'+[guid]::NewGuid().ToString('N')
+  try{
+   Invoke-WebRequest -Uri $url -OutFile $temp -ErrorAction Stop
+   if((Get-Item -LiteralPath $temp).Length -ne 14226 -or
+     (Get-FileHash -LiteralPath $temp -Algorithm SHA256).Hash -cne $sha){
+    throw 'BL_R6R1_DOWNLOADED_SOURCE_PIN_MISMATCH'
+   }
+   Move-Item -LiteralPath $temp -Destination $file -ErrorAction Stop
+  }finally{
+   if(Test-Path -LiteralPath $temp){Remove-Item -LiteralPath $temp -Force}
+  }
+ }
+ if((Get-Item -LiteralPath $file).Length -ne 14226 -or
+   (Get-FileHash -LiteralPath $file -Algorithm SHA256).Hash -cne $sha){
+  throw 'BL_R6R1_LOCAL_SOURCE_PIN_MISMATCH'
+ }
+ $tokens=$null
+ $parseErrors=$null
+ $null=[System.Management.Automation.Language.Parser]::ParseFile(
+  $file,[ref]$tokens,[ref]$parseErrors
+ )
+ if(@($parseErrors).Count -ne 0){
+  throw ('BL_R6R1_PS7_AST_PARSE_FAILED='+($parseErrors -join '; '))
+ }
+ Write-Host ('R6R1_SOURCE_SHA256=PASS;'+$sha)
+ Write-Host 'R6R1_PS7_AST=PASS'
+ Write-Host 'R6R1_MODE=REUSE_S39_OWNED_DISPOSABLE_NATIVE_WEBVIEW_REMOVE'
+ & $file
+}
+```
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
