@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.13 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S36-R1 actual marker default-value HOLD before target deletions; S36-R2 exact marker fix pending)  
+**Verzija dokumenta:** 1.5.14 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (S36-R1 native default-marker HOLD; exact SHA-pinned S36-R2 disposable lifecycle script DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -989,6 +989,38 @@ Common base **Defender ON** dok ne prođe certificirana zajednička baza; nakon 
 - **Exact subsequent fail-closed event:** `NATIVE_MARKER_ADD_EXIT=0`; `REG_CREATED_MARKER;EXISTS=True;CHILDREN=0;VALUES=1`, specifically one unnamed default value with name `""` in JSON; `FAIL_CLOSED=NEW_MARKER_NOT_EMPTY_REGISTRY_API`. **No AppInstaller target key was deleted** because code halted before 5-key deletion loop. The default-value type and data are **NOT** included in uploaded S36-R1 snapshot, so the newly inserted marker must be inspected and normalized under strictly scoped guard on a new disposable clone; no assumption that `GetValueNames()=[""]` means genuinely empty leaf. Exact historical `BlueLite_R126_R2_R113_R4_AppInstaller_Transactional.ps1` recognizes accidental empty/default `REG_SZ` created by `reg add` and invokes `reg delete <marker> /ve /f`; R133 registry API validator requires `GetSubKeyNames().Count=0, GetValueNames().Count=0`, including default values. Use this evidence to design fail-closed S36-R2.
 - **Clean actual rollback:** `NATIVE_EMERGENCY_UNLOAD_EXIT=0`; `NATIVE_DISCARD_EXIT=0`; `OWNED_RW_MOUNT_RELEASED=True`; evidence JSON saved; `DISPOSABLE_CLONE_WIM_DELETED=True`; `S31_ORIGINAL_SHA256_UNCHANGED=True`. Literal terminal `RESULT=HOLD_S36R1_9711_APPINSTALLER_DISPOSABLE_LIFECYCLE`; `FULL_R4_PHYSICAL_REMOVAL=NOT_RUN`; `ORIGINAL_WIM_MUTATION=NOT_RUN`; `R133_DIRECT_PRODUCTION_AUTHORITY=NOT_GRANTED`. No retained half-state, no original WIM edits, no native 10→9 post transition tested.
 - **Next one step S36-R2 (source NOT_DELIVERED at first Handoff update):** copy source exact S36-R1 under NEW source/short mount/clone/log output identities; pin S36-R1 original main+JSON as above (and all prior proof/source SHA); after `reg add marker /f`, use read-only .NET Registry API to assert ZERO child keys and EITHER zero value names OR exactly one `""` default value proven `REG_SZ` with empty payload. If only valid accidental default, issue targeted offline `reg.exe delete <marker> /ve /f`, then read via Registry API again and require truly EMPTY leaf (`Children=0; Values=0`) before ANY target 5-key deletes; fail closed otherwise. Continue disposable 10→9 expected AppX, provider retention, physical payload retained, CBS health/pending0, ALWAYS `/Discard`, delete clone and verify protected S31 SHA. DO NOT transplant 26200 six-child variant, do not touch live host HKLM or original WIM. Mutation remains confined to owned disposable clone; no physical remove/production authority.
+
+### 8.28 S36-R2 — EXACT ONE OPERATOR COMMAND SHA-pinned, DELIVERED_NOT_RUN (2026-10-18)
+
+**Current endpoint:** S31 committed native PASS; S32 physical inventory PASS; S33 740/740 ownership PASS; S34 historical six-child predicate HOLD for 26300; S35 provider/manifest discovery PASS; S36 joined provider path source bug FAIL-CLOSED before mutation; S36-R1 corrected 4 provider keys PASS but new Deprovisioned marker has unnamed default value and Registry API guard HOLD before 5 target deletes; **S36-R2 = DELIVERED_NOT_RUN**. No native S36-R2 logs yet, and no production R133 authorization.
+
+- **S36-R2 independently refetched from immutable GitHub commit `0e9ef47384025aa31e22be7a506572e905f481fd`** at `development/BlueLite_Stage1_S36R2_26300.9711_AppInstaller_LifecycleDisposable.ps1`, Git blob SHA1 **`1958b0316192bbc7fb2384e08f5d710c2c8ae278`**, SHA256 **`70F11C9AC3A63F3236751E7FBA3927BDF12CD99F3913773A2D5EE44360B01507`**, 18,704 ASCII bytes, 361 lines. Source contents same from `main` and immutable commit. SHA256 independently calculated with self-tested ASCII SHA256 implementation. This does not claim the script was parser-checked or executed natively on Windows.
+- **ONE EXACT PS7 Admin operator command (close Total Commander/Explorer browsing `C:\work\E2E` or `C:\BL36R2M`):**
+
+```powershell
+& {
+    $ErrorActionPreference = 'Stop'
+    $dest = 'C:\work\scripts\BlueLite_Stage1_S36R2_26300.9711_AppInstaller_LifecycleDisposable.ps1'
+    $url = 'https://raw.githubusercontent.com/johnny-belgrade/windows/0e9ef47384025aa31e22be7a506572e905f481fd/development/BlueLite_Stage1_S36R2_26300.9711_AppInstaller_LifecycleDisposable.ps1'
+    $expected = '70F11C9AC3A63F3236751E7FBA3927BDF12CD99F3913773A2D5EE44360B01507'
+    if (-not (Test-Path -LiteralPath 'C:\work\scripts' -PathType Container)) { throw 'BLUELITE_SCRIPTS_DIR_MISSING' }
+    if (Test-Path -LiteralPath $dest) { throw 'S36R2_LOCAL_SCRIPT_EXISTS_NO_OVERWRITE' }
+    Invoke-WebRequest -Uri $url -OutFile $dest -ErrorAction Stop
+    $got = (Get-FileHash -LiteralPath $dest -Algorithm SHA256).Hash
+    if ($got -cne $expected) {
+        Remove-Item -LiteralPath $dest -Force
+        throw "S36R2_PINNED_SOURCE_SHA_MISMATCH=$got"
+    }
+    Write-Host "S36R2_SOURCE_SHA256=PASS;$got"
+    & (Join-Path $PSHOME 'pwsh.exe') -NoProfile -ExecutionPolicy Bypass -File $dest
+}
+```
+
+- **New replay scope:** PIN S36-R1 original log SHA `2DCCF677E2B94E0D5952BE4FB15E517310679B28510BBCA1D37E42ADFAB8F3FF` and original JSON SHA `3D765C7345A7E8EAAE7C50D4208EE26512C7B6EFFDA02D67E561F4FB8C666E18`; require previous R1 `HOLD`, corrected four-provider PASS, unload/discard/clone-delete/original-WIM unchanged markers. Also pin S36 original reports, S35/S34/S33 evidence and exact S31 WIM SHA. New distinct owned `C:\work\E2E\BlueLite_Stage1_S36R2_26300.9711_DisposableLifecycle\install.disposable.wim`, RW short mount `C:\BL36R2M`, unique HKLM offline SOFTWARE alias pointing only at mounted cloned WIM. C: free ≥12 GiB. Neither existing log/WIM overwrite nor host OS manipulation.
+- **Narrow R2 source change:** after `reg add <exact Deprovisioned family> /f`, read .NET Registry API topology. If no values and zero children already, accept; if **exactly one unnamed default** `""` and zero children, reopen key READONLY, require `RegistryValueKind.String` (`REG_SZ`) and actual value of empty string; only then `reg.exe delete <exact offline hive marker> /ve /f` to remove that default value. Re-read and require `Exists=true`, `Children.Count=0`, `Values.Count=0`; evidence `R133_STYLE_EMPTY_MARKER_API=PASS_ZERO_CHILDREN_ZERO_VALUES`. Any type/data difference, named value, child, failed deletion, or remaining default gives HOLD before five target deletes. Never delete entire marker or edit shared providers.
+- **Still-only disposable lifecycle experiment:** five exact AppInstaller target registry branches vs four provider own Staged/Config keys. If marker normalized, target only registry scopes deleted on disposable WIM clone, verify Deprovisioned truly empty and five AppInstaller scopes absent, four provider keys unchanged. Unload offline hive, native DISM AppX expected TEN to NINE preserving exact four selected apps plus five frameworks, four AppInstaller physical roots/740 files intentionally PRESENT; CheckHealth CLEAN/pending0. ALWAYS `/Unmount-Image /Discard`, clone WIM deleted only after mount release, original S31 SHA immutable. No physical R4, no NTLite, no /Commit. Any fail-closed current scope is recorded as HOLD, not source-only success.
+- **Send exactly the originals** `C:\work\logs\BlueLite_Stage1_S36R2_26300.9711_AppInstaller_LifecycleDisposable.txt` and `C:\work\logs\BlueLite_Stage1_S36R2_26300.9711_AppInstaller_LifecycleEvidence.json` if created. Narrow `RESULT=PASS_S36R2_9711_R4_LIFECYCLE_TEST_ALWAYS_DISCARDED` or `RESULT=HOLD_S36R2_9711_APPINSTALLER_DISPOSABLE_LIFECYCLE`. Full R4 physical production remains separately gated.
+- **§0R documentation integrity:** First Handoff v1.5.13 S36-R1 actual evidence commit `a09f4f5f8ccd3bbaf978e2e6f57531ec894a1c84`; Current actual S36-R1 commit `412a958174078526310fcb2248a441d243afc8a0`. RecipeRegistry source remains previous S36 revision due to connector safety-blocked attempts to update it in this turn; do not report it as synchronized. Handoff/Current and S36-R2 source are separately read back. Master unchanged.
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
