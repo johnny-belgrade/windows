@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "registry_revision": "2026-10-18-s37-webview-r2-servicing-names-r14",
+  "registry_revision": "2026-10-18-s37-webview-r3-eight-cbs-package-parent-r15",
   "status": "S37_COMMITTED_CANDIDATE_INDEPENDENT_S38R3_POSTCOMMIT_PASS_NOT_RELEASED",
   "scope": "Germanium 26300-first; 26200 historical topology references",
   "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
@@ -437,6 +437,38 @@
             {
               "kind": "CBS_COMPONENT",
               "identity": "amd64_microsoft-edge-webview_31bf3856ad364e35_10.0.26100.9711_none_2e9083253adbaceb"
+            },
+            {
+              "kind": "CBS_PACKAGE",
+              "identity": "Microsoft-Edge-WebView-FOD-Package-Wrapper~31bf3856ad364e35~amd64~~10.0.26100.9711"
+            },
+            {
+              "kind": "CBS_PACKAGE",
+              "identity": "Microsoft-Edge-WebView-FOD-Package~31bf3856ad364e35~amd64~~10.0.26100.1"
+            },
+            {
+              "kind": "CBS_PACKAGE",
+              "identity": "Microsoft-Edge-WebView-FOD-Package~31bf3856ad364e35~amd64~~10.0.26100.9711"
+            },
+            {
+              "kind": "CBS_PACKAGE",
+              "identity": "Microsoft-OneCore-Edge-WebRuntime-Package~31bf3856ad364e35~amd64~~10.0.26100.1591"
+            },
+            {
+              "kind": "CBS_PACKAGE",
+              "identity": "Microsoft-OneCore-Edge-WebRuntime-Package~31bf3856ad364e35~amd64~~10.0.26100.9549"
+            },
+            {
+              "kind": "CBS_PACKAGE",
+              "identity": "Microsoft-OneCore-Edge-WebRuntime-Package~31bf3856ad364e35~amd64~en-US~10.0.26100.1"
+            },
+            {
+              "kind": "CBS_PACKAGE",
+              "identity": "Microsoft-Windows-MicrosoftEdgeDevToolsClient-Package~31bf3856ad364e35~amd64~~10.0.26100.1150"
+            },
+            {
+              "kind": "CBS_PACKAGE",
+              "identity": "Microsoft-Windows-MicrosoftEdgeDevToolsClient-Package~31bf3856ad364e35~amd64~~10.0.26100.8737"
             }
           ],
           "required_predicates": [
@@ -468,6 +500,18 @@
               "target": "two exact WinSxS amd64_microsoft-edge-webview manifests and Catalog path checks",
               "expected": "R2 version 10.0.26100.1 present reparse flag length 8625; version 10.0.26100.9711 present reparse flag length 27624; same exact Catalog directory path targets absent, not proof all catalogs missing; no manifest content opened",
               "evidence_ref": "BlueLite_MAXPRE_WebViewEdge_26300.9711_ServicingOwners_R2.txt SHA256 BA43886C7111B8DA9AA7A5A8CAEAB968D4AC48BE76BECD48B7F37FCB1271DE1E"
+            },
+            {
+              "kind": "CBS_PACKAGE_REGISTERED",
+              "target": "8 exact 26300.9711 Edge/WebView FoD, OneCore WebRuntime, DevTools registered CBS package identities",
+              "expected": "All 8/8 exact native DISM packageinfo exit 0 and CBS registry CurrentState exact; 5 Installed 0x70, 3 Staged 0x40; two FoD child visibility=0x1, other six wrapper/runtime/DevTools visibility=0x2; 8 Owners keys with 11 value entries",
+              "evidence_ref": "BlueLite_MAXPRE_WebViewEdge_26300.9711_CBSRegistration_R3.csv SHA256 0998C6FFB7A9875C5F1A194982AD114D64B16FE48466860756B626F1317927AF"
+            },
+            {
+              "kind": "CBS_PACKAGE_DIRECT_OWNERS",
+              "target": "exact nine external parent identities and FoD self-wrapper internal package owner links",
+              "expected": "FoD .9711 installed child->installed wrapper->RollupFix .9711.1.30; OneCore installed neutral .9549 and en-US .1->Runlevel-Win4 parent links; DevTools .8737->ClientOnly and SharedWithServer Desktop-Required parents; staged predecessor owner values retained; parent status and component graph not yet proven",
+              "evidence_ref": "BlueLite_MAXPRE_WebViewEdge_26300.9711_CBSRegistration_R3.txt SHA256 ED642AB518824526775BD9E46D9AC404418EDF2D21D37609AB023E46F7BD674F"
             }
           ],
           "expected_post_state": [
@@ -484,7 +528,9 @@
             "BlueLite_MAXPRE_WebViewEdge_26300.9711_TargetGate_R1.txt SHA256 29535E0700CCCD229D2792A8CAB6E895130BC19DE8A33CA783AF0CE9F52DCB22",
             "BlueLite_MAXPRE_WebViewEdge_26300.9711_Owners_R1.csv SHA256 896ADB7044F7D77C234F1C898D4956C143289C1DEAB58D0099454570CB3417FA",
             "BlueLite_MAXPRE_WebViewEdge_26300.9711_ServicingOwners_R2.txt SHA256 BA43886C7111B8DA9AA7A5A8CAEAB968D4AC48BE76BECD48B7F37FCB1271DE1E",
-            "BlueLite_MAXPRE_WebViewEdge_26300.9711_ServicingMetadata_R2.csv SHA256 3965B7B66C6841F99A375160534BB976DB3EE82CF76E8AE8BA57EAF5E0F0745E"
+            "BlueLite_MAXPRE_WebViewEdge_26300.9711_ServicingMetadata_R2.csv SHA256 3965B7B66C6841F99A375160534BB976DB3EE82CF76E8AE8BA57EAF5E0F0745E",
+            "BlueLite_MAXPRE_WebViewEdge_26300.9711_CBSRegistration_R3.txt SHA256 ED642AB518824526775BD9E46D9AC404418EDF2D21D37609AB023E46F7BD674F",
+            "BlueLite_MAXPRE_WebViewEdge_26300.9711_CBSRegistration_R3.csv SHA256 0998C6FFB7A9875C5F1A194982AD114D64B16FE48466860756B626F1317927AF"
           ]
         }
       ],
