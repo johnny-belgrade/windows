@@ -67,7 +67,8 @@ param(
   $null=Assert-BlueLiteOwnedPath -Path $SourceContractPath -OwnerRoot $owner -MustExist
   $null=Assert-BlueLiteOwnedPath -Path $LogRoot -OwnerRoot $owner -MustExist -Directory
   $null=Assert-BlueLiteDistinctImages -OriginalWim $OriginalWimPath -WorkingWim $WorkingWimPath
- $null=Assert-BlueLiteOwnedPath -Path $WorkingWimPath -OwnerRoot $owner
+  $null=Assert-BlueLiteOwnedPath -Path $WorkingWimPath -OwnerRoot $owner
+  Note 'PATH_ANCESTRY_FILEINFO_DIRECTORYINFO_WORKING_DECLARATION=PASS'
   $orig=Get-Item -LiteralPath $OriginalWimPath -Force -ErrorAction Stop
   if($ExpectedOriginalWimBytes -gt 0 -and $orig.Length -ne $ExpectedOriginalWimBytes){
    throw ('BL_SOURCE_WIM_BYTES_DRIFT='+$orig.Length)
