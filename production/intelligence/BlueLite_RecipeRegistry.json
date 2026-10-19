@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "registry_revision": "2026-10-19-s43-searchengine-r15-cbs-updates-unknown-owned-clean-hold-r29",
+  "registry_revision": "2026-10-19-r15r1-actual-updates-ff-observed-readonly-impact-first-r30",
   "status": "S37_COMMITTED_CANDIDATE_INDEPENDENT_S38R3_POSTCOMMIT_PASS_NOT_RELEASED",
   "scope": "Germanium 26300-first; 26200 historical topology references",
   "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
@@ -1140,7 +1140,7 @@
           "supported_lineage": [
             "26300.x"
           ],
-          "topology_status": "AMBER_UPDATES_TOPOLOGY_UNRESOLVED",
+          "topology_status": "UNKNOWN_DEPENDENCY",
           "exact_selectors": [
             {
               "kind": "CBS_PACKAGE",
@@ -1180,7 +1180,72 @@
           "evidence_refs": [
             "production/evidence/BlueLite_MAXPRE_SearchEngine_26300.9711_NativeAmber_R15.txt SHA256 B04B5FE5BDE13943F0C2466AD186809687FDAE92F3F500506FC89DD992F48FE1"
           ],
-          "notes": "R15 real actual controlled HOLD before target mutation due Updates strict single-zero predicate; no evidence on actual Updates names/types yet. Only follow up with scoped read-only S41 copied SOFTWARE enumeration."
+          "notes": "R15 real actual controlled HOLD before target mutation due Updates strict single-zero predicate; no evidence on actual Updates names/types yet. Only follow up with scoped read-only S41 copied SOFTWARE enumeration. Follow-up R15R1 resolved byte representation as DWORD 0xFF; original R15 was correctly fail-closed before mutation. This registry normalization changes no original operator evidence."
+        },
+        {
+          "variant_id": "26300.9711-s41-r15r1-updates-dword-ff-readonly",
+          "source_family": "Germanium",
+          "supported_lineage": [
+            "26300.x"
+          ],
+          "topology_status": "UNKNOWN_DEPENDENCY",
+          "exact_selectors": [
+            {
+              "kind": "CBS_PACKAGE",
+              "identity": "Microsoft-Windows-SearchEngine-Client-Package~31bf3856ad364e35~amd64~~10.0.26100.9711"
+            },
+            {
+              "kind": "CBS_PACKAGE",
+              "identity": "Microsoft-Windows-SearchEngine-Client-Package~31bf3856ad364e35~amd64~~10.0.26100.1591"
+            },
+            {
+              "kind": "CBS_PACKAGE",
+              "identity": "Microsoft-Windows-Client-Desktop-Required-Package04~31bf3856ad364e35~amd64~~10.0.26100.9711"
+            }
+          ],
+          "required_predicates": [
+            {
+              "kind": "CBS",
+              "target": "S41 read-only copied SOFTWARE CURRENT SearchEngine .9711 and OLD .1591 CBS Updates",
+              "expected": "CURRENT State0x70 Visibility0x2; OLD State0x40 Visibility0x2; each Updates key PRESENT, exactly one REG_DWORD SearchEngine-Client-Package=0xFF and zero child keys. This is observed; not a required universal mutation predicate."
+            },
+            {
+              "kind": "CBS",
+              "target": "S41 current/old Required-Package04 parents",
+              "expected": "current parent 0x70, old parent 0x40; both parent Updates keys missing, zero values/children; parent packages not modified"
+            },
+            {
+              "kind": "NATIVE",
+              "target": "S41 package states and health",
+              "expected": "current SearchEngine .9711 Installed; OLD .1591 Staged; parent04 .9711 Installed; pending=0; pending.xml absent; CheckHealth CLEAN"
+            },
+            {
+              "kind": "SOURCE",
+              "target": "S41 protected WIM full SHA",
+              "expected": "6636510185 bytes SHA256 378B6C7A20D434172EA7AB2F4857C78431393C0B3C1B13D993D8AAF125D6B6B1 before and after, RO /Discard, zero mounts/hives and owned temporary hive COPY/sidecars removed"
+            },
+            {
+              "kind": "NEGATIVE_FIXTURE",
+              "target": "historic 26200 346/347 Search Updates 0x0 versus actual 26300 0xFF",
+              "expected": "strict legacy 0x0 assumption rejected R15; do not substitute 0xFF blindly and do not copy historical Required-Package05 owner. Native AMBER removal for 26300 remains untested."
+            }
+          ],
+          "expected_post_state": [
+            "R15R1 actual operator-only PASS_S41_R15R1_SEARCHENGINE_UPDATES_EXACT_READONLY_CLASSIFICATION_ONLY",
+            "0xFF Updates representation observed for 26300.9711 CURRENT and OLD; removal semantics/dependency not certified",
+            "No CBS mutation, no package removal or new WIM clone; old S43 failed clone retired; protected S41 preserved",
+            "Pending0, CheckHealth CLEAN, all own temporary files and readonly mount cleaned; NO release certification"
+          ],
+          "tested_builds": [
+            "26300.9711"
+          ],
+          "evidence_refs": [
+            "production/evidence/BlueLite_MAXPRE_SearchEngine_26300.9711_UpdatesReadOnly_R15R1.txt SHA256 2519B4BBBB22EA3E093C97C39166C68CB09882BDD2600912FA2887D1A3464283",
+            "production/targets/BlueLite.MaxPre.SearchEngine26300.UpdatesTopologyRO.R15R1.ps1 SHA256 EF84EEF8FF486300CB85AB51BE1800B834868C517C581626820C29B98002C89F",
+            "Library 346-Canonical-SearchEngine-Wrapper-AMBER-PreProduction-Gate.txt",
+            "Library 347-Canonical-SearchEngine-Wrapper-Portable-AMBER-Production-Apply.txt"
+          ],
+          "notes": "Topological representation no longer missing: exact 0xFF verified read-only. AMBER native removal and significance of update marker not proven. Universal production execution remains false. Operator impact-first instruction: do not re-enter many-step microtarget chase for historical ~255451B srchadmin wrapper; prioritize high-yield source-native AppX closure and shared post-reconstruction MAX_PRE engine, without relaxing protected servicing/dependency gates."
         }
       ],
       "protected_floor": [
@@ -1228,9 +1293,14 @@
           "source_kind": "OPERATOR_LOG",
           "reference": "BlueLite_MAXPRE_SearchEngine_26300.9711_NativeAmber_R15.txt",
           "scope": "Exact original S43 R15 preliminary CBC gates PASS but target Updates single-zero predicate mismatch; full S43 discard and deletion, S41 preserved"
+        },
+        {
+          "source_kind": "OPERATOR_LOG",
+          "reference": "BlueLite_MAXPRE_SearchEngine_26300.9711_UpdatesReadOnly_R15R1.txt",
+          "scope": "Original 3131 bytes/46 CRLF SHA256 2519B4... actual S41 exact Updates DWORD FF read-only PASS; no mutation"
         }
       ],
-      "notes": "Do not treat DISM package-list nonlisting as package absence; exact CBS registry state unexamined on 26300. R14 readonly aborted on previously unanticipated srchadmin child dir. R14R1 must resolve both without broad Search exploration. Runtime removal prohibited. On 2026-10-19 actual R14R1 S41 CBS current .9711 matches historical single-owner shape, but native /Get-PackageInfo exact untested and temporary copy remains due unexpected sidecars: keep runtime=false. R14R2 native exact old Staged and current Installed, hive orphan cleanup PASS. R15 owned S43 first AMBER removal not run. R15 actual strict Updates gate held prior to any mutation and discarded/retired S43. Do not infer value or missing key without read-only S41 Updates enumeration. Runtime false."
+      "notes": "Do not treat DISM package-list nonlisting as package absence; exact CBS registry state unexamined on 26300. R14 readonly aborted on previously unanticipated srchadmin child dir. R14R1 must resolve both without broad Search exploration. Runtime removal prohibited. On 2026-10-19 actual R14R1 S41 CBS current .9711 matches historical single-owner shape, but native /Get-PackageInfo exact untested and temporary copy remains due unexpected sidecars: keep runtime=false. R14R2 native exact old Staged and current Installed, hive orphan cleanup PASS. R15 owned S43 first AMBER removal not run. R15 actual strict Updates gate held prior to any mutation and discarded/retired S43. Do not infer value or missing key without read-only S41 Updates enumeration. Runtime false. R15R1 original proves exact 0xFF for both 26300 SearchEngine CBS Updates markers; unresolved is removal applicability, not value identity. Future focus impact-first per Master/Handoff 4.0A."
     }
   ]
 }
