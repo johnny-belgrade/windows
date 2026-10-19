@@ -67,6 +67,14 @@
 * [Ventoy (GitHub)](https://github.com/ventoy/Ventoy) - Alat za multiboot USB. Sjajan izvor za razumevanje kako bootloaderi rade sa Windows ISO fajlovima.
 * [OSCDIMG Command-Line Options](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/oscdimg-command-line-options) - Alat za pakovanje foldera nazad u bootabilni ISO fajl nakon što završimo debloat WIM slike.
 
+## Virtualization & VM Validation — VMware Workstation Pro
+* [VMware Workstation Pro — Official Product Documentation](https://docs.vmware.com/en/VMware-Workstation-Pro/index.html) — zvanična dokumentacija; referenca za kontrolisane BlueLite VM instalacije, hardverski profil i validation gate-ove.
+* [VMware Workstation Pro 17 — User Guide & Advanced Configuration](https://docs.vmware.com/en/VMware-Workstation-Pro/17/com.vmware.workstation.using.doc/GUID-880F0860-2E24-4B39-8631-EC83E71661A3.html) — podešavanje i napredne opcije virtuelnih mašina; izvorni korisnički link (17.x dokumentacija, proveriti primenljivost na noviju verziju).
+* [Broadcom Knowledge Base — Troubleshooting & KB Hub](https://knowledge.broadcom.com/) — zvanične ispravke, poznata ograničenja i dijagnostika VMware Workstation okruženja.
+* [VMware Workstation Pro 17 — Windows 11 vTPM & Secure Boot Guide](https://docs.vmware.com/en/VMware-Workstation-Pro/17/com.vmware.workstation.using.doc/GUID-D8E9F6B9-130C-4A2D-A4EB-6EE454E5F528.html) — izvorni vodič za Windows 11 vTPM/Secure Boot VM konfiguraciju; za 26H1 i novije uporediti aktuelnu dokumentaciju.
+* [Broadcom — Download & License VMware Workstation Pro](https://knowledge.broadcom.com/external/article/368667/download-and-license-information-for-vmw.html) — aktuelno službeno pojašnjenje besplatnog komercijalnog/ličnog korišćenja i postupka preuzimanja.
+* [VMware Workstation 26H1 — Official Release Notes Overview](https://blogs.vmware.com/cloud-foundation/2026/05/14/announcing-vmware-workstation-and-fusion-26h1/) — novija zvanična generacija 64-bitnog Workstation Pro, relevantna za izbor VM platforme 2026.
+
 ## Package Management
 * [Windows Package Manager (WinGet)](https://github.com/microsoft/winget-cli) - Referenca za implementaciju i automatizaciju instalacije osnovnih programa u BlueLite instalaciju bez korisničke interakcije.
 
