@@ -200,10 +200,13 @@
   }
   if(-not $loaded -and $tempMade){
    try{
-    if(@(Get-ChildItem -LiteralPath $temp -Force -ErrorAction Stop).Count -eq 1 -and
-      (Test-Path -LiteralPath $hiveFile -PathType Leaf)){
-     Remove-Item -LiteralPath $hiveFile -Force -ErrorAction Stop
-    }
+     $files=@(Get-ChildItem -LiteralPath $temp -Force -ErrorAction Stop)
+    $leaf=Split-Path -Path $hiveFile -Leaf
+    $allowed=@($leaf,($leaf+'.LOG1'),($leaf+'.LOG2'))
+    if(@($files|Where-Object {$_.PSIsContainer -or
+      ($_.Attributes -band [IO.FileAttributes]::ReparsePoint) -ne 0 -or
+      $_.Name -cnotin $allowed}).Count -ne 0){throw 'BL_R14_UNKNOWN_TEMP_HIVE_CONTENT'}
+    foreach($owned in $files){Remove-Item -LiteralPath $owned.FullName -Force -ErrorAction Stop}
     if(@(Get-ChildItem -LiteralPath $temp -Force -ErrorAction Stop).Count -eq 0){
      [IO.Directory]::Delete($temp,$false);Note 'OWNED_EPHEMERAL_HIVE_COPY_DELETED=PASS'
     }else{throw 'BL_R14_TEMP_NOT_EMPTY'}
