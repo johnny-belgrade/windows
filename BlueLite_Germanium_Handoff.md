@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.103 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (R18 actual native GREEN no-copy PASS; source-select existing 26300.9807 first)  
+**Verzija dokumenta:** 1.5.104 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (R19 independent 26300.9807 source locator published, pinned command DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -2248,6 +2248,86 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - Operator-original `BlueLite_MAXPRE_FodMetadata_26300.9711_ReadOnly_R9.txt`, **1504 B/25 CRLF** SHA256 **7996B6BC49611645B3E79C87E0FC8D063BBE805CC42565067A7FE7436D19D727** independently hashed. R9 source immutable commit `e2442344ad5f396b31d6bdbd4001c16cfb8646fd`, SHA **F3DA22FF241C17E9F3055C981B92DE24D35CDC1215E8EE4B6683DEF5780B197A**; original R8 SHA pin, S37/S39 full WIM SHA pre/post, pre-zero mounts/no project hives, native /ReadOnly S39 mount, post-/Discard, post-zero mounts and owned directory cleanup all PASS; native CheckHealth CLEAN. Exact direct package info family three: **MAIN 26100.1742 Superseded**; **MAIN 26100.9711 Installed/KEEP**, **CORE 26100.1 Installed/KEEP**. Wrappers not in native /Get-Packages filtering; exact /Get-PackageInfo may resolve hidden wrapper — absence from list alone does not mean absent. Actual terminal **`PASS_S39_R9_FODMETADATA_EXACT_NATIVE_READONLY_CLASSIFICATION_ONLY`**; absolutely no R9 package removal.
 - Regression Library `162-FodMetadata-Classification-and-BL159-Cleanup.txt`, `339-R1-Canonical-FodMetadata-Superseded-Native-Production-Removal.txt` proves one native superseded MAIN /Remove-Package success on 26200.9445 with current MAIN and both wrapper packages retained; `174-FodMetadata-Core-Classification-and-BL173-Cleanup.txt` establishes distinct CORE exact self-owner AMBER and Desktop-CompDB servicing floor. **Do not apply 26200 current MAIN version 26100.9444 to 26300 current 26100.9711.** R9 observation plus historical method justifies one owned-clone 26300 native test, not direct production permission. Official DISM native `/Remove-Package` docs in BlueLite_Sources; DO NOT modify wrappers/CU owners/core/host OS.
 - **FIRST checkpoint NEXT (NOT YET DELIVERED):** separate immutable R10 native superseded MAIN test against NEW disposable S41 copy of committed S39; full SHA/bytes pre-copy and clone SHA, zero mounts/hives, min disk capacity; pre MAIN old Superseded/new Installed and CORE Installed, optional exact wrapper info with negative query classifed; pending0 CheckHealth CLEAN; native `/Remove-Package` ONLY `Microsoft-Windows-FodMetadataServicing-Desktop-Metadata-Package~31bf3856ad364e35~amd64~~10.0.26100.1742`; target invalid 0x800f0805, current+core exact keep states, wrapper matched pre/post, pending0 and CheckHealth+ScanHealth CLEAN before /Commit; source S39 protected. Scoped PASS from this possible step is only disposable commit, not production/installed-footprint proof; next independent postcommit RO and fair export on R10 if actual PASS. Registry r22 runtime=false, Master v6 unchanged.
+
+### 8.116 R19 verified local 26300.9807 ISO/WIM SOURCE SELECTION code and exact operator command DELIVERED_NOT_RUN (SECOND §0R, 2026-10-19)
+
+- **Latest actual remains R18 protected S41 native GREEN no-copy/zero mounts FASTPATH_NOOP PASS** per first checkpoint §8.115 and byte-exact archived original operator R18 log: 595 ASCII B SHA256 CC41506716DD32EEB7DEA8B15099D0B7A97D8C118DA2471BCA35582B5DA9B7DD. R19 is a new read-only source-selection step, NOT a new OS debloat result or ISO validation.
+- **R19 original source script actually published on GitHub main:** production/engine/BlueLite.SourceSelection.26300x.R19.ps1 immutable commit 0671f9eb33159dae7626d99654048ad6184b4388, blob 129b7ad15ff4dac2688b5344c6d8077735fea1c5, 6269 ASCII bytes /111 LF-split rows, SHA256 972F29C260F69ABF0D9299CE0B2517EB5A01EABA75E5C5D1407D3B19E80E35BE. Full GitHub independent exact source readback PASS; code hash independently computed using a NIST SHA256 abc test vector validated implementation. PS7 AST and real operator execution NOT YET TESTED. Fetch ONLY immutable commit, not rolling main.
+- **Precise operator source target:** operator-created independent UUP 26300.9807 v128m ISO from October 19, 2026, original Timeline reported final ISO 8094824448B (not independently hash-verified image) and pre-WinRE optimized install.wim 6198772736B (not final in-ISO WIM size). Prior frozen source C:\work\UUP_Source\26300.9807_687d1ced known; full original payload is operator-reported later from independent run. Source is independent of protected S41 26300.9711 and planned to prove actual cross-build applicability and new WebView/direct high-impact WIM savings. Do NOT automatically start UUP download or recreate already-known WebView removal on stripped S41.
+- **R19 execution contract:** PS7 Admin loader ensures existing C:\work\scripts + C:\work\logs, refuses overwrite, full SHA+size-pins actual R18 log and R19 script (AST zero parse errors), downloads ~6KB script only if absent. R19 script inspects frozen UUP 9807 root immediate files/dirs and bounded metadata-only ISO/WIM search on C:\work\E2E, C:\work, user Downloads/Desktop and fixed-volume root depth2; total max 6000 directories and 100 candidate files, avoids reparse entry recursion, emits path/tier/size and candidates sorted strongest first. Detect exact 8094824448-byte .iso size-match but labels it NOT HASH/EDITION proof, and may require exact path from operator if file outside bounded roots. Reads file metadata only, **does not hash gigabyte images**, no mounted ISO/WIM, no source mutation/large copy/network UUP/NTLite/VM/ISO creation. If no candidate, do not make up a path; operator can supply exact source ISO full path or run with custom ExtraRoot only as separately agreed. The report always says metadata-only PASS when scan completes even if no candidate. No need to ask to redownload while an operator source may already exist.
+- **EXACT ONE PS7 ADMIN OPERATOR COMMAND, R19 DELIVERED_NOT_RUN:**
+
+```powershell
+& {
+    Set-StrictMode -Version Latest
+    $ErrorActionPreference = 'Stop'
+    if ($PSVersionTable.PSVersion.Major -ne 7) {
+        throw 'BL_R19_POWERSHELL7_REQUIRED'
+    }
+    $admin = [Security.Principal.WindowsPrincipal]::new(
+        [Security.Principal.WindowsIdentity]::GetCurrent()
+    )
+    if (-not $admin.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+        throw 'BL_R19_ADMIN_REQUIRED'
+    }
+
+    $dir = 'C:\work\scripts'
+    $logs = 'C:\work\logs'
+    $file = Join-Path $dir 'BlueLite.SourceSelection.26300x.R19.ps1'
+    $url = 'https://raw.githubusercontent.com/johnny-belgrade/windows/0671f9eb33159dae7626d99654048ad6184b4388/production/engine/BlueLite.SourceSelection.26300x.R19.ps1'
+    $sha = '972F29C260F69ABF0D9299CE0B2517EB5A01EABA75E5C5D1407D3B19E80E35BE'
+    $report = Join-Path $logs 'BlueLite_26300_9807_SourceSelection_R19.txt'
+    $prior = Join-Path $logs 'BlueLite_MAXPRE_NativeGreenDispatcher_R18.txt'
+    if (-not (Test-Path -LiteralPath $dir -PathType Container) -or
+        -not (Test-Path -LiteralPath $logs -PathType Container)) {
+        throw 'BL_R19_WORKSPACE_MISSING'
+    }
+    if (Test-Path -LiteralPath $report) {
+        throw 'BL_R19_REPORT_ALREADY_EXISTS'
+    }
+    if (-not (Test-Path -LiteralPath $prior -PathType Leaf) -or
+        (Get-Item -LiteralPath $prior).Length -ne 595 -or
+        (Get-FileHash -LiteralPath $prior -Algorithm SHA256).Hash -cne
+        'CC41506716DD32EEB7DEA8B15099D0B7A97D8C118DA2471BCA35582B5DA9B7DD') {
+        throw 'BL_R19_ORIGINAL_R18_NOT_PINNED'
+    }
+
+    if (-not (Test-Path -LiteralPath $file)) {
+        $tmp = Join-Path $dir ('BL_R19_' + [guid]::NewGuid().ToString('N') + '.tmp')
+        try {
+            Invoke-WebRequest -Uri $url -OutFile $tmp -TimeoutSec 90
+            if ((Get-Item -LiteralPath $tmp).Length -ne 6269 -or
+                (Get-FileHash -LiteralPath $tmp -Algorithm SHA256).Hash -cne $sha) {
+                throw 'BL_R19_DOWNLOADED_SOURCE_MISMATCH'
+            }
+            [IO.File]::Move($tmp, $file)
+        }
+        finally {
+            if (Test-Path -LiteralPath $tmp) {
+                Remove-Item -LiteralPath $tmp -Force
+            }
+        }
+    }
+    if (-not (Test-Path -LiteralPath $file -PathType Leaf) -or
+        (Get-Item -LiteralPath $file).Length -ne 6269 -or
+        (Get-FileHash -LiteralPath $file -Algorithm SHA256).Hash -cne $sha) {
+        throw 'BL_R19_LOCAL_SOURCE_MISMATCH'
+    }
+
+    $tokens = $null
+    $parseErrors = $null
+    $null = [System.Management.Automation.Language.Parser]::ParseFile(
+        $file, [ref]$tokens, [ref]$parseErrors
+    )
+    if ($parseErrors.Count -ne 0) {
+        throw ('BL_R19_AST_FAILURE: ' + $parseErrors[0].Message)
+    }
+    Write-Host 'R19 SOURCE SHA256 + AST + R18 PIN PASS'
+    & $file -ReportPath $report
+}
+```
+
+- **Expected original local report:** C:\work\logs\BlueLite_26300_9807_SourceSelection_R19.txt; terminal RESULT=PASS_R19_LOCAL_SOURCE_SELECTION_METADATA_ONLY possible if scan completed, source selection separately from PASS. Operator will submit the full original report, including candidate path(s) or NOT_FOUND. Next §0R after report: source-specific hash and index check of one true 26300.9807 original ISO/install.wim, then reuse universal MAX_PRE engine with new target present and actual measured equal-compression deltas, not infinite NOOP steps. Master v6.0.0 Defender ON/OFF clean-install branches and user optional install/tweak folders unchanged; RecipeRegistry r30 runtime false; no new variant on source discovery.
 
 ### 8.115 R18 actual original native GREEN dispatcher S41 FASTPATH NOOP PASS; available independent 26300.9807 ISO source selection NEXT (FIRST §0R, 2026-10-19)
 
