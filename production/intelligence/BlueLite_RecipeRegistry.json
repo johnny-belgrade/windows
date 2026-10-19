@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "registry_revision": "2026-10-19-s41-fodmetadata-r11-independent-postcommit-native-pass-r24",
+  "registry_revision": "2026-10-19-s41-fodmetadata-r12-normalized-713456b-native-pass-r25",
   "status": "S37_COMMITTED_CANDIDATE_INDEPENDENT_S38R3_POSTCOMMIT_PASS_NOT_RELEASED",
   "scope": "Germanium 26300-first; 26200 historical topology references",
   "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
@@ -905,7 +905,7 @@
           "supported_lineage": [
             "26300.x"
           ],
-          "topology_status": "NATIVE_DISPOSABLE_COMMIT_AND_INDEPENDENT_POSTCOMMIT_READONLY_PASS",
+          "topology_status": "NATIVE_COMMIT_POSTCOMMIT_AND_NORMALIZED_WIM_DELTA_VERIFIED",
           "exact_selectors": [
             {
               "kind": "CBS_PACKAGE",
@@ -924,7 +924,8 @@
             "current MAIN/core/RollupFix Installed and both wrapper states unchanged",
             "pending0, CheckHealth and ScanHealth CLEAN before committed WIM",
             "S41 committed WIM bytes 6636510185 SHA256 378B6C7A20D434172EA7AB2F4857C78431393C0B3C1B13D993D8AAF125D6B6B1",
-            "Independent R11 operator readonly confirms six native exact packages, pending0, CheckHealth CLEAN, capability provider success, zero mounts and protected full SHA unchanged"
+            "Independent R11 operator readonly confirms six native exact packages, pending0, CheckHealth CLEAN, capability provider success, zero mounts and protected full SHA unchanged",
+            "R12 same compression max S39 normalized WIM 5557124413B vs S41 5556410957B, difference 713456B smaller post-removal; compressed transport not installed footprint"
           ],
           "allowed_delta": [
             "native exact old Superseded MAIN removal only; no manual CBS registry edits",
@@ -936,9 +937,10 @@
           "evidence_refs": [
             "BlueLite_MAXPRE_FodMetadata_26300.9711_Native_R10.txt SHA256 3F42C3949AFBFE1F0C381ABCA7C0EEC8C18AB3A7A2B6B2FDAA90D2E57AA33D28",
             "R10 reviewed source SHA256 EB44A2657BB415F7A0240B79718A014E8051A14DADE0AF7B055BD7A67B648BC2",
-            "BlueLite_MAXPRE_FodMetadata_26300.9711_PostCommit_R11.txt SHA256 711A2673A0541AF86A33C41E71B7758B060C6AE808119555C23C4D724F997F6A"
+            "BlueLite_MAXPRE_FodMetadata_26300.9711_PostCommit_R11.txt SHA256 711A2673A0541AF86A33C41E71B7758B060C6AE808119555C23C4D724F997F6A",
+            "production/evidence/BlueLite_MAXPRE_FodMetadata_26300.9711_ExportCompare_R12.txt SHA256 AF177CA3A617C87D5ADA926B2E1F93FB4347C337C69C3AED16218B481709BC30"
           ],
-          "notes": "Scoped operator-native S41 disposable removal+commit PASS only. Not production engine authorization, independent postcommit, normalized export, ISO or release proof. R11 independent S41 /ReadOnly after R10 native /Commit proven PASS (2106 ASCII bytes/27 CRLF rows, original SHA above). R11 checked six exact native package states, pending0, CheckHealth CLEAN and capabilities exit0; zero mounts and full protected hashes. No measured normalized export savings, no universal production runtime promotion."
+          "notes": "Scoped operator-native S41 disposable removal+commit PASS only. Not production engine authorization, independent postcommit, normalized export, ISO or release proof. R11 independent S41 /ReadOnly after R10 native /Commit proven PASS (2106 ASCII bytes/27 CRLF rows, original SHA above). R11 checked six exact native package states, pending0, CheckHealth CLEAN and capabilities exit0; zero mounts and full protected hashes. No measured normalized export savings, no universal production runtime promotion. R12 independent original equal-compression DISM Export-Image outputs show 713456B isolated transport saving with source hashes preserved; original R12 log archived verbatim to project GitHub. S42 owned 2 WIM measurements eligible for scoped deletion only after full pinned source/output and proof preflight; parent source WIMs kept. Runtime remains false."
         }
       ],
       "protected_floor": [
