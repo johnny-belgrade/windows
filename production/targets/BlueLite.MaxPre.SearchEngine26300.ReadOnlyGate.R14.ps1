@@ -106,7 +106,7 @@
   $chosen=@($states|Where-Object {$_.State -ceq 'Installed'})
   if($chosen.Count -gt 1){throw 'BL_R14_MULTIPLE_INSTALLED_SEARCH_WRAPPERS'}
   Note 'STEP_03_SEARCH_CBS_OWNER_COPIED_SOFTWARE_HIVE'
-  $classification='ABSENT_NATIVE_SEARCHENGINE_PACKAGE'
+  $classification='NOT_LISTED_BY_NATIVE_SEARCH_FAMILY_UNRESOLVED'
   if($chosen.Count -eq 1){
    $identity=[string]$chosen[0].Identity
    $null=[IO.Directory]::CreateDirectory($temp);$tempMade=$true
