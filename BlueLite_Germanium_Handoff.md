@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.109 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (R20 actual pre-mount HOLD; 03-Oct 26200 UUP source/code/proven run integrated into enduring intelligence)  
+**Verzija dokumenta:** 1.5.110 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (R20R1 raw DISM mount table capture exact one command delivered; Oct03 UUP review locked)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -2248,6 +2248,58 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - Operator-original `BlueLite_MAXPRE_FodMetadata_26300.9711_ReadOnly_R9.txt`, **1504 B/25 CRLF** SHA256 **7996B6BC49611645B3E79C87E0FC8D063BBE805CC42565067A7FE7436D19D727** independently hashed. R9 source immutable commit `e2442344ad5f396b31d6bdbd4001c16cfb8646fd`, SHA **F3DA22FF241C17E9F3055C981B92DE24D35CDC1215E8EE4B6683DEF5780B197A**; original R8 SHA pin, S37/S39 full WIM SHA pre/post, pre-zero mounts/no project hives, native /ReadOnly S39 mount, post-/Discard, post-zero mounts and owned directory cleanup all PASS; native CheckHealth CLEAN. Exact direct package info family three: **MAIN 26100.1742 Superseded**; **MAIN 26100.9711 Installed/KEEP**, **CORE 26100.1 Installed/KEEP**. Wrappers not in native /Get-Packages filtering; exact /Get-PackageInfo may resolve hidden wrapper — absence from list alone does not mean absent. Actual terminal **`PASS_S39_R9_FODMETADATA_EXACT_NATIVE_READONLY_CLASSIFICATION_ONLY`**; absolutely no R9 package removal.
 - Regression Library `162-FodMetadata-Classification-and-BL159-Cleanup.txt`, `339-R1-Canonical-FodMetadata-Superseded-Native-Production-Removal.txt` proves one native superseded MAIN /Remove-Package success on 26200.9445 with current MAIN and both wrapper packages retained; `174-FodMetadata-Core-Classification-and-BL173-Cleanup.txt` establishes distinct CORE exact self-owner AMBER and Desktop-CompDB servicing floor. **Do not apply 26200 current MAIN version 26100.9444 to 26300 current 26100.9711.** R9 observation plus historical method justifies one owned-clone 26300 native test, not direct production permission. Official DISM native `/Remove-Package` docs in BlueLite_Sources; DO NOT modify wrappers/CU owners/core/host OS.
 - **FIRST checkpoint NEXT (NOT YET DELIVERED):** separate immutable R10 native superseded MAIN test against NEW disposable S41 copy of committed S39; full SHA/bytes pre-copy and clone SHA, zero mounts/hives, min disk capacity; pre MAIN old Superseded/new Installed and CORE Installed, optional exact wrapper info with negative query classifed; pending0 CheckHealth CLEAN; native `/Remove-Package` ONLY `Microsoft-Windows-FodMetadataServicing-Desktop-Metadata-Package~31bf3856ad364e35~amd64~~10.0.26100.1742`; target invalid 0x800f0805, current+core exact keep states, wrapper matched pre/post, pending0 and CheckHealth+ScanHealth CLEAN before /Commit; source S39 protected. Scoped PASS from this possible step is only disposable commit, not production/installed-footprint proof; next independent postcommit RO and fair export on R10 if actual PASS. Registry r22 runtime=false, Master v6 unchanged.
+
+### 8.122 R20R1 exact RAW mounted-image table capture (NO cleanup) — one PS7 Admin command DELIVERED_NOT_RUN (SECOND §0R, 2026-10-19)
+
+- Latest ACTUAL remains R20 original 616 ASCII B/11 CRLF SHA256 E75D37873FA8E65F21AFC1C0AF9EC0375B2959E0775BEED683015B057AD41CEC, byte-exact archived production/evidence/BlueLite_26300_9807_HighImpactNativePreflight_R20.txt, blob fb63bbe25d3fdc436584b748e1519850e8f888ba. Source pre SHA PASS, mounted table native exits zero, **wrapper flagged other mount PRE and POST**, no raw mounted table body in report, no WIM mount or FoD state. Do not label as false parser HOLD until native table captured. No mutation, cloning, downloading, NTLite/VM.
+- Original 2026-10-03 26200 UUP code+native prior review COMPLETE in production/intelligence/BlueLite_UUP_Oct03_26200_Transfer_Review_20261019.md (commit e4316d2c7e65dba45e18ec8957911e97d09a7727). Current Status top and Handoff §8.121 already reference this; NEXT successor should use the proven D4/D5/D6 source/URL refresh, source-closed FoD reconstruction, optional SkipWinRE and ONE universal pre-ISO/standalone native MAX_PRE engine, not reinvent source deletion. Historical Oct3 real 26200.9550 MAX_PRE 50 actions/8 skips with 6,027,835,493B WIM and 7,014,342,656B ISO; not transferable 26300 gains without native gates.
+- **R20R1 ONE EXACT OPERATOR STEP** is inline PS7 Admin (no external script download, command stored verbatim below). Full original R20 local report 616B SHA preflight. Refuse overwrite C:\work\logs\BlueLite_26300_9807_MountTableRaw_R20R1.txt. Execute native DISM /English /Get-MountedWimInfo and /Get-MountedImageInfo, log verbatim unmodified stdout/standard error string and EXIT for each, count Mount Dir rows. Optional /Get-MountedImageInfo could be unsupported: log native exit, do not confuse that with image defect. This is intentionally only RAW DIAGNOSTIC — NO mount, unmount, discard, Cleanup-Wim, registry, hash of 7GB WIM, source mutation, ISO action. Success of capture DOES NOT assert mount table empty; inspect actual recorded paths/status/owner first. If real unrelated mount exists, leave it; if project-owned lingering mount, settle ONLY after original mount origin/transaction established. Next new source-specific native preflight is permitted only when real table permits exact mounted ownership.
+- **Complete one PS7 Admin command, DELIVERED_NOT_RUN:**
+
+```powershell
+& {
+    Set-StrictMode -Version Latest
+    $ErrorActionPreference = 'Stop'
+    $PSNativeCommandUseErrorActionPreference = $false
+    if ($PSVersionTable.PSVersion.Major -ne 7) { throw 'BL_R20R1_PS7_REQUIRED' }
+    $admin = [Security.Principal.WindowsPrincipal]::new(
+        [Security.Principal.WindowsIdentity]::GetCurrent()
+    )
+    if (-not $admin.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+        throw 'BL_R20R1_ADMIN_REQUIRED'
+    }
+    $prior = 'C:\work\logs\BlueLite_26300_9807_HighImpactNativePreflight_R20.txt'
+    $report = 'C:\work\logs\BlueLite_26300_9807_MountTableRaw_R20R1.txt'
+    $dism = Join-Path $env:WINDIR 'System32\dism.exe'
+    if ((Get-Item -LiteralPath $prior -ErrorAction Stop).Length -ne 616 -or
+        (Get-FileHash -LiteralPath $prior -Algorithm SHA256).Hash -cne
+        'E75D37873FA8E65F21AFC1C0AF9EC0375B2959E0775BEED683015B057AD41CEC') {
+        throw 'BL_R20R1_ORIGINAL_R20_REPORT_NOT_PINNED'
+    }
+    if (Test-Path -LiteralPath $report) { throw 'BL_R20R1_NO_REPORT_OVERWRITE' }
+    $output = [Collections.Generic.List[string]]::new()
+    [void]$output.Add('BLUELITE_R20R1_RAW_NATIVE_MOUNT_TABLE_READONLY')
+    foreach ($op in @('/Get-MountedWimInfo','/Get-MountedImageInfo')) {
+        [void]$output.Add('BEGIN_NATIVE=' + $op)
+        $rows = @(& $dism /English $op 2>&1 | ForEach-Object { [string]$_ })
+        $rc = [int]$LASTEXITCODE
+        foreach ($line in $rows) { [void]$output.Add($line) }
+        [void]$output.Add('NATIVE_EXIT=' + $op + '=' + $rc)
+        $mounts = @($rows | Where-Object { $_ -match '(?i)^\s*Mount Dir\s*:' })
+        [void]$output.Add('MOUNT_DIR_ROWS=' + $op + '=' + $mounts.Count)
+        [void]$output.Add('END_NATIVE=' + $op)
+    }
+    [void]$output.Add('RESULT=PASS_R20R1_NATIVE_MOUNT_TABLE_CAPTURE_ONLY')
+    [void]$output.Add('NO_MOUNT_NO_UNMOUNT_NO_CLEANUP_NO_WIM_COPY_NO_MUTATION')
+    $enc = [Text.UTF8Encoding]::new($false)
+    [IO.File]::WriteAllText(
+        $report, ($output -join [Environment]::NewLine) + [Environment]::NewLine, $enc
+    )
+    $output | ForEach-Object { Write-Host $_ }
+}
+```
+
+- Expected original next report C:\work\logs\BlueLite_26300_9807_MountTableRaw_R20R1.txt; console includes two raw DISM sections, terminal RESULT=PASS_R20R1_NATIVE_MOUNT_TABLE_CAPTURE_ONLY is a successful **table-capture**, not a ZeroMounts certification. After operator response §0R FIRST records actual raw table and next guarded action, then SECOND exact next native source command. No changes to Master, Defender two clean-install branches, or Registry r30.
 
 ### 8.121 R20 ACTUAL HOLD before mount + exhaustive OCT 3 26200.x original predecessor UUP review recorded (FIRST §0R, 2026-10-19)
 
