@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.107 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (R19P original ISO/WIM hashes and native image 26300.9807 verified; wrapper false HOLD, R20 high-impact preflight next)  
+**Verzija dokumenta:** 1.5.108 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (R20 pinned universal high-impact native source preflight operator DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -2248,6 +2248,92 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - Operator-original `BlueLite_MAXPRE_FodMetadata_26300.9711_ReadOnly_R9.txt`, **1504 B/25 CRLF** SHA256 **7996B6BC49611645B3E79C87E0FC8D063BBE805CC42565067A7FE7436D19D727** independently hashed. R9 source immutable commit `e2442344ad5f396b31d6bdbd4001c16cfb8646fd`, SHA **F3DA22FF241C17E9F3055C981B92DE24D35CDC1215E8EE4B6683DEF5780B197A**; original R8 SHA pin, S37/S39 full WIM SHA pre/post, pre-zero mounts/no project hives, native /ReadOnly S39 mount, post-/Discard, post-zero mounts and owned directory cleanup all PASS; native CheckHealth CLEAN. Exact direct package info family three: **MAIN 26100.1742 Superseded**; **MAIN 26100.9711 Installed/KEEP**, **CORE 26100.1 Installed/KEEP**. Wrappers not in native /Get-Packages filtering; exact /Get-PackageInfo may resolve hidden wrapper — absence from list alone does not mean absent. Actual terminal **`PASS_S39_R9_FODMETADATA_EXACT_NATIVE_READONLY_CLASSIFICATION_ONLY`**; absolutely no R9 package removal.
 - Regression Library `162-FodMetadata-Classification-and-BL159-Cleanup.txt`, `339-R1-Canonical-FodMetadata-Superseded-Native-Production-Removal.txt` proves one native superseded MAIN /Remove-Package success on 26200.9445 with current MAIN and both wrapper packages retained; `174-FodMetadata-Core-Classification-and-BL173-Cleanup.txt` establishes distinct CORE exact self-owner AMBER and Desktop-CompDB servicing floor. **Do not apply 26200 current MAIN version 26100.9444 to 26300 current 26100.9711.** R9 observation plus historical method justifies one owned-clone 26300 native test, not direct production permission. Official DISM native `/Remove-Package` docs in BlueLite_Sources; DO NOT modify wrappers/CU owners/core/host OS.
 - **FIRST checkpoint NEXT (NOT YET DELIVERED):** separate immutable R10 native superseded MAIN test against NEW disposable S41 copy of committed S39; full SHA/bytes pre-copy and clone SHA, zero mounts/hives, min disk capacity; pre MAIN old Superseded/new Installed and CORE Installed, optional exact wrapper info with negative query classifed; pending0 CheckHealth CLEAN; native `/Remove-Package` ONLY `Microsoft-Windows-FodMetadataServicing-Desktop-Metadata-Package~31bf3856ad364e35~amd64~~10.0.26100.1742`; target invalid 0x800f0805, current+core exact keep states, wrapper matched pre/post, pending0 and CheckHealth+ScanHealth CLEAN before /Commit; source S39 protected. Scoped PASS from this possible step is only disposable commit, not production/installed-footprint proof; next independent postcommit RO and fair export on R10 if actual PASS. Registry r22 runtime=false, Master v6 unchanged.
+
+### 8.120 R20 native 26300.x high-impact preflight published and one exact PS7 operator command DELIVERED_NOT_RUN (SECOND §0R, 2026-10-19)
+
+- LAST ACTUAL remains original operator R19P native DISM image 10.0.26300 ServicePackBuild 9807 x64 Professional correctly printed and both source SHA proven, while R19P terminal HOLD is only wrong DISM banner parser (Handoff §8.119). Do not claim actual R20 output before original operator file. Original ISO 8094824448 B SHA A564F5EF2F6C7B53E3DD42C66CCC4CAA2DF2995348E0FBDA4992A55212AA4A3F; WIM 7021953581 B SHA 0FB778D4696DABA17EDC52E6391A3F217982422FB920C98C8273E0C51A094B49.
+- SOURCE ACTUALLY CREATED: production/engine/BlueLite.MaxPre.NativeSourcePreflight.R20.ps1 immutable FINAL commit 0656d886a9b94377b10e1df2612ee41787c00034, Git blob 37b44e463725e2456f6ea77cb688ddc06c05b311, SHA256 BBFCA7DB2811BF2197C36A02181ABDA850E81934B71539EFFE4DC59D1E89600C, 12349 ASCII B /225 LF-split rows. Independent source readback byte exact and SHA256 implementation NIST abc test PASS. Initial code commit 8fd4a5798cea6cdf30080cbe185d994ea6313f7b superseded by data-driven image expected version/build source params. PS7 AST and native R20 NOT RUN until user executes next command.
+- Execution: uses exact source WIM and original operator R19P log bytes/sha, checks raw image Version only within Details for image section (ignores DISM tool banner), requires 26300 lineage and expected ServicePackBuild parameter 9807. One owned read-only mount C:\BLR20RO after source full WIM SHA check and zero mounts; exact five capabilities hidden WebView/DirectX/LA57/Sense/Language, four retained provisioned AppX, AppInstaller provisioned status; targeted exact metadata MUM and DISM /Get-PackageInfo for WebView, OneDrive, SearchEngine; pending package states and native CheckHealth CLEAN. On all branches /Discard, only empty owned mount removal, zero mount table post/source WIM SHA post. No 7GB clone, UUP download, WIM edit, ISO mount or release claim. JSON and TXT report with actual state if success; any dependency/unknown state leads HOLD rather than invented removals. Current RecipeRegistry r30 execution forbidden.
+- ONE PS7 ADMIN COMPLETE COMMAND SOURCE+SHA+AST PINNED, DELIVERED_NOT_RUN:
+
+```powershell
+& {
+    Set-StrictMode -Version Latest
+    $ErrorActionPreference = 'Stop'
+    if ($PSVersionTable.PSVersion.Major -ne 7) { throw 'BL_R20_PS7_REQUIRED' }
+    $admin = [Security.Principal.WindowsPrincipal]::new(
+        [Security.Principal.WindowsIdentity]::GetCurrent()
+    )
+    if (-not $admin.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+        throw 'BL_R20_ADMIN_REQUIRED'
+    }
+    $dir = 'C:\work\scripts'
+    $file = Join-Path $dir 'BlueLite.MaxPre.NativeSourcePreflight.R20.ps1'
+    $url = 'https://raw.githubusercontent.com/johnny-belgrade/windows/0656d886a9b94377b10e1df2612ee41787c00034/production/engine/BlueLite.MaxPre.NativeSourcePreflight.R20.ps1'
+    $sha = 'BBFCA7DB2811BF2197C36A02181ABDA850E81934B71539EFFE4DC59D1E89600C'
+    $prior = 'C:\work\logs\BlueLite_26300_9807_DirectSourceIdentity_R19P.txt'
+    $source = 'C:\work\26300.9807-UUP\install.wim'
+    $sourceSha = '0FB778D4696DABA17EDC52E6391A3F217982422FB920C98C8273E0C51A094B49'
+    $txt = 'C:\work\logs\BlueLite_26300_9807_HighImpactNativePreflight_R20.txt'
+    $json = 'C:\work\logs\BlueLite_26300_9807_HighImpactNativePreflight_R20.json'
+    if (-not (Test-Path -LiteralPath $dir -PathType Container) -or
+        -not (Test-Path -LiteralPath 'C:\work\logs' -PathType Container)) {
+        throw 'BL_R20_WORKSPACE_MISSING'
+    }
+    if ((Test-Path -LiteralPath $txt) -or (Test-Path -LiteralPath $json) -or
+        (Test-Path -LiteralPath 'C:\BLR20RO')) {
+        throw 'BL_R20_OUTPUT_OR_MOUNT_ALREADY_EXISTS'
+    }
+    if ((Get-Item -LiteralPath $prior -ErrorAction Stop).Length -ne 2482 -or
+        (Get-FileHash -LiteralPath $prior -Algorithm SHA256).Hash -cne
+        '2D9B7F61380B081EC062ABFF225EDABAC0C2E3E0C2394223EA0A12DDB4BFBF66') {
+        throw 'BL_R20_PRIOR_REPORT_SHA_MISMATCH'
+    }
+    if ((Get-Item -LiteralPath $source -ErrorAction Stop).Length -ne 7021953581 -or
+        (Get-FileHash -LiteralPath $source -Algorithm SHA256).Hash -cne $sourceSha) {
+        throw 'BL_R20_SOURCE_WIM_SHA_MISMATCH'
+    }
+    if (-not (Test-Path -LiteralPath $file)) {
+        $tmp = Join-Path $dir ('BL_R20_' + [guid]::NewGuid().ToString('N') + '.tmp')
+        try {
+            Invoke-WebRequest -Uri $url -OutFile $tmp -TimeoutSec 90
+            if ((Get-Item -LiteralPath $tmp).Length -ne 12349 -or
+                (Get-FileHash -LiteralPath $tmp -Algorithm SHA256).Hash -cne $sha) {
+                throw 'BL_R20_DOWNLOADED_SOURCE_MISMATCH'
+            }
+            [IO.File]::Move($tmp, $file)
+        }
+        finally {
+            if (Test-Path -LiteralPath $tmp) { Remove-Item -LiteralPath $tmp -Force }
+        }
+    }
+    if ((Get-Item -LiteralPath $file -ErrorAction Stop).Length -ne 12349 -or
+        (Get-FileHash -LiteralPath $file -Algorithm SHA256).Hash -cne $sha) {
+        throw 'BL_R20_SCRIPT_SHA_MISMATCH'
+    }
+    $tokens = $null
+    $errors = $null
+    $null = [System.Management.Automation.Language.Parser]::ParseFile(
+        $file, [ref]$tokens, [ref]$errors
+    )
+    if ($errors.Count -ne 0) { throw ('BL_R20_AST_FAILURE: ' + $errors[0].Message) }
+    Write-Host 'R20 SOURCE + SCRIPT SHA256 AND AST PASS'
+    $parameters = @{
+        ImagePath = $source
+        ExpectedSha256 = $sourceSha
+        ExpectedBytes = 7021953581
+        ExpectedImageVersion = '10.0.26300'
+        ExpectedServicePackBuild = '9807'
+        PriorReport = $prior
+        ReportPath = $txt
+        JsonPath = $json
+        MountPath = 'C:\BLR20RO'
+    }
+    & $file @parameters
+}
+```
+
+- Expected original R20 reports C:\work\logs\BlueLite_26300_9807_HighImpactNativePreflight_R20.txt and C:\work\logs\BlueLite_26300_9807_HighImpactNativePreflight_R20.json. Terminal potential PASS_R20_NATIVE_26300_9807_HIGH_IMPACT_PREFLIGHT_READONLY_ONLY or HOLD_R20_NATIVE_SOURCE_PREFLIGHT only after actual native output. After receipt §0R FIRST upsert native 26300.9807 target states, then next ONE independent guarded owned-disposable native high-impact mutation step and equal-compression WIM delta. Master Defender ON/OFF clean-install dual variants unchanged.
 
 ### 8.119 R19P original native 26300.9807 source verified, false HOLD from DISM header parser; R20 read-only high-impact preflight NEXT (FIRST §0R, 2026-10-19)
 
