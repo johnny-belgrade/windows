@@ -1,0 +1,94 @@
+{
+  "Schema": "BlueLite.MAXPRE.ImpactPlan.v0.1",
+  "Mode": "READONLY",
+  "Source": "C:\\work\\E2E\\BlueLite_Stage1_S41_26300.9711_FodMetadata_Superseded_R10\\install.fodmetadata-disposable.wim",
+  "ImageIndex": 1,
+  "ImageSha256": "378B6C7A20D434172EA7AB2F4857C78431393C0B3C1B13D993D8AAF125D6B6B1",
+  "Lineage": "26300.x",
+  "Architecture": "x64",
+  "TargetObservation": {
+    "DirectX": "NOT_PRESENT",
+    "WebView": "NOT_PRESENT",
+    "Sense": "INSTALLED",
+    "LA57": "NOT_PRESENT"
+  },
+  "ProvisionedAppx": [
+    "Microsoft.NET.Native.Framework.2.2",
+    "Microsoft.NET.Native.Runtime.2.2",
+    "Microsoft.SecHealthUI",
+    "Microsoft.UI.Xaml.2.8",
+    "Microsoft.VCLibs.140.00.UWPDesktop",
+    "Microsoft.VCLibs.140.00",
+    "Microsoft.Windows.Photos",
+    "Microsoft.WindowsCalculator",
+    "Microsoft.WindowsNotepad"
+  ],
+  "OneDriveSetupMumNames": [],
+  "Candidates": [
+    {
+      "Target": "WebView.FoD",
+      "Priority": 1,
+      "ObservedState": "NOT_PRESENT",
+      "Decision": "ALREADY_ABSENT",
+      "EqualCompressionWimDeltaReferenceBytes": 603556113,
+      "ReferenceEvidence": "R8 26300.9711 equal-max WIM comparison only",
+      "ProductionRemovalAuthorized": false
+    },
+    {
+      "Target": "OneDrive.Setup",
+      "Priority": 2,
+      "ObservedState": "MUM_FILES_0",
+      "Decision": "MUM_ABSENT_NOT_NATIVE_PROOF",
+      "EqualCompressionWimDeltaReferenceBytes": null,
+      "ReferenceEvidence": "S31 26300 native group removal; MUM count not installed state",
+      "ProductionRemovalAuthorized": false
+    },
+    {
+      "Target": "DesktopAppInstaller",
+      "Priority": 3,
+      "ObservedState": "NOT_PROVISIONED",
+      "Decision": "ALREADY_NOT_PROVISIONED",
+      "EqualCompressionWimDeltaReferenceBytes": null,
+      "ReferenceEvidence": "S36/S37 26300 proven AppX source-specific",
+      "ProductionRemovalAuthorized": false
+    },
+    {
+      "Target": "DirectX.Configuration.Database",
+      "Priority": 4,
+      "ObservedState": "NOT_PRESENT",
+      "Decision": "ALREADY_ABSENT",
+      "EqualCompressionWimDeltaReferenceBytes": null,
+      "ReferenceEvidence": "S28 26300 native GREEN",
+      "ProductionRemovalAuthorized": false
+    },
+    {
+      "Target": "Windows.Kernel.LA57",
+      "Priority": 5,
+      "ObservedState": "NOT_PRESENT",
+      "Decision": "ALREADY_ABSENT",
+      "EqualCompressionWimDeltaReferenceBytes": null,
+      "ReferenceEvidence": "S28 26300 native GREEN",
+      "ProductionRemovalAuthorized": false
+    },
+    {
+      "Target": "Defender.Sense",
+      "Priority": 99,
+      "ObservedState": "INSTALLED",
+      "Decision": "KEEP_PROTECTED",
+      "EqualCompressionWimDeltaReferenceBytes": null,
+      "ReferenceEvidence": "Defender ON floor",
+      "ProductionRemovalAuthorized": false
+    },
+    {
+      "Target": "SearchEngine.ClientWrapper",
+      "Priority": 100,
+      "ObservedState": "NOT_REPROBED",
+      "Decision": "LOW_PAYOFF_HOLD",
+      "EqualCompressionWimDeltaReferenceBytes": null,
+      "ReferenceEvidence": "R15R1 26300.9711 CBS Updates FF; 26200 tiny wrapper",
+      "ProductionRemovalAuthorized": false
+    }
+  ],
+  "MutationAllowed": false,
+  "ReleaseCertified": false
+}
