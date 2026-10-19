@@ -224,6 +224,7 @@
    }catch{$ok=$false;Note ('RO_DISCARD_HOLD='+$_.Exception.Message)}
   }
   try{ZeroMounts 'POST'}catch{$ok=$false;Note ('MOUNT_CLOSE_HOLD='+$_.Exception.Message)}
+  try{ProjectHives 'POST'}catch{$ok=$false;Note ('HIVE_CLOSE_HOLD='+$_.Exception.Message)}
   if($mountMade -and -not $mounted){
    try{
     if(@(Get-ChildItem -LiteralPath $mount -Force -ErrorAction Stop).Count -eq 0){
