@@ -1,0 +1,31 @@
+BLUELITE_R20R1_RAW_NATIVE_MOUNT_TABLE_READONLY
+BEGIN_NATIVE=/Get-MountedWimInfo
+
+Deployment Image Servicing and Management tool
+Version: 10.0.26100.9549
+
+Mounted images:
+
+
+No mounted images found.
+
+The operation completed successfully.
+NATIVE_EXIT=/Get-MountedWimInfo=0
+MOUNT_DIR_ROWS=/Get-MountedWimInfo=0
+END_NATIVE=/Get-MountedWimInfo
+BEGIN_NATIVE=/Get-MountedImageInfo
+
+Deployment Image Servicing and Management tool
+Version: 10.0.26100.9549
+
+Mounted images:
+
+
+No mounted images found.
+
+The operation completed successfully.
+NATIVE_EXIT=/Get-MountedImageInfo=0
+MOUNT_DIR_ROWS=/Get-MountedImageInfo=0
+END_NATIVE=/Get-MountedImageInfo
+RESULT=PASS_R20R1_NATIVE_MOUNT_TABLE_CAPTURE_ONLY
+NO_MOUNT_NO_UNMOUNT_NO_CLEANUP_NO_WIM_COPY_NO_MUTATION
