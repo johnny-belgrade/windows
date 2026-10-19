@@ -21,7 +21,8 @@
  $new='Microsoft-Windows-FodMetadataServicing-Desktop-Metadata-Package~31bf3856ad364e35~amd64~~10.0.26100.9711'
  $core='Microsoft-Windows-FodMetadata-Package~31bf3856ad364e35~amd64~~10.0.26100.1'
  $wrapperPrefix='Microsoft-Windows-FodMetadataServicing-Desktop-Metadata-Package-Wrapper~31bf3856ad364e35~amd64~~10.0.'
- $wrappers=@($wrapperPrefix+'26100.1742',$wrapperPrefix+'26100.9711')
+ $wrappers=@(($wrapperPrefix+'26100.1742'),($wrapperPrefix+'26100.9711'))
+ $rollup='Package_for_RollupFix~31bf3856ad364e35~amd64~~26100.9711.1.30'
  $dism=Join-Path $env:SystemRoot 'System32\dism.exe'
  $reg=Join-Path $env:SystemRoot 'System32\reg.exe'
  $utf8=[Text.UTF8Encoding]::new($false)
@@ -98,13 +99,15 @@
      -not $state.Success){throw ('BL_R10_NATIVE_ID_OR_STATE_DRIFT='+$identity)}
   return $state.Groups[1].Value.Trim()
  }
- function CheckMainAndCore([string]$stage){
+ function CheckProtectedFloor([string]$stage){
   $cur=QueryExact $new $false
   $central=QueryExact $core $false
+  $ru=QueryExact $rollup $false
   Note ('KEEP_'+$stage+'_CURRENT_MAIN='+$cur)
   Note ('KEEP_'+$stage+'_CORE='+$central)
-  if($cur -cne 'Installed' -or $central -cne 'Installed'){
-   throw ('BL_R10_CURRENT_MAIN_OR_CORE_DRIFT_'+$stage)
+  Note ('KEEP_'+$stage+'_ROLLUPFIX='+$ru)
+  if($cur -cne 'Installed' -or $central -cne 'Installed' -or $ru -cne 'Installed'){
+   throw ('BL_R10_CURRENT_MAIN_CORE_OR_ROLLUP_DRIFT_'+$stage)
   }
  }
  function PendingZero([string]$stage){
@@ -150,7 +153,7 @@
   $oldState=QueryExact $old $false
   Note ('TARGET_OLD_MAIN_PRE='+$oldState)
   if($oldState -cne 'Superseded'){throw 'BL_R10_TARGET_NOT_EXACT_SUPERSEDED'}
-  CheckMainAndCore 'PRE'
+  CheckProtectedFloor 'PRE'
   $wrapperStates=[ordered]@{}
   foreach($id in $wrappers){
    $state=QueryExact $id $true
@@ -165,7 +168,7 @@
   $oldAfter=QueryExact $old $true
   Note ('TARGET_OLD_MAIN_POST='+$oldAfter)
   if($oldAfter -cne 'NONRESOLVING'){throw 'BL_R10_SUPERSEDED_MAIN_STILL_REGISTERED'}
-  CheckMainAndCore 'POST'
+  CheckProtectedFloor 'POST'
   foreach($id in $wrappers){
    $state=QueryExact $id $true
    Note ('WRAPPER_POST='+$id+';STATE='+$state+';PRE='+$wrapperStates[$id])
@@ -177,7 +180,7 @@
   PendingZero 'POST'
   Health 'POST' 'CheckHealth'
   Health 'POST' 'ScanHealth'
-  Note 'PRECOMMIT_TARGET_ABSENT_CURRENT_AND_CORE_AND_WRAPPERS_PRESERVED_PENDING0_HEALTH_CLEAN=PASS'
+  Note 'PRECOMMIT_TARGET_ABSENT_CURRENT_CORE_ROLLUPFIX_WRAPPERS_PRESERVED_PENDING0_HEALTH_CLEAN=PASS'
   $null=Native 'COMMIT_OWNED_S41' @('/English','/Unmount-Image',('/MountDir:'+$mount),'/Commit')
   $mounted=$false;$committed=$true
   Note 'OWNED_S41_NATIVE_COMMIT=PASS'
