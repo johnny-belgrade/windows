@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.105 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (exact 26300.9807 ISO/WIM paths resolved; obsolete R19 locator superseded, direct R19P source pin next)  
+**Verzija dokumenta:** 1.5.106 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (R19P direct ISO/WIM hash+DISM source check delivered, not run)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -2248,6 +2248,53 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - Operator-original `BlueLite_MAXPRE_FodMetadata_26300.9711_ReadOnly_R9.txt`, **1504 B/25 CRLF** SHA256 **7996B6BC49611645B3E79C87E0FC8D063BBE805CC42565067A7FE7436D19D727** independently hashed. R9 source immutable commit `e2442344ad5f396b31d6bdbd4001c16cfb8646fd`, SHA **F3DA22FF241C17E9F3055C981B92DE24D35CDC1215E8EE4B6683DEF5780B197A**; original R8 SHA pin, S37/S39 full WIM SHA pre/post, pre-zero mounts/no project hives, native /ReadOnly S39 mount, post-/Discard, post-zero mounts and owned directory cleanup all PASS; native CheckHealth CLEAN. Exact direct package info family three: **MAIN 26100.1742 Superseded**; **MAIN 26100.9711 Installed/KEEP**, **CORE 26100.1 Installed/KEEP**. Wrappers not in native /Get-Packages filtering; exact /Get-PackageInfo may resolve hidden wrapper — absence from list alone does not mean absent. Actual terminal **`PASS_S39_R9_FODMETADATA_EXACT_NATIVE_READONLY_CLASSIFICATION_ONLY`**; absolutely no R9 package removal.
 - Regression Library `162-FodMetadata-Classification-and-BL159-Cleanup.txt`, `339-R1-Canonical-FodMetadata-Superseded-Native-Production-Removal.txt` proves one native superseded MAIN /Remove-Package success on 26200.9445 with current MAIN and both wrapper packages retained; `174-FodMetadata-Core-Classification-and-BL173-Cleanup.txt` establishes distinct CORE exact self-owner AMBER and Desktop-CompDB servicing floor. **Do not apply 26200 current MAIN version 26100.9444 to 26300 current 26100.9711.** R9 observation plus historical method justifies one owned-clone 26300 native test, not direct production permission. Official DISM native `/Remove-Package` docs in BlueLite_Sources; DO NOT modify wrappers/CU owners/core/host OS.
 - **FIRST checkpoint NEXT (NOT YET DELIVERED):** separate immutable R10 native superseded MAIN test against NEW disposable S41 copy of committed S39; full SHA/bytes pre-copy and clone SHA, zero mounts/hives, min disk capacity; pre MAIN old Superseded/new Installed and CORE Installed, optional exact wrapper info with negative query classifed; pending0 CheckHealth CLEAN; native `/Remove-Package` ONLY `Microsoft-Windows-FodMetadataServicing-Desktop-Metadata-Package~31bf3856ad364e35~amd64~~10.0.26100.1742`; target invalid 0x800f0805, current+core exact keep states, wrapper matched pre/post, pending0 and CheckHealth+ScanHealth CLEAN before /Commit; source S39 protected. Scoped PASS from this possible step is only disposable commit, not production/installed-footprint proof; next independent postcommit RO and fair export on R10 if actual PASS. Registry r22 runtime=false, Master v6 unchanged.
+
+### 8.118 R19P DIRECT LOCAL 26300.9807 ISO + WIM integrity — single loader delivered, NOT RUN (SECOND §0R 2026-10-19)
+
+- Operator supplied definitive path C:\work\26300.9807-UUP\26300.9807.261013-1834.26H2_GE_RELEASE_SVC_PROD3_CLIENTPRO_OEMRET_X64FRE_EN-US.ISO and path C:\work\26300.9807-UUP\install.wim. The earlier broad R19 finder is superseded NOT_RUN; no new UUP download or directory scan.
+- Source code PUBLISHED GitHub production/engine/BlueLite.DirectSourceIdentity.26300x.R19P.ps1 immutable commit f8ae99adb2fcdd8e18cdb8b887a0e45b858f6780, Git blob 583d6a401764da3a4d7555ff6573fcb763959fad, **5,473 ASCII B /111 LF-split rows**, SHA256 9FFBA659E5107CB570663E398A06EEFC5BAB802CF09C43FF3B6735F16EE51F43; exact GitHub full readback and verified SHA256 abc vector. Local AST and runtime not yet verified.
+- Exact read-only source verification contract: PS7 Admin, source size+SHA+AST, default operator-supplied original ISO/WIM paths. Stat each original file and reject missing/reparse/too small; calculate full independent SHA256 of ISO and WIM (not inferred from names); compare reported original Timeline ISO 8,094,824,448B and PRE-WinRE WIM 6,198,772,736B, without requiring identity from size. Native DISM /English /Get-WimInfo index inventory plus index1 details, enforce 26300.x, x64, Professional, log actual ServicePack Build and full native output, compare post file lengths and timestamps. Does not mount ISO/WIM, does not certify in-ISO WIM equals loose WIM or exact KB5127936 by image metadata. No Windows/UUP downloads, no clone, CBS mutation, NTLite, VM or ISO build.
+- Pinned local report C:\work\logs\BlueLite_26300_9807_DirectSourceIdentity_R19P.txt, no overwrite; potential RESULT=PASS_R19P_ISO_AND_STANDALONE_WIM_SHA_DISM_IDENTITY_ONLY or HOLD_R19P_SOURCE_IDENTITY, neither executed yet. Last ACTUAL native proof is R18 FASTPATH_NOOP PASS, 595 B SHA CC41506716DD32EEB7DEA8B15099D0B7A97D8C118DA2471BCA35582B5DA9B7DD. Master Defender ON/OFF variants and RecipeRegistry r30 retained.
+- One exact PS7 loader command, DELIVERED_NOT_RUN:
+
+```powershell
+& {
+    Set-StrictMode -Version Latest
+    $ErrorActionPreference = 'Stop'
+    $dir = 'C:\work\scripts'
+    $file = Join-Path $dir 'BlueLite.DirectSourceIdentity.26300x.R19P.ps1'
+    $sha = '9FFBA659E5107CB570663E398A06EEFC5BAB802CF09C43FF3B6735F16EE51F43'
+    $url = 'https://raw.githubusercontent.com/johnny-belgrade/windows/f8ae99adb2fcdd8e18cdb8b887a0e45b858f6780/production/engine/BlueLite.DirectSourceIdentity.26300x.R19P.ps1'
+    if ($PSVersionTable.PSVersion.Major -ne 7) { throw 'BL_R19P_PS7_REQUIRED' }
+    if (-not (Test-Path -LiteralPath $dir -PathType Container)) { throw 'BL_R19P_DIR_MISSING' }
+    if (-not (Test-Path -LiteralPath $file)) {
+        $tmp = Join-Path $dir ('R19P_' + [guid]::NewGuid().ToString('N') + '.tmp')
+        try {
+            Invoke-WebRequest -Uri $url -OutFile $tmp -TimeoutSec 90
+            if ((Get-Item -LiteralPath $tmp).Length -ne 5473 -or
+                (Get-FileHash -LiteralPath $tmp -Algorithm SHA256).Hash -cne $sha) {
+                throw 'BL_R19P_DOWNLOAD_MISMATCH'
+            }
+            [IO.File]::Move($tmp, $file)
+        }
+        finally { if (Test-Path -LiteralPath $tmp) { Remove-Item -LiteralPath $tmp -Force } }
+    }
+    if ((Get-Item -LiteralPath $file).Length -ne 5473 -or
+        (Get-FileHash -LiteralPath $file -Algorithm SHA256).Hash -cne $sha) {
+        throw 'BL_R19P_SOURCE_MISMATCH'
+    }
+    $tokens = $null
+    $errors = $null
+    $null = [System.Management.Automation.Language.Parser]::ParseFile(
+        $file, [ref]$tokens, [ref]$errors
+    )
+    if ($errors.Count) { throw ('BL_R19P_AST_FAILURE: ' + $errors[0].Message) }
+    Write-Host 'R19P SOURCE SHA256 + AST PASS'
+    & $file
+}
+```
+
+- NEXT: user provides complete original R19P report; perform §0R FIRST two-document commit/readback of source SHA/index/CU constraints, then a source-bound high-impact native MAX_PRE disposable on actually present target. Keep original ISO/WIM unchanged. Do not send R19 locator command.
 
 ### 8.117 Operator resolves 26300.9807 source EXACT PATHS: CANCEL unrun R19 locator; R19P direct pinned WIM/ISO proof NEXT (FIRST §0R, 2026-10-19)
 
