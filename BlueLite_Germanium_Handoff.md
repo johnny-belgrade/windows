@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.99 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (R16 ACTUAL native readonly PASS; universal MAX_PRE recipe-controller integration next)  
+**Verzija dokumenta:** 1.5.100 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (R17 universal recipe controller immutable source published; one pinned operator command DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -2248,6 +2248,118 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - Operator-original `BlueLite_MAXPRE_FodMetadata_26300.9711_ReadOnly_R9.txt`, **1504 B/25 CRLF** SHA256 **7996B6BC49611645B3E79C87E0FC8D063BBE805CC42565067A7FE7436D19D727** independently hashed. R9 source immutable commit `e2442344ad5f396b31d6bdbd4001c16cfb8646fd`, SHA **F3DA22FF241C17E9F3055C981B92DE24D35CDC1215E8EE4B6683DEF5780B197A**; original R8 SHA pin, S37/S39 full WIM SHA pre/post, pre-zero mounts/no project hives, native /ReadOnly S39 mount, post-/Discard, post-zero mounts and owned directory cleanup all PASS; native CheckHealth CLEAN. Exact direct package info family three: **MAIN 26100.1742 Superseded**; **MAIN 26100.9711 Installed/KEEP**, **CORE 26100.1 Installed/KEEP**. Wrappers not in native /Get-Packages filtering; exact /Get-PackageInfo may resolve hidden wrapper — absence from list alone does not mean absent. Actual terminal **`PASS_S39_R9_FODMETADATA_EXACT_NATIVE_READONLY_CLASSIFICATION_ONLY`**; absolutely no R9 package removal.
 - Regression Library `162-FodMetadata-Classification-and-BL159-Cleanup.txt`, `339-R1-Canonical-FodMetadata-Superseded-Native-Production-Removal.txt` proves one native superseded MAIN /Remove-Package success on 26200.9445 with current MAIN and both wrapper packages retained; `174-FodMetadata-Core-Classification-and-BL173-Cleanup.txt` establishes distinct CORE exact self-owner AMBER and Desktop-CompDB servicing floor. **Do not apply 26200 current MAIN version 26100.9444 to 26300 current 26100.9711.** R9 observation plus historical method justifies one owned-clone 26300 native test, not direct production permission. Official DISM native `/Remove-Package` docs in BlueLite_Sources; DO NOT modify wrappers/CU owners/core/host OS.
 - **FIRST checkpoint NEXT (NOT YET DELIVERED):** separate immutable R10 native superseded MAIN test against NEW disposable S41 copy of committed S39; full SHA/bytes pre-copy and clone SHA, zero mounts/hives, min disk capacity; pre MAIN old Superseded/new Installed and CORE Installed, optional exact wrapper info with negative query classifed; pending0 CheckHealth CLEAN; native `/Remove-Package` ONLY `Microsoft-Windows-FodMetadataServicing-Desktop-Metadata-Package~31bf3856ad364e35~amd64~~10.0.26100.1742`; target invalid 0x800f0805, current+core exact keep states, wrapper matched pre/post, pending0 and CheckHealth+ScanHealth CLEAN before /Commit; source S39 protected. Scoped PASS from this possible step is only disposable commit, not production/installed-footprint proof; next independent postcommit RO and fair export on R10 if actual PASS. Registry r22 runtime=false, Master v6 unchanged.
+
+### 8.112 R17 universal MAX_PRE recipe controller v0.1 — exact immutable SHA, PINNED OPERATOR COMMAND DELIVERED_NOT_RUN (SECOND §0R, 2026-10-19)
+
+- **Latest ACTUAL operator checkpoint is R16 READONLY native PASS, not R17:** exact original R16 TXT/JSON SHA in §8.111, S41 source WIM hash unchanged, zero mounts, WebView/DirectX/LA57 Not Present, four apps and Sense Installed, CheckHealth CLEAN. Current top and Handoff §8.111 already preserved this fact, and Master canonical Defender ON and OFF clean-install variants remain untouched.
+- **R17 source actually CREATED and full readback verified on GitHub main:** `production/engine/BlueLite.MaxPre.UniversalRecipeController.v01.ps1`, immutable commit `47cad296e97d6db506654895aef59287a14d6f18`, Git blob `0da1275d8bad3998f41bfa05db82153bd29fada8`, SHA256 `C579B18F1C71AA944792C00B8031C023050B8A1EE97804E9B0B499B256EFE293`, 8806 ASCII bytes /143 newline-split lines. GitHub exact byte-for-byte readback PASS; code does not contain native DISM/remove/hive/mount calls and accepts only pinned R16 evidence and Registry. Local PowerShell 7 AST/native operator execution **NOT RUN**. `production/intelligence/BlueLite_RecipeRegistry.json` r30 pinned immutable commit `a51906951b4b791aaf4cdaed38f798a04525242a`, Git blob `6b88be78a31b0731d72841f79aa044f6c72a6eb0`, content UTF8 SHA256 `BF79A205058FDD30500F1DD709482A8AB6DABF6EB73DC78B9074D20339A2A5AA` (full GitHub readback, NIST-tested JS hash). The loader downloads exactly 2 small source data files if absent, no Windows/UUP/Apps download.
+- **R17 engine contract:** full SHA-pins exact user original `C:\work\logs\BlueLite_MAXPRE_UniversalImpactPlanner_R16.txt` `7B37F583002C6D949702B8732CCF4069C41929BAC10FDEB160DB439593B3FD41` and `.json` `C9A599B4B41E737E8774DECDE3E6247ABBA5D077F3E231CD0E2213409CBE3949`. Exact R16 SUCCESS, zero native mounts, post-WIM SHA pin, JSON schema `BlueLite.MAXPRE.ImpactPlan.v0.1`, lineage `26300.x`, WIM index1 and SHA format, read-only/mutation/release false. Registry identifies exact five family recipe IDs including protected `BL.CBS.Sense` RED, all runtime false. Four app top-level keep and Sense Installed are fail-closed gates. Emits 7 deterministic controller rows: WebView (R8 603556113B measured historic WIM ref), OneDrive (MUM count zero != native package absent), AppInstaller, DirectX, LA57, FoDMetadata, protected Sense. Expected S41 fastpath four skip states, exact MUM negative classification, other known no-auto mutation. In-memory SYNTHETIC tests for installed WebView requiring parent gate; installed DirectX+LA57 requiring native GREEN gate; absent protected Sense rejected; wrong-lineage rejected; missing protected AppX rejected; global runtime deny. 8 total fixture PASS expected if code logic holds. This does NOT claim production native executor or 26300.9807 native proof.
+- **OUTPUTS REFUSE OVERWRITE:** `C:\work\logs\BlueLite_MAXPRE_UniversalRecipeController_R17.txt` and `C:\work\logs\BlueLite_MAXPRE_UniversalRecipeController_R17.json`. Only if original operator run passes possible terminal `RESULT=PASS_R17_UNIVERSAL_RECIPE_CONTROLLER_FASTPATH_ONLY`, 8 fixtures; status **DELIVERED_NOT_RUN**, no local script AST/native PASS yet. No WIM open or hash/clone, no mounts or WIM mutation, no CBS/Registry edits, no NTLite/VM/ISO.
+- **ONE EXACT COPY/PASTE POWERSHELL 7 ADMIN COMMAND, DELIVERED_NOT_RUN:**
+
+```powershell
+& {
+    Set-StrictMode -Version Latest
+    $ErrorActionPreference = 'Stop'
+    $PSNativeCommandUseErrorActionPreference = $false
+
+    if ($PSVersionTable.PSVersion.Major -ne 7) {
+        throw 'BL_R17_POWERSHELL_7_REQUIRED'
+    }
+    $principal = [Security.Principal.WindowsPrincipal]::new(
+        [Security.Principal.WindowsIdentity]::GetCurrent()
+    )
+    if (-not $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+        throw 'BL_R17_ADMIN_REQUIRED'
+    }
+
+    $dir = 'C:\work\scripts'
+    $logs = 'C:\work\logs'
+    if (-not (Test-Path -LiteralPath $dir -PathType Container) -or
+        -not (Test-Path -LiteralPath $logs -PathType Container)) {
+        throw 'BL_R17_WORKSPACE_DIRECTORIES_MISSING'
+    }
+
+    $sources = @(
+        [pscustomobject]@{
+            Path = (Join-Path $dir 'BlueLite.MaxPre.UniversalRecipeController.v01.ps1')
+            Url = 'https://raw.githubusercontent.com/johnny-belgrade/windows/47cad296e97d6db506654895aef59287a14d6f18/production/engine/BlueLite.MaxPre.UniversalRecipeController.v01.ps1'
+            Sha = 'C579B18F1C71AA944792C00B8031C023050B8A1EE97804E9B0B499B256EFE293'
+            Bytes = 8806
+        },
+        [pscustomobject]@{
+            Path = (Join-Path $dir 'BlueLite_RecipeRegistry_r30.json')
+            Url = 'https://raw.githubusercontent.com/johnny-belgrade/windows/a51906951b4b791aaf4cdaed38f798a04525242a/production/intelligence/BlueLite_RecipeRegistry.json'
+            Sha = 'BF79A205058FDD30500F1DD709482A8AB6DABF6EB73DC78B9074D20339A2A5AA'
+            Bytes = 0
+        }
+    )
+
+    $r16Txt = Join-Path $logs 'BlueLite_MAXPRE_UniversalImpactPlanner_R16.txt'
+    $r16Json = Join-Path $logs 'BlueLite_MAXPRE_UniversalImpactPlanner_R16.json'
+    $outTxt = Join-Path $logs 'BlueLite_MAXPRE_UniversalRecipeController_R17.txt'
+    $outJson = Join-Path $logs 'BlueLite_MAXPRE_UniversalRecipeController_R17.json'
+
+    foreach ($out in @($outTxt, $outJson)) {
+        if (Test-Path -LiteralPath $out) {
+            throw ('BL_R17_OUTPUT_ALREADY_EXISTS: ' + $out)
+        }
+    }
+
+    foreach ($item in $sources) {
+        if (-not (Test-Path -LiteralPath $item.Path)) {
+            $tmp = Join-Path $dir ('BL_R17_' + [guid]::NewGuid().ToString('N') + '.tmp')
+            try {
+                Invoke-WebRequest -Uri $item.Url -OutFile $tmp -TimeoutSec 90
+                if ((Get-FileHash -LiteralPath $tmp -Algorithm SHA256).Hash -cne $item.Sha) {
+                    throw 'BL_R17_DOWNLOADED_SOURCE_SHA_MISMATCH'
+                }
+                if ($item.Bytes -gt 0 -and (Get-Item -LiteralPath $tmp).Length -ne $item.Bytes) {
+                    throw 'BL_R17_DOWNLOADED_SOURCE_LENGTH_MISMATCH'
+                }
+                [IO.File]::Move($tmp, $item.Path)
+            }
+            finally {
+                if (Test-Path -LiteralPath $tmp) {
+                    Remove-Item -LiteralPath $tmp -Force
+                }
+            }
+        }
+        if (-not (Test-Path -LiteralPath $item.Path -PathType Leaf) -or
+            (Get-FileHash -LiteralPath $item.Path -Algorithm SHA256).Hash -cne $item.Sha) {
+            throw ('BL_R17_LOCAL_SOURCE_MISMATCH: ' + $item.Path)
+        }
+        if ($item.Bytes -gt 0 -and (Get-Item -LiteralPath $item.Path).Length -ne $item.Bytes) {
+            throw 'BL_R17_LOCAL_SOURCE_LENGTH_MISMATCH'
+        }
+    }
+
+    $script = $sources[0].Path
+    $tokens = $null
+    $parseErrors = $null
+    $null = [System.Management.Automation.Language.Parser]::ParseFile(
+        $script, [ref]$tokens, [ref]$parseErrors
+    )
+    if ($parseErrors.Count -ne 0) {
+        throw ('BL_R17_AST_FAILURE: ' + $parseErrors[0].Message)
+    }
+
+    $parameters = @{
+        PlannerTxt = $r16Txt
+        PlannerTxtSha256 = '7B37F583002C6D949702B8732CCF4069C41929BAC10FDEB160DB439593B3FD41'
+        PlannerJson = $r16Json
+        PlannerJsonSha256 = 'C9A599B4B41E737E8774DECDE3E6247ABBA5D077F3E231CD0E2213409CBE3949'
+        RegistryPath = $sources[1].Path
+        RegistrySha256 = $sources[1].Sha
+        ReportPath = $outTxt
+        OutputJson = $outJson
+    }
+    Write-Host 'R17 SOURCES SHA256 + AST PASS'
+    & $script @parameters
+}
+```
+
+- **NEXT after original operator report:** §0R FIRST: read full operator files / actual SHA, reconcile R17 source, classify native PowerShell output vs adapter; first GitHub writes Current+Handoff and RecipeRegistry only if new actual recipe/topology; then build the safeguarded native component-batch dispatcher with owned-source/clone/rollback/exact topology for proven high impact WebView/OneDrive/AppInstaller/DirectX/LA57, no blind repeats; §0R SECOND write exact next command. All current production recipe flags false and Master v6 unchanged.
 
 ### 8.111 R16 actual universal MAX_PRE planner readonly PASS; high-impact reusable executor NEXT (2026-10-19 §0R FIRST)
 
