@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "registry_revision": "2026-10-19-s39-webview-r7-independent-postcommit-ro-pass-r20",
+  "registry_revision": "2026-10-19-webview-r8-max-export-normalized-savings-pass-r21",
   "status": "S37_COMMITTED_CANDIDATE_INDEPENDENT_S38R3_POSTCOMMIT_PASS_NOT_RELEASED",
   "scope": "Germanium 26300-first; 26200 historical topology references",
   "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
@@ -428,7 +428,7 @@
           "supported_lineage": [
             "26300.x"
           ],
-          "topology_status": "NATIVE_DISPOSABLE_POSTCOMMIT_READONLY_PASS_SIZE_MEASUREMENT_PENDING",
+          "topology_status": "NATIVE_POSTCOMMIT_AND_EQUAL_MAX_WIM_DELTA_PASS_PRODUCTION_INTEGRATION_PENDING",
           "exact_selectors": [
             {
               "kind": "CBS_COMPONENT",
@@ -560,6 +560,12 @@
               "target": "S39 26300.9711 Edge.Webview2.Platform~~~~",
               "expected": "Independent read-only postcommit PASS, exact capability Not Present, 3 linked FoD package identities nonresolving, 9 parent package states unchanged, pending0, CheckHealth CLEAN, 0 exact microsoft-edge-webview WinSxS directories; /Discard zero mounts and original SHA preserved. Physical ISO savings not measured.",
               "evidence_ref": "R7 original SHA256 756B9BFD521A714F843A3A188D2B83B60B799006A928415A331A1D0885CFF43B"
+            },
+            {
+              "kind": "R8_NATIVE_DUAL_EXPORT_EQUAL_MAX_COMPRESSION_PASS",
+              "target": "S37 baseline vs S39 WebView capability removed 26300.9711 WIM index1",
+              "expected": "Both native DISM /Export-Image /Compress:max /CheckIntegrity and /Get-WimInfo PASS; baseline S37 6160680526B, S39 5557124413B, delta S37-S39 +603556113B = 575.596MiB (S39 smaller). Original S37/S39 SHA unchanged, zero mounts. Only WIM transport savings; ISO, installed hardlink-unique bytes, shared WebView2Standalone physical impact not proven.",
+              "evidence_ref": "Original BlueLite_MAXPRE_WebViewEdge_26300.9711_ExportCompare_R8.txt SHA256 426E004E351F5EAE2654B858756201CAB75D6A87A99A981F19E72E6B7BD73A1F"
             }
           ],
           "expected_post_state": [
@@ -584,7 +590,8 @@
             "BlueLite_MAXPRE_WebViewEdge_26300.9711_HiddenCapability_R5R1.txt SHA256 C9E371715EC961FA8FC89D2CBFD96D6E908FDB705931446ADAB9BB45248BA49E",
             "BlueLite_MAXPRE_WebViewEdge_26300.9711_NativeRemoval_R6.txt SHA256 722C6F6DDE1E5AE290385D1EA0D5DB080E89F60A733D4D3B5436EFAEC712C776",
             "BlueLite_MAXPRE_WebViewEdge_26300.9711_NativeRemoval_R6R1.txt SHA256 673E04082074A027BFE9C597737E0D28070B1DA7D957534A9939B56DC199D72D",
-            "BlueLite_MAXPRE_WebViewEdge_26300.9711_PostCommit_R7.txt SHA256 756B9BFD521A714F843A3A188D2B83B60B799006A928415A331A1D0885CFF43B"
+            "BlueLite_MAXPRE_WebViewEdge_26300.9711_PostCommit_R7.txt SHA256 756B9BFD521A714F843A3A188D2B83B60B799006A928415A331A1D0885CFF43B",
+            "BlueLite_MAXPRE_WebViewEdge_26300.9711_ExportCompare_R8.txt SHA256 426E004E351F5EAE2654B858756201CAB75D6A87A99A981F19E72E6B7BD73A1F"
           ]
         }
       ],
