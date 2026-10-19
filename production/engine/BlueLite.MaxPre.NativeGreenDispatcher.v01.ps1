@@ -70,10 +70,10 @@ foreach($t in $targets){
 }
 $web=@($plan.DecisionRows|Where-Object {$_.Target -ceq 'WebView.FoD'})
 if($web.Count -ne 1){throw 'BL_R18_WEBVIEW_ROW_MISSING'}
-if($web[0].Observed -ceq 'INSTALLED'){
- throw 'BL_R18_WEBVIEW_NEEDS_EXACT_NINE_PARENT_GATE_SEPARATE_MODULE'
-}
-if($web[0].Observed -cne 'NOT_PRESENT' -or $web[0].Decision -cne 'ALREADY_ABSENT'){
+$webNeedsOwnerGate=$false
+if($web[0].Observed -ceq 'INSTALLED' -and $web[0].Decision -ceq 'OWNER_AND_NATIVE_GATE_REQUIRED'){
+ $webNeedsOwnerGate=$true
+}elseif($web[0].Observed -cne 'NOT_PRESENT' -or $web[0].Decision -cne 'ALREADY_ABSENT'){
  throw 'BL_R18_WEBVIEW_UNEXPECTED_STATE'
 }
 $sense=@($plan.DecisionRows|Where-Object {$_.Target -ceq 'Defender.Sense'})
@@ -128,6 +128,7 @@ function NativeCapabilityState([string]$mount,[string]$cap){
 Note 'BLUELITE_R18_UNIVERSAL_GREEN_NATIVE_DISPATCHER_V01'
 Note ('MODE='+$Mode+';LINEAGE='+$plan.Lineage+';SOURCE_SHA='+$SourceWimSha256.ToUpperInvariant())
 Note ('GREEN_QUEUE_COUNT='+$queue.Count+';WEBVIEW='+$web[0].Decision+';SENSE=KEEP')
+if($webNeedsOwnerGate){Note 'WEBVIEW_OWNER_GRAPH=DEFER_TO_SEPARATE_EXACT_NINE_PARENT_MODULE'}
 $completed=$false
 $mountUsed=$false
 $mounted=$false
@@ -183,6 +184,8 @@ try{
   foreach($t in $queue){
    if((NativeCapabilityState $mount $t.Capability) -cne 'INSTALLED'){throw ('BL_R18_NATIVE_PRESTATE_DRIFT_'+$t.Name)}
   }
+  $webPre=NativeCapabilityState $mount 'Edge.Webview2.Platform~~~~'
+  if($webPre -cne ([string]$web[0].Observed)){throw 'BL_R18_WEBVIEW_PRESTATE_DRIFT'}
   if((NativeCapabilityState $mount 'Microsoft.Windows.Sense.Client~~~~') -cne 'INSTALLED'){throw 'BL_R18_SENSE_FLOOR_MISSING'}
   if((NativeCapabilityState $mount 'Language.Basic~~~en-US~0.0.1.0') -cne 'INSTALLED'){throw 'BL_R18_LANGUAGE_FLOOR_MISSING'}
   ProtectedApps $mount 'PRE'
@@ -193,6 +196,7 @@ try{
    $null=Native ('REMOVE_'+$t.Name) @('/English',('/Image:'+$mount),'/Remove-Capability',('/CapabilityName:'+$t.Capability))
    if((NativeCapabilityState $mount $t.Capability) -cne 'NOT_PRESENT'){throw ('BL_R18_POST_TARGET_NOT_ABSENT_'+$t.Name)}
   }
+  if((NativeCapabilityState $mount 'Edge.Webview2.Platform~~~~') -cne $webPre){throw 'BL_R18_WEBVIEW_POSTSTATE_DRIFT'}
   if((NativeCapabilityState $mount 'Microsoft.Windows.Sense.Client~~~~') -cne 'INSTALLED'){throw 'BL_R18_POST_SENSE_FLOOR_MISSING'}
   if((NativeCapabilityState $mount 'Language.Basic~~~en-US~0.0.1.0') -cne 'INSTALLED'){throw 'BL_R18_POST_LANGUAGE_FLOOR_MISSING'}
   ProtectedApps $mount 'POST'
