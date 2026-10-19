@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "registry_revision": "2026-10-19-s41-searchengine-r14-native-nonlisting-ro-hold-r26",
+  "registry_revision": "2026-10-19-s41-searchengine-r14r1-cbs-current-owner04-hive-temp-hold-r27",
   "status": "S37_COMMITTED_CANDIDATE_INDEPENDENT_S38R3_POSTCOMMIT_PASS_NOT_RELEASED",
   "scope": "Germanium 26300-first; 26200 historical topology references",
   "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
@@ -1038,6 +1038,58 @@
           "evidence_refs": [
             "production/evidence/BlueLite_MAXPRE_SearchEngine_26300.9711_ReadOnly_R14.txt SHA256 5D08567AFE7FED617C8910F924A1E305157EABAFE58742F9FBA6B8EA9FBE3F20"
           ]
+        },
+        {
+          "variant_id": "26300.9711-s41-r14r1-cbs-single-installed-parent04-native-list-nonlisting-hive-copy-cleanup-hold",
+          "source_family": "Germanium",
+          "supported_lineage": [
+            "26300.x"
+          ],
+          "topology_status": "UNKNOWN_DEPENDENCY",
+          "exact_selectors": [
+            {
+              "kind": "CBS_PACKAGE",
+              "identity": "Microsoft-Windows-SearchEngine-Client-Package~31bf3856ad364e35~amd64~~10.0.26100.9711"
+            },
+            {
+              "kind": "CBS_PACKAGE",
+              "identity": "Microsoft-Windows-SearchEngine-Client-Package~31bf3856ad364e35~amd64~~10.0.26100.1591"
+            }
+          ],
+          "required_predicates": [
+            {
+              "kind": "CBS",
+              "target": "SOFTWARE copy CBS SearchEngine packages",
+              "expected": "exact .1591 CurrentState 0x40, Visibility 0x2, one Client-Desktop-Required-Package04 26100.1742 owner DWORD 0x30040; exact .9711 CurrentState 0x70, Visibility 0x2, one Client-Desktop-Required-Package04 26100.9711 owner DWORD 0x30070; parent CBS CurrentState 0x70"
+            },
+            {
+              "kind": "NATIVE",
+              "target": "DISM /Get-Packages exact SearchEngine family count 0",
+              "expected": "inconclusive nonlisting, exact DISM /Get-PackageInfo for .1591 and .9711 remains NOT RUN"
+            },
+            {
+              "kind": "FILES",
+              "target": "S41 WinSxS srchadmin x64/WOW64",
+              "expected": "x64 4 files 544003 logical bytes, wow64 2 files 299463 logical bytes, each nested r/ directory; 6 total files 843466 logical bytes, reparse entries metadata only"
+            },
+            {
+              "kind": "RECOVERY",
+              "target": "R14R1 temporary copied SOFTWARE hive folder",
+              "expected": "reg unload PASS and zero project hives, but unknown directory content prevented allowed-list cleanup; identify exact leftovers before deleting only trusted ephemeral copies"
+            }
+          ],
+          "expected_post_state": [
+            "R14R1 original result HOLD_R14R1_SEARCHENGINE_READONLY, not native package removal PASS",
+            "Native S41 RO mount /Discard PASS, pending0, CheckHealth CLEAN, zero mounts/hives, S41 SHA preserved; no changes to source or CBS",
+            "R14R2 must perform exact native package query of both resolved SearchEngine identities and safe cleanup of only self-owned leftover temporary copy"
+          ],
+          "tested_builds": [
+            "26300.9711"
+          ],
+          "evidence_refs": [
+            "production/evidence/BlueLite_MAXPRE_SearchEngine_26300.9711_ReadOnly_R14R1.txt SHA256 9014DF6D0B328B83F81699E4FF315810B1C1767298A265D131E9F12C556D0813"
+          ],
+          "notes": "R14R1 revealed actual 26300 CBS historical single-owner AMBER shape for current .9711 but native exact package removal not proven; R14R1 is HOLD only on bounded temp hive artifact cleanup. No AMBER mutation authorized."
         }
       ],
       "protected_floor": [
@@ -1075,9 +1127,14 @@
           "source_kind": "OPERATOR_LOG",
           "reference": "BlueLite_MAXPRE_SearchEngine_26300.9711_ReadOnly_R14.txt",
           "scope": "S41 26300 R14 native list count0, 2 srchadmin directories; scoped scanner HOLD; no mutation, health not checked"
+        },
+        {
+          "source_kind": "OPERATOR_LOG",
+          "reference": "BlueLite_MAXPRE_SearchEngine_26300.9711_ReadOnly_R14R1.txt",
+          "scope": "Exact 26300 SearchEngine CBS x2 with one current Installed-like 0x70 owner Required-Package04; native nonlisting; srchadmin nested dirs bounded; health and zero mounts/hives clean; temporary SOFTWARE-copy cleanup HOLD"
         }
       ],
-      "notes": "Do not treat DISM package-list nonlisting as package absence; exact CBS registry state unexamined on 26300. R14 readonly aborted on previously unanticipated srchadmin child dir. R14R1 must resolve both without broad Search exploration. Runtime removal prohibited."
+      "notes": "Do not treat DISM package-list nonlisting as package absence; exact CBS registry state unexamined on 26300. R14 readonly aborted on previously unanticipated srchadmin child dir. R14R1 must resolve both without broad Search exploration. Runtime removal prohibited. On 2026-10-19 actual R14R1 S41 CBS current .9711 matches historical single-owner shape, but native /Get-PackageInfo exact untested and temporary copy remains due unexpected sidecars: keep runtime=false."
     }
   ]
 }
