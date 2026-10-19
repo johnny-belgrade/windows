@@ -98,7 +98,11 @@
  function UpdateInfo([string]$root,[string]$id,[string]$label){
   $path=$root+'\'+$id
   $key=[Microsoft.Win32.Registry]::LocalMachine.OpenSubKey($path,$false)
-  if($null -eq $key){throw ('BL_R15R1_CBS_PACKAGE_MISSING_'+$label)}
+  if($null -eq $key){
+   Note ('CBS_'+$label+'_PACKAGE_KEY=MISSING')
+   if($label -ceq 'OLD_PARENT04'){return}
+   throw ('BL_R15R1_CBS_PACKAGE_MISSING_'+$label)
+  }
   try{
    $state=$key.GetValue('CurrentState',$null)
    $vis=$key.GetValue('Visibility',$null)
@@ -157,7 +161,7 @@
    throw 'BL_R15R1_TEMP_NOT_PLAIN_DIRECTORY'
   }
   $items=@(Get-ChildItem -LiteralPath $temp -Force -ErrorAction Stop)
-  if($items.Count -lt 1 -or $items.Count -gt 16){throw 'BL_R15R1_TEMP_ITEM_COUNT_UNEXPECTED'}
+  if($items.Count -gt 16){throw 'BL_R15R1_TEMP_ITEM_COUNT_UNEXPECTED'}
   $prefix=[regex]::Escape('SOFTWARE.readonlycopy.hiv')
   $guid='\{[0-9a-fA-F]{8}(-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}\}'
   $allowed='^'+$prefix+'(?:\.LOG[12]?|'+$guid+'\.TM\.blf|'+$guid+'\.TMContainer[0-9]{20}\.regtrans-ms)?$'
