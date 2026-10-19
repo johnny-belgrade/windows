@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.73 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-18 (R6R1 S39 native Remove-Capability/Commit ACTUAL PASS; R7 independent postcommit read-only DELIVERED_NOT_RUN)  
+**Verzija dokumenta:** 1.5.74 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (R7 independent S39 WebView postcommit read-only actual PASS; fair dual-WIM DISM export size comparison NEXT)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -2132,6 +2132,11 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
  & $file
 }
 ```
+
+### 8.87 R7 S39 independent native postcommit READONLY actual PASS (2026-10-19 FIRST §0R)
+
+- Original operator `BlueLite_MAXPRE_WebViewEdge_26300.9711_PostCommit_R7.txt` **3,160 B, 35 CRLF lines**, SHA256 **756B9BFD521A714F843A3A188D2B83B60B799006A928415A331A1D0885CFF43B** independently byte-hashed. Reviewed source commit `ca61dd9d9e5784c9c48d2d978de90db1ec751d52` SHA **473E46E6D8F0BE73F6E7541D3F7944F9409A9A8FB945354A519BDF377FE1809B**. Direct original R3/R4/R6R1 original SHA gates pass. Protected S37 **6,551,362,129 B** SHA **A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F**, committed disposable S39 **6,595,075,169 B** SHA **32AD747CD86052BDF6226A25B92A7B051E9946B3D43A591D1EFFD99B265AEBED**, full SHA PASS before and after the read-only mount. Mounts 0/Hives clear PRE, native S39 /ReadOnly PASS, direct exact `Edge.Webview2.Platform~~~~` Not Present, three FoD native package identities unresolvable `0x800f0805`; nine protected parent package native states match CBS 0x40=>Staged /0x70=>Installed; pending0, pending.xml False, CheckHealth CLEAN. Exactly **0 named `amd64_microsoft-edge-webview_*` WinSxS directories** is scoped metadata; NOT proof of no WebView2Standalone residuals or reclaimed unique physical bytes. /Discard, DISM 0 mount, owned empty dir removed, post WIM hashes PASS. Actual terminal **`PASS_S39_R7_WEBVIEW_INDEPENDENT_POSTCOMMIT_READONLY_ONLY`**. Native WebView FoD removal now both disposable commit and independent postcommit certified for 26300.9711; not yet universal production recipe/first boot/release.
+- R6R1 raw container changed **+43,713,040 B** after commit; does not establish space savings. Microsoft official DISM `/Export-Image` documents that unnecessary resource files can be removed by exporting, and same `/Compress:max` with fresh destination files makes WIM container sizes more comparable: https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/dism-image-management-command-line-options-s14?view=windows-11 (reviewed 2026-10-19). Next action at FIRST §0R is **NOT DELIVERED**: one PS7 Admin tool to pin originals+R7, check available disk/zero mounts/no owner alias, export image index 1 from immutable S37 and separately already committed S39 into two new, owned `max` compressed fresh WIM files with /CheckIntegrity; verify output DISM Get-WimInfo, SHA/bytes, and report comparable delta, no source mutation. Measure export size but do not call it deployed footprint, ISO size or hardlink saved bytes; retain original sources and measurement WIMs until evidence readback. R20 variant must remain `runtime_execution_allowed=false`, Master v6 unchanged, protected S31/S37 untouched, §0L sources required.
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
