@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.96 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (R15R1 ACTUAL readonly PASS: Search Updates=0xFF; 26300.9807 v128m size benchmark; universal impact-first focus)  
+**Verzija dokumenta:** 1.5.97 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (R16 universal MAX_PRE impact planner source published; pinned read-only operator step DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -2248,6 +2248,86 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - Operator-original `BlueLite_MAXPRE_FodMetadata_26300.9711_ReadOnly_R9.txt`, **1504 B/25 CRLF** SHA256 **7996B6BC49611645B3E79C87E0FC8D063BBE805CC42565067A7FE7436D19D727** independently hashed. R9 source immutable commit `e2442344ad5f396b31d6bdbd4001c16cfb8646fd`, SHA **F3DA22FF241C17E9F3055C981B92DE24D35CDC1215E8EE4B6683DEF5780B197A**; original R8 SHA pin, S37/S39 full WIM SHA pre/post, pre-zero mounts/no project hives, native /ReadOnly S39 mount, post-/Discard, post-zero mounts and owned directory cleanup all PASS; native CheckHealth CLEAN. Exact direct package info family three: **MAIN 26100.1742 Superseded**; **MAIN 26100.9711 Installed/KEEP**, **CORE 26100.1 Installed/KEEP**. Wrappers not in native /Get-Packages filtering; exact /Get-PackageInfo may resolve hidden wrapper — absence from list alone does not mean absent. Actual terminal **`PASS_S39_R9_FODMETADATA_EXACT_NATIVE_READONLY_CLASSIFICATION_ONLY`**; absolutely no R9 package removal.
 - Regression Library `162-FodMetadata-Classification-and-BL159-Cleanup.txt`, `339-R1-Canonical-FodMetadata-Superseded-Native-Production-Removal.txt` proves one native superseded MAIN /Remove-Package success on 26200.9445 with current MAIN and both wrapper packages retained; `174-FodMetadata-Core-Classification-and-BL173-Cleanup.txt` establishes distinct CORE exact self-owner AMBER and Desktop-CompDB servicing floor. **Do not apply 26200 current MAIN version 26100.9444 to 26300 current 26100.9711.** R9 observation plus historical method justifies one owned-clone 26300 native test, not direct production permission. Official DISM native `/Remove-Package` docs in BlueLite_Sources; DO NOT modify wrappers/CU owners/core/host OS.
 - **FIRST checkpoint NEXT (NOT YET DELIVERED):** separate immutable R10 native superseded MAIN test against NEW disposable S41 copy of committed S39; full SHA/bytes pre-copy and clone SHA, zero mounts/hives, min disk capacity; pre MAIN old Superseded/new Installed and CORE Installed, optional exact wrapper info with negative query classifed; pending0 CheckHealth CLEAN; native `/Remove-Package` ONLY `Microsoft-Windows-FodMetadataServicing-Desktop-Metadata-Package~31bf3856ad364e35~amd64~~10.0.26100.1742`; target invalid 0x800f0805, current+core exact keep states, wrapper matched pre/post, pending0 and CheckHealth+ScanHealth CLEAN before /Commit; source S39 protected. Scoped PASS from this possible step is only disposable commit, not production/installed-footprint proof; next independent postcommit RO and fair export on R10 if actual PASS. Registry r22 runtime=false, Master v6 unchanged.
+
+### 8.110 R16 reusable 26300.x HIGH-IMPACT MAX_PRE ENGINE — source published, operator read-only run DELIVERED_NOT_RUN (SECOND §0R, 2026-10-19)
+
+- **Authoritative strategy remains Master v6 §0A and Handoff §4.0A:** one universal 26300.x topology-driven high-impact MAX_PRE engine, not repeated per-build microforensics. §8.109 already reconciled original R15R1 read-only PASS and independent 26300.9807 converter benchmark. The latest operator ACTUAL remains R15R1, no later component mutations.
+- **New concrete GitHub source:** `production/engine/BlueLite.MaxPre.UniversalImpactPlanner.v01.ps1`, final immutable commit `949475225fffb8452c9dbe07d0dca1a2ea2dc614`, Git blob `f70c46290cb8fde35243ab1490b2b7310d904410`, SHA256 `6F1319DF193AC3DF343A4BE88A436A34FADEDB0AA36926C7D0EFEFDE8CBA438F`, **9804 ASCII B/178 split rows**. Independent full GitHub readback identical; JS SHA256 NIST test-vector matched. Initial commit `347b6fa3835872c4e0b397971c3909bce15a3ac7` was replaced with final PS7 native-preference correction. Only pin FINAL immutable commit. **Operator PS7 AST and native runtime NOT YET EXECUTED.**
+- **One next step contract:** local PS7 Admin script loader, validates source 9804B/SHA, AST parse 0 errors. Image source S41 protected `C:\work\E2E\BlueLite_Stage1_S41_26300.9711_FodMetadata_Superseded_R10\install.fodmetadata-disposable.wim`, 6636510185B SHA256 `378B6C7A20D434172EA7AB2F4857C78431393C0B3C1B13D993D8AAF125D6B6B1` before AND after, index1. No WIM copy or image write. Source module accepts arbitrary source WIM path/index/SHA/size and verifies DISM 26300.x lineage at runtime; no hardcoded .9711 branch. Zero global mounted images before/after, one new owned read-only `C:\BLUIM1RO` mount, /Discard and only empty owned mount-folder deletion; fail-closed on unexpected state. Native target states for WebView2 capability, DirectX, LA57, Sense protected; provisioned AppX 4 retained applications, AppInstaller, Store, PurchaseApp; OneDrive Setup precise MUM name count only (not proof of native package state). CheckHealth clean/pending.xml absent. Machine-readable JSON dynamic classifications; old R8 WebView equal-max delta 603556113B only reference, not predicted savings on any other build. SearchEngine low-payoff HOLD. Does not implement or authorize actual removals (`MutationAllowed=false`), install/ISO/VM, release, or production recipe activation.
+- **Potential wrapper HOLD:** unexpected DISM/AppX output shape or required Sense/4 apps absent must be logged as HOLD and /Discard; wrapper HOLD with native EXIT0 is not automatically CBS/OS dependency failure. No 9807 UUP download or S41 mutation. This is first actual reusable executable engine code, READONLY planner subcomponent, not full four-stage production executor.
+- **EXACT ONE COMPLETE COPY-PASTE POWERSHELL 7 ADMIN STEP, DELIVERED_NOT_RUN:**
+
+```powershell
+& {
+    Set-StrictMode -Version Latest
+    $ErrorActionPreference = 'Stop'
+    $PSNativeCommandUseErrorActionPreference = $false
+    if ($PSVersionTable.PSVersion.Major -ne 7) {
+        throw 'BL_R16_POWERSHELL_7_REQUIRED'
+    }
+    $principal = [Security.Principal.WindowsPrincipal]::new(
+        [Security.Principal.WindowsIdentity]::GetCurrent()
+    )
+    if (-not $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+        throw 'BL_R16_ADMIN_REQUIRED'
+    }
+    $dir = 'C:\work\scripts'
+    $file = Join-Path $dir 'BlueLite.MaxPre.UniversalImpactPlanner.v01.ps1'
+    $url = 'https://raw.githubusercontent.com/johnny-belgrade/windows/949475225fffb8452c9dbe07d0dca1a2ea2dc614/production/engine/BlueLite.MaxPre.UniversalImpactPlanner.v01.ps1'
+    $sha = '6F1319DF193AC3DF343A4BE88A436A34FADEDB0AA36926C7D0EFEFDE8CBA438F'
+    if (-not (Test-Path -LiteralPath $dir -PathType Container)) {
+        throw 'BL_R16_SCRIPT_DIR_MISSING'
+    }
+    if (-not (Test-Path -LiteralPath 'C:\work\logs' -PathType Container)) {
+        throw 'BL_R16_LOG_DIR_MISSING'
+    }
+    $report = 'C:\work\logs\BlueLite_MAXPRE_UniversalImpactPlanner_R16.txt'
+    $json = 'C:\work\logs\BlueLite_MAXPRE_UniversalImpactPlanner_R16.json'
+    if ((Test-Path -LiteralPath $report) -or (Test-Path -LiteralPath $json)) {
+        throw 'BL_R16_REPORT_NO_OVERWRITE'
+    }
+    if (-not (Test-Path -LiteralPath $file)) {
+        $tmp = Join-Path $dir ('BL_R16_' + [guid]::NewGuid().ToString('N') + '.tmp')
+        try {
+            Invoke-WebRequest -Uri $url -OutFile $tmp -TimeoutSec 90
+            if ((Get-Item -LiteralPath $tmp).Length -ne 9804 -or
+                (Get-FileHash -LiteralPath $tmp -Algorithm SHA256).Hash -cne $sha) {
+                throw 'BL_R16_DOWNLOADED_SOURCE_MISMATCH'
+            }
+            [IO.File]::Move($tmp, $file)
+        }
+        finally {
+            if (Test-Path -LiteralPath $tmp) {
+                Remove-Item -LiteralPath $tmp -Force
+            }
+        }
+    }
+    if ((Get-Item -LiteralPath $file).Length -ne 9804 -or
+        (Get-FileHash -LiteralPath $file -Algorithm SHA256).Hash -cne $sha) {
+        throw 'BL_R16_LOCAL_SOURCE_MISMATCH'
+    }
+    $tokens = $null
+    $parseErrors = $null
+    $null = [System.Management.Automation.Language.Parser]::ParseFile(
+        $file, [ref]$tokens, [ref]$parseErrors
+    )
+    if ($parseErrors.Count -ne 0) {
+        throw ('BL_R16_AST_FAILURE: ' + $parseErrors[0].Message)
+    }
+    Write-Host 'R16 SOURCE SHA256 + AST PASS'
+    $parameters = @{
+        ImagePath      = 'C:\work\E2E\BlueLite_Stage1_S41_26300.9711_FodMetadata_Superseded_R10\install.fodmetadata-disposable.wim'
+        ExpectedSha256 = '378B6C7A20D434172EA7AB2F4857C78431393C0B3C1B13D993D8AAF125D6B6B1'
+        ExpectedBytes  = 6636510185
+        ReportPath     = $report
+        JsonPath       = $json
+        Index          = 1
+    }
+    & $file @parameters
+}
+```
+
+- **Expected two operator-original files:** `C:\work\logs\BlueLite_MAXPRE_UniversalImpactPlanner_R16.txt` and `C:\work\logs\BlueLite_MAXPRE_UniversalImpactPlanner_R16.json`. Possible terminal `PASS_UNIVERSAL_MAXPRE_IMPACT_PLANNER_READONLY_ONLY` is **NOT YET RUN**, expected only if actual native pass plus /Discard/source SHA clean. Next operator action: run once, submit both complete files plus console if HOLD. Apply Handoff §0R first writes then next step and §0R second; preserve Master and RecipeRegistry r30 until new actual evidence.
 
 ### 8.109 R15R1 original PASS 26300 CBS Updates=0xFF; independent operator 26300.9807 converter size + IMPACT-FIRST universality feedback (2026-10-19)
 
