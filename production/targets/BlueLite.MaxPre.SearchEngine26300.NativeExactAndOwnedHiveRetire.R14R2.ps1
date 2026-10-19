@@ -134,7 +134,8 @@
    $total=0L
    foreach($item in $items){
     $isLink=(($item.Attributes -band [IO.FileAttributes]::ReparsePoint) -ne 0)
-    Note ('R14R1_TEMP_ENTRY='+$item.Name+';BYTES='+$item.Length+';DIRECTORY='+$item.PSIsContainer+';REPARSE='+$isLink)
+    $itemSize=if($item.PSIsContainer){-1}else{[long]$item.Length}
+    Note ('R14R1_TEMP_ENTRY='+$item.Name+';BYTES='+$itemSize+';DIRECTORY='+$item.PSIsContainer+';REPARSE='+$isLink)
     if($item.PSIsContainer -or $isLink -or $item.Name -cnotmatch $allowed){
      throw ('BL_R14R2_UNRECOGNIZED_TEMP_FILE='+$item.Name)
     }
