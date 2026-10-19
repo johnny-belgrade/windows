@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.121 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (R20R2F1 collision HOLD; GUI-delivered local-only readonly R20R2F1A; Oct03 predecessor review retained)  
+**Verzija dokumenta:** 1.5.122 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (R20R2F1 collision HOLD; GUI-delivered local-only readonly R20R2F1A; Oct03 predecessor review retained)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -2248,6 +2248,26 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - Operator-original `BlueLite_MAXPRE_FodMetadata_26300.9711_ReadOnly_R9.txt`, **1504 B/25 CRLF** SHA256 **7996B6BC49611645B3E79C87E0FC8D063BBE805CC42565067A7FE7436D19D727** independently hashed. R9 source immutable commit `e2442344ad5f396b31d6bdbd4001c16cfb8646fd`, SHA **F3DA22FF241C17E9F3055C981B92DE24D35CDC1215E8EE4B6683DEF5780B197A**; original R8 SHA pin, S37/S39 full WIM SHA pre/post, pre-zero mounts/no project hives, native /ReadOnly S39 mount, post-/Discard, post-zero mounts and owned directory cleanup all PASS; native CheckHealth CLEAN. Exact direct package info family three: **MAIN 26100.1742 Superseded**; **MAIN 26100.9711 Installed/KEEP**, **CORE 26100.1 Installed/KEEP**. Wrappers not in native /Get-Packages filtering; exact /Get-PackageInfo may resolve hidden wrapper — absence from list alone does not mean absent. Actual terminal **`PASS_S39_R9_FODMETADATA_EXACT_NATIVE_READONLY_CLASSIFICATION_ONLY`**; absolutely no R9 package removal.
 - Regression Library `162-FodMetadata-Classification-and-BL159-Cleanup.txt`, `339-R1-Canonical-FodMetadata-Superseded-Native-Production-Removal.txt` proves one native superseded MAIN /Remove-Package success on 26200.9445 with current MAIN and both wrapper packages retained; `174-FodMetadata-Core-Classification-and-BL173-Cleanup.txt` establishes distinct CORE exact self-owner AMBER and Desktop-CompDB servicing floor. **Do not apply 26200 current MAIN version 26100.9444 to 26300 current 26100.9711.** R9 observation plus historical method justifies one owned-clone 26300 native test, not direct production permission. Official DISM native `/Remove-Package` docs in BlueLite_Sources; DO NOT modify wrappers/CU owners/core/host OS.
 - **FIRST checkpoint NEXT (NOT YET DELIVERED):** separate immutable R10 native superseded MAIN test against NEW disposable S41 copy of committed S39; full SHA/bytes pre-copy and clone SHA, zero mounts/hives, min disk capacity; pre MAIN old Superseded/new Installed and CORE Installed, optional exact wrapper info with negative query classifed; pending0 CheckHealth CLEAN; native `/Remove-Package` ONLY `Microsoft-Windows-FodMetadataServicing-Desktop-Metadata-Package~31bf3856ad364e35~amd64~~10.0.26100.1742`; target invalid 0x800f0805, current+core exact keep states, wrapper matched pre/post, pending0 and CheckHealth+ScanHealth CLEAN before /Commit; source S39 protected. Scoped PASS from this possible step is only disposable commit, not production/installed-footprint proof; next independent postcommit RO and fair export on R10 if actual PASS. Registry r22 runtime=false, Master v6 unchanged.
+
+### 8.134 R20R2F2 immutable GUI PS1 source-bound CRLF parser correction DELIVERED_NOT_RUN (SECOND §0R, 2026-10-19)
+
+- Most recent ACTUAL is R20R2F1C, 1,216B SHA256 `C7CABC82A56716FD32697260A6B9F403D4B781579703A5448DFD4412554F4EB2`, native WIMINFO identity and false old regex gates (§8.133). No physical source mutation.
+- **New exact user-downloadable .ps1 artifact:** `BlueLite.MaxPre.NativeSourcePreflight.R20R2F2.ps1`; save in `C:\work\scripts\`. Exact ASCII **5,553 bytes / SHA256 `0B910F5AB30BCD4BD92E761E1A005A34A6DE6372522001FF952541A4D568A282`** calculated from sandbox artifact; matching GitHub `production/engine/BlueLite.MaxPre.NativeSourcePreflight.R20R2F2.ps1`, commit `b68b391889846c615c41e228725f521e1985806d`, Git blob `149e4d885f397725a953ef28d8a55cdcbc7613a7`, exact GitHub readback PASS. In-memory only patch of 4 unique CRLF-sensitive regex anchors in already-existing fully SHA-pinned F1 source, no F1 disk overwrite; internal synthetic LF and CRLF positive/negative fixtures, AST parse before execution, exact new R20R2F1C receipt pin. Original F1 14,311B SHA `88F03C07A7EE8F000C77BBD464D448E6B57001C5A49004984F0C0C6728D2C919`. Maintains original source WIM 7,021,953,581B SHA `0FB778D4696DABA17EDC52E6391A3F217982422FB920C98C8273E0C51A094B49`, R19P/R20R1 evidence, mount PRE/POST raw native tables, original protected AppX and Sense/Language gates, one owned `C:\BLR20R2RO` `/ReadOnly` mount and /Discard, no clone or CBS/AppX mutation.
+- **User must close Total Commander / Total CMD and Explorer windows using WIM/mount before invoking, as this step performs mount/unmount.** New F2 TXT/JSON only, no overwrites, no URL. One complete local **PS7 Administrator** copy/paste command after downloading GUI PS1:
+
+```powershell
+& {
+    $p = 'C:\work\scripts\BlueLite.MaxPre.NativeSourcePreflight.R20R2F2.ps1'
+    if ((Get-Item -LiteralPath $p -ErrorAction Stop).Length -ne 5553 -or
+        (Get-FileHash -LiteralPath $p -Algorithm SHA256).Hash -cne
+        '0B910F5AB30BCD4BD92E761E1A005A34A6DE6372522001FF952541A4D568A282') {
+        throw 'BL_R20R2F2_GUI_SOURCE_SHA_MISMATCH'
+    }
+    & $p
+}
+```
+
+- **Expected TXT** `C:\work\logs\BlueLite_26300_9807_HighImpactNativePreflight_R20R2F2.txt`; **expected JSON if complete success** `C:\work\logs\BlueLite_26300_9807_HighImpactNativePreflight_R20R2F2.json`; send original TXT, optional JSON, or entire console if no TXT. This is a source-bound RO inventory, not high-impact native removal nor release certification. **DELIVERED_NOT_RUN**; no claim PS7 fixture/native PASS before operator report. Next after report: choose actually present high-impact target from capability/CBS result, reuse measured 26300 WebView and proven 26200 upstream recipes, only source-dependent deltas.
 
 ### 8.133 R20R2F1C ACTUAL native DISM image 26300.9807 valid; four CRLF regex bugs in F1 identified (FIRST §0R, 2026-10-19)
 
