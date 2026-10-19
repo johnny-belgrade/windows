@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.115 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (R20R1 raw DISM mount table capture exact one command delivered; Oct03 UUP review locked)  
+**Verzija dokumenta:** 1.5.116 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (R20R2F1 collision HOLD; GUI-delivered local-only readonly R20R2F1A; Oct03 predecessor review retained)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -2248,6 +2248,28 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - Operator-original `BlueLite_MAXPRE_FodMetadata_26300.9711_ReadOnly_R9.txt`, **1504 B/25 CRLF** SHA256 **7996B6BC49611645B3E79C87E0FC8D063BBE805CC42565067A7FE7436D19D727** independently hashed. R9 source immutable commit `e2442344ad5f396b31d6bdbd4001c16cfb8646fd`, SHA **F3DA22FF241C17E9F3055C981B92DE24D35CDC1215E8EE4B6683DEF5780B197A**; original R8 SHA pin, S37/S39 full WIM SHA pre/post, pre-zero mounts/no project hives, native /ReadOnly S39 mount, post-/Discard, post-zero mounts and owned directory cleanup all PASS; native CheckHealth CLEAN. Exact direct package info family three: **MAIN 26100.1742 Superseded**; **MAIN 26100.9711 Installed/KEEP**, **CORE 26100.1 Installed/KEEP**. Wrappers not in native /Get-Packages filtering; exact /Get-PackageInfo may resolve hidden wrapper — absence from list alone does not mean absent. Actual terminal **`PASS_S39_R9_FODMETADATA_EXACT_NATIVE_READONLY_CLASSIFICATION_ONLY`**; absolutely no R9 package removal.
 - Regression Library `162-FodMetadata-Classification-and-BL159-Cleanup.txt`, `339-R1-Canonical-FodMetadata-Superseded-Native-Production-Removal.txt` proves one native superseded MAIN /Remove-Package success on 26200.9445 with current MAIN and both wrapper packages retained; `174-FodMetadata-Core-Classification-and-BL173-Cleanup.txt` establishes distinct CORE exact self-owner AMBER and Desktop-CompDB servicing floor. **Do not apply 26200 current MAIN version 26100.9444 to 26300 current 26100.9711.** R9 observation plus historical method justifies one owned-clone 26300 native test, not direct production permission. Official DISM native `/Remove-Package` docs in BlueLite_Sources; DO NOT modify wrappers/CU owners/core/host OS.
 - **FIRST checkpoint NEXT (NOT YET DELIVERED):** separate immutable R10 native superseded MAIN test against NEW disposable S41 copy of committed S39; full SHA/bytes pre-copy and clone SHA, zero mounts/hives, min disk capacity; pre MAIN old Superseded/new Installed and CORE Installed, optional exact wrapper info with negative query classifed; pending0 CheckHealth CLEAN; native `/Remove-Package` ONLY `Microsoft-Windows-FodMetadataServicing-Desktop-Metadata-Package~31bf3856ad364e35~amd64~~10.0.26100.1742`; target invalid 0x800f0805, current+core exact keep states, wrapper matched pre/post, pending0 and CheckHealth+ScanHealth CLEAN before /Commit; source S39 protected. Scoped PASS from this possible step is only disposable commit, not production/installed-footprint proof; next independent postcommit RO and fair export on R10 if actual PASS. Registry r22 runtime=false, Master v6 unchanged.
+
+### 8.128 R20R2F1A downloadable GUI PS1 collision audit DELIVERED_NOT_RUN (SECOND §0R, 2026-10-19)
+
+**Last operator ACTUAL still only** `BL_R20R2F1_NO_OVERWRITE_OR_MOUNT_ALREADY_EXISTS` from the previous local inline wrapper: unknown which of four guarded objects exists. No automatic removal, cleanup or mount permitted. First GitHub checkpoint of new HOLD and operator-specific delivery rules: Current commit `a4b107141e8df01e9c078077b5be28f052706e25`, Handoff commit `97e57eb0cd56ea77c68d38d4e1382fe56dcf8ceb`.
+
+**New dedicated standalone PS7 Admin READONLY diagnostic source:** `production/engine/BlueLite_26300_9807_R20R2F1_CollisionAudit_R20R2F1A.ps1`, commit `9df8349b1b1cd6ac405541b4eafb0afc3d61f34f`, blob `b0785f3b2b2e8d66958f74094d20f60afeb69e1c`, exact **5,427 ASCII bytes SHA256 `F85B7ADD54E86718A4D64D061F20AD6E50D7613FDB3F1FBE713E13D37B391294`**, independently verified original generated GUI artifact and GitHub SHA against SHA256 NIST `abc` fixture, full readback exact. **GUI downloadable file delivered** (not an internet URL for Windows): `BlueLite_26300_9807_R20R2F1_CollisionAudit_R20R2F1A.ps1`. Operator saves under **`C:\work\scripts\`** before local run. It checks existence and file/dir type of all four objects, checks local F1/original-R20R2 PS1 SHA and any preexisting report SHA (max64MiB), source WIM presence/byte length only (no >7GB rehash), reads native two DISM mounted-image tables with raw output and exit code. **Never mounts/unmounts, cleans, deletes, overwrites, downloads, runs F1 or changes source WIM**; only `FileMode.CreateNew` its standalone report path.
+
+**ONE exact PS7 Admin LOCAL ONLY command**, after downloading and saving the GUI attachment. No URL, network, dynamic script generation or launch of any GitHub script:
+
+```powershell
+& {
+    $p = 'C:\work\scripts\BlueLite_26300_9807_R20R2F1_CollisionAudit_R20R2F1A.ps1'
+    if ((Get-Item -LiteralPath $p -ErrorAction Stop).Length -ne 5427 -or
+        (Get-FileHash -LiteralPath $p -Algorithm SHA256).Hash -cne
+        'F85B7ADD54E86718A4D64D061F20AD6E50D7613FDB3F1FBE713E13D37B391294') {
+        throw 'BL_R20R2F1A_GUI_SCRIPT_SHA_MISMATCH'
+    }
+    & $p
+}
+```
+
+**REPORT TO SEND:** `C:\work\logs\BlueLite_26300_9807_R20R2F1_CollisionAudit_R20R2F1A.txt`. **JSON=NOT_EXPECTED**. If no TXT, send full PS7 console output. `PASS_R20R2F1A_INVENTORY_CAPTURE_ONLY` is evidence *capture*, not zero mounts or green R20R2F1 health. **DELIVERED_NOT_RUN**, no actual native execution or original source mutation. This diagnostic has **no mount/unmount**. For EVERY FUTURE step that does mount/unmount, start visible user answer with bold **ZATVORI TOTAL COMMANDER (TOTAL CMD) PRE MOUNT/UNMOUNT**; close Explorer handles to mount/WIM as well. After genuine operator report apply §0R FIRST and only then decide whether to reuse existing pinned F1 or hold for foreign mount ownership. Deliver future PS1 files via GUI, always invoke locally, and end message with exact report names.
 
 ### 8.127 R20R2F1 ACTUAL pre-execution collision HOLD; direct GUI PS1 download policy (FIRST §0R, 2026-10-19)
 
