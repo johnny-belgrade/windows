@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "registry_revision": "2026-10-19-s41-searchengine-r14r2-native-oldstaged-currentinstalled-pass-r28",
+  "registry_revision": "2026-10-19-s43-searchengine-r15-cbs-updates-unknown-owned-clean-hold-r29",
   "status": "S37_COMMITTED_CANDIDATE_INDEPENDENT_S38R3_POSTCOMMIT_PASS_NOT_RELEASED",
   "scope": "Germanium 26300-first; 26200 historical topology references",
   "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
@@ -1133,6 +1133,54 @@
             "production/evidence/BlueLite_MAXPRE_SearchEngine_26300.9711_NativeExact_R14R2.txt SHA256 40EC240558E8FECE65C11B69EBF67A25C5AF5FAB118BAC534BCBD9715585433A"
           ],
           "notes": "Native and CBS exact preconditions verified on S41; AMBER runtime removal is not yet tested on 26300 and runtime_execution_allowed remains false."
+        },
+        {
+          "variant_id": "26300.9711-s43-r15-cbs-updates-precondition-unmet-owned-disposable-retired",
+          "source_family": "Germanium",
+          "supported_lineage": [
+            "26300.x"
+          ],
+          "topology_status": "AMBER_UPDATES_TOPOLOGY_UNRESOLVED",
+          "exact_selectors": [
+            {
+              "kind": "CBS_PACKAGE",
+              "identity": "Microsoft-Windows-SearchEngine-Client-Package~31bf3856ad364e35~amd64~~10.0.26100.9711"
+            }
+          ],
+          "required_predicates": [
+            {
+              "kind": "CBS",
+              "target": "R15 live S43 target before any AMBER mutation",
+              "expected": "CurrentState 0x70, Visibility 0x2, single exact Required-Package04 .9711 owner DWORD 0x30070 PASS"
+            },
+            {
+              "kind": "UPDATES",
+              "target": "R15 exact target CBS Updates subkey",
+              "expected": "Exact only SearchEngine-Client-Package DWORD 0x0 not matched. Actual value/subkey names and kinds NOT logged; read-only S41 precise enumeration required"
+            },
+            {
+              "kind": "NATIVE",
+              "target": "S43 before AMBER",
+              "expected": "Target Installed, old .1591 Staged, Required-Package04 .9711 and RollupFix Installed, pending0, CheckHealth CLEAN"
+            },
+            {
+              "kind": "ROLLBACK",
+              "target": "owned S43 failed candidate",
+              "expected": "hive unloaded, DISM /Discard, exact failed S43 WIM and workdir deleted, mount/hives0, protected S41 full hash unchanged"
+            }
+          ],
+          "expected_post_state": [
+            "R15 HOLD_R15_S43_SEARCH_AMBER_NATIVE, no target CBS modification, no native Remove-Package, no commit",
+            "Source S41 unchanged, failed owned S43 disposed; terminal static PASS_S43... tag in log is generic advisory, not actual PASS",
+            "R15R1 must inspect exact Updates topology, without relaxing the AMBER gate or making another WIM clone"
+          ],
+          "tested_builds": [
+            "26300.9711"
+          ],
+          "evidence_refs": [
+            "production/evidence/BlueLite_MAXPRE_SearchEngine_26300.9711_NativeAmber_R15.txt SHA256 B04B5FE5BDE13943F0C2466AD186809687FDAE92F3F500506FC89DD992F48FE1"
+          ],
+          "notes": "R15 real actual controlled HOLD before target mutation due Updates strict single-zero predicate; no evidence on actual Updates names/types yet. Only follow up with scoped read-only S41 copied SOFTWARE enumeration."
         }
       ],
       "protected_floor": [
@@ -1175,9 +1223,14 @@
           "source_kind": "OPERATOR_LOG",
           "reference": "BlueLite_MAXPRE_SearchEngine_26300.9711_ReadOnly_R14R1.txt",
           "scope": "Exact 26300 SearchEngine CBS x2 with one current Installed-like 0x70 owner Required-Package04; native nonlisting; srchadmin nested dirs bounded; health and zero mounts/hives clean; temporary SOFTWARE-copy cleanup HOLD"
+        },
+        {
+          "source_kind": "OPERATOR_LOG",
+          "reference": "BlueLite_MAXPRE_SearchEngine_26300.9711_NativeAmber_R15.txt",
+          "scope": "Exact original S43 R15 preliminary CBC gates PASS but target Updates single-zero predicate mismatch; full S43 discard and deletion, S41 preserved"
         }
       ],
-      "notes": "Do not treat DISM package-list nonlisting as package absence; exact CBS registry state unexamined on 26300. R14 readonly aborted on previously unanticipated srchadmin child dir. R14R1 must resolve both without broad Search exploration. Runtime removal prohibited. On 2026-10-19 actual R14R1 S41 CBS current .9711 matches historical single-owner shape, but native /Get-PackageInfo exact untested and temporary copy remains due unexpected sidecars: keep runtime=false. R14R2 native exact old Staged and current Installed, hive orphan cleanup PASS. R15 owned S43 first AMBER removal not run."
+      "notes": "Do not treat DISM package-list nonlisting as package absence; exact CBS registry state unexamined on 26300. R14 readonly aborted on previously unanticipated srchadmin child dir. R14R1 must resolve both without broad Search exploration. Runtime removal prohibited. On 2026-10-19 actual R14R1 S41 CBS current .9711 matches historical single-owner shape, but native /Get-PackageInfo exact untested and temporary copy remains due unexpected sidecars: keep runtime=false. R14R2 native exact old Staged and current Installed, hive orphan cleanup PASS. R15 owned S43 first AMBER removal not run. R15 actual strict Updates gate held prior to any mutation and discarded/retired S43. Do not infer value or missing key without read-only S41 Updates enumeration. Runtime false."
     }
   ]
 }
