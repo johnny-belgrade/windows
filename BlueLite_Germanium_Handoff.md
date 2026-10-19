@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.117 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (R20R2F1 collision HOLD; GUI-delivered local-only readonly R20R2F1A; Oct03 predecessor review retained)  
+**Verzija dokumenta:** 1.5.118 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (R20R2F1 collision HOLD; GUI-delivered local-only readonly R20R2F1A; Oct03 predecessor review retained)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -2248,6 +2248,28 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - Operator-original `BlueLite_MAXPRE_FodMetadata_26300.9711_ReadOnly_R9.txt`, **1504 B/25 CRLF** SHA256 **7996B6BC49611645B3E79C87E0FC8D063BBE805CC42565067A7FE7436D19D727** independently hashed. R9 source immutable commit `e2442344ad5f396b31d6bdbd4001c16cfb8646fd`, SHA **F3DA22FF241C17E9F3055C981B92DE24D35CDC1215E8EE4B6683DEF5780B197A**; original R8 SHA pin, S37/S39 full WIM SHA pre/post, pre-zero mounts/no project hives, native /ReadOnly S39 mount, post-/Discard, post-zero mounts and owned directory cleanup all PASS; native CheckHealth CLEAN. Exact direct package info family three: **MAIN 26100.1742 Superseded**; **MAIN 26100.9711 Installed/KEEP**, **CORE 26100.1 Installed/KEEP**. Wrappers not in native /Get-Packages filtering; exact /Get-PackageInfo may resolve hidden wrapper — absence from list alone does not mean absent. Actual terminal **`PASS_S39_R9_FODMETADATA_EXACT_NATIVE_READONLY_CLASSIFICATION_ONLY`**; absolutely no R9 package removal.
 - Regression Library `162-FodMetadata-Classification-and-BL159-Cleanup.txt`, `339-R1-Canonical-FodMetadata-Superseded-Native-Production-Removal.txt` proves one native superseded MAIN /Remove-Package success on 26200.9445 with current MAIN and both wrapper packages retained; `174-FodMetadata-Core-Classification-and-BL173-Cleanup.txt` establishes distinct CORE exact self-owner AMBER and Desktop-CompDB servicing floor. **Do not apply 26200 current MAIN version 26100.9444 to 26300 current 26100.9711.** R9 observation plus historical method justifies one owned-clone 26300 native test, not direct production permission. Official DISM native `/Remove-Package` docs in BlueLite_Sources; DO NOT modify wrappers/CU owners/core/host OS.
 - **FIRST checkpoint NEXT (NOT YET DELIVERED):** separate immutable R10 native superseded MAIN test against NEW disposable S41 copy of committed S39; full SHA/bytes pre-copy and clone SHA, zero mounts/hives, min disk capacity; pre MAIN old Superseded/new Installed and CORE Installed, optional exact wrapper info with negative query classifed; pending0 CheckHealth CLEAN; native `/Remove-Package` ONLY `Microsoft-Windows-FodMetadataServicing-Desktop-Metadata-Package~31bf3856ad364e35~amd64~~10.0.26100.1742`; target invalid 0x800f0805, current+core exact keep states, wrapper matched pre/post, pending0 and CheckHealth+ScanHealth CLEAN before /Commit; source S39 protected. Scoped PASS from this possible step is only disposable commit, not production/installed-footprint proof; next independent postcommit RO and fair export on R10 if actual PASS. Registry r22 runtime=false, Master v6 unchanged.
+
+### 8.130 R20R2F1B GUI downloadable SHA-gated LOCAL F1 actual readonly preflight DELIVERED_NOT_RUN (SECOND §0R, 2026-10-19)
+
+**ACTUAL prior operator evidence** is still R20R2F1A sole pin-matching local F1 file collision, full bytes/SHA in §8.129. F1 has **not yet executed**; no source image health or CBS/AppX/FoD PASS today.
+
+**ONE next downloadable PS1 delivered directly as ChatGPT GUI attachment**, filename `BlueLite_26300_9807_RunPinnedF1_R20R2F1B.ps1`, operator saves to **`C:\work\scripts\`**. Artifact exact **3,541 ASCII B, SHA256 `FA62ECDF0792E01F03799207B23C5B424391E3AB313A74C4080635B286ACBF57`** measured from user-visible actual sandbox file. Matching immutable repository source `production/engine/BlueLite_26300_9807_RunPinnedF1_R20R2F1B.ps1`, commit `0ac1f8f8f1d70a7b07099abcdc3fc36b6d62e9e6`, blob `59c71f149fc0c0f16c53bdb6fd70129961a4ed11`, independently full source readback exact. New F1B wrapper verifies admin/PS7, F1 existing 14,311B/SHA `88F03C07A7EE8F000C77BBD464D448E6B57001C5A49004984F0C0C6728D2C919` at `C:\work\scripts\BlueLite.MaxPre.NativeSourcePreflight.R20R2F1.ps1`, R20R2F1A original receipt 2,654B/SHA `AF72EA98449B6697CB0061C6D0C05A865B60E54C0E52FF7FBCE45FDDB43A8528` plus required native success/absence facts, ensures R20R2 TXT/JSON and owned mount path absent, validates original WIM source byte length and then invokes ALREADY-PRESENT F1 **locally**; no overwrite, dynamic patch, URL or new UUP transfer. F1 itself rechecks original R19P+R20R1 evidence, native pre/post mount tables, reads exact FoD/CBS/AppX topology, and uses **one `/ReadOnly` mount of `C:\BLR20R2RO` and `/Discard`**. This phase requires a succinct **bold Total Commander closure reminder**, as it actually mounts/unmounts. No CBS/WIM mutation, cleanup or ISO release.
+
+**ONE COMPLETE LOCAL PS7 ADMIN command after direct GUI download/save** (no internet):
+
+```powershell
+& {
+    $p = 'C:\work\scripts\BlueLite_26300_9807_RunPinnedF1_R20R2F1B.ps1'
+    if ((Get-Item -LiteralPath $p -ErrorAction Stop).Length -ne 3541 -or
+        (Get-FileHash -LiteralPath $p -Algorithm SHA256).Hash -cne
+        'FA62ECDF0792E01F03799207B23C5B424391E3AB313A74C4080635B286ACBF57') {
+        throw 'BL_R20R2F1B_GUI_SCRIPT_SHA_MISMATCH'
+    }
+    & $p
+}
+```
+
+**EXPECTED EXACT OPERATOR TXT:** `C:\work\logs\BlueLite_26300_9807_HighImpactNativePreflight_R20R2.txt`; **EXPECTED JSON only on completed success:** `C:\work\logs\BlueLite_26300_9807_HighImpactNativePreflight_R20R2.json`. Send original TXT and JSON (if produced); if no TXT, full console output. Even success `PASS_R20R2_NATIVE_26300_9807_HIGH_IMPACT_PREFLIGHT_READONLY_ONLY` certifies only evidence collection, not removal/release. Status **DELIVERED_NOT_RUN** until operator original report.
 
 ### 8.129 R20R2F1A ACTUAL sole pinned F1 path collision; zero mounted-images now (FIRST §0R, 2026-10-19)
 
