@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.78 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (FoDMetadata R9 exact native readonly actual PASS; single superseded 26300 MAIN disposable next)  
+**Verzija dokumenta:** 1.5.79 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (R9 FoDMetadata actual native readonly PASS; first exact superseded MAIN S41 disposable R10 DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -2248,6 +2248,57 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - Operator-original `BlueLite_MAXPRE_FodMetadata_26300.9711_ReadOnly_R9.txt`, **1504 B/25 CRLF** SHA256 **7996B6BC49611645B3E79C87E0FC8D063BBE805CC42565067A7FE7436D19D727** independently hashed. R9 source immutable commit `e2442344ad5f396b31d6bdbd4001c16cfb8646fd`, SHA **F3DA22FF241C17E9F3055C981B92DE24D35CDC1215E8EE4B6683DEF5780B197A**; original R8 SHA pin, S37/S39 full WIM SHA pre/post, pre-zero mounts/no project hives, native /ReadOnly S39 mount, post-/Discard, post-zero mounts and owned directory cleanup all PASS; native CheckHealth CLEAN. Exact direct package info family three: **MAIN 26100.1742 Superseded**; **MAIN 26100.9711 Installed/KEEP**, **CORE 26100.1 Installed/KEEP**. Wrappers not in native /Get-Packages filtering; exact /Get-PackageInfo may resolve hidden wrapper — absence from list alone does not mean absent. Actual terminal **`PASS_S39_R9_FODMETADATA_EXACT_NATIVE_READONLY_CLASSIFICATION_ONLY`**; absolutely no R9 package removal.
 - Regression Library `162-FodMetadata-Classification-and-BL159-Cleanup.txt`, `339-R1-Canonical-FodMetadata-Superseded-Native-Production-Removal.txt` proves one native superseded MAIN /Remove-Package success on 26200.9445 with current MAIN and both wrapper packages retained; `174-FodMetadata-Core-Classification-and-BL173-Cleanup.txt` establishes distinct CORE exact self-owner AMBER and Desktop-CompDB servicing floor. **Do not apply 26200 current MAIN version 26100.9444 to 26300 current 26100.9711.** R9 observation plus historical method justifies one owned-clone 26300 native test, not direct production permission. Official DISM native `/Remove-Package` docs in BlueLite_Sources; DO NOT modify wrappers/CU owners/core/host OS.
 - **FIRST checkpoint NEXT (NOT YET DELIVERED):** separate immutable R10 native superseded MAIN test against NEW disposable S41 copy of committed S39; full SHA/bytes pre-copy and clone SHA, zero mounts/hives, min disk capacity; pre MAIN old Superseded/new Installed and CORE Installed, optional exact wrapper info with negative query classifed; pending0 CheckHealth CLEAN; native `/Remove-Package` ONLY `Microsoft-Windows-FodMetadataServicing-Desktop-Metadata-Package~31bf3856ad364e35~amd64~~10.0.26100.1742`; target invalid 0x800f0805, current+core exact keep states, wrapper matched pre/post, pending0 and CheckHealth+ScanHealth CLEAN before /Commit; source S39 protected. Scoped PASS from this possible step is only disposable commit, not production/installed-footprint proof; next independent postcommit RO and fair export on R10 if actual PASS. Registry r22 runtime=false, Master v6 unchanged.
+
+### 8.92 R10 FoDMetadata 26300 exact superseded MAIN native /Remove-Package on isolated S41 disposable — DELIVERED_NOT_RUN (2026-10-19 SECOND §0R)
+
+- Last actual original R9 1504B/25CRLF SHA **7996B6BC49611645B3E79C87E0FC8D063BBE805CC42565067A7FE7436D19D727** verified: `Microsoft-Windows-FodMetadataServicing-Desktop-Metadata-Package` **10.0.26100.1742 Superseded** exact single target; **10.0.26100.9711 Installed** current KEEP; `Microsoft-Windows-FodMetadata-Package` CORE **10.0.26100.1 Installed** KEEP. Wrappers not listed by R9 /Get-Packages; absence from general listing is NOT proof exact wrapper is absent. R9 native CheckHealth clean, /Discard, zero mounts and original source S37/S39 SHA PASS. Historic Library 162 and 339-R1 on 26200 demonstrates native superseded MAIN removal while current MAIN+both wrappers retained; Library 174 CORE AMBER/compdb protection remains separate. Official Microsoft DISM `/Remove-Package` offline native syntax and caveat no guaranteed offline WIM file reduction: https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/dism-operating-system-package-servicing-command-line-options?view=windows-11 .
+- Reviewed immutable FINAL R10 source `production/targets/BlueLite.MaxPre.FodMetadata26300.NativeR10.ps1`, final **commit 0c2a38716a814121bc64008ee17758311b5208bf**, Git blob **4cfb8d6c96e061cb4a305656992ff10599121684**, SHA256 **EB44A2657BB415F7A0240B79718A014E8051A14DADE0AF7B055BD7A67B648BC2**, 11,290 ASCII bytes/233 newline-split lines, independently fetched full GitHub source exact PASS and SHA method crosschecked against R9 source. First intermediate create commit `43e55b0c078d3aaf91bb651ec56aa4c444c3606e` superseded by final (wrapper array parentheses and protected current RollupFix state); NEVER run old revision.
+- Pinned operator PS7 Admin R9 original TXT 1504B/SHA+exact state proof, committed S39 protected source **6,595,075,169B SHA 32AD747CD86052BDF6226A25B92A7B051E9946B3D43A591D1EFFD99B265AEBED**, retained S37 protected **6,551,362,129B SHA A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F**, free C >=16GiB, no native WIM mounts/project hives, owned no-overwrite `C:\work\E2E\BlueLite_Stage1_S41_26300.9711_FodMetadata_Superseded_R10` fresh clone `install.fodmetadata-disposable.wim` SHA exactly matches S39 source before RW mounting own `mount`. Before native removal verify exact old MAIN Superseded, current MAIN Installed, CORE Installed, protected RollupFix .9711.1.30 Installed; old/current wrapper exact native direct states: if absent 0x800f0805 record NONRESOLVING, otherwise preserve identical post state; pending=0, CheckHealth CLEAN. One `/Remove-Package /PackageName:Microsoft-Windows-FodMetadataServicing-Desktop-Metadata-Package~31bf3856ad364e35~amd64~~10.0.26100.1742` on S41 ONLY; require target post nonresolving, all protected package states preserved, wrapper states identical, pending0, CheckHealth+ScanHealth clean BEFORE owned `/Commit`; otherwise fail-closed and attempt OWNED `/Discard`, no cleanup of unrelated mounts. Record after bytes+SHA of S41, unchanged protected S37 and S39 full hashes, owned log. Original expected `C:\work\logs\BlueLite_MAXPRE_FodMetadata_26300.9711_Native_R10.txt`; possible terminal `PASS_S41_R10_FODMETADATA_NATIVE_SUPERSEDED_MAIN_REMOVE_COMMIT_ONLY` **DELIVERED_NOT_RUN**; no physical saved bytes, independent postcommit, VM or release certification. RecipeRegistry r22 FoDMetadata runtime=false; Master v6 unchanged, §0L/§0R mandatory.
+- ONE exact operator PS7 Admin loader; close Explorer/Total Commander windows showing WIM mount directories:
+
+```powershell
+& {
+ $ErrorActionPreference='Stop'
+ if($PSVersionTable.PSVersion.Major -ne 7){throw 'BL_PS7_REQUIRED'}
+ $admin=[Security.Principal.WindowsPrincipal]::new([Security.Principal.WindowsIdentity]::GetCurrent())
+ if(-not $admin.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)){throw 'BL_ADMIN_REQUIRED'}
+ $sha='EB44A2657BB415F7A0240B79718A014E8051A14DADE0AF7B055BD7A67B648BC2'
+ $commit='0c2a38716a814121bc64008ee17758311b5208bf'
+ $name='BlueLite.MaxPre.FodMetadata26300.NativeR10.ps1'
+ $dir='C:\work\scripts'
+ $path=Join-Path $dir $name
+ $url="https://raw.githubusercontent.com/johnny-belgrade/windows/$commit/production/targets/$name"
+ if(-not(Test-Path -LiteralPath $dir -PathType Container)){throw 'BL_SCRIPTS_DIR_MISSING'}
+ if(-not(Test-Path -LiteralPath $path)){
+  $tmp=$path+'.download.'+[guid]::NewGuid().ToString('N')
+  try{
+   Invoke-WebRequest -Uri $url -OutFile $tmp -ErrorAction Stop
+   if((Get-Item -LiteralPath $tmp).Length -ne 11290 -or
+      (Get-FileHash -LiteralPath $tmp -Algorithm SHA256).Hash -cne $sha){
+    throw 'BL_R10_DOWNLOAD_SOURCE_PIN_MISMATCH'
+   }
+   Move-Item -LiteralPath $tmp -Destination $path -ErrorAction Stop
+  }finally{
+   if(Test-Path -LiteralPath $tmp){Remove-Item -LiteralPath $tmp -Force}
+  }
+ }
+ if((Get-Item -LiteralPath $path).Length -ne 11290 -or
+    (Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash -cne $sha){
+  throw 'BL_R10_LOCAL_SOURCE_PIN_MISMATCH'
+ }
+ $tokens=$null;$parseErrors=$null
+ $null=[System.Management.Automation.Language.Parser]::ParseFile(
+  $path,[ref]$tokens,[ref]$parseErrors
+ )
+ if(@($parseErrors).Count -ne 0){
+  throw ('BL_R10_PS7_AST_ERRORS='+($parseErrors -join '; '))
+ }
+ Write-Host ('R10_SOURCE_SHA256=PASS;'+$sha)
+ Write-Host 'R10_PS7_AST=PASS'
+ Write-Host 'R10_MODE=ONLY_ONE_SUPERSEDED_MAIN_OWNED_S41_DISPOSABLE'
+ & $path
+}
+```
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
