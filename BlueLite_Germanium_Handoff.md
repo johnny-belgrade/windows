@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.101 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (R17 actual operator fast-path and 8 fixtures PASS; native GREEN dispatcher next)  
+**Verzija dokumenta:** 1.5.102 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (R18 native GREEN dispatcher source published, S41 no-copy Preview DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -2248,6 +2248,104 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - Operator-original `BlueLite_MAXPRE_FodMetadata_26300.9711_ReadOnly_R9.txt`, **1504 B/25 CRLF** SHA256 **7996B6BC49611645B3E79C87E0FC8D063BBE805CC42565067A7FE7436D19D727** independently hashed. R9 source immutable commit `e2442344ad5f396b31d6bdbd4001c16cfb8646fd`, SHA **F3DA22FF241C17E9F3055C981B92DE24D35CDC1215E8EE4B6683DEF5780B197A**; original R8 SHA pin, S37/S39 full WIM SHA pre/post, pre-zero mounts/no project hives, native /ReadOnly S39 mount, post-/Discard, post-zero mounts and owned directory cleanup all PASS; native CheckHealth CLEAN. Exact direct package info family three: **MAIN 26100.1742 Superseded**; **MAIN 26100.9711 Installed/KEEP**, **CORE 26100.1 Installed/KEEP**. Wrappers not in native /Get-Packages filtering; exact /Get-PackageInfo may resolve hidden wrapper — absence from list alone does not mean absent. Actual terminal **`PASS_S39_R9_FODMETADATA_EXACT_NATIVE_READONLY_CLASSIFICATION_ONLY`**; absolutely no R9 package removal.
 - Regression Library `162-FodMetadata-Classification-and-BL159-Cleanup.txt`, `339-R1-Canonical-FodMetadata-Superseded-Native-Production-Removal.txt` proves one native superseded MAIN /Remove-Package success on 26200.9445 with current MAIN and both wrapper packages retained; `174-FodMetadata-Core-Classification-and-BL173-Cleanup.txt` establishes distinct CORE exact self-owner AMBER and Desktop-CompDB servicing floor. **Do not apply 26200 current MAIN version 26100.9444 to 26300 current 26100.9711.** R9 observation plus historical method justifies one owned-clone 26300 native test, not direct production permission. Official DISM native `/Remove-Package` docs in BlueLite_Sources; DO NOT modify wrappers/CU owners/core/host OS.
 - **FIRST checkpoint NEXT (NOT YET DELIVERED):** separate immutable R10 native superseded MAIN test against NEW disposable S41 copy of committed S39; full SHA/bytes pre-copy and clone SHA, zero mounts/hives, min disk capacity; pre MAIN old Superseded/new Installed and CORE Installed, optional exact wrapper info with negative query classifed; pending0 CheckHealth CLEAN; native `/Remove-Package` ONLY `Microsoft-Windows-FodMetadataServicing-Desktop-Metadata-Package~31bf3856ad364e35~amd64~~10.0.26100.1742`; target invalid 0x800f0805, current+core exact keep states, wrapper matched pre/post, pending0 and CheckHealth+ScanHealth CLEAN before /Commit; source S39 protected. Scoped PASS from this possible step is only disposable commit, not production/installed-footprint proof; next independent postcommit RO and fair export on R10 if actual PASS. Registry r22 runtime=false, Master v6 unchanged.
+
+### 8.114 R18 GREEN native dispatcher source published; S41 no-copy Preview operator DELIVERED_NOT_RUN (SECOND §0R 2026-10-19)
+
+- LAST ACTUAL remains original R17 8/8 fixtures PASS; original TXT SHA 40AAA403516F9CFDA94D7EF1B1D146FD7B7E344F011FEABAB5A714979BB0B03F 1303B/16 CRLF; JSON SHA 8D7E15254CAD29BB08BD392157BF6913C4A6586EE54D500D085CF7830B630371 2944B/93 CRLF; archived exact original GitHub evidence and first write §8.113 verified. No post-R17 native apply or new WIM savings proven. Source S41 currently all eligible DirectX, LA57, WebView absent and all earlier predecessor WIMs S21/S26/S28 intentionally deleted.
+- NEW actual source-controlled reusable native dispatch code CREATED: production/engine/BlueLite.MaxPre.NativeGreenDispatcher.v01.ps1, FINAL immutable commit 0c045ee39141dddc32f7ce8c0b4a3928be877415, Git blob 953201081f869854eb951b98564d43befc2b1e84, SHA256 763CEF8C5EC62F8465D918A54D545E47B7D7A3A4005167BEC433427C8DE90E9B, 12,993 ASCII bytes/256 newline-split lines. Exact current GitHub content fetch/readback PASS; SHA256 algorithm NIST abc vector validated. PRELIMINARY commits ea8d9a334ace6fa766122976414f61e44b3e2800, 5972f6f36edb70b2d03ed7282c08349eb7cf9738, deb38225b8d62d780e58b9f94812f63948895a6e, e3271da0ec13e0b8a9f60184563c13adbc8eb8e7 are superseded and MUST NOT be loaded. Script PS7 AST/runtime NOT yet executed.
+- Runtime architecture: accepts R17 full SHA-pinned controller plan and independent WIM full SHA/size/source-bound path, validates source lineage DISM native /Get-WimInfo; exact R17 8 fixture names, seven rows, all CanMutate false, protected Sense Installed. Dispatch queues ONLY native GREEN DirectX.Configuration.Database~~~~0.0.1.0 and Windows.Kernel.LA57~~~~0.0.1.0 if actually Installed in a newly source-specific R17 plan. WebView Installed is DEFERRED for separate exact nine-parent identity+state contract (not automatically removed by GREEN handler). AMBER OneDrive/AppInstaller not authorized here. If all selected GREEN targets already Not Present on protected S41, script Mode Preview must return a no-copy/no-mount FASTPATH after native WIM identity+SHA and zero mounts. No total WIM scan or 6GB clone. In future, only explicit Mode ExperimentalApply with new owned path, source-bound positive Installed target, copy/hash, exact RW mount, native pre/post capabilities, protected four AppX + Sense + Language.Basic, CheckHealth and ScanHealth, commit or discard/rollback on own derivative. This experiment branch is code only, NOT DELIVERED/TESTED/RELEASE or registry production approval; a new source and separate operator authorization required before it is ever used.
+- EXACT ONE PS7 Admin SHA/AST gated command for this response, Preview ONLY; immutable source is fetched if absent and cached in C:\work\scripts. It pins user original R17 JSON bytes/SHA; protects S41 WIM C:\work\E2E\BlueLite_Stage1_S41_26300.9711_FodMetadata_Superseded_R10\install.fodmetadata-disposable.wim 6636510185B SHA 378B6C7A20D434172EA7AB2F4857C78431393C0B3C1B13D993D8AAF125D6B6B1. Expected report C:\work\logs\BlueLite_MAXPRE_NativeGreenDispatcher_R18.txt, no overwrite. Potential terminal PASS_R18_NATIVE_DISPATCHER_SOURCE_BOUND_FASTPATH_NOOP_ONLY is DELIVERED_NOT_RUN; output means dispatcher routed verified already-absent GREEN rows without mutation, not additional debloat nor assurance apply-branch works. If HOLD, report and full console needed.
+
+```powershell
+& {
+    Set-StrictMode -Version Latest
+    $ErrorActionPreference = 'Stop'
+    $PSNativeCommandUseErrorActionPreference = $false
+
+    if ($PSVersionTable.PSVersion.Major -ne 7) {
+        throw 'BL_R18_POWERSHELL7_REQUIRED'
+    }
+    $admin = [Security.Principal.WindowsPrincipal]::new(
+        [Security.Principal.WindowsIdentity]::GetCurrent()
+    )
+    if (-not $admin.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+        throw 'BL_R18_ADMIN_REQUIRED'
+    }
+
+    $dir = 'C:\work\scripts'
+    $logs = 'C:\work\logs'
+    $file = Join-Path $dir 'BlueLite.MaxPre.NativeGreenDispatcher.v01.ps1'
+    $url = 'https://raw.githubusercontent.com/johnny-belgrade/windows/0c045ee39141dddc32f7ce8c0b4a3928be877415/production/engine/BlueLite.MaxPre.NativeGreenDispatcher.v01.ps1'
+    $sha = '763CEF8C5EC62F8465D918A54D545E47B7D7A3A4005167BEC433427C8DE90E9B'
+    $bytes = 12993
+    $plan = Join-Path $logs 'BlueLite_MAXPRE_UniversalRecipeController_R17.json'
+    $planSha = '8D7E15254CAD29BB08BD392157BF6913C4A6586EE54D500D085CF7830B630371'
+    $wim = 'C:\work\E2E\BlueLite_Stage1_S41_26300.9711_FodMetadata_Superseded_R10\install.fodmetadata-disposable.wim'
+    $wimSha = '378B6C7A20D434172EA7AB2F4857C78431393C0B3C1B13D993D8AAF125D6B6B1'
+    $report = Join-Path $logs 'BlueLite_MAXPRE_NativeGreenDispatcher_R18.txt'
+
+    if (-not (Test-Path -LiteralPath $dir -PathType Container) -or
+        -not (Test-Path -LiteralPath $logs -PathType Container)) {
+        throw 'BL_R18_REQUIRED_DIRECTORIES_MISSING'
+    }
+    if (Test-Path -LiteralPath $report) {
+        throw 'BL_R18_REPORT_NO_OVERWRITE'
+    }
+    if (-not (Test-Path -LiteralPath $plan -PathType Leaf) -or
+        (Get-FileHash -LiteralPath $plan -Algorithm SHA256).Hash -cne $planSha) {
+        throw 'BL_R18_ORIGINAL_R17_PLAN_MISMATCH'
+    }
+    if (-not (Test-Path -LiteralPath $wim -PathType Leaf) -or
+        (Get-Item -LiteralPath $wim).Length -ne 6636510185 -or
+        (Get-FileHash -LiteralPath $wim -Algorithm SHA256).Hash -cne $wimSha) {
+        throw 'BL_R18_S41_SOURCE_MISMATCH'
+    }
+
+    if (-not (Test-Path -LiteralPath $file)) {
+        $tmp = Join-Path $dir ('BL_R18_' + [guid]::NewGuid().ToString('N') + '.tmp')
+        try {
+            Invoke-WebRequest -Uri $url -OutFile $tmp -TimeoutSec 90
+            if ((Get-Item -LiteralPath $tmp).Length -ne $bytes -or
+                (Get-FileHash -LiteralPath $tmp -Algorithm SHA256).Hash -cne $sha) {
+                throw 'BL_R18_DOWNLOADED_SCRIPT_MISMATCH'
+            }
+            [IO.File]::Move($tmp, $file)
+        }
+        finally {
+            if (Test-Path -LiteralPath $tmp) {
+                Remove-Item -LiteralPath $tmp -Force
+            }
+        }
+    }
+    if (-not (Test-Path -LiteralPath $file -PathType Leaf) -or
+        (Get-Item -LiteralPath $file).Length -ne $bytes -or
+        (Get-FileHash -LiteralPath $file -Algorithm SHA256).Hash -cne $sha) {
+        throw 'BL_R18_LOCAL_SCRIPT_MISMATCH'
+    }
+    $tokens = $null
+    $errors = $null
+    $null = [System.Management.Automation.Language.Parser]::ParseFile(
+        $file, [ref]$tokens, [ref]$errors
+    )
+    if ($errors.Count -gt 0) {
+        throw ('BL_R18_AST_FAILURE: ' + $errors[0].Message)
+    }
+
+    Write-Host 'R18 SOURCE SHA256 + AST + INPUTS PASS'
+    $params = @{
+        ControlJson = $plan
+        ControlJsonSha256 = $planSha
+        SourceWim = $wim
+        SourceWimSha256 = $wimSha
+        SourceWimBytes = 6636510185
+        ReportPath = $report
+        Mode = 'Preview'
+    }
+    & $file @params
+}
+```
+
+- NEXT after original R18 operator report: §0R FULL analyze SHA and source/plan identity, FIRST writes to Current+Handoff (Registry if topology changed), then choose actually new high-impact present 26300.x source or new component; do not repeat S41 already absent target actions. SECOND Handoff write exact later step. No Master modification, canonical Defender ON and OFF clean-install retained, RecipeRegistry r30 runtime=false, no NTLite/VM/ISO.
 
 ### 8.113 R17 original operator PASS — eight fast-path fixtures; GREEN native capability dispatcher NEXT (FIRST §0R, 2026-10-19)
 
