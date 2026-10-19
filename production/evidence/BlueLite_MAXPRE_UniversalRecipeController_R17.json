@@ -1,0 +1,93 @@
+{
+  "Schema": "BlueLite.MAXPRE.RecipeControl.v0.1",
+  "Lineage": "26300.x",
+  "SourceImage": "C:\\work\\E2E\\BlueLite_Stage1_S41_26300.9711_FodMetadata_Superseded_R10\\install.fodmetadata-disposable.wim",
+  "SourceImageSha256": "378B6C7A20D434172EA7AB2F4857C78431393C0B3C1B13D993D8AAF125D6B6B1",
+  "RegistryRevision": "2026-10-19-r15r1-actual-updates-ff-observed-readonly-impact-first-r30",
+  "DecisionRows": [
+    {
+      "Target": "WebView.FoD",
+      "Priority": 1,
+      "Observed": "NOT_PRESENT",
+      "Decision": "ALREADY_ABSENT",
+      "RecipeId": "BL.FOD.EdgeWebView2",
+      "KnownRegistryVariants": 2,
+      "MeasuredReferenceWimBytes": 603556113,
+      "CanMutate": false
+    },
+    {
+      "Target": "OneDrive.Setup",
+      "Priority": 2,
+      "Observed": "MUM_COUNT_0",
+      "Decision": "MUM_ABSENT_NOT_NATIVE_PROOF",
+      "RecipeId": "BL.CBS.OneDrive.NeutralSequence",
+      "KnownRegistryVariants": 2,
+      "MeasuredReferenceWimBytes": null,
+      "CanMutate": false
+    },
+    {
+      "Target": "DesktopAppInstaller",
+      "Priority": 3,
+      "Observed": "NOT_PROVISIONED",
+      "Decision": "ALREADY_NOT_PROVISIONED",
+      "RecipeId": "BL.APPX.DesktopAppInstaller.ExactLifecycle",
+      "KnownRegistryVariants": 2,
+      "MeasuredReferenceWimBytes": null,
+      "CanMutate": false
+    },
+    {
+      "Target": "DirectX",
+      "Priority": 4,
+      "Observed": "NOT_PRESENT",
+      "Decision": "ALREADY_ABSENT",
+      "RecipeId": "BUILTIN_NATIVE_GREEN",
+      "KnownRegistryVariants": 0,
+      "MeasuredReferenceWimBytes": null,
+      "CanMutate": false
+    },
+    {
+      "Target": "LA57",
+      "Priority": 5,
+      "Observed": "NOT_PRESENT",
+      "Decision": "ALREADY_ABSENT",
+      "RecipeId": "BUILTIN_NATIVE_GREEN",
+      "KnownRegistryVariants": 0,
+      "MeasuredReferenceWimBytes": null,
+      "CanMutate": false
+    },
+    {
+      "Target": "FoDMetadata.Superseded",
+      "Priority": 90,
+      "Observed": "NOT_IN_R16",
+      "Decision": "DEFER_PROVEN_SMALL_RECIPE",
+      "RecipeId": "BL.CBS.FoDMetadata.Superseded",
+      "KnownRegistryVariants": 3,
+      "MeasuredReferenceWimBytes": null,
+      "CanMutate": false
+    },
+    {
+      "Target": "Defender.Sense",
+      "Priority": 99,
+      "Observed": "INSTALLED",
+      "Decision": "KEEP_PROTECTED",
+      "RecipeId": "BL.CBS.Sense",
+      "KnownRegistryVariants": 1,
+      "MeasuredReferenceWimBytes": null,
+      "CanMutate": false
+    }
+  ],
+  "SkipCount": 4,
+  "MutationsApplied": 0,
+  "MutationAllowed": false,
+  "ReleaseCertified": false,
+  "FixtureTests": [
+    "ACTUAL_R16_FOUR_SKIPS",
+    "ONEDRIVE_NOT_INFERRED_FROM_MUM",
+    "SYNTHETIC_INSTALLED_WEBVIEW_HELD",
+    "SYNTHETIC_NATIVE_GREEN_REQUIRES_GATE",
+    "SYNTHETIC_SENSE_FLOOR_NEGATIVE",
+    "SYNTHETIC_LINEAGE_NEGATIVE",
+    "SYNTHETIC_APPX_FLOOR_NEGATIVE",
+    "RUNTIME_MUTATION_DENIED"
+  ]
+}
