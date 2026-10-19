@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.75 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (WebView R7 actual independent postcommit PASS; R8 equal-max dual native WIM export measurement DELIVERED_NOT_RUN)  
+**Verzija dokumenta:** 1.5.76 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (WebView R8 ACTUAL equal-max dual DISM WIM comparison PASS; next component portfolio fast-path selection)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -2188,6 +2188,12 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
  & $path
 }
 ```
+
+### 8.89 R8 S37 vs S39 equal-MAX WIM export measurement ACTUAL PASS; 26300 WebView FoD WIM delta quantified (2026-10-19 FIRST §0R)
+
+- Original operator `BlueLite_MAXPRE_WebViewEdge_26300.9711_ExportCompare_R8.txt` **1,640 ASCII B, 26 CRLF**, SHA256 **426E004E351F5EAE2654B858756201CAB75D6A87A99A981F19E72E6B7BD73A1F** independently confirmed. Operator R8 native DISM `/Export-Image /Compress:max /CheckIntegrity` twice PASS, native `/Get-WimInfo /Index:1` twice PASS, zero mounts before/after, S37+S39 original source WIM whole SHA pre/post PASS. Original immutable R8 script `production/targets/BlueLite.MaxPre.WebView26300.ExportCompare.R8.ps1`, commit `70b6d0265f523593d8f98a42947347c40ee6cecf`, SHA **1963CC154156E75C5C55E44D09C9CF457F25F6A180CE3021E7517C572D33983D**. New comparison-only S40 `C:\work\E2E\BlueLite_S40_26300.9711_R8_EqualMaxExports`: baseline-S37-max.wim **6,160,680,526B**, SHA **2CCF19FFC2DDDF13D37D6EE3CA2F70FA2B7C42697587B50556AA410962227AA9**; webview-removed-S39-max.wim **5,557,124,413B**, SHA **EB8C462E7BE3AB7F69CD572E08672D8CA9062BCFC146EAD763C27235449FED07**. Difference S37 minus S39 **603,556,113B = 575.596MiB = 9.797% baseline**, comparable native max-compressed WIM, no deployed hardlink/unique bytes, no final ISO/footprint/capability boot claim. Native FoD removal itself independently proven by R6R1 commit + R7 postcommit RO. S37/S39 sources unchanged and S40 output retained; no new component engine edits.
+- Relevant regression original Library `148-EdgeWebView-Classification-and-BL144-Cleanup.txt` shows distinct `WebView2Standalone` residue after FoD removal on **26200** was small (~1.60MiB) inside shared Client-Desktop-Required owner with 183 owner components and physical carve/owner removal **rejected**, classified `SERVICING_AWARE_COMPONENT_ENGINE_HANDOFF`, so do not use the measured WIM delta to claim WebView2Standalone removal nor schedule unsafe raw carve on 26300. Source `BlueLite_Sources.md` and official DISM export docs support comparing same compression only.
+- **At FIRST §0R NEXT NOT DELIVERED:** one narrow, source-pinned, read-only **next-target portfolio selector** for existing S39, using specific proven old Library OneDrive and FoD Metadata native CBS methods and RecipeRegistry profiles to avoid another generalized scan or repeated WebView audit. Need exact current package/capability evidence before *separate* owned mutation (if warranted). Protected S31/S37/S39 and Master v6 remain unchanged. RecipeRegistry r21 retains WebView `runtime_execution_allowed=false`, while recording exact R8 metric.
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
