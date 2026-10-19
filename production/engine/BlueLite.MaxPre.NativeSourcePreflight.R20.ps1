@@ -5,6 +5,8 @@ param(
  [string]$ImagePath='C:\work\26300.9807-UUP\install.wim',
  [string]$ExpectedSha256='0FB778D4696DABA17EDC52E6391A3F217982422FB920C98C8273E0C51A094B49',
  [long]$ExpectedBytes=7021953581,
+ [string]$ExpectedImageVersion='10.0.26300',
+ [string]$ExpectedServicePackBuild='9807',
  [string]$PriorReport='C:\work\logs\BlueLite_26300_9807_DirectSourceIdentity_R19P.txt',
  [string]$ReportPath='C:\work\logs\BlueLite_26300_9807_HighImpactNativePreflight_R20.txt',
  [string]$JsonPath='C:\work\logs\BlueLite_26300_9807_HighImpactNativePreflight_R20.json',
@@ -31,6 +33,7 @@ foreach($output in @($report,$json)){
  if(-not [IO.Directory]::Exists([IO.Path]::GetDirectoryName($output))){throw 'BL_R20_OUTPUT_PARENT_MISSING'}
 }
 if($ExpectedSha256 -notmatch '^[0-9A-Fa-f]{64}$'){throw 'BL_R20_SHA_FORMAT'}
+if($ExpectedImageVersion -notmatch '^10\.0\.26300(?:\.\d+)?$' -or $ExpectedServicePackBuild -notmatch '^\d{1,6}$'){throw 'BL_R20_EXPECTED_LINEAGE_FORMAT'}
 if(-not [IO.File]::Exists($prior) -or (Get-Item -LiteralPath $prior).Length -ne 2482 -or
    (Get-FileHash -LiteralPath $prior -Algorithm SHA256).Hash -cne '2D9B7F61380B081EC062ABFF225EDABAC0C2E3E0C2394223EA0A12DDB4BFBF66'){
  throw 'BL_R20_ORIGINAL_R19P_EVIDENCE_MISMATCH'
@@ -128,7 +131,7 @@ try{
  $spb=Field $details 'ServicePack Build'
  $arch=Field $details 'Architecture'
  $edition=Field $details 'Edition'
- if($version -cne '10.0.26300' -or $spb -cne '9807' -or $arch -cne 'x64' -or $edition -cne 'Professional'){
+ if($version -cne $ExpectedImageVersion -or $spb -cne $ExpectedServicePackBuild -or $arch -cne 'x64' -or $edition -cne 'Professional'){
   throw ('BL_R20_IMAGE_IDENTITY_NOT_EXPECTED_'+$version+'_'+$spb+'_'+$arch+'_'+$edition)
  }
  Note ('REAL_IMAGE_VERSION='+$version+';SP_BUILD='+$spb+';ARCH='+$arch+';EDITION='+$edition)
