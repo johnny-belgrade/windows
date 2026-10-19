@@ -1,0 +1,36 @@
+BLUELITE_R20R2F1C_RAW_NATIVE_WIMINFO_READONLY
+NATIVE_EXIT=0
+IMAGE_SECTION_REGEX=False
+IMAGE_VERSION_26300=False
+SERVICEPACK_BUILD_9807=False
+WIMINFO_RAW|
+WIMINFO_RAW|Deployment Image Servicing and Management tool
+WIMINFO_RAW|Version: 10.0.26100.9549
+WIMINFO_RAW|
+WIMINFO_RAW|Details for image : C:\work\26300.9807-UUP\install.wim
+WIMINFO_RAW|
+WIMINFO_RAW|Index : 1
+WIMINFO_RAW|Name : Windows 11 Pro
+WIMINFO_RAW|Description : Windows 11 Pro
+WIMINFO_RAW|Size : 22,798,464,693 bytes
+WIMINFO_RAW|WIM Bootable : No
+WIMINFO_RAW|Architecture : x64
+WIMINFO_RAW|Hal : <undefined>
+WIMINFO_RAW|Version : 10.0.26300
+WIMINFO_RAW|ServicePack Build : 9807
+WIMINFO_RAW|ServicePack Level : 0
+WIMINFO_RAW|Edition : Professional
+WIMINFO_RAW|Installation : Client
+WIMINFO_RAW|ProductType : WinNT
+WIMINFO_RAW|ProductSuite : Terminal Server
+WIMINFO_RAW|System Root : WINDOWS
+WIMINFO_RAW|Directories : 32434
+WIMINFO_RAW|Files : 132659
+WIMINFO_RAW|Created : 19-Oct-26 - 10:20:04
+WIMINFO_RAW|Modified : 19-Oct-26 - 10:25:21
+WIMINFO_RAW|Languages :
+WIMINFO_RAW|	en-US (Default)
+WIMINFO_RAW|
+WIMINFO_RAW|The operation completed successfully.
+RESULT=CAPTURE_R20R2F1C_ONLY
+NO_MOUNT_NO_UNMOUNT_NO_WIM_MUTATION
