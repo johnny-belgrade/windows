@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.74 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (R7 independent S39 WebView postcommit read-only actual PASS; fair dual-WIM DISM export size comparison NEXT)  
+**Verzija dokumenta:** 1.5.75 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (WebView R7 actual independent postcommit PASS; R8 equal-max dual native WIM export measurement DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -2137,6 +2137,57 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 
 - Original operator `BlueLite_MAXPRE_WebViewEdge_26300.9711_PostCommit_R7.txt` **3,160 B, 35 CRLF lines**, SHA256 **756B9BFD521A714F843A3A188D2B83B60B799006A928415A331A1D0885CFF43B** independently byte-hashed. Reviewed source commit `ca61dd9d9e5784c9c48d2d978de90db1ec751d52` SHA **473E46E6D8F0BE73F6E7541D3F7944F9409A9A8FB945354A519BDF377FE1809B**. Direct original R3/R4/R6R1 original SHA gates pass. Protected S37 **6,551,362,129 B** SHA **A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F**, committed disposable S39 **6,595,075,169 B** SHA **32AD747CD86052BDF6226A25B92A7B051E9946B3D43A591D1EFFD99B265AEBED**, full SHA PASS before and after the read-only mount. Mounts 0/Hives clear PRE, native S39 /ReadOnly PASS, direct exact `Edge.Webview2.Platform~~~~` Not Present, three FoD native package identities unresolvable `0x800f0805`; nine protected parent package native states match CBS 0x40=>Staged /0x70=>Installed; pending0, pending.xml False, CheckHealth CLEAN. Exactly **0 named `amd64_microsoft-edge-webview_*` WinSxS directories** is scoped metadata; NOT proof of no WebView2Standalone residuals or reclaimed unique physical bytes. /Discard, DISM 0 mount, owned empty dir removed, post WIM hashes PASS. Actual terminal **`PASS_S39_R7_WEBVIEW_INDEPENDENT_POSTCOMMIT_READONLY_ONLY`**. Native WebView FoD removal now both disposable commit and independent postcommit certified for 26300.9711; not yet universal production recipe/first boot/release.
 - R6R1 raw container changed **+43,713,040 B** after commit; does not establish space savings. Microsoft official DISM `/Export-Image` documents that unnecessary resource files can be removed by exporting, and same `/Compress:max` with fresh destination files makes WIM container sizes more comparable: https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/dism-image-management-command-line-options-s14?view=windows-11 (reviewed 2026-10-19). Next action at FIRST §0R is **NOT DELIVERED**: one PS7 Admin tool to pin originals+R7, check available disk/zero mounts/no owner alias, export image index 1 from immutable S37 and separately already committed S39 into two new, owned `max` compressed fresh WIM files with /CheckIntegrity; verify output DISM Get-WimInfo, SHA/bytes, and report comparable delta, no source mutation. Measure export size but do not call it deployed footprint, ISO size or hardlink saved bytes; retain original sources and measurement WIMs until evidence readback. R20 variant must remain `runtime_execution_allowed=false`, Master v6 unchanged, protected S31/S37 untouched, §0L sources required.
+
+### 8.88 R8 S37 baseline vs S39 WebView removed — TWO NEW comparable MAX native DISM WIM exports, source-pinned, DELIVERED_NOT_RUN (2026-10-19 SECOND §0R)
+
+- Last ACTUAL R7 independent read-only postcommit PASS, original report **3,160 B,35 CRLF**, SHA256 **756B9BFD521A714F843A3A188D2B83B60B799006A928415A331A1D0885CFF43B**. R6R1 /Remove-Capability + commit passed, R7 original proved removed capability still Not Present, exact three FoD package identities negative, 9 protected parent package states intact, zero pending, clean CheckHealth, targeted exact amd64_microsoft-edge-webview_* WinSxS dirs 0, RO Discard and zero mounts and original WIM hashes unchanged. No certified physical unique-byte savings or final ISO. R6R1 WIM container growth +43,713,040B is servicing resource overhead confounder: Microsoft DISM native `/Export-Image` explicitly documents export eliminates unnecessary resources in modified WIM files and `/Compress:max` on new export WIM (reviewed 2026-10-19): https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/dism-image-management-command-line-options-s14?view=windows-11 . Library 142/145/148 original 26200 historical native WebView route, current 26300 R3/R4/R5R1/R6R1/R7 original logs and sources reused under §0L.
+- Immutable reviewed new source `production/targets/BlueLite.MaxPre.WebView26300.ExportCompare.R8.ps1`, commit **70b6d0265f523593d8f98a42947347c40ee6cecf**, Git blob **ec0be8a18c4b7856893696756dd1ff700fddc38c**, SHA256 **1963CC154156E75C5C55E44D09C9CF457F25F6A180CE3021E7517C572D33983D**, 5299 ASCII bytes/112 newline-split rows, exact independent main readback PASS and SHA algorithm verified against R7 source.
+- Source checks PS7 Admin, original operator R7 report 3160 B/SHA+PASS, protected S37 WIM source 6551362129 B/SHA A599CF7B7CB44748D738D1F5AD75D1D6C462DD15293755DFFB17F6D2ABE0BE9F, committed S39 6595075169 B/SHA 32AD747CD86052BDF6226A25B92A7B051E9946B3D43A591D1EFFD99B265AEBED. Must have 24GiB C free, zero native mounts, reject if report/unique output folder exists. Creates only owned `C:\work\E2E\BlueLite_S40_26300.9711_R8_EqualMaxExports` containing **two fresh separate** `baseline-S37-max.wim` and `webview-removed-S39-max.wim` from native DISM `/Export-Image /SourceIndex:1 /Compress:max /CheckIntegrity`; validates successful Get-WimInfo Index1, SHA and file size per output. Reports exact S37-export and S39-export bytes, delta `S37 - S39`, signed positive when S39 WIM smaller; source SHA+size after exports and native zero mounts. Does NOT overwrite original source, existing S39 committed image, any output, or host OS; no mount, no recursive cleanup or same-image shell replacement. Preserves two output WIMs on partial failure for diagnosis; no ISO/installed physical unique bytes claims. Report `C:\work\logs\BlueLite_MAXPRE_WebViewEdge_26300.9711_ExportCompare_R8.txt` expected only, scoped possible `PASS_R8_EQUAL_COMPRESSION_DUAL_NATIVE_EXPORT_MEASUREMENT_ONLY` **NOT RUN**. RecipeRegistry r20 runtime=false and Master v6 unchanged.
+- **EXACT ONE PS7 Admin command**; close Explorer/Total Commander mount windows first:
+
+```powershell
+& {
+ $ErrorActionPreference='Stop'
+ if($PSVersionTable.PSVersion.Major -ne 7){throw 'BL_PS7_REQUIRED'}
+ $admin=[Security.Principal.WindowsPrincipal]::new([Security.Principal.WindowsIdentity]::GetCurrent())
+ if(-not $admin.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)){throw 'BL_ADMIN_REQUIRED'}
+ $sha='1963CC154156E75C5C55E44D09C9CF457F25F6A180CE3021E7517C572D33983D'
+ $commit='70b6d0265f523593d8f98a42947347c40ee6cecf'
+ $name='BlueLite.MaxPre.WebView26300.ExportCompare.R8.ps1'
+ $dir='C:\work\scripts'
+ $path=Join-Path $dir $name
+ $url="https://raw.githubusercontent.com/johnny-belgrade/windows/$commit/production/targets/$name"
+ if(-not(Test-Path -LiteralPath $dir -PathType Container)){throw 'BL_SCRIPTS_DIRECTORY_MISSING'}
+ if(-not(Test-Path -LiteralPath $path)){
+  $tmp=$path+'.download.'+[guid]::NewGuid().ToString('N')
+  try{
+   Invoke-WebRequest -Uri $url -OutFile $tmp -ErrorAction Stop
+   if((Get-Item -LiteralPath $tmp).Length -ne 5299 -or
+      (Get-FileHash -LiteralPath $tmp -Algorithm SHA256).Hash -cne $sha){
+    throw 'BL_R8_REMOTE_SCRIPT_PIN_MISMATCH'
+   }
+   Move-Item -LiteralPath $tmp -Destination $path -ErrorAction Stop
+  }finally{
+   if(Test-Path -LiteralPath $tmp){Remove-Item -LiteralPath $tmp -Force}
+  }
+ }
+ if((Get-Item -LiteralPath $path).Length -ne 5299 -or
+    (Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash -cne $sha){
+  throw 'BL_R8_LOCAL_SCRIPT_PIN_MISMATCH'
+ }
+ $tokens=$null;$parseErrors=$null
+ $null=[System.Management.Automation.Language.Parser]::ParseFile(
+  $path,[ref]$tokens,[ref]$parseErrors
+ )
+ if(@($parseErrors).Count -ne 0){
+  throw ('BL_R8_PS7_AST_ERRORS='+($parseErrors -join '; '))
+ }
+ Write-Host ('R8_SOURCE_SHA256=PASS;'+$sha)
+ Write-Host 'R8_PS7_AST=PASS'
+ Write-Host 'R8_MODE=EQUAL_MAX_COMPRESSION_TWO_NEW_WIM_EXPORTS_ONLY'
+ & $path
+}
+```
 
 ## 9. Izuzetno važni negativni dokazi — već rešene „slepe ulice“
 
