@@ -77,8 +77,8 @@
    throw ('BL_R14R2_UNTRUSTED_DIRECTORY='+$path)
   }
  }
- function Native([string]$tag,[string[]]$args){
-  $lines=@(& $dism @args 2>&1|ForEach-Object {[string]$_})
+ function Native([string]$tag,[string[]]$argv){
+  $lines=@(& $dism @argv 2>&1|ForEach-Object {[string]$_})
   $ec=[int]$LASTEXITCODE
   $body=$lines -join [Environment]::NewLine
   if($ec -ne 0 -or
