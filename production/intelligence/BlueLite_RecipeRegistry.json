@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "registry_revision": "2026-10-19-webview-r8-max-export-normalized-savings-pass-r21",
+  "registry_revision": "2026-10-19-s39-fodmetadata-r9-exact-superseded-main-readonly-pass-r22",
   "status": "S37_COMMITTED_CANDIDATE_INDEPENDENT_S38R3_POSTCOMMIT_PASS_NOT_RELEASED",
   "scope": "Germanium 26300-first; 26200 historical topology references",
   "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
@@ -862,6 +862,42 @@
           "evidence_refs": [
             "339-R1-Canonical-FodMetadata-Superseded-Native-Production-Removal.txt"
           ]
+        },
+        {
+          "variant_id": "26300.9711-s39-r9-one-exact-superseded-main",
+          "source_family": "Germanium",
+          "supported_lineage": [
+            "26300.x"
+          ],
+          "topology_status": "NATIVE_READONLY_EXACT_CANDIDATE_VERIFIED",
+          "exact_selectors": [
+            {
+              "kind": "CBS_PACKAGE",
+              "identity": "Microsoft-Windows-FodMetadataServicing-Desktop-Metadata-Package~31bf3856ad364e35~amd64~~10.0.26100.1742"
+            }
+          ],
+          "required_predicates": [
+            {
+              "kind": "NATIVE_EXACT_PACKAGE_STATE",
+              "target": "MAIN 10.0.26100.1742",
+              "expected": "R9 S39 native Superseded (1 exact); 10.0.26100.9711 MAIN Installed KEEP; 10.0.26100.1 CORE Installed KEEP; wrappers not listed do not assume absent; exact wrapper native info before any mutation",
+              "evidence_ref": "BlueLite_MAXPRE_FodMetadata_26300.9711_ReadOnly_R9.txt SHA256 7996B6BC49611645B3E79C87E0FC8D063BBE805CC42565067A7FE7436D19D727"
+            }
+          ],
+          "expected_post_state": [
+            "only exact old 26100.1742 MAIN nonresolving if native removal succeeds on new owned disposable",
+            "new 26100.9711 MAIN and CORE 26100.1 retained Installed, preexisting resolvable wrappers untouched",
+            "pending=0 and CheckHealth/ScanHealth CLEAN, independent postcommit needed"
+          ],
+          "tested_builds": [
+            "26300.9711"
+          ],
+          "evidence_refs": [
+            "BlueLite_MAXPRE_FodMetadata_26300.9711_ReadOnly_R9.txt SHA256 7996B6BC49611645B3E79C87E0FC8D063BBE805CC42565067A7FE7436D19D727",
+            "Library: 162-FodMetadata-Classification-and-BL159-Cleanup.txt",
+            "Library: 339-R1-Canonical-FodMetadata-Superseded-Native-Production-Removal.txt"
+          ],
+          "notes": "R9 read-only positive identity, NOT actual removal. Never mutate protected S31/S37/S39 or wrappers, CORE, RollupFix. Owned disposable only; runtime false."
         }
       ],
       "protected_floor": [
