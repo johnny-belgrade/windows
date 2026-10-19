@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "registry_revision": "2026-10-19-s41-searchengine-r14r1-cbs-current-owner04-hive-temp-hold-r27",
+  "registry_revision": "2026-10-19-s41-searchengine-r14r2-native-oldstaged-currentinstalled-pass-r28",
   "status": "S37_COMMITTED_CANDIDATE_INDEPENDENT_S38R3_POSTCOMMIT_PASS_NOT_RELEASED",
   "scope": "Germanium 26300-first; 26200 historical topology references",
   "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
@@ -1090,6 +1090,49 @@
             "production/evidence/BlueLite_MAXPRE_SearchEngine_26300.9711_ReadOnly_R14R1.txt SHA256 9014DF6D0B328B83F81699E4FF315810B1C1767298A265D131E9F12C556D0813"
           ],
           "notes": "R14R1 revealed actual 26300 CBS historical single-owner AMBER shape for current .9711 but native exact package removal not proven; R14R1 is HOLD only on bounded temp hive artifact cleanup. No AMBER mutation authorized."
+        },
+        {
+          "variant_id": "26300.9711-s41-r14r2-native-current-installed-old-staged-scoped-pass",
+          "source_family": "Germanium",
+          "supported_lineage": [
+            "26300.x"
+          ],
+          "topology_status": "UNKNOWN_DEPENDENCY",
+          "exact_selectors": [
+            {
+              "kind": "CBS_PACKAGE",
+              "identity": "Microsoft-Windows-SearchEngine-Client-Package~31bf3856ad364e35~amd64~~10.0.26100.9711"
+            }
+          ],
+          "required_predicates": [
+            {
+              "kind": "NATIVE",
+              "target": "SearchEngine exact current and old installed package states",
+              "expected": "current 26100.9711 native Installed; old 26100.1591 native Staged; zero pending, CheckHealth CLEAN"
+            },
+            {
+              "kind": "CBS",
+              "target": "SearchEngine current .9711 owner and parent",
+              "expected": "CurrentState 0x70, Visibility 0x2, single Required-Package04 .9711 owner 0x30070; parent CBS CurrentState 0x70"
+            },
+            {
+              "kind": "NEXT_GATE",
+              "target": "owned S43 AMBER target-only mutation",
+              "expected": "CBS Updates value and exact current parent/old staged must be reverified in owned RW clone; only native exact target removal, ScanHealth clean and commit; independent postcommit pending"
+            }
+          ],
+          "expected_post_state": [
+            "R14R2 original result PASS_S41_R14R2_EPHEMERAL_HIVE_RETIRE_AND_NATIVE_EXACT_READONLY_ONLY",
+            "Six previously owned R14R1 hive copy and sidecars removed, own folder removed, S41 unchanged",
+            "No package mutation/commit or universal production runtime proof"
+          ],
+          "tested_builds": [
+            "26300.9711"
+          ],
+          "evidence_refs": [
+            "production/evidence/BlueLite_MAXPRE_SearchEngine_26300.9711_NativeExact_R14R2.txt SHA256 40EC240558E8FECE65C11B69EBF67A25C5AF5FAB118BAC534BCBD9715585433A"
+          ],
+          "notes": "Native and CBS exact preconditions verified on S41; AMBER runtime removal is not yet tested on 26300 and runtime_execution_allowed remains false."
         }
       ],
       "protected_floor": [
@@ -1134,7 +1177,7 @@
           "scope": "Exact 26300 SearchEngine CBS x2 with one current Installed-like 0x70 owner Required-Package04; native nonlisting; srchadmin nested dirs bounded; health and zero mounts/hives clean; temporary SOFTWARE-copy cleanup HOLD"
         }
       ],
-      "notes": "Do not treat DISM package-list nonlisting as package absence; exact CBS registry state unexamined on 26300. R14 readonly aborted on previously unanticipated srchadmin child dir. R14R1 must resolve both without broad Search exploration. Runtime removal prohibited. On 2026-10-19 actual R14R1 S41 CBS current .9711 matches historical single-owner shape, but native /Get-PackageInfo exact untested and temporary copy remains due unexpected sidecars: keep runtime=false."
+      "notes": "Do not treat DISM package-list nonlisting as package absence; exact CBS registry state unexamined on 26300. R14 readonly aborted on previously unanticipated srchadmin child dir. R14R1 must resolve both without broad Search exploration. Runtime removal prohibited. On 2026-10-19 actual R14R1 S41 CBS current .9711 matches historical single-owner shape, but native /Get-PackageInfo exact untested and temporary copy remains due unexpected sidecars: keep runtime=false. R14R2 native exact old Staged and current Installed, hive orphan cleanup PASS. R15 owned S43 first AMBER removal not run."
     }
   ]
 }
