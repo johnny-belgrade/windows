@@ -245,7 +245,7 @@ finally{
   $clean=$true
  }catch{Note ('POST_SOURCE_OR_MOUNT_HOLD='+$_.Exception.Message)}
  if($completed -and $clean){
-  if($Mode -ceq 'Preview' -and $queue.Count -eq 0){
+  if($queue.Count -eq 0){
    Note 'RESULT=PASS_R18_NATIVE_DISPATCHER_SOURCE_BOUND_FASTPATH_NOOP_ONLY'
   }elseif($Mode -ceq 'Preview'){
    Note 'RESULT=PASS_R18_NATIVE_DISPATCHER_GUARDED_PREVIEW_ONLY'
