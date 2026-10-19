@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "registry_revision": "2026-10-19-s41-fodmetadata-r12-normalized-713456b-native-pass-r25",
+  "registry_revision": "2026-10-19-s41-searchengine-r14-native-nonlisting-ro-hold-r26",
   "status": "S37_COMMITTED_CANDIDATE_INDEPENDENT_S38R3_POSTCOMMIT_PASS_NOT_RELEASED",
   "scope": "Germanium 26300-first; 26200 historical topology references",
   "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
@@ -962,6 +962,122 @@
       ],
       "notes": "Old wrapper and current layer have different dispositions.",
       "contract_version": "1.0.0"
+    },
+    {
+      "recipe_id": "BL.CBS.SearchEngine.ClientWrapper",
+      "logical_target": "SearchEngine Client CBS wrapper (not broad Search payload)",
+      "aliases": [
+        "SearchEngine-Client-Package",
+        "srchadmin",
+        "SearchEngine wrapper"
+      ],
+      "phase": "STAGE1_MAX_PRE",
+      "removal_class": "AMBER",
+      "disposition": "PRODUCTION_RULE",
+      "certification": "HISTORICAL_REFERENCE",
+      "runtime_execution_allowed": false,
+      "variants": [
+        {
+          "variant_id": "26200.9445-347-search-single-owner-amber",
+          "source_family": "Germanium",
+          "supported_lineage": [
+            "26200.x"
+          ],
+          "topology_status": "KNOWN_BUT_NOT_TESTED_ON_26300",
+          "exact_selectors": [
+            {
+              "kind": "CBS_PACKAGE",
+              "identity": "Microsoft-Windows-SearchEngine-Client-Package~31bf3856ad364e35~amd64~~10.0.26100.9278"
+            }
+          ],
+          "required_predicates": [
+            {
+              "kind": "CBS",
+              "target": "26200 native installed wrapper and CBS single parent",
+              "expected": "CurrentState 0x70, Visibility 0x2, exactly one installed Client-Desktop-Required-Package05 26100.9445 owner DWORD 0x30070, no pending, CheckHealth CLEAN"
+            }
+          ],
+          "expected_post_state": [
+            "historic native targeted package removed after exact AMBER owner/visibility decouple; broad Search residual remains servicing-aware tool handoff"
+          ],
+          "tested_builds": [
+            "26200.9445"
+          ],
+          "evidence_refs": [
+            "Library 131-SearchEngine-Classification-and-BL119-Cleanup.txt",
+            "Library 346-Canonical-SearchEngine-Wrapper-AMBER-PreProduction-Gate.txt",
+            "Library 347-Canonical-SearchEngine-Wrapper-Portable-AMBER-Production-Apply.txt"
+          ]
+        },
+        {
+          "variant_id": "26300.9711-s41-r14-native-list-empty-readonly-hold",
+          "source_family": "Germanium",
+          "supported_lineage": [
+            "26300.x"
+          ],
+          "topology_status": "UNKNOWN_DEPENDENCY",
+          "required_predicates": [
+            {
+              "kind": "NATIVE",
+              "target": "R14 S41 DISM /Get-Packages exact SearchEngine-Client family regex",
+              "expected": "R14 count=0 is a scoped nonlisting only; CBS registry package enumeration not executed, cannot prove absence"
+            },
+            {
+              "kind": "FILES",
+              "target": "S41 2 srchadmin WinSxS owner directories",
+              "expected": "2 directories detected, unexpected child directory triggered scanner HOLD; recursive bounded non-traversal inspection pending"
+            }
+          ],
+          "expected_post_state": [
+            "R14 S41 /ReadOnly /Discard PASS, pre/post zero mounts and project hives, S41 full SHA unchanged",
+            "No SearchEngine removal; package absent/present unresolved until independent CBS inspection"
+          ],
+          "tested_builds": [
+            "26300.9711"
+          ],
+          "evidence_refs": [
+            "production/evidence/BlueLite_MAXPRE_SearchEngine_26300.9711_ReadOnly_R14.txt SHA256 5D08567AFE7FED617C8910F924A1E305157EABAFE58742F9FBA6B8EA9FBE3F20"
+          ]
+        }
+      ],
+      "protected_floor": [
+        "S41 source WIM 26300.9711 full hash unchanged",
+        "Search UI and servicing/Client-Desktop-Required package parents",
+        "Store, four final AppX roots, Defender ON, HOST virtualization floor"
+      ],
+      "required_checks": [
+        "SOURCE_SHA",
+        "EXACT_TOPOLOGY",
+        "DEPENDENCY_GRAPH",
+        "PROTECTED_FLOOR",
+        "CHECKHEALTH",
+        "PENDING_ZERO",
+        "NEGATIVE_FIXTURES"
+      ],
+      "rollback": "For future allowed exact isolated mutation only: owner-bound disposable RW copy, before/after native health, discard on failure; never mutate S41 source or broad Search owners.",
+      "evidence": [
+        {
+          "source_kind": "LIBRARY_FILE",
+          "reference": "347-Canonical-SearchEngine-Wrapper-Portable-AMBER-Production-Apply.txt",
+          "scope": "Historical 26200 exact native AMBER wrapper success"
+        },
+        {
+          "source_kind": "LIBRARY_FILE",
+          "reference": "346-Canonical-SearchEngine-Wrapper-AMBER-PreProduction-Gate.txt",
+          "scope": "Historical 26200 exact owner/visibility fixture"
+        },
+        {
+          "source_kind": "LIBRARY_FILE",
+          "reference": "131-SearchEngine-Classification-and-BL119-Cleanup.txt",
+          "scope": "Search broad residual dependency boundary"
+        },
+        {
+          "source_kind": "OPERATOR_LOG",
+          "reference": "BlueLite_MAXPRE_SearchEngine_26300.9711_ReadOnly_R14.txt",
+          "scope": "S41 26300 R14 native list count0, 2 srchadmin directories; scoped scanner HOLD; no mutation, health not checked"
+        }
+      ],
+      "notes": "Do not treat DISM package-list nonlisting as package absence; exact CBS registry state unexamined on 26300. R14 readonly aborted on previously unanticipated srchadmin child dir. R14R1 must resolve both without broad Search exploration. Runtime removal prohibited."
     }
   ]
 }
