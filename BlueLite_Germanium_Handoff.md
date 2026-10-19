@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.119 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (R20R2F1 collision HOLD; GUI-delivered local-only readonly R20R2F1A; Oct03 predecessor review retained)  
+**Verzija dokumenta:** 1.5.120 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-19 (R20R2F1 collision HOLD; GUI-delivered local-only readonly R20R2F1A; Oct03 predecessor review retained)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -2248,6 +2248,66 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - Operator-original `BlueLite_MAXPRE_FodMetadata_26300.9711_ReadOnly_R9.txt`, **1504 B/25 CRLF** SHA256 **7996B6BC49611645B3E79C87E0FC8D063BBE805CC42565067A7FE7436D19D727** independently hashed. R9 source immutable commit `e2442344ad5f396b31d6bdbd4001c16cfb8646fd`, SHA **F3DA22FF241C17E9F3055C981B92DE24D35CDC1215E8EE4B6683DEF5780B197A**; original R8 SHA pin, S37/S39 full WIM SHA pre/post, pre-zero mounts/no project hives, native /ReadOnly S39 mount, post-/Discard, post-zero mounts and owned directory cleanup all PASS; native CheckHealth CLEAN. Exact direct package info family three: **MAIN 26100.1742 Superseded**; **MAIN 26100.9711 Installed/KEEP**, **CORE 26100.1 Installed/KEEP**. Wrappers not in native /Get-Packages filtering; exact /Get-PackageInfo may resolve hidden wrapper — absence from list alone does not mean absent. Actual terminal **`PASS_S39_R9_FODMETADATA_EXACT_NATIVE_READONLY_CLASSIFICATION_ONLY`**; absolutely no R9 package removal.
 - Regression Library `162-FodMetadata-Classification-and-BL159-Cleanup.txt`, `339-R1-Canonical-FodMetadata-Superseded-Native-Production-Removal.txt` proves one native superseded MAIN /Remove-Package success on 26200.9445 with current MAIN and both wrapper packages retained; `174-FodMetadata-Core-Classification-and-BL173-Cleanup.txt` establishes distinct CORE exact self-owner AMBER and Desktop-CompDB servicing floor. **Do not apply 26200 current MAIN version 26100.9444 to 26300 current 26100.9711.** R9 observation plus historical method justifies one owned-clone 26300 native test, not direct production permission. Official DISM native `/Remove-Package` docs in BlueLite_Sources; DO NOT modify wrappers/CU owners/core/host OS.
 - **FIRST checkpoint NEXT (NOT YET DELIVERED):** separate immutable R10 native superseded MAIN test against NEW disposable S41 copy of committed S39; full SHA/bytes pre-copy and clone SHA, zero mounts/hives, min disk capacity; pre MAIN old Superseded/new Installed and CORE Installed, optional exact wrapper info with negative query classifed; pending0 CheckHealth CLEAN; native `/Remove-Package` ONLY `Microsoft-Windows-FodMetadataServicing-Desktop-Metadata-Package~31bf3856ad364e35~amd64~~10.0.26100.1742`; target invalid 0x800f0805, current+core exact keep states, wrapper matched pre/post, pending0 and CheckHealth+ScanHealth CLEAN before /Commit; source S39 protected. Scoped PASS from this possible step is only disposable commit, not production/installed-footprint proof; next independent postcommit RO and fair export on R10 if actual PASS. Registry r22 runtime=false, Master v6 unchanged.
+
+### 8.132 R20R2F1C exact inline native DISM WIMINFO RAW capture DELIVERED_NOT_RUN (SECOND §0R, 2026-10-19)
+
+Actual latest R20R2F1B native WIMINFO exit0/old ImagePart regex HOLD recorded §8.131 and exact original archived. Previous R19P raw native `Details for image : ...` and true image Version `10.0.26300` / ServicePack Build `9807` already exist; avoid repeating 7GB SHA scan, and acquire only previously unlogged native output-shape once.
+
+**ONE PS7 Admin INLINE command, no .ps1 file needed, no mount/unmount**; probes R19P (2,482B SHA) and R20R2 (2,387B SHA) originals, checks existing WIM byte length, calls `dism.exe /English /Get-WimInfo /WimFile:... /Index:1` exactly once, writes native stdout lines and exit, plus 3 regex predicate decisions (image section/version/SP), with `FileMode.CreateNew` no-overwrite TXT. No large-image hash this diagnostic, no CBS mutation, no installation or external download. Copy/paste unchanged:
+
+```powershell
+& {
+    Set-StrictMode -Version Latest
+    $ErrorActionPreference = 'Stop'
+    $PSNativeCommandUseErrorActionPreference = $false
+    if ($PSVersionTable.PSVersion.Major -ne 7) { throw 'BL_R20R2F1C_PS7_REQUIRED' }
+    $wim = 'C:\work\26300.9807-UUP\install.wim'
+    $r19p = 'C:\work\logs\BlueLite_26300_9807_DirectSourceIdentity_R19P.txt'
+    $prior = 'C:\work\logs\BlueLite_26300_9807_HighImpactNativePreflight_R20R2.txt'
+    $report = 'C:\work\logs\BlueLite_26300_9807_WimInfoRaw_R20R2F1C.txt'
+    if (Test-Path -LiteralPath $report) { throw 'BL_R20R2F1C_NO_OVERWRITE' }
+    if ((Get-Item -LiteralPath $wim -ErrorAction Stop).Length -ne 7021953581) {
+        throw 'BL_R20R2F1C_SOURCE_LENGTH_DRIFT'
+    }
+    if ((Get-Item -LiteralPath $r19p -ErrorAction Stop).Length -ne 2482 -or
+        (Get-FileHash -LiteralPath $r19p -Algorithm SHA256).Hash -cne
+        '2D9B7F61380B081EC062ABFF225EDABAC0C2E3E0C2394223EA0A12DDB4BFBF66') {
+        throw 'BL_R20R2F1C_R19P_NOT_PINNED'
+    }
+    if ((Get-Item -LiteralPath $prior -ErrorAction Stop).Length -ne 2387 -or
+        (Get-FileHash -LiteralPath $prior -Algorithm SHA256).Hash -cne
+        '19CB1C3881087707BA4C62A14AE75AA31254EB7754FC9D1510C39E11F1B1A8C3') {
+        throw 'BL_R20R2F1C_PRIOR_NOT_PINNED'
+    }
+    $dism = Join-Path $env:WINDIR 'System32\dism.exe'
+    $raw = @(& $dism /English /Get-WimInfo ('/WimFile:' + $wim) /Index:1 2>&1 |
+        ForEach-Object { [string]$_ })
+    $exitCode = [int]$LASTEXITCODE
+    $body = $raw -join [Environment]::NewLine
+    $section = [regex]::IsMatch($body, '(?im)^[ \t]*Details for image[ \t]*:[^\r\n]*$')
+    $version = [regex]::Match($body, '(?im)^[ \t]*Version[ \t]*:[ \t]*10\.0\.26300[ \t]*$').Success
+    $sp = [regex]::Match($body, '(?im)^[ \t]*ServicePack Build[ \t]*:[ \t]*9807[ \t]*$').Success
+    $lines = [Collections.Generic.List[string]]::new()
+    [void]$lines.Add('BLUELITE_R20R2F1C_RAW_NATIVE_WIMINFO_READONLY')
+    [void]$lines.Add('NATIVE_EXIT=' + $exitCode)
+    [void]$lines.Add('IMAGE_SECTION_REGEX=' + $section)
+    [void]$lines.Add('IMAGE_VERSION_26300=' + $version)
+    [void]$lines.Add('SERVICEPACK_BUILD_9807=' + $sp)
+    foreach ($line in $raw) { [void]$lines.Add('WIMINFO_RAW|' + $line) }
+    [void]$lines.Add('RESULT=CAPTURE_R20R2F1C_ONLY')
+    [void]$lines.Add('NO_MOUNT_NO_UNMOUNT_NO_WIM_MUTATION')
+    $stream = [IO.File]::Open($report, [IO.FileMode]::CreateNew,
+        [IO.FileAccess]::Write, [IO.FileShare]::None)
+    try {
+        $writer = [IO.StreamWriter]::new($stream, [Text.UTF8Encoding]::new($false))
+        try { foreach ($line in $lines) { $writer.WriteLine($line); Write-Host $line } }
+        finally { $writer.Dispose() }
+    }
+    finally { $stream.Dispose() }
+}
+```
+
+**Expected new original TXT** `C:\work\logs\BlueLite_26300_9807_WimInfoRaw_R20R2F1C.txt`. No JSON. Send TXT, or full console output if command aborted before report. `CAPTURE_R20R2F1C_ONLY` certifies raw capture, not R20 engine, mount, FoD targets, WIM savings or release. **DELIVERED_NOT_RUN**. Once actual stdout is known, fix universal `ImagePart` adapter using R19P+new raw fixtures, then immediately resume source-bound high-impact native preflight rather than another 26200/URL/WinRE research round. User-facing answer remains short and ends with the exact report path.
 
 ### 8.131 R20R2F1B ACTUAL R20R2 WIMINFO parser HOLD before mount; full 22-ChatGPT.md predecessor context read (FIRST §0R, 2026-10-19)
 
