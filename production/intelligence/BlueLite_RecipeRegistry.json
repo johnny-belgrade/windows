@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "registry_revision": "2026-10-20-r20r2f5-9807-disposable-native-commit-r35",
+  "registry_revision": "2026-10-20-r20r2f6-9807-equal-max-export-pass-r36",
   "status": "S37_COMMITTED_CANDIDATE_INDEPENDENT_S38R3_POSTCOMMIT_PASS_NOT_RELEASED",
   "scope": "Germanium 26300-first; 26200 historical topology references",
   "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
@@ -824,6 +824,54 @@
           "evidence_refs": [
             "production/evidence/BlueLite_26300_9807_WebViewDisposableNative_R20R2F5.txt SHA256 B616CEDF70D94D5302626E77D4D89177755E47A77ED0F7996CF9B6CB77F9D3D6",
             "production/evidence/BlueLite_26300_9807_HighImpactNativePreflight_R20R2F3.json SHA256 62575ED0F012228D36D2E8CB86E9B196552F44298F40280AF24A01E13A3E547C"
+          ]
+        },
+        {
+          "variant_id": "26300.9807-r20r2f6-equal-max-export-pass",
+          "source_family": "Germanium",
+          "supported_lineage": [
+            "26300.x"
+          ],
+          "topology_status": "NATIVE_DISPOSABLE_REMOVAL_COMMIT_AND_EQUAL_MAX_EXPORT_PASS_POSTCOMMIT_INDEPENDENT_QA_PENDING",
+          "exact_selectors": [
+            {
+              "kind": "CAPABILITY",
+              "identity": "Edge.Webview2.Platform~~~~"
+            }
+          ],
+          "required_predicates": [
+            {
+              "kind": "DISPOSABLE_NATIVE",
+              "target": "R20R2F5 source 26300.9807",
+              "expected": "/Remove-Capability native0, Not Present, 4 protected capabilities, 14 AppX, 10 exact OneDrive/Search packages and 146 non-target CBS package states retained, CheckHealth CLEAN and disposable /Commit0"
+            },
+            {
+              "kind": "SAME_COMPRESSION",
+              "target": "R20R2F6 native DISM index1 /Export-Image /Compress:max /CheckIntegrity",
+              "expected": "Original source max export 7010536463 B SHA256 85D3A3370E3A42741C5BC1330AF251AD216F8C9E8B9788D032AC76E7CF1CE568; WebView removed max export 6407308664 B SHA256 F8F2FFF0A40508C88F8426B2923FEDCF9B00F3FFF3A5637A13C0EB0006E8BA7E; exact delta +603227799 B; both /Get-WimInfo 26300.9807 Pro x64 index1 native exit0"
+            },
+            {
+              "kind": "SOURCE_PRESERVATION",
+              "target": "original source and committed disposable WIM PRE/POST SHA",
+              "expected": "original 7021953581 B SHA 0FB778D4696DABA17EDC52E6391A3F217982422FB920C98C8273E0C51A094B49; clone 7063786811 B SHA 814ABD14BDE3E4C17049667B627C6DD8FCEF9472E69EB6EE2BCA1362B67C3858; no mounts pre/post, no input mutation"
+            },
+            {
+              "kind": "DISPOSABLE_LIFECYCLE",
+              "target": "R20R2F6 input clone and original-baseline export",
+              "expected": "Log/evidence retained; clone and base export now disposable cleanup candidates after exact path/size/hash + zero mount/hive guards; retained smaller 6407308664 B export is single test-candidate for independent postcommit audit; NO deletion yet"
+            }
+          ],
+          "expected_post_state": [
+            "Native disposable WebView removed and normalized MAX WIM transport savings 603227799 B independently measured",
+            "No installed footprint, no physical unique payload reclaim, no Defender branches / VM / ISO release certification",
+            "Retain WebView-removed max export as a future read-only postcommit candidate while retiring unneeded clone and baseline export only via separate gated operator command"
+          ],
+          "tested_builds": [
+            "26300.9807"
+          ],
+          "evidence_refs": [
+            "production/evidence/BlueLite_26300_9807_WebViewDisposableNative_R20R2F5.txt SHA256 B616CEDF70D94D5302626E77D4D89177755E47A77ED0F7996CF9B6CB77F9D3D6",
+            "production/evidence/BlueLite_26300_9807_WebViewEqualCompress_R20R2F6.txt SHA256 478A174E9AB511FCD29F3A1F15B51FD3DA58AABD44BC17EBB564FB021D4453FC"
           ]
         }
       ],
