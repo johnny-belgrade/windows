@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "registry_revision": "2026-10-20-r20r2f4-9807-native-list-adapter-hold-r33",
+  "registry_revision": "2026-10-20-r20r2f4r1-native-direct-readonly-r34",
   "status": "S37_COMMITTED_CANDIDATE_INDEPENDENT_S38R3_POSTCOMMIT_PASS_NOT_RELEASED",
   "scope": "Germanium 26300-first; 26200 historical topology references",
   "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
@@ -739,6 +739,35 @@
           ],
           "evidence_refs": [
             "production/evidence/BlueLite_26300_9807_WebViewNativeDelta_R20R2F4.txt SHA256 7E76DBF15717D9711BB4EECDCF312520E421A2591AC05D49EDDA548BF5CBEF3B"
+          ]
+        },
+        {
+          "variant_id": "26300.9807-r20r2f4r1-native-direct-details-pass",
+          "source_family": "Germanium",
+          "supported_lineage": [
+            "26300.x"
+          ],
+          "topology_status": "NATIVE_DIRECT_READONLY_PASS_NOT_REMOVAL_CERTIFIED",
+          "required_predicates": [
+            {
+              "kind": "EXACT_NATIVE_DETAILS",
+              "target": "Edge.Webview2.Platform~~~~ and Microsoft-Edge-WebView-FOD-Package~31bf3856ad364e35~amd64~~10.0.26100.1",
+              "expected": "Capability Installed, linked FoD Staged, both native DISM exit0; install size 559.24 MB is not WIM saving"
+            },
+            {
+              "kind": "SOURCE_AND_LIFECYCLE",
+              "target": "26300.9807 original WIM",
+              "expected": "7021953581B source original SHA PRE/POST unchanged, 0 mounts, readonly /Discard exit0"
+            }
+          ],
+          "expected_post_state": [
+            "Exact read-only provider state proven; mutation/reclaim untested"
+          ],
+          "tested_builds": [
+            "26300.9807"
+          ],
+          "evidence_refs": [
+            "production/evidence/BlueLite_26300_9807_WebViewDirectDetails_R20R2F4R1.txt SHA256 96907BF4B4C9FE613A1C79FE648277178164F64734C3D1C77062F92D4D76BEDC"
           ]
         }
       ],
