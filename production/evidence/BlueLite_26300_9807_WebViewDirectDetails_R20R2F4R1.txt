@@ -1,0 +1,517 @@
+BLUELITE_R20R2F4R1_EXACT_HIDDEN_WEBVIEW_PROVIDER_DETAILS_READONLY
+ORIGINAL_WIM_PRE_SHA=PASS
+NATIVE_PRE_WIM_EXIT=0
+RAW_PRE_WIM|
+RAW_PRE_WIM|Deployment Image Servicing and Management tool
+RAW_PRE_WIM|Version: 10.0.26100.9549
+RAW_PRE_WIM|
+RAW_PRE_WIM|Mounted images:
+RAW_PRE_WIM|
+RAW_PRE_WIM|
+RAW_PRE_WIM|No mounted images found.
+RAW_PRE_WIM|
+RAW_PRE_WIM|The operation completed successfully.
+ZERO_MOUNTS_PRE_WIM=PASS
+NATIVE_PRE_IMAGE_EXIT=0
+RAW_PRE_IMAGE|
+RAW_PRE_IMAGE|Deployment Image Servicing and Management tool
+RAW_PRE_IMAGE|Version: 10.0.26100.9549
+RAW_PRE_IMAGE|
+RAW_PRE_IMAGE|Mounted images:
+RAW_PRE_IMAGE|
+RAW_PRE_IMAGE|
+RAW_PRE_IMAGE|No mounted images found.
+RAW_PRE_IMAGE|
+RAW_PRE_IMAGE|The operation completed successfully.
+ZERO_MOUNTS_PRE_IMAGE=PASS
+NATIVE_MOUNT_READONLY_EXIT=0
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|Deployment Image Servicing and Management tool
+RAW_MOUNT_READONLY|Version: 10.0.26100.9549
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|Mounting image
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[                           1.0%                           ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[=                          2.0%                           ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[=                          3.0%                           ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[==                         4.0%                           ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[==                         5.0%                           ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===                        6.0%                           ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[====                       7.0%                           ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[====                       8.0%                           ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[=====                      9.0%                           ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[=====                      10.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[======                     11.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[======                     12.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[=======                    13.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[========                   14.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[========                   15.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[=========                  16.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[=========                  17.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[==========                 18.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========                19.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========                20.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[============               21.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[============               22.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[=============              23.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[=============              24.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[==============             25.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===============            26.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===============            27.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[================           28.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[================           29.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[=================          30.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[=================          31.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[==================         32.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===================        33.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===================        34.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[====================       35.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[====================       36.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[=====================      37.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[======================     38.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[======================     39.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[=======================    40.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[=======================    41.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[========================   42.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[========================   43.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[=========================  44.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[========================== 45.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[========================== 46.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================47.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================48.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================49.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================50.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================51.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================52.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================53.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================54.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================55.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================56.0%                          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================57.0%=                         ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================58.0%=                         ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================59.0%==                        ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================60.0%==                        ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================61.0%===                       ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================62.0%===                       ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================63.0%====                      ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================64.0%=====                     ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================65.0%=====                     ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================66.0%======                    ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================67.0%======                    ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================68.0%=======                   ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================69.0%========                  ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================70.0%========                  ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================71.0%=========                 ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================72.0%=========                 ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================73.0%==========                ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================74.0%==========                ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================75.0%===========               ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================76.0%============              ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================77.0%============              ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================78.0%=============             ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================79.0%=============             ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================80.0%==============            ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================81.0%==============            ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================82.0%===============           ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================83.0%================          ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================85.0%=================         ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================86.0%=================         ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================87.0%==================        ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================88.0%===================       ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================89.0%===================       ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================90.0%====================      ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================91.0%====================      ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================92.0%=====================     ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================93.0%=====================     ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================94.0%======================    ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[===========================95.0%=======================   ] 
+RAW_MOUNT_READONLY|
+RAW_MOUNT_READONLY|[==========================100.0%==========================] 
+RAW_MOUNT_READONLY|The operation completed successfully.
+NATIVE_WEBVIEW_CAPABILITY_INFO_EXIT=0
+RAW_WEBVIEW_CAPABILITY_INFO|
+RAW_WEBVIEW_CAPABILITY_INFO|Deployment Image Servicing and Management tool
+RAW_WEBVIEW_CAPABILITY_INFO|Version: 10.0.26100.9549
+RAW_WEBVIEW_CAPABILITY_INFO|
+RAW_WEBVIEW_CAPABILITY_INFO|Image Version: 10.0.26300.9807
+RAW_WEBVIEW_CAPABILITY_INFO|
+RAW_WEBVIEW_CAPABILITY_INFO|Capability Identity : Edge.Webview2.Platform~~~~
+RAW_WEBVIEW_CAPABILITY_INFO|Name : Edge.Webview2.Platform
+RAW_WEBVIEW_CAPABILITY_INFO|State : Installed
+RAW_WEBVIEW_CAPABILITY_INFO|Display Name : Microsoft Edge Webview2 (Platform)
+RAW_WEBVIEW_CAPABILITY_INFO|Description : Microsoft Edge Webview2 (Platform)
+RAW_WEBVIEW_CAPABILITY_INFO|Download Size :  0 bytes
+RAW_WEBVIEW_CAPABILITY_INFO|Install Size : 559.24 MB
+RAW_WEBVIEW_CAPABILITY_INFO|
+RAW_WEBVIEW_CAPABILITY_INFO|The operation completed successfully.
+NATIVE_EXACT_FOD_PACKAGE_INFO_EXIT=0
+RAW_EXACT_FOD_PACKAGE_INFO|
+RAW_EXACT_FOD_PACKAGE_INFO|Deployment Image Servicing and Management tool
+RAW_EXACT_FOD_PACKAGE_INFO|Version: 10.0.26100.9549
+RAW_EXACT_FOD_PACKAGE_INFO|
+RAW_EXACT_FOD_PACKAGE_INFO|Image Version: 10.0.26300.9807
+RAW_EXACT_FOD_PACKAGE_INFO|
+RAW_EXACT_FOD_PACKAGE_INFO|Package information:
+RAW_EXACT_FOD_PACKAGE_INFO|
+RAW_EXACT_FOD_PACKAGE_INFO|Package Identity : Microsoft-Edge-WebView-FOD-Package~31bf3856ad364e35~amd64~~10.0.26100.1
+RAW_EXACT_FOD_PACKAGE_INFO|Applicable : Yes
+RAW_EXACT_FOD_PACKAGE_INFO|Copyright : Copyright (c) Microsoft Corporation. All Rights Reserved
+RAW_EXACT_FOD_PACKAGE_INFO|Company : 
+RAW_EXACT_FOD_PACKAGE_INFO|Creation Time : 
+RAW_EXACT_FOD_PACKAGE_INFO|Description : Microsoft Edge Webview2 (Platform)
+RAW_EXACT_FOD_PACKAGE_INFO|Install Client : DISM Package Manager Provider
+RAW_EXACT_FOD_PACKAGE_INFO|Install Package Name : Microsoft-Edge-WebView-FOD-Package~31bf3856ad364e35~amd64~~10.0.26100.1.mum
+RAW_EXACT_FOD_PACKAGE_INFO|Install Time : 01-Apr-24 08:03
+RAW_EXACT_FOD_PACKAGE_INFO|Last Update Time : 
+RAW_EXACT_FOD_PACKAGE_INFO|Name : Microsoft Edge Webview2 (Platform)
+RAW_EXACT_FOD_PACKAGE_INFO|Product Name : Microsoft-Edge-WebView-FOD-Package
+RAW_EXACT_FOD_PACKAGE_INFO|Product Version : 
+RAW_EXACT_FOD_PACKAGE_INFO|Release Type : OnDemand Pack
+RAW_EXACT_FOD_PACKAGE_INFO|Restart Required : Possible
+RAW_EXACT_FOD_PACKAGE_INFO|Support Information : http://support.microsoft.com/?kbid=777777
+RAW_EXACT_FOD_PACKAGE_INFO|State : Staged
+RAW_EXACT_FOD_PACKAGE_INFO|Completely offline capable : Undetermined
+RAW_EXACT_FOD_PACKAGE_INFO|Self servicing package : No
+RAW_EXACT_FOD_PACKAGE_INFO|Capability Identity : Edge.Webview2.Platform~~~~
+RAW_EXACT_FOD_PACKAGE_INFO|
+RAW_EXACT_FOD_PACKAGE_INFO|Custom Properties:
+RAW_EXACT_FOD_PACKAGE_INFO|
+RAW_EXACT_FOD_PACKAGE_INFO|mum2:FodInformation\Id : 887
+RAW_EXACT_FOD_PACKAGE_INFO|mum2:OptionalFeatures\SchemaVersion : 1.0
+RAW_EXACT_FOD_PACKAGE_INFO|mum2:OptionalFeatures\mum2:SettingsPageOptions\Visibility : hidden
+RAW_EXACT_FOD_PACKAGE_INFO|mum2:OptionalFeatures\mum2:SettingsPageOptions\FeatureType : default
+RAW_EXACT_FOD_PACKAGE_INFO|mum2:OptionalFeatures\mum2:DismOptions\Visibility : hidden
+RAW_EXACT_FOD_PACKAGE_INFO|
+RAW_EXACT_FOD_PACKAGE_INFO|Features listing for package : Microsoft-Edge-WebView-FOD-Package~31bf3856ad364e35~amd64~~10.0.26100.1
+RAW_EXACT_FOD_PACKAGE_INFO|
+RAW_EXACT_FOD_PACKAGE_INFO|(No features found for this package)
+RAW_EXACT_FOD_PACKAGE_INFO|
+RAW_EXACT_FOD_PACKAGE_INFO|The operation completed successfully.
+NATIVE_DIRECT_EXACT_CAPABILITY_INSTALLED_FOD_STAGED=PASS;Microsoft-Edge-WebView-FOD-Package~31bf3856ad364e35~amd64~~10.0.26100.1
+NATIVE_DISCARD_OWNED_READONLY_EXIT=0
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|Deployment Image Servicing and Management tool
+RAW_DISCARD_OWNED_READONLY|Version: 10.0.26100.9549
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|Unmounting image
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[=                          2.0%                           ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[=                          3.0%                           ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[==                         4.0%                           ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[==                         5.0%                           ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===                        6.0%                           ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[====                       7.0%                           ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[====                       8.0%                           ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[=====                      9.0%                           ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[=====                      10.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[======                     11.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[======                     12.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[=======                    13.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[========                   14.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[========                   15.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[=========                  16.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[=========                  17.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[==========                 18.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========                19.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========                20.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[============               21.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[============               22.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[=============              23.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[=============              24.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[==============             25.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===============            26.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===============            27.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[================           28.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[================           29.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[=================          30.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[=================          31.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[==================         32.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===================        33.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===================        34.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[====================       35.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[====================       36.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[=====================      37.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[======================     38.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[======================     39.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[=======================    40.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[=======================    41.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[========================   42.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[========================   43.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[=========================  44.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[========================== 45.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[========================== 46.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================47.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================48.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================49.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================50.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================51.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================52.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================53.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================54.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================55.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================56.0%                          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================57.0%=                         ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================58.0%=                         ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================59.0%==                        ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================60.0%==                        ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================61.0%===                       ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================62.0%===                       ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================63.0%====                      ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================64.0%=====                     ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================65.0%=====                     ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================66.0%======                    ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================67.0%======                    ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================68.0%=======                   ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================69.0%========                  ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================70.0%========                  ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================71.0%=========                 ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================72.0%=========                 ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================73.0%==========                ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================74.0%==========                ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================75.0%===========               ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================76.0%============              ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================77.0%============              ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================78.0%=============             ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================79.0%=============             ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================80.0%==============            ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================81.0%==============            ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================82.0%===============           ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================83.0%================          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================84.0%================          ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================85.0%=================         ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================86.0%=================         ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================87.0%==================        ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================88.0%===================       ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================89.0%===================       ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================90.0%====================      ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================91.0%====================      ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================92.0%=====================     ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================93.0%=====================     ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================94.0%======================    ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================95.0%=======================   ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================96.0%=======================   ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================97.0%========================  ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================98.0%========================  ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[===========================99.0%========================= ] 
+RAW_DISCARD_OWNED_READONLY|
+RAW_DISCARD_OWNED_READONLY|[==========================100.0%==========================] 
+RAW_DISCARD_OWNED_READONLY|The operation completed successfully.
+OWNED_READONLY_DISCARD=PASS
+OWNED_MOUNT_FOLDER_REMOVED=PASS
+NATIVE_POST_WIM_EXIT=0
+RAW_POST_WIM|
+RAW_POST_WIM|Deployment Image Servicing and Management tool
+RAW_POST_WIM|Version: 10.0.26100.9549
+RAW_POST_WIM|
+RAW_POST_WIM|Mounted images:
+RAW_POST_WIM|
+RAW_POST_WIM|
+RAW_POST_WIM|No mounted images found.
+RAW_POST_WIM|
+RAW_POST_WIM|The operation completed successfully.
+ZERO_MOUNTS_POST_WIM=PASS
+NATIVE_POST_IMAGE_EXIT=0
+RAW_POST_IMAGE|
+RAW_POST_IMAGE|Deployment Image Servicing and Management tool
+RAW_POST_IMAGE|Version: 10.0.26100.9549
+RAW_POST_IMAGE|
+RAW_POST_IMAGE|Mounted images:
+RAW_POST_IMAGE|
+RAW_POST_IMAGE|
+RAW_POST_IMAGE|No mounted images found.
+RAW_POST_IMAGE|
+RAW_POST_IMAGE|The operation completed successfully.
+ZERO_MOUNTS_POST_IMAGE=PASS
+ORIGINAL_WIM_POST_SHA=PASS
+RESULT=PASS_R20R2F4R1_NATIVE_DIRECT_WEBVIEW_DETAILS_READONLY
+NO_WIM_MUTATION_NO_REMOVAL_NO_ISO_NO_RELEASE;JSON_NOT_EXPECTED
