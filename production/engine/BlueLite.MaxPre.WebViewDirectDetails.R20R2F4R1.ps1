@@ -41,8 +41,8 @@ function Log([string]$line) {
     Write-Host $line
     [IO.File]::AppendAllText($report,$line+[Environment]::NewLine,$encoding)
 }
-function Native([string]$tag,[string[]]$args) {
-    $rows = @(& $dism @args 2>&1 | ForEach-Object { [string]$_ })
+function Native([string]$tag,[string[]]$arguments) {
+    $rows = @(& $dism @arguments 2>&1 | ForEach-Object { [string]$_ })
     $code = [int]$LASTEXITCODE
     Log ('NATIVE_' + $tag + '_EXIT=' + $code)
     foreach ($line in $rows) { Log ('RAW_' + $tag + '|' + $line) }
