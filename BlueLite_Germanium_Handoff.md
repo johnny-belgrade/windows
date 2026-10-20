@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.124 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-20 (R20R2F2 actual partial native PASS; wrapper MUM reparse HOLD, F3 pending)  
+**Verzija dokumenta:** 1.5.125 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-20 (R20R2F2 partial native PASS and F3 exact inline readonly correction DELIVERED_NOT_RUN)  
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -2249,7 +2249,174 @@ S37 je potvrdio zasebno COMMIT-ovan kandidat, ne finalni release. Izvorni S31 WI
 - Regression Library `162-FodMetadata-Classification-and-BL159-Cleanup.txt`, `339-R1-Canonical-FodMetadata-Superseded-Native-Production-Removal.txt` proves one native superseded MAIN /Remove-Package success on 26200.9445 with current MAIN and both wrapper packages retained; `174-FodMetadata-Core-Classification-and-BL173-Cleanup.txt` establishes distinct CORE exact self-owner AMBER and Desktop-CompDB servicing floor. **Do not apply 26200 current MAIN version 26100.9444 to 26300 current 26100.9711.** R9 observation plus historical method justifies one owned-clone 26300 native test, not direct production permission. Official DISM native `/Remove-Package` docs in BlueLite_Sources; DO NOT modify wrappers/CU owners/core/host OS.
 - **FIRST checkpoint NEXT (NOT YET DELIVERED):** separate immutable R10 native superseded MAIN test against NEW disposable S41 copy of committed S39; full SHA/bytes pre-copy and clone SHA, zero mounts/hives, min disk capacity; pre MAIN old Superseded/new Installed and CORE Installed, optional exact wrapper info with negative query classifed; pending0 CheckHealth CLEAN; native `/Remove-Package` ONLY `Microsoft-Windows-FodMetadataServicing-Desktop-Metadata-Package~31bf3856ad364e35~amd64~~10.0.26100.1742`; target invalid 0x800f0805, current+core exact keep states, wrapper matched pre/post, pending0 and CheckHealth+ScanHealth CLEAN before /Commit; source S39 protected. Scoped PASS from this possible step is only disposable commit, not production/installed-footprint proof; next independent postcommit RO and fair export on R10 if actual PASS. Registry r22 runtime=false, Master v6 unchanged.
 
-### 8.136 R20R2F2 ACTUAL 26300.9807 readonly partial PASS / MUM reparse wrapper HOLD — FIRST §0R (2026-10-20)
+### 8.137 R20R2F3 one whole PS7 Admin INLINE read-only package metadata correction — SECOND §0R (2026-10-20)
+
+**LAST ACTUAL remains R20R2F2 partial native READONLY + `BL_R20R2_PACKAGE_MUM_REPARSE` wrapper HOLD**, 3407B SHA256 `B67A408D8E5D0BEF5AF99B7A0675B8678EA49CD28C9014164EC87FAFEADCF9F0`, archived original §8.136. **This section delivers next step, NOT execution proof.** New versioned exact source `production/engine/BlueLite.MaxPre.NativeSourcePreflight.R20R2F3.ps1`, Git commit `99011ddace97eaa1d8f6d2deec303466c57e66b5`, Git blob `2e328018378f5b1ab8a6541a8c412f87d4098d73`, **7,999 ASCII bytes, SHA256 `FAFFE21FBC234131892DD588B0933D21C67D531B7E0D3C5004FF818E4064A89B`**, independent local hash and full GitHub readback. Because GUI downloads are unavailable, the canonical code is pasted directly below as `& { ... }`; body SHA is not a hash of the outer console wrapper. **No F3 .ps1 download, no local script file write or overwrite is required.**
+
+Scope: pinned original `C:\work\26300.9807-UUP\install.wim`, Pro x64 index1 7021953581B SHA `0FB778D4696DABA17EDC52E6391A3F217982422FB920C98C8273E0C51A094B49`, prior local F1 14311B /SHA `88F03C07A7EE8F000C77BBD464D448E6B57001C5A49004984F0C0C6728D2C919`; original R20R2F1C and R20R2F2 log SHA required. One owned `C:\BLR20R2RO` `/ReadOnly` DISM mount and `/Discard`; four proven CRLF adaptations in memory, one exact legacy MUM `FileAttributes.ReparsePoint` guard replaced **IN MEMORY ONLY** with verified `.mum` suffix, `Microsoft-...` filename allow-list and exact immediate `Windows\servicing\Packages` directory requirement, no MUM dereference or contents read, `/Get-PackageInfo` native exact. Static positive/negative CRLF/MUM fixtures, AST, provider state, pending and CheckHealth. Any unknown returns fail-closed or HOLD; no target mutation, ISO, download, NTLite, VM or release. This tests *current image* and does not promote Registry r31 runtime removal authorization.
+
+**CLOSE TOTAL COMMANDER / TOTAL CMD AND EXPLORER windows on WIM/mount BEFORE run.** A mount/unmount occurs in this one step; no manual preflight command is needed. Paste this exact complete block into **PowerShell 7 Administrator**, including `& {` first and `}` last:
+
+```powershell
+& {
+# BlueLite R20R2F3: source-bound CRLF-safe native preflight using existing SHA-pinned F1.
+# The exact F1 source is patched only in memory; no existing script is changed.
+[CmdletBinding()]
+param()
+Set-StrictMode -Version Latest
+$ErrorActionPreference = 'Stop'
+$PSNativeCommandUseErrorActionPreference = $false
+if ($PSVersionTable.PSVersion.Major -ne 7) { throw 'BL_R20R2F3_PS7_REQUIRED' }
+$principal = [Security.Principal.WindowsPrincipal]::new([Security.Principal.WindowsIdentity]::GetCurrent())
+if (-not $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+    throw 'BL_R20R2F3_ADMIN_REQUIRED'
+}
+$f1 = 'C:\work\scripts\BlueLite.MaxPre.NativeSourcePreflight.R20R2F1.ps1'
+$rawEvidence = 'C:\work\logs\BlueLite_26300_9807_WimInfoRaw_R20R2F1C.txt'
+$lastReport = 'C:\work\logs\BlueLite_26300_9807_HighImpactNativePreflight_R20R2F2.txt'
+$lastJson = 'C:\work\logs\BlueLite_26300_9807_HighImpactNativePreflight_R20R2F2.json'
+$source = 'C:\work\26300.9807-UUP\install.wim'
+$report = 'C:\work\logs\BlueLite_26300_9807_HighImpactNativePreflight_R20R2F3.txt'
+$json = 'C:\work\logs\BlueLite_26300_9807_HighImpactNativePreflight_R20R2F3.json'
+$mount = 'C:\BLR20R2RO'
+$inputs = @(
+    [pscustomobject]@{Path=$f1; Length=14311; Sha='88F03C07A7EE8F000C77BBD464D448E6B57001C5A49004984F0C0C6728D2C919'; Id='F1'},
+    [pscustomobject]@{Path=$rawEvidence; Length=1216; Sha='C7CABC82A56716FD32697260A6B9F403D4B781579703A5448DFD4412554F4EB2'; Id='R20R2F1C'},
+    [pscustomobject]@{Path=$lastReport; Length=3407; Sha='B67A408D8E5D0BEF5AF99B7A0675B8678EA49CD28C9014164EC87FAFEADCF9F0'; Id='R20R2F2'}
+)
+foreach ($entry in $inputs) {
+    $item = Get-Item -LiteralPath $entry.Path -ErrorAction Stop
+    if ($item.PSIsContainer -or $item.Length -ne $entry.Length -or
+        (($item.Attributes -band [IO.FileAttributes]::ReparsePoint) -ne 0) -or
+        (Get-FileHash -LiteralPath $entry.Path -Algorithm SHA256).Hash -cne $entry.Sha) {
+        throw ('BL_R20R2F3_INPUT_NOT_PINNED_' + $entry.Id)
+    }
+}
+$evidence = [IO.File]::ReadAllText($rawEvidence)
+foreach ($needed in @('NATIVE_EXIT=0', 'IMAGE_SECTION_REGEX=False',
+    'WIMINFO_RAW|Details for image : C:\work\26300.9807-UUP\install.wim',
+    'WIMINFO_RAW|Version : 10.0.26300', 'WIMINFO_RAW|ServicePack Build : 9807',
+    'RESULT=CAPTURE_R20R2F1C_ONLY')) {
+    if (-not $evidence.Contains($needed)) { throw 'BL_R20R2F3_RAW_EVIDENCE_SHAPE' }
+}
+# The previous HOLD must be the exact preserved original; its JSON must be absent.
+if (Test-Path -LiteralPath $lastJson) { throw 'BL_R20R2F3_PRIOR_JSON_UNEXPECTED' }
+$lastText = [IO.File]::ReadAllText($lastReport)
+foreach ($needed in @(
+    'NATIVE_MOUNT_READONLY_EXIT=0',
+    'CAPABILITY=Edge.Webview2.Platform~~~~;STATE=INSTALLED',
+    'PACKAGE=Microsoft-Edge-WebView-FOD-Package~31bf3856ad364e35~amd64~~10.0.26100.1;STATE=STAGED;NATIVE_EXIT=0',
+    'FAIL_CLOSED=BL_R20R2_PACKAGE_MUM_REPARSE',
+    'OWNED_READONLY_DISCARD=PASS', 'ZERO_MOUNTS_POST_WIM=PASS',
+    'ZERO_MOUNTS_POST_IMAGE=PASS', 'SOURCE_POST_PIN=PASS',
+    'RESULT=HOLD_R20R2_NATIVE_SOURCE_PREFLIGHT')) {
+    if (-not $lastText.Contains($needed)) { throw 'BL_R20R2F3_PRIOR_HOLD_SHAPE' }
+}
+foreach ($output in @($report,$json,$mount)) {
+    if (Test-Path -LiteralPath $output) { throw ('BL_R20R2F3_NO_OVERWRITE_OR_MOUNT=' + $output) }
+}
+$image = Get-Item -LiteralPath $source -ErrorAction Stop
+if ($image.PSIsContainer -or $image.Length -ne 7021953581 -or
+    (($image.Attributes -band [IO.FileAttributes]::ReparsePoint) -ne 0)) {
+    throw 'BL_R20R2F3_SOURCE_IDENTITY_HOLD'
+}
+
+# Repair all CRLF-sensitive .NET multiline end anchors in the pinned F1 code.
+$original = [IO.File]::ReadAllText($f1)
+$changes = @(
+    @('Details for image[ \t]*:[^\r\n]*$', 'Details for image[ \t]*:[^\r\n]*\r?$'),
+    @('(Installed|Not Present|Staged)[ \t]*$', '(Installed|Not Present|Staged)[ \t]*\r?$'),
+    @('(Installed|Staged|Superseded|Install Pending|Uninstall Pending)[ \t]*$', '(Installed|Staged|Superseded|Install Pending|Uninstall Pending)[ \t]*\r?$'),
+    @('(Install Pending|Uninstall Pending|Partially Installed)[ \t]*$', '(Install Pending|Uninstall Pending|Partially Installed)[ \t]*\r?$')
+)
+$patched = $original
+foreach ($change in $changes) {
+    $before = [string]$change[0]
+    $after = [string]$change[1]
+    if ([regex]::Matches($patched,[regex]::Escape($before)).Count -ne 1) {
+        throw ('BL_R20R2F3_PATCH_ANCHOR_NOT_UNIQUE_' + $before)
+    }
+    $patched = $patched.Replace($before,$after)
+}
+# ReparsePoint is metadata on some DISM-mounted MUM files, not CBS state.
+# Never open/follow/read this MUM. Validate exact filename and directory; query CBS natively.
+$oldMum = "if((`$f.Attributes -band [IO.FileAttributes]::ReparsePoint) -ne 0){throw 'BL_R20R2_PACKAGE_MUM_REPARSE'}"
+$newMum = @'
+if(($f.Attributes -band [IO.FileAttributes]::ReparsePoint) -ne 0){
+  if($f.Extension -cne '.mum' -or
+     [IO.Path]::GetDirectoryName($f.FullName) -ine $dir -or
+     $f.BaseName -cnotmatch '^Microsoft-[A-Za-z0-9_.~-]+$'){
+    throw 'BL_R20R2_PACKAGE_MUM_METADATA_SCOPE_HOLD'
+  }
+  Note ('PACKAGE_MUM_REPARSE_METADATA_ONLY='+$f.Name)
+}
+'@
+if ([regex]::Matches($patched,[regex]::Escape($oldMum)).Count -ne 1) {
+    throw 'BL_R20R2F3_MUM_ANCHOR_NOT_UNIQUE'
+}
+$patched = $patched.Replace($oldMum,$newMum)
+# Safe filename acceptance and deliberate negative fixtures.
+$mumPattern = '^Microsoft-[A-Za-z0-9_.~-]+$'
+foreach ($candidate in @(
+    'Microsoft-Edge-WebView-FOD-Package~31bf3856ad364e35~amd64~~10.0.26100.1',
+    'Microsoft-Windows-OneDrive-Setup-Package~31bf3856ad364e35~amd64~~10.0.26100.1')) {
+    if ($candidate -cnotmatch $mumPattern) { throw 'BL_R20R2F3_MUM_POSITIVE_FIXTURE' }
+}
+foreach ($candidate in @('..\escape','not-microsoft','Microsoft-test\x','Microsoft-test.exe/mum')) {
+    if ($candidate -cmatch $mumPattern) { throw 'BL_R20R2F3_MUM_NEGATIVE_FIXTURE' }
+}
+if ($patched -ceq $original) { throw 'BL_R20R2F3_NO_PATCH' }
+
+# CRLF + LF positive fixtures, negative fixtures for missing header and pending state.
+foreach ($nl in @(([string][char]13 + [string][char]10), ([string][char]10))) {
+    $sample = 'Details for image : C:\fixture.wim' + $nl +
+      'Version : 10.0.26300' + $nl + 'ServicePack Build : 9807' + $nl
+    if (-not [regex]::IsMatch($sample,'(?im)^[ \t]*Details for image[ \t]*:[^\r\n]*\r?$')) {
+        throw 'BL_R20R2F3_IMAGE_SECTION_FIXTURE'
+    }
+    foreach ($state in @('Installed','Not Present','Staged')) {
+        if (-not [regex]::IsMatch(('State : ' + $state + $nl),
+            '(?im)^[ \t]*State[ \t]*:[ \t]*(Installed|Not Present|Staged)[ \t]*\r?$')) {
+            throw 'BL_R20R2F3_CAPABILITY_FIXTURE'
+        }
+    }
+    if (-not [regex]::IsMatch(('State : Superseded' + $nl),
+        '(?im)^[ \t]*State[ \t]*:[ \t]*(Installed|Staged|Superseded|Install Pending|Uninstall Pending)[ \t]*\r?$')) {
+        throw 'BL_R20R2F3_PACKAGE_FIXTURE'
+    }
+    if (-not [regex]::IsMatch(('State : Install Pending' + $nl),
+        '(?im)^[ \t]*State[ \t]*:[ \t]*(Install Pending|Uninstall Pending|Partially Installed)[ \t]*\r?$')) {
+        throw 'BL_R20R2F3_PENDING_FIXTURE'
+    }
+    if ([regex]::IsMatch(('State : Unknown' + $nl),
+        '(?im)^[ \t]*State[ \t]*:[ \t]*(Installed|Not Present|Staged)[ \t]*\r?$')) {
+        throw 'BL_R20R2F3_NEGATIVE_CAPABILITY_FIXTURE'
+    }
+}
+$tokens = $null
+$parseErrors = $null
+$null = [Management.Automation.Language.Parser]::ParseInput($patched,[ref]$tokens,[ref]$parseErrors)
+if (@($parseErrors).Count -gt 0) { throw ('BL_R20R2F3_AST_' + $parseErrors[0].Message) }
+$runner = [ScriptBlock]::Create($patched)
+Write-Host 'BL_R20R2F3_F1_PIN_CRLF_MUM_FIXTURES_AST=PASS'
+$parameters = @{
+    ImagePath=$source
+    ExpectedSha256='0FB778D4696DABA17EDC52E6391A3F217982422FB920C98C8273E0C51A094B49'
+    ExpectedBytes=7021953581
+    ExpectedImageVersion='10.0.26300'
+    ExpectedServicePackBuild='9807'
+    PriorReport='C:\work\logs\BlueLite_26300_9807_DirectSourceIdentity_R19P.txt'
+    ReportPath=$report
+    JsonPath=$json
+    MountPath=$mount
+}
+& $runner @parameters
+}
+```
+
+**ONLY EXPECTED REPORTS**: `C:\work\logs\BlueLite_26300_9807_HighImpactNativePreflight_R20R2F3.txt`; success-only `C:\work\logs\BlueLite_26300_9807_HighImpactNativePreflight_R20R2F3.json`. Send original TXT and JSON if created; if TXT is missing send entire console. If HOLD occurs, do NOT rerun/delete old report or mount arbitrarily; rely on logged /Discard/zero-mount proof. **R20R2F3 = DELIVERED_NOT_RUN**, no result inferred.
+
+## 8.136 R20R2F2 ACTUAL 26300.9807 readonly partial PASS / MUM reparse wrapper HOLD — FIRST §0R (2026-10-20)
 
 **Original operator report read in full**: `BlueLite_26300_9807_HighImpactNativePreflight_R20R2F2.txt`, 3,407 ASCII bytes, 79 CRLF, SHA256 `B67A408D8E5D0BEF5AF99B7A0675B8678EA49CD28C9014164EC87FAFEADCF9F0`. Immutable exact GitHub evidence `production/evidence/BlueLite_26300_9807_HighImpactNativePreflight_R20R2F2.txt` commit `577c1601629561fc73efbfce7b57cebc6a4006d9`, blob `fd01acad54c1b7b012fcb71d5c9d716338ea2dd9`, full readback PASS.
 
