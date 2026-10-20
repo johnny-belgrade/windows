@@ -1,0 +1,99 @@
+{
+  "Schema": "BlueLite.MAXPRE.NativeSourcePreflight.v0.2",
+  "Source": "C:\\work\\26300.9807-UUP\\install.wim",
+  "SourceSha256": "0FB778D4696DABA17EDC52E6391A3F217982422FB920C98C8273E0C51A094B49",
+  "SourceBytes": 7021953581,
+  "ImageVersion": "10.0.26300",
+  "ServicePackBuild": "9807",
+  "Architecture": "x64",
+  "Edition": "Professional",
+  "CapabilityStates": {
+    "Edge.Webview2.Platform~~~~": "INSTALLED",
+    "DirectX.Configuration.Database~~~~0.0.1.0": "INSTALLED",
+    "Windows.Kernel.LA57~~~~0.0.1.0": "INSTALLED",
+    "Microsoft.Windows.Sense.Client~~~~": "INSTALLED",
+    "Language.Basic~~~en-US~0.0.1.0": "INSTALLED"
+  },
+  "ProvisionedAppx": [
+    "Microsoft.DesktopAppInstaller",
+    "Microsoft.NET.Native.Framework.2.2",
+    "Microsoft.NET.Native.Runtime.2.2",
+    "Microsoft.SecHealthUI",
+    "Microsoft.Services.Store.Engagement",
+    "Microsoft.UI.Xaml.2.7",
+    "Microsoft.UI.Xaml.2.8",
+    "Microsoft.VCLibs.140.00.UWPDesktop",
+    "Microsoft.VCLibs.140.00",
+    "Microsoft.Windows.Photos",
+    "Microsoft.WindowsAppRuntime.1.3",
+    "Microsoft.WindowsAppRuntime.1.4",
+    "Microsoft.WindowsCalculator",
+    "Microsoft.WindowsNotepad"
+  ],
+  "WebViewPackages": [
+    {
+      "Identity": "Microsoft-Edge-WebView-FOD-Package~31bf3856ad364e35~amd64~~10.0.26100.1",
+      "State": "STAGED",
+      "NativeExit": 0
+    }
+  ],
+  "OneDrivePackages": [
+    {
+      "Identity": "Microsoft-Windows-OneDrive-Setup-Package~31bf3856ad364e35~amd64~~10.0.26100.1",
+      "State": "STAGED",
+      "NativeExit": 0
+    },
+    {
+      "Identity": "Microsoft-Windows-OneDrive-Setup-Package~31bf3856ad364e35~amd64~en-US~10.0.26100.1",
+      "State": "INSTALLED",
+      "NativeExit": 0
+    }
+  ],
+  "SearchEnginePackages": [
+    {
+      "Identity": "Microsoft-Windows-SearchEngine-Client-Package-base-Package~31bf3856ad364e35~amd64~~10.0.26100.1",
+      "State": "INSTALLED",
+      "NativeExit": 0
+    },
+    {
+      "Identity": "Microsoft-Windows-SearchEngine-Client-Package-base-Package~31bf3856ad364e35~amd64~en-US~10.0.26100.1",
+      "State": "INSTALLED",
+      "NativeExit": 0
+    },
+    {
+      "Identity": "Microsoft-Windows-SearchEngine-Client-Package-onecoreuap-Package~31bf3856ad364e35~amd64~~10.0.26100.1591",
+      "State": "STAGED",
+      "NativeExit": 0
+    },
+    {
+      "Identity": "Microsoft-Windows-SearchEngine-Client-Package-onecoreuap-Package~31bf3856ad364e35~amd64~en-US~10.0.26100.1",
+      "State": "INSTALLED",
+      "NativeExit": 0
+    },
+    {
+      "Identity": "Microsoft-Windows-SearchEngine-Client-Package-shell-Package~31bf3856ad364e35~amd64~~10.0.26100.1591",
+      "State": "STAGED",
+      "NativeExit": 0
+    },
+    {
+      "Identity": "Microsoft-Windows-SearchEngine-Client-Package-shell-Package~31bf3856ad364e35~amd64~en-US~10.0.26100.1591",
+      "State": "STAGED",
+      "NativeExit": 0
+    },
+    {
+      "Identity": "Microsoft-Windows-SearchEngine-Client-Package~31bf3856ad364e35~amd64~~10.0.26100.1591",
+      "State": "STAGED",
+      "NativeExit": 0
+    },
+    {
+      "Identity": "Microsoft-Windows-SearchEngine-Client-Package~31bf3856ad364e35~amd64~en-US~10.0.26100.1591",
+      "State": "STAGED",
+      "NativeExit": 0
+    }
+  ],
+  "PendingPackageStateRows": 0,
+  "CBSCheckHealth": "CLEAN",
+  "NextHighImpact": "WEBVIEW_FOD_26300_OWNER_GRAPH_THEN_NATIVE_DISPOSABLE",
+  "MutationAllowed": false,
+  "ReleaseCertified": false
+}
