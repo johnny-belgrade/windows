@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "registry_revision": "2026-10-20-r20r2f2-9807-readonly-mum-flag-r31",
+  "registry_revision": "2026-10-20-r20r2f3-9807-full-native-ro-source-bound-r32",
   "status": "S37_COMMITTED_CANDIDATE_INDEPENDENT_S38R3_POSTCOMMIT_PASS_NOT_RELEASED",
   "scope": "Germanium 26300-first; 26200 historical topology references",
   "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
@@ -646,6 +646,63 @@
             "production/evidence/BlueLite_26300_9807_HighImpactNativePreflight_R20R2F2.txt SHA256 B67A408D8E5D0BEF5AF99B7A0675B8678EA49CD28C9014164EC87FAFEADCF9F0",
             "BlueLite_MAXPRE_WebViewEdge_26300.9711_ServicingMetadata_R2.csv SHA256 3965B7B66C6841F99A375160534BB976DB3EE82CF76E8AE8BA57EAF5E0F0745E"
           ]
+        },
+        {
+          "variant_id": "26300.9807-r20r2f3-native-ro-complete",
+          "source_family": "Germanium",
+          "supported_lineage": [
+            "26300.x"
+          ],
+          "topology_status": "NATIVE_READONLY_PREFLIGHT_PASS_FOD_STAGED_CAP_INSTALLED_DEPENDENCY_DELTA_REQUIRED",
+          "exact_selectors": [
+            {
+              "kind": "CAPABILITY",
+              "identity": "Edge.Webview2.Platform~~~~"
+            },
+            {
+              "kind": "CBS_PACKAGE",
+              "identity": "Microsoft-Edge-WebView-FOD-Package~31bf3856ad364e35~amd64~~10.0.26100.1"
+            }
+          ],
+          "required_predicates": [
+            {
+              "kind": "SOURCE",
+              "target": "26300.9807 Original UUP v128m WIM index1",
+              "expected": "7021953581B SHA256 0FB778D4696DABA17EDC52E6391A3F217982422FB920C98C8273E0C51A094B49 unchanged PRE/POST; native 26300 build / 9807 SP / Pro x64"
+            },
+            {
+              "kind": "CAPABILITY_EXACT_NATIVE",
+              "target": "Edge.Webview2.Platform~~~~",
+              "expected": "Installed, native Get-CapabilityInfo exit0; earlier 26300.9711 variant had FOD wrapper and updated Installed package, not automatically transferable"
+            },
+            {
+              "kind": "PACKAGE_EXACT_NATIVE",
+              "target": "Microsoft-Edge-WebView-FOD-Package~31bf3856ad364e35~amd64~~10.0.26100.1",
+              "expected": "Staged, native Get-PackageInfo exit0; only one exact WebView FoD MUM filename matched in F3, not proof that other CBS registered package identities are absent"
+            },
+            {
+              "kind": "PROTECTED_FLOOR",
+              "target": "Microsoft.Windows.Sense.Client~~~~ / Language.Basic~~~en-US~0.0.1.0",
+              "expected": "Installed; other two exact DirectX and LA57 capabilities Installed; four mandatory provisioned apps present with 14 total; AppInstaller provisioned"
+            },
+            {
+              "kind": "NATIVE_SERVICING_HEALTH",
+              "target": "26300.9807",
+              "expected": "DISM /Get-Packages pending state rows 0, /CheckHealth CLEAN, owned RO mount /Discard exit0, both post mount catalogs empty, original WIM SHA unchanged"
+            }
+          ],
+          "expected_post_state": [
+            "Read-only inventory PASS, JSON success receipt created",
+            "No CBS/AppX mutation, ISO or release certification",
+            "Do not authorize direct native removal until source-specific FOD package identity/parent delta is checked"
+          ],
+          "tested_builds": [
+            "26300.9807"
+          ],
+          "evidence_refs": [
+            "production/evidence/BlueLite_26300_9807_HighImpactNativePreflight_R20R2F3.txt SHA256 A4B3C5FDD83B7D3B0677DDF98CE080E397CD8F304731D3249853233708503A21",
+            "production/evidence/BlueLite_26300_9807_HighImpactNativePreflight_R20R2F3.json SHA256 62575ED0F012228D36D2E8CB86E9B196552F44298F40280AF24A01E13A3E547C"
+          ]
         }
       ],
       "protected_floor": [
@@ -774,6 +831,30 @@
             "C:\\work\\logs\\BlueLite_Stage1_S31_26300.9711_OneDrive_AMBER_Apply.txt SHA256 0BEE37DAD57F111F878EAF37C5EFB9B0B59BF68C4B7ED638F067008603C20DF6",
             "C:\\work\\logs\\BlueLite_Stage1_S31_26300.9711_POST_SCANHEALTH.txt SHA256 1E02D1A863874ACB0C9B0CB6FA6010F7C42449F79481BDE90EC656A49E9DF3AB",
             "BlueLite_Germanium_Handoff.md §8.15"
+          ]
+        },
+        {
+          "variant_id": "26300.9807-r20r2f3-readonly-native-package-baseline",
+          "source_family": "Germanium",
+          "supported_lineage": [
+            "26300.x"
+          ],
+          "topology_status": "NATIVE_READONLY_PACKAGE_STATES_KNOWN_NO_MUTATION",
+          "required_predicates": [
+            {
+              "kind": "CBS_PACKAGE",
+              "target": "OneDrive-Setup-Package neutral and en-US 26100.1",
+              "expected": "Neutral Staged and en-US Installed, both native exact /Get-PackageInfo exit0; dependencies/unlinks, unique byte savings and post-removal state NOT TESTED"
+            }
+          ],
+          "expected_post_state": [
+            "Original SHA preserved; no OneDrive removal run"
+          ],
+          "tested_builds": [
+            "26300.9807"
+          ],
+          "evidence_refs": [
+            "production/evidence/BlueLite_26300_9807_HighImpactNativePreflight_R20R2F3.json SHA256 62575ED0F012228D36D2E8CB86E9B196552F44298F40280AF24A01E13A3E547C"
           ]
         }
       ],
@@ -1299,6 +1380,30 @@
             "Library 347-Canonical-SearchEngine-Wrapper-Portable-AMBER-Production-Apply.txt"
           ],
           "notes": "Topological representation no longer missing: exact 0xFF verified read-only. AMBER native removal and significance of update marker not proven. Universal production execution remains false. Operator impact-first instruction: do not re-enter many-step microtarget chase for historical ~255451B srchadmin wrapper; prioritize high-yield source-native AppX closure and shared post-reconstruction MAX_PRE engine, without relaxing protected servicing/dependency gates."
+        },
+        {
+          "variant_id": "26300.9807-r20r2f3-readonly-native-package-baseline",
+          "source_family": "Germanium",
+          "supported_lineage": [
+            "26300.x"
+          ],
+          "topology_status": "NATIVE_READONLY_8_IDENTITIES_NO_REMOVAL",
+          "required_predicates": [
+            {
+              "kind": "CBS_PACKAGE",
+              "target": "Eight SearchEngine Client base/onecoreuap/shell/wrapper 26100.1, 26100.1591",
+              "expected": "8 exact native Get-PackageInfo exit0, 3 Installed and 5 Staged; protected source unchanged; no inherited 9711 SearchEngine mutation permission"
+            }
+          ],
+          "expected_post_state": [
+            "No SearchEngine removal or owner graph proof for 9807"
+          ],
+          "tested_builds": [
+            "26300.9807"
+          ],
+          "evidence_refs": [
+            "production/evidence/BlueLite_26300_9807_HighImpactNativePreflight_R20R2F3.json SHA256 62575ED0F012228D36D2E8CB86E9B196552F44298F40280AF24A01E13A3E547C"
+          ]
         }
       ],
       "protected_floor": [
