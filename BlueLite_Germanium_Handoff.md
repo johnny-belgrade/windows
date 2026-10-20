@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.149 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-20 (NTLite XML confirmed; F12 sandbox source delivered, Library upload unavailable)   
+**Verzija dokumenta:** 1.5.150 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-20 (F12 operator read-only parent CBS PASS; desktop/local workflow discussion)   
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; trenutno potvrđen izvor 26300.9711 / en-US / Professional.  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
@@ -10,6 +10,18 @@
 **Historijski UUP dokazni indeks:** [`BlueLite_UUP_Evidence_Reconciliation_20261013.md`](BlueLite_UUP_Evidence_Reconciliation_20261013.md).  
 **Celokupan spoljašnji katalog:** [`BlueLite_Sources.md`](BlueLite_Sources.md).  
 **Repo:** <https://github.com/johnny-belgrade/windows>; branch `main`.
+
+## 2026-10-20 — ACTUAL R20R2F12 two-parent read-only PASS; session-continuity infrastructure discussion (§0R FIRST)
+
+**Original operator attachment verified as bytes:** `BlueLite_26300_9807_OneDriveParentOwner_R20R2F12.txt`, 3095 ASCII bytes, 43 CRLF rows, SHA256 `1B32F0F86E3C3909784169F1B44E0486EB3D42335641F3A822C599F6FC28475B`. This is a **new actual operator run**, superseding older F12 `DELIVERED_NOT_RUN` only for its exact source-bound read-only scope. Literal `RESULT=PASS_R20R2F12_TWO_ONEDRIVE_CBS_PARENTS_READONLY_ONLY` with explicit `MUTATION_AUTHORIZATION=NOT_GRANTED`. Original attachment retained in conversation; neither GitHub raw receipt archive nor Library upload is claimed.
+
+**Current 26300.9807 exact dependency confirmation:** neutral OneDrive-Setup child `...~amd64~~10.0.26100.1` CBS state `0x40`, Visibility `0x2`, single named LTSB neutral owner `Microsoft-Windows-Not-Supported-On-LTSB-Package~31bf3856ad364e35~amd64~~10.0.26100.1301` DWORD `0x30040`; its parent CBS key resolves with state `0x40`/Visibility `0x2`. en-US child `...~amd64~en-US~10.0.26100.1` state `0x70`, Visibility `0x2`, single named parent `Microsoft-Windows-Not-Supported-On-LTSB-Package~31bf3856ad364e35~amd64~en-US~10.0.26100.1` DWORD `0x30070`; its parent CBS key resolves state `0x70`/Visibility `0x2`. Native exits=0, both expected owner links and two exact parent roots PASS. **Read-only**, no CBS edits, no new S31 universal mutation certification.
+
+**Strong closeout evidence:** pinned original 26300.9807 source 7021953581B/SHA256 `0FB778D4696DABA17EDC52E6391A3F217982422FB920C98C8273E0C51A094B49`; candidate WebViewRemoved MAX 6407308664B/SHA256 `F8F2FFF0A40508C88F8426B2923FEDCF9B00F3FFF3A5637A13C0EB0006E8BA7E`; both PRE/POST PASS. True native DISM RO mount and /Discard exit0, temporary SOFTWARE REG load/unload exit0, both DISM mount tables empty PRE/POST, HKLM roots6, owned SOFTWARE copy and native sidecars retired and empty owned mount/root removed. No new WIM clone, mutation, servicing remove, NTLite/VM/ISO/release.
+
+**Next operator decision instead of a new local run in this governance-only exchange:** user requested a plan for Windows desktop app, Work/Codex local-folder access and uninterrupted handoff while maintaining operator control. Do not assume consent for new autonomous filesystem writes, offline WIM mutation or Master §6.1 operator-relay change. Preserve **one NEXT: approve/choose workflow setup**, then resume narrowly scoped 26300.9807 OneDrive two-child disposable candidate only after full new reviewed mutation code/negative fixtures and new operator authorization. Prior 14272B R12 exact source with SHA `4B7E717F4EDCCFE0F25A997333E388A71B3E6D54B778AB4863ABB48FB37A3987` remains **not remotely archived** in `production/targets`/Library; no false durable-source assertion. Master v6 and release goals unchanged.
+
+---
 
 ## 0L. OBAVEZNA POLITIKA PONOVNE UPOTREBE LIBRARY/REGRESIONIH DOKAZA I SPOLJAŠNJIH IZVORA — PRE SVAKOG NOVOG PROBE-A (2026-10-18)
 
