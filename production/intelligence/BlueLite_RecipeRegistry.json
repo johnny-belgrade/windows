@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "registry_revision": "2026-10-20-r20r2f3-9807-full-native-ro-source-bound-r32",
+  "registry_revision": "2026-10-20-r20r2f4-9807-native-list-adapter-hold-r33",
   "status": "S37_COMMITTED_CANDIDATE_INDEPENDENT_S38R3_POSTCOMMIT_PASS_NOT_RELEASED",
   "scope": "Germanium 26300-first; 26200 historical topology references",
   "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
@@ -702,6 +702,43 @@
           "evidence_refs": [
             "production/evidence/BlueLite_26300_9807_HighImpactNativePreflight_R20R2F3.txt SHA256 A4B3C5FDD83B7D3B0677DDF98CE080E397CD8F304731D3249853233708503A21",
             "production/evidence/BlueLite_26300_9807_HighImpactNativePreflight_R20R2F3.json SHA256 62575ED0F012228D36D2E8CB86E9B196552F44298F40280AF24A01E13A3E547C"
+          ]
+        },
+        {
+          "variant_id": "26300.9807-r20r2f4-native-enumeration-adapter-hold",
+          "source_family": "Germanium",
+          "supported_lineage": [
+            "26300.x"
+          ],
+          "topology_status": "NATIVE_GET_PACKAGES_EXIT0_NO_EXACT_MATCH_COUNT_LOGGED_ADAPTER_HOLD",
+          "exact_selectors": [
+            {
+              "kind": "CAPABILITY",
+              "identity": "Edge.Webview2.Platform~~~~"
+            }
+          ],
+          "required_predicates": [
+            {
+              "kind": "PREVIOUS_NATIVE_HOLD",
+              "target": "R20R2F4 no-overwrite TXT",
+              "expected": "Native Get-Packages /Format:List exit0 but filtered exact registered count was 0 OR >24; count and raw native body not recorded; fail-closed wrapper; never infer missing package or corruption"
+            },
+            {
+              "kind": "SOURCE_PRESERVATION",
+              "target": "C:\\work\\26300.9807-UUP\\install.wim",
+              "expected": "/ReadOnly mount0 /Discard0, both WIM/IMAGE mount tables empty PRE/POST, original WIM post SHA intact, F3 original receipt pin verified"
+            }
+          ],
+          "expected_post_state": [
+            "Read-only F4 adapter HOLD; no WIM or CBS mutation",
+            "Follow prior hidden package provider precedent: 26300.9711 R2 native Edge/WebView name list 0/0 and direct /Get-PackageInfo can resolve exact staged FoD",
+            "No R20R2F4 production removal authorization"
+          ],
+          "tested_builds": [
+            "26300.9807"
+          ],
+          "evidence_refs": [
+            "production/evidence/BlueLite_26300_9807_WebViewNativeDelta_R20R2F4.txt SHA256 7E76DBF15717D9711BB4EECDCF312520E421A2591AC05D49EDDA548BF5CBEF3B"
           ]
         }
       ],
