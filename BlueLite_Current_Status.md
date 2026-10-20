@@ -1,5 +1,9 @@
 # BlueLite v1.0 — Current Status
 
+## 2026-10-20 — R20R2F2 direct inline-console fallback DELIVERED_NOT_RUN (platform download problem)
+
+**LAST ACTUAL is unchanged R20R2F1C**: original 1,216B SHA256 `C7CABC82A56716FD32697260A6B9F403D4B781579703A5448DFD4412554F4EB2`, native DISM WIMINFO exit0 index1 26300.9807 Pro x64, four PowerShell CRLF regex false-negative gates. Operator reports GUI script download unusable for >12h; no new WIM/native run. **ONE NEXT:** full single PS7 Admin **copy/paste code block** `BlueLite_Germanium_Handoff.md v1.5.123 §8.135` (operator-requested fallback instead of GUI download). It wraps the exact previously published R20R2F2 5,553B ASCII PS1 body SHA256 `0B910F5AB30BCD4BD92E761E1A005A34A6DE6372522001FF952541A4D568A282`, Git blob `149e4d885f397725a953ef28d8a55cdcbc7613a7`, in `& { ... }`; original code is not changed, wrapper console text has no separate SHA. Existing F1/source and R20R2F1C SHA gates remain. **CLOSE TOTAL COMMANDER AND EXPLORER** before running: the owned source-bound native DISM mount is **/ReadOnly + /Discard**. Expected original `C:\work\logs\BlueLite_26300_9807_HighImpactNativePreflight_R20R2F2.txt` and, only on complete success, matching `.json`; send originals or full console if TXT absent. No download, source mutation, NTLite or VM; r30 runtime recipe flags unchanged, release NOT CERTIFIED.
+
 ## 2026-10-19 — R20R2F2 GUI source-bound CRLF-safe RO preflight DELIVERED_NOT_RUN (SECOND §0R)
 
 **LAST ACTUAL remains R20R2F1C** (raw native Get-WimInfo exit0, index1 26300/9807 Pro x64, 1,216B SHA256 `C7CABC82A56716FD32697260A6B9F403D4B781579703A5448DFD4412554F4EB2`; actual four CRLF multiline end-anchor regex defects as first §0R below). No mount/unmount in that step and no new FoD/CBS/AppX topology proof yet.
