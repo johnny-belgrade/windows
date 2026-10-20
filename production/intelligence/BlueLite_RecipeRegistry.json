@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "registry_revision": "2026-10-20-r20r2f6-9807-equal-max-export-pass-r36",
+  "registry_revision": "2026-10-20-r20r2f12-9807-two-parent-cbs-readonly-r37",
   "status": "S37_COMMITTED_CANDIDATE_INDEPENDENT_S38R3_POSTCOMMIT_PASS_NOT_RELEASED",
   "scope": "Germanium 26300-first; 26200 historical topology references",
   "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
@@ -1009,22 +1009,64 @@
           "supported_lineage": [
             "26300.x"
           ],
-          "topology_status": "NATIVE_READONLY_PACKAGE_STATES_KNOWN_NO_MUTATION",
+          "topology_status": "SOURCE_BOUND_TWO_CHILD_OWNER_AND_TWO_PARENT_CBS_KEYS_READONLY_PASS_NO_MUTATION",
           "required_predicates": [
             {
               "kind": "CBS_PACKAGE",
               "target": "OneDrive-Setup-Package neutral and en-US 26100.1",
               "expected": "Neutral Staged and en-US Installed, both native exact /Get-PackageInfo exit0; dependencies/unlinks, unique byte savings and post-removal state NOT TESTED"
+            },
+            {
+              "kind": "SOURCE",
+              "target": "26300.9807 original index1 plus retained WebViewRemoved MAX candidate",
+              "expected": "Original 7021953581B SHA256 0FB778D4696DABA17EDC52E6391A3F217982422FB920C98C8273E0C51A094B49; MAX candidate 6407308664B SHA256 F8F2FFF0A40508C88F8426B2923FEDCF9B00F3FFF3A5637A13C0EB0006E8BA7E; pins PASS PRE/POST and RO mount/discard",
+              "evidence_ref": "BlueLite_26300_9807_OneDriveParentOwner_R20R2F12.txt SHA256 1B32F0F86E3C3909784169F1B44E0486EB3D42335641F3A822C599F6FC28475B; operator conversation attachment"
+            },
+            {
+              "kind": "CBS",
+              "target": "neutral 26100.1 child OneDrive-Setup and exact Not-Supported-On-LTSB neutral parent 26100.1301",
+              "expected": "Child CurrentState=0x40/Visibility=0x2; one Owner parent 26100.1301 DWORD 0x30040; exact parent CBS key Present CurrentState=0x40/Visibility=0x2; copied SOFTWARE registry read-only; native REG exit0"
+            },
+            {
+              "kind": "CBS",
+              "target": "en-US 26100.1 child OneDrive-Setup and exact Not-Supported-On-LTSB en-US parent 26100.1",
+              "expected": "Child CurrentState=0x70/Visibility=0x2; one Owner parent en-US 26100.1 DWORD 0x30070; exact parent CBS key Present CurrentState=0x70/Visibility=0x2; copied SOFTWARE registry read-only; native REG exit0"
+            },
+            {
+              "kind": "DEPENDENCY",
+              "target": "26300.9807 OneDrive AMBER mutation authority",
+              "expected": "NOT_GRANTED. Only two source-native child identities proven in R10/R11/R12; historical 26300.9711 S31 had five identities and three neutral remove targets. New exact source-bound disposable-only mutation proof and negative fixtures required before reuse."
             }
           ],
           "expected_post_state": [
-            "Original SHA preserved; no OneDrive removal run"
+            "R20R2F12 read-only parent keys both resolve and match reported child Owner references; no edits or package removal",
+            "Immutable original and retained WebViewRemoved candidate unchanged; native RO mount/discard and copied-hive unload complete; no mounts or stray alias/sidecars",
+            "OneDrive-Setup removal/serviceability/release on 26300.9807 NOT_TESTED"
           ],
           "tested_builds": [
             "26300.9807"
           ],
           "evidence_refs": [
-            "production/evidence/BlueLite_26300_9807_HighImpactNativePreflight_R20R2F3.json SHA256 62575ED0F012228D36D2E8CB86E9B196552F44298F40280AF24A01E13A3E547C"
+            "production/evidence/BlueLite_26300_9807_HighImpactNativePreflight_R20R2F3.json SHA256 62575ED0F012228D36D2E8CB86E9B196552F44298F40280AF24A01E13A3E547C",
+            "BlueLite_26300_9807_OneDriveParentOwner_R20R2F12.txt 3095 ASCII B/43 CRLF SHA256 1B32F0F86E3C3909784169F1B44E0486EB3D42335641F3A822C599F6FC28475B (operator attachment; no GitHub raw receipt archive)"
+          ],
+          "exact_selectors": [
+            {
+              "kind": "CBS_PACKAGE",
+              "identity": "Microsoft-Windows-OneDrive-Setup-Package~31bf3856ad364e35~amd64~~10.0.26100.1"
+            },
+            {
+              "kind": "CBS_PACKAGE",
+              "identity": "Microsoft-Windows-OneDrive-Setup-Package~31bf3856ad364e35~amd64~en-US~10.0.26100.1"
+            },
+            {
+              "kind": "CBS_PACKAGE",
+              "identity": "Microsoft-Windows-Not-Supported-On-LTSB-Package~31bf3856ad364e35~amd64~~10.0.26100.1301"
+            },
+            {
+              "kind": "CBS_PACKAGE",
+              "identity": "Microsoft-Windows-Not-Supported-On-LTSB-Package~31bf3856ad364e35~amd64~en-US~10.0.26100.1"
+            }
           ]
         }
       ],
