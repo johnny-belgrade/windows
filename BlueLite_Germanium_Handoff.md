@@ -1,15 +1,31 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.157 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-21 (Master v6.2.1 §0D PREMAX/UUP workspace/checkpoint; prethodni v6.1 connector i NTLite 2025.8.10552 korekcija važe)   
+**Verzija dokumenta:** 1.5.158 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-21 (Master v6.2.1 §0D PREMAX/UUP workspace/checkpoint; prethodni v6.1 connector i NTLite 2025.8.10552 korekcija važe)   
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; sada aktivni operatorom potvrđen izvor **26300.9807 / en-US / Professional** (26300.9711 je istorijska referenca).  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
 **Vlasnik cilja i lokalnog izvršavanja:** operator; **inženjerski saradnik:** ChatGPT.  
-**Normativna osnova:** [`BlueLite-Master_Germanium_Strategy_final.md`](BlueLite-Master_Germanium_Strategy_final.md), **v6.2.0 / §0C–§0D**.  
+**Normativna osnova:** [`BlueLite-Master_Germanium_Strategy_final.md`](BlueLite-Master_Germanium_Strategy_final.md), **v6.3.0 / §0C–§0E**.  
 **Živi kompaktni dnevnik:** [`BlueLite_Current_Status.md`](BlueLite_Current_Status.md). **Hronološki izvršni dnevnik komandi/rezultata S01–S22:** [`BlueLite_26300_Stage1_Execution_Chronology_20261016-17.md`](BlueLite_26300_Stage1_Execution_Chronology_20261016-17.md). **Puna istorijska arhiva (pre kompaktovanja):** [Current archive](https://github.com/johnny-belgrade/windows/blob/archive/current-status-precompact-20261017/BlueLite_Current_Status.md), blob `c8dafcf9f45f8652ef4b5fbcee0a3e9293989b2c`.  
 **Historijski UUP dokazni indeks:** [`BlueLite_UUP_Evidence_Reconciliation_20261013.md`](BlueLite_UUP_Evidence_Reconciliation_20261013.md).  
 **Celokupan spoljašnji katalog:** [`BlueLite_Sources.md`](BlueLite_Sources.md).  
 **Repo:** <https://github.com/johnny-belgrade/windows>; branch `main`.
+
+## 0X. 2026-10-21 — OPERATOR-APPROVED GLOBAL EXECUTION PROTOCOL (§0E, Master v6.3.0)
+
+**New binding rule, all sessions and stages:** After every logically independent action/analysis or natural group of directly related actions, complete factual analysis and required §0R/§0D GitHub/evidence readback, then **STOP**, report very briefly in GUI (performed action, actual PASS/HOLD/FAIL, ONE NEXT), and **WAIT for operator approval or changed focus**. Merely preparing a NEXT step does not authorize executing it. The record/write/readback phases belong to completion of the current block.
+
+**Three-attempt error ceiling:** Any local/GitHub file operation, external link/server access, fetch, execution, read/write or other tool failure gets a total maximum of **three actual attempts for the same issue**, counting initial attempt and any alternative method/connector. Diagnose before retry; do not reset the count by changing tactic/session. Stop sooner for definitive access/safety/permission blocks. If unresolved, mark **ERROR_HOLD_AWAITING_OPERATOR**, record resource, error, actual attempt count, last confirmed state, any not-completed write/action and ONE NEXT in the appropriate document; if that document cannot be written, use another permitted checkpoint and say explicitly what was not persisted. In GUI report the blocker concisely and wait for operator intervention. No unsafe bypass, automatic fourth retry or invented PASS.
+
+**Sole ordinary-pause exception:** The operator must explicitly write **„Nastavi bez prekida“**. Only regular stops *between successful completed blocks* are lifted for that operator-directed continuation; maximum three attempts/error HOLD, evidence/readback, §0R/§0D, all pre-existing source/mutation/network/safety and separate explicit GUI approval gates remain mandatory. Operator may change course at any time.
+
+**Prior failed Session Entry pause sync (historical failure, not a successful update):** On 2026-10-21 two proposed GitHub Session Entry writes were blocked before GitHub mutation by platform safety checks. Current and Handoff operator-PAUSE entries were successfully committed/read back; Session Entry remained at its previous R001 checkpoint. Operator subsequently reconnected GitHub and explicitly authorized this protocol documentation sync plus recovery of the failed Session Entry pause sync. Do not represent the blocked attempts as successful. The Session Entry final current pointer is to be replaced/read back LAST after this documentation batch.
+
+**R001 state unchanged / ONE NEXT:** UUP Dump reportedly HTTP 502; operator owns its 60-second PHP availability monitor and will report restoration. No duplicate monitoring or network GET. R001 26300.9711 D4 saved-queue read-only PASS and 26300.9807 baseline HOLD remain; two get.php metadata requests are PREPARED_NOT_AUTHORIZED. **PAUSE** for operator notice of availability and separate approval. This documentation authorization does not approve R001 runtime.
+
+**Normative source:** Master v6.3.0 §0E, commit `126581049668313ed1b33a373c481245a8b71931`, exact readback PASS.
+
+---
 
 ## 0W. 2026-10-21 — OPERATOR PAUSE: UUP Dump/backend HTTP 502; prepared R001 metadata GET remains NOT AUTHORIZED
 
@@ -194,6 +210,9 @@ Independent verified GitHub Current FIRST (R13) commit `595fd0959da1b1555fdae04c
 ---
 
 ## 0R. OBAVEZNI REPORT → ANALIZA → GITHUB UPIS → NOVI KORAK → DRUGI HANDOFF UPIS (17.10.2026)
+
+**Obavezna dopuna 2026-10-21:** Master v6.3.0 §0E zahteva kratki GUI izveštaj i PAUZU radi operatorske odluke na kraju svake zaokružene grupe radnji, posle svih §0R obaveznih upisa. Svaka neuspešna operacija podleže limitu od najviše tri ukupna pokušaja i dokumentovanom ERROR_HOLD; samo izričito „Nastavi bez prekida“ izuzima pauzu posle uspešnog bloka, bez oslobađanja bilo kog posebnog odobrenja.
+
 
 **IZRIČITA TRAJNA OPERATORSKA INSTRUKCIJA ZA SVAKU SESIJU.** Posle svakog primljenog operatorovog ili preko autorizovanog konektora direktno očitanog report-a (TXT/CSV/LOG/ZIP/JSON ili drugi format, uključujući priloge i konzolni izlaz), **ne zadavati odmah novi korak**. Izvršiti sledeći redosled, bez preskakanja:
 
