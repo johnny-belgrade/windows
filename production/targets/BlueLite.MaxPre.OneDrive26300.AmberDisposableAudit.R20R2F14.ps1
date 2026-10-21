@@ -38,8 +38,18 @@ if(-not $c.Contains("Run 'DELETE_NEUTRAL_OWNERS'")){throw 'NEUTRAL_OWNERS_EXACT_
 if(-not $c.Contains('"/PackageName:$neut"')){throw 'REMOVE_NEUTRAL_NAME_TOKEN_MISSING'}
 if(-not $c.Contains('"$c\$neut\Owners"')){throw 'OWNER_TARGET_TOKEN_MISSING'}
 $sha=(Get-FileHash -LiteralPath $target -Algorithm SHA256).Hash
-Write-Output 'RESULT=PASS_R20R2F14_AST_SCOPE_SOURCE_STATIC_NO_RUNTIME'
-Write-Output 'NEGATIVE_FIXTURE_REFERENCE=R13_10_OF_10'
-Write-Output ('SCRIPT_SHA256='+$sha)
-Write-Output ('SCRIPT_BYTES='+([IO.File]::ReadAllBytes($target).Length))
-Write-Output ('SCRIPT_LINES='+(@([IO.File]::ReadAllLines($target)).Count))
+$receipt='C:\work\logs\BlueLite_26300_9807_OneDriveAmberStatic_R20R2F14.txt'
+if([IO.File]::Exists($receipt)){throw 'STATIC_RECEIPT_EXISTS_NO_OVERWRITE'}
+$rows=@(
+  'BLUELITE_R20R2F14_STATIC_SOURCE_REVIEW_ONLY',
+  'RESULT=PASS_R20R2F14_AST_SCOPE_SOURCE_STATIC_NO_RUNTIME',
+  'NEGATIVE_FIXTURE_REFERENCE=R13_10_OF_10',
+  ('SCRIPT_SHA256='+$sha),
+  ('SCRIPT_BYTES='+([IO.File]::ReadAllBytes($target).Length)),
+  ('SCRIPT_LINES='+(@([IO.File]::ReadAllLines($target)).Count)),
+  'REG_BLOCK_CHANGE=NOT_RUN',
+  'WIM_MOUNT_UNMOUNT_CLONE_CBS_MUTATION=NOT_RUN',
+  'AUTHORIZATION=USER_APPROVED_PENDING_TOTALCMD_CLOSURE_CONFIRMATION'
+)
+[IO.File]::WriteAllLines($receipt,$rows,[Text.UTF8Encoding]::new($false))
+$rows
