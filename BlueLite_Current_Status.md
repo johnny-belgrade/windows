@@ -1,5 +1,15 @@
 # BlueLite v1.0 — Current Status
 
+## 2026-10-21 — OPERATOR PAUSE: UUP Dump unavailable (502), no BlueLite network/runtime action
+
+**Operator report:** `https://uupdump.net/` and its PHP/backend are currently unavailable with HTTP 502 and have been unavailable for several hours. Operator already has a separate local monitor that checks the PHP endpoint every 60 seconds and provides notifications. BlueLite must **not duplicate that monitoring**, must not attempt the prepared R001 `get.php` metadata-only test, and must not treat current outage as a source-identity or BlueLite-engine failure.
+
+**Authorization state:** prior R001 D4 read-only 26300.9711 PASS and 26300.9807 independent-baseline HOLD remain unchanged. The prepared two-`get.php` 26300.9711 metadata-only step remains `PREPARED_NOT_AUTHORIZED` and **must not run** until operator explicitly reports service availability and gives the corresponding approval. No WIM, converter, WinRE, aria2, OneDrive R14, NTLite, VM or connector-config change is authorized by this pause.
+
+**ONE NEXT:** **PAUSE.** Wait for operator to report that UUP Dump/server/database is available again and explicitly authorize the prepared bounded metadata-only test. Do not perform independent polling or create a duplicate availability automation.
+
+
+
 ## 2026-10-21 — R001 continued D4 metadata adapter / actual 9711 native read-only queue PASS, 9807 baseline HOLD
 
 **Prework checkpoint FIRST:** Session Entry `IN_PROGRESS_SOURCE_REUSE_REVIEW` commit `375fa371f3424244799428d4501fb11d53852f9b`, independent content readback PASS; no new operator WIM/network mutation authorization inferred. Current prior R001 source ZIP preflights 9711/9807 and independent GitHub receipt remain valid. Active work only `C:\work\PREMAX-work\R001_Universal_PREMAX_UUP`.
