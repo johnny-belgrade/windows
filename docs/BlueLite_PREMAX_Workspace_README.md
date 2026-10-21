@@ -37,4 +37,11 @@ C:\work\PREMAX-work\R001_kratka-namena\
 
 **Veza sa prethodnim radom:** `C:\work\UUP-history\99_Index\RH06_Final_ProvenanceMapping.csv` mapira originalne putanje koje su *postojale unutar UUP-history u trenutku RH02 inventara* na sadašnji kanonski path; **ne** dokazuje da su spoljni `C:\work` UUP fajlovi identični. RH01–RH08 dokaz [GitHub](https://github.com/johnny-belgrade/windows/blob/main/production/evidence/BlueLite_UUP_History_RH07_20261021.md).
 
+## Protokol radnih blokova i grešaka — Master v6.3.0 §0E (2026-10-21)
+
+- Po završenoj nezavisnoj analizi/radnji ili prirodnoj grupi povezanih radnji: analiziraj rezultat, obavi obavezni Current/Handoff/Session Entry upis i nezavisan readback, zatim **PAUZA**. Operatoru u GUI vrlo kratko prikaži šta je urađeno, PASS/HOLD/FAIL i jedan NEXT; čekaj njegovo odobrenje ili promenu kursa.
+- Za neuspešno čitanje, upis, preuzimanje, pristup, izvršenje, GitHub/web/server/alat ili bilo koju drugu grešku: **ukupno najviše tri pokušaja po istom problemu** (prvi uračunat; metoda/putanja/sesija ne resetuje limit). Bez slepog retry-a ili zaobilaženja sigurnosnih zabrana. Ako problem ostane, zaustavi blok, zapiši operaciju, grešku, broj pokušaja, poslednje dokazano stanje i neizvršeno u Current/Handoff ili drugi dostupan dozvoljen zapis, kratko prijavi u GUI i čekaj operatora. Ako zapis nije moguć, to izričito navedi.
+- Samo ako operator tačno napiše **„Nastavi bez prekida“** može se preskočiti redovna pauza među uspešnim blokovima. **Nikad** se time ne preskaču pravila o greškama, zasebna GUI odobrenja (mreža/WIM/CBS/registry/ISO), source/SHA/dependency, §0R ili §0D.4 checkpoint.
+- Trenutna operatorska UUP Dump HTTP 502 pauza ostaje: nema dodatnog monitoringa ili get.php proba; R001 metadata test PREPARED_NOT_AUTHORIZED do operatorovog novog eksplicitnog odobrenja. Istorijski UUP-history corpus ostaje read-only.
+
 **START STATUS:** `NO_ACTIVE_CYCLE`; postoje samo `_TEMPLATE` i `99_Index`. Novi ciklus tek kada operator izabere cilj/izvor.
