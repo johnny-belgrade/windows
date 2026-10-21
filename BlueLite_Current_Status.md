@@ -1,5 +1,21 @@
 # BlueLite v1.0 — Current Status
 
+## 2026-10-21 — OPERATOR-APPROVED MANDATORY GUI WORK-BLOCK / THREE-ATTEMPT RULE (documentation only)
+
+**Operator directive and explicit write permission:** global BlueLite protocol now requires a very brief GUI PASS/HOLD/FAIL and ONE NEXT followed by **pause for operator continuation/change of course after every finished logical work block**, once its analysis and mandatory §0R/§0D readbacks are complete. The *only* successful-block pause exemption is the exact explicit phrase **„Nastavi bez prekida“**, which never waives individual mutation/network approvals, the failure rule or existing safety/source/evidence gates.
+
+**Error ceiling:** maximum **three total attempts** for an unresolved local, GitHub, link/server, web, tool or other failure (first try included; alternative path/connector/session does not reset). On unresolved error: record resource/failure/count/last verified result/not-completed actions and ONE NEXT in an available operational document, stop as ERROR_HOLD_AWAITING_OPERATOR, give a short GUI explanation and await operator. A denied safety/authorization boundary can require immediate stop rather than further retry; never fake a completed log/write.
+
+**Confirmed protocol revisions, exact readback PASS:**
+- Master [v6.3.0 §0E](BlueLite-Master_Germanium_Strategy_final.md), commit `126581049668313ed1b33a373c481245a8b71931`.
+- Handoff [v1.5.158 §0X plus §0R clarification](BlueLite_Germanium_Handoff.md), commit `8b3e2f0baac49fc6e9810d92a0b33a6110aeb18f`.
+- Owned mutable local `C:\work\PREMAX-work\00_README.md` actual connector edit/readback, and exact GitHub [PREMAX README mirror](docs/BlueLite_PREMAX_Workspace_README.md) commit `5276a7d235d36f368499280889f6104c148a8283`; content matched local. UUP-history immutable evidence corpus/README not modified.
+- Last sync of compact Session Entry is scheduled **LAST** under Master §0D.4 and must have its own exact successful readback. Previously two Session Entry pause-only writes were safety-blocked before remote mutation, and the stale previous R001 pointer is not a successful pause record. Operator reconnected GitHub and expressly requested recovery in this documentation batch.
+
+**No R001 runtime change:** Operator still reports UUP Dump HTTP 502; operator-owned 60-second PHP monitor handles restoration. R001 .9711 native saved-queue D4 PASS remains, .9807 baseline HOLD remains, two .9711 get.php metadata-only requests remain PREPARED_NOT_AUTHORIZED. No new network calls or WIM/OneDrive/NTLite/VM activity; RecipeRegistry r38 unchanged.
+
+**ONE NEXT:** **PAUSE / GUI_PAUSE_AWAITING_OPERATOR** after the verified documentation sync. Await operator notice that UUP Dump/backend is restored plus a separate express authorization before any R001 metadata-only network test.
+
 ## 2026-10-21 — OPERATOR PAUSE: UUP Dump unavailable (502), no BlueLite network/runtime action
 
 **Operator report:** `https://uupdump.net/` and its PHP/backend are currently unavailable with HTTP 502 and have been unavailable for several hours. Operator already has a separate local monitor that checks the PHP endpoint every 60 seconds and provides notifications. BlueLite must **not duplicate that monitoring**, must not attempt the prepared R001 `get.php` metadata-only test, and must not treat current outage as a source-identity or BlueLite-engine failure.
