@@ -75,7 +75,7 @@
 
 ---
 
-## 0. JEDINI POČETNI LINK ZA SVE NAREDNE BLUELITE SESIJE
+## 0. JEDINI POČETNI LINK JE SESSION ENTRY — MASTER OSTAJE PRVI OBAVEZNI PUNI DOKUMENT
 
 **Jedini aktuelni početni link je [Session Entry](BlueLite_Session_Entry.md):** https://github.com/johnny-belgrade/windows/blob/main/BlueLite_Session_Entry.md . Naslednik najpre u celosti čita Master v6.1.0, zatim Session Entry, Current od vrha i potrebne obavezne Handoff sekcije (§0R/§0S/§12B) i originalne dokaze; Handoff ostaje istorijski i operativni autoritet, ali ne ulazni link. Link nije dokaz čitanja.
 
@@ -89,7 +89,7 @@
 6. **IZVRŠAVANJE/ISPORUKA:** jedan pregledani, prethodno kratko objašnjeni GUI korak; operator izričito odobrava novu/revidiranu WIM mutaciju. Asistent preko scoped Remote Desktop Commander-a može isporučiti i pokrenuti samo odobreni PS7 iz `C:\work\scripts`, a potom pročitati originalni `C:\work\logs`; bez funkcionalnog konektora obavezan jedan potpuni copy/paste PS7 Admin operator-run korak. Bez mutacije live OS-a; offline WIM samo uz source/hash/index/mount/dependency/rollback preflight, Total Commander/Explorer zatvoreni pre mount/unmount, uredan hive/mount closeout. Nema nenajavljenog download-a, NTLite pre offline faza ili VM pre NTLite.
 7. **UPIS JE OBAVEZA, NE OPCIJA:** za svaki stvarni PASS/FAIL/HOLD nakon operatorovog loga ažuriraj `BlueLite_Current_Status.md`; za novi potvrđeni komponentni recipe/owner/variant uz to `production/intelligence/BlueLite_RecipeRegistry.json`; Handoff/Contracts/Sources/Master samo po tačnim uslovima iz §12B. `fetch current SHA → merge → update → independent full read-back → prijavi commit`. Ako remote upis ne uspe, izričito `GITHUB_WRITE_BLOCKED`, bez lažne tvrdnje o uspehu.
 
-**Kratka poruka operatora za novu sesiju:** „Nastavi BlueLite v1.0. Polazni i jedini link je [Handoff](https://github.com/johnny-belgrade/windows/blob/main/BlueLite_Germanium_Handoff.md). Sam pročitaj njegovim redom Master (obavezna strategija), najnoviji Current i relevantne repo/Library izvore; primeni sva pravila timskog rada i upisa na GitHub. Prvo usaglasi poslednji dokaz, pa daj jednu sledeću potpunu komandu.”
+**Kratka poruka operatora za novu sesiju:** „Nastavi BlueLite v1.0 prema [Session Entry](https://github.com/johnny-belgrade/windows/blob/main/BlueLite_Session_Entry.md). Obavezno prvo pročitaj kompletan Master v6.1.0, zatim Session Entry, najnoviji Current i relevantne Handoff §0R/§0S/§12B, Library/GitHub i lokalne izvore. Proveri live Remote Desktop Commander scope, poštuj operatorovu eksplicitnu autorizaciju mutacija i nastavi od poslednjeg dokazanog receipt-a jednim sledećim korakom.”
 
 ---
 
@@ -419,7 +419,7 @@ Common base **Defender ON** dok ne prođe certificirana zajednička baza; nakon 
 **Celokupan spoljašnji katalog:** [`BlueLite_Sources.md`](BlueLite_Sources.md).  
 **Repo:** <https://github.com/johnny-belgrade/windows>; branch `main`.
 
-## 0. JEDINI POČETNI LINK ZA SVE NAREDNE BLUELITE SESIJE
+## 0. JEDINI POČETNI LINK JE SESSION ENTRY — MASTER OSTAJE PRVI OBAVEZNI PUNI DOKUMENT
 
 **Jedini aktuelni početni link je [Session Entry](BlueLite_Session_Entry.md):** https://github.com/johnny-belgrade/windows/blob/main/BlueLite_Session_Entry.md . Naslednik najpre u celosti čita Master v6.1.0, zatim Session Entry, Current od vrha i potrebne obavezne Handoff sekcije (§0R/§0S/§12B) i originalne dokaze; Handoff ostaje istorijski i operativni autoritet, ali ne ulazni link. Link nije dokaz čitanja.
 
@@ -433,7 +433,7 @@ Common base **Defender ON** dok ne prođe certificirana zajednička baza; nakon 
 6. **IZVRŠAVANJE/ISPORUKA:** jedan pregledani, prethodno kratko objašnjeni GUI korak; operator izričito odobrava novu/revidiranu WIM mutaciju. Asistent preko scoped Remote Desktop Commander-a može isporučiti i pokrenuti samo odobreni PS7 iz `C:\work\scripts`, a potom pročitati originalni `C:\work\logs`; bez funkcionalnog konektora obavezan jedan potpuni copy/paste PS7 Admin operator-run korak. Bez mutacije live OS-a; offline WIM samo uz source/hash/index/mount/dependency/rollback preflight, Total Commander/Explorer zatvoreni pre mount/unmount, uredan hive/mount closeout. Nema nenajavljenog download-a, NTLite pre offline faza ili VM pre NTLite.
 7. **UPIS JE OBAVEZA, NE OPCIJA:** za svaki stvarni PASS/FAIL/HOLD nakon operatorovog loga ažuriraj `BlueLite_Current_Status.md`; za novi potvrđeni komponentni recipe/owner/variant uz to `production/intelligence/BlueLite_RecipeRegistry.json`; Handoff/Contracts/Sources/Master samo po tačnim uslovima iz §12B. `fetch current SHA → merge → update → independent full read-back → prijavi commit`. Ako remote upis ne uspe, izričito `GITHUB_WRITE_BLOCKED`, bez lažne tvrdnje o uspehu.
 
-**Kratka poruka operatora za novu sesiju:** „Nastavi BlueLite v1.0. Polazni i jedini link je [Handoff](https://github.com/johnny-belgrade/windows/blob/main/BlueLite_Germanium_Handoff.md). Sam pročitaj njegovim redom Master (obavezna strategija), najnoviji Current i relevantne repo/Library izvore; primeni sva pravila timskog rada i upisa na GitHub. Prvo usaglasi poslednji dokaz, pa daj jednu sledeću potpunu komandu.”
+**Kratka poruka operatora za novu sesiju:** „Nastavi BlueLite v1.0 prema [Session Entry](https://github.com/johnny-belgrade/windows/blob/main/BlueLite_Session_Entry.md). Obavezno prvo pročitaj kompletan Master v6.1.0, zatim Session Entry, najnoviji Current i relevantne Handoff §0R/§0S/§12B, Library/GitHub i lokalne izvore. Proveri live Remote Desktop Commander scope, poštuj operatorovu eksplicitnu autorizaciju mutacija i nastavi od poslednjeg dokazanog receipt-a jednim sledećim korakom.”
 
 ---
 
@@ -4014,14 +4014,17 @@ Posle svakog materijalnog operatorom ili autorizovanim konektorom potvrđenog mi
 
 | Dokument | Tačan trenutak obaveznog upisa | Ograničenje |
 |---|---|---|
-| [Current](BlueLite_Current_Status.md) | **SVAKI** stvarno potvrđen operator checkpoint, čak i `FAIL_CLOSED`/`HOLD`, preuzimanje novog izvora, promenjen SHA, završen test, repo dokumentacioni milestone | Jedna kratka reverse-chronological stavka: source UUID/build, hashes, literal log, output tier, scope, status, jedan next step; bez celega transkripta |
+| [Current](BlueLite_Current_Status.md) | **SVAKI** stvarno potvrđen operator ili odobren connector checkpoint, uključujući `FAIL_CLOSED`/`HOLD`, novi source/SHA, test ili repo dokumentacioni milestone | Jedna kratka reverse-chronological stavka: source/build/hash, original receipt, dokazni nivo, scope, status, jedan NEXT; bez celog transkripta |
+| [Session Entry](BlueLite_Session_Entry.md) | **NA KRAJU** svakog značajnog verified status/dokumentacionog ciklusa posle drugih GitHub write/readback transakcija | Držati par KB, bez istorije; važeći Master/Current/Handoff, source/candidate pins, last receipt, scoped allowed roots, authorization, dependency i jedno NEXT |
 | [RecipeRegistry](production/intelligence/BlueLite_RecipeRegistry.json) | **SVAKI** novi ili promenjeni potvrđeni target, dependency, topology-variant, owner, predicate, allowed delta, rollback, fixture i disposition; promenu upari sa Current checkpoint-om | Stare varijante sačuvati; `runtime_execution_allowed=true` tek uz module SHA, operatorov native post-state, potrebne negative fixtures i važeće 26300 topology gate-ove |
 | [RunManifest / Recipe / ResultReceipt schemas](production/contracts/README.md) | Samo kada se **FORMAT UGOVORA** menja, uz verziju i positive/negative fixtures, engine compatibility i Git commit | Nema šeme po CU-u ili običnoj runtime stavci |
-| [Handoff](BlueLite_Germanium_Handoff.md) | Nova trajna arhitektura, promena rasporeda dokaza, univerzalno pravilo prenosa, kritični correction ili novi model procesa | Revidirati verziju; ne pisati svaki log S-koraka |
+| [Handoff](BlueLite_Germanium_Handoff.md) | Nova trajna arhitektura, kritični correction ili novi model procesa **i obavezni §0R prvi/drugi zapis svake realne operator/connector report transakcije** | Revidirati verziju za normativne promene; log tela ne duplirati, svaku §0R transakciju svesti na hash, rezultat, target, jedan NEXT i tačan source |
 | [Master](BlueLite-Master_Germanium_Strategy_final.md) | Operator-odobren NOVI TRAJNI cilj, policy, redosled faza ili release gate | Ne upisivati dnevne rezultate u normativnu strategiju |
 | [Sources](BlueLite_Sources.md) | Nova otvorena/proverena tehnička referenca kada je materijalna za target | Dokumentacija nije sama runtime removal dozvola |
 | [UUP Evidence](BlueLite_UUP_Evidence_Reconciliation_20261013.md) | Samo stvarni datirani istorijski correction/addendum potreban za prenos dokaza | Ne menjati retroaktivno tadašnji S/R status |
 | [Current historical archive](https://github.com/johnny-belgrade/windows/blob/archive/current-status-precompact-20261017/BlueLite_Current_Status.md) i [ChatsGPT_15 archive](https://github.com/johnny-belgrade/windows/blob/archive/chatsgpt15-20261017/ChatsGPT_15.md) | Nikada rutinski; ove arhivske grane su IMMUTABLE | Ne brisati grane i ne force-push; nove arhive dobijaju nove snapshot grane |
+
+**Current 2026-10-21 dokumentacioni synchronization:** [Current](BlueLite_Current_Status.md) commit `a7818e503f75282ad56dcbc2c1e45dd22a5677e2` READBACK PASS; [Master v6.1.0](BlueLite-Master_Germanium_Strategy_final.md) commit `68d58a5b9e5cf45138b49c0f1b04fc1c152dcec9` READBACK PASS; [Session Entry](BlueLite_Session_Entry.md) commit `e316e927611578a97ad828cc045eea5e576da3dd` READBACK PASS. Original Handoff v1.5.151 correction commit `bb31b53fca3487f48becf856455b33b55904387b` READBACK PASS. No new authorized WIM mutation; current next is separate approval for source-bound 26300.9807 OneDrive two-child disposable candidate.
 
 **Dvojni update:** svaki novi stvarni component recipe/dependency zaključak obavezno ažurira i `production/intelligence/BlueLite_RecipeRegistry.json` (tačni predikati/fixture) **i** `BlueLite_Current_Status.md` (stvarni operaterski log i next). Ako recipe nije promenjen, običan S-korak menja samo Current. Dizajn/predlog bez runtime-a ostaje neautorizovan `DOCUMENTED_ONLY` / `STATIC_VERIFIED`, bez pretvaranja u `THIS_BUILD_CERTIFIED`.
 
