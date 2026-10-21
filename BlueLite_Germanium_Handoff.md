@@ -1,6 +1,6 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
-**Verzija dokumenta:** 1.5.156 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-21 (Master v6.1.0 scoped connector / NTLite 2025.8.10552 corrected)   
+**Verzija dokumenta:** 1.5.156 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-21 (Master v6.2.0 §0D PREMAX/UUP workspace; prethodni v6.1 connector i NTLite 2025.8.10552 korekcija važe)   
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; sada aktivni operatorom potvrđen izvor **26300.9807 / en-US / Professional** (26300.9711 je istorijska referenca).  
 **Istorijska/regresiona baza:** 26200.x; zajednički servisni referentni koren: 26100.x. Nove Germanium linije samo po odluci operatora i uz proveru porekla.  
