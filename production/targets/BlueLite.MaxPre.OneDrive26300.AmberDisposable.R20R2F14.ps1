@@ -32,7 +32,7 @@ $releaseOk=$true
 $result='HOLD_R20R2F14_NOT_CERTIFIED'
 function Log([string]$msg) {
   $line="$(Get-Date -Format 'HH:mm:ss') | $msg"
-  Write-Output $line
+  Write-Host $line
   if($null -ne $writer){$writer.WriteLine($line);$writer.Flush()}
 }
 function Pin([string]$name,[string]$p,[long]$size,[string]$sha) {
@@ -67,7 +67,7 @@ function RegDWORD([string]$key,[string]$name) {
 }
 function Owner([string]$child,[string]$expectedName,[int]$expectedValue) {
   $q=RegRead "$child\Owners"
-  $rows=@([regex]::Matches($q.Text,'(?im)^\s+(\S+)\s+REG_DWORD\s+(0x[0-9a-f]+|\d+)\s*$'))
+  $rows=[regex]::Matches($q.Text,'(?im)^\s+(\S+)\s+REG_DWORD\s+(0x[0-9a-f]+|\d+)\s*$')
   if($q.Code -ne 0 -or $rows.Count -ne 1){throw 'CBS_OWNER_CARDINALITY_FAILED'}
   $val=$rows[0].Groups[2].Value
   $num=if($val.StartsWith('0x')){[Convert]::ToInt32($val.Substring(2),16)}else{[int]$val}
@@ -158,6 +158,14 @@ try {
   PendingHealth 'PRE' $false
   Package 'PRE_NEUTRAL' $neut 'Staged'
   Package 'PRE_ENUS' $sat 'Installed'
+  $protectedFiles=@('Windows\System32\WinHvPlatform.dll','Windows\System32\hvax64.exe','Windows\System32\hvix64.exe','Windows\System32\drivers\vmbus.sys','Windows\System32\drivers\vid.sys','Windows\System32\drivers\ndis.sys','Windows\System32\drivers\netio.sys','Windows\System32\drivers\tcpip.sys','Windows\System32\drivers\storport.sys','Windows\System32\drivers\disk.sys','Windows\System32\drivers\partmgr.sys')
+  $floorPre=@{}
+  foreach($rel in $protectedFiles){
+    $fp=Join-Path $mount $rel
+    if(-not [IO.File]::Exists($fp)){throw "VM_NETWORK_STORAGE_FLOOR_PRE_MISSING=$rel"}
+    $floorPre[$rel]=(Get-FileHash -LiteralPath $fp -Algorithm SHA256).Hash
+  }
+  Log 'PRE_VM_NETWORK_STORAGE_11_FILES_HASH_PINNED=PASS'
   $setup=Join-Path $mount 'Windows\System32\OneDriveSetup.exe'
   if(-not(Test-Path -LiteralPath $setup)){throw 'EXPECTED_ONEDRIVE_SETUP_NOT_PRESENT'}
   $win=Join-Path $mount 'Windows\WinSxS'
@@ -197,6 +205,11 @@ try {
   if($left.Count -ne 0){throw "WINSXS_ONEDRIVE_SETUP_RESIDUE=$($left.Count)"}
   $afterB=@(Get-ChildItem -LiteralPath $win -Directory -Force | Where-Object {$_.Name -match '(?i)onedrivebackup_'} | ForEach-Object {$_.Name})
   if(([string]::Join(';',@($beforeB|Sort-Object))) -cne ([string]::Join(';',@($afterB|Sort-Object)))){throw 'ONEDRIVEBACKUP_DRIFT'}
+  foreach($rel in $protectedFiles){
+    $fp=Join-Path $mount $rel
+    if(-not [IO.File]::Exists($fp) -or (Get-FileHash -LiteralPath $fp -Algorithm SHA256).Hash -cne $floorPre[$rel]){throw "VM_NETWORK_STORAGE_PROTECTED_FLOOR_DRIFT=$rel"}
+  }
+  Log 'POST_VM_NETWORK_STORAGE_11_FILES_UNCHANGED=PASS'
   LoadHive
   Parents
   UnloadHive
