@@ -1,7 +1,7 @@
-# BlueLite v1.0 — MASTER GERMANIUM STRATEGY v6.2.1
+# BlueLite v1.0 — MASTER GERMANIUM STRATEGY v6.3.0
 
 **Status:** AUTHORITATIVE / UNIFIED PRODUCTION ARCHITECTURE — SUPERSEDES PREVIOUS MASTER REVISIONS  
-**Date:** 2026-10-16 · **Normative amendments:** 2026-10-21 (v6.1 connector/NTLite; v6.2 UUP/PRE_MAX history lifecycle; v6.2.1 two-phase Session Entry checkpoint)  
+**Date:** 2026-10-16 · **Normative amendments:** 2026-10-21 (v6.1 connector/NTLite; v6.2 UUP/PRE_MAX history lifecycle; v6.2.1 two-phase Session Entry checkpoint; v6.3 GUI block pauses and three-attempt errors)  
 **Scope:** PRIMARY Windows 11 26H2 GA / 26300.x; SECONDARY 26200.x solely historic/regression/Component Intelligence; shared 26100 servicing reference; future Germanium branches only after operator decision and lineage verification.  
 **Project:** BlueLite v1.0  
 **Team:** Operator + ChatGPT; locally approved execution by operator or by the authorized, scoped Remote Desktop Commander connector after operator GUI approval  
@@ -70,6 +70,20 @@ For **each meaningful multi-step new development cycle or locally executed evide
 5. Local connector command-list restrictions: operator permits a narrow temporary blocked-command exception **only when required for a specifically approved step**; capture original config, remove minimum necessary command, execute reviewed exact operation, restore complete original config and verify readback even when HOLD. Static source research does not itself require `reg` unblock. Connector file allowlist must remain explicitly scoped; command blocklist is not an OS sandbox.
 
 This checkpoint protocol supplements, and does not replace, Handoff §0R mandatory order and user GUI authorization gates.
+
+## 0E. v6.3.0 — OBAVEZNA GUI PAUZA PO BLOKU I PRAVILO TRI POKUŠAJA (2026-10-21)
+
+**Trajna dopuna koju je operator izričito odobrio.** Primenjuje se na sve radne, analitičke, dokumentacione, razvojne i izvršne poslove BlueLite, lokalno, na GitHub-u i na web-u, u svakoj narednoj sesiji. Dopunjuje §0C/§0D/§6/§30.1 i Handoff §0R; nijedna ranija obaveza, dozvola, zabrana, source/SHA/dependency gate ili zasebna autorizacija se ne ukida. Ako stariji tekst podrazumeva automatski prelazak na naredni blok, ovaj član ima prednost.
+
+1. **Pauza posle svakog logičkog bloka.** Blok je jedna nezavisna analiza/radnja ili prirodna grupa neposredno povezanih analiza/radnji sa jednim zajedničkim ciljem. Po stvarnom završetku rada, analizi rezultata i obaveznim dokumentacionim upisima i readback-u, zaustaviti rad. U ChatGPT GUI dati **vrlo kratak i koncizan izveštaj**: šta je urađeno, provereni rezultat PASS/HOLD/FAIL i najviše jedan predlog NEXT ili preostalu prepreku. Sačekati operatorovo odobrenje nastavka ili promenu fokusa/kursa. Ne izvršavati sledeći radni blok samo zato što je pripremljen. GUI ne mora sadržati ceo skript ili log.
+2. **Najviše tri pokušaja za isti problem.** Neuspešan upis, čitanje, preuzimanje, izvršenje, pristup, verifikacija ili druga greška sa bilo kojim lokalnim/GitHub fajlom, web linkom/serverom ili alatom dozvoljava **ukupno najviše tri stvarna pokušaja**, uključujući prvi neuspeh. Promena putanje, konektora, metode, komande ili sesije ne resetuje limit istog problema. Uzrok proveriti pre ponavljanja; bez slepog retry-a. Stati ranije ako je prepreka definitivna, sigurnosna, nedozvoljena ili naredni pokušaj nije bezbedan/odobren.
+3. **HOLD kada se problem ne reši.** Posle najviše tri neuspešna pokušaja (ili ranije kada je potrebna operatorova intervencija), pauzirati radni blok. U odgovarajući operativni dokument zabeležiti resurs i operaciju, grešku, broj pokušaja, poslednje provereno stanje, neizvršene posledice i tačno jedan predlog za operatora. Ako upis/readback upravo tog dokumenta nije dostupan, koristiti drugi raspoloživ autoritativni dokument ili dopušten lokalni zapis; ako nijedan upis nije moguć, eksplicitno reći da evidencija nije sačuvana. U GUI kratko objasniti šta nije uspelo, pa čekati operatorovu odluku. Zabranjeno zaobilaženje bezbednosnih ili konektorskih blokada alternativnim putem.
+4. **Jedini izuzetak od tačke 1** postoji samo kada operator eksplicitno napiše tačno **„Nastavi bez prekida“** za tekući posao. Tada uspešni povezani blokovi ne zahtevaju međupauzu, ali tačke 2–3, ograničenje od tri pokušaja, obavezni zapisi, sva zasebna GUI odobrenja za mrežne i mutacione radnje, WIM/CBS/registry/ISO, osiguranje izvora, rollback, §0R i §0D.4 ostaju bez izuzetka. Operator uvek može promeniti kurs.
+5. **Evidencija i redosled.** Current sadrži stvarni rezultat/blokadu i pokušaje; Handoff obaveze i fazni status GUI_PAUSE_AWAITING_OPERATOR ili ERROR_HOLD_AWAITING_OPERATOR; Session Entry je poslednji kratak pointer sa ONE NEXT. Obavezni §0R/§0D.4 upis i readback čine završetak istog bloka, ali **nisu** dozvola za izvršenje sledećeg. Kod izričite operatorske pauze ili spoljne nedostupnosti ne započinjati sopstvene mrežne probe i ne duplirati već postojeći operatorski monitor.
+
+**Trenutna pauza (status, ne odobrenje):** operator je prijavio UUP Dump HTTP 502 i sam prati raspoloživost; R001 26300.9711 dva get.php metadata GET-a ostaju PREPARED_NOT_AUTHORIZED do operatorove potvrde povratka servisa i zasebnog odobrenja.
+
+---
 
 ---
 
@@ -1565,6 +1579,8 @@ The success metric is not the count of scripts, phases or retrieved logs. It is 
 
 # 33. CHANGE HISTORY AND AUTHORITY
 
+**v6.3.0 — 2026-10-21, operator-approved protocol.** §0E requires a concise GUI report/operator decision after every completed logical work block; sets a hard total of three attempts per unresolved issue, with documented HOLD and GUI explanation; only explicit „Nastavi bez prekida“ waives routine successful-block pauses, never separate authorizations or error rules.
+
 **v6.0.0 — 2026-10-16, operator-approved 26300 FIRST strategic pivot.** Windows 11 26H2 GA / 26300.x is the sole active new production target; 26200.x is historical/regression and 26100.x common-servicing reference. Microsoft je zvanično potvrdio da Windows 11 26H2 (26300), 25H2 (26200) i 24H2 (26100) dele ZAJEDNIČKI CORE OS, ISTI SKUP OSNOVNIH SISTEMSKIH FAJLOVA i ISTU SERVICING BRANCH/FOUNDATION. KB5121794 je enablement package koji aktivira uspavane 26H2 funkcije na kompatibilnim 24H2/25H2 sistemima; KB5127648 od 13. oktobra 2026. servisira buildove 26300.9711, 26200.9711 i 26100.9711. Ovo je ČVRSTA MICROSOFT-OVA PLATFORMSKA ČINJENICA, ali NE dokazuje da su svi CBS/AppX/FoD owner grafovi, raspored komponenti ili rezultati uklanjanja identični na 26300. One new original 26300 UUP source/queue gate is next; no 26300 UUP has previously been acquired. A02 R132 exact duplicate deletion PASS, 8.329 GiB C: regained; no continued disk-cleanup project. All earlier Germanium 4-stage, immutable WIM, AppX, Defender, NTLite, VM and dependency/certification requirements remain effective.
 
 **v5.0.0 — 2026-10-15, operator-directed scope restriction.** Production, research backlog and acceptance are restricted to 26200.x/26300.x and later confirmed Germanium. The older line is retired; historic original logs and servicing identities are not falsified. All v4.0.0 disposable cleanup and evidence-first rules remain unchanged.
@@ -1595,4 +1611,4 @@ The success metric is not the count of scripts, phases or retrieved logs. It is 
 
 ---
 
-**End of BlueLite v1.0 — MASTER GERMANIUM STRATEGY v6.2.1**
+**End of BlueLite v1.0 — MASTER GERMANIUM STRATEGY v6.3.0**
