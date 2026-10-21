@@ -1,7 +1,7 @@
-# BlueLite v1.0 — MASTER GERMANIUM STRATEGY v6.2.0
+# BlueLite v1.0 — MASTER GERMANIUM STRATEGY v6.2.1
 
 **Status:** AUTHORITATIVE / UNIFIED PRODUCTION ARCHITECTURE — SUPERSEDES PREVIOUS MASTER REVISIONS  
-**Date:** 2026-10-16 · **Normative amendments:** 2026-10-21 (v6.1 connector/NTLite; v6.2 UUP/PRE_MAX history and draft-workspace lifecycle)  
+**Date:** 2026-10-16 · **Normative amendments:** 2026-10-21 (v6.1 connector/NTLite; v6.2 UUP/PRE_MAX history lifecycle; v6.2.1 two-phase Session Entry checkpoint)  
 **Scope:** PRIMARY Windows 11 26H2 GA / 26300.x; SECONDARY 26200.x solely historic/regression/Component Intelligence; shared 26100 servicing reference; future Germanium branches only after operator decision and lineage verification.  
 **Project:** BlueLite v1.0  
 **Team:** Operator + ChatGPT; locally approved execution by operator or by the authorized, scoped Remote Desktop Commander connector after operator GUI approval  
@@ -57,6 +57,19 @@
 - For the **current authorized v6.2.0 workspace/policy task**, the operator explicitly **forbids** even *read-only* `C:\work` UUP-related → `UUP-history` SHA reconciliation, because no deletion is planned. **Do not inventory/compare/sort/move/delete any legacy sibling folders/files under `C:\work`** in this task. No broad `C:\work` cleanup. This deferral is active until a later *separately scoped operator decision*.
 - Connector allowed paths and `blockedCommands` must not be widened for the UUP-history/PREMAX-work documentation/scaffold task. No image mount/unmount, OneDrive R14 execution, NTLite, VirtualBox or live-host debloat as a side effect. Operator states Total Commander/Explorer windows remain closed unless they explicitly notify otherwise; this supersedes repetitive mount-closure warnings, but not individual WIM mutation authorization or actual preflight/cleanup.
 - At completion of this setup, check local folder contents, manifest syntax and source hashes **only for the approved new workspace and already indexed UUP-history artifacts**, archive local/GitHub readback, update Current/Handoff, refresh compact Session Entry LAST, and **STOP for user review**.
+
+---
+
+### 0D.4 Two-phase atomic successor checkpoint (2026-10-21 operator decision)
+
+For **each meaningful multi-step new development cycle or locally executed evidence-producing task**, use [`BlueLite_Session_Entry.md`](BlueLite_Session_Entry.md) as a **small mutable current-state pointer**, **not append-only execution history**:
+1. **BEFORE any consequential local work**, compare-and-swap GitHub Session Entry from fresh blob SHA with `IN_PROGRESS`, exact task/cycle id and allowed source/target paths, operator permission and exclusions, current verified phase, any tool/security blockers, and **ONE NEXT**. Independently read back the committed contents. If write/readback fails, report the blocker before proceeding with potentially non-idempotent operations; do not invent completed steps.
+2. During long multi-stage work update this short checkpoint at material boundaries or before operations that cannot simply be re-executed. Do not flood the repo with a snapshot per trivial file read. Real side-effect receipt, script/hash, output and replay/rollback status are essential so the successor knows **what actually happened**, not just intent.
+3. **AFTER** the task or a fail-closed stop, update [Current Status](BlueLite_Current_Status.md) and the relevant Handoff §0R first/second transactions using **literal verified evidence** and exact source SHA/GitHub readback; update Registry only on a proven predicate change. **REPLACE** the short active `IN_PROGRESS` section in Session Entry with actual `PASS`/`HOLD`, receipts/sha, unresolved dependencies and **ONE NEXT**, updating it LAST. All older historical analysis stays in Current/Handoff/original evidence, never duplicated at length in Session Entry.
+4. **Successor recovery:** read full Master first, then the current active checkpoint, distinguish `PREPARED_NOT_RUN` / `RUNNING` / `EXECUTED_PASS` / `HOLD` with local immutable receipts, process/mount/owned state and original GitHub refs before continuing. An abandoned `IN_PROGRESS` never implies a run completed and never licenses an automatic rerun. No background/automatic future work implied.
+5. Local connector command-list restrictions: operator permits a narrow temporary blocked-command exception **only when required for a specifically approved step**; capture original config, remove minimum necessary command, execute reviewed exact operation, restore complete original config and verify readback even when HOLD. Static source research does not itself require `reg` unblock. Connector file allowlist must remain explicitly scoped; command blocklist is not an OS sandbox.
+
+This checkpoint protocol supplements, and does not replace, Handoff §0R mandatory order and user GUI authorization gates.
 
 ---
 
@@ -1582,4 +1595,4 @@ The success metric is not the count of scripts, phases or retrieved logs. It is 
 
 ---
 
-**End of BlueLite v1.0 — MASTER GERMANIUM STRATEGY v6.2.0**
+**End of BlueLite v1.0 — MASTER GERMANIUM STRATEGY v6.2.1**
