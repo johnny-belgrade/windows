@@ -10,6 +10,8 @@
 
 **No new WIM source pin measured in R13:** immutable `C:\work\26300.9807-UUP\install.wim` known R12 7021953581B SHA256 `0FB778D4696DABA17EDC52E6391A3F217982422FB920C98C8273E0C51A094B49`; retained `C:\BLR20R2F5\R20R2F6_exports\WebViewRemoved_26300_9807_MAX.wim` known R12 6407308664B SHA256 `F8F2FFF0A40508C88F8426B2923FEDCF9B00F3FFF3A5637A13C0EB0006E8BA7E`. R13 did NOT rehash those GB files; future authorized code must re-pin them. `MUTATION_AUTHORIZED=false`, no WIM clone/mount/DISM/REG/CBS write, no NTLite/VM/ISO/release.
 
+**Registry synchronized:** [production/intelligence/BlueLite_RecipeRegistry.json](production/intelligence/BlueLite_RecipeRegistry.json) revision `2026-10-21-r20r2f13-9807-onedrive-static-contract-10-negative-r38` commit `01241f1a9a3edf3040bbe7d6e5687cc02d30ca8f`, full independent readback PASS; `static_candidate_contract` added to source-bound `.9807` variant; 7/7 recipes continue `runtime_execution_allowed=false`. This is **STATIC recipe indexing**, not production execution permission.
+
 **ONE NEXT:** prepare and full-source-review an R20R2F14 disposable-only two-child-specific AMBER mutation script, with source pin, ownership/dependency/rollback, no parent or en-US direct editing, post-state/pending/CheckHealth/ScanHealth and owned cleanup; **operator's new explicit GUI authorization is required before running any mutation**. No R14 run yet. Master v6.1.0/Handoff §0S connector rules still apply.
 
 
