@@ -1,0 +1,57 @@
+{
+  "contract_id": "BL.ONEDRIVE.26300.9807.R20R2F13",
+  "contract_mode": "STATIC_ONLY_NO_IMAGE_OR_CBS_MUTATION",
+  "source_build": "26300.9807",
+  "source_candidate_path": "C:\\BLR20R2F5\\R20R2F6_exports\\WebViewRemoved_26300_9807_MAX.wim",
+  "source_candidate_size": 6407308664,
+  "source_candidate_sha256": "F8F2FFF0A40508C88F8426B2923FEDCF9B00F3FFF3A5637A13C0EB0006E8BA7E",
+  "source_original_path": "C:\\work\\26300.9807-UUP\\install.wim",
+  "source_original_sha256": "0FB778D4696DABA17EDC52E6391A3F217982422FB920C98C8273E0C51A094B49",
+  "mutation_authorized": false,
+  "reviewed_mutation_script_exists": false,
+  "only_future_direct_native_remove_candidate": "Microsoft-Windows-OneDrive-Setup-Package~31bf3856ad364e35~amd64~~10.0.26100.1",
+  "en_us_satellite": "Microsoft-Windows-OneDrive-Setup-Package~31bf3856ad364e35~amd64~en-US~10.0.26100.1",
+  "child_and_parent_expected": [
+    {
+      "Name": "NEUTRAL_STAGED",
+      "Identity": "Microsoft-Windows-OneDrive-Setup-Package~31bf3856ad364e35~amd64~~10.0.26100.1",
+      "State": 64,
+      "Visibility": 2,
+      "Owner": "Microsoft-Windows-Not-Supported-On-LTSB-Package~31bf3856ad364e35~amd64~~10.0.26100.1301",
+      "OwnerDWORD": 196672,
+      "ParentState": 64,
+      "ParentVisibility": 2
+    },
+    {
+      "Name": "EN_US_SATELLITE",
+      "Identity": "Microsoft-Windows-OneDrive-Setup-Package~31bf3856ad364e35~amd64~en-US~10.0.26100.1",
+      "State": 112,
+      "Visibility": 2,
+      "Owner": "Microsoft-Windows-Not-Supported-On-LTSB-Package~31bf3856ad364e35~amd64~en-US~10.0.26100.1",
+      "OwnerDWORD": 196720,
+      "ParentState": 112,
+      "ParentVisibility": 2
+    }
+  ],
+  "retained": [
+    "Microsoft-Windows-Not-Supported-On-LTSB-Package~31bf3856ad364e35~amd64~~10.0.26100.1301",
+    "Microsoft-Windows-Not-Supported-On-LTSB-Package~31bf3856ad364e35~amd64~en-US~10.0.26100.1",
+    "OneDriveBackup"
+  ],
+  "future_guard": [
+    "Separate operator GUI approval and full mutation-code review required",
+    "One NEW owned disposable clone under C:\\work\\E2E; original and WebViewRemoved source immutable",
+    "Before any CBS write: live source hashes, index=1, exact mount-owner and both parent/child states/owner cardinality",
+    "Only staged neutral child is proposed for visibility 2->1 and exact single Owners removal",
+    "Never directly modify en-US satellite, LTSB parent keys or OneDriveBackup",
+    "Native DISM /Remove-Package neutral only after hive unload and just the exact authorized target",
+    "All two original OneDrive package identities must become nonresolving; System32 OneDriveSetup absent, WinSxS OneDrive-Setup absent; OneDriveBackup retained",
+    "Pending=0, native CheckHealth/ScanHealth CLEAN, retained protected floor unchanged, no unknown delta",
+    "Unexpected state/exit/leftover/health => DISCARD new owned WIM, no source change",
+    "Do not claim predicted size saving before controlled clean export"
+  ],
+  "historical_s31_is_not_9807_certificate": true,
+  "positive_fixture_passed": true,
+  "negative_fixture_count": 10,
+  "next": "PREPARE_REVIEWED_DISPOSABLE_9807_SINGLE_STAGED_MUTATION_SCRIPT_THEN_REQUIRE_GUI_APPROVAL"
+}
