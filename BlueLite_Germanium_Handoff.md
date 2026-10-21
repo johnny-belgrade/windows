@@ -23,6 +23,16 @@
 
 ---
 
+### §0R SECOND — R001 metadata GET proposed, source prepared but NOT authorized/executed (2026-10-21)
+
+**One prepared future step, status `PREPARED_NOT_AUTHORIZED`, NOT `DELIVERED/EXECUTED PASS`:** after operator GUI consent, run **exactly one** local PS7 invocation of `C:\work\PREMAX-work\R001_Universal_PREMAX_UUP\03_Drafts\R001_D4_MetadataRenewal_SourceBound_DRAFT.ps1`, expected SHA256 `850E333DC6C1BB5670D445997C9D5C72BDAEA852311DD64928F73EF85209C22F`, params `-Mode FetchMetadata -Profile 9711 -OutputDirectory 'C:\work\PREMAX-work\R001_Universal_PREMAX_UUP\05_Evidence\R001_MetadataGET_9711_001' -Authorization I_APPROVE_R001_TWO_METADATA_GET_ONLY`. Exact output dir did not exist when checked (ENOENT); script must itself demand new owned dir. Before execution, recheck reviewed hash/AST, source ZIP/launcher pin, actual connector scope and previously acquired source queues. **Operator authorization is REQUIRED before even these two GETs.** No unauthorised tool call, aria2/payload, WIM, WinRE, 9807 baseline bootstrapping or download/converter. On actual execution, capture unredacted raw queues only in approved local folder, redact signed tokens from GUI/GitHub excerpts, record command exit, content identity 98/2798 or literal HOLD, preserve evidence if mismatch.
+
+**Pending 9807 dependency:** its independent original Windows+Apps queue/identity proof needs separate S11/S13 and source-based evidence; don't accept 9711 counts nor treat new active `get.php` as frozen reference without source provenance. Converter v127/v128m parity and boot-only WinRE remain separate unexecuted analyses. `06_Candidate` empty; Registry runtime false, release not certified.
+
+**GitHub FIRST evidence confirmation:** Current `290548f332078734dc8d890d29d94e27bccee758`, Handoff FIRST `3f4ae8cbba567483a8728512f5418ead4bfc6e99`, DRAFT `15632450a250c69897a13fee284a92bdabf86db7`, evidence `9c18a3561469f43c909f3dbc27df2e7ac5604f52`, each independently read back. Refresh mutable Session Entry LAST to terminal factual PASS/HOLD and precisely **ONE NEXT: seek operator approval of bounded 9711 two-metadata-GET step**. No authority is granted implicitly.
+
+---
+
 ## 2026-10-20 — ACTUAL R20R2F12 two-parent read-only PASS; session-continuity infrastructure discussion (§0R FIRST)
 
 **Original operator attachment verified as bytes:** `BlueLite_26300_9807_OneDriveParentOwner_R20R2F12.txt`, 3095 ASCII bytes, 43 CRLF rows, SHA256 `1B32F0F86E3C3909784169F1B44E0486EB3D42335641F3A822C599F6FC28475B`. This is a **new actual operator run**, superseding older F12 `DELIVERED_NOT_RUN` only for its exact source-bound read-only scope. Literal `RESULT=PASS_R20R2F12_TWO_ONEDRIVE_CBS_PARENTS_READONLY_ONLY` with explicit `MUTATION_AUTHORIZATION=NOT_GRANTED`. Original attachment retained in conversation; neither GitHub raw receipt archive nor Library upload is claimed.
