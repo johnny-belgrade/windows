@@ -12,6 +12,8 @@
 
 **Registry synchronized:** [production/intelligence/BlueLite_RecipeRegistry.json](production/intelligence/BlueLite_RecipeRegistry.json) revision `2026-10-21-r20r2f13-9807-onedrive-static-contract-10-negative-r38` commit `01241f1a9a3edf3040bbe7d6e5687cc02d30ca8f`, full independent readback PASS; `static_candidate_contract` added to source-bound `.9807` variant; 7/7 recipes continue `runtime_execution_allowed=false`. This is **STATIC recipe indexing**, not production execution permission.
 
+**Remote connector execution dependency:** current `blockedCommands` includes native `reg`, required by historical S31 for offline SOFTWARE load/child Owners/Visibility/unload. Do **not** smuggle blocked `reg.exe` through a PowerShell child invocation to bypass connector command policy. A future mutation needs operator-approved explicit tooling exception with re-block/readback after (or operator-run PS7 Admin fallback). Only preparation/static tests and direct read-only evidence are authorized now; **no new mutation authorization in this user message**.
+
 **ONE NEXT:** prepare and full-source-review an R20R2F14 disposable-only two-child-specific AMBER mutation script, with source pin, ownership/dependency/rollback, no parent or en-US direct editing, post-state/pending/CheckHealth/ScanHealth and owned cleanup; **operator's new explicit GUI authorization is required before running any mutation**. No R14 run yet. Master v6.1.0/Handoff §0S connector rules still apply.
 
 
