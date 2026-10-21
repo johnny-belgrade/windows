@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "registry_revision": "2026-10-20-r20r2f12-9807-two-parent-cbs-readonly-r37",
+  "registry_revision": "2026-10-21-r20r2f13-9807-onedrive-static-contract-10-negative-r38",
   "status": "S37_COMMITTED_CANDIDATE_INDEPENDENT_S38R3_POSTCOMMIT_PASS_NOT_RELEASED",
   "scope": "Germanium 26300-first; 26200 historical topology references",
   "recipe_schema": "../contracts/BlueLite_Recipe.schema.json",
@@ -1048,7 +1048,8 @@
           ],
           "evidence_refs": [
             "production/evidence/BlueLite_26300_9807_HighImpactNativePreflight_R20R2F3.json SHA256 62575ED0F012228D36D2E8CB86E9B196552F44298F40280AF24A01E13A3E547C",
-            "BlueLite_26300_9807_OneDriveParentOwner_R20R2F12.txt 3095 ASCII B/43 CRLF SHA256 1B32F0F86E3C3909784169F1B44E0486EB3D42335641F3A822C599F6FC28475B (operator attachment; no GitHub raw receipt archive)"
+            "BlueLite_26300_9807_OneDriveParentOwner_R20R2F12.txt 3095 ASCII B/43 CRLF SHA256 1B32F0F86E3C3909784169F1B44E0486EB3D42335641F3A822C599F6FC28475B (operator attachment; no GitHub raw receipt archive)",
+            "production/evidence/BlueLite_26300_9807_OneDriveContract_R20R2F13.txt local SHA256 1597A4000E008EB951FBA3CE33F81695F04345D5424FA9B7B091A2495C80B9D2; 10/10 negative fixtures + no image operation"
           ],
           "exact_selectors": [
             {
@@ -1067,7 +1068,35 @@
               "kind": "CBS_PACKAGE",
               "identity": "Microsoft-Windows-Not-Supported-On-LTSB-Package~31bf3856ad364e35~amd64~en-US~10.0.26100.1"
             }
-          ]
+          ],
+          "static_candidate_contract": {
+            "id": "R20R2F13",
+            "tier": "STATIC_SOURCE_BOUND_NEGATIVE_FIXTURE_PASS_NO_MUTATION",
+            "script_path": "production/targets/BlueLite.MaxPre.OneDrive26300.Contract.R20R2F13.ps1",
+            "script_sha256": "31D16BCD9BBE575AE68B451E2ECE2F15B1A7EF531943838819249BBC1722FBD9",
+            "local_receipt_sha256": "1597A4000E008EB951FBA3CE33F81695F04345D5424FA9B7B091A2495C80B9D2",
+            "local_json_sha256": "D684BB43016B76AF6A0F30E0F66A3BEA29E24CBCC02147243E9F3BD314A42C17",
+            "positive_fixture_count": 1,
+            "negative_fixture_count": 10,
+            "source_receipts_pinned": [
+              "R20R2F10",
+              "R20R2F11",
+              "R20R2F11R1",
+              "R20R2F12",
+              "26300.9711 S31 historical"
+            ],
+            "actual_wim_mutation_tested": false,
+            "authorization_to_remove": false,
+            "stage": "PREPARED_STATIC_CONTRACT_ONLY",
+            "one_future_native_remove_candidate": "Microsoft-Windows-OneDrive-Setup-Package~31bf3856ad364e35~amd64~~10.0.26100.1",
+            "forbidden_direct_mutation": [
+              "en-US satellite",
+              "neutral LTSB parent",
+              "en-US LTSB parent",
+              "OneDriveBackup"
+            ],
+            "next": "R20R2F14 full mutation script source review and separate operator GUI authorization before execution"
+          }
         }
       ],
       "protected_floor": [
