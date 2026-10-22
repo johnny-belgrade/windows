@@ -25,6 +25,14 @@
 
 **ONE NEXT:** prepare a declarative, zero-execution **exact expected-gate QA specification** for a future independently approved test, not a changed invocation route around the denied script and not permission to fetch live .9807 metadata. GUI PAUSE after SECOND Handoff and Session Entry LAST readbacks.
 
+### §0R SECOND — R002R9 one next source specification (2026-10-22)
+
+**FIRST independent transactions:** [Current](BlueLite_Current_Status.md) `6e33140463b80e602567ddcba4a6014a0cbf71c8` blob `559a2d81d9f8fc9a28d31195fd81c32e364e9793`, exact; Handoff FIRST `d87e18e091da6d2226358f24ee15e08a25d2587a` blob `00740bbf2ff5d67ecf461080de116811feda6671`, exact. Audit `development/PREMAX/R002/02_Analysis/R002R9_NegativeSuite_SourceAudit_20261022.md` blob `efe1f00d3ec4cf8646a66d463fd44585159ce152`; R002 CycleManifest r9 blob `f0434c1d37bce36bb1a142bf1bd5dc08e94ce9da`, both exact readbacks. No new script process attempted or blocked in this block.
+
+**ONE NEXT design = `R002R10_EXACT_GATE_NEGATIVE_ASSERTION_SPEC_REVIEW`, `PROPOSED_NOT_AUTHORIZED`: build a **declarative review-only expected outcome matrix**, keeping original R002R6 denied script SHA fixed as historical evidence, one predicted D4 gate per six negative inputs, one predicted invalid-auth gate; pin source and expected messages, distinguish diagnostic design from native execution, and explicitly refuse generic exception-as-PASS. If an independently authorized new QA artifact is developed later, it still needs its own reviewed script/source/approval and must not act as a different invocation of the denied step. Future .9807 metadata GET requires a separately valid source/negative gate. None of these R002R10 actions were executed or delivered now. §0E GUI_PAUSE then successor reads Session Entry LAST.
+
+---
+
 ## 0AG. 2026-10-22 — R002-R8 RDC RECONNECT / DISTINCT NONMUTATING PS7 EXECUTION VERIFIED (§0R FIRST)
 
 **Operator request:** after reconnect of Remote Desktop Commander, continue under plan; if **new** scripts fail, provide exact English OpenAI Support text including error. The previously platform-denied R002R6 negative suite must not be routed through a substitute invocation to defeat its denial. Master v6.3 §0E GUI pause and scoped original source/target limits remain binding.
