@@ -2,6 +2,14 @@
 
 **Mandatory current reading:** full [Master v6.3.0](BlueLite-Master_Germanium_Strategy_final.md), compact Session Entry, top [Current Status](BlueLite_Current_Status.md), governing [Handoff](BlueLite_Germanium_Handoff.md) §0R/0AC/0AA and pertinent history, [Sources](BlueLite_Sources.md), [RecipeRegistry](production/intelligence/BlueLite_RecipeRegistry.json) r38, Contracts, independent Library and local UUP-history/PREMAX-work 00_READMEs and RH06/RH07/RH08 whenever working on UUP/PREMAX. Operator goals, exact source/sha/native receipt and already authorized scope control; do not promote static PASS to runtime PASS.
 
+## ACTIVE R002R5 — IN_PROGRESS_9807_ORIGINAL_SOURCE_QUEUE_BASELINE_STATIC_REVIEW — 2026-10-22
+
+**Permission:** operator requested continuation of the latest Session Entry; ONE bounded read-only/source-static verification block. **No explicit approval** for external UUP get.php GET, stock converter archive/payload download, converter launch, image/ISO export or mutation, mount, registry, cleanup, or next block. Master v6.3 §0E GUI pause remains mandatory.
+
+**Exact investigation:** corroborate the original 26300.9807 frozen source/ZIP/launcher/UUID Windows+Apps queue provenance against available read-only evidence under `C:\work\UUP_Source\26300.9807_687d1ced`, `C:\work\26300.9807-UUP` and existing `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package`; inspect mandatory local `C:\work\UUP-history\00_README.md`, `C:\work\PREMAX-work\00_README.md` and targeted RH06/RH07/RH08 indices, never alter original/history. Last proved R002R4 static audit/11 negatives PASS; current target original 9807 queue identity HOLD. Connector live online `DESKTOP-4J4KCEA`, approved roots `C:\work`, `C:\BLR20R2F5`, 33 blocked commands unchanged incl `reg`. **No runtime certified.**
+
+**ONE NEXT:** perform bounded source-only readback for independent pre-renewal 9807 queue ledger and original ZIP; if not present, record explicit provenance HOLD with a single scoped operator decision. Before local work this checkpoint must be GitHub-exact read back.
+
 ## ACTIVE R002 — 2026-10-22 — R002-R4 ORIGINAL STOCK CONVERTER V128M PRE-ISO HANDOFF SOURCE PROVEN / RUNTIME HOLD / GUI PAUSE
 
 **Operator authorization:** continue project plan and stock original vendor converter pre-final-ISO handoff source audit, no changed Stage1/MAX_PRE target or exact phrase „Nastavi bez prekida“. GitHub PREWORK `IN_PROGRESS_R002R4_STOCK_CONVERTER_PREISO_HANDOFF_STATIC` commit `b75968c0d61e31c8d9224b468776c4472d6bec93` exact readback PASS before R002R4 source writes. RDC `DESKTOP-4J4KCEA` online, only `C:\work` and `C:\BLR20R2F5` approved; reg blocker unchanged. Mandatory Master/Current/Handoff/Library, UUP-history & PREMAX 00_README RH06/07/08, R002 manifest source contracts inspected.
