@@ -1,0 +1,18 @@
+# INTENT ONLY — NOT A COPY-READY ConvertConfig.ini / NOT APPLIED.
+# Requires exact locally frozen v127/v128m converter source audit, operator review.
+[convert-UUP]
+AutoStart=0
+AddUpdates=1
+Cleanup=0
+ResetBase=0
+NetFx3=0
+SkipISO=0
+SkipWinRE=0
+SkipApps=0
+SkipEdge=0
+[Store_Apps]
+StubAppsFull=1
+CustomList=1
+# Generated CustomAppsList must be based on converter-native syntax and
+# the actual current manifest closure, not an invented list of five names.
+# Exact original ZIP and its original ConvertConfig.ini never modified here.
