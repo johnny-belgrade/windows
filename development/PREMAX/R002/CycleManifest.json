@@ -2,7 +2,7 @@
   "schema": "BlueLite.PREMAX.CycleManifest.v1",
   "cycle_id": "R002_Universal_Stage1_MAXPRE_Package",
   "created_date": "2026-10-22",
-  "status": "R002R4_STOCK_UPSTREAM_V128M_SOURCE_PREISO_BOUNDARY_AST_11_NEGATIVES_PASS_ORIGINAL_9711_V126_CROSS_VERSION_HOLD_NO_RUNTIME",
+  "status": "R002R5_9807_ORIGINAL_ZIP_SOURCE_PROVEN_QUEUE_BASELINE_HOLD_R002R4_STATIC_PASS_NO_RUNTIME",
   "source_build": "Germanium 26300.x universal target; 26300.9711 pinned fixture; 26300.9807 baseline HOLD",
   "source_index": null,
   "source_sha256": "D3E7162605A61D8A0FD62E1738DE523B52B36059D6AAC8F756F90AEFCB64C4A2",
@@ -177,6 +177,24 @@
     "converter_or_wim_mutation": false,
     "runtime_execution_allowed": false
   },
+  "r5_9807_original_queue_baseline_review": {
+    "authorized_scope": "2026-10-22_OPERATOR_CONTINUATION_SOURCE_ONLY_READONLY_NO_NEW_NETWORK",
+    "zip_sha256": "83203A6E79E62579A7D64204120BCECC111FE114C614AB1DBFAE032BB02DE7B7",
+    "uuid": "687d1ced-aab1-4cd5-ad05-705189769731",
+    "zip_bytes": 8218,
+    "zip_members": 11,
+    "launcher_sha_matches_contract": true,
+    "frozen_original_windows_queue_sha256": null,
+    "frozen_original_apps_queue_sha256": null,
+    "history_rh06_rows": 2416,
+    "history_rh08_rows": 549,
+    "receipt": "05_Evidence/R002R5_9807_SourceQueueBaseline_Review_20261022.txt",
+    "receipt_sha256": "C13C4516E70BE3A6F8E55EC2948121235142B228F0F30266E9BC7887005213C7",
+    "outcome": "SOURCE_STATIC_REVIEW_PASS_PRE_RENEWAL_9807_QUEUE_BASELINE_HOLD",
+    "new_getphp_authorized": false,
+    "converter_wim_iso_runtime": false,
+    "runtime_execution_allowed": false
+  },
   "candidate": {
     "relative_path": null,
     "sha256": null,
@@ -189,5 +207,5 @@
     "receipt": "05_Evidence/R002_Static_Draft_Receipt_20261022.txt",
     "note": "No new network or UUP payload, aria2, converter, WIM, registry, NTLite, VM or ISO runtime"
   },
-  "one_next": "OPERATOR_GUI_REVIEW_ORIGINAL_V128M_SOURCE_PREISO_HANDOFF_AND_SEPARATELY_AUTHORIZE_VENDOR_ARCHIVE_OR_26300_BUILD_COMPAT_GATE; ANNOUNCE_CPU_TEMP_CWORK_PATH_BEFORE_HEAVY_DOWNLOAD_CONVERSION_WIM_EXPORT"
+  "one_next": "OPERATOR_GUI_EXPLICITLY_AUTHORIZE_TWO_BOUNDED_26300_9807_GETPHP_METADATA_GETS_FOR_NEW_QUEUE_BASELINE_NOT_HISTORICAL_ORIGINAL; NO_LARGE_PAYLOAD_OR_CONVERTER_OR_WIM"
 }
