@@ -24,6 +24,14 @@
 **ONE NEXT proposed:** `R002R16_NEW_VERSIONED_INSTRUMENTED_FULL_EXACT_V2_PROBE_AND_IN_MEMORY_STREAM_CANCEL_QA` as separate source-reviewed, bounded native QA under R002 worktree; compare actual *complete* URI Query/VerifyUrl and test cancellation with local synthetic stream only, preserve v2 draft and all frozen source. Full independent v2 metadata HTTP Fetch needs later scoped gate/review. §0R Handoff SECOND, Session LAST, Master §0E GUI_PAUSE.
 
 
+### §0R SECOND — R002-R15 local preflight native PASS, v2 direct Probe HOLD, one next bounded R16 design (2026-10-22)
+
+**FIRST authoritative readbacks:** Current `fe59a5ce4090a19824ea6f1fa013603ef36da6b1`, blob `3bfba62efc6a2a062ac30f658e6f792ad63a9e19`, exact; Handoff FIRST `0deb94f72d5cff3788c06a4257dc02abfec2b05e`, blob `c67f317c3afcbe41724412f485aa4ee660e13735`, exact. R15 native staged original receipt has independent local 18-line PASS and GitHub blob `44910000ffb3703b65845b6276dd2f512783c158`, 74ms, no network. Old R14 v2 original no-output remains HOLD and is **not** proof of a network failure. Master/Registry/RDC command scope remain unchanged.
+
+**Sole next action = `R002R16_NEW_VERSIONED_INSTRUMENTED_FULL_EXACT_V2_PROBE_AND_IN_MEMORY_STREAM_CANCEL_QA=PROPOSED_NOT_AUTHORIZED`:** review new separate versioned non-destructive code that instruments **the exact existing v2 source preflight** (all Uri.Query/VerifyUrl predicates, case and four source SHA/contract), plus independently synthetic in-memory cancellation/read timeout; write new owned small native receipt, zero external GET. Do **not** rerun the previously stuck v2 file or silently authorize `-Mode Fetch`; user decision required before the R16 block. Full GET/bulk download and heavy image operations are outside this immediate NEXT. If the separate corrected candidate later passes, metadata transport requires its own explicit, scoped GUI approval / verification. **Finalize Session Entry LAST and GUI_PAUSE_AWAITING_OPERATOR.**
+
+---
+
 ## 0AN. 2026-10-22 — R002-R14 NATIVE EXACT NEGATIVE 7/7 PASS AND VERSIONED STREAM-READER PROBE ERROR_HOLD (§0R FIRST)
 
 **Operator direction and prework:** continue max-effort along reenabled ordinary RDC PS7 workflow, not a generic platform bypass. Only one logical development block before Master §0E GUI pause (user did not write exact "Nastavi bez prekida"). Master v6.3.0 / Session R14A / Current / Handoff §0AM/0AL/§0R/§0S, GitHub Sources/Contracts/Registry r38, actual R002R6 source/D4 code, local history/PREMAX README, R002R10 seven-case exact spec and R13 body timeout finding reviewed. §0D.4 Session IN_PROGRESS prework commit `0e9669fb0d71c0624a38f1f352413691fa9c3d48`, blob `c24f5d2f83f56fa0f457ab95179b14c79fc102a3`, independently verified before local new files. RDC `DESKTOP-4J4KCEA` v0.3.1, authorized two roots only, all 33 original command blocks incl reg; no setting changes.
