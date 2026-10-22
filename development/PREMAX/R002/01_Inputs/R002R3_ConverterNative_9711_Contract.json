@@ -1,0 +1,53 @@
+{
+  "schema": "BlueLite.R002R3.ConverterNativeTemplateContract.v1",
+  "mode": "STATIC_ONLY_NO_VENDOR_BINARY_EXECUTION",
+  "source_build": "26300.9711",
+  "source_zip_sha256": "D3E7162605A61D8A0FD62E1738DE523B52B36059D6AAC8F756F90AEFCB64C4A2",
+  "original_zip_fixture": "C:\\work\\PREMAX-work\\R002_Universal_Stage1_MAXPRE_Package\\04_StaticTests\\R002R2_Fixture_001",
+  "original_config_sha256": "F7DB3FA739F2AC7B121C915BE6B8439201EF4E2828A57552B51A9306F19AD03E",
+  "original_app_list_sha256": "1F2FBC910A0F016EAD61D1FEEF41D1E7B75E234753572AE37C83D0DAE955CC94",
+  "original_converter_metadata_sha256": "E3BF5F4FF7F333E13D96A0F2871B4526AB0A56AEA4CDEEE68C2A5A005B4FA891",
+  "converter_declared": "uup-converter-wimlib-v126.7z",
+  "converter_declared_sha256": "1448F7E33353FA63D558333C4B6DDB8B41B992A7911F19D3B72BA3246CF349BC",
+  "settings_pinned_expected": {
+    "convert-UUP": {
+      "AutoStart": "1",
+      "AddUpdates": "1",
+      "Cleanup": "1",
+      "ResetBase": "0",
+      "NetFx3": "0",
+      "SkipISO": "0",
+      "SkipWinRE": "0"
+    },
+    "Store_Apps": {
+      "SkipApps": "0",
+      "StubAppsFull": "0",
+      "CustomList": "0"
+    }
+  },
+  "settings_only_changes": {
+    "convert-UUP": {
+      "AutoStart": "0"
+    },
+    "Store_Apps": {
+      "StubAppsFull": "1",
+      "CustomList": "1"
+    }
+  },
+  "required_staging_families": [
+    "Microsoft.SecHealthUI_8wekyb3d8bbwe",
+    "Microsoft.DesktopAppInstaller_8wekyb3d8bbwe",
+    "Microsoft.WindowsCalculator_8wekyb3d8bbwe",
+    "Microsoft.WindowsNotepad_8wekyb3d8bbwe",
+    "Microsoft.Windows.Photos_8wekyb3d8bbwe"
+  ],
+  "forbidden_active_non_staging": [
+    "Microsoft.WindowsStore_8wekyb3d8bbwe",
+    "Microsoft.StorePurchaseApp_8wekyb3d8bbwe"
+  ],
+  "source_g4_staging_count": 32,
+  "source_g4_semantic_sha256": "32486F7757C96A21053AE49B568A17F9BB2E5BA973700D0A0F8B9327D45D9F9D",
+  "source_g4_proof": "R002R2_Fixture_001;2026-10-22 D4 32/32;S06 prior native log zero unresolved dependencies",
+  "runtime_allowed": false,
+  "future_converter_update_policy": "ASSESS_ORIGINAL_UPSTREAM_NEW_VERSIONS_LATER_AT_CONVERTER_INTEGRATION_GATE;VERIFY_LICENSED_SOURCE_CHECKSUM_TOOLCHAIN_COMPATIBILITY_BOTH_POSITIVE_AND_NEGATIVE_FIXTURES;NO_AUTO_UPGRADE"
+}
