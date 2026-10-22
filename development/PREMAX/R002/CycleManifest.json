@@ -2,7 +2,7 @@
   "schema": "BlueLite.PREMAX.CycleManifest.v1",
   "cycle_id": "R002_Universal_Stage1_MAXPRE_Package",
   "created_date": "2026-10-22",
-  "status": "R002R3_ORIGINAL_V126_TEMPLATE_NATIVE_CONFIG_FIVE_STAGING_FAMILIES_9_NEGATIVES_STATIC_PASS_NO_CONVERTER_RUNTIME",
+  "status": "R002R4_STOCK_UPSTREAM_V128M_SOURCE_PREISO_BOUNDARY_AST_11_NEGATIVES_PASS_ORIGINAL_9711_V126_CROSS_VERSION_HOLD_NO_RUNTIME",
   "source_build": "Germanium 26300.x universal target; 26300.9711 pinned fixture; 26300.9807 baseline HOLD",
   "source_index": null,
   "source_sha256": "D3E7162605A61D8A0FD62E1738DE523B52B36059D6AAC8F756F90AEFCB64C4A2",
@@ -144,6 +144,39 @@
     "converter_or_wim_mutation": false,
     "runtime_execution_allowed": false
   },
+  "r4_stock_vendor_preiso": {
+    "operator_approval": "2026-10-22_STATIC_STOCK_VENDOR_SOURCE_PREISO_HANDOFF_ONLY",
+    "upstream_author": "abbodi1406/BatUtil",
+    "upstream_convert_uup_blob": "262A6E6B0AD2016D1345927BDC334898F71B49F2",
+    "upstream_readme_blob": "58AEEE6F7A1EBA3FBEB1675E9CD7BA65251FDBD1",
+    "local_upstream_source": "01_Inputs/R002R4_UPSTREAM_convert-UUP_v128m_SOURCE_ONLY.txt",
+    "upstream_source_sha256": "DA557A5EF7541C2E472B09FB171F6A9C823A25CA6A73212541A348ECDCE36A6B",
+    "local_upstream_readme": "01_Inputs/R002R4_UPSTREAM_ReadMe_v128m_REFERENCE.html.txt",
+    "upstream_readme_sha256": "58509368E0E508876998DCAB141EFFA0579C98F6F704BFF4B14A9E43D36AA750",
+    "upstream_current_converter_script_version": "v128m",
+    "uupdump_misc_declared_archive_sha256": "1597F39D614529843DCADF630ED6DD4543C955EA703B6B0D1FDBE65AA078A5F1",
+    "original_26300_9711_converter_metadata_version": "v126",
+    "cross_version_actual_compatibility": "HOLD_NOT_EXECUTED",
+    "contract": "01_Inputs/R002R4_StockConverterPreISO_Contract.json",
+    "contract_sha256": "BEAD96EFAF2400D9FF5587C0F37C08FD29F8912BE467C9F85A7599B7C84221FC",
+    "audit_draft": "03_Drafts/R002R4_StockConverter_PreISO_BoundaryAudit_DRAFT.ps1",
+    "audit_sha256": "CD8BDC0A8D26C6A1F24962D56EB3431A5FFA70A050440D3CD06D810E1EAEAE65",
+    "test": "04_StaticTests/R002R4_StockConverter_Boundary_NativeStaticNegatives.ps1",
+    "test_sha256": "7F7727129312D7D0BE28BCE534183D809941EC753C4759961F57B46F353BA1C4",
+    "ast_command_count": 59,
+    "source_boundary_result": "PASS_AUTOSTART1_ISO_FULL_LAYOUT_SKIPISO1_EXIT_BEFORE_CDIMAGE",
+    "negative_fixtures": "11_OF_11_PASS",
+    "source_audit_attempts": 3,
+    "source_audit_first_two_expected_development_corrections": "menu_order_and_skipiso_internal_order",
+    "source_only_zip": "05_Evidence/R002R4_BlueLite_SourceOnly_20261022.zip",
+    "source_only_zip_bytes": 12149,
+    "source_only_zip_sha256": "4C90D6EF1A7F8EC3D4BE18ED1BBB3C8D930C0DAE0338CF4CA00A0A53BA379FF1",
+    "receipt": "05_Evidence/R002R4_StockVendor_PreISO_Static_Receipt_20261022.txt",
+    "upstream_original_full_source_redistributed_on_project_github": false,
+    "network_uup_payload_or_vendor_archive_downloaded": false,
+    "converter_or_wim_mutation": false,
+    "runtime_execution_allowed": false
+  },
   "candidate": {
     "relative_path": null,
     "sha256": null,
@@ -156,5 +189,5 @@
     "receipt": "05_Evidence/R002_Static_Draft_Receipt_20261022.txt",
     "note": "No new network or UUP payload, aria2, converter, WIM, registry, NTLite, VM or ISO runtime"
   },
-  "one_next": "OPERATOR_GUI_DECISION_ON_NEXT_ORIGINAL_UPSTREAM_CONVERTER_SOURCE_COMPARISON_AND_VERSION_CAPABILITY_STATIC_GATE; HEAVY_NETWORK_CONVERSION_WIM_REQUIRES_CPU_NOTICE_AND_SEPARATE_AUTHORIZATION"
+  "one_next": "OPERATOR_GUI_REVIEW_ORIGINAL_V128M_SOURCE_PREISO_HANDOFF_AND_SEPARATELY_AUTHORIZE_VENDOR_ARCHIVE_OR_26300_BUILD_COMPAT_GATE; ANNOUNCE_CPU_TEMP_CWORK_PATH_BEFORE_HEAVY_DOWNLOAD_CONVERSION_WIM_EXPORT"
 }
