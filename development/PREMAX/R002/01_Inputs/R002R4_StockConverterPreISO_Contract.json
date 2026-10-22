@@ -1,0 +1,67 @@
+{
+  "schema": "BlueLite.R002R4.StockConverterPreISOContract.v1",
+  "intent": "SOURCE_ONLY_REVIEW_NO_RUNTIME",
+  "upstream": {
+    "repository": "abbodi1406/BatUtil",
+    "branch": "master",
+    "source_path": "uup-converter-wimlib/convert-UUP.cmd",
+    "github_blob_sha": "262a6e6b0ad2016d1345927bdc334898f71b49f2",
+    "local_snapshot": "C:\\work\\PREMAX-work\\R002_Universal_Stage1_MAXPRE_Package\\01_Inputs\\R002R4_UPSTREAM_convert-UUP_v128m_SOURCE_ONLY.txt",
+    "local_snapshot_sha256": "DA557A5EF7541C2E472B09FB171F6A9C823A25CA6A73212541A348ECDCE36A6B",
+    "version": "v128m",
+    "readme_github_blob_sha": "58aeee6f7a1eba3fbeb1675e9cd7ba65251fdbd1",
+    "readme_local_sha256": "58509368E0E508876998DCAB141EFFA0579C98F6F704BFF4B14A9E43D36AA750",
+    "uupdump_misc_converter_windows_version": "v128m",
+    "uupdump_misc_declared_archive_sha256": "1597F39D614529843DCADF630ED6DD4543C955EA703B6B0D1FDBE65AA078A5F1",
+    "actual_vendor_archive_downloaded": false,
+    "actual_vendor_binary_verified": false
+  },
+  "frozen_original_source": {
+    "build": "26300.9711",
+    "zip": "C:\\work\\26300.9711-UUP\\26300.9711_amd64_en-us_professional_2b22470a_convert.zip",
+    "zip_sha256": "D3E7162605A61D8A0FD62E1738DE523B52B36059D6AAC8F756F90AEFCB64C4A2",
+    "upstream_declared_converter": "v126",
+    "upstream_declared_archive_sha256": "1448F7E33353FA63D558333C4B6DDB8B41B992A7911F19D3B72BA3246CF349BC",
+    "cross_version_compatibility_certified": false
+  },
+  "intended_vendor_options": {
+    "AutoStart": "1",
+    "SkipISO": "1",
+    "SkipWinRE": "0",
+    "StartVirtual": "0",
+    "wim2esd": "0",
+    "wim2swm": "0",
+    "SkipApps": "0",
+    "NetFx3": "0",
+    "ResetBase": "0"
+  },
+  "handoff": {
+    "source_output_mode": "ISO_FULL_LAYOUT_WITH_INSTALL_WIM_NO_FINAL_ISO",
+    "pre_iso_layout_expected": true,
+    "install_wim_expected": true,
+    "boot_wim_expected": true,
+    "output_directory": "C:\\work\\PREMAX-work\\R002_Universal_Stage1_MAXPRE_Package\\FUTURE_APPROVED_RUNTIME_PLACEHOLDER_NOT_CREATED",
+    "immutable_source_wim_required": true,
+    "distinct_mutable_working_wim_required": true,
+    "stage1_maxpre_offline_target_only": true,
+    "final_iso_separate_verified_step": true,
+    "media_directory_name_resolved_from_native_receipt_not_assumed": true
+  },
+  "safety": {
+    "runtime_authorized": false,
+    "converter_runtime_executed": false,
+    "network_payload_allowed": false,
+    "wim_mutation_allowed": false,
+    "iso_export_allowed": false,
+    "notice_heavy_cpu_before_action": true,
+    "all_large_output_cwork": true,
+    "source_disposable_cleanup_only_after_ownership_evidence_and_separate_approval": true
+  },
+  "unresolved": [
+    "v128m has not been archive-byte verified against UUP Dump misc SHA",
+    "9711 original archive declares v126; cross-version runtime compatibility not proven",
+    "26300.9807 original Windows/Apps frozen queue baseline HOLD",
+    "native full reconstruction/WinRE/boot.wim and post-stage health checks not executed",
+    "final ISO builder source and performance not vetted"
+  ]
+}
