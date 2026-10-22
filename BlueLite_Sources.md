@@ -1,5 +1,11 @@
 # BlueLite Project Sources
 
+## Integrated source-bound Probe — R002R21 native evidence (2026-10-22)
+
+- [Original native trace](development/PREMAX/R002/05_Evidence/R002R21_Native_PreflightStages.txt), commit `909f452fb6da8d19474b6276ac0cd47e74c2f50d`, 664 bytes, SHA256 `3F4463567AF509F863ABDBFD958BB2BDF44D859C5F18BFC1D5DA0C2930F882D8`; exact native/Git bytes verified.
+- [Analysis and checkpoint](development/PREMAX/R002/02_Analysis/R002R21_Probe_ResultAndCheckpoint_20261022.md): corrected v4 completed through ordinary -File, native exit 0, all source/hash/contract/URI guards passed by 84ms, HTTP_GET_REQUESTS=0. Independent source/process/output/config checks passed.
+- This extends R20's controlled synthetic mechanism proof to the current integrated **Probe**. Historical terminated-process handles and actual HTTP/queue/MAX_PRE outcomes are outside that proof.
+
 ## Installed PowerShell input/EOF reproduction — R002R20 native evidence (2026-10-22)
 
 - [Original native receipt, byte-exact mirror](development/PREMAX/R002/05_Evidence/R002R20_InputEof_NativeReceipt.json): commit `0095bcd80259f67c532c66657aace18c521cb274`, SHA256 `D6D7FD2E139DF3D007C9F6EBB1E5A5382257F957CDA26C11309321E6A6178F69`, 1933 bytes, exact Git/native hash reconciliation.
