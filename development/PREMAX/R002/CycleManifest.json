@@ -2,7 +2,7 @@
   "schema": "BlueLite.PREMAX.CycleManifest.v1",
   "cycle_id": "R002_Universal_Stage1_MAXPRE_Package",
   "created_date": "2026-10-22",
-  "status": "R002R9_SOURCE_REVIEW_PASS_EXPECTED_GATE_ASSERTION_GAP_NEGATIVE_RUNTIME_HOLD",
+  "status": "R002R10_DECLARATIVE_SEVEN_EXACT_GATES_PASS_NO_NATIVE_TEST_NEGATIVE_HOLD",
   "source_build": "Germanium 26300.x universal target; 26300.9711 pinned fixture; 26300.9807 baseline HOLD",
   "source_index": null,
   "source_sha256": "D3E7162605A61D8A0FD62E1738DE523B52B36059D6AAC8F756F90AEFCB64C4A2",
@@ -227,7 +227,7 @@
     "receipt": "05_Evidence/R002_Static_Draft_Receipt_20261022.txt",
     "note": "No new network or UUP payload, aria2, converter, WIM, registry, NTLite, VM or ISO runtime"
   },
-  "one_next": "R002R10_EXACT_GATE_NEGATIVE_ASSERTION_SPEC_REVIEW_PROPOSED_NOT_AUTHORIZED; NO_DENIED_SCRIPT_RERUN_OR_GET",
+  "one_next": "R002R11_OPERATOR_REVIEW_ALLOWED_NATIVE_STRICT_GATE_TEST_SEPARATE_APPROVAL;NO_BLOCKED_SCRIPT_BYPASS_NO_GET",
   "r9_negative_source_audit": {
     "status": "PASS_SOURCE_ONLY_EXPECTED_GATE_ASSERTION_GAP_NEGATIVE_RUNTIME_HOLD",
     "script_source": "04_StaticTests/R002R6_Metadata_SourceAndQueue_Negatives.ps1",
@@ -251,6 +251,29 @@
     "new_platform_denials": 0,
     "analysis": "02_Analysis/R002R9_NegativeSuite_SourceAudit_20261022.md",
     "analysis_git_blob": "efe1f00d3ec4cf8646a66d463fd44585159ce152",
+    "runtime_execution_allowed": false
+  },
+  "r10_exact_gate_spec": {
+    "status": "PASS_DECLARATIVE_JSON_7_EXPECTED_GATES_NOT_EXECUTED",
+    "relative_path": "02_Analysis/R002R10_ExactGate_NegativeSpec_20261022.json",
+    "git_blob": "9b8a7b52823160b6eb34c4dec4c3e6061ef46a7b",
+    "gate_cases": 7,
+    "expected_gates": [
+      "QUEUE_EMPTY",
+      "QUEUE_LAST_RECORD_INCOMPLETE",
+      "QUEUE_UNSAFE_OUT",
+      "QUEUE_UNSUPPORTED_CHECKSUM",
+      "QUEUE_DUPLICATE_OUT",
+      "UUPDUMP_QUEUE_ERROR",
+      "EXPLICIT_GUI_APPROVAL_REQUIRED"
+    ],
+    "source_reviewed": "R002R9_LOCAL_GITHUB_MATCH",
+    "only_declarative": true,
+    "local_json_validation": "PASS",
+    "github_mirror_readback": "PASS",
+    "r002r6_denied_script_executed": false,
+    "network_get_attempts": 0,
+    "actual_7_negative_results": "NOT_TESTED",
     "runtime_execution_allowed": false
   }
 }
