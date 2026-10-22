@@ -1,5 +1,15 @@
 # BlueLite v1.0 — Current Status
 
+## 2026-10-22 — R002-R20 APPROVED / PREPARED_NOT_RUN — SYNTHETIC INPUT/EOF DIAGNOSTIC PREWORK
+
+After the reported platform interruption, the operator explicitly requested analysis and plan records before execution, execution of this planned block, verified result/successor checkpoint, then GUI report and pause. R19 source review below is the technical basis; no original runtime cause is yet certified.
+
+**Pinned complete source:** [R002R20_InputEof_Diagnostic_v1.ps1](development/PREMAX/R002/04_StaticTests/R002R20_InputEof_Diagnostic_v1.ps1), SHA256 DEED0863D04FFEE56286A79695C7A899D68C3562F244075D560D114FBF122D27, source commit 6277365eabbfb0d490ff347cf0bf223379d45f5c / blob f3e9a39eeecea4ac65bab749595a2bba319745f0, exact readback. [Execution plan](development/PREMAX/R002/02_Analysis/R002R20_ExecutionPlan_20261022.md), commit c2ac3e0b63a5a7f7bd5f2fd5858a8ff129fda09f, exact readback. New source and both R002R20_InputEof_001 folders absent in actual local listings. RDC online, same exact roots/33 blocks, no sessions.
+
+**Scope:** deliver/hash/AST-check this source; run once with three tiny synthetic child fixtures (renamed/open stdin, automatic-input/closed stdin, automatic-input/held-then-closed stdin); exact outputs and child exit codes, bounded waits and owned-child cleanup. Native report goes to C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\05_Evidence\R002R20_InputEof_001\R002R20_InputEof_NativeReceipt.json. No prior adapter invocation or R18 rejected audit recreation, no HTTP or image/security changes. Low CPU and small files only.
+
+**ONE NEXT:** execute the reviewed diagnostic once after Session IN_PROGRESS and local exact source/AST/hash readback; inspect real receipt and close documentation, then pause. State at this prework record: APPROVED_NOT_RUN.
+
 ## 2026-10-22 — R002-R19 POWERSHELL AUTOMATIC-INPUT STARTUP MECHANISM SOURCE-CONFIRMED / ORIGINAL NATIVE CAUSE STILL UNPROVEN (§0R FIRST)
 
 **Scope/entry:** operator requested continuation from R18. Complete attached Master v6.3.0 equals current GitHub text (SHA256 `022D0BEBE79423E28742B5CF61D9E71D9E331240F2F8BFABD1C153A99BA18736`); mandatory Session/Current/Handoff §0AR/0AQ/0R/0S/0L/12B, Sources, Contracts, Registry r38 and both local READMEs read. Session prework `IN_PROGRESS_R002R19` commit `1fe300feab8b50740c4b0f243510b23295aefce8`, blob `496b4dca596e30e355624d6d93ddebe441f81971`, exact readback before new R19 work. RDC `DESKTOP-4J4KCEA` v0.3.1 online, exact roots C:\work / C:\BLR20R2F5, 33 blocked commands including reg unchanged, no active sessions. No Windows process launched in R19.
