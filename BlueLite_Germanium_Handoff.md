@@ -2,6 +2,12 @@
 
 ## 0AU. 2026-10-22 — R002-R21 per-process checkpoint journal
 
+### B — delivery/native AST gate completed; DELIVERED_NOT_RUN
+
+Current B e1a8b22c7968fdbad1ef28ba19a682e2c4d375a3, exact readback. Normal scoped delivery completed once; native PS7.6.7 PID 5308 exited 0 in 0.31s at 18:13:13.9800364Z. Actual [native stdout](development/PREMAX/R002/05_Evidence/R002R21_B_DeliveryAst_NativeStdout.json), commit 94173c3c431b5f528342de365c2d2dca9fbedf0a / blob 5edc682fd2a82453137b83c8535cf95ec02cbe3b, exact readback. Result PASS_R21_B_DELIVERY_AST_HASH: source 8470 bytes / SHA256 959A04FDA12C319BF60A2DFC806FF1166FC1CE3B9C3F5635A0E11C5233ED4A3E, no parse errors, zero input/matches VariableExpressionAst references including nested bodies; R21 trace and old R6 queue output absent. Adapter not invoked. Full text is the already-reviewed frozen v4; no in-place source fix.
+
+**One next C:** the existing contract's ordinary -File -Mode Probe command (15s observation ceiling), only new R21 trace output. Source and contract pins unchanged. Read actual trace/native exit/hash/cleanup, write Current/Handoff FIRST before further preparation. C is APPROVED_NOT_RUN; no HTTP/native adapter PASS yet. Master/Registry/config/source originals unchanged. Intermediate Session pointer is updated and read back before C.
+
 ### A — source and live preflight analysis complete; APPROVED_NOT_RUN
 
 Operator resumed the exact R20→R21 plan and requested write/readback after each individual analysis/execution process within the planned block, then a final GUI pause. This is the execution of the previously prepared Probe-only step, not a new unbounded chain. Master is unchanged (full content read earlier in this ongoing session; fresh attached SHA and live blob match); source v4 and execution contract are fully reread and unchanged. Current A commit 4c7046755204a6ea55663509f76415f47b84a447, exact readback.
