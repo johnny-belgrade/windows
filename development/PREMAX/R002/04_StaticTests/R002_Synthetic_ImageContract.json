@@ -1,0 +1,15 @@
+{
+  "schema": "BlueLite.R002.ImageContract.v1",
+  "source_family": "Germanium",
+  "build": "26300.9711",
+  "index": 1,
+  "original_wim_sha256": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+  "image_original": "C:\\work\\R002_SYNTHETIC_NONEXISTENT\\immutable.wim",
+  "image_working": "C:\\work\\R002_SYNTHETIC_OTHER_NONEXISTENT\\work.wim",
+  "operator_authorized_mutation": false,
+  "converter_runtime_authorized": false,
+  "source_topology_verified": false,
+  "staging_five_verified": false,
+  "protected_floor_verified": false,
+  "synthetic_fixture": true
+}
