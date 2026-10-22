@@ -1,0 +1,104 @@
+{
+  "schema": "BlueLite.PREMAX.CycleManifest.v1",
+  "cycle_id": "R002_Universal_Stage1_MAXPRE_Package",
+  "created_date": "2026-10-22",
+  "status": "R002_3_REAL_READONLY_SOURCE_OVERLAY_MAXPRE_DRAFTS_PS7_AST_PASS_NATIVE_9711_SOURCE_PASS_SYNTHETIC_10_OF_10_NEGATIVE_PASS_NOT_RUNTIME",
+  "source_build": "Germanium 26300.x universal target; 26300.9711 pinned fixture; 26300.9807 baseline HOLD",
+  "source_index": null,
+  "source_sha256": "D3E7162605A61D8A0FD62E1738DE523B52B36059D6AAC8F756F90AEFCB64C4A2",
+  "source_path": "C:\\work\\26300.9711-UUP\\26300.9711_amd64_en-us_professional_2b22470a_convert.zip",
+  "operator_scope_approval": "2026-10-22 user approved R002 static-only integrated universal Stage1/MAX_PRE first draft package, Oct03 predecessor research; no live new download, no converter/WIM/registry mutation",
+  "inputs": [
+    {
+      "id": "R002_Stage1_Profile_9711.json",
+      "sha256": "BA6E13A11EC24D33724328CDD230DE43E252965668718B508BD6B0311B35E56E"
+    },
+    {
+      "id": "R002_RecipeRegistry_Snapshot.json",
+      "sha256": "4D4D27AC86F6204E81D04D6408CCBCB221B0B8C7B1DAE0F2FC0C2F503C1D612A",
+      "origin_git_blob_sha": "44f6c2f37cf9d4fd8c10331b491ff3d75c7c136b",
+      "recipes": 7,
+      "runtime_flags_all_false": true
+    }
+  ],
+  "provenance": {
+    "local_history_readme_verified": true,
+    "history_mapping_refs": [
+      "C:\\work\\UUP-history\\99_Index\\RH06_Final_ProvenanceMapping.csv",
+      "C:\\work\\UUP-history\\99_Index\\RH07_Manifest_SHA256.txt",
+      "C:\\work\\UUP-history\\99_Index\\RH08_ContentMarkers_ForUniversalDrafts.csv",
+      "C:\\work\\UUP-history\\02_Scripts\\26200.9445\\UUP\\BlueLite_UUP__1243F63B5A4E.cmd"
+    ],
+    "library_refs": [
+      "5-ChatGPT(1).md",
+      "5-ChatGPT.md",
+      "BlueLite_v1.0_CANONICAL_SUCCESSOR_HANDOFF_2-10.md"
+    ],
+    "github_refs": [
+      "production/intelligence/BlueLite_UUP_Oct03_26200_Transfer_Review_20261019.md",
+      "BlueLite_Germanium_Handoff.md",
+      "BlueLite_Sources.md",
+      "production/intelligence/BlueLite_RecipeRegistry.json",
+      "production/evidence/BlueLite_R001_MetadataGET_9711_20261022.txt"
+    ]
+  },
+  "source_bound_predicates": [
+    "original UUP ZIP SHA/UUID/edition/lang",
+    "D4 module SHA+all 98 Windows and 2798 Apps out+checksum semantic identity",
+    "no Windows queue pruning",
+    "five required staging AppX names",
+    "preserve installed WinRE default",
+    "registry snapshot 7/7 runtime false",
+    "original/working WIM distinct and owned scope (synthetic contract test only)"
+  ],
+  "dependencies_unresolved": [
+    "native overlay extraction/integration NOT IMPLEMENTED",
+    "fresh get.php JIT renewal adapter integration NOT IMPLEMENTED (reuse R001 verified)",
+    "full source download/resume NOT RUN in R002",
+    "exact pinned converter source+hook, WIM runtime and servicing topology verification NOT RUN",
+    "26300.9807 original frozen queue baseline HOLD"
+  ],
+  "drafts": [
+    {
+      "relative_path": "03_Drafts/R002_OriginalZip_OverlayPreflight_DRAFT.ps1",
+      "sha256": "37F8B2672D8054D1B49F65B64EA21A0D9C2B3E8779BE1167542337BBAE48B09E",
+      "audited": true,
+      "executed_readonly": true,
+      "runtime_execution_allowed": false
+    },
+    {
+      "relative_path": "03_Drafts/R002_Stage1_SourceTransport_Control_DRAFT.ps1",
+      "sha256": "9DC33CBBA01BF97D6685DDEC341B181EEE66F697C3BC7D70B16DE3225C2039B9",
+      "audited": true,
+      "executed_readonly": true,
+      "runtime_execution_allowed": false
+    },
+    {
+      "relative_path": "03_Drafts/R002_MAXPRE_OfflineDecisionPlan_DRAFT.ps1",
+      "sha256": "B591BCDAB8FF85428D0909C5AEBA1F7B02EDDD37F7D9C0F71F1436A8A4FC926A",
+      "audited": true,
+      "executed_readonly": false,
+      "runtime_execution_allowed": false
+    }
+  ],
+  "static_tests": {
+    "ast": "3_OF_3_ACTUAL_PS7_AST_PASS",
+    "positive": "9711_D4_98_WINDOWS_2798_APPS_AND_7_HOLD_PLAN_PASS",
+    "negative_fixtures": "10_OF_10_PASS_SYNTHETIC_PLUS_ONE_OVERLAY_NEGATIVE_PASS",
+    "source_queue_identity": "REAL_READONLY_9711_FROZEN_VS_RENEWED_D4_PASS",
+    "overlay_layout": "REAL_ZIP_11_ENTRIES_PASS_NO_EXTRACT"
+  },
+  "candidate": {
+    "relative_path": null,
+    "sha256": null,
+    "reviewed": false,
+    "runtime_execution_allowed": false
+  },
+  "runtime": {
+    "authorized": false,
+    "executed": false,
+    "receipt": "05_Evidence/R002_Static_Draft_Receipt_20261022.txt",
+    "note": "No new network or UUP payload, aria2, converter, WIM, registry, NTLite, VM or ISO runtime"
+  },
+  "one_next": "OPERATOR_GUI_REVIEW_R002_STATIC_DRAFT_AND_AUTHORIZE_NEXT_EXACT_SOURCE_BOUND_OVERLAY_RENEWAL_INTEGRATION_BLOCK; WIM_AND_CONVERTER_MUTATION_SEPARATELY_APPROVED"
+}
