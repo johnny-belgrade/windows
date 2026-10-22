@@ -1,0 +1,94 @@
+{
+  "schema": "BlueLite.PREMAX.R002R10.NegativeGateSpec.v1",
+  "date": "2026-10-22",
+  "cycle_id": "R002_Universal_Stage1_MAXPRE_Package",
+  "tier": "DECLARATIVE_REVIEW_ONLY",
+  "status": "STATIC_SPEC_REVIEWED_NOT_EXECUTED",
+  "runtime_execution_allowed": false,
+  "source": {
+    "source_build": "26300.9807",
+    "uuid": "687d1ced-aab1-4cd5-ad05-705189769731",
+    "negative_source": "04_StaticTests/R002R6_Metadata_SourceAndQueue_Negatives.ps1",
+    "negative_source_git_blob": "e6fb168859562333d2d08a77873c2aaa1816d1f7",
+    "metadata_draft": "03_Drafts/R002R6_9807_TwoQueue_MetadataOnly_DRAFT.ps1",
+    "metadata_draft_git_blob": "4be64d502be440270a68605411279788b5b05954",
+    "metadata_draft_native_sha256": "755412852CF6E6A16DAC25386DFD988B2743924039BF969E0AB4DB91163D460F",
+    "d4_module": "C:\\work\\scripts\\BlueLite_Stage1_S06_26300_G4_AppsOnly\\BlueLite_QueueIdentity.psm1",
+    "d4_module_previous_native_sha256": "7015C86B97F91E38D691B2831B9AD353EB6D2369E8AD69559B8DC6FF5E31745E",
+    "r9_review_git_blob": "efe1f00d3ec4cf8646a66d463fd44585159ce152"
+  },
+  "acceptance_contract": {
+    "negative_count": 7,
+    "require_actual_native_log_before_runtime_pass": true,
+    "require_source_hash_readback_before_future_test": true,
+    "success_only_if_caught_error_matches_expected_case_gate": true,
+    "unexpected_success": "FAIL_OPEN",
+    "unexpected_error_or_source_hash_mismatch": "FAIL_WRONG_GATE_NOT_PASS",
+    "missing_error_or_wrong_fixture": "FAIL_INCOMPLETE_NOT_PASS",
+    "prohibited_shortcuts": [
+      "catch-any-exception implies PASS",
+      "re-run prior platform-denied source through alternate wrapper",
+      "network GET as a parser test",
+      "claim 7/7 from source-only review"
+    ],
+    "notes": "Expected prefixes cover source-authored variable suffixes (file path, line, value); they are case-sensitive anchors at the beginning of the exception message. Authorization denial demands the full exact message and valid read-only frozen-source preconditions.",
+    "expected_runtime_result": "NOT_TESTED",
+    "attempts_in_this_spec_block": 0,
+    "getphp_requests_in_this_spec_block": 0,
+    "new_9807_queue_identities": null
+  },
+  "cases": [
+    {
+      "id": "N01_EMPTY",
+      "fixture_content": "",
+      "expected_error_key": "QUEUE_EMPTY",
+      "expected_error_prefix": "QUEUE_EMPTY=",
+      "precondition": "queue file exists but contains zero aria2 records"
+    },
+    {
+      "id": "N02_MISSING_CHECKSUM",
+      "fixture_content": "https://example.invalid/payload\n  out=sample.cab\n",
+      "expected_error_key": "QUEUE_LAST_RECORD_INCOMPLETE",
+      "expected_error_prefix": "QUEUE_LAST_RECORD_INCOMPLETE=",
+      "precondition": "single last record ends without checksum"
+    },
+    {
+      "id": "N03_UNSAFE_OUT",
+      "fixture_content": "https://example.invalid/payload\n  out=../escape.cab\n  checksum=sha-256=0000000000000000000000000000000000000000000000000000000000000000\n",
+      "expected_error_key": "QUEUE_UNSAFE_OUT",
+      "expected_error_prefix": "QUEUE_UNSAFE_OUT=",
+      "precondition": "output name contains parent traversal"
+    },
+    {
+      "id": "N04_UNSUPPORTED_CHECKSUM",
+      "fixture_content": "https://example.invalid/payload\n  out=sample.cab\n  checksum=md5=aaa\n",
+      "expected_error_key": "QUEUE_UNSUPPORTED_CHECKSUM",
+      "expected_error_prefix": "QUEUE_UNSUPPORTED_CHECKSUM=",
+      "precondition": "unsupported checksum algorithm"
+    },
+    {
+      "id": "N05_DUPLICATE_OUT",
+      "fixture_content": "https://example.invalid/payload\n  out=sample.cab\n  checksum=sha-256=0000000000000000000000000000000000000000000000000000000000000000\nhttps://example.invalid/payload\n  out=sample.cab\n  checksum=sha-256=0000000000000000000000000000000000000000000000000000000000000000\n",
+      "expected_error_key": "QUEUE_DUPLICATE_OUT",
+      "expected_error_prefix": "QUEUE_DUPLICATE_OUT=",
+      "precondition": "same out name in two complete records"
+    },
+    {
+      "id": "N06_SERVER_ERROR",
+      "fixture_content": "#UUPDUMP_ERROR: simulated\n",
+      "expected_error_key": "UUPDUMP_QUEUE_ERROR",
+      "expected_error_prefix": "UUPDUMP_QUEUE_ERROR=",
+      "precondition": "UUP Dump error sentinel in queue"
+    },
+    {
+      "id": "N07_AUTHORIZATION_DENY",
+      "fixture_content": null,
+      "source_mode": "Fetch",
+      "source_authorization": "NOT_AUTHORIZED",
+      "expected_error_key": "EXPLICIT_GUI_APPROVAL_REQUIRED",
+      "expected_error_exact": "R002R6_GATE=EXPLICIT_GUI_APPROVAL_REQUIRED",
+      "precondition": "all pinned ZIP, launcher, contract, module hashes and frozen values match; output not inspected or created before auth gate",
+      "effect_expectation": "no HTTP request, no output folder creation when invalid auth gate is reached"
+    }
+  ]
+}
