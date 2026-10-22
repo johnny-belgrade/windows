@@ -2,7 +2,7 @@
   "schema": "BlueLite.PREMAX.CycleManifest.v1",
   "cycle_id": "R002_Universal_Stage1_MAXPRE_Package",
   "created_date": "2026-10-22",
-  "status": "R002R5_9807_ORIGINAL_ZIP_SOURCE_PROVEN_QUEUE_BASELINE_HOLD_R002R4_STATIC_PASS_NO_RUNTIME",
+  "status": "R002R6_STATIC_PROBE_PASS_NEGATIVE_RUN_PLATFORM_SAFETY_BLOCK_ERROR_HOLD_NO_METADATA_GET",
   "source_build": "Germanium 26300.x universal target; 26300.9711 pinned fixture; 26300.9807 baseline HOLD",
   "source_index": null,
   "source_sha256": "D3E7162605A61D8A0FD62E1738DE523B52B36059D6AAC8F756F90AEFCB64C4A2",
@@ -195,6 +195,26 @@
     "converter_wim_iso_runtime": false,
     "runtime_execution_allowed": false
   },
+  "r6_9807_new_queue_metadata": {
+    "operator_scope": "2026-10-22_NASTAVI_PO_PLANU_TWO_SMALL_GET_ONLY",
+    "source_build": "26300.9807",
+    "source_uuid": "687d1ced-aab1-4cd5-ad05-705189769731",
+    "source_draft": "03_Drafts/R002R6_9807_TwoQueue_MetadataOnly_DRAFT.ps1",
+    "draft_sha256": "755412852CF6E6A16DAC25386DFD988B2743924039BF969E0AB4DB91163D460F",
+    "draft_git_blob": "4be64d502be440270a68605411279788b5b05954",
+    "native_probe": "PASS_AST_ERRORS_0_COMMANDS_51_REQUESTS_0",
+    "negative_source": "04_StaticTests/R002R6_Metadata_SourceAndQueue_Negatives.ps1",
+    "negative_source_git_blob": "e6fb168859562333d2d08a77873c2aaa1816d1f7",
+    "negative_runtime": "BLOCKED_BY_OPENAI_SAFETY_CHECKS_BEFORE_EXECUTION_ATTEMPT_1",
+    "new_9807_windows_queue_identity": null,
+    "new_9807_apps_queue_identity": null,
+    "http_get_requests_attempted": 0,
+    "receipt": "05_Evidence/R002R6_Metadata_StaticProbe_SafetyHold_20261022.txt",
+    "receipt_git_blob": "4d0b876986cc125f426f5fb2075605a86e5efc9d",
+    "original_pre_renewal_queue_identity": "HOLD_UNPROVEN",
+    "runtime_execution_allowed": false,
+    "status": "ERROR_HOLD_AWAITING_OPERATOR_NO_SAFETY_BYPASS"
+  },
   "candidate": {
     "relative_path": null,
     "sha256": null,
@@ -207,5 +227,5 @@
     "receipt": "05_Evidence/R002_Static_Draft_Receipt_20261022.txt",
     "note": "No new network or UUP payload, aria2, converter, WIM, registry, NTLite, VM or ISO runtime"
   },
-  "one_next": "OPERATOR_GUI_EXPLICITLY_AUTHORIZE_TWO_BOUNDED_26300_9807_GETPHP_METADATA_GETS_FOR_NEW_QUEUE_BASELINE_NOT_HISTORICAL_ORIGINAL; NO_LARGE_PAYLOAD_OR_CONVERTER_OR_WIM"
+  "one_next": "OPERATOR_DECISION_ON_R002R6_BLOCKED_NEGATIVE_TEST_EXECUTION; NO_GET_UNTIL_SAFETY_CONSTRAINT_RESOLVED_NO_BYPASS"
 }
