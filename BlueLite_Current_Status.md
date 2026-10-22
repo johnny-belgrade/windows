@@ -10,7 +10,7 @@
 
 **RESULT:** `PASS_R002R5_FROZEN_9807_ORIGINAL_SOURCE_REVIEW`; **dependency HOLD** = `26300.9807 ORIGINAL PRE-RENEWAL WINDOWS/APP QUEUE IDENTITY NOT PRESENT IN CHECKED FROZEN SOURCE/HISTORICAL INDEX`. A new same-UUID live metadata retrieval could establish a **new** queue baseline, never falsely retroactively certify an original pre-renewal download.
 
-**ONE NEXT — GUI_PAUSE_AWAITING_OPERATOR:** request separate explicit operator approval for **only two bounded 26300.9807 original-UUID UUP Dump get.php small Windows+Apps metadata GETs**, hash/record their new `out+checksum` baseline under a new owned small evidence path `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package`; **no** GB download/converter/WIM/ISO, no .9711 queue borrowing. Preannounce precise endpoint, path and low CPU/size before any permitted GET. Until consent, `PREPARED_NOT_AUTHORIZED`.
+**ONE NEXT — GUI_PAUSE_AWAITING_OPERATOR:** request separate explicit operator approval for **only two bounded 26300.9807 original-UUID UUP Dump get.php small Windows+Apps metadata GETs**, hash/record their new `out+checksum` baseline under a new owned small evidence path `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package`; **no** GB download/converter/WIM/ISO, no .9711 queue borrowing. Preannounce precise endpoint, path and low CPU/size before any permitted GET. Until consent, `PROPOSED_NOT_AUTHORIZED`; no GET executor authored or delivered.
 
 ## 2026-10-22 — R002-R4 ORIGINAL STOCK UUP CONVERTER V128M PRE-ISO SOURCE HANDOFF PASS, RUNTIME HOLD (§0R FIRST)
 
