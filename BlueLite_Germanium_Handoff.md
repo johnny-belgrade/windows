@@ -23,6 +23,16 @@
 
 **FIRST §0R ONE NEXT:** prepare an exactly scoped 2-request same-UUID 9807 Windows+Apps UUP Dump get.php metadata retrieval proposal, **without executing any GET before separate GUI approval**. After FIRST GitHub Current+Handoff writes and readbacks, record precise `PREPARED_NOT_AUTHORIZED` boundary in SECOND Handoff; Session Entry LAST and GUI stop.
 
+### §0R SECOND — one precisely limited external-metadata recovery proposal, no runtime approval (2026-10-22)
+
+**SINGLE NEXT STATUS:** `R002R6_9807_SAME_UUID_TWO_SMALL_QUEUES=PROPOSED_NOT_AUTHORIZED` / `GUI_PAUSE_AWAITING_OPERATOR`. No reviewed .9807 GET executor has been created, delivered or executed by R002R5; this SECOND Handoff write is not an execution command. If operator authorizes a new block: prepare a separately SHA-pinned, source-reviewed **two-request** `get.php` metadata-only retrieval for **original UUID `687d1ced-aab1-4cd5-ad05-705189769731`, amd64/en-us/Professional, build 26300.9807**, yielding one complete Windows reconstruction queue and one complete Apps queue, with D4 exact per-entry `out+checksum` identity, signed-URL renewal scope and negative fixtures. Store only a versioned small target under `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\05_Evidence\R002R6_9807_QueueBaseline_...` after per-file no-clobber check. New retrieved metadata becomes **NEWLY_OBSERVED_9807_QUEUE**, not `ORIGINAL_PRE_RENEWAL_QUEUE_PROVEN`, unless independent earlier frozen original queue evidence is actually found. No .9711 count/hash borrowing.
+
+**Separate authorization boundary:** ask GUI before any live UUP Dump network calls and specify two-request endpoint, output bytes/path/CPU expectation; no vendor archive or multi-GB UUP payload download, no converter execution, DISM/mount/registry/WIM/ISO/export/NTLite/VM and no cleanup. Preserve existing `C:\work\UUP_Source\26300.9807_687d1ced` original SHA and separately operator-produced original ISO/WIM, unchanged. Existing R002-R4 static/11 negatives and Registry r38 remain unchanged. For a later heavy operation, announce CPU-temperature monitoring and exact `C:\work` destination, request new GUI consent. Operator alone chooses the next action.
+
+**Readback lineage:** R002R5 FIRST Current commit `136750092b65f0932218e36863e6682739ee41db` blob `4e1e54553d455303d30d80fa5c7af2788b45a4f3`; FIRST Handoff commit `35d9fa3e09862bfebc77d281ae10f04c42dc0bf9` blob `c7741bc2ecd8115196a135e53edef85f8e9a80a5`, both exact fetched back. This second checkpoint supplies the reviewed **scope proposal only**. Session Entry must be finalized LAST and separately exact read back; no Master change.
+
+---
+
 ## 0AC. 2026-10-22 — ORIGINAL UPSTREAM V128M STOCK CONVERTER PRE-ISO MAX_PRE SOURCE BOUNDARY (§0R FIRST)
 
 ### §0R SECOND — exact next logical step, source-version convergence before heavy conversion (2026-10-22)
