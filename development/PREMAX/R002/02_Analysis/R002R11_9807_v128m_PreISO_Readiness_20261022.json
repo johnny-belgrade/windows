@@ -1,0 +1,161 @@
+{
+  "schema": "BlueLite.R002R11P.Stage1PreISOReadiness.v1",
+  "created_date": "2026-10-22",
+  "scope": "SOURCE_ONLY_INDEPENDENT_STAGE1_9807_VENDOR_V128M_HANDOFF",
+  "status": "PREISO_SOURCE_LINEAGE_REVIEW_PASS_RUNTIME_HOLD",
+  "runtime_execution_allowed": false,
+  "source": {
+    "family": "Germanium",
+    "os": "Windows 11 26H2",
+    "build": "26300.9807",
+    "architecture": "amd64",
+    "language": "en-us",
+    "edition": "professional",
+    "uuid": "687d1ced-aab1-4cd5-ad05-705189769731",
+    "source_contract": "C:\\work\\UUP_Source\\26300.9807_687d1ced\\BlueLite_S11_SourceContract.json",
+    "source_contract_previously_pinned_sha256": "9D9DCD4FD8190863F1591679574879D3B652D2FE6DED176EEFED0C204D947D11",
+    "original_zip": "C:\\work\\UUP_Source\\26300.9807_687d1ced\\26300.9807_amd64_en-us_professional_687d1ced_convert.zip",
+    "original_zip_sha256": "83203A6E79E62579A7D64204120BCECC111FE114C614AB1DBFAE032BB02DE7B7",
+    "original_zip_bytes": 8218,
+    "original_zip_members": 11,
+    "launcher_sha256": "289EBCBEA3352F66187BDF2E75961A855DAA187F6C9F4739E7301F9C9F12DEB5",
+    "frozen_windows_queue_original_semantic_sha256": null,
+    "frozen_apps_queue_original_semantic_sha256": null,
+    "newly_observed_windows_queue_semantic_sha256": null,
+    "newly_observed_apps_queue_semantic_sha256": null,
+    "newly_observed_getphp_requests_attempted": 0,
+    "source_original_queue_provenance": "HOLD_NO_ORIGINAL_PRE_RENEWAL_9807_OUT_CHECKSUM_PIN"
+  },
+  "vendor_converter": {
+    "frozen_zip_declares": "v128m",
+    "frozen_zip_declared_converter_archive_sha256": "1597F39D614529843DCADF630ED6DD4543C955EA703B6B0D1FDBE65AA078A5F1",
+    "archived_vendor_binary_downloaded": false,
+    "archived_vendor_binary_sha256_verified": false,
+    "converter_executed": false,
+    "upstream_source_repo": "abbodi1406/BatUtil",
+    "upstream_source_path": "uup-converter-wimlib/convert-UUP.cmd",
+    "pinned_source_git_blob": "262a6e6b0ad2016d1345927bdc334898f71b49f2",
+    "r002r4_source_only_snapshot_sha256": "DA557A5EF7541C2E472B09FB171F6A9C823A25CA6A73212541A348ECDCE36A6B",
+    "source_only_r002r4_result": "PASS_V128M_AUTOSTART1_SKIPISO1_ORDER_AND_11_NEGATIVES",
+    "source_to_archived_binary_equivalence": "NOT_TESTED",
+    "cross_version_v126_from_9711": "NOT_CLAIMED_OR_SUBSTITUTED"
+  },
+  "planned_vendor_options_not_applied": {
+    "AutoStart": "1",
+    "SkipISO": "1",
+    "SkipWinRE": "0",
+    "StartVirtual": "0",
+    "wim2esd": "0",
+    "wim2swm": "0",
+    "SkipApps": "0",
+    "NetFx3": "0",
+    "ResetBase": "0",
+    "CustomList": "1",
+    "StubAppsFull": "1",
+    "notes": "R002R4 reviewed original vendor source branch contract; R002R3 CustomList and StubAppsFull from 9711 staging fixture, revalidate on exact 9807 vendor binary before actual converter use"
+  },
+  "source_derived_preiso_boundary": {
+    "autostart_1_full_media_layout": true,
+    "skip_iso_1_exit_before_cdimage": true,
+    "expected_media_files": [
+      "sources/install.wim",
+      "sources/boot.wim"
+    ],
+    "actual_preiso_media_path": null,
+    "native_converter_receipt": null,
+    "path_name_must_be_taken_from_native_receipt": true,
+    "immutable_reconstructed_source_wim_required": true,
+    "separate_owned_working_wim_required": true,
+    "pre_iso_maxpre_only_after_reconstruction": true,
+    "final_iso_requires_separately_reviewed_builder_and_permission": true
+  },
+  "appx_dependency_policy": {
+    "historic_9711_g4_apps_only_records": 32,
+    "historic_9711_staging_top_level_families": [
+      "SecHealthUI",
+      "DesktopAppInstaller",
+      "Calculator",
+      "Notepad",
+      "Photos"
+    ],
+    "historic_9711_staging_five_static": true,
+    "stage1_9807_actual_staging_5_and_framework_closure": "NOT_VERIFIED",
+    "final_four_app_state": "REQUIRES_OFFLINE_CBS_APPX_CURRENT_TARGET_PROOF",
+    "no_windows_queue_pruning": true,
+    "maintain_store_policy_and_dependent_framework_gates": true
+  },
+  "gates": [
+    {
+      "id": "G01_SOURCE",
+      "requirement": "Original 9807 ZIP, launcher, UUID, contract hashes and member identities match frozen source",
+      "observed": "PREVIOUS_STATIC_SOURCE_EVIDENCE",
+      "runtime": "NOT_RUN"
+    },
+    {
+      "id": "G02_QUEUE_IDENTITY",
+      "requirement": "Independent 9807 windows and apps queue out+checksum baseline; distinguish original vs newly observed",
+      "observed": "HOLD_ORIGINAL_QUEUE_NOT_FROZEN",
+      "runtime": "NOT_RUN"
+    },
+    {
+      "id": "G03_APPS",
+      "requirement": "Revalidate five staging AppX families and framework closure from exact 9807 signed queues",
+      "observed": "9711_REFERENCE_ONLY",
+      "runtime": "NOT_RUN"
+    },
+    {
+      "id": "G04_VENDOR",
+      "requirement": "Archive must match exact frozen v128m digest; inspect actual tool/config and preserve original release",
+      "observed": "UPSTREAM_SOURCE_ONLY_VALIDATED_ARCHIVE_NOT_DOWNLOADED",
+      "runtime": "NOT_RUN"
+    },
+    {
+      "id": "G05_MEDIA",
+      "requirement": "Native vendor AutoStart=1 SkipISO=1 should yield complete install+boot WIM media tree, actual folder/receipts verified",
+      "observed": "SOURCE_BRANCH_VALIDATED_ONLY",
+      "runtime": "NOT_RUN"
+    },
+    {
+      "id": "G06_WIM_OWNER",
+      "requirement": "Freeze immutable reconstructed WIM SHA then create uniquely owned working WIM with approved mount/export/rollback",
+      "observed": "DESIGN_ONLY_NO_WIM",
+      "runtime": "NOT_RUN"
+    },
+    {
+      "id": "G07_MAXPRE",
+      "requirement": "Current 26300 image CBS/Feature/FoD/AppX/WinRE dependency graph, GREEN/AMBER predicates and health gate",
+      "observed": "HOLD_NO_IMAGE_TOPOLOGY",
+      "runtime": "NOT_RUN"
+    },
+    {
+      "id": "G08_FINAL_ISO",
+      "requirement": "Replace only reviewed working media WIM, separately vet ISO builder and output artifact hashes/metrics",
+      "observed": "DESIGN_ONLY",
+      "runtime": "NOT_RUN"
+    },
+    {
+      "id": "G09_ACCEPTANCE",
+      "requirement": "Stage2/Stage3/VM and servicing/Defender ON-OFF and footprint targets require native proof",
+      "observed": "NOT_RELEASE_CERTIFIED",
+      "runtime": "NOT_RUN"
+    }
+  ],
+  "source_evidence": [
+    "R002R5_9807_SourceQueueBaseline_Review_20261022.txt",
+    "R002R4_OriginalStock_PreISO_Handoff_Review.md",
+    "R002R3_ConverterNative_And_FutureVendorDecision.md",
+    "BlueLite_S11_SourceContract.json",
+    "Master v6.3.0 Stage1 and §0D/§0E"
+  ],
+  "preserved_hold": {
+    "r002r6_negative_suite": "PRIOR_PLATFORM_DENIAL_NOT_RUN",
+    "r002r10_spec": "DECLARATIVE_SEVEN_CASE_JSON_PASS_ONLY",
+    "r002_cyclemanifest_local": "R002R10",
+    "r002_cyclemanifest_github": "R002R9",
+    "github_cyclemanifest_update": "PLATFORM_BLOCKED_NO_RETRY",
+    "support_ticket": "USER_ESCALATED_AWAIT_EMAIL",
+    "no_connection_polling": true
+  },
+  "heavy_work_notice": "Advance notice of expected transfer and CPU/temperature/destination plus explicit separate GUI permission before download, converter, WIM or ISO",
+  "one_next": "R002R12_OPERATOR_SCOPE_REVIEW_FOR_9807_SOURCE_BOUND_TWO_METADATA_GETS_ONLY_AFTER_SEPARATELY_ALLOWED_QA_GATE;NO_AUTOMATIC_TRANSFER"
+}
