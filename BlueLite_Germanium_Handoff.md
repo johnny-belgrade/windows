@@ -2,6 +2,16 @@
 
 ## 0AU. 2026-10-22 — R002-R21 per-process checkpoint journal
 
+### C — integrated native Probe EXECUTED_PASS (§0R FIRST)
+
+Current C e6f838b251f6579bd7da6e04c295c7019b957254, exact readback, before next analysis/preparation. One ordinary -File -Mode Probe launch PID 2848, exit 0/runtime 1.06s. Source trace begins at 2ms and all source/contract/Windows+Apps URI predicates pass by 84ms. **PASS_R002R21_INSTRUMENTED_METADATA_PROBE_NATIVE / HTTP_GET_REQUESTS=0**. No retry or forced cleanup.
+
+[Original trace mirror](development/PREMAX/R002/05_Evidence/R002R21_Native_PreflightStages.txt): commit 909f452fb6da8d19474b6276ac0cd47e74c2f50d, blob 97e3e542d8e3dc00bae400193c3e3e3a064e006b, 664 bytes SHA256 3F4463567AF509F863ABDBFD958BB2BDF44D859C5F18BFC1D5DA0C2930F882D8; exact native bytes/readback. [Native independent post-state](development/PREMAX/R002/05_Evidence/R002R21_C_IndependentPostState_NativeStdout.json): commit 5cf3d6f51b8df30a9022679340b8531fd56a6943/blob 0181063dfbd6962e64d9181f70de7d47473b5da6. PID 6904 verified unchanged v4 source SHA, no old/gate/adapter processes, old R6 output absent and R18 rejected audit absent. Protected connector config unchanged; no active sessions. Only v4 source+native trace, 9134 bytes total, retained.
+
+The corrected integrated Probe now works on installed PS7.6.7; no retrospective handle proof or HTTP/MAX_PRE certification. Fresh metadata GET 0/2, original .9807 pre-renewal baseline unknown; Master/Registry unchanged, all recipe runtime flags false. Source ZIP/launcher/contract/module guards passed without editing any input.
+
+**ONE NEXT D, source preparation only:** review and pin one new R22 bounded metadata-fetch revision and exact future execution contract after this FIRST checkpoint. Preserve v4, both-source URI/hash gates, two GET maximum, one 90s cancellation budget for headers+body per GET, 10MiB response bound, no redirects/retries/payload. No R22 delivery, native execution or GET now. Record the prepared source/contract and exact status in SECOND, final Entry LAST, then GUI pause. If review identifies unresolved requirements, record them explicitly.
+
 ### B — delivery/native AST gate completed; DELIVERED_NOT_RUN
 
 Current B e1a8b22c7968fdbad1ef28ba19a682e2c4d375a3, exact readback. Normal scoped delivery completed once; native PS7.6.7 PID 5308 exited 0 in 0.31s at 18:13:13.9800364Z. Actual [native stdout](development/PREMAX/R002/05_Evidence/R002R21_B_DeliveryAst_NativeStdout.json), commit 94173c3c431b5f528342de365c2d2dca9fbedf0a / blob 5edc682fd2a82453137b83c8535cf95ec02cbe3b, exact readback. Result PASS_R21_B_DELIVERY_AST_HASH: source 8470 bytes / SHA256 959A04FDA12C319BF60A2DFC806FF1166FC1CE3B9C3F5635A0E11C5233ED4A3E, no parse errors, zero input/matches VariableExpressionAst references including nested bodies; R21 trace and old R6 queue output absent. Adapter not invoked. Full text is the already-reviewed frozen v4; no in-place source fix.
