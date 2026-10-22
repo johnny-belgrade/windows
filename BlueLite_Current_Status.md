@@ -1,14 +1,20 @@
 # BlueLite v1.0 — Current Status
 
-## 2026-10-22 — R002-R20 APPROVED / PREPARED_NOT_RUN — SYNTHETIC INPUT/EOF DIAGNOSTIC PREWORK
+## 2026-10-22 — R002-R20 PASS — NATIVE SYNTHETIC INPUT/EOF MECHANISM (§0R FIRST)
 
-After the reported platform interruption, the operator explicitly requested analysis and plan records before execution, execution of this planned block, verified result/successor checkpoint, then GUI report and pause. R19 source review below is the technical basis; no original runtime cause is yet certified.
+**Completed approved block:** pre-execution analysis, frozen source and plan were recorded and read back before local work; Session IN_PROGRESS commit bf0c2e15af98e0f6908972243ba74c3af97eee0e. Native parser/source gate PID 7684: PS7.6.7, zero parse errors, parent automatic-input AST count 0, exact 7496-byte source SHA256 DEED0863D04FFEE56286A79695C7A899D68C3562F244075D560D114FBF122D27. RDC read_file omitted one trailing empty display line; native bytes matched the pinned source, so no source rewrite was necessary.
 
-**Pinned complete source:** [R002R20_InputEof_Diagnostic_v1.ps1](development/PREMAX/R002/04_StaticTests/R002R20_InputEof_Diagnostic_v1.ps1), SHA256 DEED0863D04FFEE56286A79695C7A899D68C3562F244075D560D114FBF122D27, source commit 6277365eabbfb0d490ff347cf0bf223379d45f5c / blob f3e9a39eeecea4ac65bab749595a2bba319745f0, exact readback. [Execution plan](development/PREMAX/R002/02_Analysis/R002R20_ExecutionPlan_20261022.md), commit c2ac3e0b63a5a7f7bd5f2fd5858a8ff129fda09f, exact readback. New source and both R002R20_InputEof_001 folders absent in actual local listings. RDC online, same exact roots/33 blocks, no sessions.
+**Actual execution:** one ordinary -File invocation, outer RDC PID 1864, native parent PID 8620; completed exit 0 in 3.46s. Native receipt interval 2026-10-22T17:43:16.8742013Z–17:43:18.9575925Z.
+- RENAMED_LEFT_OPEN: PASS, child 6020, 232ms.
+- INPUT_CLOSED: PASS, child 7372, 210ms.
+- INPUT_HELD_THEN_CLOSED: PASS, child 6948, 1585ms; during the 1500ms pre-EOF hold, both exited and first-line-completed were false; after EOF exact stdout and exit 0.
+All three exact stdout checks PASS, stderr empty, owned children exited without forced termination. Result **PASS_R002R20_SYNTHETIC_INPUT_EOF_MECHANISM**.
 
-**Scope:** deliver/hash/AST-check this source; run once with three tiny synthetic child fixtures (renamed/open stdin, automatic-input/closed stdin, automatic-input/held-then-closed stdin); exact outputs and child exit codes, bounded waits and owned-child cleanup. Native report goes to C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\05_Evidence\R002R20_InputEof_001\R002R20_InputEof_NativeReceipt.json. No prior adapter invocation or R18 rejected audit recreation, no HTTP or image/security changes. Low CPU and small files only.
+**Evidence:** native receipt C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\05_Evidence\R002R20_InputEof_001\R002R20_InputEof_NativeReceipt.json, 1933 bytes, SHA256 D6D7FD2E139DF3D007C9F6EBB1E5A5382257F957CDA26C11309321E6A6178F69. Independent closeout PID 6140 at 17:43:48.9095535Z verified source/fixture/receipt hashes and all five execution PIDs absent. RDC sessions empty; exact roots/33 blocked commands/default shell unchanged. Rejected R18 audit remains absent. Only 9697 bytes of retained new diagnostic source/fixtures/receipt; no large disposable artifact.
 
-**ONE NEXT:** execute the reviewed diagnostic once after Session IN_PROGRESS and local exact source/AST/hash readback; inspect real receipt and close documentation, then pause. State at this prework record: APPROVED_NOT_RUN.
+**Interpretation:** [R19 source finding](development/PREMAX/R002/02_Analysis/R002R19_PowerShell_InputBoundary_SourceReview_20261022.md) is now reproduced on the installed engine with controlled synthetic fixtures. It explains how an automatic-input expression can prevent the first marker under -File plus open redirected stdin. Historical R14/R17 inner-process handles remain unavailable, so their exact causal attribution remains a leading inference. This is not integrated adapter Probe/HTTP/MAX_PRE PASS. Fresh Windows/Apps metadata GET remains 0/2; original pre-renewal baseline unknown. Immutable 26300.9807 source, Master and Registry r38 unchanged; all seven runtime_execution_allowed remain false.
+
+**ONE NEXT after operator resumes:** prepare a new v4 adapter revision replacing the ordinary-directory use of automatic input with sourceRoot and ordinary query collection use of automatic matches with queryEntries; preserve existing guards, then native AST/hash and Probe-only validation. Status PROPOSED_NOT_PREPARED_NOT_RUN. Finish evidence mirror and Handoff SECOND, Session pointer LAST, short GUI report, then pause as requested. No additional native adapter execution in this block.
 
 ## 2026-10-22 — R002-R19 POWERSHELL AUTOMATIC-INPUT STARTUP MECHANISM SOURCE-CONFIRMED / ORIGINAL NATIVE CAUSE STILL UNPROVEN (§0R FIRST)
 
