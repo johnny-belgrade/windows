@@ -1,0 +1,62 @@
+{
+  "task": "R002R20_SYNTHETIC_INPUT_EOF",
+  "started_utc": "2026-10-22T17:43:16.8742013Z",
+  "powershell_version": "7.6.7",
+  "parent_pid": 8620,
+  "script_sha256": "DEED0863D04FFEE56286A79695C7A899D68C3562F244075D560D114FBF122D27",
+  "native_executable": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+  "original_adapters_executed": false,
+  "network_requests": 0,
+  "image_registry_security_mutations": 0,
+  "result": "PASS_R002R20_SYNTHETIC_INPUT_EOF_MECHANISM",
+  "error": null,
+  "fixture_sha256": {
+    "A": "C9252A519CDC8EB1C135CE17DFDA292BAC2EF606531334950EFA20443D72DFF2",
+    "B": "909BA4E6C4716FF1050EFB3B4DA997DB48F1CD054296DD63DF4E64A806B0F218"
+  },
+  "cases": [
+    {
+      "case": "RENAMED_LEFT_OPEN",
+      "stdin": "LEFT_OPEN",
+      "child_pid": 6020,
+      "before_eof_exited": null,
+      "before_eof_first_line": null,
+      "exit_code": 0,
+      "elapsed_ms": 232,
+      "stdout": "R20_BEGIN\nR20_VALUE=fixture\nR20_END",
+      "stderr": "",
+      "result": "PASS",
+      "cleanup": "OWNED_CHILD_EXITED",
+      "error": null
+    },
+    {
+      "case": "INPUT_CLOSED",
+      "stdin": "CLOSED",
+      "child_pid": 7372,
+      "before_eof_exited": null,
+      "before_eof_first_line": null,
+      "exit_code": 0,
+      "elapsed_ms": 210,
+      "stdout": "R20_BEGIN\nR20_VALUE=fixture\nR20_END",
+      "stderr": "",
+      "result": "PASS",
+      "cleanup": "OWNED_CHILD_EXITED",
+      "error": null
+    },
+    {
+      "case": "INPUT_HELD_THEN_CLOSED",
+      "stdin": "HELD_THEN_CLOSED",
+      "child_pid": 6948,
+      "before_eof_exited": false,
+      "before_eof_first_line": false,
+      "exit_code": 0,
+      "elapsed_ms": 1585,
+      "stdout": "R20_BEGIN\nR20_VALUE=fixture\nR20_END",
+      "stderr": "",
+      "result": "PASS",
+      "cleanup": "OWNED_CHILD_EXITED",
+      "error": null
+    }
+  ],
+  "finished_utc": "2026-10-22T17:43:18.9575925Z"
+}
