@@ -1,0 +1,131 @@
+{
+  "schema": "BlueLite.R002R12.SourceMetadataApprovalGate.v1",
+  "as_of": "2026-10-22",
+  "result": "PASS_SOURCE_REVIEW_QUEUE_SCOPE_AND_APPROVAL_GATES_NOT_EXECUTED",
+  "tier": "DECLARATIVE_SOURCE_REVIEW_ONLY",
+  "runtime_execution_allowed": false,
+  "operator_current_permission": "SOURCE_REVIEW_ONLY_NETWORK_GET_NOT_STARTED",
+  "source": {
+    "original_zip": "C:\\work\\UUP_Source\\26300.9807_687d1ced\\26300.9807_amd64_en-us_professional_687d1ced_convert.zip",
+    "original_zip_sha256": "83203A6E79E62579A7D64204120BCECC111FE114C614AB1DBFAE032BB02DE7B7",
+    "original_launcher": "C:\\work\\UUP_Source\\26300.9807_687d1ced\\uup_download_windows.cmd",
+    "original_launcher_sha256": "289EBCBEA3352F66187BDF2E75961A855DAA187F6C9F4739E7301F9C9F12DEB5",
+    "source_contract": "C:\\work\\UUP_Source\\26300.9807_687d1ced\\BlueLite_S11_SourceContract.json",
+    "source_contract_previously_pinned_sha256": "9D9DCD4FD8190863F1591679574879D3B652D2FE6DED176EEFED0C204D947D11",
+    "source_contract_role": "SECONDARY_UNIVERSALITY_FIXTURE",
+    "build": "26300.9807",
+    "uuid": "687d1ced-aab1-4cd5-ad05-705189769731",
+    "arch": "amd64",
+    "language": "en-us",
+    "edition": "professional",
+    "original_pre_renewal_windows_queue_sha256": null,
+    "original_pre_renewal_apps_queue_sha256": null,
+    "newly_observed_windows_queue_sha256": null,
+    "newly_observed_apps_queue_sha256": null,
+    "actual_getphp_requests_attempted": 0
+  },
+  "metadata_query_intent": [
+    {
+      "name": "Windows",
+      "method": "GET",
+      "scheme": "https",
+      "host": "uupdump.net",
+      "path": "/get.php",
+      "params": {
+        "id": "687d1ced-aab1-4cd5-ad05-705189769731",
+        "pack": "en-us",
+        "edition": "professional",
+        "aria2": "2"
+      },
+      "observed_in_original_launcher": true,
+      "executed": false
+    },
+    {
+      "name": "Apps",
+      "method": "GET",
+      "scheme": "https",
+      "host": "uupdump.net",
+      "path": "/get.php",
+      "params": {
+        "id": "687d1ced-aab1-4cd5-ad05-705189769731",
+        "pack": "neutral",
+        "edition": "app",
+        "aria2": "2"
+      },
+      "observed_in_original_launcher": true,
+      "executed": false
+    }
+  ],
+  "prospective_permission_gate": {
+    "require_new_explicit_gui_scope_prior_to_network": true,
+    "requests_maximum": 2,
+    "retries": 0,
+    "redirects_allowed": false,
+    "timeout_per_request_seconds": 90,
+    "max_response_per_request_bytes": 10485760,
+    "maximum_total_response_bytes": 20971520,
+    "controlled_destination": "C:\\work\\PREMAX-work\\R002_Universal_Stage1_MAXPRE_Package\\05_Evidence\\R002R6_9807_NewQueue_001",
+    "destination_preexisting_must_fail_closed": true,
+    "create_output_only_after_authorization_and_source_hash_gates": true,
+    "actual_folder_created": false,
+    "output_purpose": "two small newly-observed aria2 metadata queues and native source-only checksum receipts; never UUP binary payload",
+    "cpu_thermal_notice": "Expected light I/O and low CPU, maximum 20 MiB response data; warn user before any separate heavy download, conversion or WIM stage.",
+    "source_plan_only": "The previously reviewed R002R6 metadata DRAFT is SOURCE_ONLY. Do not infer execution approval from this declaration or reuse earlier blocked R002R6 negative run under an alternate launcher."
+  },
+  "semantic_validation_contract": {
+    "input": "only newly obtained aria2 queue files; reject HTML, errors, invalid options and unsafe out names",
+    "d4_parser": "C:\\work\\scripts\\BlueLite_Stage1_S06_26300_G4_AppsOnly\\BlueLite_QueueIdentity.psm1",
+    "d4_module_sha256_previously_pinned": "7015C86B97F91E38D691B2831B9AD353EB6D2369E8AD69559B8DC6FF5E31745E",
+    "keys": [
+      "case-folded out filename",
+      "normalized sha-1 or sha-256 checksum"
+    ],
+    "ignore_transport_url_changes": true,
+    "reject_duplicate_or_unsafe_out": true,
+    "require_nonempty_queue_and_valid_checksum": true,
+    "byte_sha256_of_received_metadata_required": true,
+    "semantic_out_checksum_sha256_required": true,
+    "limit_evidence_claim": "Newly observed identity does not prove exact pre-renewal original 9807 queue payload; those original SHAs cannot be reconstructed from frozen ZIP because it lacks queues.",
+    "r002r6_earlier_negative_test": "NOT_EXECUTED_PLATFORM_DENIAL",
+    "r002r10_static_seven_case_spec": "PASS_DECLARATIVE_ONLY",
+    "r002r10_spec_git_blob": "9b8a7b52823160b6eb34c4dec4c3e6061ef46a7b",
+    "proceed_only_after_approved_independent_test_gate": true
+  },
+  "converter_separate_gate": {
+    "declared_vendor_version": "v128m",
+    "declared_archive_sha256": "1597F39D614529843DCADF630ED6DD4543C955EA703B6B0D1FDBE65AA078A5F1",
+    "original_upstream_source_r002r4": "PREISO_BRANCH_STATIC_PASS_11_NEGATIVES",
+    "vendor_archive_bytes_currently_verified": false,
+    "vendor_archive_download_authorized": false,
+    "converter_run_authorized": false,
+    "planned_source_branch": "AutoStart=1;SkipISO=1 full media folder including install.wim and boot.wim, not final ISO",
+    "native_media_layout_observed": false,
+    "native_wim_output_observed": false,
+    "appx_9711_staging_five_and_32": "HISTORICAL_REFERENCE_ONLY_NOT_9807_CERTIFIED"
+  },
+  "provenance_and_parallel_support": {
+    "project_source_master": "BlueLite-Master_Germanium_Strategy_final.md v6.3.0",
+    "prior_source_review": "R002R11_9807_v128m_PreISO_Readiness_20261022.json",
+    "source_get_draft": "03_Drafts/R002R6_9807_TwoQueue_MetadataOnly_DRAFT.ps1",
+    "source_get_draft_sha256": "755412852CF6E6A16DAC25386DFD988B2743924039BF969E0AB4DB91163D460F",
+    "source_draft_git_blob": "4be64d502be440270a68605411279788b5b05954",
+    "previous_platform_denied_r002r6_negative_runtime": false,
+    "controlled_manifest_sync_attempts_this_block": 1,
+    "controlled_manifest_sync_result": "PASS_GITHUB_READBACK_AFTER_RETRY",
+    "controlled_manifest_sync_commit": "316f6a1fbece1ba98fff860f7b6b2f985784013d",
+    "controlled_manifest_sync_blob": "42c31e14643d15edcfe940db3b9d12bb8dbc8780",
+    "original_operator_support_case": "ESCALATED_USER_AWAITS_EMAIL_NOT_POLLED",
+    "master_and_recipe_registry_changed": false
+  },
+  "next_single_step": "OPERATOR_REVIEW_R002R13_SCOPE_ONE_SEPARATE_SMALL_METADATA_ONLY_NETWORK_GATE_AFTER_APPROVED_QA;NOT_RUN",
+  "excluded_actions": [
+    "original source changes",
+    "R002R6 negative-run re-invocation or bypass",
+    "full UUP payload download",
+    "vendor archive download",
+    "converter execution",
+    "DISM/CBS/registry mutation",
+    "WIM/ISO/NTLite/VM runtime",
+    "RDC settings changes"
+  ]
+}
