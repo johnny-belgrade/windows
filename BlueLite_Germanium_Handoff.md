@@ -1,5 +1,17 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
+## 0AU. 2026-10-22 — R002-R21 per-process checkpoint journal
+
+### A — source and live preflight analysis complete; APPROVED_NOT_RUN
+
+Operator resumed the exact R20→R21 plan and requested write/readback after each individual analysis/execution process within the planned block, then a final GUI pause. This is the execution of the previously prepared Probe-only step, not a new unbounded chain. Master is unchanged (full content read earlier in this ongoing session; fresh attached SHA and live blob match); source v4 and execution contract are fully reread and unchanged. Current A commit 4c7046755204a6ea55663509f76415f47b84a447, exact readback.
+
+RDC online, same exact two allowed roots / 33 blocked commands / default shell and no sessions. Actual local mandatory READMEs read; v4 local source, new R21 trace directory and old R6 output directory all absent in direct listings. Sources/Registry/schema context reconciled. Native R21 parser/Probe not yet run. Registry blob 44f6c2f37cf9d4fd8c10331b491ff3d75c7c136b, seven runtime_execution_allowed=false; no schema/recipe change.
+
+**Pinned next process B:** ordinary file delivery of [v4 source](development/PREMAX/R002/03_Drafts/R002R21_9807_TwoQueue_Instrumented_v4_PROBE_DRAFT.ps1), commit abe232ebee25711ea39b40aaa0e71c06419853c2, blob 1766e509784de49741a293a2e4c5ff721e1f6a80, SHA256 959A04FDA12C319BF60A2DFC806FF1166FC1CE3B9C3F5635A0E11C5233ED4A3E, 8470 bytes; native AST/hash and zero input/matches AST references, trace collision gate. Local source belongs under C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\03_Drafts. Record B before C.
+
+**Process C already defined, not executed:** [execution contract](development/PREMAX/R002/02_Analysis/R002R21_ProbeOnly_ExecutionContract_20261022.md), commit f282ac614a88228621ed92e9c50a6fe795dbc03c; ordinary pwsh -File -Mode Probe, 15s observation limit, expected 05_Evidence\R002R21_Probe_001\R002R21_Native_PreflightStages.txt. Native exit/markers/hash and finished owned process required. Fetch remains hard-disabled, no image/network/security work. Preserve errors and partial traces; no original adapter retry. Close each process via Current/Handoff/Entry readbacks; final result/next-source SECOND and Session LAST, then pause.
+
 ## 0AT. 2026-10-22 — R002-R20 native input/EOF mechanism PASS; original adapter still unverified (§0R FIRST)
 
 Operator-authorized post-interruption sequence completed its single bounded diagnostic: technical source review and execution plan published first, Session IN_PROGRESS bf0c2e15af98e0f6908972243ba74c3af97eee0e read back before delivery; then native AST/hash and one three-case fixture execution. Frozen script [R002R20_InputEof_Diagnostic_v1.ps1](development/PREMAX/R002/04_StaticTests/R002R20_InputEof_Diagnostic_v1.ps1), commit 6277365eabbfb0d490ff347cf0bf223379d45f5c, SHA256 DEED0863D04FFEE56286A79695C7A899D68C3562F244075D560D114FBF122D27, 7496 bytes. [Pre-execution plan](development/PREMAX/R002/02_Analysis/R002R20_ExecutionPlan_20261022.md) remains the immutable plan-at-publication record.
