@@ -24,6 +24,14 @@
 **ONE NEXT:** `R002R18_OPERATOR_SCOPED_RDC_PROCESS_LAUNCH_OR_SHELL_LOG_DIAGNOSTIC_READONLY_NO_V2_RETRY_NO_FETCH=PROPOSED_NOT_AUTHORIZED`. Analyze connector terminal/PowerShell process entry and captured logs/metadata, within approved paths and no safety workaround, without executing these hanging v2/v3 sources, then choose one cause-specific remedy after new GUI decision. Handoff SECOND, Session LAST, GUI pause.
 
 
+### §0R SECOND — R002-R17 Probe silent/no trace; sole R18 scoped launch diagnostic (2026-10-22)
+
+**FIRST exact independent readbacks:** Current commit `d730eefc69d4b07899c89c07e6dd4a2cd1bfb4f1`, blob `cc0cc7e85239ac8bf5e6b9d8e2fb3bac905c2471` exact; Handoff FIRST commit `93280b455367e83429cb38bef89691916e286346`, blob `e4dfee4e33fd2622c8395e9facc0616361242f8b` exact. New v3 local/GitHub source `40b7c0cb41eb4bafd3a0ec4564485067d5b01f66`, Fetch hard-disabled source-only. Original direct R17 Probe PID4608 had ZERO stdout/stderr line evidence and no first log directory, terminated after ~38s, no active sessions, **HOLD not PASS**, no indicated platform refusal. Actual 46-line audit `088e367a2eb09cdb9c03d427d03f0d572466b8e3` exact; 0/2 metadata GET, no OS/image mutation.
+
+**ONE NEXT `R002R18_OPERATOR_SCOPED_RDC_PROCESS_LAUNCH_OR_SHELL_LOG_DIAGNOSTIC_READONLY_NO_V2_RETRY_NO_FETCH=PROPOSED_NOT_AUTHORIZED`:** next authorized block should review existing RDC process/terminal diagnostics from the approved workspace and metadata available via connector, confirm what starts vs what is merely reported as shell PID, without expanding file allowlist/disabled commands or using a different runner to sidestep prior silent scripts. No original v2/v3 Probe retry, HTTP GET, converter, WIM/ISO operation, source/history overwrite or host OS mutation. Native resource/log inspection only; decide remedy from actual read-only evidence. **GUI_PAUSE_AWAITING_OPERATOR** per Master §0E; update Session Entry LAST.
+
+---
+
 ## 0AP. 2026-10-22 — R002-R16 EXACT FROZEN V2 URI FUNCTIONS AND LOCAL STALLED STREAM CANCELLATION NATIVE PASS (§0R FIRST)
 
 **Auth/provenance:** Operator "Nastavi" from R15 GUI_PAUSE, one synthetic offline R16 diagnostic block within Master v6.3.0 and permitted PREMAX workspace. Full Master → Session R15 → Current → Handoff §0AO/§0R/§0S, relevant Sources/Contracts/Registry r38, local UUP-history/PREMAX README and RH index headers, Library S11/S13 and prior R14/R15 local/Repository evidence checked. §0D.4 Session R16 IN_PROGRESS CAS commit `f7e918023730a543e079ed534f7adafa18d8dd03`, blob `c42cce5e3ec212d62b0f2777d4c8425a0a24ea8e`, independently read back **before local new source/test**. RDC `DESKTOP-4J4KCEA` 0.3.1 online, `C:\\work` + `C:\\BLR20R2F5` allowed, exact same 33 blocked commands incl `reg`, no active processes or configuration changes pre/post.
