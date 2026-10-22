@@ -2,7 +2,7 @@
   "schema": "BlueLite.PREMAX.CycleManifest.v1",
   "cycle_id": "R002_Universal_Stage1_MAXPRE_Package",
   "created_date": "2026-10-22",
-  "status": "R002_3_REAL_READONLY_SOURCE_OVERLAY_MAXPRE_DRAFTS_PS7_AST_PASS_NATIVE_9711_SOURCE_PASS_SYNTHETIC_10_OF_10_NEGATIVE_PASS_NOT_RUNTIME",
+  "status": "R002R2_SMALL_OWNED_OVERLAY_D4_D5_G4_FIXTURE_PASS_11_ORIGINAL_98_WINDOWS_32_APPS_4_NEGATIVES_NO_RUNTIME",
   "source_build": "Germanium 26300.x universal target; 26300.9711 pinned fixture; 26300.9807 baseline HOLD",
   "source_index": null,
   "source_sha256": "D3E7162605A61D8A0FD62E1738DE523B52B36059D6AAC8F756F90AEFCB64C4A2",
@@ -88,6 +88,31 @@
     "source_queue_identity": "REAL_READONLY_9711_FROZEN_VS_RENEWED_D4_PASS",
     "overlay_layout": "REAL_ZIP_11_ENTRIES_PASS_NO_EXTRACT"
   },
+  "r2_small_overlay": {
+    "authorized_scope": "STATIC_ONLY_OPERATOR_CONTINUATION_20261022",
+    "operator_thermal_and_cleanup_policy": "ADVANCE_NOTICE_BEFORE_HEAVY_DOWNLOAD_CONVERSION_EXPORT;CWORK_DEFAULT;OWNED_DISPOSABLE_DELETE_ONLY_AFTER_PROOF_ROLLBACK_UNMOUNT_HIVE",
+    "adapter": "03_Drafts/R002R2_OverlayQueue_Adapter_DRAFT.ps1",
+    "adapter_sha256": "80ECA403012D72FB136DAA47CC0D657D10BAE54BC9FECBB8161A1D007135930B",
+    "test": "04_StaticTests/R002R2_FixturePostAuditAndNegative.ps1",
+    "test_sha256": "32D3F40449C40ED60F17AD066082D76BE524A689A76A6D73AFF63D164C7F1A92",
+    "small_fixture": "04_StaticTests/R002R2_Fixture_001",
+    "source_zip_bytes": 8218,
+    "original_zip_entries_equal": 11,
+    "windows_full_count": 98,
+    "original_apps_full_count": 2798,
+    "appx_staging_g4_count": 32,
+    "g4_unproven_dependencies": 0,
+    "negative_tests": "4_OF_4_PASS",
+    "fixture_files": 15,
+    "fixture_bytes": 64886,
+    "source_only_zip": "05_Evidence/R002R2_SourceOnly_20261022.zip",
+    "source_only_zip_sha256": "E8B77C0C830D1A05831984231529F0CCB6F8ED65E77CF937D64D434F5CD6DCF9",
+    "receipt": "05_Evidence/R002R2_SmallOverlay_Receipt_20261022.txt",
+    "network_or_aria2": false,
+    "converter_or_wim_mutation": false,
+    "source_zips_modified": false,
+    "runtime_execution_allowed": false
+  },
   "candidate": {
     "relative_path": null,
     "sha256": null,
@@ -100,5 +125,5 @@
     "receipt": "05_Evidence/R002_Static_Draft_Receipt_20261022.txt",
     "note": "No new network or UUP payload, aria2, converter, WIM, registry, NTLite, VM or ISO runtime"
   },
-  "one_next": "OPERATOR_GUI_REVIEW_R002_STATIC_DRAFT_AND_AUTHORIZE_NEXT_EXACT_SOURCE_BOUND_OVERLAY_RENEWAL_INTEGRATION_BLOCK; WIM_AND_CONVERTER_MUTATION_SEPARATELY_APPROVED"
+  "one_next": "OPERATOR_GUI_APPROVAL_FOR_NEXT_CONVERTER_NATIVE_CUSTOMAPPSLIST_CONFIG_SOURCE_ADAPTER_STATIC_ONLY; HEAVY_TRANSFER_CONVERSION_EXPORT_PRENOTICE_CPU_AND_SEPARATE_AUTHORIZATION"
 }
