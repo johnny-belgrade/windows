@@ -23,6 +23,14 @@
 
 **One NEXT:** `R002R11_PLATFORM_DENIAL_SUPPORT_REVIEW_AND_MANIFEST_DIVERGENCE_HOLD`. Operator receives English support text, pending allowed resolution; blocked manifest write and earlier denied R002R6 script NOT rerun. R002R6 negative runtime NOT_TESTED, no new .9807 GET/Windows/Apps queues, no WIM/ISO/mutations; current project remains at source-only tier, `GUI_PAUSE_AWAITING_OPERATOR`. Handoff SECOND and Session Entry LAST mandatory even on HOLD.
 
+### §0R SECOND — R002R10 exact status and only permitted NEXT (2026-10-22)
+
+**Verified FIRST transactions:** Current `a822e9303880270df34bd4dba3e0175306c4b090` blob `d40053d046ed9de9f4c34664d0e083a7ae816f78` exact; Handoff FIRST `d7963664562882ee2cc9726e9c0bf4046d00e671` blob `d89e73a91c6b58229b6bb88e4d9a670b94a4c9c7` exact. Exact R002R10 seven-case spec Git blob `9b8a7b52823160b6eb34c4dec4c3e6061ef46a7b`; exact incident receipt Git blob `495a17c294d29f7dfb162750e828cad8e4c6a3ec`. The local R002 CycleManifest is **R10** (JSON parse and readback PASS); GitHub R002 CycleManifest is **R9**, blob `f0434c1d37bce36bb1a142bf1bd5dc08e94ce9da`, verified. The blocked operation has not been replayed and no alternative was used to advance this target.
+
+**ONE NEXT = `R002R11_PLATFORM_DENIAL_SUPPORT_REVIEW_AND_MANIFEST_DIVERGENCE_HOLD`, `OPERATOR_SUPPORT_ESCALATION_AWAITED`.** Supply the operator exact English OpenAI Support case describing (a) the earlier native-test execution pre-block with exact error, (b) this new source/manifest update combined-call denial with exact same message and partial readbacks, (c) harmless RDC PS7 smoke PASS, (d) no attempted security bypass. Ask OpenAI to review whether an erroneous safety classification affected authorized project operations and how to resolve this via supported route; do not speculate what heuristic triggered it. Keep 7 native negative tests NOT_TESTED and Windows/Apps GET 0/2. No blocked manifest retry, no alternate executable runner or live source transfer until separately permitted safe approach. No script is delivered for execution by this SECOND Handoff entry. Session Entry LAST and GUI_PAUSE per Master §0E.
+
+---
+
 ## 0AH. 2026-10-22 — R002-R9 EXACT D4 NEGATIVE TEST SOURCE-ONLY AUDIT AND ASSERTION GAP (§0R FIRST)
 
 **Authorization/source:** operator continued after R002R8 PS7 connector smoke with conditional English OpenAI Support escalation only on a repeated/new script execution error. One logical R002R9 **SOURCE_ONLY** audit, not an authorized re-run of the previously platform-denied `R002R6_Metadata_SourceAndQueue_Negatives.ps1`. Master v6.3 §0D.4 Session Entry prework commit `befc5a0d351887e4addf143629a28a3978f12082`, blob `dcafbc239168798d5d3f66738a9f298ac05d2d9f`, exact readback before consequential local writes. Live connector `DESKTOP-4J4KCEA` 0.3.1 online, roots unchanged and 33 blocked commands incl `reg`; no temporary exception needed or used.
