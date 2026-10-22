@@ -1,5 +1,11 @@
 # BlueLite Project Sources
 
+## Installed PowerShell input/EOF reproduction — R002R20 native evidence (2026-10-22)
+
+- [Original native receipt, byte-exact mirror](development/PREMAX/R002/05_Evidence/R002R20_InputEof_NativeReceipt.json): commit `0095bcd80259f67c532c66657aace18c521cb274`, SHA256 `D6D7FD2E139DF3D007C9F6EBB1E5A5382257F957CDA26C11309321E6A6178F69`, 1933 bytes, exact Git/native hash reconciliation.
+- [Source, execution observations and proof limits](development/PREMAX/R002/02_Analysis/R002R20_InputEof_ResultAndCheckpoint_20261022.md): commit `299438f20c0f6471eb693eff6c3fb323ae7f6ec9`. Installed PS7.6.7 passed all three controlled cases: renamed variable/open stdin; automatic input/closed stdin; automatic input/held-then-closed stdin. The latter emitted no first marker during the 1500ms hold and completed after EOF. Exact outputs, empty stderr and native exit 0 verified.
+- This extends the earlier R19 **source-only** finding below with native proof of the controlled mechanism. Historical R14/R17 handles remain unavailable, so their exact causal attribution is still inferred. No integrated adapter, HTTP, component-removal or MAX_PRE certification follows.
+
 ## PowerShell launch and automatic input — R002R19 source finding (2026-10-22)
 
 - [Microsoft automatic variables](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.6): engine-managed `$input` must not be reused as an ordinary source-path variable.
