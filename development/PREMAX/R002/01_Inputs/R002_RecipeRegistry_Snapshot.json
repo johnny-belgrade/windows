@@ -1,0 +1,65 @@
+{
+  "schema": "BlueLite.R002.ReadOnlyRecipeInventory.v1",
+  "upstream_path": "production/intelligence/BlueLite_RecipeRegistry.json",
+  "upstream_git_blob_sha": "44f6c2f37cf9d4fd8c10331b491ff3d75c7c136b",
+  "upstream_revision": "2026-10-21-r20r2f13-9807-onedrive-static-contract-10-negative-r38",
+  "usage": "STATIC_PLANNING_ONLY_NO_EXECUTABLE_RECIPE_SOURCE",
+  "recipes": [
+    {
+      "recipe_id": "BL.APPX.DesktopAppInstaller.ExactLifecycle",
+      "phase": "STAGE1_MAX_PRE",
+      "removal_class": "AMBER",
+      "disposition": "PRODUCTION_RULE",
+      "runtime_execution_allowed": false,
+      "actual_26300_topology_recheck": "REQUIRED_BEFORE_ANY_EXECUTION"
+    },
+    {
+      "recipe_id": "BL.FOD.LanguageBasic.enUS",
+      "phase": "STAGE1_MAX_PRE",
+      "removal_class": "RED",
+      "disposition": "RED_HOLD",
+      "runtime_execution_allowed": false,
+      "actual_26300_topology_recheck": "REQUIRED_BEFORE_ANY_EXECUTION"
+    },
+    {
+      "recipe_id": "BL.FOD.EdgeWebView2",
+      "phase": "STAGE1_MAX_PRE",
+      "removal_class": "GREEN",
+      "disposition": "PRODUCTION_RULE",
+      "runtime_execution_allowed": false,
+      "actual_26300_topology_recheck": "REQUIRED_BEFORE_ANY_EXECUTION"
+    },
+    {
+      "recipe_id": "BL.CBS.OneDrive.NeutralSequence",
+      "phase": "STAGE1_MAX_PRE",
+      "removal_class": "AMBER",
+      "disposition": "PRODUCTION_RULE",
+      "runtime_execution_allowed": false,
+      "actual_26300_topology_recheck": "REQUIRED_BEFORE_ANY_EXECUTION"
+    },
+    {
+      "recipe_id": "BL.CBS.Sense",
+      "phase": "CROSS_STAGE",
+      "removal_class": "RED",
+      "disposition": "COMPONENT_ENGINE_HANDOFF",
+      "runtime_execution_allowed": false,
+      "actual_26300_topology_recheck": "REQUIRED_BEFORE_ANY_EXECUTION"
+    },
+    {
+      "recipe_id": "BL.CBS.FoDMetadata.Superseded",
+      "phase": "STAGE1_MAX_PRE",
+      "removal_class": "GREEN",
+      "disposition": "PRODUCTION_RULE",
+      "runtime_execution_allowed": false,
+      "actual_26300_topology_recheck": "REQUIRED_BEFORE_ANY_EXECUTION"
+    },
+    {
+      "recipe_id": "BL.CBS.SearchEngine.ClientWrapper",
+      "phase": "STAGE1_MAX_PRE",
+      "removal_class": "AMBER",
+      "disposition": "PRODUCTION_RULE",
+      "runtime_execution_allowed": false,
+      "actual_26300_topology_recheck": "REQUIRED_BEFORE_ANY_EXECUTION"
+    }
+  ]
+}
