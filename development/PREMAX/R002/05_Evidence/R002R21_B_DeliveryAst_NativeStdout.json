@@ -1,0 +1,14 @@
+{
+  "phase": "R21_B_DELIVERY_AST_HASH",
+  "utc": "2026-10-22T18:13:13.9800364Z",
+  "native_pid": 5308,
+  "powershell": "7.6.7",
+  "source_bytes": 8470,
+  "source_sha256": "959A04FDA12C319BF60A2DFC806FF1166FC1CE3B9C3F5635A0E11C5233ED4A3E",
+  "parse_errors": [],
+  "automatic_input_or_matches_refs": 0,
+  "trace_directory_exists": false,
+  "legacy_queue_output_exists": false,
+  "result": "PASS_R21_B_DELIVERY_AST_HASH",
+  "adapter_invoked": false
+}
