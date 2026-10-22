@@ -12,6 +12,15 @@
 
 **ONE NEXT:** prepare one complete synthetic **R002R20 input/EOF A/B diagnostic**: same installed pwsh, tiny fixtures differing only in ordinary variable name, explicit open/closed redirected stdin, exact outputs/native exits and strict child timeout, owned small receipt. Do not invoke v2/v3 or switch their execution route. Pin final source and expected report in SECOND; no native execution in this R19 block. GUI pause follows closure under Master §0E.
 
+### §0R SECOND — R002-R19 diagnostic finalized; operator authorizes R20 execution after interruption
+
+R19 analysis is complete: Current FIRST be41c206f2576c38ce38d4b81a99b944e2af0190 and Handoff FIRST 9f0bc8aceda4c5090e703c67258f5d9eacf33682 were independently read back. The operator explicitly requested documented technical findings and a plan before execution, then actual execution, complete result/checkpoint records and a GUI pause.
+
+**One approved next step:** [R002R20 source](development/PREMAX/R002/04_StaticTests/R002R20_InputEof_Diagnostic_v1.ps1), SHA256 DEED0863D04FFEE56286A79695C7A899D68C3562F244075D560D114FBF122D27, commit 6277365eabbfb0d490ff347cf0bf223379d45f5c / blob f3e9a39eeecea4ac65bab749595a2bba319745f0, exact readback. [Execution plan](development/PREMAX/R002/02_Analysis/R002R20_ExecutionPlan_20261022.md), commit c2ac3e0b63a5a7f7bd5f2fd5858a8ff129fda09f / blob 63bed740bf04a6527ddc679a0817ae200e0d8028, exact readback. It defines the exact new source/fixture paths, native AST/hash gate, three controlled stdin cases, bounded waits and owned-child cleanup. Status **APPROVED_NOT_RUN**, no native PASS.
+
+Expected report: C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\05_Evidence\R002R20_InputEof_001\R002R20_InputEof_NativeReceipt.json. No old adapter invocation, HTTP, security changes, WIM or rejected R18 audit retry. Live RDC scope/33 blocks unchanged and sessions empty. Session IN_PROGRESS must be independently read back before local delivery. Close actual R20 evidence afterward, then pause as requested.
+
+
 ---
 
 **Verzija dokumenta:** 1.5.158 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-21 (Master v6.2.1 §0D PREMAX/UUP workspace/checkpoint; prethodni v6.1 connector i NTLite 2025.8.10552 korekcija važe)   
