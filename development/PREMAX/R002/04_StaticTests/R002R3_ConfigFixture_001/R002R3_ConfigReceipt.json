@@ -1,0 +1,28 @@
+{
+  "schema": "BlueLite.R002R3.ConverterConfigFixture.v1",
+  "status": "PASS_STATIC_ONLY",
+  "frozen_build": "26300.9711",
+  "converter_declared": "v126",
+  "source_zip_sha256": "D3E7162605A61D8A0FD62E1738DE523B52B36059D6AAC8F756F90AEFCB64C4A2",
+  "originals_preserved": true,
+  "changed_keys": [
+    "convert-UUP/AutoStart",
+    "Store_Apps/StubAppsFull",
+    "Store_Apps/CustomList"
+  ],
+  "active_app_families": [
+    "Microsoft.SecHealthUI_8wekyb3d8bbwe",
+    "Microsoft.DesktopAppInstaller_8wekyb3d8bbwe",
+    "Microsoft.Windows.Photos_8wekyb3d8bbwe",
+    "Microsoft.WindowsNotepad_8wekyb3d8bbwe",
+    "Microsoft.WindowsCalculator_8wekyb3d8bbwe"
+  ],
+  "reused_g4_subset": 32,
+  "original_config_sha256": "F7DB3FA739F2AC7B121C915BE6B8439201EF4E2828A57552B51A9306F19AD03E",
+  "original_app_list_sha256": "1F2FBC910A0F016EAD61D1FEEF41D1E7B75E234753572AE37C83D0DAE955CC94",
+  "no_vendor_archive_download": true,
+  "no_converter_runtime": true,
+  "no_wim_mutation": true,
+  "vendor_binary_actual_version_verified": false,
+  "note": "Native template semantics verified; converter implementation not acquired or executed. Upgradeability decision deferred."
+}
