@@ -2,7 +2,7 @@
   "schema": "BlueLite.PREMAX.CycleManifest.v1",
   "cycle_id": "R002_Universal_Stage1_MAXPRE_Package",
   "created_date": "2026-10-22",
-  "status": "R002R10_DECLARATIVE_SEVEN_EXACT_GATES_PASS_NO_NATIVE_TEST_NEGATIVE_HOLD",
+  "status": "R002R21_NATIVE_PROBE_PASS_METADATA_FETCH_NOT_RUN",
   "source_build": "Germanium 26300.x universal target; 26300.9711 pinned fixture; 26300.9807 baseline HOLD",
   "source_index": null,
   "source_sha256": "D3E7162605A61D8A0FD62E1738DE523B52B36059D6AAC8F756F90AEFCB64C4A2",
@@ -227,7 +227,7 @@
     "receipt": "05_Evidence/R002_Static_Draft_Receipt_20261022.txt",
     "note": "No new network or UUP payload, aria2, converter, WIM, registry, NTLite, VM or ISO runtime"
   },
-  "one_next": "R002R11_OPERATOR_REVIEW_ALLOWED_NATIVE_STRICT_GATE_TEST_SEPARATE_APPROVAL;NO_BLOCKED_SCRIPT_BYPASS_NO_GET",
+  "one_next": "R002R22_BOUNDED_TWO_METADATA_GET_PREPARED_NOT_RUN_AWAIT_OPERATOR",
   "r9_negative_source_audit": {
     "status": "PASS_SOURCE_ONLY_EXPECTED_GATE_ASSERTION_GAP_NEGATIVE_RUNTIME_HOLD",
     "script_source": "04_StaticTests/R002R6_Metadata_SourceAndQueue_Negatives.ps1",
@@ -274,6 +274,44 @@
     "r002r6_denied_script_executed": false,
     "network_get_attempts": 0,
     "actual_7_negative_results": "NOT_TESTED",
+    "runtime_execution_allowed": false
+  },
+  "r21_native_probe": {
+    "status": "EXECUTED_PASS",
+    "result": "PASS_R002R21_INSTRUMENTED_METADATA_PROBE_NATIVE",
+    "source_build": "26300.9807",
+    "source_uuid": "687d1ced-aab1-4cd5-ad05-705189769731",
+    "source_zip_sha256": "83203A6E79E62579A7D64204120BCECC111FE114C614AB1DBFAE032BB02DE7B7",
+    "source_fields_note": "Root source_* fields retain the initial .9711 fixture; this section pins the current .9807 Probe.",
+    "adapter": "03_Drafts/R002R21_9807_TwoQueue_Instrumented_v4_PROBE_DRAFT.ps1",
+    "adapter_sha256": "959A04FDA12C319BF60A2DFC806FF1166FC1CE3B9C3F5635A0E11C5233ED4A3E",
+    "ast_gate": "PASS_NATIVE_PS7_7.6.7_ZERO_ERRORS_ZERO_INPUT_MATCHES_REFS",
+    "native_pid": 2848,
+    "native_exit": 0,
+    "trace_final_ms": 84,
+    "receipt": "05_Evidence/R002R21_Probe_001/R002R21_Native_PreflightStages.txt",
+    "receipt_bytes": 664,
+    "receipt_sha256": "3F4463567AF509F863ABDBFD958BB2BDF44D859C5F18BFC1D5DA0C2930F882D8",
+    "receipt_git_commit": "909f452fb6da8d19474b6276ac0cd47e74c2f50d",
+    "post_state_git_commit": "5cf3d6f51b8df30a9022679340b8531fd56a6943",
+    "source_only_probe_http_gets": 0,
+    "owned_processes_remaining": 0,
+    "original_pre_renewal_queue_baseline": "HOLD_UNPROVEN",
+    "runtime_execution_allowed": false,
+    "previous_top_status": "R002R10_DECLARATIVE_SEVEN_EXACT_GATES_PASS_NO_NATIVE_TEST_NEGATIVE_HOLD",
+    "previous_one_next": "R002R11_OPERATOR_REVIEW_ALLOWED_NATIVE_STRICT_GATE_TEST_SEPARATE_APPROVAL;NO_BLOCKED_SCRIPT_BYPASS_NO_GET"
+  },
+  "r22_prepared_next": {
+    "status": "PREPARED_NOT_RUN_NOT_DELIVERED",
+    "source": "03_Drafts/R002R22_9807_TwoQueue_Bounded90s_v5_DRAFT.ps1",
+    "source_sha256": "E48556CD44C0E1188143F8F1F040CBDA569B34C86E2D334ACCF7CF43254F892D",
+    "source_git_commit": "6a7f44b35994217b1b96ad820fdb83266d8e68b3",
+    "contract": "02_Analysis/R002R22_BoundedMetadata_ExecutionContract_20261022.md",
+    "contract_git_commit": "363593369c25bf1b30cd676c3c200c40a2b20d57",
+    "max_metadata_requests": 2,
+    "max_response_bytes_each": 10485760,
+    "timeout_seconds_each": 90,
+    "network_requests_executed": 0,
     "runtime_execution_allowed": false
   }
 }
