@@ -11,6 +11,22 @@
 **Celokupan spoljašnji katalog:** [`BlueLite_Sources.md`](BlueLite_Sources.md).  
 **Repo:** <https://github.com/johnny-belgrade/windows>; branch `main`.
 
+## 0Y. 2026-10-22 — R001 LIVE 9711 TWO GETPHP METADATA GETS D4 PASS (§0R FIRST)
+
+**Operator restored authorization:** 2026-10-22 user reported UUP Dump backend functional, authorized needed source downloads and resumed universal Stage1 UUP/MAX_PRE focus. The first scoped execution was **only** the previously reviewed two 26300.9711 metadata GETs; user did **not** issue explicit „Nastavi bez prekida“, so Master v6.3 §0E GUI pause applies after this block.
+
+**Prework GitHub checkpoint:** Session Entry IN_PROGRESS `de77acc78694ab5a780d50cb35424c2b66a66a53`, exact readback PASS, before native run. Verified RDC online `DESKTOP-4J4KCEA`, allowed roots `C:\work`, `C:\BLR20R2F5`, blocked commands retained, no reg unblock; mandatory UUP-history/PREMAX README, RH06/RH07/RH08, Library and R001 source/registry context rechecked. Source-bound DRAFT SHA `850E333DC6C1BB5670D445997C9D5C72BDAEA852311DD64928F73EF85209C22F` actual PS7 AST PASS, 49 AST commands, exact output directory absent before test.
+
+**Actual execution evidence:** one authorized PS7 script call `-Mode FetchMetadata -Profile 9711` produced 2 metadata-only HTTPS get.php GETs, exit 0 in 6.90 seconds; literal `R001_METADATA_ONLY_PASS;PROFILE=9711;WINDOWS=98;APPS=2798;SIGNED_URLS_REDACTED=TRUE`. Independently frozen D4 original `out+checksum` payload identities matched for entire 98 Windows and 2798 Apps queues. New raw local Windows queue = 34,613B SHA256 `88E8608EC664C212D0CDA7486662511312820827039CA0A4CDA7AD79F047096E`; Apps = 947,737B SHA256 `514B34B351B0B89784CF60CEBFA9088FEE25D3D4149AFEE3B4BA18843296B1E3`. Signed URL contents remain ONLY in `C:\work\PREMAX-work\R001_Universal_PREMAX_UUP\05_Evidence\R001_MetadataGET_9711_001`. Local assistant-transcribed connector report exact readback PASS; mutable CycleManifest now JSON-parsed/readback with separate metadata transport status, WIM runtime false. Evidence mirror `production/evidence/BlueLite_R001_MetadataGET_9711_20261022.txt` commit `4adcc4de8f560dd790987960fce58fd162db10ac`, exact readback PASS.
+
+**§0R FIRST Current:** `BlueLite_Current_Status.md` newest 2026-10-22 section commit `e8b48910cf60520d47c5fbab982b7f18e9f4d41c`, exact readback PASS.
+
+**Boundaries:** 26300.9807 still independent frozen source queue HOLD; no full UUP payload, aria2, converter, WinRE, image/WIM registry/servicing, OneDrive, NTLite, VM; RecipeRegistry r38 unchanged, runtime disabled. Source queue semantic matching is not a guarantee of active signed-URL lifetime or a full MAX_PRE draft/release.
+
+**ONE NEXT (for SECOND §0R review):** first independent integrated **universal** Stage1 UUP→MAX_PRE **development draft package** using verified historical D4/D5/D6/G4 and source/servicing constraints, within a fresh isolated R### cycle; static parser/source/negative fixtures and GitHub versioning only. Explicit GUI decision before starting another work block; all converter/full-UUP/WIM mutation require their own authorizations.
+
+---
+
 ## 0X. 2026-10-21 — OPERATOR-APPROVED GLOBAL EXECUTION PROTOCOL (§0E, Master v6.3.0)
 
 **New binding rule, all sessions and stages:** After every logically independent action/analysis or natural group of directly related actions, complete factual analysis and required §0R/§0D GitHub/evidence readback, then **STOP**, report very briefly in GUI (performed action, actual PASS/HOLD/FAIL, ONE NEXT), and **WAIT for operator approval or changed focus**. Merely preparing a NEXT step does not authorize executing it. The record/write/readback phases belong to completion of the current block.
