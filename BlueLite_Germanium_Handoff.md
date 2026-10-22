@@ -23,6 +23,14 @@
 
 **ONE NEXT:** operator review of non-bypassing safe analysis of R002R6 negative-test source, then decide separately if a permitted validation mechanism exists; no denied script retry or GET under the current gate. Source-only/diagnostic changes do not certify runtime. After §0R SECOND and Session LAST, GUI pause.
 
+### §0R SECOND — R002R8 PASS closure and safely scoped single NEXT (2026-10-22)
+
+**Verified FIRST GitHub transactions:** Current `2880474da50b435e318e1e3a58991d595cce3467` blob `65431c90917c11248c059e8fd2f467ac276621b7` exact; Handoff FIRST `11066f04e860dd62a84864cf2277bcc04eaf7bfd` blob `2aa72fd665f2844ed38894845a4591542f0d8ffb` exact; local/GitHub assistant-transcribed smoke receipt commit `062df87604a5cefbfb3f5c83d812f1af2ec8aee0` verified. No RDC blocklist or Master/Registry change.
+
+**One next operator step = `R002R9_TARGETED_NONBYPASS_NEGATIVE_SUITE_SOURCE_REVIEW`, `PROPOSED_NOT_AUTHORIZED` (no prepared runnable candidate). Review exact 55-line R002R6 negative script and prior denial receipt for risky assumptions, source drift and allowed static QA scope. The earlier blocked call is neither reissued nor routed through a different process or tool; a different benign one-line smoke already proves generic PowerShell execution. Do not infer platform approval for that specific suite from the smoke, do not launch `-Mode Fetch`, and keep two .9807 GETs on HOLD pending a separately permitted, reviewed validation. If a **different, genuinely authorized** script is later refused, stop promptly, record exact target/tool command, timestamp, platform message, attempt count and absence/presence of native process/log, then provide the user a ready-to-send English OpenAI Support report; never guess undisclosed platform filter details. Master §0E PAUSE now.
+
+---
+
 ## 0AF. 2026-10-22 — OPERATOR STANDING RDC NECESSARY-COMMAND EXCEPTION / RESTORE CONTRACT (R002-R7 §0R FIRST)
 
 **Authority:** operator explicitly authorized temporarily excluding precisely task-required RDC command blocklist entries, including `reg` when needed for an approved step, and requires their immediate restoration afterwards; confirmed this on 2026-10-22 and reported GitHub reconnect. **Applies to all successors** using the approved RDC connector, subordinate to Master v6.3 §0D.4(5), §0C/§6.1 and §0E. This does **not** enlarge authorized root directories, approve live-host debloat, license a WIM/ISO/CBS/registry mutation without its own exact GUI scope, or override a separate OpenAI/platform safety denial. The Master already contains the narrow temporary-exception principle and is not edited.
