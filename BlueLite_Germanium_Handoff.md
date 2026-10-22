@@ -24,6 +24,14 @@
 **ONE NEXT proposed, not approved:** `R002R14_VERSIONED_EXACT_NEGATIVE_REASON_AND_METADATA_BODY_TIMEOUT_QA_DESIGN` (source-only distinct versioned QA and bounded streaming reader review, no original re-execution / networking implied), then Handoff §0R SECOND + Session Entry LAST and Master §0E pause.
 
 
+### §0R SECOND — R002R14A native test accepted with bounded proof / GUI pause (2026-10-22)
+
+**FIRST verified GitHub readbacks:** Current `a1a680d889d266292f92845c891ef128c99ec2dc`, blob `b442e4688b8963e825da886cd4180be1b64c8809` exact; Handoff FIRST `9e021fe564818ad24f2e530142eff8b80c60ef14`, blob `cd0a19b93afdd2b7d37dba0a0cea8c6d31550930` exact. Archived local original R002R6 PS7 native receipt has SHA256 `541CEF538A05DEDA59DFFAEA84E86A19983AC26BAA08BC0CF12CD22BDBE73243`; new R14A mirror Git blob `b638d87f1772b37af3b9508c0007144f029e0317`, exact. Original runtime `7/7` coarse TEST_PASS but six exact throw reasons remain QA HOLD, no network and no OpenAI safety denial. The previous denied attempt history is retained.
+
+**Only next intended step = `R002R14_VERSIONED_EXACT_NEGATIVE_REASON_AND_METADATA_BODY_TIMEOUT_QA_DESIGN`, `PROPOSED_NOT_AUTHORIZED`.** Prepare a **new versioned** non-destructive source-only exact-gate QA revision and bounded body-read deadline/cancellation review, preserving the old original script and original native evidence. This second Handoff entry delivers **NO** new runnable command; next work block requires the operator's next decision per Master §0E. Network GETs, vendor converter, WIM/ISO, active host modifications or rerun of the same original negative test are not part of R14A. Complete Session Entry LAST, then `GUI_PAUSE_AWAITING_OPERATOR`.
+
+---
+
 ## 0AL. 2026-10-22 — R002-R13 SOURCE-BOUND METADATA STREAMING DEADLINE GAP / QA CONTRACT (§0R FIRST)
 
 **Authority and checkpoint:** Master v6.3.0, Session Entry R002R12, Current top and Handoff §0R/§0S/§0AK + exact R002R6 draft/D4 parser and R002R10 QA spec read. New §0D.4 IN_PROGRESS Session Entry commit `9a66bab535f17751b08ed47535fac79cd7acc92d`, blob `a1541a7fd32857cb09f4e93df3282217bf7b44bb`, independent exact readback before work. RDC 0.3.1 `DESKTOP-4J4KCEA` online, allowed roots `C:\\work` and `C:\\BLR20R2F5`, 33 blocked commands including `reg` intact; both local mandatory history/workspace READMEs read and Library S11/S13 source evidence consulted.
