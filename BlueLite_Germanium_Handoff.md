@@ -11,6 +11,18 @@
 **Celokupan spoljašnji katalog:** [`BlueLite_Sources.md`](BlueLite_Sources.md).  
 **Repo:** <https://github.com/johnny-belgrade/windows>; branch `main`.
 
+## 0AD. 2026-10-22 — R002-R5 26300.9807 FROZEN ORIGINAL QUEUE PROVENANCE AUDIT (§0R FIRST)
+
+**Checkpoint/precedence:** operator GUI continuation of one bounded source-only block (not „Nastavi bez prekida“), Session prework commit `2ab95669492411efcf76908c87da7a143ef93928` independently read back BEFORE local work. Master v6.3 authoritative unchanged, no network/converter/WIM mutation authorization. RDC live `DESKTOP-4J4KCEA`; roots unchanged `C:\work`, `C:\BLR20R2F5`; all 33 blocked commands preserved. R002R4 v128m upstream code AST 59/11 negative PASS unchanged, **no runtime**.
+
+**Literal result:** source-pinned original operator 26300.9807 8,218B/11-member ZIP SHA256 `83203A6E79E62579A7D64204120BCECC111FE114C614AB1DBFAE032BB02DE7B7`, UUID `687d1ced-aab1-4cd5-ad05-705189769731` and launcher SHA match local original S11 SourceContract; ZIP declares v128m, but no vendor executable/archive was used. No full original Windows/Apps queue ledger in ZIP. History RH06 2,416 entries (30 9807 source provenance, 13 canonical files), RH07 549 verified survivor files, RH08 seven marked 9807, direct original 9807 canonical SourceContract both original queue SHA values null, original-hashes CSV 11 vendor controls, R001 .9807 Windows/Apps identities null. These prove **absence within inspected frozen source set, not a global filesystem negative**, and do not permit substitution of 9711 Windows98/Apps2798 hashes. Separately operator-produced .9807 ISO/WIM have prior R19P evidence, not original queue provenance.
+
+**Receipt:** `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\05_Evidence\R002R5_9807_SourceQueueBaseline_Review_20261022.txt`, 1,890B SHA256 `C13C4516E70BE3A6F8E55EC2948121235142B228F0F30266E9BC7887005213C7`, labeled assistant transcription of actual RDC read-only observations, not native vendor log. GitHub evidence text commit `34fc46e11c50705350a55317d98d4663385e7363`; R002 manifest r5 receipt pinned, native JSON PASS, `06_Candidate` empty, runtime false; GitHub manifest commit `945effca42a2c4b3a4e8f0b537cf3297384e36a6`, both exact content readback PASS. No changes to original/historical sibling materials or RecipeRegistry r38.
+
+**Classification:** source-origin static audit PASS, **9807 PRE-RENEWAL QUEUE BASELINE HOLD**; no production/runtime/ISO/NTLite/VM certification. New same-UUID GET can establish only a *newly acquired* source-bound queue baseline, not retroactive original snapshot. CPU and destination notice, all network approval and owner/dependency boundaries remain binding.
+
+**FIRST §0R ONE NEXT:** prepare an exactly scoped 2-request same-UUID 9807 Windows+Apps UUP Dump get.php metadata retrieval proposal, **without executing any GET before separate GUI approval**. After FIRST GitHub Current+Handoff writes and readbacks, record precise `PREPARED_NOT_AUTHORIZED` boundary in SECOND Handoff; Session Entry LAST and GUI stop.
+
 ## 0AC. 2026-10-22 — ORIGINAL UPSTREAM V128M STOCK CONVERTER PRE-ISO MAX_PRE SOURCE BOUNDARY (§0R FIRST)
 
 ### §0R SECOND — exact next logical step, source-version convergence before heavy conversion (2026-10-22)
