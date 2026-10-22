@@ -13,6 +13,16 @@
 
 ## 0Y. 2026-10-22 — R001 LIVE 9711 TWO GETPHP METADATA GETS D4 PASS (§0R FIRST)
 
+### §0R SECOND — next reviewed block only, R002 integrated universal Stage1 MAX_PRE draft PROPOSED_NOT_STARTED (2026-10-22)
+
+**Dependency-bound engineering decision:** preserve the now actual successful 9711 original-vs-renewed D4 queue equality while **not** mislabeling 9807 frozen queue identity as proven. The immediate deliverable should be the **first reusable package of UUP source/config + queue renewal verification + post-reconstruction MAX_PRE offline dispatch contracts**, **not another build-specific downloader**. Reuse existing source-verified D4 module SHA `7015C86B97F91E38D691B2831B9AD353EB6D2369E8AD69559B8DC6FF5E31745E`, original reviewed R001 metadata adapter SHA `850E333DC6C1BB5670D445997C9D5C72BDAEA852311DD64928F73EF85209C22F` and prior D5/D6/G4 source/fixtures after required precise hash review. Keep complete Windows reconstruction inputs, preserve five staging AppX + required framework closure, distinguish boot WinRE from installed recovery; include source family/edition/index and owner/dependency/rollback/post-state guards. All new implementation remains isolated under future `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package` with versioned drafts, source/analysis/static/negative evidence and manifest, not promoted/runnable production.
+
+**Explicit NEXT state:** `PROPOSED_NOT_STARTED` / **`GUI_PAUSE_AWAITING_OPERATOR`**. No R002 folder, package, runnable draft, operator-execution command, future GET, new UUP payload, converter, WIM/registry mutation or release was prepared, delivered, approved or run by this SECOND write. One next decision: operator approves or changes focus for first integrated *static-only* R002 draft package. If approved, next development block will produce literal reviewed files and independently validated SHA/AST/fixtures, then itself STOP per Master §0E. Runtime/downloading authorization remains separate.
+
+**§0R FIRST confirmed:** Current commit `e8b48910cf60520d47c5fbab982b7f18e9f4d41c`, Handoff FIRST commit `1f10c303424a035f4d7d3bd4a296fd426d992bd7`, local R001 evidence source readback and GitHub mirror `4adcc4de8f560dd790987960fce58fd162db10ac`. Session Entry final factual checkpoint to be updated LAST, independently read back. Source Master v6.3 unchanged; Registry r38 unchanged.
+
+
+
 **Operator restored authorization:** 2026-10-22 user reported UUP Dump backend functional, authorized needed source downloads and resumed universal Stage1 UUP/MAX_PRE focus. The first scoped execution was **only** the previously reviewed two 26300.9711 metadata GETs; user did **not** issue explicit „Nastavi bez prekida“, so Master v6.3 §0E GUI pause applies after this block.
 
 **Prework GitHub checkpoint:** Session Entry IN_PROGRESS `de77acc78694ab5a780d50cb35424c2b66a66a53`, exact readback PASS, before native run. Verified RDC online `DESKTOP-4J4KCEA`, allowed roots `C:\work`, `C:\BLR20R2F5`, blocked commands retained, no reg unblock; mandatory UUP-history/PREMAX README, RH06/RH07/RH08, Library and R001 source/registry context rechecked. Source-bound DRAFT SHA `850E333DC6C1BB5670D445997C9D5C72BDAEA852311DD64928F73EF85209C22F` actual PS7 AST PASS, 49 AST commands, exact output directory absent before test.
