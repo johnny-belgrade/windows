@@ -44,6 +44,12 @@ C:\work\PREMAX-work\R001_kratka-namena\
 - Samo ako operator tačno napiše **„Nastavi bez prekida“** može se preskočiti redovna pauza među uspešnim blokovima. **Nikad** se time ne preskaču pravila o greškama, zasebna GUI odobrenja (mreža/WIM/CBS/registry/ISO), source/SHA/dependency, §0R ili §0D.4 checkpoint.
 - **Istorijski 2026-10-21 HTTP 502 HOLD je zatvoren 2026-10-22 isključivo operatorskom potvrdom ponovne dostupnosti i eksplicitnom dozvolom.** R001 26300.9711 dve metadata GET provere su sada zaista završene D4 PASS 98/2798; ovaj statički R002 ciklus nema dodatnu dozvolu za velike UUP/aria2 prenose, converter, WIM ili ISO mutacije. Operatorov raniji 60s monitor se ne duplira. UUP-history ostaje read-only.
 
+## Latest Stage1 PREMAX R002-R4 pointer (2026-10-22)
+
+- New current R002-R4 source-only original-vendor `abbodi1406/BatUtil` v128m branch audit **PASS**, precise full ISO media reconstruction with `install.wim` and `boot.wim`, then `SkipISO=1` exits before final ISO creation; native PS7 AST PASS and **11/11 synthetic negative PASS**. Vendor upstream source bytes independently matched exact Git blobs but upstream full script remains a read-only local reference, not executed or republished.
+- Source/frozen-version boundary remains **HOLD**: operator 26300.9711 UUP ZIP declares v126 while latest official UUP Dump metadata declares v128m; no archive binary/runtime compatibility tested. 26300.9807 independent original queue baseline remains HOLD. R002`06_Candidate` empty; RecipeRegistry r38 runtime disabled; no WIM/ISO mutation.
+- Owned evidence under `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\05_Evidence\R002R4_StockVendor_PreISO_Static_Receipt_20261022.txt`, CycleManifest `r4_stock_vendor_preiso`, GitHub Current/Handoff/Session Entry. The operator thermal advance notice and selective owner-verified disposable WIM cleanup below remain mandatory. No new runtime/dowload permission.
+
 ## Obavezno operatorsko upozorenje na CPU temperaturu i kontrolisano uklanjanje velikih disposable artefakata (2026-10-22)
 
 - **PRE** svakog većeg download-a, UUP/converter rada, WIM export-a ili sličnog CPU/disk-intenzivnog posla: ChatGPT mora u GUI **unapred** da napiše šta se izvršava, približnu veličinu kada je poznata, očekivano CPU opterećenje, sve odredišne putanje i da operator može da nadgleda temperaturu. Navedena najava nije zasebno odobrenje za mutacioni/network runtime — prethodni Master gates ostaju.
