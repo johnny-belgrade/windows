@@ -24,6 +24,14 @@
 **ONE NEXT proposed (not delivered/executable):** `R002R14_OPERATOR_REVIEW_NEW_VERSIONED_STREAM_TIMEOUT_CORRECTION_AND_QA_STATIC_ONLY`. A new versioned source-only proposed reader/QA gate is required before separately authorizing exactly two small HTTPS metadata GETs; do not substitute or retry the earlier platform-denied negative suite via a wrapper. Handoff §0R SECOND, Session Entry LAST, then Master §0E GUI_PAUSE.
 
 
+### §0R SECOND — R002R13 exact QA hold and sole next proposal (2026-10-22)
+
+**FIRST independent readbacks:** Current commit `3e229949693c408dae8e3da16e9e56b9588cff33`, blob `7bf18f4c3965dc5c5272d08b3d58325461a5215e` PASS; Handoff FIRST commit `bb553e3362968b395a83612e3474738b7b680a70`, blob `94a38c22f3196f928bb69ad7d0144bced269a8f9` PASS. R002R13 new source-only JSON blob `58a71b8e09107ab5d4d0b1ad4b044451bf9d02c8` exact local/GitHub PASS, native execution false.
+
+**ONE NEXT = `R002R14_OPERATOR_REVIEW_NEW_VERSIONED_STREAM_TIMEOUT_CORRECTION_AND_QA_STATIC_ONLY`, `PROPOSED_NOT_AUTHORIZED`**: independently review a new, SHA-versioned BODY-stream timeout/cancellation and exact negative-gate QA design inside existing R002 workspace; use a distinct new file, do not rewrite frozen R002R6 draft or execute the earlier safety-denied native test with a substitute. Revalidate source hashes and scope; separate GUI network authorization required even for future two `get.php` metadata GETs. No command/script was delivered for runtime, no download can start from this Handoff. End R13 with Session Entry LAST and `GUI_PAUSE_AWAITING_OPERATOR`.
+
+---
+
 ## 0AK. 2026-10-22 — R002-R12 OPERATOR-REQUESTED CONTROLLED GITHUB MANIFEST RETRY PASS AND SOURCE QUEUE APPROVAL SCOPE (§0R FIRST)
 
 **New explicit operator scope:** one controlled attempt at previously blocked CycleManifest update, then continue independent planned review even on re-denial. This is user-directed one attempt, **not** a platform-security workaround; the same existing GitHub CAS update flow was used and succeeded normally with independent exact readback. Never equate that result with access for previously rejected R002R6 PowerShell negative-test process. Master v6.3 §0D.4 prework Session Entry `46b20ec47546bf26936e3c1eea418132ca931e3b` blob `87d0e02ee5b5b94038e4d728cc85f54896c9db0d` exact before local work; RDC 0.3.1 online, only two allowed roots and 33 blocked commands including reg unchanged.
