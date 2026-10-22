@@ -1,5 +1,11 @@
 # BlueLite Project Sources
 
+## PowerShell launch and automatic input — R002R19 source finding (2026-10-22)
+
+- [Microsoft automatic variables](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.6): engine-managed `$input` must not be reused as an ordinary source-path variable.
+- Original **PowerShell v7.6.7** implementation: [ConsoleHost.cs](https://github.com/PowerShell/PowerShell/blob/v7.6.7/src/Microsoft.PowerShell.ConsoleHost/host/msh/ConsoleHost.cs) blob `632181d4161dfdf95e3ed12b5e68ca431f34fce8`; [AstVisitor.cs](https://github.com/PowerShell/PowerShell/blob/v7.6.7/src/System.Management.Automation/engine/parser/AstVisitor.cs) blob `03b234cf41f7fc869c999cf0930081d036c63f8f`; [Executor.cs](https://github.com/PowerShell/PowerShell/blob/v7.6.7/src/Microsoft.PowerShell.ConsoleHost/host/msh/Executor.cs) blob `38924f3e39794c4f81ea54c369f4468c1b154729`. All directly fetched/read. -File AST detection of the automatic input variable activates redirected-stdin consumption; -Command detection instead inspects the outer command text. This supports a testable explanation for R14/R17 no-output, **not a native reproduction or proof of their historical stdin state**.
+- [R19 exact evidence and proof limits](development/PREMAX/R002/02_Analysis/R002R19_PowerShell_InputBoundary_SourceReview_20261022.md). No adapter or image runtime certification is inferred.
+
 ## Original UUP converter — current stock pre-ISO proof (2026-10-22)
 
 - [Original author abbodi1406 — stock convert-UUP.cmd](https://github.com/abbodi1406/BatUtil/blob/master/uup-converter-wimlib/convert-UUP.cmd): direct GitHub connector source blob `262a6e6b0ad2016d1345927bdc334898f71b49f2`, locally byte-exact Git blob verified; current literal `uivr=v128m`. [Original ReadMe](https://github.com/abbodi1406/BatUtil/blob/master/uup-converter-wimlib/ReadMe.html) blob `58aeee6f7a1eba3fbeb1675e9cd7ba65251fdbd1`. This **source-level** authority is not a certification that any vendor converter archive was downloaded or run.
