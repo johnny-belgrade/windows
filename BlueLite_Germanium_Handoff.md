@@ -24,6 +24,14 @@
 **ONE NEXT:** `R002R17_NEW_VERSIONED_INSTRUMENTED_METADATA_ADAPTER_READONLY_PROBE_AND_HTTP_QA_GATE=PROPOSED_NOT_AUTHORIZED`; new owned versioned preflight-instrumented candidate with narrow per-step durable logs, independent reviewed Probe and only THEN separate network user decision for two metadata GETs. This R16 pass does not authorize next block or any network/host image actions. §0R Handoff SECOND, Session LAST, GUI pause per §0E.
 
 
+### §0R SECOND — R002-R16 PASS with bounded successor plan (2026-10-22)
+
+**FIRST transaction verified independently:** Current FIRST commit `46f18b57ab15e864d110800bfd2d3812b4424a56`, blob `3952cc4b650e9c5555208f19fa0afb95dbfa0712`; Handoff FIRST commit `b2368a7fcad8152303d82523727fc786528f6db2`, blob `7c7b8f95112bbb88d9b17b46af72ded58276fa2e`, both exact. Native proof source blob `ea1ad72f7072a92e046c6adb47e1a30f17e13386`; immutable native receipt SHA256 `ED89A8F222A2A68142D5707DFE99E6FD5F0E9404C2AAA53F81467D693E79F44E`, mirrored Git blob `25b2f08845999d9e5aa09cb32b939c8f24afe18f` exact. Native PID4196 PASS 283ms; original v2 PID2000 root-cause still HOLD; GET 0/2. No new network/runtime authority.
+
+**Only NEXT** `R002R17_NEW_VERSIONED_INSTRUMENTED_METADATA_ADAPTER_READONLY_PROBE_AND_HTTP_QA_GATE=PROPOSED_NOT_AUTHORIZED`. A new separate instrumented R002 adapter source should checkpoint every native preflight stage, bind the two frozen URLs and module/contract hashes, own isolated zero-network `Probe` output, expose exact reason/stage of any no-output stall and preserve cancellation-size/HTTP guardrails. Stage a reviewed candidate under a new version, **do not run the R14 v2 source again**. R17 proposal starts only after next GUI user permission. Actual two bounded UUP metadata GETs need separate decision following proven independent Probe + response-safety review; no WIM, converter, heavy CPU, link-restriction workaround or cleanup in the proposed step. Finish Session Entry LAST; `GUI_PAUSE_AWAITING_OPERATOR`.
+
+---
+
 ## 0AO. 2026-10-22 — R002-R15 INDEPENDENT NATIVE V2 PROBE STAGE DIAGNOSTIC 74MS PASS; PRIOR DIRECT V2 NO-OUTPUT CAUSE STILL UNKNOWN (§0R FIRST)
 
 **Authority:** user again directs full-effort within existing heavy CPU/WIM advance notices and allows narrow temporary block exceptions only when needed, but no bypass of platform safety. Master 6.3.0 / Session R14 / Current top / Handoff §0AN/§0R/§0S / Sources / Contracts / RecipeRegistry r38, mandatory local history/PREMAX README and Library S11/S13 source evidence reviewed. Authorized RDC `DESKTOP-4J4KCEA` 0.3.1 online, both exact roots `C:\\work`, `C:\\BLR20R2F5`, unchanged blocked 33 incl reg before and after. §0D.4 Session IN_PROGRESS CAS commit `c269cbd7b1f10c342a5dcc0fbf45385df79307a7`, blob `af84bf2b2ac4413bda5e8dac6577ce9430742b82`, independently read before local new work. Previous direct versioned v2 `Probe` PID2000 had NO stdout >~60s and was terminated in R14; not repeated, no alternate bypass.
