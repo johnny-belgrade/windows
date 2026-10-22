@@ -1,0 +1,97 @@
+{
+  "schema": "BlueLite.R002R13.MetadataStreamingQAGate.v1",
+  "date": "2026-10-22",
+  "cycle_id": "R002_Universal_Stage1_MAXPRE_Package",
+  "result": "PASS_SOURCE_AUDIT_NEW_STREAM_TIMEOUT_GAP",
+  "tier": "SOURCE_REVIEW_ONLY",
+  "native_test_executed": false,
+  "network_get_attempts": 0,
+  "queue_baseline_newly_observed": null,
+  "original_pre_renewal_queue_baseline": null,
+  "runtime_execution_allowed": false,
+  "source": {
+    "build": "26300.9807",
+    "uuid": "687d1ced-aab1-4cd5-ad05-705189769731",
+    "original_zip_sha256": "83203A6E79E62579A7D64204120BCECC111FE114C614AB1DBFAE032BB02DE7B7",
+    "draft": "03_Drafts/R002R6_9807_TwoQueue_MetadataOnly_DRAFT.ps1",
+    "draft_git_blob": "4be64d502be440270a68605411279788b5b05954",
+    "draft_native_sha256_previous": "755412852CF6E6A16DAC25386DFD988B2743924039BF969E0AB4DB91163D460F",
+    "native_negatives": "04_StaticTests/R002R6_Metadata_SourceAndQueue_Negatives.ps1",
+    "native_negative_git_blob": "e6fb168859562333d2d08a77873c2aaa1816d1f7",
+    "prior_spec_git_blob": "9b8a7b52823160b6eb34c4dec4c3e6061ef46a7b",
+    "previous_controlled_manifest_sync_commit": "316f6a1fbece1ba98fff860f7b6b2f985784013d"
+  },
+  "observed_in_source": {
+    "http_completion": "ResponseHeadersRead",
+    "http_client_timeout_seconds": 90,
+    "stream_read": "synchronous stream.Read(byte[],offset,count) without cancellation or deadline",
+    "size_cap_each_bytes": 10485760,
+    "redirects_allowed": false,
+    "request_order": [
+      "Windows",
+      "Apps"
+    ],
+    "max_http_gets": 2,
+    "fail_closed_on_source_hash_drift": true,
+    "preexisting_output_collision_guard": true,
+    "unmodified_originals": true,
+    "previous_negative_suite": "7 cases specified declaratively; 0 native passes; earlier platform refusal not retried",
+    "finding": "HttpClient.Timeout only bounds GetAsync through HTTP headers with ResponseHeadersRead; synchronous response stream.Read has no independent cancellation/deadline, so proposed 90-second full-request bound is not established."
+  },
+  "mandatory_future_QA": [
+    {
+      "id": "G01_STREAM_STALL",
+      "expected": "FAIL_CLOSED by independent body-read deadline; not implemented",
+      "status": "OPEN_SOURCE_GAP"
+    },
+    {
+      "id": "G02_CONTENT_LENGTH_OVER_CAP",
+      "expected": "RESPONSE_TOO_LARGE before writing body",
+      "status": "SOURCE_EXPECTED_NOT_TESTED"
+    },
+    {
+      "id": "G03_CHUNKED_BODY_OVER_CAP",
+      "expected": "RESPONSE_EXCEEDS_10MIB; retain partial solely as HOLD evidence, never PASS",
+      "status": "SOURCE_EXPECTED_NOT_TESTED"
+    },
+    {
+      "id": "G04_HTTP_REDIRECT_OR_NON_200",
+      "expected": "NO_REDIRECT; non-200 is HOLD; no retry",
+      "status": "SOURCE_EXPECTED_NOT_TESTED"
+    },
+    {
+      "id": "G05_MALFORMED_RESPONSE",
+      "expected": "native D4 reject invalid content; never classify HTML/error as queue",
+      "status": "SOURCE_EXPECTED_NOT_TESTED"
+    },
+    {
+      "id": "G06_BOTH_REQUESTS_ATOMIC_ACCEPTANCE",
+      "expected": "Windows valid + Apps failure remains overall HOLD; distinct observed SHA only after both validate",
+      "status": "SOURCE_EXPECTED_NOT_TESTED"
+    },
+    {
+      "id": "G07_OUTPUT_COLLISION",
+      "expected": "existing owned destination fails closed, zero network",
+      "status": "SOURCE_EXPECTED_NOT_TESTED"
+    },
+    {
+      "id": "G08_SOURCE_7_NEGATIVE_GATES",
+      "expected": "R002R10 exact case gates require separately allowed native test; prior denied R002R6 runner not bypassed",
+      "status": "HOLD_NATIVE_NOT_TESTED"
+    }
+  ],
+  "reference": {
+    "provider": "Microsoft Learn HttpCompletionOption Remarks",
+    "url": "https://learn.microsoft.com/en-us/dotnet/api/system.net.http.httpcompletionoption?view=net-10.0",
+    "observed": "2026-10-22",
+    "claim": "ResponseHeadersRead applies HttpClient.Timeout only until response headers; content read needs independent timeout."
+  },
+  "authorization": {
+    "network_gets": "NOT_AUTHORIZED_IN_R002R13",
+    "mutation": "NOT_AUTHORIZED",
+    "new_script_or_execution": "NOT_AUTHORIZED",
+    "master_or_registry_change": false,
+    "rdc_config_change": false
+  },
+  "one_next": "R002R14_OPERATOR_REVIEW_NEW_VERSIONED_BOUNDED_STREAM_READER_AND_NEGATIVE_QA_STATIC_ONLY; do not execute previous blocked script, GET, converter or image mutation without separate approval"
+}
