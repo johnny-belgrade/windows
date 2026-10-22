@@ -1,5 +1,19 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
+## 0AS. 2026-10-22 — R002-R19 source comparison identifies automatic input / -File startup dependency (§0R FIRST)
+
+**Completed source-review block:** continued from verified R18 after operator instruction. Mandatory complete Master, live entry/status/governing Handoff, Sources/Contracts/Registry and local READMEs read; Session prework commit `1fe300feab8b50740c4b0f243510b23295aefce8` / blob `496b4dca596e30e355624d6d93ddebe441f81971` exact readback. RDC online v0.3.1, scoped C:\work and C:\BLR20R2F5, 33 blocked commands intact, no sessions; no new Windows process or write.
+
+**Source-proven correction to the UNKNOWN-only explanation:** both local v2/v3 full texts match frozen Git blobs `8f4b1b007334a8867cd1a4053279f8b32b152000` and `40b7c0cb41eb4bafd3a0ec4564485067d5b01f66`. Both repurpose automatic `$input` as the source directory. R15 uses `$inputRoot`, R16 a full path. Original launch records show v2/v3 as -File; prior R6 PASS used a command-string call operator. Microsoft PowerShell **v7.6.7** ConsoleHost/AstVisitor/Executor source directly confirms automatic-input AST detection activates redirected-stdin reading for -File; input is closed differently when that variable is absent. This yields a concrete **leading inference**, open-stdin/EOF dependency, not an installed-binary runtime proof or evidence of the original terminated process handles. No security-control change is needed for this diagnostic. R18 local-write denial remains separate.
+
+**Evidence and limits:** [R19 source review](development/PREMAX/R002/02_Analysis/R002R19_PowerShell_InputBoundary_SourceReview_20261022.md), commit `fa7c2b554f4f65426fba23d10c92b79a7428c0de`, blob `997b03e015a0456ff4732666b7752e1921967991`, exact readback; [Sources](BlueLite_Sources.md) commit `81b0d061f51878383c31aa84a54d1aa1f9c105b3` exact; Current FIRST commit `be41c206f2576c38ce38d4b81a99b944e2af0190`, blob `f6e70a3cb077522f5bd1351921d0a474725a38c3`, exact. Known Library 28-ChatGPT.md actual bytes/read SHA `F30813ADF5D54EC5EC884A6019EEC00B73CC2D8E6CE665F9864557EE6930FDAA`; search indexing was empty, materialization supplied the original. RH indexes were inspected only as scoped headers/verification, not a full historical-script review.
+
+**Endpoint:** `PASS_R002R19_SOURCE_REVIEW` / `HOLD_ORIGINAL_NATIVE_CAUSE_NOT_REPRODUCED`. No original adapter rerun, no R18 rejected audit recreation, no Windows file write or new native receipt, no image/HTTP/native mount-hive certification. Fresh .9807 Windows/Apps GET still 0/2, original pre-renewal baseline unknown; immutable source and Master/Registry unchanged. No new large disposable artifact to delete.
+
+**ONE NEXT:** prepare one complete synthetic **R002R20 input/EOF A/B diagnostic**: same installed pwsh, tiny fixtures differing only in ordinary variable name, explicit open/closed redirected stdin, exact outputs/native exits and strict child timeout, owned small receipt. Do not invoke v2/v3 or switch their execution route. Pin final source and expected report in SECOND; no native execution in this R19 block. GUI pause follows closure under Master §0E.
+
+---
+
 **Verzija dokumenta:** 1.5.158 · **Izrađeno:** 2026-10-17 · **Dopunjeno:** 2026-10-21 (Master v6.2.1 §0D PREMAX/UUP workspace/checkpoint; prethodni v6.1 connector i NTLite 2025.8.10552 korekcija važe)   
 **Status:** Trajni tehničko-operativni handoff; **ne predstavlja release sertifikat**  
 **Primarni proizvod:** Windows 11 **26H2 GA / 26300.x**, x64; sada aktivni operatorom potvrđen izvor **26300.9807 / en-US / Professional** (26300.9711 je istorijska referenca).  
