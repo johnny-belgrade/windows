@@ -1,0 +1,57 @@
+{
+  "schema": "BlueLite.R002.Stage1.StaticProfile.v1",
+  "profile_name": "26H2_GA_26300.9711_Pro_en-US",
+  "state": "R002_DEVELOPMENT_ONLY",
+  "source": {
+    "build": "26300.9711",
+    "arch": "amd64",
+    "language": "en-us",
+    "edition": "professional",
+    "uuid": "2b22470a-8b6f-498f-9c88-66f7b9fb56b1",
+    "zip_path": "C:\\work\\26300.9711-UUP\\26300.9711_amd64_en-us_professional_2b22470a_convert.zip",
+    "zip_sha256": "D3E7162605A61D8A0FD62E1738DE523B52B36059D6AAC8F756F90AEFCB64C4A2",
+    "launcher_path": "C:\\work\\UUP_Source\\26300.9711_2b22470a\\uup_download_windows.cmd",
+    "launcher_sha256": "CC52FB726E1DCD645C8C7C2A96A59A2EB83DD0323EBBEE6471AB6DCA6F4E1A90"
+  },
+  "queue": {
+    "module_path": "C:\\work\\scripts\\BlueLite_Stage1_S06_26300_G4_AppsOnly\\BlueLite_QueueIdentity.psm1",
+    "module_sha256": "7015C86B97F91E38D691B2831B9AD353EB6D2369E8AD69559B8DC6FF5E31745E",
+    "frozen_windows": "C:\\work\\E2E\\BlueLite_Stage1_S06_26300_9711_2b22470a\\Queues\\WindowsQueue.original.txt",
+    "frozen_apps": "C:\\work\\E2E\\BlueLite_Stage1_S06_26300_9711_2b22470a\\Queues\\AppsQueue.original.txt",
+    "renewed_windows": "C:\\work\\PREMAX-work\\R001_Universal_PREMAX_UUP\\05_Evidence\\R001_MetadataGET_9711_001\\WindowsQueue.renewed.txt",
+    "renewed_apps": "C:\\work\\PREMAX-work\\R001_Universal_PREMAX_UUP\\05_Evidence\\R001_MetadataGET_9711_001\\AppsQueue.renewed.txt",
+    "original_windows_identity_sha256": "07EB7120FC7B41001D0FA4E71213D6EB03901A0CDAAA951F8BF90D2D21B61C06",
+    "original_apps_identity_sha256": "DF2747330DB66B5ACB8398EDF8DC29BDC22F3F80FA3088C005131324B5A5C566",
+    "expected_windows_count": 98,
+    "expected_apps_count": 2798
+  },
+  "staging": {
+    "required_apps": [
+      "Microsoft.SecHealthUI",
+      "Microsoft.DesktopAppInstaller",
+      "Microsoft.WindowsCalculator",
+      "Microsoft.WindowsNotepad",
+      "Microsoft.Windows.Photos"
+    ],
+    "windows_queue": "PRESERVE_FULL_RECONSTRUCTION",
+    "apps_closure": "REUSE_D5_D6_G4_MANIFEST_VERIFIED",
+    "winre": "PRESERVE_INSTALLED_WINRE",
+    "netfx3": "OFF",
+    "update_policy": "PINNED_CONVERTER_NATIVE",
+    "skip_edge": "SOURCE_CONFIG_VERSION_GATED"
+  },
+  "pipeline": [
+    "FROZEN_SOURCE_AUDIT",
+    "JIT_QUEUE_RENEWAL_IDENTITY",
+    "D5_G4_APPS_CLOSURE",
+    "WINDOWS_COMPLETE_SOURCE_ACQUIRE",
+    "NATIVE_CONVERTER_RECONSTRUCTION",
+    "IMMUTABLE_RECONSTRUCTED_WIM",
+    "OWNED_MUTABLE_WIM_PRE_ISO",
+    "MAXPRE_DEPENDENCY_GATED_RECIPES",
+    "POST_STATE_SERVICING_HEALTH",
+    "ATOMIC_EXPORT_ISO",
+    "STAGE2_RESIDUE_HANDOFF"
+  ],
+  "runtime_allowed": false
+}
