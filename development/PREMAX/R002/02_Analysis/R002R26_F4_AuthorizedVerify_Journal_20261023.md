@@ -13,3 +13,11 @@ Frozen F code: `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\03_Draf
 ## B — pre-launch connector sessions
 
 Attempt1 independent same-RDC `list_sessions`: **No active sessions**. No competing connector-owned process detected. Next: standalone source SHA256, note original PID/stdout; no scripts run yet.
+
+## C — platform safety rejection, stop before source SHA/Verify
+
+**One actual attempt (1/3 cumulative for this new narrowly scoped F4 source-SHA request)** via unchanged RDC `start_process` for standalone `pwsh.exe -NoLogo -NoProfile -NonInteractive -Command` / `Get-FileHash -Algorithm SHA256` of the exact frozen F v1 script in existing allowed R002 `03_Drafts`: platform rejected the tool call **before remote execution** with literal message `This tool call was blocked by OpenAI's safety checks. Please double check what you are sending.`. No PID, stdout, native hash or numeric exit produced; no evidence that the local command ran. Same source SHA from earlier F3 PID8036 is **historical**, not fresh F4 confirmation.
+
+Per Master §0E and Handoff §0BE, **immediate `ERROR_HOLD_R26_F4_SOURCE_SHA_PLATFORM_SAFETY_REJECTION_1_OF_3`**; no alternate command, reroute, connector, path, `reg` unblock, relaxing allowedDirectories or additional attempt to bypass this denial. Operator's request for broad safety bypass cannot override platform safety controls. No R26-F `-Mode Verify` attempt, no historical payload SHA1 comparison, no new owned JSON, no network, image/registry/cache mutation. Live RDC roots/33 blocklist were unmodified at last verified check. Previous F2 SelfTests and F3 SHA pins remain valid at their older scope; no claim of any F4 Verify PASS.
+
+**ONE NEXT:** record actual denial in Current FIRST, Handoff FIRST/SECOND and Session Entry LAST with independent Git readbacks. Pause for operator disposition/compliant next step; exact error cause unknown. Master/Registry/CycleManifest unchanged.
