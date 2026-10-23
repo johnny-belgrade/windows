@@ -1,0 +1,9 @@
+# R002-R25 I — v3 native static PASS, final Verify pending (2026-10-23)
+
+Full source: development/PREMAX/R002/03_Drafts/R002R25_FullRecord_Parity_v3_DRAFT.ps1, commit 40309241611937acf584f70b63ef54a03a716091, blob 5f3451446d1829a1f91b6022def1b7245ff1269c. Full 124-line local and Git text identical after newline normalization, original v1/v2 frozen. The only new changes: actual PowerShell boolean sha1_hex_casefold=$true, new output folder suffix _003, and in-memory JSON boolean serialization test. H plan/readback commit b115c14948b7f8fd2c89dbfdd447d7568cb4de7f.
+
+Native RDC PID7188: PASS_R002R25_AST0_POSITIVE_AND_3_NEGATIVES. Source AST parse errors zero, forbidden CommandAst hits zero, full URL-field positive4/4 including URL-only policy match, 3/3 negatives (missing checksum/duplicate out/missing required), JSON boolean serialization PASS. Separate native RDC PID7524 Get-FileHash + size: 8660B/SHA256 169A0CDE152A4E1755A818FC7823B31D44713D88AE19C4C744438BCE6A5FDDDA. No original queue read, network or local evidence write in SelfTest. One helper JS text-generation attempt to create this documentation failed before commit because of unescaped delimiters; this corrected single Git transaction follows.
+
+Attempt budget: two prior native Verify failures (v1 case-sensitive SHA1 hex; v2 bare true report assembly); only ONE more original-source Verify permitted. All preflight failures/receipts retained. Neither parity nor AppxManifest closure has been demonstrated yet.
+
+ONE NEXT J: independently confirm untouched RDC config and output folder _003 absent; run exact v3 -Mode Verify once. Independently verify owned sanitized result, immutable R22/R23 hashes and no URL content. Any failure leads to ERROR_HOLD_R25_MAX3 without a fourth retry; full closeout Current/Handoff/Session LAST and GUI pause.
