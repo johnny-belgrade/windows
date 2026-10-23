@@ -2,6 +2,10 @@
 
 ## 0AX. 2026-10-23 — R002-R24 source-development per-process journal
 
+### C2b — native source hash, AST and in-memory negative fixtures PASS; main R24 NOT_RUN
+
+One ordinary native PS7.6.7 source-only test via RDC outer PID7936/native PID5440 returned `PASS_R002R24_C2B_SOURCE_AST_AND_NEGATIVE_FIXTURES`; complete local script 8371B/SHA256 **3E3C6E1273585DA36311ED668B952D2F0464FD203B96C8CB54C542AAFE0F5406**, parse errors0, forbidden command AST set hits0, automatic input/matches refs0. Tested only exact SHA-pinned helper function definitions in memory, positive2 entries and 3/3 negatives: malformed digest, duplicate case-folded `out`, unsafe path. R24 prospective owned output absent; source top-level NEVER executed, network0, WIM/registry0. [Detailed literal observed native evidence](development/PREMAX/R002/02_Analysis/R002R24_C2B_NativeStatic_Result_20261023.md) commit f8c3a49a427c9303ed76b8567baa799b695d0043/blob c96a5faa706ff5d0ab554fdd00408ff57d468e7e, exact readback. **ONE NEXT C3:** draft reviewed bounded future R24 local-only execution/poststate contract with output fail-closed rules, no R24 Preview invocation in static-test stage. Master/Registry untouched.
+
 ### C2a — R24 source delivered local; full-text readback exact, native AST still pending
 
 Recovered C1 Handoff GitHub write commit ccf66b87eb923bdaf79c3937ee7f90487a476559 with exact SHA readback. Existing frozen v1 source Git blob 9b41de86c29b0bc9c0df209e372e0907f8159c98 was fetched again and written **only** to authorized R002 `03_Drafts/R002R24_9807_URLFree_SeedPreview_v1_DRAFT.ps1`, 130 lines/8371 characters. Entire local RDC `read_file` text equals Git content; remote output R24 directory absent at immediately prior check. Delivery not execution: no R24 adapter launch, native AST/hash verification or fixtures yet. Protected connector scope and 33 blocklist entries unchanged. **ONE NEXT C2b:** native PS7 source hash/AST, source command-surface and harmless negative fixture checks, documented before preparing execution gate. This receipt changes no Master, recipe or WIM approval.
