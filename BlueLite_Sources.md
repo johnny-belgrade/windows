@@ -1,5 +1,11 @@
 # BlueLite Project Sources
 
+## R002-R24 26300.9807 source-only out-name seed-preview readiness (2026-10-23)
+
+- [R24 native G4/R23 pin analysis](development/PREMAX/R002/02_Analysis/R002R24_B_SourceSelection_Analysis_20261023.md), commit d1c68b894f425659682d33469ab4e4e04e78d75d: existing five S06 G4 sources exact SHA and R23 source SHA PASS; 27 **out-only** candidate names. Matching a count from 26300.9711 does **not** prove identical Apps payload selection.
+- [Complete versioned R24 v1 source](development/PREMAX/R002/03_Drafts/R002R24_9807_URLFree_SeedPreview_v1_DRAFT.ps1), commit d12238c81d78b04ff86e2d7c29f12f9879a6c50a/blob9b41de86c29b0bc9c0df209e372e0907f8159c98, local PS7.6.7 native 8371B/SHA256 `3E3C6E1273585DA36311ED668B952D2F0464FD203B96C8CB54C542AAFE0F5406`; [C2b native AST+3/3 negative fixture result](development/PREMAX/R002/02_Analysis/R002R24_C2B_NativeStatic_Result_20261023.md) commit f8c3a49a427c9303ed76b8567baa799b695d0043. Full R24 Preview **NOT_RUN**.
+- [R24 frozen future execution/independent poststate contract](development/PREMAX/R002/02_Analysis/R002R24_LocalPreview_ExecutionContract_20261023.md), commit ee3a5ed83e04fae72c8782fc96eb8add7f214de3; local-only/no URL/network/WIM changes, output collision and immutable input checks; **PREPARED_AWAITING_OPERATOR**. No AppxManifest.xml provider closure or vendor converter claims.
+
 ## R002-R23 26300.9807 URL-free inventory and R24 source analysis (2026-10-23)
 
 - [Native R23 URL-free 2,896-record inventory](development/PREMAX/R002/05_Evidence/R002R23_SafeQueueInventory.json), SHA256 `0058049376679F6011F9BD3C9D51FE49BD631E46D843E38CF09E15D7AFD1CDE6`, 485,382 bytes; [native 681-byte receipt](development/PREMAX/R002/05_Evidence/R002R23_Native_Inventory_Receipt.json) and [independent 1,372-byte post-state](development/PREMAX/R002/05_Evidence/R002R23_C_IndependentPostState_Native.json). Exact out/checksum semantic identity and original hashes verified, no URLs, payload or GET. AppX dependency closure **NOT_EVALUATED**.
