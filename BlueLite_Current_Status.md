@@ -1,5 +1,13 @@
 # BlueLite v1.0 — Current Status
 
+## 2026-10-23 — R26-F2 preflight PASS; unchanged SelfTest APPROVED_NOT_RUN
+
+Fresh standalone native source SHA PID4516/exit0/runtime0.22s: A937E1CE2234AC42840B98F682965DA56E752AF5BC41F9725384AE3DF420670F. Full102-line local text equals Gitblob8ae82568cb6103defb3068f60dfac3b8b817405d. Both mandatory READMEs read; protected RDC configuration unchanged, no sessions. Captured local CycleManifest parsed separately and equals current Gitblob80bc477df6f04f5ffd16b5f724064e4ebdd5e4f2. F Verify output folder absent in direct listing. [Per-action journal](development/PREMAX/R002/02_Analysis/R002R26_F2_GranularSelfTest_Journal_20261023.md) 05ce09c78a8c0465d3950bfdd2d4a4852d2bd504: attempts1, each written/read back before next operation.
+
+Original Support evidence actually read (SHA256FC606ECED536E534BE6D45716CF352C31A833901D451A64DC42BDF204956A04B); confirms narrow operations/verification, not an identified safety cause. Prior30-WORK ending is only R22/R23, superseded by current R26. Master6.3.1 exact/unchanged; Registry7 false unchanged.
+
+**ONE NEXT:** ordinary pwsh.exe -NoLogo -NoProfile -NonInteractive -File frozen local R002R26_F_HistoricCache_SHA1_ReuseGate_v1_DRAFT.ps1 -Mode SelfTest,30s observation limit; expected PASS_R002R26_F_SOURCE_AST0_SHA1_CASEFOLD_5_NEGATIVES and actual exit0. No input/cache payload read or output file in this mode. Generic MustReject verifies rejection occurrence, not exact exception identity/full Verify preflight. Native SelfTest not yet run; Verify is separately pending.
+
 ## 2026-10-23 — R002-R26 F2 IN_PROGRESS: successor reconciliation; SelfTest approved, not run
 
 User resumed after another session. Full Master6.3.1 attached/live exact (blob00d3d34e97c35d6fde241f5aa47f17de050d6eb7); current Entry/Handoff0BH/0BE/0R/0S/12B and governing evidence read. R22 superseded: R23–R25 and R26 reconnect synchronization completed; historical E4 blocker resolved. R26 proves27 candidate names/26 historic .9711 matches only. Prepared v1 remains6771B/SHA256A937E1CE2234AC42840B98F682965DA56E752AF5BC41F9725384AE3DF420670F,blob8ae82568cb6103defb3068f60dfac3b8b817405d.
