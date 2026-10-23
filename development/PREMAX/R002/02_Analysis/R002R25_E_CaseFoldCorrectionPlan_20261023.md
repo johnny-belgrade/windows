@@ -1,0 +1,7 @@
+# R002-R25 E — source version v2 correction plan (2026-10-23)
+
+R25 D [verified diagnosis](R002R25_D_FirstNativeVerify_HOLD_20261023.md) commit `45032cca4e2e22f75d542efa00f132411a0927dd`: native PID7776 found exactly 2798/2798 raw R22→R23 out entries, all checksums differ **only in hex-letter case** (0 other diff, 0 missing). Original R22 SHA remained correct. Frozen v1 Verify PID2564 ended before output `R22_R23_PAIR_MISMATCH` from using case-sensitive SHA-1 string comparison. This is parser/projection logic, not evidence of a different UUP binary.
+
+**Planned narrow correction:** freeze original Git v1 unchanged. Create new R002 `03_Drafts/R002R25_FullRecord_Parity_v2_DRAFT.ps1` from exact original Git source with precisely three checksum comparisons `-cne` → PowerShell ordinal-by-default case-insensitive `-ne`, after existing strict `sha-1=40hex` validation. New owned `05_Evidence/R002R25_FullRecordParity_002` (never re-use/collide with v1). All other logic/guard/policy/G4 full URL-record semantics stay byte-text equivalent. Source Git and full local exact readback before native run. SelfTest positive and negatives 3/3 must PASS, native SHA/size recorded. Then separately run one `-Mode Verify`, independently inspect URL-free report and source hashes. No original queue rewrite, HTTP or WIM/reg/config ops.
+
+**ONE NEXT:** deliver and readback v2 source; static checks; only then Verify after target-output collision and live R22 SHA gates. All actual outcomes separately journaled before next process.
