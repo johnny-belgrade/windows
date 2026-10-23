@@ -45,3 +45,7 @@ Direct, single-path RDC `list_directory` attempt1 on `C:\work\PREMAX-work\R002_U
 ## I — original local F v1 source SHA retry PASSED after operator reconnect
 
 Operator's explicit restart/continuation; reused **the exact same original RDC start_process command**, path and tool with unchanged protections (no workaround). Previous pre-execution safety rejection remained cumulative attempt1; **attempt2/3 now actually ran PID1900**, finished with stdout `A937E1CE2234AC42840B98F682965DA56E752AF5BC41F9725384AE3DF420670F`, matching frozen source 6771B/Git blob `8ae82568cb6103defb3068f60dfac3b8b817405d`. RDC completion confirmed, native numeric exit not separately exposed; no source mutation, no Verify yet. **Status: PASS_F4_F_SOURCE_SHA_NATIVE_ATTEMPT2**. **ONE NEXT:** isolated R24 input SHA check, journal and independent readback, then R26 similarly.
+
+## J — original R24 source preview SHA256 PASS
+
+One scoped RDC `start_process` pwsh Get-FileHash SHA256 over only `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\05_Evidence\R002R24_URLFreeSeedPreview_001\R002R24_URLFree_SeedPreview.json`: **attempt1, PID436**, process finished, literal SHA256 `2D91B0C75970738DC2DC93A66C75AEA761BC02CB8452DF5B7055FFDE22029A82` exactly equals immutable input pin in reviewed F1 script. Native numeric exit unexposed; no write, no payload hash. **ONE NEXT:** independently hash the single R26 input inventory JSON, then separate checkpoint/readback before Verify.
