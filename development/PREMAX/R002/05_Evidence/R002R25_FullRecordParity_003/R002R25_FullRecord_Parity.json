@@ -1,0 +1,21 @@
+{
+  "schema": "BlueLite.R002R25.SourceOnlyFullG4Parity.v1",
+  "result": "PASS_R002R25_FULL_RECORD_G4_FILTER_PARITY_NOT_CLOSURE",
+  "build": "26300.9807",
+  "uuid": "687d1ced-aab1-4cd5-ad05-705189769731",
+  "raw_apps_records": 2798,
+  "r23_pairs_verified": 2798,
+  "r24_out_only_candidates": 27,
+  "full_g4_selected": 27,
+  "extra_vs_r24": 0,
+  "missing_vs_r24": 0,
+  "staging_identities": 5,
+  "metadata_cab": 1,
+  "sha1_hex_casefold": true,
+  "urls_emitted": 0,
+  "http_requests": 0,
+  "original_queue_mutated": false,
+  "manifest_closure": "NOT_EVALUATED",
+  "payload_sha_verified": false,
+  "runtime_execution_allowed": false
+}
