@@ -1,5 +1,14 @@
 # BlueLite v1.0 — Current Status
 
+## 2026-10-23 — R002-R26 F3 read-only Verify preflight PASS; separate explicit approval still PENDING
+
+Operator: "Nastavi po planu i protokolu" after F2; **current Handoff §0BJ SECOND expressly says generic continuation is NOT separate authorization** for `-Mode Verify`. Only read-only preflight performed; historic cache SHA1 Verify **NOT RUN**, not attempted. Latest live Master v6.3.1 blob `00d3d34e97c35d6fde241f5aa47f17de050d6eb7`, Registry r38 all 7 runtime false, CycleManifest R26 unchanged. Exact RDC v0.3.1 online DESKTOP-4J4KCEA, roots `C:\work`/`C:\BLR20R2F5` and 33 blocklist entries unchanged. Last12 local start_process history: two F2 SelfTests PID7840/PID8860, no Verify in that bounded set. Exact new Verify report directory returned `NOT_FOUND` (not a global absence proof).
+
+Three **separate native source/input SHA256 checks**, all completed attempt1: frozen F draft PID8036 = `A937E1CE2234AC42840B98F682965DA56E752AF5BC41F9725384AE3DF420670F`; R24 original source preview PID1012 = `2D91B0C75970738DC2DC93A66C75AEA761BC02CB8452DF5B7055FFDE22029A82`; original R26 filename inventory PID8820 = `24DD6D74DB006A7DC9D39190CD3044A62F43DB23863D5CCEEEEF8423D004EDED`. All match exact script frozen pins. RDC tool output reports process completion, but numeric exits are not separately exposed. Independent [F3 per-action journal](development/PREMAX/R002/02_Analysis/R002R26_F3_VerifyAuthorizationAndPreflight_20261023.md) commit `a681a6d5704b0c555eaa59c4e5d54d24a037f447`, blob `78bd6cba78e16c8599cc466c5924461df52e8f84` readback PASS.
+
+**RESULT:** `PASS_R26_F3_SOURCE_AND_INPUT_SHA_OUTPUT_COLLISION_PREFLIGHT_ONLY` / `VERIFY_PREPARED_NOT_AUTHORIZED_NOT_RUN`. No payload SHA1/manifest-provider closure, no new JSON output, downloads/network, Windows registry, WIM/ISO/DISM/CBS/NTLite/VM or release. No recipe promotion. **ONE NEXT:** operator specifically authorizes F v1 `-Mode Verify` (or changes it), for existing R002 historical cache up to 110.4 MiB read-only package hash I/O, modest CPU and temperature watch, plus one newly owned small evidence JSON; then immediate fresh source/input/output guards before invocation. `GUI_PAUSE_AWAITING_OPERATOR`.
+
+
 ## 2026-10-23 — R002-R26 F2 frozen native SelfTest PASS token; historic first invocation recovered, Verify NOT_RUN
 
 Exact source `R002R26_F_HistoricCache_SHA1_ReuseGate_v1_DRAFT.ps1` 6771B, fresh local SHA256 PID5760 `A937E1CE2234AC42840B98F682965DA56E752AF5BC41F9725384AE3DF420670F`, Git blob `8ae82568cb6103defb3068f60dfac3b8b817405d`. Live RDC DESKTOP-4J4KCEA online v0.3.1, roots only `C:\\work`/`C:\\BLR20R2F5`, 33 blocked unchanged, no prior live sessions. Current Master v6.3.1 Git blob `00d3d34e97c35d6fde241f5aa47f17de050d6eb7`, Registry r38 seven runtime flags false, R002 canonical manifest Git blob `80bc477df6f04f5ffd16b5f724064e4ebdd5e4f2`; no changes to those files.
