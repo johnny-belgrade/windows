@@ -40,3 +40,6 @@ Attempt1. Standalone same-RDC pwsh.exe Get-FileHash only over F v1 source,PID451
 
 ## I — local CycleManifest read
 Attempt1. Single local CycleManifest.json read returned all569 lines,0 remaining. Read is complete; parsing/equality validation is a separate next action. NEXT: validate captured JSON and compare it with fresh canonical Git manifest.
+
+## J — captured manifest JSON/equality validation
+Attempt1. Parsed captured local JSON successfully; full object equals freshly fetched Git blob80bc477df6f04f5ffd16b5f724064e4ebdd5e4f2. Root R26 filename/SHA result unchanged; R25 history retained. Its broad next remains provider-closure design while Current/Handoff refine the immediate dependency to F SelfTest then SHA-1; this is documented sequencing, not a new local/Git divergence. NEXT: inspect only cycle05_Evidence direct children for an existing F Verify output.
