@@ -2,7 +2,7 @@
   "schema": "BlueLite.PREMAX.CycleManifest.v1",
   "cycle_id": "R002_Universal_Stage1_MAXPRE_Package",
   "created_date": "2026-10-22",
-  "status": "R002R26_LOCAL_FILENAME_INVENTORY_SHA_VERIFIED_NOT_MANIFEST_CLOSURE",
+  "status": "R002R26_F4_SHA1_VERIFIED_26_OF_26_NOT_PROVIDER_CLOSURE",
   "source_build": "Germanium 26300.x universal target; 26300.9711 pinned fixture; 26300.9807 baseline HOLD",
   "source_index": null,
   "source_sha256": "D3E7162605A61D8A0FD62E1738DE523B52B36059D6AAC8F756F90AEFCB64C4A2",
@@ -227,7 +227,7 @@
     "receipt": "05_Evidence/R002_Static_Draft_Receipt_20261022.txt",
     "note": "MAX_PRE/UUP payload/converter/WIM/registry/NTLite/VM/ISO runtime not executed. R22 separately executed two metadata GETs; see r22_metadata_fetch. This runtime object is not the metadata transport status."
   },
-  "one_next": "R002R26_APPX_PAYLOAD_MANIFEST_PROVIDER_CLOSURE_DESIGN_PENDING_GUI",
+  "one_next": "R002R26_G_APPX_MANIFEST_PROVIDER_DEPENDENCY_CLOSURE_DESIGN_NEXT",
   "r9_negative_source_audit": {
     "status": "PASS_SOURCE_ONLY_EXPECTED_GATE_ASSERTION_GAP_NEGATIVE_RUNTIME_HOLD",
     "script_source": "04_StaticTests/R002R6_Metadata_SourceAndQueue_Negatives.ps1",
@@ -565,5 +565,35 @@
     "appx_manifest_provider_closure": "NOT_EVALUATED",
     "runtime_execution_allowed": false,
     "one_next": "R002R26_APPX_PAYLOAD_MANIFEST_PROVIDER_CLOSURE_DESIGN_PENDING_GUI"
+  },
+  "r26_f4_native_sha1_reuse": {
+    "status": "PASS_NATIVE_26_OF_26_HISTORIC_CACHE_SHA1_REUSABLE_NOT_PROVIDER_CLOSURE",
+    "source_build": "26300.9807",
+    "source_uuid": "687d1ced-aab1-4cd5-ad05-705189769731",
+    "historic_cache_source": "26300.9711",
+    "script": "03_Drafts/R002R26_F_HistoricCache_SHA1_ReuseGate_v1_DRAFT.ps1",
+    "script_sha256": "A937E1CE2234AC42840B98F682965DA56E752AF5BC41F9725384AE3DF420670F",
+    "native_verify_pid": 4132,
+    "selected_staging": 26,
+    "matched_sha1": 26,
+    "different_sha1": 0,
+    "missing_in_historic_cache": 0,
+    "metadata_cab_excluded": 1,
+    "bytes_read": 94548045,
+    "r24_input_sha256": "2D91B0C75970738DC2DC93A66C75AEA761BC02CB8452DF5B7055FFDE22029A82",
+    "r26_input_sha256": "24DD6D74DB006A7DC9D39190CD3044A62F43DB23863D5CCEEEEF8423D004EDED",
+    "original_report": "05_Evidence/R002R26_F_HistoricCache_SHA1_001/R002R26_F_ReuseGate.json",
+    "original_report_bytes": 8054,
+    "original_report_sha256": "8989870BADFEA64A3675E2AF22B4C29AC631CA222D6D8BD14CBAF5416D45084A",
+    "git_summary": "development/PREMAX/R002/05_Evidence/R002R26_F_HistoricCache_SHA1_001/R002R26_F_URLFree_SummaryReceipt.json",
+    "git_summary_commit": "0ebef94a910688752baca9dc84ee64f7ea2ef187",
+    "git_summary_blob": "200bd86980487f94429b9b9348219d083c64f334",
+    "independent_json_qa": "PASS_26_UNIQUE_MATCHING_SHA1_COUNT_BYTES",
+    "numeric_native_exit_exposed": false,
+    "appx_manifest_provider_closure": "NOT_EVALUATED",
+    "original_cache_modified": false,
+    "network_requests": 0,
+    "runtime_execution_allowed": false,
+    "one_next": "R002R26_G_APPX_MANIFEST_PROVIDER_DEPENDENCY_CLOSURE_DESIGN_NEXT"
   }
 }
