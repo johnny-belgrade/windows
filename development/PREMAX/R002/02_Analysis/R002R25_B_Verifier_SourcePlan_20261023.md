@@ -7,3 +7,5 @@
 **Self-test before real Verify:** own AST parser count zero and blocked command AST hits zero, synthetic positive full-record URL-match and 3/3 negatives (missing checksum, duplicate out, missing required); native stdout only sanitized result, no sensitive local record. All actual code Git+local exact readback and native SHA before actual `-File Verify` action. No CPU-intensive transfer planned; no config unblock or network needed.
 
 **ONE NEXT:** author/review source and read back SHA, then run `SelfTest`, independently checkpoint its real result, and only afterward consider `Verify` with fresh no-collision guard.
+
+**Source delivery attempt 1/3:** helper JavaScript failed to parse before any Git/local source write (`SyntaxError: Unexpected identifier 'n'`), caused by unescaped PowerShell backtick in a JS template literal. Correct the transport source string (no unescaped JS delimiter), verify Git + local readback, then AST before running. No R25 script was created by this failed call.
