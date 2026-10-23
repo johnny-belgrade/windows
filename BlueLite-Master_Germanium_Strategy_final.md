@@ -1,4 +1,4 @@
-# BlueLite v1.0 — MASTER GERMANIUM STRATEGY v6.3.0
+# BlueLite v1.0 — MASTER GERMANIUM STRATEGY v6.3.1
 
 **Status:** AUTHORITATIVE / UNIFIED PRODUCTION ARCHITECTURE — SUPERSEDES PREVIOUS MASTER REVISIONS  
 **Date:** 2026-10-16 · **Normative amendments:** 2026-10-21 (v6.1 connector/NTLite; v6.2 UUP/PRE_MAX history lifecycle; v6.2.1 two-phase Session Entry checkpoint; v6.3 GUI block pauses and three-attempt errors)  
@@ -84,6 +84,16 @@ This checkpoint protocol supplements, and does not replace, Handoff §0R mandato
 **Trenutna pauza (status, ne odobrenje):** operator je prijavio UUP Dump HTTP 502 i sam prati raspoloživost; R001 26300.9711 dva get.php metadata GET-a ostaju PREPARED_NOT_AUTHORIZED do operatorove potvrde povratka servisa i zasebnog odobrenja.
 
 ---
+
+---
+
+## 0F. OPERATIVNA OVLAŠĆENJA — 2026-10-23
+
+1. Za potrebne BlueLite analize dozvoljeno je preuzimanje paketa i izvora bez ograničenja veličine i bez pojedinačnog odobrenja. Sačuvati poreklo, putanju, hash i dokaz; zahtevno preuzimanje prethodno najaviti.
+2. Velike, vlasnički potvrđene disposable kopije ukloniti kada više nisu potrebne i kada su dovoljni dokazi i logovi sačuvani; originali, aktivne zavisnosti i tuđi fajlovi ostaju zaštićeni.
+3. Za konkretan dozvoljen korak mogu se privremeno prilagoditi samo neophodne lokalne blokade, uključujući `reg`, uz snimak prvobitnog stanja, vraćanje i nezavisnu proveru. Ovim se ne ukidaju pravila platforme, ograničenja pristupa niti zasebna odobrenja za izmene sistema ili image-a.
+4. CPU/disk zahtevne integracije, mount/unmount i export mogu biti planirani uz prethodnu najavu opterećenja i odredišta; izvršenje koje menja offline image i dalje podleže postojećim odobrenjima.
+5. Koristiti relevantan Library, dozvoljene lokalne izvore, Sources i dodatna istraživanja. Sva ostala pravila §0C–§0E, §6 i §0R ostaju na snazi.
 
 ---
 
@@ -1611,4 +1621,4 @@ The success metric is not the count of scripts, phases or retrieved logs. It is 
 
 ---
 
-**End of BlueLite v1.0 — MASTER GERMANIUM STRATEGY v6.3.0**
+**End of BlueLite v1.0 — MASTER GERMANIUM STRATEGY v6.3.1**
