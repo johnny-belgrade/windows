@@ -113,3 +113,7 @@ Single direct RDC `read_file` returned exactly header + R001 row + R002 row, no 
 ## Z — local active CycleRegistry R002-only status change and independent readback
 
 Single surgical RDC `edit_block` replaced only R002 row status/last_receipt/ONE NEXT; header, source SHA/build/scope, R001 row and other R002 columns preserved. After edit independent direct RDC `read_file` returned exactly 3 lines with R001 row unchanged and R002 status `R002R26_F4_SHA1_VERIFIED_26_OF_26_NOT_PROVIDER_CLOSURE`, last receipt `05_Evidence/R002R26_F_HistoricCache_SHA1_001/R002R26_F_ReuseGate.json`, next `R002R26_G_APPX_MANIFEST_PROVIDER_DEPENDENCY_CLOSURE_DESIGN_NEXT`. No old R26 Registry snapshot modified. **ONE NEXT:** standalone native SHA256 on active CSV, journal/readback, publish new R26-F4 URL-free immutable CSV snapshot under same R002 evidence with original-byte provenance, independently verify.
+
+## ZA — independent native SHA256 of active CycleRegistry
+
+Single same-RDC PS7 Get-FileHash on only `C:\work\PREMAX-work\99_Index\CycleRegistry.csv`, **PID7724** finished, exact SHA256 `C17D6D9704CC52761B37347D7F085633B64BE0E403A0D696D3C5A898EB86F35C`; numeric exit not separately exposed. Direct CSV content previously read shows only 3 lines, R001 preserved and R002 F4 next/recent receipt. **ONE NEXT:** create new Git URL-free R26-F4 immutable Registry CSV text snapshot, verify 3 rows/fields; if Git bytes differ from local, report only semantic row parity, not identical native SHA.
