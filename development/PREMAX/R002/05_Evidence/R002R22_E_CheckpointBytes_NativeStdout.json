@@ -1,0 +1,22 @@
+{
+  "utc": "2026-10-23T02:25:46.1744675Z",
+  "pid": 8584,
+  "files": [
+    {
+      "path": "C:\\work\\PREMAX-work\\R002_Universal_Stage1_MAXPRE_Package\\CycleManifest.json",
+      "bytes": 19884,
+      "sha256": "C3EF4E929C50E1FD215541121B9BA716890376581FDFB88F314B0ED8ED605090"
+    },
+    {
+      "path": "C:\\work\\PREMAX-work\\99_Index\\CycleRegistry.csv",
+      "bytes": 832,
+      "sha256": "A0FC5D6E006BC9CBC008BD74548904F04A15AC97EF4A828610471694F514A749"
+    }
+  ],
+  "manifest_status": "R002R22_NEWLY_OBSERVED_METADATA_D4_PASS",
+  "one_next": "R002R23_LOCAL_URL_FREE_METADATA_INVENTORY_PREPARED_NOT_RUN_AWAIT_OPERATOR",
+  "index_r002_status": "R002R22_NEWLY_OBSERVED_METADATA_D4_PASS",
+  "r23_local_source_exists": false,
+  "r23_output_exists": false,
+  "result": "PASS_R22_E_LOCAL_CHECKPOINT_BYTES"
+}
