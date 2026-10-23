@@ -23,3 +23,9 @@ Standalone same-RDC `pwsh.exe Get-FileHash -Algorithm SHA256` on **only** the re
 ## D — R24 original source-selection evidence SHA256 (attempt 1)
 
 One same-RDC PowerShell SHA256 command on only `05_Evidence\R002R24_URLFreeSeedPreview_001\R002R24_URLFree_SeedPreview.json`: **PID1012**, completed and printed **`2D91B0C75970738DC2DC93A66C75AEA761BC02CB8452DF5B7055FFDE22029A82`**, equal frozen F-script R24 pin. No modifications. Native numeric exit not separately provided. **ONE NEXT:** isolate R26 original owned inventory JSON hash (not historic-cache package bytes), journal/readback, then decide remaining preflight.
+
+## E — R26 original filename inventory JSON SHA256 (attempt 1)
+
+One isolated same-RDC PowerShell SHA256 command on `05_Evidence\R002R26_LocalPayloadInventory_001\R002R26_LocalPayloadInventory.json`: **PID8820**, completed with exact expected original SHA256 **`24DD6D74DB006A7DC9D39190CD3044A62F43DB23863D5CCEEEEF8423D004EDED`**. Native numeric exit not separately exposed; digest matches F source pin. This certifies the *inventory JSON* input identity, **not** payload package SHA-1. Original R24 and R26 remain preserved. No network or package bytes touched.
+
+**F3 readiness:** current source and two JSON input hashes match frozen pins, exact result directory absent, earlier SelfTests present, live RDC restrictions intact. This is all preparatory. Handoff requires **explicit separate operator approval** for `-Mode Verify`: generic "Nastavi po planu i protokolu" does not waive that. Therefore no `-Mode Verify`, no attempted package SHA-1 and no new native report in F3. All operations succeeded on attempt1. **ONE NEXT:** Current §0R FIRST + Handoff FIRST factual checkpoint, reviewed exact Verify proposal (remain NOT_AUTHORIZED), Handoff SECOND and compact Session Entry LAST, all independently read back; then GUI pause for explicit decision.
