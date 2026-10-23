@@ -19,3 +19,7 @@ Single direct RDC `list_directory` on `C:\work\PREMAX-work\R002_Universal_Stage1
 ## C — local frozen source SHA256 (attempt 1)
 
 Standalone same-RDC `pwsh.exe Get-FileHash -Algorithm SHA256` on **only** the reviewed `03_Drafts\R002R26_F_HistoricCache_SHA1_ReuseGate_v1_DRAFT.ps1` returned **PID8036**, `A937E1CE2234AC42840B98F682965DA56E752AF5BC41F9725384AE3DF420670F`, process completed. Equals frozen source/Git reference; independent numeric exit code not exposed by tool response. No source change and no script execution. `Verify` still NOT_RUN. **ONE NEXT:** separately check R24 source JSON pinned SHA256 before any future operator-approved Verify; then independently checkpoint and read back.
+
+## D — R24 original source-selection evidence SHA256 (attempt 1)
+
+One same-RDC PowerShell SHA256 command on only `05_Evidence\R002R24_URLFreeSeedPreview_001\R002R24_URLFree_SeedPreview.json`: **PID1012**, completed and printed **`2D91B0C75970738DC2DC93A66C75AEA761BC02CB8452DF5B7055FFDE22029A82`**, equal frozen F-script R24 pin. No modifications. Native numeric exit not separately provided. **ONE NEXT:** isolate R26 original owned inventory JSON hash (not historic-cache package bytes), journal/readback, then decide remaining preflight.
