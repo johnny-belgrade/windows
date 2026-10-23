@@ -1,0 +1,182 @@
+{
+  "schema": "BlueLite.R002R24.URLFreeOutOnlySeedPreview.v1",
+  "source_build": "26300.9807",
+  "source_uuid": "687d1ced-aab1-4cd5-ad05-705189769731",
+  "source_class": "NEWLY_OBSERVED_R22_METADATA",
+  "r23_sha256": "0058049376679F6011F9BD3C9D51FE49BD631E46D843E38CF09E15D7AFD1CDE6",
+  "full_windows_entries": 98,
+  "full_apps_entries": 2798,
+  "preview_candidate_count": 27,
+  "staging_identity_count": 5,
+  "reconstruction_metadata_count": 1,
+  "url_record_filter_parity": "UNPROVEN_URL_FIELDS_INTENTIONALLY_EXCLUDED",
+  "manifest_dependency_closure": "NOT_EVALUATED",
+  "payload_sha_verified": false,
+  "runtime_execution_allowed": false,
+  "http_requests": 0,
+  "candidate_role": "OUT_ONLY_DISCOVERY_NOT_DOWNLOAD_SELECTION",
+  "identities": [
+    {
+      "staging_identity": "Microsoft.SecHealthUI",
+      "candidate_out": "Microsoft.SecHealthUI_8wekyb3d8bbwe.appx",
+      "checksum": "sha-1=81E1DA943D518A7EDDC92FA1BC572B42AA458E28"
+    },
+    {
+      "staging_identity": "Microsoft.DesktopAppInstaller",
+      "candidate_out": "Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle",
+      "checksum": "sha-1=AC6BEC437BCEDB6420E8AA7F5D8296B9CE5ED44C"
+    },
+    {
+      "staging_identity": "Microsoft.WindowsCalculator",
+      "candidate_out": "Microsoft.WindowsCalculator_8wekyb3d8bbwe.msixbundle",
+      "checksum": "sha-1=C19861ED34DD9AFABDBE35314E41E0B35DE9B489"
+    },
+    {
+      "staging_identity": "Microsoft.WindowsNotepad",
+      "candidate_out": "Microsoft.WindowsNotepad_8wekyb3d8bbwe.msixbundle",
+      "checksum": "sha-1=6EB585D6F139301F50DBD8A23A66A38EE88970B5"
+    },
+    {
+      "staging_identity": "Microsoft.Windows.Photos",
+      "candidate_out": "Microsoft.Windows.Photos_8wekyb3d8bbwe.msixbundle",
+      "checksum": "sha-1=A3C43B8C724B17EF2E26D1962CFF89236607294A"
+    }
+  ],
+  "candidates": [
+    {
+      "out": "687d1ced-aab1-4cd5-ad05-705189769731.AggregatedMetadata.cab",
+      "checksum": "sha-1=0A5F6B6ADD22E6500ECFB91E192FC7B17B8327F7",
+      "role": "RECONSTRUCTION_METADATA_CANDIDATE"
+    },
+    {
+      "out": "AppInstaller_scale-100.msix",
+      "checksum": "sha-1=17C09E7AA0906DA13EBB6BDBB28A20AD1044BB18",
+      "role": "STAGING_APPX_CANDIDATE"
+    },
+    {
+      "out": "AppInstaller_scale-125.msix",
+      "checksum": "sha-1=FE6D957CBA5C058D237434F91CA17EDCCBE2A474",
+      "role": "STAGING_APPX_CANDIDATE"
+    },
+    {
+      "out": "AppInstaller_scale-150.msix",
+      "checksum": "sha-1=81D24D2CB11B0BFC9AC69EAA4C3793ACB002294D",
+      "role": "STAGING_APPX_CANDIDATE"
+    },
+    {
+      "out": "AppInstaller_scale-400.msix",
+      "checksum": "sha-1=2BBB719E68D556C1087A527C179F6628B5148C6D",
+      "role": "STAGING_APPX_CANDIDATE"
+    },
+    {
+      "out": "AppInstaller_x64_stub.msix",
+      "checksum": "sha-1=E1CA4009E2B12BD76D32959D7F3759C4D0BA9007",
+      "role": "STAGING_APPX_CANDIDATE"
+    },
+    {
+      "out": "AppInstaller_x64.msix",
+      "checksum": "sha-1=FB1D71B4D02A472A6EDEB231E5C245234BFEFD4D",
+      "role": "STAGING_APPX_CANDIDATE"
+    },
+    {
+      "out": "Calculator_11.2311.0.0_scale-100.msix",
+      "checksum": "sha-1=8D5784B2961DDFE3821C298E31E4513F349D821A",
+      "role": "STAGING_APPX_CANDIDATE"
+    },
+    {
+      "out": "Calculator_11.2311.0.0_scale-125.msix",
+      "checksum": "sha-1=28B1EF02977074765CE3B5BB5DB16B7309E5B617",
+      "role": "STAGING_APPX_CANDIDATE"
+    },
+    {
+      "out": "Calculator_11.2311.0.0_scale-150.msix",
+      "checksum": "sha-1=35A9FB133E2A4C551F6F45C83E1581CDDC77AF2D",
+      "role": "STAGING_APPX_CANDIDATE"
+    },
+    {
+      "out": "Calculator_11.2311.0.0_scale-400.msix",
+      "checksum": "sha-1=3F9F5B62D159F2BAA6499CB39A681F40C3B3C174",
+      "role": "STAGING_APPX_CANDIDATE"
+    },
+    {
+      "out": "Calculator_11.2311.0.0_x64.msix",
+      "checksum": "sha-1=9BC2F981A1A9FABCDC92BC9E09BEF6E3547A74BE",
+      "role": "STAGING_APPX_CANDIDATE"
+    },
+    {
+      "out": "LightboxApp_24.24010.29003.0_scale-100.msix",
+      "checksum": "sha-1=EDE3972B0CF189BDF5DE3440E1395EE1FC18CC5F",
+      "role": "STAGING_APPX_CANDIDATE"
+    },
+    {
+      "out": "LightboxApp_24.24010.29003.0_scale-125.msix",
+      "checksum": "sha-1=D576C1B22150B1B27A95F40617D2A20AEB2DFF6C",
+      "role": "STAGING_APPX_CANDIDATE"
+    },
+    {
+      "out": "LightboxApp_24.24010.29003.0_scale-150.msix",
+      "checksum": "sha-1=B9465565B969D0357E7D7E1B9C12C22C8E699888",
+      "role": "STAGING_APPX_CANDIDATE"
+    },
+    {
+      "out": "LightboxApp_24.24010.29003.0_scale-400.msix",
+      "checksum": "sha-1=F5F2C52F8F3958CA88D32AD1305AA224C35EC997",
+      "role": "STAGING_APPX_CANDIDATE"
+    },
+    {
+      "out": "LightboxApp_24.24010.29003.0_x64_Release_Inbox.msix",
+      "checksum": "sha-1=66D6BBEE6E5C778F2370D479B440F3AAA703B343",
+      "role": "STAGING_APPX_CANDIDATE"
+    },
+    {
+      "out": "Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle",
+      "checksum": "sha-1=AC6BEC437BCEDB6420E8AA7F5D8296B9CE5ED44C",
+      "role": "STAGING_APPX_CANDIDATE"
+    },
+    {
+      "out": "Microsoft.SecHealthUI_8wekyb3d8bbwe.appx",
+      "checksum": "sha-1=81E1DA943D518A7EDDC92FA1BC572B42AA458E28",
+      "role": "STAGING_APPX_CANDIDATE"
+    },
+    {
+      "out": "Microsoft.Windows.Photos_8wekyb3d8bbwe.msixbundle",
+      "checksum": "sha-1=A3C43B8C724B17EF2E26D1962CFF89236607294A",
+      "role": "STAGING_APPX_CANDIDATE"
+    },
+    {
+      "out": "Microsoft.WindowsCalculator_8wekyb3d8bbwe.msixbundle",
+      "checksum": "sha-1=C19861ED34DD9AFABDBE35314E41E0B35DE9B489",
+      "role": "STAGING_APPX_CANDIDATE"
+    },
+    {
+      "out": "Microsoft.WindowsNotepad_8wekyb3d8bbwe.msixbundle",
+      "checksum": "sha-1=6EB585D6F139301F50DBD8A23A66A38EE88970B5",
+      "role": "STAGING_APPX_CANDIDATE"
+    },
+    {
+      "out": "NotepadApp_11.2312.18.0_scale-100.msix",
+      "checksum": "sha-1=077B3B6BC9ADA27A3E6813AF46DCE44FFEA74A08",
+      "role": "STAGING_APPX_CANDIDATE"
+    },
+    {
+      "out": "NotepadApp_11.2312.18.0_scale-125.msix",
+      "checksum": "sha-1=D14B387D0D11072E54AA6AA4973D133928ED1D91",
+      "role": "STAGING_APPX_CANDIDATE"
+    },
+    {
+      "out": "NotepadApp_11.2312.18.0_scale-150.msix",
+      "checksum": "sha-1=13165EB74177638A1F2F9EBCAE5DCC3C4CDC05B4",
+      "role": "STAGING_APPX_CANDIDATE"
+    },
+    {
+      "out": "NotepadApp_11.2312.18.0_scale-400.msix",
+      "checksum": "sha-1=E1B3C90A746FB31FBCFF65E2BC00DF0C3084BDC3",
+      "role": "STAGING_APPX_CANDIDATE"
+    },
+    {
+      "out": "NotepadApp_11.2312.18.0_x64.msix",
+      "checksum": "sha-1=720E097C5ECF396A2D13D2EB29E5A3AEA0DB3D4E",
+      "role": "STAGING_APPX_CANDIDATE"
+    }
+  ]
+}
