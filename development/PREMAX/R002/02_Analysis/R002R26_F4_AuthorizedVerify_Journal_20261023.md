@@ -89,3 +89,7 @@ Local direct `CycleManifest.json` read all569 lines, JSON parser PASS, root stat
 ## T — local canonical root status single-field edit/readback
 
 Scoped RDC `edit_block` only root `status` in local R002 CycleManifest: old `R002R26_LOCAL_FILENAME_INVENTORY_SHA_VERIFIED_NOT_MANIFEST_CLOSURE` → `R002R26_F4_SHA1_VERIFIED_26_OF_26_NOT_PROVIDER_CLOSURE`. Tool returned changed context; **separate RDC read_file** of first7 local lines confirmed exact new root status and retained source_build. One field, no other source/candidate edits claimed. **ONE NEXT:** independent root `one_next` edit/readback; then append one F4 record preserving prior R26/R25 objects.
+
+## U — local canonical root ONE NEXT field edit/readback
+
+Scoped RDC edit only local R002 root `one_next`: old `R002R26_APPX_PAYLOAD_MANIFEST_PROVIDER_CLOSURE_DESIGN_PENDING_GUI` → `R002R26_G_APPX_MANIFEST_PROVIDER_DEPENDENCY_CLOSURE_DESIGN_NEXT`, anchored before unique `r9_negative_source_audit`. Separate direct local read around line229 confirms exact new root one_next, other R9 data retained; not yet changing nested historical R26 next. **ONE NEXT:** append exactly one versioned F4 factual receipt object after R26 history and parse whole JSON independently.
