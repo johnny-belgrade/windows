@@ -2,6 +2,25 @@
 
 ## 0AV. 2026-10-23 — R002-R22 per-process checkpoint journal
 
+### C — two metadata GETs EXECUTED_PASS (§0R FIRST)
+
+A readiness and B delivery/native AST received separate Current/Handoff/Entry writes and independent readbacks before advancing; pre-C Entry 1c8a49e55efe00c019872107c9c9bae7982c8c18. One announced ordinary default powershell.exe→pwsh -File Fetch, outerPID7856/nativePID2908, native exit0/runtime3.11s. Source/hash/contract/Windows+Apps URI guards pass by84ms; exactly two GETs, both HTTP200, no retry/redirect/payload. Original receipt interval02:18:53.9808166Z–02:18:56.0103218Z. **PASS_R002R22_NEWLY_OBSERVED_9807_WINDOWS_APPS_SOURCE_METADATA_ONLY; NATIVE_METADATA_REQUESTS_COMPLETED=2.**
+
+| Actual newly observed queue | Bytes | Entries | File SHA256 | D4 semantic SHA256 |
+|---|---:|---:|---|---|
+| Windows | 34639 | 98 | 22E5DE1AD1A86A08C8BA1E1FBD7DF66AC06FA85E2FFCE1B1B7D7D01BAC29AC67 | 838219EF2F638D2C7F63E92E02F73FDD593802E1A284C63301AA7C6B29C3C33C |
+| Apps | 947419 | 2798 | 91A3542BDF027559EB8541C9841903613357894501D0FB392880A740E4D0F67A | 8AFD51F42BEDEDED5ABF88F662A15376941C86099A5542EE4095A0F128F6764B |
+
+**Evidence:** local cycle05_Evidence\R002R22_Run_001\R002R22_Native_Stages.txt (730B/SHA256 ACAB70398663AE867E35291004D860ECF430960DC86C052EA33D1AD92BD09A91), [Git trace](development/PREMAX/R002/05_Evidence/R002R22_Native_Stages.txt) b676e4587d65e1864f01df9f4e82a2806ee7a051; local05_Evidence\R002R22_9807_NewQueue_001\R002R22_Native_Metadata_Receipt.txt (1279B/SHA256 6EE8E416BB48F58E997774A799509DC4EA99FD60A9D82F3FECBF074AF2585814), [Git receipt](development/PREMAX/R002/05_Evidence/R002R22_Native_Metadata_Receipt.txt) dc94821d6cc8488566c37d87b3cd3505c7706962. Mirrors preserve native CRLF content with exact Git readbacks. Raw signed queues remain local.
+
+**Independent native post-state:** verifierPID6396 at02:19:44.2588640Z, exit0/runtime1.38s; source SHA unchanged, both actual file bytes/SHA/count/semantic SHA match original receipt, recorded process IDs and adapter processes absent. Only expected three metadata files and one trace; rejected R18 audit absent. Protected connector configuration unchanged, sessions empty. [Native stdout](development/PREMAX/R002/05_Evidence/R002R22_C_IndependentPostState_NativeStdout.json) 0e5057dc7c3db3219a01bab2f61431d9d69568e7, exact readback. Source v5 remains9114B/SHA E48556CD44C0E1188143F8F1F040CBDA569B34C86E2D334ACCF7CF43254F892D.
+
+**Proof boundary:** source26300.9807/UUID687d1ced-aab1-4cd5-ad05-705189769731, immutable ZIP/launcher/contract/module gates passed. This proves newly observed metadata transport plus D4 queue identity, not payload checksum verification, original pre-renewal baseline, AppX dependency closure, converter compatibility or MAX_PRE runtime. Counts were measured independently for .9807, not copied from .9711. Master/Registry unchanged; seven runtime flags false. Small metadata retained for next analysis; no large disposable output.
+
+**ONE NEXT D (preparation only):** after this FIRST checkpoint prepare one complete read-only local inventory step for safe out+checksum records from these exact queues, pinned inputs and no URLs/network/payload. Its intended output will support subsequent exact dependency/AppX closure analysis; no closure certification from filenames. Synchronize cycle metadata/result/Sources, SECOND and Entry LAST, then GUI pause.
+
+Current FIRST 0dc356b44a5753f961d22637b03340bb3e64dcd9 independently read back before D preparation.
+
 ### B — delivery/native gate PASS; DELIVERED_NOT_RUN
 
 Ordinary RDC delivery of frozen v5 completed; normalized full-text readback and native bytes/SHA agree with Git. PS7.6.7 verifier PID2844 at02:18:06.9250176Z, native exit0/runtime0.28s:9114 bytes/SHA256 E48556CD44C0E1188143F8F1F040CBDA569B34C86E2D334ACCF7CF43254F892D, parse_errors0, automatic input/matches references0 including nested AST. Both R22 output directories absent. **Adapter not invoked; HTTP0.** [Actual native stdout](development/PREMAX/R002/05_Evidence/R002R22_B_DeliveryAst_NativeStdout.json), commit bee1aada84544ddc3f6e7337a246e2fca0867e21/blob c3bbe4c8b108bbe44982bfaf7a32557aa95aed25, exact readback.
