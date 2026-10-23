@@ -1,5 +1,12 @@
 # BlueLite Project Sources
 
+## Newly observed26300.9807 queue metadata — R002R22 (2026-10-23)
+
+- [Native receipt](development/PREMAX/R002/05_Evidence/R002R22_Native_Metadata_Receipt.txt), commit dc94821d6cc8488566c37d87b3cd3505c7706962,1279B/SHA2566EE8E416BB48F58E997774A799509DC4EA99FD60A9D82F3FECBF074AF2585814; [trace](development/PREMAX/R002/05_Evidence/R002R22_Native_Stages.txt),730B/SHA256ACAB70398663AE867E35291004D860ECF430960DC86C052EA33D1AD92BD09A91.
+- [Independent native post-state](development/PREMAX/R002/05_Evidence/R002R22_C_IndependentPostState_NativeStdout.json), commit0e5057dc7c3db3219a01bab2f61431d9d69568e7: actual two HTTP200,exit0,Windows98/Apps2798; independently matching file bytes/SHA and D4 semantic identity; no owned processes/config changes.
+- SourceUUID687d1ced-aab1-4cd5-ad05-705189769731/ZIP SHA83203A6E79E62579A7D64204120BCECC111FE114C614AB1DBFAE032BB02DE7B7. Signed raw queues remain local. Proof is NEWLY_OBSERVED metadata, not historical pre-renewal baseline, payload verification, AppX closure or MAX_PRE runtime.
+- [Prepared R23 contract](development/PREMAX/R002/02_Analysis/R002R23_MetadataInventory_ExecutionContract_20261023.md) pins a URL-free local inventory step; no execution claim.
+
 ## Integrated source-bound Probe — R002R21 native evidence (2026-10-22)
 
 - [Original native trace](development/PREMAX/R002/05_Evidence/R002R21_Native_PreflightStages.txt), commit `909f452fb6da8d19474b6276ac0cd47e74c2f50d`, 664 bytes, SHA256 `3F4463567AF509F863ABDBFD958BB2BDF44D859C5F18BFC1D5DA0C2930F882D8`; exact native/Git bytes verified.
