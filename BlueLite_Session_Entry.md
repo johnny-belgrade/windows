@@ -1,4 +1,4 @@
-# BlueLite v1.0 — Session Entry — active R002-R26 E checkpoint (2026-10-23)
+# BlueLite v1.0 — Session Entry — R002-R26 reconnect reconciliation PASS / R26-F next PREPARED (2026-10-23)
 
 ## TRAJNO OBAVEZNO ZA SVAKOG SUCCESSOR-A: ONE ACTION / ONE CHECKPOINT / VERIFIED READBACK
 
@@ -10,7 +10,23 @@ Operator after OpenAI Support response case **17972045** adopted two permanent w
 
 **Mandatory bootstrap successor:** full live Master, then this Entry, latest [Current TOP](BlueLite_Current_Status.md), [Handoff §0BF/0BE/§0R/§0S/12B](BlueLite_Germanium_Handoff.md), Sources, Contracts, R002 local/Git CycleManifest and RecipeRegistry, original UUP-history/PREMAX README and relevant Library. Historical states are not current proof.
 
-## LATEST ACTUAL R26 E — native receipt SHA PASS, Git original mirror PASS; separate Git write HOLD
+## LATEST — R002-R26 RECONNECT RECONCILIATION FULL PASS / R26-F NEXT DELIVERED_NOT_RUN
+
+**Operator:** after GitHub reconnect, ordered retry of previously safety-rejected Git E4 update BEFORE any other execution. Same E4 write on cumulative attempt **2/3** SUCCEEDED commit `e35471d8eaf3b826f5870b9787c9d2e1c1213f44`, independently exact readback. Historical Git-checkpoint refusal and local-ahead-of-Git divergence described below are **resolved**, not active blockers.
+
+**All real current R26 evidence:** native own URL-free [27-candidate filename-only JSON](development/PREMAX/R002/05_Evidence/R002R26_LocalPayloadInventory_001/R002R26_LocalPayloadInventory.json) **10437B/SHA256 `24DD6D74DB006A7DC9D39190CD3044A62F43DB23863D5CCEEEEF8423D004EDED`**, Git commit `ad16ae8c65109db3072089a01d6bd1736cac8438` / exact CRLF content. Only directly tested .9807 source root has 0 candidate names; **26/27** have same names in historic *different* .9711 S06 cache, one distinct .9807 metadata CAB not there. This is NOT package SHA/AppxManifest provider closure. Native R25 27/27 original filter parity remains preserved.
+
+**R002 canonical synchronization now PASS:** [CycleManifest.json](development/PREMAX/R002/CycleManifest.json) Git CAS commit `4138b0c7ba8954ede96f60e5c26ec6115c73e0a5` / blob `80bc477df6f04f5ffd16b5f724064e4ebdd5e4f2`, 29360B, local native SHA256 `31FDFF07630DE6875422CA91157A38AC2FABC5494741C2C3DF5E226D006C0536` PID5776, independent readback. Previous R25 record untouched; only root status/ONE NEXT and new R26 inventory record. Active local Registry 861B SHA256 `F6CCF1199AC038DE5AF2AC9F37DA6A2188A306D528FC0C4BB76B4C3C4B9F5076`; R001 preserved, only R002 row updated. [R26 immutable Registry snapshot](development/PREMAX/R002/05_Evidence/R002R26_CycleRegistry_RuntimeCheckpoint.csv) Git commit `8c23d06cda75b5d0176fbdae60dfd59059b9f2f1`, 861B native-and-Git exact, R25 earlier snapshot preserved. [E4–E9 original checkpoint report](development/PREMAX/R002/02_Analysis/R002R26_E_GranularQA_Preflight_20261023.md) commit `9aced15c4335ecd7723398fc01565c4f9607938d`; [Sources](BlueLite_Sources.md) commit `c82de6f9d9a1ff483267317be88c02d0efce2c5a`.
+
+**Reviewed and DELIVERED future executable, NOT RUN:** [R26-F source-bound SHA-1 reuse design](development/PREMAX/R002/02_Analysis/R002R26_F_HistoricCache_SHA1_ReuseGate_Design_20261023.md) commit `cecf45fd2e3f79bbf25f113985dcbf11ebe7356c`; [R26-F PS7 v1 draft](development/PREMAX/R002/03_Drafts/R002R26_F_HistoricCache_SHA1_ReuseGate_v1_DRAFT.ps1) Git commit `f5bebab5e76e9c3c7d3e4d4083f22196df7aef69` /blob `8ae82568cb6103defb3068f60dfac3b8b817405d`; exact full local Git source readback, native SHA256 `A937E1CE2234AC42840B98F682965DA56E752AF5BC41F9725384AE3DF420670F` /6771B, PID4060. Both SelfTest and Verify **NOT_EXECUTED**; no new R26-F receipt, no historical cache binary SHA-1 comparison yet. If future operator approves this distinct block, read-only SHA-1 of 26 historic files may read up to approx 110.4MiB local disk (actual 26 subset unknown); no network; then assess whether actual .9807 checksum equals cache, **not** AppxManifest provider closure. No WIM/CBS/registry/ISO mutations. Master v6.3.1 and RecipeRegistry r38 seven runtime flags false unchanged.
+
+**Protocol terminal:** [Current FIRST reconciliation](BlueLite_Current_Status.md) commit `18898938073dea270efef6f14b209ea7c24f8989` and [Current revised next](BlueLite_Current_Status.md) commit `a643f5bfcdd3b53ea35f8d54afec45cf3974a438`, independently read back. [Handoff §0R FIRST](BlueLite_Germanium_Handoff.md) commit `eec0b9f0c89f467902fb2685fb2a4b8e09de5fef`; [Handoff §0R SECOND](BlueLite_Germanium_Handoff.md) commit `7ee355690f8a57e9583ccb315256b0aec0d10103`; both exact readbacks. **This Session Entry is LAST.**
+
+**ONE NEXT only with a NEW operator GUI approval:** R26-F `SelfTest` then separately approved source-only local SHA-1 `Verify` of the 26 historic AppX packages against frozen .9807 R24 checksums; no automatic execution of a prepared draft. **GUI_PAUSE_AWAITING_OPERATOR.**
+
+---
+
+## HISTORICAL R26 E — native receipt SHA PASS, Git original mirror PASS; subsequent Git write HOLD (resolved after reconnect)
 
 **Already completed:** R25 exact original S06 27/27 full-record selection parity PASS (not payload closure); R26 existing R002 development cycle, native PID7712 URL-free local inventory: **27** candidates, exact checked .9807 source root **0** matching payload filenames, historic **different** .9711 cache **26** matching filenames, missing .9807 UUID metadata CAB **1**. These are exact-root filename observations only.
 
