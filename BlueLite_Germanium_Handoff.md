@@ -1,5 +1,14 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
+## 0BJ. 2026-10-23 — R002-R26 F2 actual native SelfTest and prior local history (§0R FIRST)
+
+**Actual current source:** 26300.9807 selected R26-F frozen draft 6771B/SHA256 `A937E1CE2234AC42840B98F682965DA56E752AF5BC41F9725384AE3DF420670F`, Git blob `8ae82568cb6103defb3068f60dfac3b8b817405d`; local PID5760 hash matched. Live RDC v0.3.1 roots C:\work and C:\BLR20R2F5, 33 command blocks intact; Master6.3.1/Registry r38 unchanged. SelfTest local PID8860 14:32 completed and emitted `PASS_R002R26_F_SOURCE_AST0_SHA1_CASEFOLD_5_NEGATIVES`. Provider response lacks numeric exit but reviewed PASS branch exits0. **Tool-call history retrieved after this run revealed previous identical SelfTest PID7840 at 09:27 with exact same stdout/completion**, not yet reflected in previously active Git Current. Mark this as a redundant harmless repeat, *not* the first SelfTest and not a failure retry. Native R26-F Verify never ran, and direct target report directory listing after SelfTest is NOT_FOUND. No package SHA-1, AppxManifest provider/publisher/minversion/arch graph proof; no download/WIM/CBS/host registry/NTLite/VM or release.
+
+**Proof tier** `SELFTEST_PASS_TOKEN_PROCESS_COMPLETED` with numeric native exit not separately exposed, 5 negative rejection fixtures and SHA1 casefold tested but exact exception identity not proven. Full literal [F2 journal](development/PREMAX/R002/02_Analysis/R002R26_F2_GranularSelfTest_Journal_20261023.md) new blob `5a3d8a82c25fc71a41ea863bad747e19b611956f`, independently readback; Current §0R FIRST commit `44611a3291ac1e24e062472f039e044dd3612083`, blob `2ea189b0fcea405746b5872d30ecbf2ba53d4367`, exact readback.
+
+**ONE NEXT pending separate GUI authorization:** review frozen F v1 `-Mode Verify` exact local cache SHA1 comparison scope (~110.4MiB max, read-only CPU and temperature notice), without changing source or invoking it in this SelfTest-only segment. Then §0R SECOND/Entry LAST and GUI pause. Master/Registry unchanged.
+
+
 ## 0BI. 2026-10-23 — R26-F2 native SelfTest block, granular journal
 
 ### PRE-EXECUTION SECOND — exact frozen SelfTest ready
