@@ -1,0 +1,15 @@
+# BlueLite R002-R25 — 26300.9807 full-record G4 filter parity (NEXT; proposal only)
+
+**Status 2026-10-23: PROPOSED_NOT_AUTHORIZED / SCRIPT_NOT_AUTHORED / NOT_RUN.** This is the single next logical source-only development block proposed after actual R24 `PASS_R002R24_OUT_ONLY_PREVIEW_NOT_CLOSURE`. Master §0E requires GUI pause before executing any R25 work.
+
+## Source and proof boundary
+
+- Original **newly observed** R22 Apps queue at `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\05_Evidence\R002R22_9807_NewQueue_001\AppsQueue.newly_observed.txt` (2798) and Windows queue same folder (98); signed URLs **must stay local and not appear in Git logs**. The original pre-renewal .9807 baseline remains HOLD.
+- Frozen .9807 UUID `687d1ced-aab1-4cd5-ad05-705189769731`, ZIP SHA `83203A6E79E62579A7D64204120BCECC111FE114C614AB1DBFAE032BB02DE7B7`; actual R23 safe JSON SHA `0058049376679F6011F9BD3C9D51FE49BD631E46D843E38CF09E15D7AFD1CDE6`.
+- Actual R24 local-only preview [original](../05_Evidence/R002R24_URLFreeSeedPreview_001/R002R24_URLFree_SeedPreview.json) 27 name candidates / five staging anchors, SHA `2D91B0C75970738DC2DC93A66C75AEA761BC02CB8452DF5B7055FFDE22029A82`, NOT proof of full URL-inclusive filtering or AppxManifest package dependencies.
+- Reuse exact S06 original `C:\work\scripts\BlueLite_Stage1_S06_26300_G4_AppsOnly\BlueLite_FilterApps.ps1`, SHA `827CC9BAC9B8690AC05BDD45545138ABB9FDBD097AE47CD37AA51496157C8BD8`, together with immutable allow/keep/required policy hashes pinned in [R24 contract](R002R24_LocalPreview_ExecutionContract_20261023.md). Relevant historical original Library `16-ChatGPT.md` S05/S06 was inspected; S06 .9711 G4 proof does not automatically establish .9807.
+- Future reviewed source MUST verify fresh raw R22 SHA, source UUID/content `out+checksum` projection equal R23, full original filter semantics, input/output count, role, duplicate/reconstruction metadata, policy identity SHA and five anchors. Create only owned new R25 folder/files after a fresh absent collision gate. Do not report signed URLs, credential query strings or raw queue contents to GitHub.
+- A different count or candidate identity is an evidence mismatch / target-scoped HOLD, not proof that the source payload is corrupt; isolate whether full URL-field matching versus only `out` explains it. If exact 27 selection parity passes, this still does **NOT** prove binary/AppxManifest.xml provider closure. That requires separately approved pinned actual existing payload reuse or download/manifest verification.
+- No R25 `-File` execution authorized by this document; no HTTP, aria2, UUP payload, converter, WIM/registry/CBS/NTLite/VM/ISO mutation in the **proposed source-only** block. No config unblock, no root expansion. Static/negative tests and native read-only evidence only upon next GUI continuation.
+
+**ONE NEXT on operator continuation:** design/review source-bound R25 PowerShell local-only exact G4 full-record parity verifier under this contract, with AST/negative fixtures and independent sanitized native proof; report per-process and pause.
