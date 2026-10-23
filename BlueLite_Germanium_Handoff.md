@@ -2,6 +2,14 @@
 
 ## 0AV. 2026-10-23 — R002-R22 per-process checkpoint journal
 
+### B — delivery/native gate PASS; DELIVERED_NOT_RUN
+
+Ordinary RDC delivery of frozen v5 completed; normalized full-text readback and native bytes/SHA agree with Git. PS7.6.7 verifier PID2844 at02:18:06.9250176Z, native exit0/runtime0.28s:9114 bytes/SHA256 E48556CD44C0E1188143F8F1F040CBDA569B34C86E2D334ACCF7CF43254F892D, parse_errors0, automatic input/matches references0 including nested AST. Both R22 output directories absent. **Adapter not invoked; HTTP0.** [Actual native stdout](development/PREMAX/R002/05_Evidence/R002R22_B_DeliveryAst_NativeStdout.json), commit bee1aada84544ddc3f6e7337a246e2fca0867e21/blob c3bbe4c8b108bbe44982bfaf7a32557aa95aed25, exact readback.
+
+**ONE NEXT C — APPROVED_NOT_RUN:** unchanged [execution contract](development/PREMAX/R002/02_Analysis/R002R22_BoundedMetadata_ExecutionContract_20261022.md), ordinary default powershell.exe → pwsh -File frozen v5 -Mode Fetch -Authorization "I_APPROVE_R002R22_TWO_METADATA_GET_ONLY". Two GET maximum,90s each headers+body,10MiB each,no redirects/retries/payload;210s observation bound and owned cleanup. Advance GUI notice then one launch, no v5 Probe/no alternate directory retry. Read original native trace/receipt, independent source/queue/hash/D4/process/config proof. Record C FIRST before successor preparation. Local source is cycle03_Drafts; output trace R002R22_Run_001 and queues/receipt R002R22_9807_NewQueue_001 under05_Evidence. Original baseline unknown, metadata/AppX/MAX_PRE not yet proven. Master/Registry/config unchanged.
+
+Current B 0a7490e675844d9e03d662726530ec0814be81db exact readback; Entry checkpoint precedes C.
+
 ### A — readiness analysis; APPROVED_NOT_RUN
 
 Operator resumed the prepared R21→R22 block with mandatory write/readback after each individual process. Complete Master was read earlier in this ongoing session; fresh local SHA256 022D0BEBE79423E28742B5CF61D9E71D9E331240F2F8BFABD1C153A99BA18736 and live blob 7e1433ff26448e094f6f9cf5b5170972a27fa210 remain identical. Session/Current/Handoff 0AU, 0R, 0S, 12B, full R22 source/contract and both mandatory local READMEs rechecked. Previous source/history reconciliation remains scoped to this existing R002 cycle.
