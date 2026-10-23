@@ -2,6 +2,10 @@
 
 ## 0AX. 2026-10-23 — R002-R24 source-development per-process journal
 
+### C2a — R24 source delivered local; full-text readback exact, native AST still pending
+
+Recovered C1 Handoff GitHub write commit ccf66b87eb923bdaf79c3937ee7f90487a476559 with exact SHA readback. Existing frozen v1 source Git blob 9b41de86c29b0bc9c0df209e372e0907f8159c98 was fetched again and written **only** to authorized R002 `03_Drafts/R002R24_9807_URLFree_SeedPreview_v1_DRAFT.ps1`, 130 lines/8371 characters. Entire local RDC `read_file` text equals Git content; remote output R24 directory absent at immediately prior check. Delivery not execution: no R24 adapter launch, native AST/hash verification or fixtures yet. Protected connector scope and 33 blocklist entries unchanged. **ONE NEXT C2b:** native PS7 source hash/AST, source command-surface and harmless negative fixture checks, documented before preparing execution gate. This receipt changes no Master, recipe or WIM approval.
+
 ### C1 — R24 v1 draft versioned; source-only, NOT_DELIVERED/NOT_RUN (reconnect checkpoint)
 
 The R24 v1 URL-free filename-only seed preview DRAFT has been authored and published as [complete frozen source](development/PREMAX/R002/03_Drafts/R002R24_9807_URLFree_SeedPreview_v1_DRAFT.ps1), commit d12238c81d78b04ff86e2d7c29f12f9879a6c50a, Git blob 9b41de86c29b0bc9c0df209e372e0907f8159c98 (8371 characters), independent Git readback exact. It pins the R23 JSON and five existing G4 policy files; projects only out/checksum metadata and 27 filename-derived candidates including five staging anchors, with no URL or image/registry action. This is source review, **not native AST, fixture tests, delivery or R24 runtime**. The preceding C1 Handoff write encountered a tool safety check and was not committed; operator reports a new GitHub reconnect and explicitly requests a bounded retry. **ONE NEXT:** after exact Handoff readback, deliver R24 draft within the approved R002 workspace, perform native PS7 syntax/SHA and harmless negative-fixture checks, record separately before any new execution. R23 remains last actually run inventory; Master, Registry and mutation approvals unchanged.
