@@ -1,0 +1,44 @@
+{
+  "result": "PASS_R002R23_C_INDEPENDENT_URL_FREE_POSTSTATE",
+  "verified_utc": "2026-10-23T03:02:39.1363164Z",
+  "verifier_pid": 3852,
+  "native_inventory_pid": 532,
+  "original_process_absent": true,
+  "files": [
+    "R002R23_Native_Inventory_Receipt.json",
+    "R002R23_SafeQueueInventory.json"
+  ],
+  "inventory_bytes": 485382,
+  "inventory_sha256": "0058049376679F6011F9BD3C9D51FE49BD631E46D843E38CF09E15D7AFD1CDE6",
+  "receipt_sha256": "C2E8E078F76F0F074129F6C262148FCFC6A5BA3E53BFDC27EAA203089D0E7BF0",
+  "total_records": 2896,
+  "windows_records": 98,
+  "apps_records": 2798,
+  "bad_record_keys": 0,
+  "has_url": false,
+  "input_checks": [
+    {
+      "queue": "Windows",
+      "count": 98,
+      "identity_ok": true,
+      "input_sha_ok": true,
+      "input_bytes_ok": true
+    },
+    {
+      "queue": "Apps",
+      "count": 2798,
+      "identity_ok": true,
+      "input_sha_ok": true,
+      "input_bytes_ok": true
+    }
+  ],
+  "extension_groups": 8,
+  "overlap_names": 1,
+  "overlap_checksum_conflicts": 0,
+  "source_sha256": "8F7D69792036CE114674416B8842EBF085A744B1E1758667DC58764563F13499",
+  "r22_receipt_sha256": "6EE8E416BB48F58E997774A799509DC4EA99FD60A9D82F3FECBF074AF2585814",
+  "http_requests": 0,
+  "dependency_closure": "NOT_EVALUATED",
+  "payload_verified": false,
+  "runtime_execution_allowed": false
+}
