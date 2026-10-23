@@ -41,3 +41,7 @@ Separate RDC `list_sessions` attempt1: **No active sessions**. This does not pro
 ## H — exact F Verify owned output collision inspection
 
 Direct, single-path RDC `list_directory` attempt1 on `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\05_Evidence\R002R26_F_HistoricCache_SHA1_001` returned literal `[NOT_FOUND]`. No existing F report in that exact owned path; no modification. This is a path-specific absence result, not a proof of no other external F execution. **ONE NEXT:** assess same-command local SHA retry only under current explicit operator continuation, with full cumulative safety-attempt accounting; never switch tool/route on denial.
+
+## I — original local F v1 source SHA retry PASSED after operator reconnect
+
+Operator's explicit restart/continuation; reused **the exact same original RDC start_process command**, path and tool with unchanged protections (no workaround). Previous pre-execution safety rejection remained cumulative attempt1; **attempt2/3 now actually ran PID1900**, finished with stdout `A937E1CE2234AC42840B98F682965DA56E752AF5BC41F9725384AE3DF420670F`, matching frozen source 6771B/Git blob `8ae82568cb6103defb3068f60dfac3b8b817405d`. RDC completion confirmed, native numeric exit not separately exposed; no source mutation, no Verify yet. **Status: PASS_F4_F_SOURCE_SHA_NATIVE_ATTEMPT2**. **ONE NEXT:** isolated R24 input SHA check, journal and independent readback, then R26 similarly.
