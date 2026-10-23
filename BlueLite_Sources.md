@@ -1,5 +1,10 @@
 # BlueLite Project Sources
 
+## R002-R23 26300.9807 URL-free inventory and R24 source analysis (2026-10-23)
+
+- [Native R23 URL-free 2,896-record inventory](development/PREMAX/R002/05_Evidence/R002R23_SafeQueueInventory.json), SHA256 `0058049376679F6011F9BD3C9D51FE49BD631E46D843E38CF09E15D7AFD1CDE6`, 485,382 bytes; [native 681-byte receipt](development/PREMAX/R002/05_Evidence/R002R23_Native_Inventory_Receipt.json) and [independent 1,372-byte post-state](development/PREMAX/R002/05_Evidence/R002R23_C_IndependentPostState_Native.json). Exact out/checksum semantic identity and original hashes verified, no URLs, payload or GET. AppX dependency closure **NOT_EVALUATED**.
+- [R24 out-only AppX seed-preview design contract](development/PREMAX/R002/02_Analysis/R002R24_AppXSourcePreview_DesignContract_20261023.md), GitHub commit `42851f214e8fb4460c3b383045e1b9c61bf3810b`, prepared only: full URL-bearing S06 filter records and actual AppxManifest.xml publisher/minimum-version/architecture closure cannot be reconstructed from R23 safe inventory. Script not yet authored, delivered or run; S06 26300.9711 AppsOnly 27-to-32 historical proof is a different source.
+
 ## Newly observed26300.9807 queue metadata — R002R22 (2026-10-23)
 
 - [Complete result, limitations and verified write ledger](development/PREMAX/R002/02_Analysis/R002R22_Metadata_ResultAndCheckpoint_20261023.md), commit 1fa874516e1d92fb432870a4769a52bac4b75ca6; per-process checkpoints and prepared R23 source/contract.
