@@ -85,3 +85,7 @@ Created a **summary only**, not byte-exact replacement of original 8054B local r
 ## S — canonical R002 local/Git CycleManifest read-only preflight before F4 index
 
 Local direct `CycleManifest.json` read all569 lines, JSON parser PASS, root status R26 filename inventory, `r26_local_payload_inventory` present, F4 property absent. Git canonical `development/PREMAX/R002/CycleManifest.json` latest blob `80bc477df6f04f5ffd16b5f724064e4ebdd5e4f2`/29,360 chars, valid JSON, 2-space `JSON.stringify` equals native Git source except final newline. Existing R25/R26 records must remain untouched. F4 will add only root status/ONE NEXT and one append-only `r26_f4_native_sha1_reuse` record. No WIM/source/cache access needed. **ONE NEXT:** separately apply three narrowly scoped local canonical JSON text edits (root status, ONE NEXT, append F4), verifying after each before Git mirror and final local/Git semantic equality.
+
+## T — local canonical root status single-field edit/readback
+
+Scoped RDC `edit_block` only root `status` in local R002 CycleManifest: old `R002R26_LOCAL_FILENAME_INVENTORY_SHA_VERIFIED_NOT_MANIFEST_CLOSURE` → `R002R26_F4_SHA1_VERIFIED_26_OF_26_NOT_PROVIDER_CLOSURE`. Tool returned changed context; **separate RDC read_file** of first7 local lines confirmed exact new root status and retained source_build. One field, no other source/candidate edits claimed. **ONE NEXT:** independent root `one_next` edit/readback; then append one F4 record preserving prior R26/R25 objects.
