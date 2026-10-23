@@ -1,0 +1,7 @@
+# R002-R26 C — real native static test PASS; inventory not run yet
+
+**Exact native execution:** RDC start_process outer PID9176 ran PS7 `-File C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\03_Drafts\R002R26_LocalPayloadInventory_v1_DRAFT.ps1 -Mode SelfTest` and finished literal `PASS_R002R26_AST0_POSITIVE_LOOKUP_NEGATIVE4_OF_4`. Own PowerShell Parser.ParseFile errors0 and forbidden command AST matches0; two synthetic valid unique filenames, case-insensitive existing/missing lookup, four negative cases (relative path, path separator, double-dot, casefold duplicate) PASS. No R24/R25 data read and no output directory produced in SelfTest.
+
+**Independent native SHA+bytes:** RDC outer PID9132 native Get-FileHash/Get-Item returned 6063B, SHA256 `B0BFA7915C8C133318B34C763B4FB97DBD6D0279150A0309CFD1453FC6D3F479` for actual local R26 v1 source. Complete Git [v1 script](../03_Drafts/R002R26_LocalPayloadInventory_v1_DRAFT.ps1) commit `d3fa3d6e99411346c6d0a150ebc1edd6b265cc9e` blob `00c988ab8ec6dab27d0f19d934d375a061ca5b02`; full Git vs full local text readback exact after newline normalization. Proven tier `STATIC_NATIVE_VERIFIED`, not payload SHA or AppxManifest provider verification.
+
+**ONE NEXT:** verify unique destination absence, RDC paths/blockedCommands and no sessions, then **single source-only native** `-Mode Inventory` with SHA-pinned R24 27 candidate set/R25 receipt; output one owned URL-free JSON and independently inspect result/hash/source poststate. No network, image/registry, historic S06 mutator or transfer.
