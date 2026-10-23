@@ -49,3 +49,7 @@ Operator's explicit restart/continuation; reused **the exact same original RDC s
 ## J — original R24 source preview SHA256 PASS
 
 One scoped RDC `start_process` pwsh Get-FileHash SHA256 over only `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\05_Evidence\R002R24_URLFreeSeedPreview_001\R002R24_URLFree_SeedPreview.json`: **attempt1, PID436**, process finished, literal SHA256 `2D91B0C75970738DC2DC93A66C75AEA761BC02CB8452DF5B7055FFDE22029A82` exactly equals immutable input pin in reviewed F1 script. Native numeric exit unexposed; no write, no payload hash. **ONE NEXT:** independently hash the single R26 input inventory JSON, then separate checkpoint/readback before Verify.
+
+## K — original R26 filename inventory JSON SHA256 PASS
+
+One scoped same-RDC `start_process` pwsh Get-FileHash SHA256 over only `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\05_Evidence\R002R26_LocalPayloadInventory_001\R002R26_LocalPayloadInventory.json`: attempt1, **PID8276**, process finished, stdout SHA256 `24DD6D74DB006A7DC9D39190CD3044A62F43DB23863D5CCEEEEF8423D004EDED`, exactly matching frozen F1 pin. Native numeric exit unexposed. This verifies input JSON identity, **not** historical cache SHA-1 package content. No source/cache/output change. Both R24/R26 inputs and F source now match original pins after reconnect. **ONE NEXT:** only with fresh no-output collision, run exact user-approved `-Mode Verify` once; record original PID/stdout and native report independent readback, preserve all source and cache.
