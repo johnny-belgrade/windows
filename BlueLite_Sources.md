@@ -1,5 +1,11 @@
 # BlueLite Project Sources
 
+## R002-R24 actual local URL-free Preview — independently checked (2026-10-23)
+
+- [R24 F native and independent result](development/PREMAX/R002/02_Analysis/R002R24_F_Runtime_ResultAndCheckpoint_20261023.md), Git commit `274d6bc4750c15eb258f7493148d7c01558d8c49`: exact original [27-candidate preview JSON](development/PREMAX/R002/05_Evidence/R002R24_URLFreeSeedPreview_001/R002R24_URLFree_SeedPreview.json) SHA256 `2D91B0C75970738DC2DC93A66C75AEA761BC02CB8452DF5B7055FFDE22029A82` /6765B; [native receipt](development/PREMAX/R002/05_Evidence/R002R24_URLFreeSeedPreview_001/R002R24_Native_Preview_Receipt.json) SHA256 `C965F5B41E41130ABBBE1F7D43F86496328ED53F946EF59D40BEC715BEE9D193`/563B. Native PS7.6.7 PASS and independent 27/27 matching R23 `out+checksum`, staging5, metadata1, no URL/payload/WIM/registry/network. Strict original S06 URL-field filter parity and provider AppxManifest closure remain **NOT_EVALUATED**.
+- [R002 CycleManifest R24 native checkpoint](development/PREMAX/R002/CycleManifest.json) commit `5b25fd87b4b860637efe2e84d4dbb9e254c33aeb`, native SHA256 `EA7ED5A6273B2C3227FE0513DC1FDC1C30D7F43D0E96C11E17F7466AB703F6F8`/25635B; [original registry snapshot](development/PREMAX/R002/05_Evidence/R002R24_CycleRegistry_RuntimeCheckpoint.csv) commit `f88108df52639299b5131feece3e01cdc3b27b15`, native SHA256 `1E734635829EB6DFDB0C96FC244EF32438CB402D1EC62740F31FAFD5929F8BD1`/870B. Both Git full readback, protected R001 preserved.
+- [R25 next source-only design contract](development/PREMAX/R002/02_Analysis/R002R25_FullRecordG4_FilterParity_DesignContract_20261023.md) commit `829b7fc4cf8da8a16c9148c1cbb92a7338d9df79`; `PROPOSED_NOT_AUTHORIZED`. Reuse original local R22 URL-bearing queue and exact S06 filter without exposing URLs. No R25 code/runtime/transport permissions created.
+
 ## R002-R24 26300.9807 source-only out-name seed-preview readiness (2026-10-23)
 
 - [R24 native G4/R23 pin analysis](development/PREMAX/R002/02_Analysis/R002R24_B_SourceSelection_Analysis_20261023.md), commit d1c68b894f425659682d33469ab4e4e04e78d75d: existing five S06 G4 sources exact SHA and R23 source SHA PASS; 27 **out-only** candidate names. Matching a count from 26300.9711 does **not** prove identical Apps payload selection.
