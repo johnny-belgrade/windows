@@ -34,3 +34,6 @@ Attempt1. Standalone RDC list_sessions returned No active sessions. No unfinishe
 
 ## G — delivered source text read and compared
 Attempt1. Full102-line local source read from03_Drafts/R002R26_F_HistoricCache_SHA1_ReuseGate_v1_DRAFT.ps1. All text exactly matches current frozen Git blob8ae82568cb6103defb3068f60dfac3b8b817405d after display newline normalization; no edit. SelfTest branch exits before source inputs/cache/output handling; native test is still unexecuted. Negative helper catches any exception, so exact-error attribution is not established by that helper. NEXT: standalone SHA256 of this one source file.
+
+## H — single-source native SHA256 PASS
+Attempt1. Standalone same-RDC pwsh.exe Get-FileHash only over F v1 source,PID4516,exit0/runtime0.22s. Actual A937E1CE2234AC42840B98F682965DA56E752AF5BC41F9725384AE3DF420670F equals frozen design. No unrelated file hash, no write, no adapter execution. NEXT: one local CycleManifest read to reconcile current Git checkpoint before SelfTest.
