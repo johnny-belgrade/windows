@@ -31,3 +31,6 @@ Attempt1. Actual C:\work\PREMAX-work\00_README.md fully read66 lines. Existing R
 
 ## F — active session inspection
 Attempt1. Standalone RDC list_sessions returned No active sessions. No unfinished connector-owned execution observed. NEXT: read the delivered F v1 source only.
+
+## G — delivered source text read and compared
+Attempt1. Full102-line local source read from03_Drafts/R002R26_F_HistoricCache_SHA1_ReuseGate_v1_DRAFT.ps1. All text exactly matches current frozen Git blob8ae82568cb6103defb3068f60dfac3b8b817405d after display newline normalization; no edit. SelfTest branch exits before source inputs/cache/output handling; native test is still unexecuted. Negative helper catches any exception, so exact-error attribution is not established by that helper. NEXT: standalone SHA256 of this one source file.
