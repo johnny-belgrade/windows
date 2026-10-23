@@ -1,5 +1,20 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
+## 0BL. TRAJNO — PODRAZUMEVANA ODOBRENJA ZA ANALITIKU / RESURSE (2026-10-23, operator re-confirmed)
+
+**OBAVEZNO successor čitanje posle Master/Session Entry.** Za BlueLite u već odobrenim project/RDC root-ovima **podrazumevano i bez posebnog GUI pitanja** smeju se izvršavati: izvorno vezani read-only pregled/analiza, SHA/hash provera, AST i negativni test, preflight, poređenje paketa/keša, scoped `SelfTest` i `Verify` koji ne menja original/OS/image, uz pisanje isključivo novih *owned* izveštaja. Konkretni **R002-R26 F v1 `-Mode Verify` je sada IZRIČITO ODOBREN** (operator u ovoj poruci), 26 istorijskih AppX SHA-1 provera, bez mreže/keš mutacije. Starije F2/F3 `PREPARED_NOT_AUTHORIZED` tvrdnje ostaju istorijske i sada su superseded; dozvola nije dokaz izvršenja.
+
+**Mreža:** bez per-download odobrenja preuzimati *sve potrebne* izvore/pakete, bez limita veličine, za ciljane analize, sa source URL/provenance, SHA, dozvoljenim odredištem i rezultatom; pre velikog transfera najaviti u GUI procenu bytes/CPU/disk/temp i putanju. Originali, source queues i potpisani tokeni ostaju zaštićeni; Git ne sadrži signed URL tajne. **CPU/disk:** teži read-only hash, integracije, mount/unmount/export mogu se planirati uz prethodnu konkretnu najavu i owner/target/cleanup preflight. Ako operacija menja offline WIM/CBS/registry/ISO ili aktivni OS, i dalje važe **Master §0C.1(6), §0D.4 i izričito odobrenje za mutaciju**, source/dependency/rollback/health gates; najava ne zamenjuje odobrenje.
+
+**Disposable:** kada je **tačno utvrđeno vlasništvo**, original i zavisnosti sačuvani, nijedan mount/hive nije aktivan, a potrebni logovi/receipts/SHA i analiza su dostupni, ukloniti samo dokazano nepotrebne velike disposable kopije. Ne brisati originalni UUP, zaštićeni/aktivni WIM, istorijski corpus, nejasne ili tuđe fajlove, niti pregledavati/brisati široki sibling prostor bez odgovarajuće dozvole.
+
+**RDC/bezbednost:** operator želi autonomnu privremenu prilagodbu nužnih lokalnih `blockedCommands` uključujući `reg` pri već autorizovanoj aktivnosti. Dozvoljena je samo **usko potrebna**, scoped promena po Master §0F i §0D.4(5): native config pre-snapshot → jedna neophodna stavka → odobreni korak → vraćanje pune izvorne liste i nezavisni config readback, čak i kod greške. **Nikad blanket odblokiranje, proširenje `allowedDirectories`, zaobilaženje OpenAI/platform safety, denied pristupa, zaštite izvora, ili zamena konektora/metode nakon platformskog odbijanja.** Operatorov zahtev za uklanjanje „svih bezbednosnih protokola” evidentira se kao njegova namera da olakša rad, ali ne može ukinuti nezavisne bezbednosne kontrole. Ako precizan task ne zahteva `reg`, ostaviti konfiguraciju netaknutom.
+
+**Resursi / protokol:** koristiti ciljano sav relevantan dostupni Library, lokalne fajlove *unutar dozvoljenih root-ova*, GitHub Sources i druge besplatne reference; stvarno čitati originalne dokaze pre novih analiza. Ostaju Master v6.3.1, §0E najviše 3 pokušaja, §0BE jedna akcija → zapis → nezavisan readback, §0R Current FIRST → Handoff FIRST → reviewed next → Handoff SECOND → Session Entry LAST, i GUI pauza po bloku. **Ne tražiti ponovo odobrenje za već dozvoljen read-only analitički Verify; ne pretvarati opštu analitičku dozvolu u odobrenje mutacije.**
+
+**Ovaj dodatak ne menja Master** (v6.3.1 blob `00d3d34e97c35d6fde241f5aa47f17de050d6eb7`); tehnički rezultat R26-F Verify upisuje se zasebno nakon stvarnog izvršenja.
+
+
 ## 0BK. 2026-10-23 — R26 F3 preflight PASS; explicit Verify authorization pending (§0R FIRST)
 
 New operator instruction: "Nastavi po planu i protokolu". Current §0BJ SECOND explicitly excludes treating generic continuation as distinct GUI authorization for F1 `-Mode Verify`; no file-byte Verify was executed. All work in this F3 block was read-only verification/preflight plus Git evidence. Master v6.3.1 original blob `00d3d34e97c35d6fde241f5aa47f17de050d6eb7`, Current/Entry/Handoff live reviewed, original host local RDC v0.3.1 only permitted `C:\work`/`C:\BLR20R2F5` 33 blocked commands unchanged.
