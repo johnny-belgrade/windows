@@ -1,0 +1,294 @@
+{
+  "schema": "BlueLite.R002R26.LocalPayloadInventory.v1",
+  "result": "PASS_R002R26_LOCAL_FILENAME_REUSE_INVENTORY_NOT_PAYLOAD_CLOSURE",
+  "target_build": "26300.9807",
+  "target_uuid": "687d1ced-aab1-4cd5-ad05-705189769731",
+  "source_type": "R25_SOURCE_BOUND_LOCAL_ONLY",
+  "source_r24_sha256": "2D91B0C75970738DC2DC93A66C75AEA761BC02CB8452DF5B7055FFDE22029A82",
+  "source_r25_sha256": "E7DAD5C864CF9724AD8790C92888F5EA13A60696639D40F1E8F54B6EC476B518",
+  "candidates_checked": 27,
+  "target9807_exact_root_present": 0,
+  "historic9711_filename_matches": 26,
+  "absent_from_both_exact_roots": 1,
+  "reconstruction_metadata_candidates": 1,
+  "historic_9711_total_files": 32,
+  "target9807_root_total_files": 8,
+  "rows": [
+    {
+      "out": "687d1ced-aab1-4cd5-ad05-705189769731.AggregatedMetadata.cab",
+      "role": "RECONSTRUCTION_METADATA_CANDIDATE",
+      "exact_9807_root_present": false,
+      "exact_9807_length": null,
+      "historic_9711_name_present": false,
+      "historic_9711_length": null,
+      "payload_sha_verified": false,
+      "provider_manifest_verified": false
+    },
+    {
+      "out": "AppInstaller_scale-100.msix",
+      "role": "STAGING_APPX_CANDIDATE",
+      "exact_9807_root_present": false,
+      "exact_9807_length": null,
+      "historic_9711_name_present": true,
+      "historic_9711_length": 32717,
+      "payload_sha_verified": false,
+      "provider_manifest_verified": false
+    },
+    {
+      "out": "AppInstaller_scale-125.msix",
+      "role": "STAGING_APPX_CANDIDATE",
+      "exact_9807_root_present": false,
+      "exact_9807_length": null,
+      "historic_9711_name_present": true,
+      "historic_9711_length": 35958,
+      "payload_sha_verified": false,
+      "provider_manifest_verified": false
+    },
+    {
+      "out": "AppInstaller_scale-150.msix",
+      "role": "STAGING_APPX_CANDIDATE",
+      "exact_9807_root_present": false,
+      "exact_9807_length": null,
+      "historic_9711_name_present": true,
+      "historic_9711_length": 39742,
+      "payload_sha_verified": false,
+      "provider_manifest_verified": false
+    },
+    {
+      "out": "AppInstaller_scale-400.msix",
+      "role": "STAGING_APPX_CANDIDATE",
+      "exact_9807_root_present": false,
+      "exact_9807_length": null,
+      "historic_9711_name_present": true,
+      "historic_9711_length": 96764,
+      "payload_sha_verified": false,
+      "provider_manifest_verified": false
+    },
+    {
+      "out": "AppInstaller_x64_stub.msix",
+      "role": "STAGING_APPX_CANDIDATE",
+      "exact_9807_root_present": false,
+      "exact_9807_length": null,
+      "historic_9711_name_present": true,
+      "historic_9711_length": 4214695,
+      "payload_sha_verified": false,
+      "provider_manifest_verified": false
+    },
+    {
+      "out": "AppInstaller_x64.msix",
+      "role": "STAGING_APPX_CANDIDATE",
+      "exact_9807_root_present": false,
+      "exact_9807_length": null,
+      "historic_9711_name_present": true,
+      "historic_9711_length": 59212375,
+      "payload_sha_verified": false,
+      "provider_manifest_verified": false
+    },
+    {
+      "out": "Calculator_11.2311.0.0_scale-100.msix",
+      "role": "STAGING_APPX_CANDIDATE",
+      "exact_9807_root_present": false,
+      "exact_9807_length": null,
+      "historic_9711_name_present": true,
+      "historic_9711_length": 43853,
+      "payload_sha_verified": false,
+      "provider_manifest_verified": false
+    },
+    {
+      "out": "Calculator_11.2311.0.0_scale-125.msix",
+      "role": "STAGING_APPX_CANDIDATE",
+      "exact_9807_root_present": false,
+      "exact_9807_length": null,
+      "historic_9711_name_present": true,
+      "historic_9711_length": 53789,
+      "payload_sha_verified": false,
+      "provider_manifest_verified": false
+    },
+    {
+      "out": "Calculator_11.2311.0.0_scale-150.msix",
+      "role": "STAGING_APPX_CANDIDATE",
+      "exact_9807_root_present": false,
+      "exact_9807_length": null,
+      "historic_9711_name_present": true,
+      "historic_9711_length": 61491,
+      "payload_sha_verified": false,
+      "provider_manifest_verified": false
+    },
+    {
+      "out": "Calculator_11.2311.0.0_scale-400.msix",
+      "role": "STAGING_APPX_CANDIDATE",
+      "exact_9807_root_present": false,
+      "exact_9807_length": null,
+      "historic_9711_name_present": true,
+      "historic_9711_length": 177363,
+      "payload_sha_verified": false,
+      "provider_manifest_verified": false
+    },
+    {
+      "out": "Calculator_11.2311.0.0_x64.msix",
+      "role": "STAGING_APPX_CANDIDATE",
+      "exact_9807_root_present": false,
+      "exact_9807_length": null,
+      "historic_9711_name_present": true,
+      "historic_9711_length": 7386014,
+      "payload_sha_verified": false,
+      "provider_manifest_verified": false
+    },
+    {
+      "out": "LightboxApp_24.24010.29003.0_scale-100.msix",
+      "role": "STAGING_APPX_CANDIDATE",
+      "exact_9807_root_present": false,
+      "exact_9807_length": null,
+      "historic_9711_name_present": true,
+      "historic_9711_length": 133669,
+      "payload_sha_verified": false,
+      "provider_manifest_verified": false
+    },
+    {
+      "out": "LightboxApp_24.24010.29003.0_scale-125.msix",
+      "role": "STAGING_APPX_CANDIDATE",
+      "exact_9807_root_present": false,
+      "exact_9807_length": null,
+      "historic_9711_name_present": true,
+      "historic_9711_length": 201363,
+      "payload_sha_verified": false,
+      "provider_manifest_verified": false
+    },
+    {
+      "out": "LightboxApp_24.24010.29003.0_scale-150.msix",
+      "role": "STAGING_APPX_CANDIDATE",
+      "exact_9807_root_present": false,
+      "exact_9807_length": null,
+      "historic_9711_name_present": true,
+      "historic_9711_length": 255609,
+      "payload_sha_verified": false,
+      "provider_manifest_verified": false
+    },
+    {
+      "out": "LightboxApp_24.24010.29003.0_scale-400.msix",
+      "role": "STAGING_APPX_CANDIDATE",
+      "exact_9807_root_present": false,
+      "exact_9807_length": null,
+      "historic_9711_name_present": true,
+      "historic_9711_length": 1317078,
+      "payload_sha_verified": false,
+      "provider_manifest_verified": false
+    },
+    {
+      "out": "LightboxApp_24.24010.29003.0_x64_Release_Inbox.msix",
+      "role": "STAGING_APPX_CANDIDATE",
+      "exact_9807_root_present": false,
+      "exact_9807_length": null,
+      "historic_9711_name_present": true,
+      "historic_9711_length": 9116608,
+      "payload_sha_verified": false,
+      "provider_manifest_verified": false
+    },
+    {
+      "out": "Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle",
+      "role": "STAGING_APPX_CANDIDATE",
+      "exact_9807_root_present": false,
+      "exact_9807_length": null,
+      "historic_9711_name_present": true,
+      "historic_9711_length": 9564,
+      "payload_sha_verified": false,
+      "provider_manifest_verified": false
+    },
+    {
+      "out": "Microsoft.SecHealthUI_8wekyb3d8bbwe.appx",
+      "role": "STAGING_APPX_CANDIDATE",
+      "exact_9807_root_present": false,
+      "exact_9807_length": null,
+      "historic_9711_name_present": true,
+      "historic_9711_length": 7351595,
+      "payload_sha_verified": false,
+      "provider_manifest_verified": false
+    },
+    {
+      "out": "Microsoft.Windows.Photos_8wekyb3d8bbwe.msixbundle",
+      "role": "STAGING_APPX_CANDIDATE",
+      "exact_9807_root_present": false,
+      "exact_9807_length": null,
+      "historic_9711_name_present": true,
+      "historic_9711_length": 9316,
+      "payload_sha_verified": false,
+      "provider_manifest_verified": false
+    },
+    {
+      "out": "Microsoft.WindowsCalculator_8wekyb3d8bbwe.msixbundle",
+      "role": "STAGING_APPX_CANDIDATE",
+      "exact_9807_root_present": false,
+      "exact_9807_length": null,
+      "historic_9711_name_present": true,
+      "historic_9711_length": 9049,
+      "payload_sha_verified": false,
+      "provider_manifest_verified": false
+    },
+    {
+      "out": "Microsoft.WindowsNotepad_8wekyb3d8bbwe.msixbundle",
+      "role": "STAGING_APPX_CANDIDATE",
+      "exact_9807_root_present": false,
+      "exact_9807_length": null,
+      "historic_9711_name_present": true,
+      "historic_9711_length": 9262,
+      "payload_sha_verified": false,
+      "provider_manifest_verified": false
+    },
+    {
+      "out": "NotepadApp_11.2312.18.0_scale-100.msix",
+      "role": "STAGING_APPX_CANDIDATE",
+      "exact_9807_root_present": false,
+      "exact_9807_length": null,
+      "historic_9711_name_present": true,
+      "historic_9711_length": 29928,
+      "payload_sha_verified": false,
+      "provider_manifest_verified": false
+    },
+    {
+      "out": "NotepadApp_11.2312.18.0_scale-125.msix",
+      "role": "STAGING_APPX_CANDIDATE",
+      "exact_9807_root_present": false,
+      "exact_9807_length": null,
+      "historic_9711_name_present": true,
+      "historic_9711_length": 35671,
+      "payload_sha_verified": false,
+      "provider_manifest_verified": false
+    },
+    {
+      "out": "NotepadApp_11.2312.18.0_scale-150.msix",
+      "role": "STAGING_APPX_CANDIDATE",
+      "exact_9807_root_present": false,
+      "exact_9807_length": null,
+      "historic_9711_name_present": true,
+      "historic_9711_length": 40014,
+      "payload_sha_verified": false,
+      "provider_manifest_verified": false
+    },
+    {
+      "out": "NotepadApp_11.2312.18.0_scale-400.msix",
+      "role": "STAGING_APPX_CANDIDATE",
+      "exact_9807_root_present": false,
+      "exact_9807_length": null,
+      "historic_9711_name_present": true,
+      "historic_9711_length": 100727,
+      "payload_sha_verified": false,
+      "provider_manifest_verified": false
+    },
+    {
+      "out": "NotepadApp_11.2312.18.0_x64.msix",
+      "role": "STAGING_APPX_CANDIDATE",
+      "exact_9807_root_present": false,
+      "exact_9807_length": null,
+      "historic_9711_name_present": true,
+      "historic_9711_length": 4573831,
+      "payload_sha_verified": false,
+      "provider_manifest_verified": false
+    }
+  ],
+  "package_content_sha_verified": false,
+  "appx_manifest_provider_closure": "NOT_EVALUATED",
+  "urls_serialized": 0,
+  "network_requests": 0,
+  "original_queue_modified": false,
+  "runtime_execution_allowed": false
+}
