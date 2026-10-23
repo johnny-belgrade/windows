@@ -25,3 +25,6 @@ Attempt1 original-byte retrieval succeeded after unavailable indexed text. Suppo
 
 ## D — UUP-history README read
 Attempt1. Actual current C:\work\UUP-history\00_README.md fully read38 lines. History remains read-only; no archived source execution or broad sibling reconciliation. Existing R002 continues, with current frozen F1 source; no new historical script is being reused and no RH corpus re-analysis needed for this SelfTest. NEXT: separately read PREMAX-work README.
+
+## E — PREMAX-work README read
+Attempt1. Actual C:\work\PREMAX-work\00_README.md fully read66 lines. Existing R002 development layout and immutable source/candidate distinction retained. Dated R4/R6 status paragraphs are historical; current R26 checkpoint and Master6.3.1 control current scope. No broad filesystem reconciliation or active cache-byte access in SelfTest. NEXT: independently list active RDC sessions.
