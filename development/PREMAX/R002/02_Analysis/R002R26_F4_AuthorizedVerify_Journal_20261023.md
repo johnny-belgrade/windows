@@ -33,3 +33,7 @@ The required Handoff SECOND (subsequent to recovered FIRST) committed as `d832f9
 ## F — post-reconnect live RDC standalone configuration
 
 Attempt1: `get_config` independently confirms DESKTOP-4J4KCEA v0.3.1; `allowedDirectories` exactly `C:\work` and `C:\BLR20R2F5`, 33 original blocked commands including `reg`; default PowerShell, no connector configuration changes. Prior device list independently online. **ONE NEXT:** standalone `list_sessions` for any active connector-owned process, journal/readback, then exact F output collision listing.
+
+## G — live session inspection
+
+Separate RDC `list_sessions` attempt1: **No active sessions**. This does not prove other Windows local processes absent, only no RDC-owned live sessions. **ONE NEXT:** inspect exact target new Verify evidence directory for output collision, then journal/readback.
