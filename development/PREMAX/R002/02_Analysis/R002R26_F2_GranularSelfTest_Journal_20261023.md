@@ -37,3 +37,6 @@ Attempt1. Full102-line local source read from03_Drafts/R002R26_F_HistoricCache_S
 
 ## H — single-source native SHA256 PASS
 Attempt1. Standalone same-RDC pwsh.exe Get-FileHash only over F v1 source,PID4516,exit0/runtime0.22s. Actual A937E1CE2234AC42840B98F682965DA56E752AF5BC41F9725384AE3DF420670F equals frozen design. No unrelated file hash, no write, no adapter execution. NEXT: one local CycleManifest read to reconcile current Git checkpoint before SelfTest.
+
+## I — local CycleManifest read
+Attempt1. Single local CycleManifest.json read returned all569 lines,0 remaining. Read is complete; parsing/equality validation is a separate next action. NEXT: validate captured JSON and compare it with fresh canonical Git manifest.
