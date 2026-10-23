@@ -1,0 +1,9 @@
+# R002-R25 C — native source AST + synthetic regression (2026-10-23)
+
+**Actual native PowerShell 7:** RDC `start_process` outer PID6792 invoked exact local `-File "C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\03_Drafts\R002R25_FullRecord_Parity_v1_DRAFT.ps1" -Mode SelfTest`; actual finished result `PASS_R002R25_AST0_POSITIVE_AND_3_NEGATIVES`. Parsed own exact source using `[Management.Automation.Language.Parser]::ParseFile` (0 parser errors), no forbidden native command AST hits. In-memory positive 4/4 synthetic full-URL-record allowed, including one `out` whose only positive match is in URL path; 3/3 negatives rejected (missing checksum, duplicate out, missing required identity). SelfTest does not access original R22 Apps queue, write output or execute original destructive S06 filter.
+
+**Exact delivered/source proof:** original reviewed [Git R25 v1](../03_Drafts/R002R25_FullRecord_Parity_v1_DRAFT.ps1) commit `63fb0410aa6e04c0de7c65b8056e360aba52f79c` blob `33c1309ce96206513292fb693083cb098a257b6e`, full Git/local 122-line newline-normalized source exact readback verified. Separate native PS7 SHA/byte check RDC PID5416: source 8447 bytes/SHA256 `D6DC9D7EA5A2DCBD9F422880C28830B08920DAE116FAB59C36D094DC68E254CE`. No source modifications after native static test.
+
+**Evidence limit:** this PASS proves verifier source parser and isolated synthetic cases, NOT R22/R23/R24 actual complete URL-record parity, signed URL validity, payload hash or AppxManifest provider dependency closure. 0 HTTP, no source queues changed, no WIM/registry/ISO/connector config changes. Inline preflight attempt 1 transport quotation error already documented in A; no retry.
+
+**ONE NEXT D:** exact reviewed source `-Mode Verify` read-only under collision/hash guards, local signed URL input never logged, one new owned sanitized JSON report; independently inspect local output, input hashes and report before Current/Handoff closeout. GUI pause after block.
