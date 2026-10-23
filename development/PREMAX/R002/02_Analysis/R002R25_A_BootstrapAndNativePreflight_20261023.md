@@ -1,0 +1,9 @@
+# R002-R25 A — bootstrap / native preflight attempt 1 (2026-10-23)
+
+Master v6.3.1 blob `00d3d34e97c35d6fde241f5aa47f17de050d6eb7`, operator's later successful policy commit `2d1eba8826973914cc88863a870662089f70bf77` supersedes earlier governance HOLD. R25 IN_PROGRESS Session Entry commit `71e0bb9ad754b25ca95769597d631bed9b051121`, independently read back. Original local UUP-history/PREMAX READMEs, S06 original 117-line filter, S06 policies, Library `16-ChatGPT.md` S06 and Git R23/R24 source content inspected. RDC online v0.3.1, roots `C:\work`/`C:\BLR20R2F5`, 33 blocked commands incl. reg, no sessions before preflight.
+
+**Expected exact pins:** original 26300.9807 R22 Apps queue 2798 URL records, 947419B/SHA256 `91A3542BDF027559EB8541C9841903613357894501D0FB392880A740E4D0F67A`; original R23 safe JSON SHA `0058049376679F6011F9BD3C9D51FE49BD631E46D843E38CF09E15D7AFD1CDE6`; native R24 preview SHA `2D91B0C75970738DC2DC93A66C75AEA761BC02CB8452DF5B7055FFDE22029A82`; S06 filter SHA `827CC9BAC9B8690AC05BDD45545138ABB9FDBD097AE47CD37AA51496157C8BD8`. These are previously proven expectations, NOT a new live preflight PASS.
+
+**Actual native preflight attempt 1/3:** RDC PID6564 inline `pwsh -Command` invocation failed because outer PowerShell interpolated inner `$...` variables in double-quoted command. Literal errors: `ParserError: Missing expression after ','`; `Cannot index into a null array`. No R22 SHA/count read completed; no report issued, no source content or signed URL printed, no network/download/image/registry/config mutation. This is a command transport quoting defect, NOT evidence of wrong source content. Do not repeat the same inline quoting approach.
+
+**ONE NEXT:** create a versioned R25 local read-only `-File` verifier with exact inputs, AST and negative fixtures. Reuse original S06 full-record semantics without invoking destructive original script; no URL output. Native parity test only after source and collision gates.
