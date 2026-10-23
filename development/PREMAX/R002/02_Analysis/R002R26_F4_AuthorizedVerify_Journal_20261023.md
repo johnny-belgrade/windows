@@ -29,3 +29,7 @@ User explicitly reported GitHub reconnect and asked to retry failed documentatio
 ## E — Handoff SECOND and Session Entry LAST reconnect complete
 
 The required Handoff SECOND (subsequent to recovered FIRST) committed as `d832f9184dd9b4c9beba5695e315fab9d23f9c5e`, exact Git blob `785f864730688ca6bfbea88362df4794a69a160b` checked via independent fetch. Previously safety-rejected active Session Entry LAST was retried on operator's explicit reconnect instruction, **cumulative attempt2/3 PASS**: commit `ec911fdbe1630a7afa87cdd828bd6623a67ee63e`, Git blob `5d6c4dd5d08622d3a4d9588ae120051643bc2392`, full fresh readback PASS. No change to Master/RecipeRegistry/CycleManifest or local OS. Git F4 documentation holds resolved; local previously rejected F4 source SHA still attempt1/3, no native Verify receipt. **ONE NEXT:** evaluate live RDC status/output and then only compliant same-scope approved local SHA/Verify checks if safety permits; no route changes or direct denial bypass.
+
+## F — post-reconnect live RDC standalone configuration
+
+Attempt1: `get_config` independently confirms DESKTOP-4J4KCEA v0.3.1; `allowedDirectories` exactly `C:\work` and `C:\BLR20R2F5`, 33 original blocked commands including `reg`; default PowerShell, no connector configuration changes. Prior device list independently online. **ONE NEXT:** standalone `list_sessions` for any active connector-owned process, journal/readback, then exact F output collision listing.
