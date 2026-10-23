@@ -28,3 +28,6 @@ Attempt1. Actual current C:\work\UUP-history\00_README.md fully read38 lines. Hi
 
 ## E — PREMAX-work README read
 Attempt1. Actual C:\work\PREMAX-work\00_README.md fully read66 lines. Existing R002 development layout and immutable source/candidate distinction retained. Dated R4/R6 status paragraphs are historical; current R26 checkpoint and Master6.3.1 control current scope. No broad filesystem reconciliation or active cache-byte access in SelfTest. NEXT: independently list active RDC sessions.
+
+## F — active session inspection
+Attempt1. Standalone RDC list_sessions returned No active sessions. No unfinished connector-owned execution observed. NEXT: read the delivered F v1 source only.
