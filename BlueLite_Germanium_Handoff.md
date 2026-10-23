@@ -1,5 +1,14 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
+## 0BM. 2026-10-23 — F4 authorized SHA Verify stopped by platform safety before start (§0R FIRST)
+
+**Latest operator consent:** `R002-R26 F v1 -Mode Verify` explicitly approved, and **generic scoped read-only SelfTest/Verify, relevant analytic download and CPU-intensive local research are permanently pre-authorized** per §0BL; do not demand repetitive separate GUI permission for this type. §0BL first governance commit `730b0417196411fe3d8ff81f39c91b9be682eef2` independently readback. Session Entry `IN_PROGRESS_R002R26_F4` had separate commit `d9aa7924c0ff4b99168259802a59b9fb8fe8e73f` and exact readback. Master v6.3.1 and runtime approval flags unchanged.
+
+**Prelaunch native boundary:** remote device DESKTOP-4J4KCEA online v0.3.1; exact roots `C:\work` and `C:\BLR20R2F5`, 33 blocks incl. reg, no active sessions. One distinct source-SHA command for immutable F v1 draft sent to RDC `start_process` received **platform pre-execution safety rejection** (literal `This tool call was blocked by OpenAI's safety checks. Please double check what you are sending.`); **attempt 1/3**, no process PID/output/native SHA. Stopped without retry, route switching or access relaxation. No `-Mode Verify` execution and no SHA1 package/providermanifest closure; old F2/F3 source/checksum proofs remain older checkpoints only. [F4 journal](development/PREMAX/R002/02_Analysis/R002R26_F4_AuthorizedVerify_Journal_20261023.md) commit `38c1702965ad4c94123296fe2b06593a20400e98` blob `0ac0dd2371ab72e4369ec5876960574a8214db5f` independent exact readback. Current §0R FIRST `9d818def421e8ee70d852ca29a0c881e11acc217` / blob `869043969560494bd456549a663c63f03832bd30` independently read back.
+
+**STATUS:** `ERROR_HOLD_R26_F4_SOURCE_SHA_PLATFORM_SAFETY_REJECTION_1_OF_3`, authorized `Verify` remains `NOT_RUN`. No independent justification to disable security/relax local allowlist; user cannot override OpenAI/platform safety checks. **ONE NEXT:** one compliant operator decision about platform block; do not automatically retry or bypass. §0R SECOND and Session Entry LAST still required. `GUI_PAUSE_AWAITING_OPERATOR`.
+
+
 ## 0BL. TRAJNO — PODRAZUMEVANA ODOBRENJA ZA ANALITIKU / RESURSE (2026-10-23, operator re-confirmed)
 
 **OBAVEZNO successor čitanje posle Master/Session Entry.** Za BlueLite u već odobrenim project/RDC root-ovima **podrazumevano i bez posebnog GUI pitanja** smeju se izvršavati: izvorno vezani read-only pregled/analiza, SHA/hash provera, AST i negativni test, preflight, poređenje paketa/keša, scoped `SelfTest` i `Verify` koji ne menja original/OS/image, uz pisanje isključivo novih *owned* izveštaja. Konkretni **R002-R26 F v1 `-Mode Verify` je sada IZRIČITO ODOBREN** (operator u ovoj poruci), 26 istorijskih AppX SHA-1 provera, bez mreže/keš mutacije. Starije F2/F3 `PREPARED_NOT_AUTHORIZED` tvrdnje ostaju istorijske i sada su superseded; dozvola nije dokaz izvršenja.
