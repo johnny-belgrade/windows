@@ -10,6 +10,10 @@ Successor reviewed Master v6.3.0 entirely (local SHA256 022D0BEBE79423E28742B5CF
 
 Authorized RDC wrote exact GitHub reviewed R23 v1 source text into R002 cycle03_Drafts. First attempt to launch a PowerShell hash/AST verifier via nested `-Command` failed during **outer command-line parsing** (`ParserError` at `@(input,matches)` after quote stripping). No R23 inventory run and no demonstrated local SHA/AST PASS. Identical problem retry ceiling 1/3 consumed. Source remains in cycle; no R23 output made by this verifier. **ONE NEXT B2:** version a small read-only PS7 verifier in cycle04_StaticTests and run via `-File` to eliminate quoting, independently verify source/hash/AST/inputs/absent output; readback/checkpoint before R23 local-only run. Master/Registry/permissions/config unchanged.
 
+### B2 — native PS7.6.7 exact source and input gate PASS; R23 NOT_RUN
+
+To remedy B1 *outer command-line quoting*, a separately reviewed harmless verifier file was created in cycle04_StaticTests and launched normally via PS7 `-File`, without reusing the broken nested `-Command` invocation. B2 remote outer PID3212, native PID4272 returned **PASS_R002R23_B_SOURCE_AND_INPUT_GATE** with exact 6944 bytes, source SHA256 8F7D69792036CE114674416B8842EBF085A744B1E1758667DC58764563F13499, parser errors0, automatic input/matches variable refs0, R22 Windows+Apps+receipt three pinned files all exact size/SHA, and no R23 output folder. B1+ B2 total verifier attempts2/3, B problem resolved. **ONE NEXT C:** local-only R23 source-bound inventory single ordinary PS7 -File and only the approved `-Authorization` token, output under 05_Evidence\R002R23_MetadataInventory_001; observe30s, independent URL-free+semantic+SHA+process/inputs proof, no GET, no UUP payload/image/registry. Do not run twice or change target path if output partially created. Master, Recipe Registry and mutation approval boundaries intact.
+
 ## 0AV. 2026-10-23 — R002-R22 per-process checkpoint journal
 
 ### E — block closed (§0R SECOND); GUI_PAUSE_AWAITING_OPERATOR
