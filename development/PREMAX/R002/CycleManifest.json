@@ -2,7 +2,7 @@
   "schema": "BlueLite.PREMAX.CycleManifest.v1",
   "cycle_id": "R002_Universal_Stage1_MAXPRE_Package",
   "created_date": "2026-10-22",
-  "status": "R002R23_URL_FREE_METADATA_INVENTORY_PASS",
+  "status": "R002R24_NATIVE_STATIC_NEGATIVES_PASS_PREVIEW_NOT_RUN",
   "source_build": "Germanium 26300.x universal target; 26300.9711 pinned fixture; 26300.9807 baseline HOLD",
   "source_index": null,
   "source_sha256": "D3E7162605A61D8A0FD62E1738DE523B52B36059D6AAC8F756F90AEFCB64C4A2",
@@ -227,7 +227,7 @@
     "receipt": "05_Evidence/R002_Static_Draft_Receipt_20261022.txt",
     "note": "MAX_PRE/UUP payload/converter/WIM/registry/NTLite/VM/ISO runtime not executed. R22 separately executed two metadata GETs; see r22_metadata_fetch. This runtime object is not the metadata transport status."
   },
-  "one_next": "R002R24_SOURCE_BOUND_URLFREE_APPX_SEED_PREVIEW_DESIGN_ONLY_SCRIPT_NOT_AUTHORED",
+  "one_next": "R002R24_LOCAL_URLFREE_OUT_ONLY_PREVIEW_PREPARED_AWAIT_OPERATOR",
   "r9_negative_source_audit": {
     "status": "PASS_SOURCE_ONLY_EXPECTED_GATE_ASSERTION_GAP_NEGATIVE_RUNTIME_HOLD",
     "script_source": "04_StaticTests/R002R6_Metadata_SourceAndQueue_Negatives.ps1",
@@ -434,6 +434,35 @@
     "contract_blob": "0b98fed9c178f7454af5f2e4af204178ab41c367",
     "requires_payload_for_strict_manifest_closure": true,
     "network_requests_allowed": 0,
+    "runtime_execution_allowed": false
+  },
+  "r24_source_prepared": {
+    "status": "SOURCE_DELIVERED_NATIVE_PS7_STATIC_PASS_PREVIEW_NOT_RUN",
+    "scope": "26300.9807_SOURCE_BOUND_URL_FREE_METADATA_PREVIEW_ONLY",
+    "source": "03_Drafts/R002R24_9807_URLFree_SeedPreview_v1_DRAFT.ps1",
+    "source_git_commit": "d12238c81d78b04ff86e2d7c29f12f9879a6c50a",
+    "source_blob": "9b41de86c29b0bc9c0df209e372e0907f8159c98",
+    "source_bytes": 8371,
+    "source_sha256": "3E3C6E1273585DA36311ED668B952D2F0464FD203B96C8CB54C542AAFE0F5406",
+    "local_source_delivered_exact": true,
+    "native_test_result": "PASS_R002R24_C2B_SOURCE_AST_AND_NEGATIVE_FIXTURES",
+    "native_ps_version": "7.6.7",
+    "native_test_pid": 5440,
+    "native_parse_errors": 0,
+    "forbidden_command_ast_hits": 0,
+    "negative_fixtures": "3_OF_3_PASS",
+    "static_result_doc": "02_Analysis/R002R24_C2B_NativeStatic_Result_20261023.md",
+    "static_result_commit": "f8c3a49a427c9303ed76b8567baa799b695d0043",
+    "future_execution_contract": "02_Analysis/R002R24_LocalPreview_ExecutionContract_20261023.md",
+    "future_contract_commit": "ee3a5ed83e04fae72c8782fc96eb8add7f214de3",
+    "future_contract_blob": "fd46ff37388784b7fa83ad5c40bcbc36d3e4f1b4",
+    "future_output": "05_Evidence/R002R24_URLFreeSeedPreview_001",
+    "future_output_exists": false,
+    "preview_runtime_executed": false,
+    "url_filter_parity": "UNPROVEN_URL_FIELDS_INTENTIONALLY_EXCLUDED",
+    "appx_manifest_dependency_closure": "NOT_EVALUATED",
+    "payload_verified": false,
+    "network_or_wim_mutation": false,
     "runtime_execution_allowed": false
   }
 }
