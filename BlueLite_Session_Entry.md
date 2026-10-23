@@ -1,5 +1,18 @@
 # BlueLite v1.0 — Session Entry (2026-10-23)
 
+## OBAVEZNO ZA SVAKOG SUCCESSOR-A — JEDAN POSAO / JEDNA PROVERA / CHECKPOINT (§0BE Handoff, 2026-10-23)
+
+**Trajno usvojena operatorska pravila na osnovu OpenAI Support slučaja 17972045; pročitati i primenjivati PRE nove komande:**
+
+1. Svaki pregled, lokalna JSON validacija, lokalni upis, GitHub sinhronizacija i nezavisna QA/SHA provera su **odvojene samostalne i usko definisane operacije**. Ne kombinovati nevezane korake u jednu RDC/terminal komandu ili jedan veliki tool-batch.
+2. Posle **svake uspešne operacije** upiši tačan rezultat, status/proof tier, izvor, dozvoljeni target/receipt, pokušaj i ONE NEXT u relevantan dokument; **nezavisno pročitaj i potvrdi upis** pre sledeće operacije. U skladu s §0R, Current FIRST, Handoff FIRST, pregled narednog koraka, Handoff SECOND, Session Entry LAST; po §0E nakon završenog bloka GUI pauza.
+3. Bez zaobilaženja odbijenih platformskih poziva promenom metode/konektora/config-a, bez tvrdnje da Support garantuje prolaz ili identifikuje RDC kao uzrok. Tri pokušaja su gornja granica, **ne obaveza** ponavljanja zabranjene operacije. Master v6.3.1 ostaje nadređen. Puni ugovor: [Handoff §0BE i §0R](BlueLite_Germanium_Handoff.md).
+
+### Aktivni R26 E kontrolisani pokušaj (pre izvršenja)
+
+Operator je izričito zatražio ponovni pokušaj ranije blokirane SHA256 provere **nakon ovog obaveznog upisa**. Raniji kombinovani four-file PowerShell hash request imao je `OpenAI's safety checks` refusal pre početka (pokušaj 1/3), dok je originalni lokalni R26 Inventory PID7712 PASS samo za 27 naziva (0 exact .9807 / 26 historic .9711 / 1 CAB). Nezavisni SHA256 lokalnog `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\05_Evidence\R002R26_LocalPayloadInventory_001\R002R26_LocalPayloadInventory.json` je PENDING. Postupak je **jedna** ciljna read-only SHA/byte provera kroz **isti** RDC bez promene pristupa ili sigurnosnih podešavanja; ako platforma opet odbije, odmah HOLD bez drugih metoda. Ne ponavljati R25/R26 inventar, ne preuzimati payload niti proglašavati AppxManifest closure. Pre-akcioni Current FIRST commit `967866d7ca9d34474ef8b15abb11e9c6dd2d110a` i Handoff permanent §0BE commit `93c33a0052e10cd6a671af0ce2d55ede04b8ab31` oba sa exact readback. Sledeće: samostalni lokalni preflight, jedna izolovana provera, checkpoint; GUI pauza.
+
+---
 ## R002-R26 A: NATIVE LOCAL INVENTORY PASS / INDEPENDENT REPORT SHA PLATFORM HOLD — GUI_PAUSE_AWAITING_OPERATOR
 
 Successor boot: entire live Master v6.3.1 first, then this Entry, Current TOP, Handoff sections 0BD/0BC/0R/0S/12B, Sources, Contracts/RecipeRegistry, original local UUP-history/PREMAX README and relevant Library. Master Git blob 00d3d34e97c35d6fde241f5aa47f17de050d6eb7. Earlier R25 original URL-record S06 filter parity remains final native PASS 27/27, not AppxManifest closure. R26 is a substep in existing R002 development cycle, no new R026 root.
