@@ -2,7 +2,7 @@
   "schema": "BlueLite.PREMAX.CycleManifest.v1",
   "cycle_id": "R002_Universal_Stage1_MAXPRE_Package",
   "created_date": "2026-10-22",
-  "status": "R002R21_NATIVE_PROBE_PASS_METADATA_FETCH_NOT_RUN",
+  "status": "R002R22_NEWLY_OBSERVED_METADATA_D4_PASS",
   "source_build": "Germanium 26300.x universal target; 26300.9711 pinned fixture; 26300.9807 baseline HOLD",
   "source_index": null,
   "source_sha256": "D3E7162605A61D8A0FD62E1738DE523B52B36059D6AAC8F756F90AEFCB64C4A2",
@@ -225,9 +225,9 @@
     "authorized": false,
     "executed": false,
     "receipt": "05_Evidence/R002_Static_Draft_Receipt_20261022.txt",
-    "note": "No new network or UUP payload, aria2, converter, WIM, registry, NTLite, VM or ISO runtime"
+    "note": "MAX_PRE/UUP payload/converter/WIM/registry/NTLite/VM/ISO runtime not executed. R22 separately executed two metadata GETs; see r22_metadata_fetch. This runtime object is not the metadata transport status."
   },
-  "one_next": "R002R22_BOUNDED_TWO_METADATA_GET_PREPARED_NOT_RUN_AWAIT_OPERATOR",
+  "one_next": "R002R23_LOCAL_URL_FREE_METADATA_INVENTORY_PREPARED_NOT_RUN_AWAIT_OPERATOR",
   "r9_negative_source_audit": {
     "status": "PASS_SOURCE_ONLY_EXPECTED_GATE_ASSERTION_GAP_NEGATIVE_RUNTIME_HOLD",
     "script_source": "04_StaticTests/R002R6_Metadata_SourceAndQueue_Negatives.ps1",
@@ -312,6 +312,78 @@
     "max_response_bytes_each": 10485760,
     "timeout_seconds_each": 90,
     "network_requests_executed": 0,
+    "runtime_execution_allowed": false,
+    "record_kind": "HISTORICAL_R21_PREPARATION_SNAPSHOT",
+    "superseded_by": "r22_metadata_fetch"
+  },
+  "source_fields_note": "Root source_* and operator_scope_approval retain the initial .9711 static fixture. Current .9807 evidence is in r22_metadata_fetch; historical pre-renewal baseline remains unknown.",
+  "r22_metadata_fetch": {
+    "status": "EXECUTED_PASS",
+    "result": "PASS_R002R22_NEWLY_OBSERVED_9807_WINDOWS_APPS_SOURCE_METADATA_ONLY",
+    "date": "2026-10-23",
+    "source_build": "26300.9807",
+    "source_uuid": "687d1ced-aab1-4cd5-ad05-705189769731",
+    "source_zip_sha256": "83203A6E79E62579A7D64204120BCECC111FE114C614AB1DBFAE032BB02DE7B7",
+    "adapter": "03_Drafts/R002R22_9807_TwoQueue_Bounded90s_v5_DRAFT.ps1",
+    "adapter_sha256": "E48556CD44C0E1188143F8F1F040CBDA569B34C86E2D334ACCF7CF43254F892D",
+    "adapter_bytes": 9114,
+    "outer_pid": 7856,
+    "native_pid": 2908,
+    "native_exit": 0,
+    "runtime_seconds": 3.11,
+    "requests_completed": 2,
+    "http_statuses": [
+      200,
+      200
+    ],
+    "queue_directory": "05_Evidence/R002R22_9807_NewQueue_001",
+    "queues": [
+      {
+        "name": "Windows",
+        "bytes": 34639,
+        "file_sha256": "22E5DE1AD1A86A08C8BA1E1FBD7DF66AC06FA85E2FFCE1B1B7D7D01BAC29AC67",
+        "count": 98,
+        "semantic_sha256": "838219EF2F638D2C7F63E92E02F73FDD593802E1A284C63301AA7C6B29C3C33C"
+      },
+      {
+        "name": "Apps",
+        "bytes": 947419,
+        "file_sha256": "91A3542BDF027559EB8541C9841903613357894501D0FB392880A740E4D0F67A",
+        "count": 2798,
+        "semantic_sha256": "8AFD51F42BEDEDED5ABF88F662A15376941C86099A5542EE4095A0F128F6764B"
+      }
+    ],
+    "receipt": "05_Evidence/R002R22_9807_NewQueue_001/R002R22_Native_Metadata_Receipt.txt",
+    "receipt_bytes": 1279,
+    "receipt_sha256": "6EE8E416BB48F58E997774A799509DC4EA99FD60A9D82F3FECBF074AF2585814",
+    "receipt_git_commit": "dc94821d6cc8488566c37d87b3cd3505c7706962",
+    "trace": "05_Evidence/R002R22_Run_001/R002R22_Native_Stages.txt",
+    "trace_sha256": "ACAB70398663AE867E35291004D860ECF430960DC86C052EA33D1AD92BD09A91",
+    "post_state_git_commit": "0e5057dc7c3db3219a01bab2f61431d9d69568e7",
+    "owned_processes_remaining": 0,
+    "protected_connector_config_unchanged": true,
+    "original_pre_renewal_baseline": "HOLD_UNPROVEN",
+    "dependency_closure": "NOT_EVALUATED",
+    "payload_content_verified": false,
+    "uup_payload_downloaded": false,
+    "converter_or_wim_mutation": false,
+    "runtime_execution_allowed": false,
+    "previous_top_status": "R002R21_NATIVE_PROBE_PASS_METADATA_FETCH_NOT_RUN",
+    "previous_one_next": "R002R22_BOUNDED_TWO_METADATA_GET_PREPARED_NOT_RUN_AWAIT_OPERATOR",
+    "previous_runtime_note": "No new network or UUP payload, aria2, converter, WIM, registry, NTLite, VM or ISO runtime"
+  },
+  "r23_prepared_next": {
+    "status": "PREPARED_NOT_RUN_NOT_DELIVERED",
+    "source": "03_Drafts/R002R23_9807_SafeMetadataInventory_v1_DRAFT.ps1",
+    "source_sha256": "8F7D69792036CE114674416B8842EBF085A744B1E1758667DC58764563F13499",
+    "source_bytes": 6944,
+    "source_git_commit": "62cbb11f2601535ad9d5d5ca732f3f8548df38e9",
+    "contract": "02_Analysis/R002R23_MetadataInventory_ExecutionContract_20261023.md",
+    "contract_git_commit": "24a4d7023b2562c7fed17560de927dd5b669761d",
+    "output_directory": "05_Evidence/R002R23_MetadataInventory_001",
+    "native_ast_executed": false,
+    "native_runtime_executed": false,
+    "network_requests_allowed": 0,
     "runtime_execution_allowed": false
   }
 }
