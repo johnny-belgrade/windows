@@ -15,3 +15,7 @@ Frozen source from earlier R26-F review is 6771B SHA256 `A937E1CE2234AC42840B98F
 ## B — exact Verify-owned output absence (attempt 1)
 
 Single direct RDC `list_directory` on `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\05_Evidence\R002R26_F_HistoricCache_SHA1_001` returned literal `[NOT_FOUND]` on DESKTOP-4J4KCEA. No output collision or existing owned F report at that exact path; no file was created/deleted. This is path-specific, not a whole-machine search and not proof that someone never ran Verify elsewhere. **ONE NEXT:** independently read full frozen local source and check against Git, without running it; then separately record and verify its source hash.
+
+## C — local frozen source SHA256 (attempt 1)
+
+Standalone same-RDC `pwsh.exe Get-FileHash -Algorithm SHA256` on **only** the reviewed `03_Drafts\R002R26_F_HistoricCache_SHA1_ReuseGate_v1_DRAFT.ps1` returned **PID8036**, `A937E1CE2234AC42840B98F682965DA56E752AF5BC41F9725384AE3DF420670F`, process completed. Equals frozen source/Git reference; independent numeric exit code not exposed by tool response. No source change and no script execution. `Verify` still NOT_RUN. **ONE NEXT:** separately check R24 source JSON pinned SHA256 before any future operator-approved Verify; then independently checkpoint and read back.
