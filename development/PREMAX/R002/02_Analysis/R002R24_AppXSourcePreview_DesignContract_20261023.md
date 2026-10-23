@@ -1,0 +1,26 @@
+# BlueLite R002-R24 — URL-free AppX seed-preview design and execution boundary
+
+**2026-10-23. CONTRACT_PREPARED / SCRIPT_NOT_AUTHORED / NOT_DELIVERED / NOT_RUN.** Source-bound next analytical block only, after R23 independently verified PASS. Do not treat this document as permission to fetch UUP payload, apply a converter, modify a WIM/registry, or certify AppX closure.
+
+## Source lineage and exact fixed inputs
+
+- 26300.9807 Pro amd64 en-US, UUID `687d1ced-aab1-4cd5-ad05-705189769731`, frozen original ZIP SHA256 `83203A6E79E62579A7D64204120BCECC111FE114C614AB1DBFAE032BB02DE7B7`.
+- [R23 URL-free source inventory](../05_Evidence/R002R23_SafeQueueInventory.json) 485382B / SHA256 `0058049376679F6011F9BD3C9D51FE49BD631E46D843E38CF09E15D7AFD1CDE6`, 98 Windows, 2798 Apps; Git commit `06d223f4c4209dfcc465dc8fdf0e310488c9f90e`. [Native proof](../05_Evidence/R002R23_Native_Inventory_Receipt.json) and [independent proof](../05_Evidence/R002R23_C_IndependentPostState_Native.json) confirm no URL, no payload/download, immutable original queue SHA and full record count.
+- Local G4 source directory, read-only for R24: `C:\work\scripts\BlueLite_Stage1_S06_26300_G4_AppsOnly`. Actual `SHA256SUMS_S06.txt` lists `BlueLite_AppAllowPatterns.txt` SHA256 `B099C3F688A8AEC7AF151E838E263DC713D05432F682117E002AD0BDC19B49DB`, `BlueLite_AppAlwaysKeepPatterns.txt` `DA6638876F07453A3185F0EC420FA7FD52C615D9CA29702F9E89E6CCC72F8B5B`, `BlueLite_RequiredStagingApps.txt` `3812FFA2EBE6085889F007D1522D2EC3F970A9C23E1457B8B2D73798FD252265`, `BlueLite_FilterApps.ps1` `827CC9BAC9B8690AC05BDD45545138ABB9FDBD097AE47CD37AA51496157C8BD8`, and `BlueLite_ResolveAppDependencies.ps1` `D9835FC164FDC2C6684DF44798E9F41EDFC9961F889B112BE27CD984441015FF`. Confirm these hashes natively **before any new script run**; historic SHA listing is not current-byte readback.
+- Historical 26300.9711 S06 G4 successful AppsOnly: 27 selected seed records, 32 final manifest-closed/downloaded/hash-verified packages, 115765780 bytes. This is a prior-version **reference only**, not a .9807 payload/checksum/closure certificate.
+
+## Verified R23 structure and distinction
+
+- 8 extension groups: .appx525, .appxbundle21, .cab77, .esd19, .msix2227, .msixbundle24, .msu2, .wim1. Counts are combined across both queues.
+- Only cross-queue duplicate output identity is `687d1ced-aab1-4cd5-ad05-705189769731.AggregatedMetadata.cab` (two records, **same** sha-1 `0A5F6B6ADD22E6500ECFB91E192FC7B17B8327F7`). Do not mistake same-out for two payload dependencies or download permissions.
+- Five **STAGING** identities remain SecHealthUI, DesktopAppInstaller, Calculator, Notepad, Photos; the common-base **FINAL** target is the four excluding DesktopAppInstaller. No policy change.
+- `BlueLite_FilterApps.ps1` matches patterns against full original record text, including transport URLs. R23 deliberately omits URLs. An `out`-only filter preview is therefore **NOT** a strict reproduction of the upstream/native queue filter; report unknown differences instead of asserting parity.
+- `BlueLite_ResolveAppDependencies.ps1` reads `AppxManifest.xml` from real AppX/MSIX payloads and nested bundles, evaluates exact Identity/Publisher/MinVersion/ProcessorArchitecture providers and can require further package downloads. An out+checksum-only R23 file does **not** contain these facts; no offline candidate naming match proves closure.
+
+## One next R24 step for operator review
+
+Prepare exactly one versioned source file under existing `R002...\03_Drafts\R002R24_9807_URLFree_SeedPreview_v1_DRAFT.ps1` and execution contract before any local run. Its static, local-only behavior: pin R23 JSON/source+G4 policy SHA; read safe JSON and canonical pattern files; project only **candidate** 26300.9807 Apps records matching `out` text and five staging aliases, document unknown URL-based filter differences, report counts and exact out+checksum identity without changing either original R22 queue, R23 JSON, G4 files or creating active aria2 queues. Reject missing/ambiguous required identities rather than invent framework providers. Output future owned `05_Evidence\R002R24_URLFreeSeedPreview_001` using CreateNew; exclude all URLs. **No executable R24 source exists yet; no R24 local delivery, AST or runtime.**
+
+After R24 preview (only with new process checkpoint/approval for that precise step), decide what actual selected AppX payload/manifests are needed to test closure and what prior G4 cache may be reused by exact SHA; obtain separate operator GUI authorization for any new network/payload download. Do not authorize converter, WIM, MAX_PRE or NTLite as a side effect. Preserve the 98-entry Windows reconstruction closure and immutable originals. Only package-manifest/installed-provider proof can advance AppX closure beyond `NOT_EVALUATED`.
+
+**Acceptance for PREVIEW ONLY:** source+policy SHA exact, read-only code/no transport APIs, AST/negative fixtures, URL-free own receipt, source record count/hash preserved, classified out-only candidates, `dependency_closure=NOT_EVALUATED` and `runtime_execution_allowed=false`. Runtime/file result can be PASSED only after native and independent output proof. Master and RecipeRegistry remain unchanged.
