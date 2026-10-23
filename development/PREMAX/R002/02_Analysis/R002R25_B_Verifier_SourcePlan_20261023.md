@@ -9,3 +9,7 @@
 **ONE NEXT:** author/review source and read back SHA, then run `SelfTest`, independently checkpoint its real result, and only afterward consider `Verify` with fresh no-collision guard.
 
 **Source delivery attempt 1/3:** helper JavaScript failed to parse before any Git/local source write (`SyntaxError: Unexpected identifier 'n'`), caused by unescaped PowerShell backtick in a JS template literal. Correct the transport source string (no unescaped JS delimiter), verify Git + local readback, then AST before running. No R25 script was created by this failed call.
+
+**B delivered/source review:** v1 [Git frozen source](../03_Drafts/R002R25_FullRecord_Parity_v1_DRAFT.ps1) commit `63fb0410aa6e04c0de7c65b8056e360aba52f79c`/blob `33c1309ce96206513292fb693083cb098a257b6e`. Local owned 122-line `03_Drafts/R002R25_FullRecord_Parity_v1_DRAFT.ps1` successfully delivered; full local RDC 122-line readback matches full Git text **exactly after newline normalization**. Source implements strict fixed SHA input gates, R22 full-record selection and count/pair comparison, synthetic self-test and redacted one-JSON CreateNew output, no original S06 invocation. Earlier JS template literal error had no file side effect. No native PowerShell parsing/runtime had yet been claimed.
+
+**ONE NEXT C:** actual native `pwsh -File ... -Mode SelfTest` AST and synthetic fixtures with fresh script SHA and independent result. On PASS journal C and then only bounded `-Mode Verify` original R22 reading with no HTTP/queue write.
