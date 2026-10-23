@@ -37,3 +37,7 @@ Attempt1: `get_config` independently confirms DESKTOP-4J4KCEA v0.3.1; `allowedDi
 ## G — live session inspection
 
 Separate RDC `list_sessions` attempt1: **No active sessions**. This does not prove other Windows local processes absent, only no RDC-owned live sessions. **ONE NEXT:** inspect exact target new Verify evidence directory for output collision, then journal/readback.
+
+## H — exact F Verify owned output collision inspection
+
+Direct, single-path RDC `list_directory` attempt1 on `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\05_Evidence\R002R26_F_HistoricCache_SHA1_001` returned literal `[NOT_FOUND]`. No existing F report in that exact owned path; no modification. This is a path-specific absence result, not a proof of no other external F execution. **ONE NEXT:** assess same-command local SHA retry only under current explicit operator continuation, with full cumulative safety-attempt accounting; never switch tool/route on denial.
