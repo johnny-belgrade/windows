@@ -1,0 +1,14 @@
+{
+  "result": "PASS_R002R24_OUT_ONLY_PREVIEW_NOT_CLOSURE",
+  "native_pid": 8472,
+  "ps_version": "7.6.7",
+  "script_sha256": "3E3C6E1273585DA36311ED668B952D2F0464FD203B96C8CB54C542AAFE0F5406",
+  "inventory_sha256": "0058049376679F6011F9BD3C9D51FE49BD631E46D843E38CF09E15D7AFD1CDE6",
+  "preview_sha256": "2D91B0C75970738DC2DC93A66C75AEA761BC02CB8452DF5B7055FFDE22029A82",
+  "preview_bytes": 6765,
+  "preview_count": 27,
+  "identities": 5,
+  "http_requests": 0,
+  "manifest_dependency_closure": "NOT_EVALUATED",
+  "runtime_execution_allowed": false
+}
