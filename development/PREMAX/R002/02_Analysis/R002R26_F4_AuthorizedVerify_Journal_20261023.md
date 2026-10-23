@@ -9,3 +9,7 @@ Attempt1 RDC list_devices: DESKTOP-4J4KCEA online, ID `d892c878-1a42-4fcd-b0e7-c
 Frozen F code: `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\03_Drafts\R002R26_F_HistoricCache_SHA1_ReuseGate_v1_DRAFT.ps1`; expected SHA256 `A937E1CE2234AC42840B98F682965DA56E752AF5BC41F9725384AE3DF420670F`. R24 expected SHA256 `2D91B0C75970738DC2DC93A66C75AEA761BC02CB8452DF5B7055FFDE22029A82`; R26 `24DD6D74DB006A7DC9D39190CD3044A62F43DB23863D5CCEEEEF8423D004EDED`. One local read-only Verify after fresh individual guards. Payload read volume at most 115765780 B/110.4MiB; no network, original/cache/Windows image alteration, one new owned JSON only.
 
 **ONE NEXT:** separately list live RDC sessions, journal and readback before hashing source.
+
+## B — pre-launch connector sessions
+
+Attempt1 independent same-RDC `list_sessions`: **No active sessions**. No competing connector-owned process detected. Next: standalone source SHA256, note original PID/stdout; no scripts run yet.
