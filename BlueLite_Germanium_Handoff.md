@@ -2,6 +2,12 @@
 
 ## 0AW. 2026-10-23 — R002-R23 per-process journal
 
+### D — R24 URL-free seed-preview design/manifest dependency boundary (§0R SECOND prep)
+
+Read actual R23 inventory header and exact S06 26300 native G4 reference policy files, SHA256SUMS and `BlueLite_FilterApps.ps1` / `BlueLite_ResolveAppDependencies.ps1` semantic code. R23 new 26300.9807 2798 Apps entries do not contain the actual AppxManifest.xml publisher/minimum-version/processor-architecture provider facts; exact G4 strict closure requires inspecting actual AppX/MSIX/bundle package bytes. Out-only matching with R23 omitted transport URLs does not reproduce old full-record filter exactly. The one shared output name is source AggregatedMetadata.cab, matching checksum; that is not a dependency edge. Existing S06 .9711 27→32 actual download/closure remains historical reference. Retain staging five and final four.
+
+[Prepared R24 design-only source contract](development/PREMAX/R002/02_Analysis/R002R24_AppXSourcePreview_DesignContract_20261023.md), commit42851f214e8fb4460c3b383045e1b9c61bf3810b/blob0b98fed9c178f7454af5f2e4af204178ab41c367, independent exact readback. **R24_SCRIPT_NOT_AUTHORED / NOT_DELIVERED / NOT_RUN.** No R24 AST, metadata preview, manifest closure, payload download, change to protected original/R22/R23 source. **ONE NEXT E:** align R002 cycle manifest/registry, Sources if material, and final Current/Handoff SECOND/Session Entry LAST for operator pause. No mutation or Registry promotion.
+
 ### C2 — R23 native inventory + independent URL-free post-state PASS (§0R FIRST)
 
 Actual single PS7.6.7 R23 native launch remote3488/native532 `PASS_R002R23_URL_FREE_METADATA_INVENTORY_ONLY`, generated 485382B SHA256 0058049376679F6011F9BD3C9D51FE49BD631E46D843E38CF09E15D7AFD1CDE6; 98 Windows+2798 Apps=2896 records with exact queue/out/checksum and no URLs, requests0. Original [native receipt](development/PREMAX/R002/05_Evidence/R002R23_Native_Inventory_Receipt.json) 681B SHA256 C2E8E078F76F0F074129F6C262148FCFC6A5BA3E53BFDC27EAA203089D0E7BF0; [URL-free inventory](development/PREMAX/R002/05_Evidence/R002R23_SafeQueueInventory.json) Git commit06d223f4c4209dfcc465dc8fdf0e310488c9f90e/blob bbe8796f252b46a24d075cdf9482c388df2fd7c4. All mirrors exact local size/CRLF and Git readback.
