@@ -1,0 +1,18 @@
+{
+  "result": "PASS_R002R23_URL_FREE_METADATA_INVENTORY_ONLY",
+  "started_utc": "2026-10-23T02:59:46.9619143Z",
+  "finished_utc": "2026-10-23T02:59:47.1549238Z",
+  "native_pid": 532,
+  "ps_version": "7.6.7",
+  "adapter_sha256": "8F7D69792036CE114674416B8842EBF085A744B1E1758667DC58764563F13499",
+  "inventory_sha256": "0058049376679F6011F9BD3C9D51FE49BD631E46D843E38CF09E15D7AFD1CDE6",
+  "inventory_bytes": 485382,
+  "windows_count": 98,
+  "apps_count": 2798,
+  "total_records": 2896,
+  "projected_semantic_identity": "PASS",
+  "http_requests": 0,
+  "uup_payload_downloaded": false,
+  "dependency_closure": "NOT_EVALUATED",
+  "runtime_execution_allowed": false
+}
