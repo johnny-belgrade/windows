@@ -50,3 +50,7 @@ Project existing R002 only, target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab
 ## D11 — distinct v2 destination absence
 - Native PS7 PID11808 Test-Path `04_StaticTests\R002R26_G3J_Zip64Central_v2_DRAFT.ps1` returned False, safe to create new owned version; v1 must not be altered. Attempt1/3 PASS.
 - ONE NEXT: create only new v2 from reviewed v1 source with corrected fixture expression; ensure readback and native AST/SHA before v2 synthetic execution.
+
+## D12 — distinct owned v2 source created without overwriting v1
+- RDC native PS7 PID8160 read v1 owned script and wrote **new** previously absent v2 with `FileMode.CreateNew`, single exact source replacement fixing runtime-invalid `[uint16](if($extra){4}else{0})` expression into separate `$extraBytes=0;if($extra){$extraBytes=4}` and `[uint16]$extraBytes`. Literal `PASS_G3J_V2_NEW_ONLY_EXACT_REPLACEMENT_NO_V1_OVERWRITE`; no original/v9a/cache mutation, attempt1/3. v1 frozen rejected; v2 content readback, AST, SHA, synthetic test PENDING.
+- ONE NEXT: independent full local v2 source readback and verify intended one-line semantic edit, then journal/readback.
