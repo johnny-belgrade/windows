@@ -14,3 +14,7 @@ Project existing R002 only, target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab
 ## D2 — RDC connection
 - Fresh `list_devices` shows DESKTOP-4J4KCEA Online, device `d892c878-1a42-4fcd-b0e7-c51caf510ab6` RDC v0.3.1. PASS attempt1/3, no config mutation.
 - ONE NEXT: read full connector config to confirm root and 33 blocked commands.
+
+## D3 — live RDC policy and 7-Zip boundary
+- RDC v0.3.1 native config exact allowed roots `C:\work` and `C:\BLR20R2F5`, 33 blocked commands incl `reg`, default shell powershell.exe, unchanged. Operator physical `C:\Program Files\7-Zip\7z.exe` exists outside allowed roots and is NOT being accessed or executed through RDC; PATH change not needed for G3J code. PASS attempt1/3.
+- ONE NEXT: review pinned G3G v9a ZIP parser and G3I sample implementation before new source creation.
