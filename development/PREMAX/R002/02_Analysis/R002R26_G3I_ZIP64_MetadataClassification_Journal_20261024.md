@@ -37,3 +37,7 @@ Scope: existing R002, target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab1-4cd5
 ## D8 — guarded Session Entry G3I IN_PROGRESS readback
 - Git Entry CAS commit `5d06ea1992fa9aaf8d9fa3c37c567390037011fe`, blob `1ebabf78ce056880eb71106eb63c15109651d10e`, independent same-path content readback confirms only scoped G3I, original G3H HOLD, source/cache protected. PASS attempt1/3.
 - ONE NEXT: inspect original local G3H failure receipt exact (no re-run), then checksum and native scope.
+
+## D9 — original G3H failure receipt re-read
+- RDC directly re-read full existing 15-line `05_Evidence\R002R26_G3G_FailureReceipt_001\R002R26_G3G_FailClosedReceipt.json`, `error_code=ZIP64_UNSUPPORTED`, frozen v9a source SHA pin, exact build+UUID, `graph_closure=NOT_CERTIFIED`; protected cache/WIM unchanged per actual receipt. This does not identify package; native prior receipt SHA256 `E4616A7F0A10864B857BE1D7B9D5F2FCFA3D74FB421EBD18123E219F398EB3BA`. Read attempt1/3 PASS.
+- ONE NEXT: confirm native 7-Zip command discovery within allowed scope without invoking external binary; then select bounded native parser inspection route.
