@@ -37,3 +37,7 @@ Existing R002; target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab1-4cd5-ad05-7
 ## D8 — original G3J v2 locally pinned unchanged
 - Native PS7 PID7836 Get-FileHash exact owned preexisting G3J v2 source = `CE7D0AD2A4DF496F1EFC7254374473A08C27FC76328FC0851573F0D5C5AEA725`, matches G3J source pin. Original v2 unchanged, 11 synthetic PASS source remains. No mutation, PASS.
 - ONE NEXT: check new G3K v1 source exact absence, then author minimal new version using pinned v2 parser and controlled one sample mode.
+
+## D9 — G3K new source collision gate
+- Native PS7 PID8620 exact `Test-Path` new owned `04_StaticTests\R002R26_G3K_OneSampleZip64_v1_DRAFT.ps1` = False; safe new-only creation. No change to v2 source or protected cache, PASS.
+- ONE NEXT: reviewed source-only G3K new draft, implementing inherited pinned v2 ZIP64 central + in-memory 11 negatives and exact one F4 SHA1/32717B original/.NET archive manifest CRC, no extracted files; independently read back and AST/SHA before execution.
