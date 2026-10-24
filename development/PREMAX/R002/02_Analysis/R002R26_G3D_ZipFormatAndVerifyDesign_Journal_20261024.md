@@ -65,3 +65,8 @@ CRC32_TYPE=NO
 
 - Native read-only `Test-Path` on new local `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\03_Drafts\R002R26_G3D_ZipCentralStrict_v1_DRAFT.ps1` reported `G3D_V1_PATH_EXISTS=False`, confirming no overwrite of an existing owned v1-v6 file. No new script created yet.
 - **ONE NEXT:** new standalone SelfTest-only in-memory ZIP header strict fixture script; document raw source write and independently full readback before AST/SelfTest.
+
+## G3D-D13 — new standalone synthetic-only ZIP central checker local write
+
+- New, nonoverwriting RDC owned local development script `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\03_Drafts\R002R26_G3D_ZipCentralStrict_v1_DRAFT.ps1` created via `write_file`, receipt 139 lines (~7406 source chars, 140 newline-separated records). Existing v6 and v1-v5 untouched. Implements byte-buffer EOCD/CDFH/local header guards, flags/method/multidisk/ZIP64 fail-closed checks, stored-member CRC32 implementation and 15 synthetic-only checks; deflate CRC and integration into v6 real parser explicitly NOT_PROVEN. **Source is DRAFT**, SHA/AST/SelfTest not yet executed.
+- **ONE NEXT:** full independent local draft readback, then native SHA/AST/SelfTest as separate operations with journal/readback.
