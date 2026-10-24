@@ -154,4 +154,8 @@
 
 **STATUS:** `PASS_G3L_V4_FULL_892_LINE_READBACK` / `AST_SHA_SYNTHETICS_PENDING_REAL31_NOT_RUN`.
 
-**ONE NEXT:** Native PowerShell 7 parser-only AST check of this exact new v4 local source, journal/readback before independent source hash and each synthetic test.
+**D39 — native PowerShell 7 v4 AST only:** RDC single parser-only `Parser.ParseFile` over exact local new G3L v4 file, PID **11280**, finished with literal `G3L_V4_AST_ERRORS=0`. Does not execute script, cache/archive, 31-AppX graph or WIM. D38 full native 892/892 source readback verified separately. No protected/production mutation.
+
+**STATUS:** `PASS_G3L_V4_NATIVE_PS7_AST0` / `SHA_AND_SYNTHETICS_NOT_RUN`.
+
+**ONE NEXT:** One native PS7 `Get-FileHash SHA256` read-only of exactly this new v4 source; journal and independently read it back before any synthetic v4 execution.
