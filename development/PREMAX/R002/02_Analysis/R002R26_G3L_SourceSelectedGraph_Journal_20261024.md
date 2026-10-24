@@ -146,4 +146,8 @@
 
 **STATUS:** `PASS_G3L_V4_DEST_ABSENT` / `NEW_SOURCE_NOT_DELIVERED`.
 
-**ONE NEXT:** Author new v4 with exact one-expected-code fixture literal correction using source-v3 SHA guard, `FileMode.CreateNew`, then direct readback before native AST/hash/fixture operation.
+**D37 — operator reconnect, v4 new-only source delivery:** Native RDC PowerShell 7 PID **10732** finished with literal `G3L_V4_CREATED_BYTES=56063;LINES=892`. The exact source v3 SHA256 pin was `C8365420FE9011D3AC9A9C0762878D3783C6BF16C89F06431C3FFD1B2E4275DF`; the new-only v4 operation required one synthetic expected-code fixture change from `CENTRAL_COUNT` to `ZIP_CENTRAL_COUNT` and updated the v4 comment. Target was unique `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\03_Drafts\R002R26_G3L_AppxManifestGraph_Zip64_v4_DRAFT.ps1`, opened with FileMode.CreateNew. Prior Git D37 attempt1/3 was denied by platform checks before commit; operator performed reconnect and explicitly approved two additional attempts. This journal write is reconnect **attempt2/3**, not a native retest. Protected originals/cache/WIM/Registry/Master not intentionally changed. **New v4 draft is NOT independently read, hashed, AST checked or executed yet.**
+
+**STATUS:** `DELIVERED_G3L_V4_SOURCE_ONLY_PENDING_DIRECT_READBACK` / `31_REAL_GRAPH_NOT_RUN`.
+
+**ONE NEXT:** Independent exact Git journal readback; then direct full local v4 source readback (892 lines), journal/checkpoint/readback before native AST, SHA and synthetic tests.
