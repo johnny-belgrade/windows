@@ -74,3 +74,7 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D17 — corrective v9a new filename absence
 - Native PS7 PID2304 exact new `03_Drafts\R002R26_G3G_AppxManifestGraph_v9a_DRAFT.ps1` Test-Path returned False. No overwrite. PASS.
 - ONE NEXT: reconstruct v9a from original SHA-pinned v8 using literal-safe callback insert, separate new file and full readback; keep rejected v9 immutable.
+
+## D18 — corrected versioned v9a source write
+- Native RDC created separate previously absent `03_Drafts\R002R26_G3G_AppxManifestGraph_v9a_DRAFT.ps1` as 728-line, 46,855-character source from frozen v8 Git SHA. Inserted G3G external-floor classification and 13 in-memory synthetic fixtures, sanitized deterministic owned future failure receipt; construction used literal-safe JS callback replacement, avoiding previous `$'` interpolation issue. Rejected v9 and original v8 untouched. Write success, AST NOT_RUN.
+- ONE NEXT: independently full read v9a and verify source anchors, then source hash and AST before synthetic execution.
