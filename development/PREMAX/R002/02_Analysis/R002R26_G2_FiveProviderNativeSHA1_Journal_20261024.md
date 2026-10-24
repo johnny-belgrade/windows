@@ -61,3 +61,7 @@ One scoped RDC `edit_block` changed only root `status` to `R002R26_G2_FIVE_PROVI
 ## N — local manifest ONE NEXT G3 source-only parser/negative fixtures
 
 One scoped RDC `edit_block` only root `one_next` from G2 to `R002R26_G3_APPX_ZIP_XML_MANIFEST_PARSER_DRAFT_AND_NEGATIVE_TESTS`, separate direct local readback around line229 confirmed exact value, previous R9 record untouched. No parser draft or XML executed. **ONE NEXT:** append one G2 binary-SHA receipt object preserving F4/G1, independent full local JSON parse+QA and Git CAS sync.
+
+## O — local canonical R002 G2 append-only record + independent full JSON QA PASS
+
+One scoped RDC `edit_block` appended new `r26_g2_provider_binary_sha1_reuse` (23 fields) after existing G1 record, preserving all former keys. Independent full local direct `read_file` and JSON.parse PASS: **39 root keys**, G2 status SHA1 exact5, PIDs [7256,7788,6404,3016,7848], corrected Git report blob `6a611ee682e075ded873c0ffd83233af330ad96d`, F4 26 preserved, G1 five source records preserved, root ONE NEXT G3 draft/negative tests, `runtime.executed=false`. No AppxManifest content reviewed in this block. **ONE NEXT:** exact CAS sync existing R002 Git CycleManifest (root status/next/new G2 only), full independent local-vs-Git semantic parity; then active Registry R002 row-only, no R001 change.
