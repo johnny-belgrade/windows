@@ -101,3 +101,7 @@ Boundary: existing R002 only, frozen v9a 728 lines/46855 bytes SHA256 `B422869D4
 ## D24 — isolated synthetic I/O probe destination absence
 - RDC native PS7 PID1588 exact `Test-Path` on new owned `05_Evidence\R002R26_G3H_IOProbe_001` returned False. Distinct from reserved real G3 graph and failure-receipt parents. No outputs created, attempt1/3 PASS.
 - ONE NEXT: create one bounded synthetic-only owned JSON I/O receipt beneath this unique absent parent, then independent readback/QA before any real graph.
+
+## D25 — isolated synthetic-only receipt filesystem write
+- RDC native PS7 PID9724 created only new owned `05_Evidence\R002R26_G3H_IOProbe_001\G3H_Synthetic_IO_FailClosed.json` via absent-parent guard and `FileMode.CreateNew` with UTF8 no BOM; native output `PASS_G3H_SYNTHETIC_IO_PROBE_CREATED=...`. This is **standalone synthetic filesystem I/O smoke**, **not** actual v9a G3G-WriteFailure function certification and **not** real 31-AppX Verify. Original source/cache protected. Attempt1/3 WRITE_CONFIRMED.
+- ONE NEXT: independently read exact owned JSON via RDC and verify schema/flags; then collision/rewrite rejection gate separately.
