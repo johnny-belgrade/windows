@@ -46,3 +46,7 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D10 — new non-overwriting v9 source draft written
 - RDC created previously absent owned `03_Drafts\R002R26_G3G_AppxManifestGraph_v9_DRAFT.ps1`, 853 lines/56151 constructed ASCII characters, based on frozen v8 Git blob `1ba6fe8e268c36f6553d89b9740f993776b685d6`. Updated only missing-provider result/fixture expectations, pinned G1 SHA, added synthetic external-floor and sanitized receipt generation (no test-mode writes), distinct future Verify-only failure receipt writer; no actual real Verify. Write reported success. No changes to v8/cache/OS/image.
 - ONE NEXT: full independent local 853-line source readback before native AST and synthetic execution.
+
+## D11 — complete local v9 source readback
+- RDC direct read all 853/853 lines, transport 56152 chars includes added trailing read wrapper newline; original authored v9 56151 chars. Exact external-floor mapping, G3G-SelfTest, sanitized G3G-Receipt and future Verify-only G3G-WriteFailure function anchors confirmed. This is source readback, not native byte or runtime proof. PASS.
+- ONE NEXT: native PowerShell7 source SHA256, then source-only AST and synthetic tests with per-operation receipts.
