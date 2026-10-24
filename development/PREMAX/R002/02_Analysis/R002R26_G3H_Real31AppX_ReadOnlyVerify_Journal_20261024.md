@@ -97,3 +97,7 @@ Boundary: existing R002 only, frozen v9a 728 lines/46855 bytes SHA256 `B422869D4
 ## D23 — native 31 original cache binary SHA1 source preflight
 - RDC direct PowerShell 7 PID9652 executed the independently AST0/41-line read-only owned SHA1 helper on exact 31 cache leaves under historic `.9711` S06 cache, compared against `.9807` F4 26 + G1 5 source `expected_sha1`, with duplicate/leaf/path/reparse and 256MiB guards. Literal native output `PASS_G3H_ORIGINAL_CACHE_SHA1_31_BYTES_112616297_MAX_59212375_UUID_687d1ced-aab1-4cd5-ad05-705189769731`. All **31/31 SHA1 exact PASS**, 112,616,297 B total, max 59,212,375 B; process finished. Cumulative original 31 SHA1 attempts2/3 (first nested launch parser failed before reads); second PASS. Original cache/source and image unchanged; *not* XML/ZIP graph or WIM/CAB proof.
 - ONE NEXT: bounded fail-closed synthetic receipt filesystem I/O preflight in new owned path, separately verified before real v9a `-Mode Verify`; graph actual NOT_RUN.
+
+## D24 — isolated synthetic I/O probe destination absence
+- RDC native PS7 PID1588 exact `Test-Path` on new owned `05_Evidence\R002R26_G3H_IOProbe_001` returned False. Distinct from reserved real G3 graph and failure-receipt parents. No outputs created, attempt1/3 PASS.
+- ONE NEXT: create one bounded synthetic-only owned JSON I/O receipt beneath this unique absent parent, then independent readback/QA before any real graph.
