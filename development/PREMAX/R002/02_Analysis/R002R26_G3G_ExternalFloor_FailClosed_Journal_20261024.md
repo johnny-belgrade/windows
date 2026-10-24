@@ -66,3 +66,7 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D15 — independent AST helper full readback
 - RDC direct full read 11/11 lines of new helper. Fixed v9 source path, only native ParseFile, zero-error acceptance, no real AppX/cache manipulation. PASS.
 - ONE NEXT: execute read-only AST helper with native PS7 -File and journal numeric error count.
+
+## D16 — v9 native AST FAIL, frozen as rejected draft
+- Native PS7 PID10336 parsed v9 and reported G3G_V9_AST_ERRORS=6. New synthetic tests NOT_RUN, real AppX Verify NOT_RUN. Determined source-generation defect: JavaScript string-replacement expansion of `$'` tokens from PowerShell regex inserted trailing original source text, causing parser errors. v9 local file preserved/frozen; no cache/image mutation. AST attempt1/3 failed, not connector permission denial.
+- ONE NEXT: preflight unique `R002R26_G3G_AppxManifestGraph_v9a_DRAFT.ps1` absence and reconstruct with replacement callbacks that preserve literal `$` correctly; verify AST before any new test.
