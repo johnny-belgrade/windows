@@ -53,3 +53,7 @@ Boundary: existing R002 only, frozen v9a 728 lines/46855 bytes SHA256 `B422869D4
 ## D12 — native original G1 matrix SHA256 preflight
 - RDC native PS7 PID4680 read-only `Get-FileHash -Algorithm SHA256` of exact existing owned `02_Analysis\R002R26_G1_9807_SourceProviderChecksum_Matrix_20261024.json` returned `A28DF1CDDA70A93FD1FAA9E928EC8C52C5409E365B86E92E06AEBEC4C391F34D` identical to frozen G1 source. Process finished, native literal PASS, no file writes, attempt1/3.
 - ONE NEXT: identify actual 31 SHA1 provenance/source path from verified existing G1/F4 and v9a source, with one-file inspection; then check report collision guards before actual binary reads.
+
+## D13 — original F4 parsed source-bound receipt read
+- RDC directly read full existing F4 JSON (206/206 lines): schema HistoricCacheSha1.v1, target `26300.9807`, UUID `687d1ced-aab1-4cd5-ad05-705189769731`, `files` 26 original `out`/`expected_sha1`/`observed_sha1`; old F4 proof was 26/26 from distinct historical cache, not current G3H 31-byte rehash. No URLs or filesystem writes, attempt1/3 PASS.
+- ONE NEXT: original five-provider G1 matrix full direct read to identify provider names and SHA1, before source-selected 31 native rehash.
