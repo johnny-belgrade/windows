@@ -40,3 +40,7 @@
 ## D9 — Newly owned G3E v8 source draft WRITE (not executed)
 - Local RDC direct write PASS to previously absent `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\03_Drafts\R002R26_G3E_AppxManifestGraph_v8_DRAFT.ps1`; source authored 41,005 ASCII chars / 636 lines from SHA-pinned v7. New `SelfTestStrict` synthetic in-memory stored/deflate/descriptor/bundle positives and exact CRC, ZIP64, EOCD/CDFH, flags, method and local-header rejection fixtures; original v7 untouched. `-Mode Verify` NOT_RUN. Attempt1/3 PASS for write response only.
 - ONE NEXT: independently read all local v8 lines and compare key test anchors, then native SHA and AST before ANY execution.
+
+## D10 — Full independent local v8 draft readback
+- RDC `read_file` complete 636/636 lines. Source text transport 41,006 chars includes one read wrapper final LF; new mode `SelfTestStrict`, new synthetic fixture generator/descriptor/CRC/bundle and inherited exact `Verify` sections present. This does NOT establish native file byte parity. Attempt1/3 PASS.
+- ONE NEXT: native PS7 Get-FileHash SHA256 on ONLY v8 owned source; no SelfTest yet.
