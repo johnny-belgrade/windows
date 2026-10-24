@@ -9,3 +9,7 @@ Existing R002; target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab1-4cd5-ad05-7
 ## D1 — full Session Entry read
 - Git Session Entry blob `79557669c92645d18568ece5fe92521b13e30777` full 48933 characters reviewed, latest G3J v2 AST0+native SHA and 11/11 synthetic PASS; v9a original frozen and actual XML graph NOT_RUN. G3K exact ONE NEXT and original single `AppInstaller_scale-100.msix` scoped, no release authorization. PASS.
 - ONE NEXT: full Current Status top, then Handoff mandatory sections.
+
+## D2 — Current full top verified
+- Fetched Current full Git blob `ed8b543f7a80a663c014f3359a708fbc7d7e9cf4` 1511437 chars; latest G3J native one-source candidate v2 SHA256 `CE7D0AD2A4DF496F1EFC7254374473A08C27FC76328FC0851573F0D5C5AEA725`, synthetic11 PASS only. Real original 31 graph and external floor remain HOLD. PASS.
+- ONE NEXT: read current Handoff mandatory §0CE/0BE/0BL/0R/0S/12B and G3K reviewed contract.
