@@ -53,3 +53,7 @@ Same exact Git receipt path CAS corrected **only** `source_inventory_sha256` to 
 ## L — local R002 CycleManifest original root guard before G2 index
 
 Direct scoped local `read_file` first8 lines confirmed original R002 CycleManifest still carries G1 status `R002R26_G1_SOURCE_PROVIDER_METADATA_VERIFIED_DESIGN_ONLY_NOT_GRAPH_CLOSURE`, unchanged cycle ID, source build and preserved authority (625 lines). New G2 evidence not yet indexed. **ONE NEXT:** scoped root status edit to `R002R26_G2_FIVE_PROVIDER_SHA1_EXACT_NOT_XML_CLOSURE`, independent local readback, journal/readback, then ONE NEXT field.
+
+## M — local R002 manifest root G2 status edit/readback
+
+One scoped RDC `edit_block` changed only root `status` to `R002R26_G2_FIVE_PROVIDER_SHA1_EXACT_NOT_XML_CLOSURE`; separate direct first6-line readback verified exact value, original source-build string unchanged. No F4/G1/history fields edited. **ONE NEXT:** root `one_next` only -> `R002R26_G3_APPX_ZIP_XML_MANIFEST_PARSER_DRAFT_AND_NEGATIVE_TESTS`, readback/journal before append receipt.
