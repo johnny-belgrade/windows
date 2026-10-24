@@ -89,3 +89,7 @@ Boundary: existing R002 only, frozen v9a 728 lines/46855 bytes SHA256 `B422869D4
 ## D21 — independent complete local SHA1 helper source readback
 - RDC directly read full new `04_StaticTests\R002R26_G3H_Cache31_SHA1_Preflight_v1.ps1`, 41/41 lines. Confirmed F4/G1 exact pinned SHA256, target UUID, 31 records, restricted filenames/cache path, reparse and 256MiB gates, read-only original SHA1. No writes or binary hashing. Source readback PASS attempt1/3.
 - ONE NEXT: native PS7 AST-only source parser verification, one existing file; then journal/readback before reattempting 31 binary hashing.
+
+## D22 — native PS7 helper AST check
+- RDC native PowerShell 7 shell PID9368 parsed exact owned 41-line `04_StaticTests\R002R26_G3H_Cache31_SHA1_Preflight_v1.ps1`, literal output `G3H_SHA1_HELPER_AST_ERRORS=0`, process finished, attempt1/3 PASS. No package binary read, no script execution, no mutation.
+- ONE NEXT: second and bounded native 31 SHA1 verification attempt2/3 using direct `pwsh.exe` shell `& '<exact new helper path>'` to avoid prior nested PS5 interpolation; then journal/readback.
