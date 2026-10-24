@@ -29,3 +29,7 @@ Existing R002; target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab1-4cd5-ad05-7
 ## D6 — RDC live scope config
 - RDC v0.3.1 `get_config` exact roots C:\work and C:\BLR20R2F5; 33 blocked commands including reg. No change to roots or denied host Program Files; PASS attempt1/3.
 - ONE NEXT: inspect original F4 provenance of exact one AppInstaller_scale-100.msix package and pinned G3J v2 script before new G3K version.
+
+## D7 — original one-sample SHA1 source authority verified
+- RDC direct original F4 `05_Evidence\R002R26_F_HistoricCache_SHA1_001\R002R26_F_ReuseGate.json` first60 of206 lines confirmed target build26300.9807 UUID687d1ced-aab1-4cd5-ad05-705189769731, exact leaf `AppInstaller_scale-100.msix` SHA1 **`17C09E7AA0906DA13EBB6BDBB28A20AD1044BB18`**, bytes32717; observed=expected. F4 native prior SHA256 `8989870BADFEA64A3675E2AF22B4C29AC631CA222D6D8BD14CBAF5416D45084A`. Source snapshot history 26300.9711 is cache, not selected build. No binary read this step; PASS.
+- ONE NEXT: verify locally pinned G3J v2 existing source SHA256 before new v3 G3K script, then absent output path guard.
