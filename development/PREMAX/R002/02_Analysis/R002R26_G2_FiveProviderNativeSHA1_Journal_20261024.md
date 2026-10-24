@@ -25,3 +25,7 @@ One exact RDC `list_directory` under `C:\work\PREMAX-work\R002_Universal_Stage1_
 ## E — Provider 1/5 native SHA1 exact .9807 source-match PASS
 
 Single source-cache read-only `Get-FileHash -Algorithm SHA1` on `C:\work\E2E\BlueLite_Stage1_S06_26300_9711_2b22470a\UUPs\Microsoft.UI.Xaml.x64.2.8.appx` via unchanged RDC command; native **PID7256** completed, stdout `A5FA9D96FE72D5CD885DAB0B6F50A44CA82949A6`; identical to original 26300.9807 R23 SHA-1 metadata pin in G1 matrix. **PASS_REUSABLE_EXACT_SOURCE_SHA1 (1/5)**. Native exit integer not independently exposed; no source, cache, WIM, or output edit. **ONE NEXT:** independently read back this journal, then separate SHA1 for `Microsoft.VCLibs.x64.14.00.Desktop.appx` expected `9C0F20CDA41ECEEA9989F9A0C0999D82B7C05F19`.
+
+## F — Provider 2/5 native SHA1 exact .9807 source-match PASS
+
+Single unchanged RDC `Get-FileHash SHA1` on historic original `C:\work\E2E\BlueLite_Stage1_S06_26300_9711_2b22470a\UUPs\Microsoft.VCLibs.x64.14.00.Desktop.appx`, native PID7788 process completed with stdout `9C0F20CDA41ECEEA9989F9A0C0999D82B7C05F19` = exactly unique 26300.9807 source G1 matrix checksum. **PASS_REUSABLE_EXACT_SOURCE_SHA1 (2/5)**. Native numeric exit not exposed; read-only, no new file, no network. **ONE NEXT:** independent journal readback, then single SHA1 check provider3 `Microsoft.VCLibs.x64.14.00.appx`, expected `6E15245AED25EE83B027521F9CF9EA812C9D016D`.
