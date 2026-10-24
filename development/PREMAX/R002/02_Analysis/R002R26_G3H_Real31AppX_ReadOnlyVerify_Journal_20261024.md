@@ -141,3 +141,7 @@ Boundary: existing R002 only, frozen v9a 728 lines/46855 bytes SHA256 `B422869D4
 ## D34 — native original fail-closed receipt SHA256 pin
 - RDC native PS7 PID3764 `Get-FileHash -Algorithm SHA256` of exact newly created `05_Evidence\R002R26_G3G_FailureReceipt_001\R002R26_G3G_FailClosedReceipt.json` returned `E4616A7F0A10864B857BE1D7B9D5F2FCFA3D74FB421EBD18123E219F398EB3BA`. Original 15-line JSON already read at D32, mutation false, graph closure NOT_CERTIFIED. Native hash PASS attempt1/3; not evidence graph completion.
 - ONE NEXT: one native read-only graph output absence post-failure; then Current FIRST/Handoff sequence HOLD closeout.
+
+## D35 — post-Verify graph output absent native
+- Native PS7 PID7424 exact `Test-Path` for only `05_Evidence\R002R26_G3_AppxGraph_001` returned False **after** actual v9a Verify failclosed ZIP64. No main graph report was produced; only separate failclosed receipt exists with SHA256 D34. PASS read-only, attempt1/3. G3H real Verify outcome remains HOLD (not finished), 31 SHA1 original remains PASS and external WIM/CAB NOT_EVALUATED/NOT_ACQUIRED.
+- ONE NEXT: Current FIRST GitHub CAS and independent readback with G3H evidence/explicit HOLD, then Handoff FIRST/SECOND and short Session Entry LAST; no Verify retry.
