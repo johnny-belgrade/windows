@@ -34,3 +34,7 @@ Project existing R002 only, target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab
 ## D7 — independent 212-line source readback
 - RDC direct read completed full 212/212 lines from new owned G3J v1; verified isolated `SelfTest` entrypoint, in-memory fixtures and no original access/filestream original or output write. ZIP64 record/central/path/local/CRC guard functions are present. No claim AST/test readiness. Attempt1/3 readback PASS.
 - ONE NEXT: native PS7 parser AST-only examination of exact owned v1, separately journal result before any execution.
+
+## D8 — native v1 PS7 AST zero errors
+- RDC native PS7 PID9400 parsed exact new 212-line G3J v1 source, printed `G3J_V1_AST_ERRORS=0`, process finished. No source execution or artifact changes, PASS attempt1/3.
+- ONE NEXT: native SHA256 pin of exact G3J v1, journal and readback, then isolated synthetic-only SelfTest.
