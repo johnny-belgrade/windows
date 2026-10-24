@@ -7,3 +7,8 @@
 - **Operation only:** RDC `pwsh.exe -NoLogo -NoProfile -NonInteractive -Command (Get-FileHash ... -Algorithm SHA256).Hash` on exact LOCAL v2 draft, PID `7976`, reported finished, cumulative attempt 1/3.
 - **Observed SHA256:** `75CAED7CC858D9FF1C131BBFDA7880F7E2D9CCEDE3F1F14C21373D1F660C2B1E` exactly prior G3 reviewed pin. Original v1/v2 untouched; numeric native exit not separately exposed. This is source-byte integrity, NOT parser functional/static re-test or XML graph.
 - **ONE NEXT:** check target GitHub source mirror path does not exist, then source exact mirror; journal each and independently read back.
+
+## G3B-D2 — target Git noncollision probe
+
+- **Operation only:** direct GitHub contents lookup for `development/PREMAX/R002/03_Drafts/R002R26_G3_AppxManifestGraph_v2_DRAFT.ps1`; returned native `NOT_FOUND`/HTTP404, so no existing path was overwritten. This is expected noncollision, not infrastructure failure. Attempt 1/3.
+- **ONE NEXT:** obtain complete exact local v2 text bytes from scoped RDC and check encoded integrity before Git create.
