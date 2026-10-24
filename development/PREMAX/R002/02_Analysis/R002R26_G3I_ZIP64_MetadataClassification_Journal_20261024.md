@@ -45,3 +45,7 @@ Scope: existing R002, target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab1-4cd5
 ## D10 — user-reported 7-Zip native discoverability
 - RDC native PS7 PID8036 `Get-Command` metadata lookup for 7z.exe/7za.exe/7zz.exe (no binary execution, no access to nonallowed root) returned zero applications on PATH; user reports 7-Zip 26.05 installed, but native executable/version/path **NOT_VERIFIED**, so do not infer 7-Zip failure or connector problem. PASS command executed, discovery result NONE.
 - ONE NEXT: source-pinned native .NET/PS7 ZIP central-metadata classifier inside existing approved `C:\work` workspace; first verify unique owned draft destination absence.
+
+## D11 — unique G3I owned classifier source collision preflight
+- Native PS7 PID8700 exact `Test-Path` on `04_StaticTests\R002R26_G3I_Zip64MetadataInspector_v1_DRAFT.ps1` returned False. New non-overwriting source only can be created; no original cache or program mutation, attempt1/3 PASS.
+- ONE NEXT: write strictly read-only v1 inspector under this fresh owned path; independently read full source, AST, test synthetic markers before actual source-selected 31 metadata inspect.
