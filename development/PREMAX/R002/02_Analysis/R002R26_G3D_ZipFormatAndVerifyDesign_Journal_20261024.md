@@ -16,3 +16,8 @@
 
 - Full `production/contracts/README.md` Git blob `144889b63173adc392ff046826cf8dadcf914b78` reviewed: `CONTRACT_DESIGN_ONLY`, not a certified converter/engine, run/recipe/result schemas and source/scope receipts required. The new G3D parser remains development source, no production runtime promotion.
 - **ONE NEXT:** inspect actual current RecipeRegistry runtime flags and SHA, then checkpoint/readback.
+
+## G3D-D4 — Registry runtime gates verified unchanged
+
+- `production/intelligence/BlueLite_RecipeRegistry.json` Git blob `44f6c2f37cf9d4fd8c10331b491ff3d75c7c136b` parsed, revision r38, exactly seven recipe entries and `runtime_execution_allowed=false` for all 7, status not released. No Registry edit, no mutation authorization.
+- **ONE NEXT:** read local original mandatory R002 PREMAX README and UUP-history README, each separately checkpointed.
