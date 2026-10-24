@@ -94,3 +94,8 @@
 
 - Scoped RDC `read_file` returned all **73/73 lines** of exact G1 `MatrixPath` previously missing. Source-derived build `26300.9807`, target UUID `687d1ced-aab1-4cd5-ad05-705189769731`, original R23 SHA256 `0058049376679F6011F9BD3C9D51FE49BD631E46D843E38CF09E15D7AFD1CDE6`, `runtime_execution_allowed=false` and unchanged source/cache flag present. New local file now exists; no package bytes read. Local byte SHA and parsed cardinality need independent native check.
 - **ONE NEXT:** native SHA256 + parsed JSON controlled check on G1 metadata only, then F4 input path preflight.
+
+## G3C-D17 — new local matrix native SHA256 recorded
+
+- Native read-only `Get-FileHash -Algorithm SHA256` PID `7424` on newly materialized R002 `02_Analysis/R002R26_G1_9807_SourceProviderChecksum_Matrix_20261024.json` finished, reported SHA256 **`A28DF1CDDA70A93FD1FAA9E928EC8C52C5409E365B86E92E06AEBEC4C391F34D`**. This is local-file integrity receipt, not yet independent byte comparison to original Git content. No source/cache change or actual archive Verify.
+- **ONE NEXT:** independent parsed JSON source guards/provider count and Git-vs-local byte digest only if directly verifiable; then F4 path and output collision checks.
