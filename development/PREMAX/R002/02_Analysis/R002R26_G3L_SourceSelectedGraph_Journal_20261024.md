@@ -22,4 +22,8 @@
 
 **STATUS:** `PASS_REQUIRED_HISTORY_RH06_RH07_RH08_READS` / `G3L_NO_SOURCE_OR_RUNTIME_CREATED`.
 
-**ONE NEXT:** Targeted Library evidence and source-bound Git Registry/contracts/Sources review before G3L draft. Keep prior G3K one-real/31-HOLD and frozen v9a SHA unchanged.
+**D6 — targeted Library/Project search:** `files.search` scope Library+conversation for exact 26300.9807 G3G/G3J/G3K ZIP64 AppxManifest provider graph and historic UUP AppX dependency returned **8 hits, all same Master v6.3.1** excerpts, no separately accessible relevant original Library file. The already-reviewed original Git and local R002 source evidence is the direct target-specific source; this search does NOT prove Library empty or all originals reviewed. No new policy/recipe runtime fact.
+
+**STATUS:** `PASS_LIBRARY_TARGETED_SEARCH_NO_EXACT_FILE_HIT` / `G3L_PREDRAFT_NOT_RUN`.
+
+**ONE NEXT:** Review GitHub target source registry/contracts/Source catalog and frozen original parser sources, each with per-operation checkpoint/readback before any new revision.
