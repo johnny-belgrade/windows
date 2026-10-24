@@ -13,3 +13,9 @@
 - A GitHub update intended to record a bounded review of v5 and the proposed new v6 synthetic fixtures was denied before execution by the platform safety check. **First attempt 1/3** for this write problem; no commit returned and no proof of write. This is not a failure of v5 tests and does not authorize alternate transfer or rerouting.
 - Latest proven G3C: local v5 read, native SHA PID7768 unchanged, Session Entry prework checkpoint readback PASS, D1 journal and independent readback PASS. **D2 documentation write NOT_PROVEN; new v6 NOT_CREATED, G3C AST/SelfTest NOT_RUN, 31-package Verify NOT_RUN.**
 - **ONE NEXT:** operator-guided GitHub write reconciliation, then documented v5 gap analysis and individual actions. Pause in accordance with error protocol; Master, Registry, RDC and image unchanged.
+
+## G3C-D3 — Current FIRST write platform rejection; document closeout incomplete
+
+- Attempted protocol Current FIRST full-file GitHub update for G3C HOLD was **blocked by platform safety checks before confirmed execution**. Cumulative **attempt 1/3 for this Current write problem**, no commit returned, no claim that Current changed. This is separate from D2 rejected journal review upsert. No blind retries or alternate route.
+- G3C local v5 source SHA PID7768 passed, v6 NOT_CREATED; no real AppX Verify, CAB or WIM/host changes. The successful G3C journal D2 hold/readback remains factual. As Current FIRST was not completed, Handoff FIRST/SECOND and Session Entry LAST must not be falsely marked synchronized; Session Entry may still have `IN_PROGRESS` until operator resolves Git transaction. **STATUS: DOCUMENT_SYNC_HOLD**, not successful G3C block closure.
+- **ONE NEXT:** operator-guided reconnect/resolution and an authorized remaining Current FIRST write attempt with fresh CAS/readback, then Handoff/Entry completion; no new parser actions before checkpoint sync.
