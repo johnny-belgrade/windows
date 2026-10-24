@@ -73,3 +73,7 @@ Git R002 CycleManifest single CAS commit `fbe762b8759293f55e19be5f321bb177965c7b
 ## Q — active CycleRegistry baseline before R002-only G2 edit
 
 Direct single local `read_file` confirmed active `C:\work\PREMAX-work\99_Index\CycleRegistry.csv` exactly three lines (header/R001 unchanged/R002 G1 status). Previous immutable G1 Registry snapshot untouched. **ONE NEXT:** single scoped R002-row `edit_block` updates only `status`, `last_receipt`, and `one_next` to G2; independent readback, journal; then new immutable Git snapshot.
+
+## R — local active Registry R002-only G2 status, independent readback
+
+Exact scoped local `edit_block` changed only active R002 CSV fields to G2 status `R002R26_G2_FIVE_PROVIDER_SHA1_EXACT_NOT_XML_CLOSURE`, last receipt `05_Evidence/R002R26_G2_ProviderSHA1_001/R002R26_G2_FiveProviderSHA1_ReuseReceipt.json`, and ONE NEXT G3 XML parser+negative tests. Separate local direct readback confirmed original R001 unchanged, R002 original source SHA preserved, G2 and G3 fields exact; no prior snapshot touched. **ONE NEXT:** publish new immutable Git G2 three-row CSV, readback QA, native local CSV hash; then Current/Handoff/Entry §0R closure.
