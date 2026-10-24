@@ -54,3 +54,7 @@ Project existing R002 only, target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab
 ## D12 — distinct owned v2 source created without overwriting v1
 - RDC native PS7 PID8160 read v1 owned script and wrote **new** previously absent v2 with `FileMode.CreateNew`, single exact source replacement fixing runtime-invalid `[uint16](if($extra){4}else{0})` expression into separate `$extraBytes=0;if($extra){$extraBytes=4}` and `[uint16]$extraBytes`. Literal `PASS_G3J_V2_NEW_ONLY_EXACT_REPLACEMENT_NO_V1_OVERWRITE`; no original/v9a/cache mutation, attempt1/3. v1 frozen rejected; v2 content readback, AST, SHA, synthetic test PENDING.
 - ONE NEXT: independent full local v2 source readback and verify intended one-line semantic edit, then journal/readback.
+
+## D13 — complete independently read v2 owned source
+- RDC direct read **212/212** lines v2, confirmed new script complete; v1 invalid expression absent, exact intended `$extraBytes=0;if($extra){$extraBytes=4};$w.Write([uint16]$extraBytes)` present. No read of protected package or modification. PASS attempt1/3.
+- ONE NEXT: native PS7 parser AST only on new v2; journal/readback before hash and synthetic runtime test.
