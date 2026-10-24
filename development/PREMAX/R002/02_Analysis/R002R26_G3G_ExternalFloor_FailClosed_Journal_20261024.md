@@ -106,3 +106,7 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D25 — isolated G3G synthetic 13 PASS
 - Native PS7 PID9784 finished v9a `-Mode SelfTestG3G` with literal `PASS_R002R26_G3G_EXTERNAL_FLOOR_FAILCLOSED_SYNTHETIC_13_NOT_REAL_APPX`. 13 positive/negative synthetic checks of absent external provider, selected provider, wrong Publisher/MinVersion/Arch, duplicate, sanitized failure receipt and JSON round-trip, bad inputs, source reader error normalization and malformed in-memory ZIP. **No original AppX binary/VM/source image accessed; no owned failure receipt written by tests.** Numeric exit not separately exposed. PASS.
 - ONE NEXT: execute combined inherited 50 + ZIP strict18 + G3G 13 as separate `-Mode SelfTest`, log independent result.
+
+## D26 — combined 81 synthetic PASS
+- Native PS7 PID11064 finished v9a `-Mode SelfTest` with three literal PASS lines: inherited G3C 50, v8 strict ZIP/CRC 18, G3G external-floor/failclosed 13; total **81 synthetic PASS** (NOT 81 real package tests). Process completion reported; numeric exit not separately available. Original 31 AppX real `-Mode Verify` NOT_RUN. PASS.
+- ONE NEXT: native source byte length and Git new unique v9a source-exact SHA parity, then Current/Handoff/Entry closeout.
