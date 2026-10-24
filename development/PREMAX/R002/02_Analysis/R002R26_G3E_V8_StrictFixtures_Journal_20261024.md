@@ -84,3 +84,7 @@
 ## D20 — Distinct v8 Git source mirror CREATE
 - GitHub new file `development/PREMAX/R002/03_Drafts/R002R26_G3E_AppxManifestGraph_v8_DRAFT.ps1`, commit `e1d58e7003bb86dd491aa3e39ceb58de14b31b58`, 41,005 ASCII source chars copied after known read wrapper LF removal; original v7 untouched. Attempt1/3 create SUCCESS; Git byte-parity **PENDING independent QA**.
 - ONE NEXT: independently fetch newly created Git file and calculate SHA256 vs native original v8 PID8116; do not promote source if mismatch.
+
+## D21 — Independent Git exact source SHA freeze
+- Git v8 source new commit `e1d58e7003bb86dd491aa3e39ceb58de14b31b58`, blob `1ba6fe8e268c36f6553d89b9740f993776b685d6`; independent full main fetch 41,005 ASCII bytes. SHA256 JS known `abc` vector PASS, computed Git source **`A5D5D5B4D8AB270CD50DE33E2BD2884E388EDCC1E4A3D8F5AC86AD9CBFDBFC71`**, exact native local PID8116 SHA; `PASS_SOURCE_EXACT`. No extra newline/mismatch. Attempt1/3 PASS.
+- ONE NEXT: §0R Current FIRST actual v8 68 synthetic PASS with scope/gaps, independent readback; Handoff FIRST + reviewed NEXT + SECOND; Session Entry LAST; GUI pause. No real 31-AppX Verify in this block.
