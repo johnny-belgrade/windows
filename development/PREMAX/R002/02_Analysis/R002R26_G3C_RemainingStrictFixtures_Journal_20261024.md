@@ -104,3 +104,8 @@
 
 - New local G1 matrix parsed in native PS7 read-only PID `7632` `Get-Content -Raw | ConvertFrom-Json`, stdout `PASS_G3C_MATRIX_CONTRACT source=26300.9807 providerCount=5`; explicitly tested exact source build, UUID `687d1ced-aab1-4cd5-ad05-705189769731`, R23 source SHA and provider array length5. Local file SHA PID7424 `A28DF1CDDA70A93FD1FAA9E928EC8C52C5409E365B86E92E06AEBEC4C391F34D`. No AppX binary opened; not runtime/graph proof.
 - **ONE NEXT:** inspect existing original F4 input file path (read-only), and separately future G3 report output noncollision; then classify preflight result, no actual Verify.
+
+## G3C-D19 — actual original F4 JSON SHA256 preflight PASS (metadata only)
+
+- Native read-only `Get-FileHash -Algorithm SHA256` PID `4752` on original existing `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\05_Evidence\R002R26_F_HistoricCache_SHA1_001\R002R26_F_ReuseGate.json` finished with literal SHA256 `8989870BADFEA64A3675E2AF22B4C29AC631CA222D6D8BD14CBAF5416D45084A`, **exact** frozen F4 source guard in v6 Verify. No package bytes accessed and source JSON unchanged. This confirms F4 input exists/source hash only; its 26 record shape to be independently parsed, and no real XML graph evaluated.
+- **ONE NEXT:** read-only F4 JSON structure/target UUID/26 records check, then distinct future output collision/readiness check.
