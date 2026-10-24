@@ -121,3 +121,7 @@ Boundary: existing R002 only, frozen v9a 728 lines/46855 bytes SHA256 `B422869D4
 ## D29 — final graph report absence immediately before Verify
 - Native PS7 PID11544 repeat exact `Test-Path` for only owned `05_Evidence\R002R26_G3_AppxGraph_001` returned False. This is a new pre-execution collision proof at a later time (not a retry of failure), no output created. Attempt1/3 PASS.
 - ONE NEXT: fresh failure-receipt parent absence (one path), journal/readback, then bounded exact v9a Verify with original hash/31 SHA guards.
+
+## D30 — final failure receipt parent absence before Verify
+- Native PS7 PID8596 one exact `Test-Path` for only reserved `05_Evidence\R002R26_G3G_FailureReceipt_001` returned False, no old failure receipt collision. Attempt1/3 PASS. G3H D23 confirmed original 31 SHA1; D28 independent synthetic owned I/O readback; D29 graph parent absence. Frozen v9a native SHA D7 exact B422...; `-Mode Verify` is read-only original+cache plus possible **new owned** graph/failure output, under standing §0BL authorization.
+- ONE NEXT: execute exactly frozen `03_Drafts\R002R26_G3G_AppxManifestGraph_v9a_DRAFT.ps1 -Mode Verify` once, source-selected 31 ZIP/XML only; journal literal result before inspecting outputs. No image mutation, CAB/WIM floor separate.
