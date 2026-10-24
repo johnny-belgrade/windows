@@ -11,3 +11,8 @@
 
 - Read full current `BlueLite_Sources.md` Git blob `275265a873ad15761ff082be9ec7434e8a7f04d3` (~39,676 chars). Prior R26 G2 provider five exact native SHA1 checks and R23/F4+G2 historical 31/31 source-selected transport identity recorded; source bytes alone **not AppxManifest XML graph**. No download/network or mutation.
 - **ONE NEXT:** read current production contract and Registry source-gating statuses, then independent checkpoint.
+
+## G3D-D3 — current contracts reviewed
+
+- Full `production/contracts/README.md` Git blob `144889b63173adc392ff046826cf8dadcf914b78` reviewed: `CONTRACT_DESIGN_ONLY`, not a certified converter/engine, run/recipe/result schemas and source/scope receipts required. The new G3D parser remains development source, no production runtime promotion.
+- **ONE NEXT:** inspect actual current RecipeRegistry runtime flags and SHA, then checkpoint/readback.
