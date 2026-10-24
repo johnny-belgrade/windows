@@ -174,4 +174,8 @@
 
 **STATUS:** `PASS_REVIEW_STRICT_18_EXPECTATIONS_AND_NEW_PARSER_CLASSIFICATION` / `V5_NOT_CREATED_AGGREGATE2_OF3_FAIL_CLOSED`.
 
-**ONE NEXT:** Preflight unique new v5 draft path absence; deliver only narrow source/hash gated v5 version (without changing v4/parser), independent full readback/AST/SHA; one final aggregate native fixture check if no prior gate fails. After any 3rd failure, ERROR_HOLD and no further retry.
+**D44 — unique v5 filename absence preflight:** Direct RDC one-directory listing of only existing `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\03_Drafts` depth1 confirms v4 `R002R26_G3L_AppxManifestGraph_Zip64_v4_DRAFT.ps1` present and exact **v5** name `R002R26_G3L_AppxManifestGraph_Zip64_v5_DRAFT.ps1` **absent**. Source v4 SHA256 `60FD996C6AD419E42B7C219EF9208C87D3847E494E5CE3014CEB159388B714A7`. No files changed by the listing, no original/WIM operations.
+
+**STATUS:** `PASS_V5_NEW_DEST_ABSENT` / `V5_NOT_CREATED`.
+
+**ONE NEXT:** Create v5 only with source-v4 SHA gate, exactly one inherited strict synthetic central-budget expectation change, `FileMode.CreateNew`, then separate direct readback/AST/SHA before final aggregate test.
