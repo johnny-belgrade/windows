@@ -42,4 +42,8 @@
 
 **STATUS:** `PASS_V9A_SOURCE_STRUCTURE_REVIEW` / `G3L_NOT_CREATED`.
 
-**ONE NEXT:** Review G3J v2 independent ZIP64 parser full source and compare boundary checks; record source exact SHA before integrating.
+**D11 — G3J v2 source review:** exact Git `04_StaticTests/R002R26_G3J_Zip64Central_v2_DRAFT.ps1` 11,984 chars, 213 lines, blob `ee24b5d4c84a3366f716d609ff5d92bf8b66376d`. Reviewed bounded ZIP64 EOCD locator/record, 64-bit counts/offset/size, CDFH ZIP64 extra 0x0001 parsing, compression flag/path/casefold/local CRC/offset checks; its 11 synthetic fixtures are prior native PASS but not integrated into v9a or tested against all 31. Function `G3J-Check-ZipCentral` depends on helper U16/U32/U64 and `G3J-Hold` and is *not* drop-in name replacement without adapting error/manifest contract.
+
+**STATUS:** `PASS_G3J_V2_SOURCE_STRUCTURE_READ` / `G3L_NOT_CREATED`.
+
+**ONE NEXT:** Read G3K v1 actual ZIP64/.NET/CRC sample integration source; compare with G3J and frozen G3G v9a, then prepare narrowly source-reviewed new G3L draft (not v9a overwrite).
