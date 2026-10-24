@@ -122,4 +122,8 @@
 
 **STATUS:** `G3L_V3_NEW_SOURCE_CREATED_PENDING_INDEPENDENT_READBACK_AST_SHA`.
 
-**ONE NEXT:** Independent direct RDC full 892-line v3 source readback and inspect adapter/fixture anchors, then record/readback before native AST and separate SHA/test gates.
+**D31 — complete v3 independent local readback:** Direct RDC `read_file` returned **892/892** source lines `03_Drafts\R002R26_G3L_AppxManifestGraph_Zip64_v3_DRAFT.ps1`; verified `G3L-ZipHold` boundary mapping, exact legacy duplicate conversion `CASEFOLD_DUPLICATE`→`ZIP_DUPLICATE_CASEFOLD_ENTRY`, four `G3L-ExpectZip64Hold $bad` adapted expectations and `SelfTestZip64` mode present. This is direct source review, not native AST, SHA, test or actual AppX read. No protected original mutation.
+
+**STATUS:** `PASS_G3L_V3_LOCAL_892_LINE_READBACK` / `AST_SHA_SELFTEST_PENDING`.
+
+**ONE NEXT:** Native PS7 parser-only AST check against v3 exact source, journal/readback before separate source SHA and fixture execution.
