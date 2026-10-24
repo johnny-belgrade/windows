@@ -6,4 +6,8 @@
 
 **STATUS:** `PASS_BOOTSTRAP_RECONNECT_AND_UUP_HISTORY_README` / `G3L_READONLY_DRAFT_NOT_CREATED_NOT_RUN`. No G3L AST/test/graph success claimed.
 
-**ONE NEXT:** Direct read of `C:\work\PREMAX-work\00_README.md`, then separate operation checkpoint/readback before opening targeted R002 source/history.
+**D2 — exact one-operation PREMAX-work README read:** RDC direct read `C:\work\PREMAX-work\00_README.md`, **66/66 lines**. Confirms already existing R002 development cycle for G3L; do not make new R### or reuse frozen draft filename. Historical and active roots segregated, `06_Candidate` not production. Mandatory targeted RH06, RH07, RH08 history/source verification and Source/Registry before new parser analysis. No mutation/read beyond approved root.
+
+**STATUS:** `PASS_LOCAL_READMES_38_AND_66` / `G3L_NOT_CREATED_NOT_RUN`.
+
+**ONE NEXT:** Perform a narrowly targeted RH06/RH07/RH08 index evidence lookup (no external sibling C:\work inventory) and record the exact relevant source paths/limits before reading original code and drafting G3L.
