@@ -109,3 +109,7 @@ Boundary: existing R002 only, frozen v9a 728 lines/46855 bytes SHA256 `B422869D4
 ## D26 — independent synthetic I/O receipt readback
 - RDC direct `read_file` 1/1 line confirmed existing owned `R002R26_G3H_IOProbe_001\G3H_Synthetic_IO_FailClosed.json` JSON schema `BlueLite.G3H.IOProbe.v1`, `synthetic=true`, `source_build=26300.9807`, `original_cache_modified=false`, `real_verify=NOT_RUN`. Direct content readback PASS, attempt1/3; not a test of v9a real failure writer.
 - ONE NEXT: verify exclusive-create collision behavior against this synthetic-owned file (expected FAIL_CLOSED) without rewriting it; then real Verify re-preflight.
+
+## D27 — synthetic exclusive-create collision negative gate
+- Native PS7 PID7104 attempted only `[IO.File]::Open(FileMode.CreateNew)` against the independently verified **existing** synthetic-owned receipt; caught intended `IOException`, returned `PASS_G3H_SYNTHETIC_COLLISION_REJECTED_NO_OVERWRITE`. No original/cache or production output involved. Attempt1/3 PASS negative fixture; this validates .NET exclusive-create pattern, **not** current v9a `Set-Content` writer's exact atomicity.
+- ONE NEXT: verify synthetic receipt remains byte-readable and unchanged (one native SHA256, then journal/readback); then fresh actual Verify output collisions/guard.
