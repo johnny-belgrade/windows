@@ -198,4 +198,14 @@
 
 **STATUS:** `PASS_G3L_V5_ZIP64_INMEMORY_11` / `AGGREGATE_LAST_ATTEMPT3_OF3_PENDING`.
 
-**ONE NEXT:** After independently reading back D49, run **exactly one** v5 `-Mode SelfTest` aggregate synthetic check; this is the **third and last cumulative aggregate diagnostic attempt** (G3L v2/v4 already failed). Journal exact result independently; if failed, ERROR_HOLD without new methods or retries.
+**D50 — FINAL v5 native aggregate synthetic test PASS (third cumulative attempt):** Exact source-v5 SHA256 `C1F97F6ED041482C882AD4E28AB3F74347FB417989D2B3F94D0C99F5F4AE53AA`, native RDC PowerShell 7 PID **5040**, mode `-Mode SelfTest` finished with **four complete literal independent stdout markers**:
+- `PASS_R002R26_G3C_STATIC_SELFTEST_50_SYNTHETIC_FIXTURES_NOT_SOURCE_GRAPH`
+- `PASS_R002R26_G3E_V8_STRICT_SYNTHETIC_18_NOT_REAL_APPX`
+- `PASS_R002R26_G3G_EXTERNAL_FLOOR_FAILCLOSED_SYNTHETIC_13_NOT_REAL_APPX`
+- `PASS_G3L_ZIP64_CENTRAL_SYNTHETIC_11_ONLY_NOT_REAL_APPX`
+
+Total independently printed synthetics **50+18+13+11 = 92**. This was **third/final aggregate attempt** after v2 and v4 failed taxonomy mismatch; v5 v4→v5 **single expected fixture change** resulted PASS; no additional retry is due. This is source-only AST0 + native source SHA + synthetic fixture certification, **NOT** 31 original-AppX Zip/XML provider graph, source-specific CAB/Windows external dependency floor, or converter/WIM/ISO release. No original/cache/WIM/CBS/registry/NTLite/VM mutation.
+
+**STATUS:** `PASS_G3L_V5_NATIVE_AGGREGATE_92_SYNTHETIC_AST0_SHA_SOURCE` / `HOLD_REAL_SOURCE_SELECTED_31_APPX_GRAPH_NOT_RUN`.
+
+**ONE NEXT:** Independently read back D50; then close this successful scoped G3L synthetic development block under mandatory §0R Current FIRST, Handoff FIRST, reviewed NEXT, Handoff SECOND, Session Entry LAST. Review separate exact source pins, graph output/failure owned path nonexistence and SHA1/reparse guards before any real 31-package read-only Verify. Do not promote synthetic to original graph PASS.
