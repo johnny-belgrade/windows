@@ -34,3 +34,7 @@
 ## D7 — Native v8 exact source SHA preflight
 - RDC native PS7 PID2704 finished exact original v8 DRAFT SHA256 `A5D5D5B4D8AB270CD50DE33E2BD2884E388EDCC1E4A3D8F5AC86AD9CBFDBFC71` equal frozen Git/native. No mutation. Attempt1/3 PASS.
 - ONE NEXT: independent original F4 receipt SHA256 guard, one path one hash.
+
+## D8 — Native original F4 receipt hash guard
+- Native RDC PS7 PID2108 SHA256 exact original owned R002 F4 `05_Evidence\R002R26_F_HistoricCache_SHA1_001\R002R26_F_ReuseGate.json` = `8989870BADFEA64A3675E2AF22B4C29AC631CA222D6D8BD14CBAF5416D45084A` pinned; read-only, no modification. Attempt1/3 PASS.
+- ONE NEXT: read native local G1 matrix JSON exact target UUID/source and five provider schema; inspect content without original cache reads.
