@@ -29,3 +29,7 @@ Boundary: existing R002 only, frozen v9a 728 lines/46855 bytes SHA256 `B422869D4
 ## D6 — guarded Session Entry IN_PROGRESS
 - Git Entry top CAS commit `8b07825ebf6e8f90a0c0edce09b4122eb2521829`, blob `2754f69f731c28ee7333c929881da240a530f2be` readback confirms scoped G3H and real Verify NOT_STARTED. PASS.
 - ONE NEXT: local v9a SHA256 original exact gate.
+
+## D7 — native frozen v9a SHA256
+- Native PS7 PID3884 read v9a SHA256 `B422869D4629A87EDD8FC836508DE50BD4F3FC40769AF755D8B52A5ADE08456F` exact previous/Git source pin. No mutation. PASS.
+- ONE NEXT: original F4 SHA256, one path only.
