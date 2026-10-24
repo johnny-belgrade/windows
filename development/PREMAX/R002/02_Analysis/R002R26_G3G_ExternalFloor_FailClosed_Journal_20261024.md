@@ -110,3 +110,7 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D26 — combined 81 synthetic PASS
 - Native PS7 PID11064 finished v9a `-Mode SelfTest` with three literal PASS lines: inherited G3C 50, v8 strict ZIP/CRC 18, G3G external-floor/failclosed 13; total **81 synthetic PASS** (NOT 81 real package tests). Process completion reported; numeric exit not separately available. Original 31 AppX real `-Mode Verify` NOT_RUN. PASS.
 - ONE NEXT: native source byte length and Git new unique v9a source-exact SHA parity, then Current/Handoff/Entry closeout.
+
+## D27 — native corrected v9a byte length
+- Native PS7 PID8684 local v9a source byte size exactly 46855, matching prior authored character count; RDC reader had one wrapper-added LF. No BOM or binary reads implied; source contains only ASCII by construction. PASS.
+- ONE NEXT: create **new** Git source mirror from independent local full 728-line readback first exactly 46855 chars; independently SHA256 compare Git with native B422869D... .
