@@ -117,3 +117,7 @@ Boundary: existing R002 only, frozen v9a 728 lines/46855 bytes SHA256 `B422869D4
 ## D28 — post-collision independent exact JSON readback
 - RDC direct read of synthetic-only `G3H_Synthetic_IO_FailClosed.json` remained identical to D26 1-line JSON and unchanged key/value sequence (`schema=BlueLite.G3H.IOProbe.v1`, `real_verify=NOT_RUN`, `original_cache_modified=false`), after D27 refused CreateNew collision. PASS, attempt1/3; not a SHA baseline comparison. No original/cache changed.
 - ONE NEXT: fresh native real-output graph and fail-parent absence plus source scope, then bounded actual v9a source-selected 31 AppX Verify only if guards pass.
+
+## D29 — final graph report absence immediately before Verify
+- Native PS7 PID11544 repeat exact `Test-Path` for only owned `05_Evidence\R002R26_G3_AppxGraph_001` returned False. This is a new pre-execution collision proof at a later time (not a retry of failure), no output created. Attempt1/3 PASS.
+- ONE NEXT: fresh failure-receipt parent absence (one path), journal/readback, then bounded exact v9a Verify with original hash/31 SHA guards.
