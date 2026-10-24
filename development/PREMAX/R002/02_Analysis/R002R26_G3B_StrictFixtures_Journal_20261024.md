@@ -51,3 +51,9 @@
 
 - Second cumulative AST wrapper attempt PID `7736` (outer-PowerShell variable escaping corrected) finished with literal `G3B_V3_AST_ERRORS=0`; exact local v3 source SHA256 still previously pinned `C1F6E6AC17D52A0BC0EBA435248D58343D267240525D210617B03E995EF979DC` (pre-run). No edits, no real manifest Verify. **AST0 PASS**, SelfTest still NOT_RUN. First wrapper failure remains in D8 history; cumulative 2/3.
 - **ONE NEXT:** native v3 `-Mode SelfTest` synthetic ZIP/XML/provider test, separately capture precise result and journal before any correction or mirror.
+
+## G3B-D10 — v3 native SelfTest FAIL_CLOSED, actual namespace predicate bug discovered
+
+- **Native PID4996:** new 315-line, AST0 v3 `-Mode SelfTest` failed closed: `SELFTEST_WRONG_REJECTION expected=IDENTITY_INVALID actual=G3_HOLD_UNSUPPORTED_MANIFEST_NAMESPACE`, at exact synthetic valid Windows10 package XML `xmlns=http://schemas.microsoft.com/appx/manifest/foundation/windows10`. Cumulative new SelfTest attempt **1/3**; no real 31-AppX Verify and no v3 file modification.
+- **Root cause from exact v2/v3 source review:** `Parse-Manifest` had root namespace regex `^http://schemas\\.microsoft\\.com/appx/.+/(manifest|bundle)(/|$)`; it requires an extra segment before `/manifest` and excludes expected `/appx/manifest/foundation/windows10`. Historical v2 12 negatives never exercised a valid manifest. This is a concrete parser namespace **dependency** bug, not permission for accept-all namespaces. Keep v3 immutable; create distinct v4 with narrowly corrected explicit Microsoft package/bundle namespace patterns and independently test.
+- **ONE NEXT:** source-review and create new v4 with exact namespace-gate correction, AST/SHA individually, native SelfTest attempt 2/3; if another failure, diagnose before final attempt and preserve all drafts.
