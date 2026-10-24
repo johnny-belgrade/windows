@@ -28,3 +28,7 @@
 ## D6 — Frozen v7 source read
 - Git exact blob `1800d1340a304945583f5c1e6a0a0376c8bf60f4`, 33,202 ASCII chars, all G3E central/read/manifest/legacy SelfTest anchors present. V7 inherited 50 and no new strict fixtures. Attempt1/3 PASS.
 - ONE NEXT: check native local v8 target absence before creating any source.
+
+## D7 — Native v8 target absence
+- RDC PS7 PID904 finished `Test-Path` proposed local R002/03_Drafts `R002R26_G3E_AppxManifestGraph_v8_DRAFT.ps1`: **False**, no preexisting file overwritten. Attempt1/3 PASS.
+- ONE NEXT: prepare one new versioned integrated v8 script with strict synthetic positives/negatives only; no real AppX `-Mode Verify`.
