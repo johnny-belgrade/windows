@@ -42,3 +42,7 @@ Project existing R002 only, target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab
 ## D9 — native G3J v1 source SHA256 pinned
 - RDC native PS7 PID11084 `Get-FileHash` exact new owned 212-line G3J source = `945779796A2037A1840BE987590605E0DC930FB6A04BBE0CC0C74839D0877618`. Process finished; source-level SHA PASS attempt1/3. No original changes.
 - ONE NEXT: isolated `-Mode SelfTest` against only in-memory classic/ZIP64 fixtures; if fail report literal details and preserve frozen v1 source, do not overwrite it.
+
+## D10 — first G3J v1 synthetic test runtime parser-expression failure
+- RDC native PS7 PID9596 executed source-exact frozen v1 `-Mode SelfTest`; it ended with literal `The term 'if' is not recognized as a name of a cmdlet, function, script file, or executable program.` after process start; **NO fixture PASS**, despite AST0. Source review pinpoints RHS cast expression `[uint16](if($extra){4}else{0})` in synthetic fixture authoring as runtime execution problem. No original/cache read or mutation. First v1 SelfTest attempt1/3; **do not rerun unmodified v1**, preserve original SHA `945779796A2037A1840BE987590605E0DC930FB6A04BBE0CC0C74839D0877618` as rejected runtime draft, not certified.
+- ONE NEXT: create a distinctly versioned v2 owned nonoverwriting corrected synthetic fixture expression after absence check, full readback/AST/SHA, then v2 synthetic fixtures; do not misuse a retry as safety rejection (this is native code bug).
