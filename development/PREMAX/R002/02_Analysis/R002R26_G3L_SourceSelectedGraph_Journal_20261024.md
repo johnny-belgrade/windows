@@ -138,4 +138,8 @@
 
 **STATUS:** `FAIL_CLOSED_G3L_V3_ZIP64_FIXTURE_EXPECTED_TAXONOMY` / `REAL31_APPX_GRAPH_NOT_RUN`.
 
-**ONE NEXT:** Review v3 ZIP64 fixture exact expectations against new adapter, then create a separate non-overwriting G3L v4 with narrowly scoped correction(s), full independent source/AST/SHA before synthetic tests. No blind rerun and no original WIM/source/cache mutation.
+**D35 — independent targeted v3 fixture source review:** RDC direct `read_file` on frozen v3 (`03_Drafts\R002R26_G3L_AppxManifestGraph_Zip64_v3_DRAFT.ps1`) returned source lines 790–853 of 892. All eleven ZIP64 synthetic fixture calls reviewed: **only** count-over-budget negative remains `G3L-ExpectZip64Hold $bad 'CENTRAL_COUNT'` although the corresponding v3 boundary adapter deliberately emits `ZIP_CENTRAL_COUNT`. Four previously reviewed error-class expectations already use mapped codes (multidisk, encryption, local CRC, malformed extra); the ZIP64-specific cases remain raw ZIP64 codes. A distinct v4 version can correct exactly one source fixture expected literal; no mutation of previous drafts. Actual 31 ZIP/XML source graph remains NOT_RUN.
+
+**STATUS:** `PASS_V3_FIXTURE_REVIEW_ONE_EXPECTATION_DELTA` / `V4_DOCUMENTED_NOT_CREATED`.
+
+**ONE NEXT:** Verify v4 exact target is absent under existing R002 `03_Drafts`; then use a source-SHA-gated, nonoverwriting CreateNew one-string v4 correction, full independent source readback, native AST/SHA and separate fixture gates.
