@@ -46,3 +46,7 @@
 ## D10 — F4 native original parsed source
 - RDC full local original F4 JSON 206/206 lines read and parsed, target_build `26300.9807`, target_uuid `687d1ced-aab1-4cd5-ad05-705189769731`, 26 distinct `files` rows with `out` and `expected_sha1`; exact bytes native SHA256 confirmed earlier PID2108. Historic record 26 source-selected binaries; **no new SHA1 binary verification**. Attempt1/3 PASS.
 - ONE NEXT: prepare a uniquely owned, read-only 31-file filename/size inventory script for the canonical historical S06 cache, after verifying target helper file absent; output to console only.
+
+## D11 — Owned cache-presence helper negative file preflight
+- Native RDC PS7 PID6404 Test-Path exact `04_StaticTests\R002R26_G3F_CachePresence_v1.ps1` = False. New helper cannot overwrite existing file. Attempt1/3 PASS.
+- ONE NEXT: write reviewed new source-only script to count names/sizes from pinned F4+G1 and Test-Path 31 cache leaves (NO Get-FileHash of binary, no write to original/cache), then full helper readback.
