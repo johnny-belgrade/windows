@@ -80,3 +80,8 @@ CRC32_TYPE=NO
 
 - Native read-only PS7 Get-FileHash on exact new local `R002R26_G3D_ZipCentralStrict_v1_DRAFT.ps1`, PID not available, finished; SHA256 `CE0CF14D0A6F734209131862BC7308C5931171A9611D34C3E7CE45F070050F1A`. No other file changed, AST/SelfTest still NOT_RUN.
 - **ONE NEXT:** independent PowerShell AST source parse, journal/readback.
+
+## G3D-D16 — native AST check standalone ZIP checker
+
+- Native PS7 AST parse first attempt PID unknown returned `G3D_ZIP_AST_ERRORS=0`. Script SHA256 `CE0CF14D0A6F734209131862BC7308C5931171A9611D34C3E7CE45F070050F1A`. Syntax PASS, semantics not yet evaluated.
+- **ONE NEXT:** execute exclusively local synthetic memory SelfTest once, then checkpoint/readback.
