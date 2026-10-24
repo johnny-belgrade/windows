@@ -110,4 +110,8 @@
 
 **STATUS:** `PASS_V3_UNIQUE_PATH_ABSENT` / `G3L_V3_NOT_CREATED`.
 
-**ONE NEXT:** One source-only CreateNew v3 local operation from verified v2 with explicit ZIP parser error taxonomy adapter and updated synthetic expectations, then journal/write/readback and independent native source readback/AST/hash/fixtures.
+**D28 — v3 new-only source generator parser failure BEFORE write:** RDC native PowerShell 7 PID **11740** finished with top-level **`ParserError: Unexpected token 'MULTIDISK'''`** in generated inline launcher at line28; nested string quoting of synthetic fixture source literals was invalid. No v3 source was authored/executed by this parse-invalid command, no file/Git/OS original changed by launcher. Cumulative v3 delivery **attempt1/3 FAIL_CLOSED**; G3L v2 SHA and synthetic11 PASS remain historical, aggregate v2 FAIL_CLOSED taxonomy mismatch. This is quoting, not a safety refusal, and not an AppX dependency result.
+
+**STATUS:** `FAIL_CLOSED_V3_DELIVERY_WRAPPER_PARSER_ATTEMPT1_OF3` / `G3L_V3_NOT_CREATED`.
+
+**ONE NEXT:** Correct *launcher quoting only* in a new bounded single-purpose source-CreateNew action, after confirming v3 path remains absent. Retain existing v2, no old draft overwrite, do not run real 31 Verify.
