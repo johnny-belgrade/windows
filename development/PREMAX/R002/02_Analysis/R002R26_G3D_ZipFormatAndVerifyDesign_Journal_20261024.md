@@ -112,3 +112,8 @@ PASS_R002R26_G3D_ZIP_SYNTHETIC_15_NOT_INTEGRATED_NOT_REAL_APPX
 
 - Read complete `development/PREMAX/R002/02_Analysis/R002R26_G1_ManifestProviderClosure_Design_20261024.md`, Git blob `8bcdee85a14bfaf7c58842db9021418dcdd8747c`: source 26300.9807 R23 2798 Apps inventory, 26 F4 seed + five G1 provider binaries, 31 possible manifest archives; separate target-specific CAB (not provider) SHA1 `0A5F6B6ADD22E6500ECFB91E192FC7B17B8327F7` NOT_ACQUIRED. Provider resolution exact Name/Publisher/MinVersion/arch; external WIM or additional source floor must remain `UNRESOLVED_EXTERNAL_SOURCE_FLOOR` absent original target-image provenance. Historical 9711 17 dependency edges are not proof of 9807 closure.
 - **ONE NEXT:** publish reviewed G3D real-Verify source-floor amendment to design doc, independently readback; then block closeout. No actual 31-AppX Verify within G3D.
+
+## G3D-D21 — external floor design amendment wrapper JS syntax failed BEFORE Git action
+
+- First authoring attempt 1/3 for design-amendment transaction rejected by local JavaScript parser `SyntaxError: Unexpected identifier 'G1'`; Markdown inline backticks were placed in an outer JS template literal without escaping. No Git update payload was evaluated, no commit or changed blob returned; this is a command wrapper construction error, **not platform safety refusal**, and not a source-format test result.
+- **ONE NEXT:** prepare the exact design amendment as a plain escaped JS string/array of lines, then use fresh CAS on existing design file and independently read back. Do not alter underlying standalone ZIP script or any real packages.
