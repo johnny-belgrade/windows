@@ -118,4 +118,8 @@
 
 **STATUS:** `PASS_V3_NOT_CREATED_AFTER_INVALID_LAUNCH` / `REVIEWED_RETRY2_NEXT`.
 
-**ONE NEXT:** Correct multiline native PowerShell quoting; v2 source hash exact gate, parser-only insert of ZIP legacy error taxonomy map, v3 `FileMode.CreateNew` and 4 synthetic fixture expected-error literals, one operation only; independently journal/read back before AST.
+**D30 — corrected nonoverwriting v3 source created:** Native RDC PS7 **PID11812** finished exact `G3L_V3_CREATED_BYTES=56059;LINES=892`, cumulative source-delivery attempt **2/3** after prior launcher parse error. Single bounded operation SHA-checked v2 source `64375085660B5B58BE5712E002F2470CDF51374FDE3D80278CE2DECB15E9E024`, prepared a separately named v3 with a ZIP parser boundary adapter mapping G3J error codes to inherited G3G/v9a taxonomy where equivalent, and four matching synthetic expectation literals; v3 created exclusively with `FileMode.CreateNew` inside `03_Drafts`. **Not yet direct-readback/AST/SHA/tested; new code not executed as a script; originals/cache/WIM/Registry unchanged**.
+
+**STATUS:** `G3L_V3_NEW_SOURCE_CREATED_PENDING_INDEPENDENT_READBACK_AST_SHA`.
+
+**ONE NEXT:** Independent direct RDC full 892-line v3 source readback and inspect adapter/fixture anchors, then record/readback before native AST and separate SHA/test gates.
