@@ -60,3 +60,7 @@ New complete [G1 source-bound manifest/provider closure design](R002R26_G1_Manif
 Direct RDC `list_directory` on exact historical .9711 S06 `C:\work\E2E\BlueLite_Stage1_S06_26300_9711_2b22470a\UUPs` returned 32 file leaves, all **five** S06 provider `out` filenames found. Historical CAB there is `2b22470a-8b6f-498f-9c88-66f7b9fb56b1.AggregatedMetadata.cab`, **not** .9807 UUID-specific CAB. This is filename existence only, **not** proof of content SHA1, provider XML identity or target-source metadata availability. All files untouched.
 
 **ONE NEXT:** index G1 metadata/design milestone into existing R002 CycleManifest only (no recipe promotion): append `r26_g1_provider_source_design`, root `status=R002R26_G1_SOURCE_PROVIDER_METADATA_VERIFIED_DESIGN_ONLY_NOT_GRAPH_CLOSURE`, ONE NEXT `R002R26_G2_FIVE_PROVIDER_SHA1_VS_9807_SOURCE`; preserve F4/R25/R26. Then active local CycleRegistry R002-only status/next and immutable new checkpoint if practical. Verify each local/Git write/readback before Current/Handoff/Entry block close.
+
+## J — canonical local R002 root status only, independent readback
+
+Scoped RDC `edit_block` on local R002 CycleManifest changed one root field from F4 `status` to `R002R26_G1_SOURCE_PROVIDER_METADATA_VERIFIED_DESIGN_ONLY_NOT_GRAPH_CLOSURE`. Immediate separate direct `read_file` first6 lines confirmed exact value and retained source build; no other mutation in this step. **ONE NEXT:** separate root `one_next` edit/readback to G2 five binary hashes, then one new append-only G1 evidence object.
