@@ -44,3 +44,7 @@
 ## D10 — Full independent local v8 draft readback
 - RDC `read_file` complete 636/636 lines. Source text transport 41,006 chars includes one read wrapper final LF; new mode `SelfTestStrict`, new synthetic fixture generator/descriptor/CRC/bundle and inherited exact `Verify` sections present. This does NOT establish native file byte parity. Attempt1/3 PASS.
 - ONE NEXT: native PS7 Get-FileHash SHA256 on ONLY v8 owned source; no SelfTest yet.
+
+## D11 — Native v8 source hash
+- RDC PS7 PID8116 completed native SHA256 for only owned v8 DRAFT: `A5D5D5B4D8AB270CD50DE33E2BD2884E388EDCC1E4A3D8F5AC86AD9CBFDBFC71`. No other files read or mutated by hash. Numeric native exit separately unavailable. Attempt1/3 PASS stdout source digest.
+- ONE NEXT: create separate syntax-only AST helper in owned R002/04_StaticTests (nonoverwriting), verify readback, then native AST parser.
