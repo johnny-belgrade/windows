@@ -61,3 +61,7 @@ Scope: existing R002, target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab1-4cd5
 ## D14 — independent complete new G3I local source readback
 - RDC direct `read_file` retrieved all 108/108 lines of new owned G3I v1 inspector; confirmed only read-only `SelfTest` and `Inspect` paths, exact pinned F4/G1, 31 SHA1, scoped cache bounds, ZIP EOCD/CDFH/extra metadata, stdout only. No source edit, attempt1/3 PASS. Parser AST and synthetic behavior are distinct pending gates.
 - ONE NEXT: native PS7 AST parse of this one owned script (no execution), journal/readback.
+
+## D15 — native G3I PS7 AST source gate
+- RDC native PS7 PID9964 parsed exact owned G3I v1 `04_StaticTests\R002R26_G3I_Zip64MetadataInspector_v1_DRAFT.ps1`, literal `G3I_V1_AST_ERRORS=0`; no source execution/reads/writes. PASS attempt1/3.
+- ONE NEXT: native PS7 SHA256 of only new owned script, source pin before SelfTest.
