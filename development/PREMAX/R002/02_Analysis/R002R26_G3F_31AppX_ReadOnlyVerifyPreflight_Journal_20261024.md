@@ -50,3 +50,7 @@
 ## D11 — Owned cache-presence helper negative file preflight
 - Native RDC PS7 PID6404 Test-Path exact `04_StaticTests\R002R26_G3F_CachePresence_v1.ps1` = False. New helper cannot overwrite existing file. Attempt1/3 PASS.
 - ONE NEXT: write reviewed new source-only script to count names/sizes from pinned F4+G1 and Test-Path 31 cache leaves (NO Get-FileHash of binary, no write to original/cache), then full helper readback.
+
+## D12 — New owned read-only cache-presence helper written
+- RDC wrote previously absent `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\04_StaticTests\R002R26_G3F_CachePresence_v1.ps1` 34 lines. Reviewed script parses only pinned F4+G1 local JSON and runs 31 `Test-Path`/`Get-Item` filename/length checks under exact historical S06 cache; does NOT read package bytes, hash original binaries, generate report files or run G3E Verify. Attempt1/3 WRITE_CONFIRMED, local full helper readback pending.
+- ONE NEXT: independently full read 34-line helper then execute it as a single scoped filename inventory.
