@@ -19,3 +19,15 @@ If strict real archives contain a supported ZIP variant not covered by fixture g
 Preflight: Master/Session/Current/Handoff + contract, v7 exact script SHA, G1 five providers and F4 26 seed selected name/SHA1 + UUID/R23 metadata equality; original historical cache 31/31 names present; independent exact package SHA1 source byte check in Verify, read-only FileShare.Read, no network. Future evidence directory must not preexist; write only a newly owned report. Bound per-package archive entries/decompressed limits, classify every consumer→provider exact name, publisher, min version, architecture and ambiguous match; explicitly separate **EXTERNAL_PROVIDER_DEPENDENCY_WIM_FLOOR_NOT_EVALUATED** from graph-resolved-in-31. Target UUID-specific AggregatedMetadata CAB is separate NOT_ACQUIRED and cannot be inferred from 31 packages.
 
 Validation must check code AST0, all synthetic tests, all source guard failures, report schema, no original/cache/source or live host mutation. Only a later independently checked operator-reviewed checkpoint can mark real graph evaluated. End each G3D block in §0R sequence, with GUI pause.
+
+## 4. External provider floor and proof categories (reviewed G1 contract)
+
+Current G1 design Git blob 8bcdee85a14bfaf7c58842db9021418dcdd8747c requires exact selected source Name/Publisher/MinVersion/arch and unresolved outcome if outside the 31 AppX set. **Never map consumer requirements to host WindowsApps, host registry, historic 26300.9711 resolver logs, or unspecified target WIM.**
+
+Classify each consumer edge as: PROVEN_PROVIDER_SOURCE_SELECTED only if exact source SHA1 and XML identity satisfy predicates; UNRESOLVED_EXTERNAL_SOURCE_FLOOR for target WIM/other out-of-set source; AMBIGUOUS_PROVIDER for duplicates; WRONG_PUBLISHER, VERSION_BELOW_MINIMUM and ARCH_MISMATCH for mismatched predicates; UNSUPPORTED_XML_OR_ARCHIVE for unknown format. Unresolved or ambiguous edges cannot certify closure.
+
+**CAB separate:** 687d1ced-aab1-4cd5-ad05-705189769731.AggregatedMetadata.cab, expected SHA1 0A5F6B6ADD22E6500ECFB91E192FC7B17B8327F7, NOT_ACQUIRED. Prior F4+G2 transport SHA1 31/31 and G3C 31/31 filename-only do not prove dependency closure, ZIP method acceptance, target OS floor or CAB.
+
+Standalone G3D ZIP checker v1, native AST0, 15/15 synthetic cases, Git SHA256 CE0CF14D0A6F734209131862BC7308C5931171A9611D34C3E7CE45F070050F1A, Git blob f9f128102956aa738fa9d1c5301302026d1d36e0, is **not integrated into the v6 real AppX graph parser**. It checks synthetic stored CRC only, not deflate payload CRC and not real AppX bytes.
+
+**Before a separately approved real read-only 31-AppX Verify:** pin integrated source code and run full negative and positive ZIP64/encryption/method/CRC/data-descriptor/bundle fixture suite; guard original matrix, F4, UUID/R23 SHA and each cache SHA1, ensure new owned report path, bound CPU and memory; execute separate graph Verify only after static gates, with independent JSON receipt and explicit unresolved external source dependency classification. No real Verify executed in G3D.
