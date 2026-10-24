@@ -33,3 +33,8 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D7 — new v9 target absence
 - Native PS7 PID5436 `Test-Path` exact planned owned R002 `03_Drafts\R002R26_G3G_AppxManifestGraph_v9_DRAFT.ps1`: False. No overwrite. PASS.
 - ONE NEXT: build new v9 source from frozen Git v8; retain Verify fully read-only; add deterministic in-memory failure record + future owned fail receipt writer with no test-side writes.
+
+## D8 — Reconnect recovery; prewrite validation finding
+- Before reconnect, proposed v9 draft was assembled in memory but its final string assertion rejected a historic fixture identifier. This assertion examined an unquoted label as though it were the obsolete result classification. The operation aborted before any local draft write or Git source creation. No executable, package, cache or image mutation.
+- GitHub journal write was refused in prior session, subsequently operator reconnected GitHub; this is additional write attempt 1/2.
+- ONE NEXT: verify this Git journal addition by fresh readback, then correct the draft construction check and continue with a distinct new v9 file.
