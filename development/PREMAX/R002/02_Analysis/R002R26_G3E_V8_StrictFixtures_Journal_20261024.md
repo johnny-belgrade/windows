@@ -16,3 +16,7 @@
 ## D3 — Handoff governance/live
 - Handoff full 1,071,776 chars blob `2fdc0fcf4fc3c354075ace91ff51e5179a3e30ef`; reviewed latest §0BX + §0R SECOND v8 NOT_CREATED and mandatory §§0BE/0BL/0R/0S/12B. Allowed source-only synthetic development, single action/checkpoint/readback, no real graph Verify as this block side-effect. Attempt1/3 PASS.
 - ONE NEXT: check RDC live roots/blocked list then source v7 exact pins.
+
+## D4 — RDC live device
+- DESKTOP-4J4KCEA online v0.3.1 device `d892c878-1a42-4fcd-b0e7-c51caf510ab6`, one available. Attempt1/3 PASS.
+- ONE NEXT: get_config exact roots/denylist before any local command.
