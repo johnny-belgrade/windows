@@ -73,3 +73,7 @@ Boundary: existing R002 only, frozen v9a 728 lines/46855 bytes SHA256 `B422869D4
 ## D17 — G3G failure receipt destination collision preflight
 - Native PS7 PID11740 one `Test-Path -LiteralPath` on exact owned `05_Evidence\R002R26_G3G_FailureReceipt_001` returned False; failure receipt parent absent. Read-only, attempt1/3 PASS. Both graph and failure receipt output parents absent as of respective checks; preserve collision recheck at actual Verify.
 - ONE NEXT: source-pinned independent 31 original cache binary SHA1 preflight, bounded original cache read only, no writes; then retained size/ZIP and receipt I/O guard.
+
+## D18 — original selected 31 SHA1 first preflight attempt parser HOLD
+- RDC native PowerShell invocation PID3328 attempted source-pinned 31 SHA1 verification but terminal reported `ParserError: An expression was expected after '('`; nested outer PowerShell double-quoted `-Command` stripped variable tokens before inner PS7 parsed. **NO PACKAGE SHA1 VERIFIED, NO BINARY READ, NO MUTATION.** Cum. attempts1/3 for this exact 31-SHA1 operation. Failure is launch quoting/parser only, not source/cache SHA mismatch; no platform safety rejection.
+- ONE NEXT: inspect absent unique owned `04_StaticTests\R002R26_G3H_Cache31_SHA1_Preflight_v1.ps1`, then write reviewed standalone source-only script that avoids nested interpolation, independent full source readback and native AST before controlled remaining retry (attempt2/3).
