@@ -17,3 +17,7 @@ Boundary: existing R002 only, frozen v9a 728 lines/46855 bytes SHA256 `B422869D4
 ## D3 — Handoff latest and governance
 - Full Handoff blob `a9bcb45ef72b2bf06f194be775752d93c3db7f3e` 1087148 chars read; §0R SECOND G3H v9a/F4/G1, 31 SHA1, outputs absence and runtime bounds; §0BL scoped source-only Verify/new owned outputs allowed, §0BE operation checkpoints, §12B doc matrix. PASS.
 - ONE NEXT: verify RDC live device/policy before native work.
+
+## D4 — RDC device
+- DESKTOP-4J4KCEA online ID `d892c878-1a42-4fcd-b0e7-c51caf510ab6`, v0.3.1. PASS.
+- ONE NEXT: exact local config allowed roots and blocklist.
