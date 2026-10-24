@@ -56,3 +56,7 @@
 ## D13 — AST helper creation
 - RDC wrote new owned 11-line `04_StaticTests\R002R26_G3E_V8_AST_v1.ps1` only, pure Parser.ParseFile of pinned v8; no actual ZIP/Verify run. Source file absent before write PID7692. Attempt1/3 WRITE_CONFIRMED, helper full local read pending.
 - ONE NEXT: independent local helper full readback and then native parser invocation.
+
+## D14 — AST helper independent readback
+- RDC read complete 11/11 lines of new helper, exact fixed owned v8 DRAFT input, `Parser.ParseFile` only and explicit zero-error acceptance; no external/mutational calls. Attempt1/3 PASS.
+- ONE NEXT: invoke only source-only AST helper with PS7 native `-File`; record literal count before fixture execution.
