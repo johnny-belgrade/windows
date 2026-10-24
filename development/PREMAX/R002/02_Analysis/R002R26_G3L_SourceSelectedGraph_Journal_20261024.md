@@ -106,4 +106,8 @@
 
 **STATUS:** `PASS_SOURCE_ONLY_ERROR_TAXONOMY_MAPPING_DESIGN` / `G3L_V3_DOCUMENTED_NOT_CREATED_OR_RUN`.
 
-**ONE NEXT:** Verify new v3 filename absent in existing R002 `03_Drafts`, then independently document/readback; subsequently create single new v3 source using existing v2 SHA guard, CreateNew, and narrow code mapping/fixture expectation adaptation, full source/AST/SHA/fixtures separately.
+**D27 — local unique v3 name preflight:** RDC direct list of precisely existing R002 `03_Drafts` confirms v1 and v2 present, **v3 absent** (`R002R26_G3L_AppxManifestGraph_Zip64_v3_DRAFT.ps1`). No file creation, code execution, protected source read or WIM mutation. Prior v2 native SHA256 `64375085660B5B58BE5712E002F2470CDF51374FDE3D80278CE2DECB15E9E024` is source guard for next step.
+
+**STATUS:** `PASS_V3_UNIQUE_PATH_ABSENT` / `G3L_V3_NOT_CREATED`.
+
+**ONE NEXT:** One source-only CreateNew v3 local operation from verified v2 with explicit ZIP parser error taxonomy adapter and updated synthetic expectations, then journal/write/readback and independent native source readback/AST/hash/fixtures.
