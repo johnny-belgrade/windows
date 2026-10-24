@@ -114,4 +114,8 @@
 
 **STATUS:** `FAIL_CLOSED_V3_DELIVERY_WRAPPER_PARSER_ATTEMPT1_OF3` / `G3L_V3_NOT_CREATED`.
 
-**ONE NEXT:** Correct *launcher quoting only* in a new bounded single-purpose source-CreateNew action, after confirming v3 path remains absent. Retain existing v2, no old draft overwrite, do not run real 31 Verify.
+**D29 — postfailed-launch destination absence confirmed:** Scoped RDC `list_directory` of only existing R002 `03_Drafts` confirms v2 remains and **new v3 absent** after PID11740 parser failure. No writes/retries in this read-only check; no source archive or WIM changes.
+
+**STATUS:** `PASS_V3_NOT_CREATED_AFTER_INVALID_LAUNCH` / `REVIEWED_RETRY2_NEXT`.
+
+**ONE NEXT:** Correct multiline native PowerShell quoting; v2 source hash exact gate, parser-only insert of ZIP legacy error taxonomy map, v3 `FileMode.CreateNew` and 4 synthetic fixture expected-error literals, one operation only; independently journal/read back before AST.
