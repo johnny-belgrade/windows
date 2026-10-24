@@ -26,3 +26,7 @@ Project existing R002 only, target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab
 ## D5 — new G3J draft destination guard
 - Native RDC PS7 PID1748 `Test-Path` exact `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\04_StaticTests\R002R26_G3J_Zip64Central_v1_DRAFT.ps1` = False. New owned version noncollision, no original/source mutation, attempt1/3 PASS.
 - ONE NEXT: author reviewed standalone bounded ZIP64/classic central-directory validation and synthetic positive/negative cases only under this new path, then full readback and AST.
+
+## D6 — original G3J v1 source-only candidate created
+- RDC `write_file` wrote **new, previously absent** 212-line standalone draft `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\04_StaticTests\R002R26_G3J_Zip64Central_v1_DRAFT.ps1`; no overwrite and no v9a/original/cache mutations. Contains ZIP64 EOCD+locator/record, bounded 64-bit counts and central offsets, optional zero-length ZIP64 extra, entry/local/CRC/path checks, generated in-memory classic/ZIP64 fixtures including adversarial negative cases. **SOURCE WRITE only; complete local source readback, native AST, hash and any self-test pending.** Attempt1/3 write confirmed.
+- ONE NEXT: independent full 212-line source readback; journal and verify before AST.
