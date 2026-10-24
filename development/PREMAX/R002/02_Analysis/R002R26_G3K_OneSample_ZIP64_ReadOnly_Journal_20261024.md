@@ -25,3 +25,7 @@ Existing R002; target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab1-4cd5-ad05-7
 ## D5 — RDC online
 - RDC `list_devices` observed DESKTOP-4J4KCEA online, ID `d892c878-1a42-4fcd-b0e7-c51caf510ab6`, v0.3.1; no local mutations, PASS attempt1/3.
 - ONE NEXT: live get_config allowed roots/blocklist, then source pin and single original SHA.
+
+## D6 — RDC live scope config
+- RDC v0.3.1 `get_config` exact roots C:\work and C:\BLR20R2F5; 33 blocked commands including reg. No change to roots or denied host Program Files; PASS attempt1/3.
+- ONE NEXT: inspect original F4 provenance of exact one AppInstaller_scale-100.msix package and pinned G3J v2 script before new G3K version.
