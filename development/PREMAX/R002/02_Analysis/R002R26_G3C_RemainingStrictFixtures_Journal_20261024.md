@@ -109,3 +109,8 @@
 
 - Native read-only `Get-FileHash -Algorithm SHA256` PID `4752` on original existing `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\05_Evidence\R002R26_F_HistoricCache_SHA1_001\R002R26_F_ReuseGate.json` finished with literal SHA256 `8989870BADFEA64A3675E2AF22B4C29AC631CA222D6D8BD14CBAF5416D45084A`, **exact** frozen F4 source guard in v6 Verify. No package bytes accessed and source JSON unchanged. This confirms F4 input exists/source hash only; its 26 record shape to be independently parsed, and no real XML graph evaluated.
 - **ONE NEXT:** read-only F4 JSON structure/target UUID/26 records check, then distinct future output collision/readiness check.
+
+## G3C-D20 — F4 parsed target/UUID/selected-count read-only PASS
+
+- Native PS7 read-only `ConvertFrom-Json` PID `2620` on frozen F4 report output `PASS_G3C_F4_METADATA target=26300.9807 selected=26`; exact `target_build`, `target_uuid=687d1ced-aab1-4cd5-ad05-705189769731`, `files[].Count=26` independently validated. Original F4 JSON SHA256 native PID4752 matched pinned `8989870BADFEA64A3675E2AF22B4C29AC631CA222D6D8BD14CBAF5416D45084A`. Together with G1 5 providers, **31 source-selected transport records metadata**; not AppX manifest dependency closure. No package binaries touched.
+- **ONE NEXT:** verify future v6 Verify report path noncollision and local selected cache filenames count via metadata-only bounded inspection; then final G3C source-readiness status, Current/Handoff/Session Entry checkpoint and GUI pause.
