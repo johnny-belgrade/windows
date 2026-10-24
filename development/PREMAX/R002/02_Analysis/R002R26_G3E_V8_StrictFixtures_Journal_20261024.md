@@ -88,3 +88,7 @@
 ## D21 — Independent Git exact source SHA freeze
 - Git v8 source new commit `e1d58e7003bb86dd491aa3e39ceb58de14b31b58`, blob `1ba6fe8e268c36f6553d89b9740f993776b685d6`; independent full main fetch 41,005 ASCII bytes. SHA256 JS known `abc` vector PASS, computed Git source **`A5D5D5B4D8AB270CD50DE33E2BD2884E388EDCC1E4A3D8F5AC86AD9CBFDBFC71`**, exact native local PID8116 SHA; `PASS_SOURCE_EXACT`. No extra newline/mismatch. Attempt1/3 PASS.
 - ONE NEXT: §0R Current FIRST actual v8 68 synthetic PASS with scope/gaps, independent readback; Handoff FIRST + reviewed NEXT + SECOND; Session Entry LAST; GUI pause. No real 31-AppX Verify in this block.
+
+## D22 — Live Registry r38 protected runtime policy
+- GitHub main RecipeRegistry JSON parse PASS, blob `44f6c2f37cf9d4fd8c10331b491ff3d75c7c136b`, revision `2026-10-21-r20r2f13-9807-onedrive-static-contract-10-negative-r38`; 7 recipes, runtime_execution_allowed=false **7/7**. No registry modification or license/OS action. Attempt1/3 PASS.
+- ONE NEXT: §0R Current FIRST, independent readback, Handoff FIRST/SECOND, Session Entry LAST; close synthetic-only block and GUI pause.
