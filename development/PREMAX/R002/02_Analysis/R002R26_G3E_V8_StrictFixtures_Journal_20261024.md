@@ -80,3 +80,7 @@
 ## D19 — Full local original bytes source pre-mirror QA
 - RDC reread 636/636 lines, transport 41,006 chars with one wrapper LF; exact original ASCII text is first 41,005 chars, matching native byte length PID1528. All `SelfTestStrict`/ZIP/CRC/descriptor/legacy mode anchors present; non-ASCII count 0. Attempt1/3 PASS.
 - ONE NEXT: Git create distinct source-only v8 DRAFT path using only exact 41,005 chars; preserve local and Git frozen v7 originals. Independently compare Git SHA256 against native `A5D5D5B4D8AB270CD50DE33E2BD2884E388EDCC1E4A3D8F5AC86AD9CBFDBFC71` before PASS.
+
+## D20 — Distinct v8 Git source mirror CREATE
+- GitHub new file `development/PREMAX/R002/03_Drafts/R002R26_G3E_AppxManifestGraph_v8_DRAFT.ps1`, commit `e1d58e7003bb86dd491aa3e39ceb58de14b31b58`, 41,005 ASCII source chars copied after known read wrapper LF removal; original v7 untouched. Attempt1/3 create SUCCESS; Git byte-parity **PENDING independent QA**.
+- ONE NEXT: independently fetch newly created Git file and calculate SHA256 vs native original v8 PID8116; do not promote source if mismatch.
