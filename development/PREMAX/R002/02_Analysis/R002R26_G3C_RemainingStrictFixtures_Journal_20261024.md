@@ -114,3 +114,8 @@
 
 - Native PS7 read-only `ConvertFrom-Json` PID `2620` on frozen F4 report output `PASS_G3C_F4_METADATA target=26300.9807 selected=26`; exact `target_build`, `target_uuid=687d1ced-aab1-4cd5-ad05-705189769731`, `files[].Count=26` independently validated. Original F4 JSON SHA256 native PID4752 matched pinned `8989870BADFEA64A3675E2AF22B4C29AC631CA222D6D8BD14CBAF5416D45084A`. Together with G1 5 providers, **31 source-selected transport records metadata**; not AppX manifest dependency closure. No package binaries touched.
 - **ONE NEXT:** verify future v6 Verify report path noncollision and local selected cache filenames count via metadata-only bounded inspection; then final G3C source-readiness status, Current/Handoff/Session Entry checkpoint and GUI pause.
+
+## G3C-D21 — future real Verify output path collision preflight PASS
+
+- Native read-only `Test-Path` PID `6472` of v6 inherited `$Report` path `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\05_Evidence\R002R26_G3_AppxGraph_001\R002R26_G3_Graph.json`: `G3C_PREFLIGHT_REPORT_EXISTS=False`, `G3C_PREFLIGHT_PARENT_EXISTS=False`. No report directory created, no actual Verify run, no AppX content read. Future report path noncollision is **preflight observation only**, not a guarantee at later execution.
+- **ONE NEXT:** last metadata-only scoped 31-name cache file existence gate, document actual count; then close block with remaining unresolved ZIP/external floor/CAB/real AppxManifest Verify dependencies.
