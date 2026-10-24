@@ -5,3 +5,7 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D0 — live Master pin
 - GitHub main Master v6.3.1 complete 160359 chars, blob `00d3d34e97c35d6fde241f5aa47f17de050d6eb7` unchanged; §§0E/0F present. `PASS_MASTER_FROZEN`.
 - ONE NEXT: live Session Entry read and record checkpoint.
+
+## D1 — live Session Entry
+- Entire Entry 35427 chars blob `0b6a58b6ef996470393648739f9774770246951f`, TOP G3F finalized external floor gate, G3G source-only NEXT. PASS.
+- ONE NEXT: full Current and Handoff relevant section read.
