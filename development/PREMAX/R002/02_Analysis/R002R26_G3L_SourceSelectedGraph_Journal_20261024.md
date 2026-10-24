@@ -98,4 +98,8 @@
 
 **STATUS:** `PASS_G3L_V2_ZIP64_SYNTHETIC_11_AST0_SHA_PINNED` / `HOLD_REAL_31_APPX_GRAPH_NOT_RUN`.
 
-**ONE NEXT:** Independently read back this D24 Git journal; then run distinct scoped v2 **aggregate `-Mode SelfTest`** to exercise inherited v9a manifest/provider/CRC fixtures alongside ZIP64 integration. Do not treat past v9a runtime as a substitute or run original source/package Verify before all fixture/output preflight gates.
+**D25 — native G3L v2 inherited aggregate fixtures FAIL_CLOSED:** After D24 independently read back Git blob `e86f5aae8794596ba9205692b2718d949f76bf2f`, one native PS7 `-Mode SelfTest` run on SHA-pinned v2 (`64375085660B5B58BE5712E002F2470CDF51374FDE3D80278CE2DECB15E9E024`) PID **8292** finished with exception at source line372: literal **`SELFTEST_WRONG_REJECTION expected=ZIP_DUPLICATE_CASEFOLD_ENTRY actual=G3_HOLD_CASEFOLD_DUPLICATE`**. This reflects ZIP parser error-code taxonomy mismatch against inherited v9a tests, not evidence actual duplicate detection failed or original archive/graph was evaluated. G3L v2 standalone ZIP64 synthetic11 PASS is preserved from D24; aggregate `SelfTest` **FAIL_CLOSED** and requires review; no original/cache/WIM/CBS/registry/ISO/NTLite/VM writes.
+
+**STATUS:** `PASS_G3L_V2_ZIP64_SYNTHETIC11` / `FAIL_CLOSED_G3L_V2_AGGREGATE_EXPECTED_ERROR_TAXONOMY` / `REAL31_NOT_RUN`.
+
+**ONE NEXT:** Source-review exact inherited v9a vs G3J parser error-code contract and design a **new nonoverwriting G3L v3** that preserves existing v9a error taxonomy where possible, while keeping ZIP64-specific failclosed classes; mandatory full readback/AST/SHA before any additional fixture attempt, no blind rerun.
