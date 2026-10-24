@@ -92,3 +92,7 @@
 ## D22 — Live Registry r38 protected runtime policy
 - GitHub main RecipeRegistry JSON parse PASS, blob `44f6c2f37cf9d4fd8c10331b491ff3d75c7c136b`, revision `2026-10-21-r20r2f13-9807-onedrive-static-contract-10-negative-r38`; 7 recipes, runtime_execution_allowed=false **7/7**. No registry modification or license/OS action. Attempt1/3 PASS.
 - ONE NEXT: §0R Current FIRST, independent readback, Handoff FIRST/SECOND, Session Entry LAST; close synthetic-only block and GUI pause.
+
+## D23 — §0R Current FIRST committed and read back
+- Current main updated commit `7114fd37b422fcfcfa8bcc2c237aa8b104993452`, blob `a83477debadea72d70d08f72032e4530736cf1ba`; independent full fetch 1,491,847 chars, new G3E v8 50+18 static PASS and v7 historical retained. No release/real graph claim. Attempt1/3 PASS.
+- ONE NEXT: Handoff §0R FIRST verified G3E endpoint and one next G3F source-bound real Verify preflight, then Handoff SECOND and Entry LAST; Master and Registry unchanged.
