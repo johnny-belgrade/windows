@@ -10,3 +10,7 @@ Project existing R002 only, target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab
 ## D1 — authenticated GitHub reconnect
 - Native GitHub `get_user_login` returns `johnny-belgrade`, authenticated ID 323928627. PASS attempt1/3, no protected mutation.
 - ONE NEXT: RDC online device discovery.
+
+## D2 — RDC connection
+- Fresh `list_devices` shows DESKTOP-4J4KCEA Online, device `d892c878-1a42-4fcd-b0e7-c51caf510ab6` RDC v0.3.1. PASS attempt1/3, no config mutation.
+- ONE NEXT: read full connector config to confirm root and 33 blocked commands.
