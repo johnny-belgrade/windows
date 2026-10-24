@@ -37,3 +37,7 @@ Boundary: existing R002 only, frozen v9a 728 lines/46855 bytes SHA256 `B422869D4
 ## D8 — successor UUP-history boundary README
 - RDC directly read complete `C:\work\UUP-history\00_README.md` (38/38 lines), read-only historical corpus, original protected, RH06/RH07/RH08 indices are discovery not runtime. No historical execution, no mutations. Attempt1/3 PASS.
 - ONE NEXT: read exact active `C:\work\PREMAX-work\00_README.md`, then local source SHA gates from D7.
+
+## D9 — successor active PREMAX workspace README
+- RDC directly read complete `C:\work\PREMAX-work\00_README.md` (66/66 lines). Existing R002 is active development scope, historical sources protected, no new cycle or WIM mutation; source-only G3H within R002. Attempt1/3 PASS.
+- ONE NEXT: independently native original F4 receipt SHA256 gate from G3H D7 and pinned G3F F4 path; then G1 source pin.
