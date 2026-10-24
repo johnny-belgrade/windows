@@ -15,13 +15,13 @@ Operator after OpenAI Support response case **17972045** adopted two permanent w
 
 **Mandatory bootstrap successor:** full live Master, then this Entry, latest [Current TOP](BlueLite_Current_Status.md), [Handoff §0BF/0BE/§0R/§0S/12B](BlueLite_Germanium_Handoff.md), Sources, Contracts, R002 local/Git CycleManifest and RecipeRegistry, original UUP-history/PREMAX README and relevant Library. Historical states are not current proof.
 
-## R002R26-G3B — SOURCE SHA PASS / PLATFORM MIRROR HOLD 1/3 / GUI_PAUSE (2026-10-24)
+## R002R26-G3B — RECONNECTED / MIRROR RETRY IN_PROGRESS (2026-10-24)
 
 **Last proven operation:** RDC PID7976 read-only local v2 SHA256 `75CAED7CC858D9FF1C131BBFDA7880F7E2D9CCEDE3F1F14C21373D1F660C2B1E` EXACT, 242-line prior source still local; proposed new Git source path confirmed absent HTTP404. Attempt to transport/freeze byte-exact source via combined scoped source-read/Git create rejected by platform before confirmed execution: `This tool call was blocked by OpenAI's safety checks. Please double check what you are sending.` **Attempt 1/3**; no PID, no returned Git commit, source mirror NOT_PROVEN. No alternate route, blind retry or permission change; live RDC online `DESKTOP-4J4KCEA` v0.3.1 roots `C:\work`/`C:\BLR20R2F5`, 33 blocked including reg untouched. Master v6.3.1 blob `00d3d34e97c35d6fde241f5aa47f17de050d6eb7` untouched and RecipeRegistry r38 runtime flags false.
 
 **Evidence:** [G3B detailed action journal](development/PREMAX/R002/02_Analysis/R002R26_G3B_StrictFixtures_Journal_20261024.md) Git commit `088161b2bcbb1d89a2dc211dc85a2f1f983a7691`, blob `779ffafc2c33e9442daf78a3ac1765ed87669b38`; [Current FIRST](BlueLite_Current_Status.md) commit `2399981d7f0d8a4827d13affdafdd10debe57f27`, blob `e3fced09f7fc0d5c3b4dd6a7e7c4e70d2a8cb1ab`; [Handoff FIRST/SECOND](BlueLite_Germanium_Handoff.md) final commit `048da521ea7ee6fd5250a75c1a070bf1c63a9c2a`, blob `e6080fd98258743bc3d8ca93f75de5bd516353d1`; all read back independently. Original G3 prior SelfTest v2 `12` synthetic negative tests PASS retains historical proof only; NEW v3 NOT_CREATED, expanded G3B fixtures NOT_RUN, real AppX -Mode Verify NOT_RUN, CAB not acquired, WIM/CBS/registry/ISO/NTLite/VM not operated.
 
-**STATUS:** `G3B_SOURCE_MIRROR_PLATFORM_HOLD_1_OF_3` / `GUI_PAUSE_AWAITING_OPERATOR`. **ONE NEXT:** operator-guided resolution of source-exact Git mirror platform block before any continuation of G3B; then independently mirror/check source, implement NEW v3 strict fixtures and run only separate AST/SelfTest with per-action readback. No automatic real 31-package Verify.
+**OPERATOR RECONNECT RESUME:** User confirmed GitHub reconnect and authorized up to two further attempts on the same exact source mirror, cumulative attempts max 3/3. Retry source transport only, with independent Git readback and per-action journal. Existing D3 attempt 1/3 remains immutable; source/Git identity guards and mutation exclusions unchanged. **STATUS:** `G3B_MIRROR_RETRY_IN_PROGRESS` / **ONE NEXT:** make attempt 2/3 on exact v2 source mirror, then negative-fixture v3 only after verified mirror.
 
 ## R002R26-G3 — v2 PARSER STATIC PASS / GUI_PAUSE (2026-10-24)
 
