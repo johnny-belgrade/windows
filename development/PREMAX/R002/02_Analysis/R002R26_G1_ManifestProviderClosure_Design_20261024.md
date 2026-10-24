@@ -1,0 +1,51 @@
+# R002-R26 G1 — Source-bound AppX/MSIX manifest provider-graph closure DESIGN v1
+
+**Date:** 2026-10-24 · **Status:** `G1_DESIGN_ONLY_READONLY_SOURCE_METADATA_PASS_NOT_GRAPH_CLOSURE` · **Owner:** existing `R002_Universal_Stage1_MAXPRE_Package` · **no new R###**. No parser draft was executed, no package extracted/written and no CAB fetched. Mandatory Master v6.3.1/Session Entry/Current/Handoff §0BL/§0BE/§0R. Development under existing `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package`; `UUP-history` READ-ONLY.
+
+## 1. Proven inputs / scope
+
+| Input | Frozen identity / gate | Current evidence level |
+|---|---|---|
+| Target original | `26300.9807` Pro amd64 en-US, UUID `687d1ced-aab1-4cd5-ad05-705189769731` | R22/R23 source metadata |
+| 9807 URL-free Apps inventory | `05_Evidence/R002R23_MetadataInventory_001/R002R23_SafeQueueInventory.json`, SHA256 `0058049376679F6011F9BD3C9D51FE49BD631E46D843E38CF09E15D7AFD1CDE6`, original 2,798 Apps entries | Native PID1812 SHA exact; no signed URLs |
+| Selected 9807 seed | R24 `R002R24_URLFree_SeedPreview.json`, SHA256 `2D91B0C75970738DC2DC93A66C75AEA761BC02CB8452DF5B7055FFDE22029A82` | 27 selected: 26 staging AppX + 1 UUID CAB |
+| Seed binary reuse | F4 original `05_Evidence/R002R26_F_HistoricCache_SHA1_001/R002R26_F_ReuseGate.json`, 8054B, SHA256 `8989870BADFEA64A3675E2AF22B4C29AC631CA222D6D8BD14CBAF5416D45084A` | Native PID4132: **26/26 SHA1 exact**, 94,548,045B; CAB excluded |
+| Source 9807 five provider rows | [G1 exact URL-free metadata matrix](R002R26_G1_9807_SourceProviderChecksum_Matrix_20261024.json), Git blob `a118b7e5510fb0153ae32f0d3f651566b878d7b1` | Native PID7956: 5/5 exact out matches, one entry each; **source checksum only**, **binaries unverified** |
+| Historic S06 .9711 G4 | `C:\work\E2E\BlueLite_Stage1_S06_26300_9711_2b22470a\Queues\ResolveAppDependencies.log` and `UUPs` | 27 seed → 32 final (five provider additions), 17 historic proven-provider log lines, 0 unresolved for **9711 only** |
+
+**Distinct source CAB:** `687d1ced-aab1-4cd5-ad05-705189769731.AggregatedMetadata.cab`, target 9807 Apps queue SHA1 `0A5F6B6ADD22E6500ECFB91E192FC7B17B8327F7`; F4 did not find or validate its bytes. CAB not an AppX provider and must remain separately `SOURCE_METADATA_NOT_ACQUIRED` until exact source-bound necessity, provenance and SHA verified. Its absence does not automatically invalidate a read-only AppX manifest parser design, but prevents claiming complete reconstruction input closure.
+
+## 2. Five source providers — mandatory binary revalidation first
+
+Target .9807 SHA-1 values are stored in the G1 matrix; **never infer equality from historical .9711 name or G4 PASS**. Next read-only stage must `Get-FileHash -Algorithm SHA1` each of these **five exact files** in `C:\work\E2E\BlueLite_Stage1_S06_26300_9711_2b22470a\UUPs`, after pinning the new matrix and source-ownership/path guards, in separate independently journaled operations:
+
+1. `Microsoft.UI.Xaml.x64.2.8.appx`
+2. `Microsoft.VCLibs.x64.14.00.Desktop.appx`
+3. `Microsoft.VCLibs.x64.14.00.appx`
+4. `Microsoft.NET.Native.Framework.x64.2.2.appx`
+5. `Microsoft.NET.Native.Runtime.x64.2.2.appx`
+
+Record exact `source_expected_sha1`, `local_observed_sha1`, bytes, owner path, casefold equality; reject missing/empty, non-leaf, duplicate `out`, wrong source UUID/build. Outcomes per provider: `REUSABLE_EXACT_SOURCE_SHA1`, `SOURCE_SHA_MISMATCH_REQUIRES_9807_BYTES`, `HISTORIC_PROVIDER_FILE_MISSING`, `SOURCE_PROVIDER_NOT_IN_QUEUE`. Only matches qualify as content-reusable; mismatches are not corruption claims. Missing/mismatched files may be source-bound analytically downloaded under standing authorization after advance bytes/path/disk/CPU/thermal notice; no secret URLs in Git.
+
+**Scope arithmetic:** F4 = 26 seed package files SHA-proven. Five provider rows exist **in 9807 metadata**, but not yet binary-proven. Candidate package graph input after five SHA gates = **up to 31** AppX/MSIX/bundle files, plus one distinct metadata CAB = **up to 32 source-selected transport records**. Historical S06 also ended at 32 records, but this equality of counts does not prove current graph closure.
+
+## 3. Versioned read-only parser contract (future G draft, NOT yet created/executed)
+
+**Inputs:** immutable R23/R24/F4/matrix source hashes; a bounded explicit **31-file allowlist** derived from 26 F4 `files[].out` plus five matrix `provider_records[].out`; one exact historic cache root. Read each complete archive in `System.IO.Compression.ZipArchive` `Read` mode, never extract to source/cache or mutate package. Verify full file SHA1 against **9807 target queue expected checksum** before opening each archive, and preserve original evidence. Treat `.appx/.msix` as package candidates; `.appxbundle/.msixbundle` as bundle containers requiring `AppxBundleManifest.xml` (namespace-aware) and resolution of each listed package/resource, including external sibling files or contained payload. Reject unsupported/ambiguous archive layouts rather than guessing. Nested bundles/packages require bounded seekable owned scratch or safe in-memory reader after resource review; no direct disk extraction by default.
+
+**ZIP/XML controls:** exact case-insensitive unique leaf `out`, allowlist only, reject traversal/absolute paths, duplicate archive entry names/case variants, suspicious path separators and encrypted/unsupported members; reject corrupt/zero/oversized manifests and decompression bombs. Bounded entries (e.g. ≤4096/package), XML manifest uncompressed ≤4MiB, non-manifest entries never loaded into memory without explicit bounded need, finite cumulative expanded-bytes budget. Parse `AppxManifest.xml` / `AppxBundleManifest.xml` with .NET `XmlReaderSettings`: `DtdProcessing=Prohibit`, `XmlResolver=$null`, secure character/namespace bounds, no XInclude, no external entities, no URI fetch and explicit expected XML namespaces/version variants. A file/bundle with no parseable identity is `MANIFEST_UNSUPPORTED_HOLD`, not successful closure. No host-installed AppX packages, no live registry/WIM/package store invoked as implicit providers.
+
+**Normalize and record exact, source-driven identity tuples:**
+- `Name`, `Publisher`, `Version` (four-part numeric comparable), `ProcessorArchitecture` (x64/neutral and relevant exact variants); `ResourceId`, `Framework`/resource status, bundle-to-payload mapping.
+- Every declared dependency's required package `Name`, `Publisher`, `MinVersion`, architecture/OS target constraints when present and source package parent.
+- Do not derive Publisher or minimum version from filenames, framework spelling, S06 cached logs or arbitrary host state. Keep raw XML attribute and strict normalized interpretation side by side. When a Publisher DN cannot be safely canonicalized, conservatively flag `PUBLISHER_COMPARISON_UNRESOLVED`.
+
+**Graph proof:** resolve dependencies by exact source-scoped app identity, comparing same Name/Publisher, compatible architecture, provider package version ≥ MinVersion, framework applicability. Compare all selected consumer manifests and recursively required providers, including bundle nested package identities and resource scales. A provider in R23 metadata but without source SHA-matched binary/XML is **NOT** proven. Distinguish and count: `PROVEN_PROVIDER`, `MISSING_PROVIDER`, `WRONG_PUBLISHER`, `VERSION_BELOW_MINIMUM`, `ARCH_MISMATCH`, `AMBIGUOUS_DUPLICATE`, `BUNDLE_CHILD_UNRESOLVED`, `UNSUPPORTED_MANIFEST_NAMESPACE`, `UNRESOLVED_EXTERNAL_SOURCE_FLOOR`, `BAD_ARCHIVE_OR_XML`, `SOURCE_SHA_MISMATCH`. If dependency requires a component only supplied by target WIM or another out-of-set source floor, retain explicitly `UNRESOLVED_EXTERNAL_SOURCE_FLOOR` pending genuine target-source proof, not host inference.
+
+**Acceptance criteria (all required):** 26 pinned F4 seed hashes still verified, five current-provider content hashes verified or fetched exact from .9807, all expected archive/child manifests parsed with exact source IDs and crosschecked, every required dependency edge resolved against content/source-certified providers with a recorded comparison, strict negative fixtures PASS, no unresolved required edges/duplicate ambiguities, immutable URL-free native receipts + independent SHA/JSON QA, `network_requests=0` for purely local verification and no cache edits. Status may then be `PASS_TARGET_9807_APPX_PROVIDER_GRAPH_CLOSURE` **for AppX graph only**. CAB still carries independent reconstruction-transport prerequisite; WIM/ISO/converter/release remain separate.
+
+## 4. Mandatory negative fixtures and one-NEXT checkpoint
+
+Static SelfTest / negative fixtures **before** any full parser Verify: wrong source build/UUID; one altered SHA1 or missing binary; duplicate filename differing by case; path traversal or absolute ZIP member; two distinct case-insensitive `AppxManifest.xml` entries; no manifest; corrupted ZIP; XML DTD/entity/XInclude; oversized XML or decompression ratio; invalid identity version; wrong Name/Publisher/MinVersion/architecture/framework; unresolved target floor; bundle manifest with missing/ambiguous child and nested package mismatch. Negative test must verify **correct rejection reason**, not merely any exception; AST/parser0, no forbidden modifying/network commands; fail closed on unexpected structure. New owned evidence `05_Evidence/R002R26_G_ProviderGraph_001/`, with output-collision preflight, distinct `-Mode SelfTest` and `-Mode Verify` in a reviewed SHA-pinned G draft, source-only until runtime scope is explicitly established; no hidden promotion to `06_Candidate` or RecipeRegistry runtime flags.
+
+**ONE NEXT after this G1 design block:** **G2 narrow source-bound five-provider local binary SHA1 checks** against [the G1 matrix](R002R26_G1_9807_SourceProviderChecksum_Matrix_20261024.json), per-file independent journal/QA, then source-only parser v1 draft and its negative fixtures. No rerun of F4 26 seed hashes without source delta. Operator's existing standing approval covers read-only SHA validation; before any high I/O, announce estimate/CPU/temperature and exact paths. At end of G1, Current FIRST → Handoff FIRST → reviewed NEXT → Handoff SECOND → Session Entry LAST → mandatory GUI pause (§0E).
