@@ -60,3 +60,7 @@
 ## D14 — AST helper independent readback
 - RDC read complete 11/11 lines of new helper, exact fixed owned v8 DRAFT input, `Parser.ParseFile` only and explicit zero-error acceptance; no external/mutational calls. Attempt1/3 PASS.
 - ONE NEXT: invoke only source-only AST helper with PS7 native `-File`; record literal count before fixture execution.
+
+## D15 — Native v8 AST0
+- RDC PS7 PID6620 finished reviewed helper, stdout `G3E_V8_AST_ERRORS=0` and `PASS_G3E_V8_AST0_SOURCE_ONLY`. Numeric native exit not independently surfaced. This certifies syntax ONLY, not fixture behavior nor graph Verify. Attempt1/3 PASS.
+- ONE NEXT: execute v8 `-Mode SelfTestStrict` only (pure in-memory ZIP fixture scope); do not run `-Mode Verify`.
