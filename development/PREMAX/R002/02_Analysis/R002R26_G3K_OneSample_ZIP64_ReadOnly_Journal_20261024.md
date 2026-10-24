@@ -13,3 +13,7 @@ Existing R002; target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab1-4cd5-ad05-7
 ## D2 — Current full top verified
 - Fetched Current full Git blob `ed8b543f7a80a663c014f3359a708fbc7d7e9cf4` 1511437 chars; latest G3J native one-source candidate v2 SHA256 `CE7D0AD2A4DF496F1EFC7254374473A08C27FC76328FC0851573F0D5C5AEA725`, synthetic11 PASS only. Real original 31 graph and external floor remain HOLD. PASS.
 - ONE NEXT: read current Handoff mandatory §0CE/0BE/0BL/0R/0S/12B and G3K reviewed contract.
+
+## D3 — full Handoff mandatory protocol read
+- Git full Handoff blob `d4338fbf8ce001c92d950319481ff5e4eda7d9b6`, 1102479 chars reviewed with current G3J Handoff §0CE, §0R SECOND G3K contract, §0BL, §0BE, §0R, §0S, §12B. G3K scope single original 32717B SHA1 pinned, new source with synthetic negatives, .NET ZIP central comparison, no legacy v9a rerun. Prohibited indirect execution of binary outside RDC roots. PASS.
+- ONE NEXT: register future optional 7-Zip operator-relay policy in Handoff, no Master update, with independently verified Git write; then local device/config source pins.
