@@ -86,4 +86,8 @@
 
 **STATUS:** `PASS_G3L_V2_FULL_LOCAL_READBACK` / `AST_SHA_SYNTHETIC_NOT_RUN`.
 
-**ONE NEXT:** Run separate bounded native PS7 Parser AST check of exact new v2 source (no execution), journal/readback; then SHA hash, then synthetic fixture retry.
+**D22 — native PS7 v2 AST:** RDC `start_process` exact v2 `Parser.ParseFile` only, PID **5368**, finished and literal **`G3L_V2_AST_ERRORS=0`**. No execution of v2 or archive/cache source, and zero change to host/image. The v1 synthetic failure remains historical, not erased by AST PASS.
+
+**STATUS:** `PASS_G3L_V2_NATIVE_AST0` / `SHA_AND_SYNTHETIC_PENDING`.
+
+**ONE NEXT:** One native SHA256 of exact v2 under approved R002, per-action journal/readback, then synthetic retry #2 against SHA-pinned source.
