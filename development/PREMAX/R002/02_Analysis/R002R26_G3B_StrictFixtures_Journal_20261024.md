@@ -36,3 +36,8 @@
 
 - Direct RDC `read_file` returned **315/315 lines** from new v3 only; beginning/closing dispatch, `New-SyntheticZip` helper, new exact negative fixture assertions and `PASS_R002R26_G3B_STATIC_SELFTEST_` marker all present. No original v2 overwrite and no local runtime claimed. Attempt 1/3.
 - **ONE NEXT:** independent native SHA256 hash of frozen local v3 for source pin; then AST parsing separately.
+
+## G3B-D7 — local v3 standalone native SHA256
+
+- Native `pwsh.exe Get-FileHash -Algorithm SHA256` PID `7732`, process finished, SHA256 `C1F6E6AC17D52A0BC0EBA435248D58343D267240525D210617B03E995EF979DC` for `R002R26_G3B_AppxManifestGraph_v3_DRAFT.ps1`; independent original v2 SHA still `75CAED7CC858D9FF1C131BBFDA7880F7E2D9CCEDE3F1F14C21373D1F660C2B1E`. Native numeric exit separately unavailable; stdout hash proven, **no AST/SelfTest result yet**.
+- **ONE NEXT:** read-only AST parse of exactly v3, no source edits.
