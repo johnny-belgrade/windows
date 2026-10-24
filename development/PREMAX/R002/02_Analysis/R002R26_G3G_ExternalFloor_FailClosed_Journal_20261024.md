@@ -102,3 +102,7 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D24 — corrected v9a native AST0 PASS
 - RDC native PS7 PID12052 finished helper; literal `G3G_V9A_AST_ERRORS=0` and `PASS_G3G_V9A_AST0_SOURCE_ONLY`. Rejected v9 remains AST6 historical, no v9a source overwrite. Numeric process exit separately not supplied. PASS.
 - ONE NEXT: isolated in-memory G3G classification/failclosed fixture `-Mode SelfTestG3G` only; real 31-AppX Verify NOT_RUN.
+
+## D25 — isolated G3G synthetic 13 PASS
+- Native PS7 PID9784 finished v9a `-Mode SelfTestG3G` with literal `PASS_R002R26_G3G_EXTERNAL_FLOOR_FAILCLOSED_SYNTHETIC_13_NOT_REAL_APPX`. 13 positive/negative synthetic checks of absent external provider, selected provider, wrong Publisher/MinVersion/Arch, duplicate, sanitized failure receipt and JSON round-trip, bad inputs, source reader error normalization and malformed in-memory ZIP. **No original AppX binary/VM/source image accessed; no owned failure receipt written by tests.** Numeric exit not separately exposed. PASS.
+- ONE NEXT: execute combined inherited 50 + ZIP strict18 + G3G 13 as separate `-Mode SelfTest`, log independent result.
