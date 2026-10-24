@@ -1,5 +1,13 @@
 # BlueLite v1.0 — Current Status
 
+## 2026-10-24 — G3C reconnect D2 review recovered; prior Current HOLD synchronized; v6 not yet created
+
+Operator expressly confirmed GitHub reconnect and two remaining attempts on formerly rejected G3C journal/Current writes. GitHub G3C journal D2 review upsert recovered on cumulative attempt **2/3**, commit `b7cead4ee7f457f3b47a492a2e962b8dc0e08e1b`, blob `d3c9af13dbcf8e60f82382c3cfdf7556b0aad4f6`, independently read back. Original attempt 1/3 platform safety rejection retained in G3C-D2. Previous Current FIRST initial safety rejection also recorded in G3C-D3, attempted once prior to reconnect. **This Current write is recovery attempt 2/3.**
+
+Latest native G3C source-only proof: existing v5 full 317-line review and PID7768 SHA256 `6577EFB72482A4CAC24635B24BEA2F20CF3B3B38D603D75810158D9DB06F42DE` matched frozen Git v5 source blob `849eb1fc5620d5978d315486310941109f2dc845`, original 35 synthetic PASS from G3B (not repeated in G3C). R002 target build 26300.9807, original UUID `687d1ced-aab1-4cd5-ad05-705189769731`; R23 original metadata SHA `0058049376679F6011F9BD3C9D51FE49BD631E46D843E38CF09E15D7AFD1CDE6`. G3C v6 `NOT_CREATED`, new G3C AST/SelfTest `NOT_RUN`, 31 real AppX XML graph Verify `NOT_RUN`, CAB not acquired; no WIM/CBS/registry/ISO/NTLite/VM/host mutation. Master v6.3.1 blob `00d3d34e97c35d6fde241f5aa47f17de050d6eb7`, RecipeRegistry r38 runtime disabled, RDC authorized roots `C:\work`/`C:\BLR20R2F5` + original blocked commands33 unchanged.
+
+**STATUS:** `G3C_DOCUMENT_SYNC_RECOVERY_CURRENT_FIRST_PENDING_READBACK`; [G3C journal](development/PREMAX/R002/02_Analysis/R002R26_G3C_RemainingStrictFixtures_Journal_20261024.md). **ONE NEXT:** independent Current content SHA/readback → Handoff FIRST/SECOND → Session Entry LAST; only then resume new versioned G3C source-only draft and synthetic tests; no real 31-file Verify.
+
 ## 2026-10-24 — R002-R26 G3B reconnect recovery; v5 AST0 / 35 synthetic fixture PASS; exact Git source SHA frozen; REAL graph NOT_RUN
 
 Operator explicitly reconnected GitHub and authorized **two remaining passes** of previously blocked v2 exact-source Git transfer. Previous safety rejection counted 1/3; new cumulative **2/3** succeeded on RDC native byte capture PID1536 (16464 bytes) + Git mirror commit `209d0ec043374dd49a15d6b8634b674fbf9885a6`, Git blob `8bcc7a463edb3bf43e7969bdd4723c919960d4af`. Independent Git base64 readback SHA256 **`75CAED7CC858D9FF1C131BBFDA7880F7E2D9CCEDE3F1F14C21373D1F660C2B1E`** exactly native v2 original. Safety/config restrictions unchanged, no extra attempt needed.
