@@ -82,3 +82,7 @@ Project existing R002 only, target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab
 ## D19 — Handoff FIRST transport template JS error before GitHub call
 - Current FIRST commit `13ca725414c5e44eb2b6059a2f10073f012e8647`, blob `ed8b543f7a80a663c014f3359a708fbc7d7e9cf4`, independent full readback PASS. First planned Handoff FIRST connector orchestration aborted **before GitHub mutation** with `SyntaxError: Unexpected token 'if'`, caused by unescaped markdown backtick around `if` in tool-call JS template. Handoff source never updated, no protected files affected. Attempt1/3 launch error, not platform safety refusal.
 - ONE NEXT: use safe string escaping / concise Handoff FIRST change with fresh CAS, then independent full Git blob readback. If another error, follow 3-attempt rule and HOLD.
+
+## D20 — Handoff FIRST recovered, full readback PASS
+- Handoff FIRST retried through same GitHub connector, corrected tool-call quote syntax (original wrapper SyntaxError D19 before API call), commit `31fa7ebf68fdb901f510a46bdcd6d88c00df804c`, blob `133add85e4a5b7e5d6a33d679c46c21b92f34b3f`, independent full 1100813-char Git blob readback PASS. No Master, source or cache mutation; first Handoff Git API write completed at second transport attempt.
+- ONE NEXT: separately author reviewed G3K next-step scope in Handoff SECOND, then independently fetch full blob, followed by Session Entry LAST and GUI pause.
