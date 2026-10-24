@@ -57,3 +57,7 @@ Boundary: existing R002 only, frozen v9a 728 lines/46855 bytes SHA256 `B422869D4
 ## D13 — original F4 parsed source-bound receipt read
 - RDC directly read full existing F4 JSON (206/206 lines): schema HistoricCacheSha1.v1, target `26300.9807`, UUID `687d1ced-aab1-4cd5-ad05-705189769731`, `files` 26 original `out`/`expected_sha1`/`observed_sha1`; old F4 proof was 26/26 from distinct historical cache, not current G3H 31-byte rehash. No URLs or filesystem writes, attempt1/3 PASS.
 - ONE NEXT: original five-provider G1 matrix full direct read to identify provider names and SHA1, before source-selected 31 native rehash.
+
+## D14 — original five-provider G1 parsed source
+- RDC directly read 73/73 G1 JSON lines, original `source_build=26300.9807`, UUID `687d1ced-aab1-4cd5-ad05-705189769731`, R23 SHA256 `0058049376679F6011F9BD3C9D51FE49BD631E46D843E38CF09E15D7AFD1CDE6`, five source-selected provider `out`/SHA1, F4 reference SHA256 match. G1 historical booleans `local_binary_sha1_verified=false` reflect source snapshot, not current state; target CAB absent/unacquired. No original edits; attempt1/3 PASS.
+- ONE NEXT: inspect frozen v9a actual Verify source contract for cache-path and output/failure-receipt names, then check scoped output collisions and rehash 31 binaries.
