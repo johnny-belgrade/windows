@@ -50,4 +50,8 @@
 
 **STATUS:** `PASS_G3K_SOURCE_REVIEW_G3L_INTEGRATION_DESIGN_READY` / `G3L_NEW_DRAFT_NOT_CREATED`.
 
-**ONE NEXT:** Check exact new candidate filename absent under existing R002 03_Drafts and prepare a separate versioned draft with bounded ZIP64 parser integration; do not execute original/package mutations.
+**D13 — new-version absence preflight:** direct RDC list of exactly `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\03_Drafts` depth1 shows frozen v9a and existing draft variants, **no G3L filename**. Target new name: `R002R26_G3L_AppxManifestGraph_Zip64_v1_DRAFT.ps1`, unique and non-overwriting. No file mutation by listing.
+
+**STATUS:** `PASS_NEW_G3L_SOURCE_FILENAME_ABSENT` / `SOURCE_NOT_YET_WRITTEN`.
+
+**ONE NEXT:** Create precisely that separate development draft using already-reviewed v9a and bounded G3J ZIP64 function; keep every original untouched, then independent direct local source readback before AST or test.
