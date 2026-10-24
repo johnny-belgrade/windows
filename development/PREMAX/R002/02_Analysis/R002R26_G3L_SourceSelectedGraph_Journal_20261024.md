@@ -26,4 +26,8 @@
 
 **STATUS:** `PASS_LIBRARY_TARGETED_SEARCH_NO_EXACT_FILE_HIT` / `G3L_PREDRAFT_NOT_RUN`.
 
-**ONE NEXT:** Review GitHub target source registry/contracts/Source catalog and frozen original parser sources, each with per-operation checkpoint/readback before any new revision.
+**D7 — Git Recipe Registry original read:** fetched and parsed `production/intelligence/BlueLite_RecipeRegistry.json` from main, blob `44f6c2f37cf9d4fd8c10331b491ff3d75c7c136b`, 103,906 chars, `registry_revision=...r38`. All 7 `runtime_execution_allowed` values are `false`; historical AppX lifecycle disposition is not current image runtime permission, no newly certified recipe. Registry untouched.
+
+**STATUS:** `PASS_REGISTRY_R38_JSON_READ_ALL_RUNTIME_FALSE` / `G3L_SOURCE_NOT_CREATED`.
+
+**ONE NEXT:** Inspect source-bound `production/contracts/README.md` and source catalog, then existing frozen v9a and G3K script structure before G3L code review.
