@@ -114,3 +114,7 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D27 — native corrected v9a byte length
 - Native PS7 PID8684 local v9a source byte size exactly 46855, matching prior authored character count; RDC reader had one wrapper-added LF. No BOM or binary reads implied; source contains only ASCII by construction. PASS.
 - ONE NEXT: create **new** Git source mirror from independent local full 728-line readback first exactly 46855 chars; independently SHA256 compare Git with native B422869D... .
+
+## D28 — new Git v9a source mirror created
+- GitHub created previously absent `development/PREMAX/R002/03_Drafts/R002R26_G3G_AppxManifestGraph_v9a_DRAFT.ps1`, commit `dda1c1be12a55faa4e2cef7e4165f79d653eb90f`, exactly 46855 ASCII chars reconstructed from independently re-read 728-line local original excluding RDC transport-added LF. No frozen Git v8/source overwrite. Create PASS, byte parity pending separate read/hash QA.
+- ONE NEXT: independent Git source fetch and SHA256 exact local pin `B422869D4629A87EDD8FC836508DE50BD4F3FC40769AF755D8B52A5ADE08456F` before declaring source frozen.
