@@ -13,3 +13,7 @@ Boundary: existing R002 only, frozen v9a 728 lines/46855 bytes SHA256 `B422869D4
 ## D2 — Current full read
 - Main Current blob `89d90a0f8e052711bb5f42086d26abbd276e22ff`, full 1498808 chars, G3G v9a 81 synthetic only, G3H NOT_RUN. PASS.
 - ONE NEXT: full Handoff §0R SECOND, mutation/execution permissions and source I/O gate.
+
+## D3 — Handoff latest and governance
+- Full Handoff blob `a9bcb45ef72b2bf06f194be775752d93c3db7f3e` 1087148 chars read; §0R SECOND G3H v9a/F4/G1, 31 SHA1, outputs absence and runtime bounds; §0BL scoped source-only Verify/new owned outputs allowed, §0BE operation checkpoints, §12B doc matrix. PASS.
+- ONE NEXT: verify RDC live device/policy before native work.
