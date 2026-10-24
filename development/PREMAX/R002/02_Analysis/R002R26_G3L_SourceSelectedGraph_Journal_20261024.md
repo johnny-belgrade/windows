@@ -18,4 +18,8 @@
 
 **STATUS:** `PASS_RH07_MANIFEST_READ_ONLY` / `G3L_SOURCE_UNCHANGED`.
 
-**ONE NEXT:** Read `C:\work\UUP-history\99_Index\RH08_ContentMarkers_ForUniversalDrafts.csv` separately, then record/checkpoint and cross-check source-specific evidence.
+**D5 — RH08 index one-operation read:** RDC direct `read_file` consumed all **550 lines** `C:\work\UUP-history\99_Index\RH08_ContentMarkers_ForUniversalDrafts.csv` (header + 549 files). All shown classification markers are `NO_DERIVED_INDEX_ONLY`; names such as historical converter/config/CustomApps are discovery hints, not current 26300.9807 source or certificate. No historical executable run or sibling search/mutation.
+
+**STATUS:** `PASS_REQUIRED_HISTORY_RH06_RH07_RH08_READS` / `G3L_NO_SOURCE_OR_RUNTIME_CREATED`.
+
+**ONE NEXT:** Targeted Library evidence and source-bound Git Registry/contracts/Sources review before G3L draft. Keep prior G3K one-real/31-HOLD and frozen v9a SHA unchanged.
