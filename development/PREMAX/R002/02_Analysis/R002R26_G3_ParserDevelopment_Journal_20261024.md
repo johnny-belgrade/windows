@@ -18,3 +18,9 @@
 RDC `write_file` succeeded for **NEW** owned `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\03_Drafts\R002R26_G3_AppxManifestGraph_v1_DRAFT.ps1`, 242 nonempty/current lines reported (source content 16,448 JS characters before transfer). This is a **draft**, not reviewed/promoted/certified or executable approval. Source targets 31 content SHA1-pinned AppX transports from F4+G1, ZIP entry checks/size bounds, entity-disabled XML manifest parser, bundle nested children, exact provider graph and local SelfTest negative fixtures, an output-absence guard. **Do not claim AST, native SelfTest or full Verify from successful file delivery.** No existing draft/image/cache was overwritten.
 
 **ONE NEXT:** independently direct-read back this exact new local source and obtain native SHA256/AST separately; journal each action and independently read back before subsequent action.
+
+## G3-D2 — independent local direct source readback (attempt 1/3)
+
+RDC direct `read_file` from the **same exact new source path**, independent of the writing call, returned **242/242 lines**, full beginning (Param/SHA/ownership guards) and intact final `if ($Mode -eq 'SelfTest') { SelfTest } else { Verify }`. Expected read-only functions present, no partial/truncated remote source. This verifies line content presence, **not native file SHA256 or PowerShell AST**; neither has run. No second write or mutation.
+
+**ONE NEXT:** one separately scoped read-only native PowerShell SHA256 of this exact new source; then journal/readback and isolated AST.
