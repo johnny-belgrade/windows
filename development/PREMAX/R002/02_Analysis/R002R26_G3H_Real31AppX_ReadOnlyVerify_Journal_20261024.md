@@ -33,3 +33,7 @@ Boundary: existing R002 only, frozen v9a 728 lines/46855 bytes SHA256 `B422869D4
 ## D7 — native frozen v9a SHA256
 - Native PS7 PID3884 read v9a SHA256 `B422869D4629A87EDD8FC836508DE50BD4F3FC40769AF755D8B52A5ADE08456F` exact previous/Git source pin. No mutation. PASS.
 - ONE NEXT: original F4 SHA256, one path only.
+
+## D8 — successor UUP-history boundary README
+- RDC directly read complete `C:\work\UUP-history\00_README.md` (38/38 lines), read-only historical corpus, original protected, RH06/RH07/RH08 indices are discovery not runtime. No historical execution, no mutations. Attempt1/3 PASS.
+- ONE NEXT: read exact active `C:\work\PREMAX-work\00_README.md`, then local source SHA gates from D7.
