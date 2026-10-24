@@ -75,3 +75,8 @@ CRC32_TYPE=NO
 
 - Scoped RDC `read_file` returned entire 139-line owned draft, correct EOCD/CRC helpers, synthetic test block and terminal `SelfTest` dispatch; readback complete, no runtime parse verdict. Original source v6 untouched.
 - **ONE NEXT:** native file SHA256 standalone, then syntax AST; checkpoint/readback each.
+
+## G3D-D15 — native ZIP standalone draft SHA256
+
+- Native read-only PS7 Get-FileHash on exact new local `R002R26_G3D_ZipCentralStrict_v1_DRAFT.ps1`, PID not available, finished; SHA256 `CE0CF14D0A6F734209131862BC7308C5931171A9611D34C3E7CE45F070050F1A`. No other file changed, AST/SelfTest still NOT_RUN.
+- **ONE NEXT:** independent PowerShell AST source parse, journal/readback.
