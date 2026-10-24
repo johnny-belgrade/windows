@@ -1,0 +1,242 @@
+# BlueLite R002R26-G3 — source-only AppX/MSIX ZIP+XML graph draft v1. NOT CERTIFIED.
+# Verify reads only 31 SHA1-pinned historic cache package files; creates one NEW evidence JSON.
+[CmdletBinding()]
+param(
+    [ValidateSet('SelfTest','Verify')][string]$Mode = 'SelfTest',
+    [string]$MatrixPath = 'C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\02_Analysis\R002R26_G1_9807_SourceProviderChecksum_Matrix_20261024.json'
+)
+Set-StrictMode -Version Latest
+$ErrorActionPreference = 'Stop'
+Add-Type -AssemblyName System.IO.Compression
+$Cycle = 'C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package'
+$Cache = 'C:\work\E2E\BlueLite_Stage1_S06_26300_9711_2b22470a\UUPs'
+$F4 = Join-Path $Cycle '05_Evidence\R002R26_F_HistoricCache_SHA1_001\R002R26_F_ReuseGate.json'
+$F4Sha = '8989870BADFEA64A3675E2AF22B4C29AC631CA222D6D8BD14CBAF5416D45084A'
+$R23Sha = '0058049376679F6011F9BD3C9D51FE49BD631E46D843E38CF09E15D7AFD1CDE6'
+$Report = Join-Path $Cycle '05_Evidence\R002R26_G3_AppxGraph_001\R002R26_G3_Graph.json'
+$MaxEntries = 4096
+$MaxManifest = 4194304L
+$MaxNested = 134217728L
+function Hold([string]$Code) { throw "G3_HOLD_$Code" }
+function Assert-Leaf([string]$Name) {
+    if ($Name -cnotmatch '^[A-Za-z0-9][A-Za-z0-9._-]{0,180}\.(appx|msix|appxbundle|msixbundle)$') { Hold 'UNSAFE_SOURCE_LEAF' }
+}
+function Assert-Entry([string]$Name) {
+    if ([string]::IsNullOrWhiteSpace($Name) -or $Name.Length -gt 512 -or
+        $Name.Contains('\') -or $Name.Contains(':') -or $Name.StartsWith('/') -or
+        $Name.Contains('//') -or $Name -match '(^|/)\.{1,2}(/|$)' -or
+        $Name -match '[\x00-\x1F]') { Hold 'ZIP_UNSAFE_ENTRY_PATH' }
+}
+function Parse-Manifest([byte[]]$Bytes, [string]$Kind) {
+    if ($Bytes.Length -eq 0 -or $Bytes.Length -gt $MaxManifest) { Hold 'MANIFEST_SIZE' }
+    $settings = [System.Xml.XmlReaderSettings]::new()
+    $settings.DtdProcessing = [System.Xml.DtdProcessing]::Prohibit
+    $settings.XmlResolver = $null
+    $settings.MaxCharactersInDocument = $MaxManifest
+    $settings.MaxCharactersFromEntities = 0L
+    $ms = [System.IO.MemoryStream]::new($Bytes, $false)
+    try {
+        $reader = [System.Xml.XmlReader]::Create($ms, $settings)
+        try {
+            $doc = [System.Xml.XmlDocument]::new()
+            $doc.XmlResolver = $null
+            try { $doc.Load($reader) } catch { Hold 'XML_REJECTED' }
+        } finally { $reader.Dispose() }
+    } finally { $ms.Dispose() }
+    $root = $doc.DocumentElement
+    if ($null -eq $root -or $root.LocalName -cne $Kind -or
+        $root.NamespaceURI -notmatch '^http://schemas\.microsoft\.com/appx/.+/(manifest|bundle)(/|$)') {
+        Hold 'UNSUPPORTED_MANIFEST_NAMESPACE'
+    }
+    foreach ($el in $doc.GetElementsByTagName('*')) {
+        if ($el.NamespaceURI -eq 'http://www.w3.org/2001/XInclude') { Hold 'XML_XINCLUDE' }
+    }
+    return $doc
+}
+function Get-Identity([System.Xml.XmlElement]$Root, [bool]$Bundle) {
+    $id = $Root.SelectSingleNode("./*[local-name()='Identity']")
+    if ($null -eq $id) { Hold 'IDENTITY_MISSING' }
+    $name = [string]$id.GetAttribute('Name')
+    $publisher = [string]$id.GetAttribute('Publisher')
+    $v = [string]$id.GetAttribute('Version')
+    $arch = if ($Bundle) { 'bundle' } else { [string]$id.GetAttribute('ProcessorArchitecture') }
+    if ($name -cnotmatch '^[A-Za-z0-9][A-Za-z0-9_.-]{0,150}$' -or
+        [string]::IsNullOrWhiteSpace($publisher) -or $publisher.Length -gt 512 -or
+        $v -cnotmatch '^\d{1,5}(\.\d{1,5}){3}$' -or
+        $arch -notin @('bundle','x64','neutral','x86','arm64')) { Hold 'IDENTITY_INVALID' }
+    try { $parsed = [version]$v } catch { Hold 'IDENTITY_VERSION_INVALID' }
+    return [pscustomobject]@{Name=$name;Publisher=$publisher.Trim();Version=$v;ParsedVersion=$parsed;Arch=$arch;ResourceId=[string]$id.GetAttribute('ResourceId')}
+}
+function Read-EntryBytes([System.IO.Compression.ZipArchiveEntry]$Entry, [long]$Limit) {
+    if ($Entry.Length -le 0 -or $Entry.Length -gt $Limit) { Hold 'ZIP_ENTRY_SIZE_LIMIT' }
+    if ($Entry.CompressedLength -eq 0 -or ($Entry.Length / [math]::Max(1,$Entry.CompressedLength)) -gt 1000) { Hold 'ZIP_EXPANSION_LIMIT' }
+    $m = [System.IO.MemoryStream]::new()
+    try {
+        $stream = $Entry.Open()
+        try {
+            $buffer = [byte[]]::new(65536)
+            [long]$n = 0
+            while (($read = $stream.Read($buffer,0,$buffer.Length)) -gt 0) {
+                $n += $read
+                if ($n -gt $Limit) { Hold 'ZIP_RUNTIME_EXPANSION_LIMIT' }
+                $m.Write($buffer,0,$read)
+            }
+            if ($n -ne $Entry.Length) { Hold 'ZIP_ENTRY_LENGTH_MISMATCH' }
+            return $m.ToArray()
+        } finally { $stream.Dispose() }
+    } finally { $m.Dispose() }
+}
+function Read-Archive([System.IO.Stream]$SourceStream, [string]$Origin, [int]$Depth) {
+    if ($Depth -gt 1) { Hold 'BUNDLE_NESTING_DEPTH' }
+    try { $z = [System.IO.Compression.ZipArchive]::new($SourceStream, [System.IO.Compression.ZipArchiveMode]::Read, $true) }
+    catch { Hold 'INVALID_ZIP' }
+    try {
+        if ($z.Entries.Count -lt 1 -or $z.Entries.Count -gt $MaxEntries) { Hold 'ZIP_ENTRY_COUNT' }
+        $seen = [System.Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
+        $byName = [System.Collections.Generic.Dictionary[string,System.IO.Compression.ZipArchiveEntry]]::new([StringComparer]::OrdinalIgnoreCase)
+        foreach ($e in $z.Entries) {
+            Assert-Entry $e.FullName
+            if (-not $seen.Add($e.FullName)) { Hold 'ZIP_DUPLICATE_CASEFOLD_ENTRY' }
+            $byName.Add($e.FullName,$e)
+        }
+        $bundlePath='AppxMetadata/AppxBundleManifest.xml'
+        if ($byName.ContainsKey($bundlePath)) {
+            if ($Depth -ne 0 -or $byName.ContainsKey('AppxManifest.xml')) { Hold 'BUNDLE_UNSUPPORTED_LAYOUT' }
+            $doc = Parse-Manifest (Read-EntryBytes $byName[$bundlePath] $MaxManifest) 'Bundle'
+            $identity = Get-Identity $doc.DocumentElement $true
+            $children = @($doc.SelectNodes("/*[local-name()='Bundle']/*[local-name()='Packages']/*[local-name()='Package']"))
+            if ($children.Count -lt 1 -or $children.Count -gt 256) { Hold 'BUNDLE_CHILD_COUNT' }
+            $output = [System.Collections.Generic.List[object]]::new()
+            $childNames = [System.Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
+            foreach ($child in $children) {
+                $fn=[string]$child.GetAttribute('FileName')
+                Assert-Leaf $fn
+                if (-not $childNames.Add($fn)) { Hold 'BUNDLE_DUPLICATE_CHILD' }
+                if (-not $byName.ContainsKey($fn)) { Hold 'BUNDLE_CHILD_MISSING' }
+                if ($byName[$fn].Length -gt $MaxNested) { Hold 'BUNDLE_CHILD_TOO_LARGE' }
+                $raw = Read-EntryBytes $byName[$fn] $MaxNested
+                $nested = [System.IO.MemoryStream]::new($raw, $false)
+                try { $members = @(Read-Archive $nested "$Origin/$fn" ($Depth+1)) }
+                finally { $nested.Dispose() }
+                if ($members.Count -ne 1) { Hold 'BUNDLE_CHILD_AMBIGUOUS' }
+                $m=$members[0]
+                $declArch=[string]$child.GetAttribute('Architecture')
+                if ($m.Name -cne $identity.Name -or $m.Publisher -cne $identity.Publisher -or
+                    $m.Version -cne $identity.Version -or
+                    ($declArch -ne '' -and $declArch -cne $m.Arch)) { Hold 'BUNDLE_CHILD_IDENTITY_MISMATCH' }
+                $output.Add($m)
+            }
+            return $output.ToArray()
+        }
+        if (-not $byName.ContainsKey('AppxManifest.xml')) { Hold 'PACKAGE_MANIFEST_MISSING' }
+        $doc=Parse-Manifest (Read-EntryBytes $byName['AppxManifest.xml'] $MaxManifest) 'Package'
+        $id=Get-Identity $doc.DocumentElement $false
+        $deps=[System.Collections.Generic.List[object]]::new()
+        $dNodes=@($doc.SelectNodes("/*[local-name()='Package']/*[local-name()='Dependencies']/*"))
+        foreach ($dn in $dNodes) {
+            if ($dn.LocalName -eq 'PackageDependency') {
+                $n=[string]$dn.GetAttribute('Name');$p=[string]$dn.GetAttribute('Publisher');$v=[string]$dn.GetAttribute('MinVersion')
+                if ([string]::IsNullOrWhiteSpace($n) -or [string]::IsNullOrWhiteSpace($p) -or
+                    $v -cnotmatch '^\d{1,5}(\.\d{1,5}){3}$') { Hold 'DEPENDENCY_IDENTITY_INVALID' }
+                try { $pv=[version]$v } catch { Hold 'DEPENDENCY_VERSION_INVALID' }
+                $deps.Add([pscustomobject]@{Name=$n;Publisher=$p.Trim();MinVersion=$v;RequiredVersion=$pv})
+            } elseif ($dn.LocalName -notin @('TargetDeviceFamily','OSMinVersion','OSMaxVersionTested')) {
+                Hold 'UNSUPPORTED_DEPENDENCY_ELEMENT'
+            }
+        }
+        $frame=$doc.SelectSingleNode("/*[local-name()='Package']/*[local-name()='Properties']/*[local-name()='Framework']")
+        $framework = $null -ne $frame -and $frame.InnerText.Trim().ToLowerInvariant() -eq 'true'
+        return ,([pscustomobject]@{Origin=$Origin;Name=$id.Name;Publisher=$id.Publisher;Version=$id.Version;ParsedVersion=$id.ParsedVersion;Arch=$id.Arch;ResourceId=$id.ResourceId;Framework=$framework;Dependencies=@($deps.ToArray())})
+    } finally { $z.Dispose() }
+}
+function Resolve-Edges([object[]]$Packages) {
+    $edges=[System.Collections.Generic.List[object]]::new()
+    foreach ($consumer in $Packages) {
+        foreach ($dep in $consumer.Dependencies) {
+            $n=@($Packages | Where-Object { $_.Name -ceq $dep.Name })
+            $p=@($n | Where-Object { $_.Publisher -ceq $dep.Publisher })
+            $v=@($p | Where-Object { $_.ParsedVersion -ge $dep.RequiredVersion })
+            $a=@($v | Where-Object { $_.Arch -eq 'neutral' -or $_.Arch -eq $consumer.Arch })
+            $result = if ($n.Count -eq 0) {'MISSING_PROVIDER'} elseif ($p.Count -eq 0) {'WRONG_PUBLISHER'} elseif ($v.Count -eq 0) {'VERSION_BELOW_MINIMUM'} elseif ($a.Count -eq 0) {'ARCH_MISMATCH'} elseif ($a.Count -gt 1) {'AMBIGUOUS_DUPLICATE'} else {'PROVEN_PROVIDER'}
+            $edges.Add([pscustomobject]@{consumer=$consumer.Name;consumer_arch=$consumer.Arch;provider=$dep.Name;required_publisher=$dep.Publisher;minimum_version=$dep.MinVersion;result=$result;resolved=if($a.Count -eq 1){$a[0].Origin}else{$null}})
+        }
+    }
+    return $edges.ToArray()
+}
+function Expect-Hold([scriptblock]$Action,[string]$Expected) {
+    try { & $Action; Hold "SELFTEST_FALSE_ACCEPT_$Expected" }
+    catch {
+        $actual=[string]$_.Exception.Message
+        if ($actual -cne "G3_HOLD_$Expected") { throw "SELFTEST_WRONG_REJECTION expected=$Expected actual=$actual" }
+    }
+}
+function SelfTest {
+    $passed=0
+    Expect-Hold { Assert-Leaf '../evil.appx' } 'UNSAFE_SOURCE_LEAF';$passed++
+    Expect-Hold { Assert-Entry '../evil.xml' } 'ZIP_UNSAFE_ENTRY_PATH';$passed++
+    Expect-Hold { Assert-Entry 'C:\evil' } 'ZIP_UNSAFE_ENTRY_PATH';$passed++
+    Expect-Hold { Parse-Manifest ([Text.Encoding]::UTF8.GetBytes('<!DOCTYPE Package [<!ENTITY x SYSTEM "file:///C:/secret">]><Package>&x;</Package>')) 'Package' } 'XML_REJECTED';$passed++
+    Expect-Hold { Parse-Manifest ([Text.Encoding]::UTF8.GetBytes('<Package xmlns="urn:unknown"/>')) 'Package' } 'UNSUPPORTED_MANIFEST_NAMESPACE';$passed++
+    Expect-Hold { Parse-Manifest ([byte[]]::new(0)) 'Package' } 'MANIFEST_SIZE';$passed++
+    Expect-Hold { Get-Identity ([xml]'<Package />').DocumentElement $false } 'IDENTITY_MISSING';$passed++
+    $root=([xml]'<Package><Identity Name="Foo" Publisher="CN=X" Version="broken" ProcessorArchitecture="x64"/></Package>').DocumentElement
+    Expect-Hold { Get-Identity $root $false } 'IDENTITY_INVALID';$passed++
+    $bad = [System.IO.MemoryStream]::new([byte[]](1,2,3,4),$false)
+    try { Expect-Hold { Read-Archive $bad 'x.appx' 0 } 'INVALID_ZIP';$passed++ } finally {$bad.Dispose()}
+    $provider=[pscustomobject]@{Name='Contoso.Framework';Publisher='CN=Microsoft';ParsedVersion=[version]'1.0.0.0';Arch='x64';Origin='fixture.framework';Dependencies=@()}
+    $consumer=[pscustomobject]@{Name='Contoso.Consumer';Publisher='CN=Consumer';Arch='x64';Dependencies=@([pscustomobject]@{Name='Contoso.Framework';Publisher='CN=Microsoft';MinVersion='2.0.0.0';RequiredVersion=[version]'2.0.0.0'})}
+    $edge=@(Resolve-Edges @($provider,$consumer))
+    if ($edge.Count -ne 1 -or $edge[0].result -cne 'VERSION_BELOW_MINIMUM') { throw 'SELFTEST_VERSION_NEGATIVE_FAILED' };$passed++
+    $consumer.Dependencies[0].RequiredVersion=[version]'1.0.0.0'
+    $consumer.Dependencies[0].Publisher='CN=Wrong'
+    $edge=@(Resolve-Edges @($provider,$consumer))
+    if ($edge.Count -ne 1 -or $edge[0].result -cne 'WRONG_PUBLISHER') { throw 'SELFTEST_PUBLISHER_NEGATIVE_FAILED' };$passed++
+    $consumer.Dependencies[0].Publisher='CN=Microsoft'
+    $provider.Arch='arm64'
+    $edge=@(Resolve-Edges @($provider,$consumer))
+    if ($edge.Count -ne 1 -or $edge[0].result -cne 'ARCH_MISMATCH') { throw 'SELFTEST_ARCH_NEGATIVE_FAILED' };$passed++
+    Write-Output "PASS_R002R26_G3_STATIC_SELFTEST_$($passed)_NEGATIVE_FIXTURES_NOT_SOURCE_GRAPH"
+}
+function Verify {
+    if (-not (Test-Path -LiteralPath $F4 -PathType Leaf) -or
+        (Get-FileHash -LiteralPath $F4 -Algorithm SHA256).Hash -cne $F4Sha) { Hold 'F4_SOURCE_SHA256' }
+    if (-not (Test-Path -LiteralPath $MatrixPath -PathType Leaf)) { Hold 'G1_MATRIX_MISSING' }
+    $matrix=Get-Content -LiteralPath $MatrixPath -Raw -Encoding utf8 | ConvertFrom-Json
+    $f4=Get-Content -LiteralPath $F4 -Raw -Encoding utf8 | ConvertFrom-Json
+    if ($matrix.source_build -cne '26300.9807' -or
+        $matrix.source_uuid -cne '687d1ced-aab1-4cd5-ad05-705189769731' -or
+        $matrix.source_inventory_sha256 -cne $R23Sha -or
+        $f4.target_build -cne $matrix.source_build -or
+        $f4.target_uuid -cne $matrix.source_uuid -or
+        @($f4.files).Count -ne 26 -or @($matrix.provider_records).Count -ne 5) { Hold 'SOURCE_RECORD_CONTRACT' }
+    $pins=[System.Collections.Generic.Dictionary[string,string]]::new([StringComparer]::OrdinalIgnoreCase)
+    foreach ($rec in @($f4.files)+@($matrix.provider_records)) {
+        $name=[string]$rec.out;Assert-Leaf $name
+        $sha=if ($rec.PSObject.Properties.Name -contains 'expected_sha1') {[string]$rec.expected_sha1} else {''}
+        if ($sha -cnotmatch '^[A-F0-9]{40}$' -or $pins.ContainsKey($name)) { Hold 'SOURCE_SHA1_OR_DUPLICATE' }
+        $pins.Add($name,$sha)
+    }
+    if ($pins.Count -ne 31 -or (Test-Path -LiteralPath $Report)) { Hold 'OUTPUT_OR_CARDINALITY' }
+    $root=[System.IO.Path]::GetFullPath($Cache).TrimEnd('\') + '\'
+    $packages=[System.Collections.Generic.List[object]]::new()
+    foreach ($kv in $pins.GetEnumerator()) {
+        $path=[System.IO.Path]::GetFullPath((Join-Path $Cache $kv.Key))
+        if (-not $path.StartsWith($root,[StringComparison]::OrdinalIgnoreCase)) { Hold 'SOURCE_PATH_ESCAPE' }
+        if (-not (Test-Path -LiteralPath $path -PathType Leaf)) { Hold 'CACHE_FILE_MISSING' }
+        if ((Get-FileHash -LiteralPath $path -Algorithm SHA1).Hash -cne $kv.Value) { Hold 'SOURCE_SHA1_MISMATCH' }
+        $fs=[System.IO.File]::Open($path,[System.IO.FileMode]::Open,[System.IO.FileAccess]::Read,[System.IO.FileShare]::Read)
+        try { foreach ($unit in @(Read-Archive $fs $kv.Key 0)) {$packages.Add($unit)} } finally { $fs.Dispose() }
+    }
+    $edges=@(Resolve-Edges $packages.ToArray())
+    $notProven=@($edges | Where-Object { $_.result -cne 'PROVEN_PROVIDER' })
+    $result=if ($notProven.Count -eq 0) {'GRAPH_EDGES_RESOLVED_SOURCE_SCOPED_CAB_SEPARATE'}else{'HOLD_UNRESOLVED_APPX_EDGES'}
+    $out=[ordered]@{schema='BlueLite.R002R26.G3.SourceScopedGraph.v1';target_build=$matrix.source_build;source_uuid=$matrix.source_uuid;source_r23_sha256=$R23Sha;packages_transport_count=$pins.Count;manifest_units_count=$packages.Count;dependency_edges_count=$edges.Count;unresolved_count=$notProven.Count;result=$result;packages=@($packages.ToArray());edges=$edges;metadata_cab='NOT_ACQUIRED';network_requests=0;wim_mutation=$false}
+    $parent=Split-Path -Parent $Report
+    if (Test-Path -LiteralPath $parent) { Hold 'OWNED_EVIDENCE_DEST_EXISTS' }
+    [void](New-Item -ItemType Directory -Path $parent)
+    $out | ConvertTo-Json -Depth 22 | Set-Content -LiteralPath $Report -Encoding utf8
+    Write-Output "G3_REPORT=$Report"
+    if ($notProven.Count -gt 0) { Hold "UNRESOLVED_EDGES_$($notProven.Count)" }
+    Write-Output "PASS_R002R26_G3_SOURCE_SCOPED_APPX_GRAPH_ONLY_NOT_CAB_OR_WIM"
+}
+if ($Mode -eq 'SelfTest') { SelfTest } else { Verify }
