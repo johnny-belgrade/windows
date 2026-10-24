@@ -14,4 +14,8 @@
 
 **STATUS:** `PASS_RH06_2416_ROW_INDEX_READ` / `G3L_SOURCE_AND_TEST_NOT_CREATED`.
 
-**ONE NEXT:** Read `RH07_Manifest_SHA256.txt` in a separate file read, journal+independent readback, then `RH08_ContentMarkers_ForUniversalDrafts.csv` separately. 
+**D4 — RH07 checksum manifest one-operation read:** RDC direct `read_file` consumed complete **9 lines** `C:\work\UUP-history\99_Index\RH07_Manifest_SHA256.txt`; SHA256 entries include original RH02 inventory, archives, RH04 provenance, RH06 journal. This is index checksum evidence, not new verification that any listed bytes changed or 26300 app graph passed. No local/Git source modification.
+
+**STATUS:** `PASS_RH07_MANIFEST_READ_ONLY` / `G3L_SOURCE_UNCHANGED`.
+
+**ONE NEXT:** Read `C:\work\UUP-history\99_Index\RH08_ContentMarkers_ForUniversalDrafts.csv` separately, then record/checkpoint and cross-check source-specific evidence.
