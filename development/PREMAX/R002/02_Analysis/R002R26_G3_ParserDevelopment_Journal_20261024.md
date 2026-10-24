@@ -66,3 +66,9 @@ RDC direct `read_file` of exact new v2 path returned **242/242 lines**, with `fu
 RDC native PS7 `Get-FileHash` on exact new v2 draft, PID **1532**, completed with stdout SHA256 **`75CAED7CC858D9FF1C131BBFDA7880F7E2D9CCEDE3F1F14C21373D1F660C2B1E`**, numeric native exit not separately exposed. Original v1 pin `C7964D4C7B5D1820A4C40E25B8C6640C96BD04ECCE3FB5F75E24975F070DDF46` remains distinct and unchanged; no archive Verify, no WIM/cache edits. v2 is still DRAFT.
 
 **ONE NEXT:** read-only exact v1→v2 normalized text compare asserting only two intended substitutions; then independent checkpoint readback before AST and native SelfTest attempt2.
+
+## G3-D10 — independent v1→v2 full-text difference QA PASS (attempt 1/3)
+
+Read-only native PS7 PID **2124**, separately obtained full original v1/v2 UTF8 text; compared entire v2 with v1 after exactly two expected, source-literal parameter/constructor substitutions. Native stdout `PASS_V2_EXACT_TWO_TEXT_SUBSTITUTIONS`, completed. v1 SHA `C7964D4C7B5D1820A4C40E25B8C6640C96BD04ECCE3FB5F75E24975F070DDF46`; v2 SHA `75CAED7CC858D9FF1C131BBFDA7880F7E2D9CCEDE3F1F14C21373D1F660C2B1E`, distinct versioned files. Neither ZIP/MSIX source bytes nor WIM accessed in this compare. No parser runtime success inferred.
+
+**ONE NEXT:** one isolated read-only PS7 AST0 v2 check, followed by its independent Git journal readback, before second cumulative native SelfTest.
