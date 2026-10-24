@@ -66,4 +66,8 @@
 
 **STATUS:** `PASS_G3L_V1_NATIVE_PS7_AST0_ONLY` / `SHA_SYNTHETIC_REAL_VERIFY_PENDING`.
 
-**ONE NEXT:** Compute **native SHA256 for this single new draft** via separate PS7 read-only source hash action; journal and independent Git readback before executing synthetic fixture mode.
+**D17 — native source SHA256:** RDC PS7 read-only `Get-FileHash -Algorithm SHA256` applied solely to `03_Drafts\R002R26_G3L_AppxManifestGraph_Zip64_v1_DRAFT.ps1`, PID **8800** finished, literal 64-hex SHA256 **`8AEDAB580E1E0CBBEB2DA82125BBA17B2EFC00DC615C93A44B4F00351B3A6772`**. No execution of draft nor original/cache/WIM write; full 867 local source lines readback in D15 and AST0 D16.
+
+**STATUS:** `PASS_G3L_V1_NATIVE_SHA256_AST0_SOURCE_READBACK` / `SYNTHETIC_NOT_RUN_REAL31_NOT_RUN`.
+
+**ONE NEXT:** Run precisely scoped new **synthetic in-memory** G3L `-Mode SelfTestZip64` only from SHA-pinned draft, via native PowerShell 7, with no original AppX Verify/graph receipt or WIM/CBS operation; journal and independent readback.
