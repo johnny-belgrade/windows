@@ -12,3 +12,9 @@
 **Source protection:** frozen source/cache unchanged. No change to Master, Recipe Registry or existing SHA-pinned scripts. Next planned operation: author only a new `R002R26_G3_AppxManifestGraph_v1_DRAFT.ps1` inside R002 `03_Drafts`, with explicit fail-closed parsing and negative fixtures; no native Verify until AST and source guards pass. Report target/shas and exact failure categories rather than borrowing G4 .9711 closure.
 
 **ONE NEXT:** new G3 source write into the existing approved development workspace; then separately read back/hash and document its result before any test.
+
+## G3-D1 — FIRST local source write, no execution (attempt 1/3)
+
+RDC `write_file` succeeded for **NEW** owned `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\03_Drafts\R002R26_G3_AppxManifestGraph_v1_DRAFT.ps1`, 242 nonempty/current lines reported (source content 16,448 JS characters before transfer). This is a **draft**, not reviewed/promoted/certified or executable approval. Source targets 31 content SHA1-pinned AppX transports from F4+G1, ZIP entry checks/size bounds, entity-disabled XML manifest parser, bundle nested children, exact provider graph and local SelfTest negative fixtures, an output-absence guard. **Do not claim AST, native SelfTest or full Verify from successful file delivery.** No existing draft/image/cache was overwritten.
+
+**ONE NEXT:** independently direct-read back this exact new local source and obtain native SHA256/AST separately; journal each action and independently read back before subsequent action.
