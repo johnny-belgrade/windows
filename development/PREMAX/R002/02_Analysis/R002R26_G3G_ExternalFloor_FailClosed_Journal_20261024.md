@@ -29,3 +29,7 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D6 — exact v8 source review
 - Git blob `1ba6fe8e268c36f6553d89b9740f993776b685d6`, 41005 ASCII bytes complete, `Resolve-Edges` absent provider MISSING_PROVIDER, no structured fail-receipt in `Verify`. Preserved v8 AST0/synthetic68 historic. PASS.
 - ONE NEXT: native preflight new versioned v9 target absence, then create source-only v9 with scoped code+synthetics, no actual Verify.
+
+## D7 — new v9 target absence
+- Native PS7 PID5436 `Test-Path` exact planned owned R002 `03_Drafts\R002R26_G3G_AppxManifestGraph_v9_DRAFT.ps1`: False. No overwrite. PASS.
+- ONE NEXT: build new v9 source from frozen Git v8; retain Verify fully read-only; add deterministic in-memory failure record + future owned fail receipt writer with no test-side writes.
