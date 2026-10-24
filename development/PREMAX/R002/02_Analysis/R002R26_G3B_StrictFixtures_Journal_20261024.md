@@ -12,3 +12,10 @@
 
 - **Operation only:** direct GitHub contents lookup for `development/PREMAX/R002/03_Drafts/R002R26_G3_AppxManifestGraph_v2_DRAFT.ps1`; returned native `NOT_FOUND`/HTTP404, so no existing path was overwritten. This is expected noncollision, not infrastructure failure. Attempt 1/3.
 - **ONE NEXT:** obtain complete exact local v2 text bytes from scoped RDC and check encoded integrity before Git create.
+
+## G3B-D3 — exact-source Git mirror transfer blocked BEFORE confirmed execution (2026-10-24)
+
+- **Intended single logical operation:** source-exact freeze of pre-hashed local v2 at `03_Drafts/R002R26_G3_AppxManifestGraph_v2_DRAFT.ps1` using scoped RDC binary read for source transport and GitHub create on the confirmed absent development mirror path. Prior local v2 SHA256 PID7976 PASS and target Git 404 D2 recorded separately.
+- **Literal result:** connector orchestration rejected with `This tool call was blocked by OpenAI's safety checks. Please double check what you are sending.` No PID, source payload or Git commit returned. **Attempt 1/3**, platform pre-execution safety rejection; **GIT_MIRROR_NOT_PROVEN**, no claim that either nested action ran, no blind retry, alternate channel, altered permission or bypass.
+- **Result:** `G3B_SOURCE_MIRROR_PLATFORM_HOLD_1_OF_3`. v2 local prior SHA remains last proved content; v3 NOT_CREATED, extra strict fixtures NOT_RUN, AST/SelfTest v3 NOT_RUN; real 31-file Verify NOT_RUN; CAB/WIM/CBS/registry/ISO/NTLite/VM unchanged by this session's confirmed operations.
+- **ONE NEXT:** reconcile/resolve platform rejection under operator-guided allowed process before resuming same exact source transfer; do not increment version or infer G3B completion. Close Current FIRST / Handoff FIRST+SECOND / Session Entry LAST and GUI pause.
