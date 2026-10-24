@@ -54,3 +54,7 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D12 — native v9 SHA256 pin
 - Native PS7 PID9416 finished SHA256 of newly owned local v9 DRAFT: `B9F9D8B586744D49727A490604B8B94B383B6B512BFB20CE97A00093BF13ABB6`. No original input/source/cache/image write. PASS.
 - ONE NEXT: inspect absence of a uniquely named G3G AST helper, create and full-read it; run native AST0 before any fixture.
+
+## D13 — new AST helper file absent
+- RDC PS7 PID12164 Test-Path exact new owned `04_StaticTests\R002R26_G3G_v9_AST_v1.ps1` returned False; no overwrite. PASS.
+- ONE NEXT: write source-only native AST ParseFile checker to new owned helper, independent readback, execute without Verify.
