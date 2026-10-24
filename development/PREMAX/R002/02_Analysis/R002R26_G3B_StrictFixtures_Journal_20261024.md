@@ -77,3 +77,8 @@
 
 - Native PS7 Get-FileHash PID `4704`, finished, observed `6577EFB72482A4CAC24635B24BEA2F20CF3B3B38D603D75810158D9DB06F42DE`, target `03_Drafts/R002R26_G3B_AppxManifestGraph_v5_DRAFT.ps1`. Distinct v3 SHA256 `C1F6E6AC17D52A0BC0EBA435248D58343D267240525D210617B03E995EF979DC` preserved; v4 invalid draft never run. No AST or SelfTest claim yet.
 - **ONE NEXT:** native v5 AST-only check, then native SelfTest attempt 2/3.
+
+## G3B-D15 — v5 native AST zero errors
+
+- Native PS7 parser PID `4688` completed with `G3B_V5_AST_ERRORS=0` against v5 SHA256 `6577EFB72482A4CAC24635B24BEA2F20CF3B3B38D603D75810158D9DB06F42DE`. This is syntax only, not fixture or source graph proof; no script modification.
+- **ONE NEXT:** execute version-pinned `-Mode SelfTest` against in-memory synthetic fixtures, cumulative attempt **2/3** for G3B SelfTest issue. Do not run real archive Verify.
