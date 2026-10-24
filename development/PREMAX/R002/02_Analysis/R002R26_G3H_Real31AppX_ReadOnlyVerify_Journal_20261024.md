@@ -45,3 +45,7 @@ Boundary: existing R002 only, frozen v9a 728 lines/46855 bytes SHA256 `B422869D4
 ## D10 — targeted prior/Library evidence lookup
 - Targeted Library search for `G3H v9a / 26300.9807 / F4 / G1 / 31-AppX` returned matching attached `35-ChatGPT.md` prior-session historical proofs; it ends at G3H planned bootstrap, not native 31-file Verify. Cross-checked with G3F/G3G original Git journals and G3H D7. No completed current SHA1 or real XML Verify proved. Attempt1/3 PASS, no changes to originals.
 - ONE NEXT: native read-only SHA256 of exact original F4 receipt, one file/command; journal and readback.
+
+## D11 — native original F4 receipt SHA256 preflight
+- RDC native PS7 PID2804 read-only `Get-FileHash -Algorithm SHA256` of existing owned `05_Evidence\R002R26_F_HistoricCache_SHA1_001\R002R26_F_ReuseGate.json` returned `8989870BADFEA64A3675E2AF22B4C29AC631CA222D6D8BD14CBAF5416D45084A`, exact pinned F4 hash. Process finished; literal output PASS, no file writes, attempt1/3.
+- ONE NEXT: native original G1 matrix SHA256 exact gate, one file only.
