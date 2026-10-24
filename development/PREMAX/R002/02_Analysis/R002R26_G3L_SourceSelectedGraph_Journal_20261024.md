@@ -178,4 +178,8 @@
 
 **STATUS:** `PASS_V5_NEW_DEST_ABSENT` / `V5_NOT_CREATED`.
 
-**ONE NEXT:** Create v5 only with source-v4 SHA gate, exactly one inherited strict synthetic central-budget expectation change, `FileMode.CreateNew`, then separate direct readback/AST/SHA before final aggregate test.
+**D45 — new versioned v5 generated, native source delivery only:** One native PS7 scoped new-file action on v4 source PIN SHA256 `60FD996C6AD419E42B7C219EF9208C87D3847E494E5CE3014CEB159388B714A7` PID **3788** finished literal `G3L_V5_CREATED_BYTES=56059;LINES=892`. Created uniquely named `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\03_Drafts\R002R26_G3L_AppxManifestGraph_Zip64_v5_DRAFT.ps1` with FileMode.CreateNew. Compared exact single synthetic strict fixture `G3E-Fixture-Hold $v 'ZIP_CENTRAL_LAYOUT'` and replaced ONLY expected test outcome with `G3E-Fixture-Hold $v 'CENTRAL_BUDGET'` plus v5 comment version, leaving parser guards/provider graph/code unchanged. Previously versioned sources v1–v4 and original cache/WIM untouched. **Readback/AST/hash/tests of v5 NOT YET RUN**, native creation acknowledgement only.
+
+**STATUS:** `DELIVERED_G3L_V5_SOURCE_ONLY_PENDING_LOCAL_READBACK` / `AGGREGATE_LAST_ATTEMPT_NOT_RUN`.
+
+**ONE NEXT:** Independent full direct readback all 892 local v5 lines; separately journal/readback before native AST and SHA; last aggregate v5 attempt only after those gates.
