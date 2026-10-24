@@ -68,3 +68,7 @@
 ## D16 — Native strict ZIP/CRC fixtures 18/18
 - RDC PS7 PID4696 finished v8 `-Mode SelfTestStrict`, literal stdout **`PASS_R002R26_G3E_V8_STRICT_SYNTHETIC_18_NOT_REAL_APPX`**; 18 in-memory positives/negatives cover stored, deflate, descriptor, CRC vector, altered stored/deflate manifest CRC, encrypted flag, unsupported method, ZIP64 sentinel, malformed central/EOCD/offset, multidisk, local CRC and local name mismatch, safe UTF8, bundle child pass and mismatch. Numeric native exit not separately exposed. Original real AppX / WIM unchanged, no `-Mode Verify`. Attempt1/3 PASS.
 - ONE NEXT: separately execute complete inherited 50 + strict 18 `-Mode SelfTest`, then independently journal/readback. This will NOT prove real 31 package graph.
+
+## D17 — Native aggregate synthetic 50 + 18
+- RDC PS7 PID3784 finished v8 `-Mode SelfTest`: literal two PASS lines `PASS_R002R26_G3C_STATIC_SELFTEST_50_SYNTHETIC_FIXTURES_NOT_SOURCE_GRAPH` and `PASS_R002R26_G3E_V8_STRICT_SYNTHETIC_18_NOT_REAL_APPX`. Cumulative **68 synthetic PASS** (50 inherited, 18 new), not 68 real package tests. Numeric native exit separately unavailable. Attempt1/3 PASS.
+- ONE NEXT: freeze and source-exact mirror v8 to new GitHub draft path; independently verify actual raw-byte SHA equality before document completion. Real 31-AppX Verify remains NOT_RUN.
