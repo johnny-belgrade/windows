@@ -17,3 +17,7 @@ One independent RDC `list_sessions` returned **No active sessions** (no connecto
 ## C — Historic .9711 cache exact 32-leaf listing (NO CONTENT HASH YET)
 
 One RDC direct exact `list_directory(depth=1)` under `C:\work\E2E\BlueLite_Stage1_S06_26300_9711_2b22470a\UUPs` returned **32 FILE entries**, including all **five exact** R26-G1 source provider file names; historical distinct `2b22470a-8b6f-498f-9c88-66f7b9fb56b1.AggregatedMetadata.cab` is **not** .9807 source-specific CAB. Names-only proof, not SHA or manifest/XML proof, no mutation. **ONE NEXT:** exact new G2 owned output directory no-collision test, independent journal/readback; then five separate read-only SHA1 checks.
+
+## D — Owned G2 destination collision gate
+
+One exact RDC `list_directory` under `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\05_Evidence\R002R26_G2_ProviderSHA1_001` returned `[NOT_FOUND]`. Thus no existing owned report at this target path at observation time. G2 operations below only read five original .9711 providers (combined 32-file cohort previous full 115,765,780B), SHA1 CPU/disk/thermal scope; no new output directory necessary until owned receipt is prepared and checked. **ONE NEXT:** first isolated SHA-1 of historical `Microsoft.UI.Xaml.x64.2.8.appx` versus frozen 9807 expected `A5FA9D96FE72D5CD885DAB0B6F50A44CA82949A6`; record native result and readback before file2.
