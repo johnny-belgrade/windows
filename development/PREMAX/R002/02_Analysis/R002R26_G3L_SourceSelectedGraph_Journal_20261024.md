@@ -46,4 +46,8 @@
 
 **STATUS:** `PASS_G3J_V2_SOURCE_STRUCTURE_READ` / `G3L_NOT_CREATED`.
 
-**ONE NEXT:** Read G3K v1 actual ZIP64/.NET/CRC sample integration source; compare with G3J and frozen G3G v9a, then prepare narrowly source-reviewed new G3L draft (not v9a overwrite).
+**D12 — G3K source review:** exact Git `04_StaticTests/R002R26_G3K_OneSampleZip64_v1_DRAFT.ps1` blob `4a2c2398122f0b899499b9c0429ace9e57fec6c0`, 16,851 chars / 298 physical split lines. G3K inherits G3J ZIP64 bounded central reader plus source SHA1 32717B one-file preflight, independently .NET ZipArchive 29 central entries, CRC32 and secure AppxManifest XML. Preserves a separate `Inspect-One` one-original proof only, not G3G provider graph. G3L integration must preserve v9a complete package/bundle/provider graph, new failure/report owned paths, all SHA1 guards, and add G3J parser and real sample compatibility before 31 read-only Verify; never overwrite G3K/v9a.
+
+**STATUS:** `PASS_G3K_SOURCE_REVIEW_G3L_INTEGRATION_DESIGN_READY` / `G3L_NEW_DRAFT_NOT_CREATED`.
+
+**ONE NEXT:** Check exact new candidate filename absent under existing R002 03_Drafts and prepare a separate versioned draft with bounded ZIP64 parser integration; do not execute original/package mutations.
