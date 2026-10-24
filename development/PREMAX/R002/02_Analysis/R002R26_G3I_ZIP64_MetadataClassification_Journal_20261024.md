@@ -25,3 +25,7 @@ Scope: existing R002, target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab1-4cd5
 ## D5 — operator GitHub reconnect authenticated
 - Fresh GitHub connector `get_user_login` returned authenticated `johnny-belgrade` ID323928627, no errors; source-only access PASS, no mutation except owned journal. Attempt1/3.
 - ONE NEXT: live RDC device online check.
+
+## D6 — RDC online live check
+- `list_devices` shows DESKTOP-4J4KCEA Online, ID `d892c878-1a42-4fcd-b0e7-c51caf510ab6`, v0.3.1. PASS attempt1/3; no device mutations.
+- ONE NEXT: read native connector policy root allowlist and denylist.
