@@ -24,3 +24,9 @@ RDC `write_file` succeeded for **NEW** owned `C:\work\PREMAX-work\R002_Universal
 RDC direct `read_file` from the **same exact new source path**, independent of the writing call, returned **242/242 lines**, full beginning (Param/SHA/ownership guards) and intact final `if ($Mode -eq 'SelfTest') { SelfTest } else { Verify }`. Expected read-only functions present, no partial/truncated remote source. This verifies line content presence, **not native file SHA256 or PowerShell AST**; neither has run. No second write or mutation.
 
 **ONE NEXT:** one separately scoped read-only native PowerShell SHA256 of this exact new source; then journal/readback and isolated AST.
+
+## G3-D3 — native read-only draft SHA256 (attempt 1/3)
+
+RDC `start_process`, shell `powershell.exe` invoking PowerShell 7 Get-FileHash on only new 242-line draft, native PID **1228**, completed stdout SHA256 **`C7964D4C7B5D1820A4C40E25B8C6640C96BD04ECCE3FB5F75E24975F070DDF46`**. Remote tool reports process finished; numeric native exit was not separately exposed. No source/cache writes, packages read, network, WIM or registry. This is a content pin **not** AST, negative fixtures or manifest closure.
+
+**ONE NEXT:** single independent PS7 parser/AST0 check of exact pinned local new source, read-only; document and read back the result before negative fixtures.
