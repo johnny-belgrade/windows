@@ -22,3 +22,7 @@ Project existing R002 only, target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab
 ## D4 — frozen v9a parser-source review
 - Read full Git original v9a source path `development/PREMAX/R002/03_Drafts/R002R26_G3G_AppxManifestGraph_v9a_DRAFT.ps1`, original blob `333befcf162b53bf0ce8a73fabfbd5a22705ab57`, 46855 chars. Existing `G3E-Check-ZipCentral` rejects ZIP64 EOCD sentinel or central 0x0001 extra, then otherwise checks entry count, EOCD layout, flags, compression, CRC, path, casefold, local-central name, offsets. `Read-Archive` relies on its dictionary of manifest CRCs before bounded .NET ZipArchive. All this original MUST remain unmodified; G3J standalone candidate can return matching `Dictionary[string,uint32]` with safe ZIP64-aware central validation, not claim integrated graph PASS.
 - ONE NEXT: verify new exact G3J local draft path does not exist, then create nonoverwriting source-only candidate with in-memory positive/negative fixtures.
+
+## D5 — new G3J draft destination guard
+- Native RDC PS7 PID1748 `Test-Path` exact `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\04_StaticTests\R002R26_G3J_Zip64Central_v1_DRAFT.ps1` = False. New owned version noncollision, no original/source mutation, attempt1/3 PASS.
+- ONE NEXT: author reviewed standalone bounded ZIP64/classic central-directory validation and synthetic positive/negative cases only under this new path, then full readback and AST.
