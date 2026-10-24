@@ -166,4 +166,8 @@
 
 **STATUS:** `PASS_G3L_V4_ZIP64_SYNTHETIC_11_AST0_SHA` / `HOLD_AGGREGATE_SELFTEST_AND_REAL31_VERIFY_NOT_RUN`.
 
-**ONE NEXT:** Independently read back D41 journal, then execute separately only v4 `-Mode SelfTest` inherited graph/CRC/manifest/ZIP fixtures and ZIP64 fixtures; journal/readback before any subsequent real source-scoped 31-file operation.
+**D42 — v4 inherited aggregate synthetic FAIL_CLOSED after partial PASS:** One native PS7 `-Mode SelfTest` on source SHA256 `60FD996C6AD419E42B7C219EF9208C87D3847E494E5CE3014CEB159388B714A7` PID **7576** finished with stdout `PASS_R002R26_G3C_STATIC_SELFTEST_50_SYNTHETIC_FIXTURES_NOT_SOURCE_GRAPH`, **then exception** line397: literal `SELFTEST_WRONG_REJECTION expected=ZIP_CENTRAL_LAYOUT actual=G3_HOLD_CENTRAL_BUDGET`. Aggregate `SelfTest` therefore **FAIL_CLOSED**, despite inherited first 50 fixture subtotal PASS. The v4 standalone ZIP64 11 synthetic PASS is preserved from D41. Likely parser taxonomy/order mismatch on a malformed central offset and `CENTRAL_BUDGET` before `CENTRAL_LAYOUT`; this is **not** evidence of real archive failures or a completed 31-package dependency graph. Across aggregate G3L v2 and v4, same error-code compatibility family has native failures, so **two cumulative aggregate attempts (2/3)**; no blind further rerun until all expected diagnostics reviewed. No original/cache/WIM/CBS/OS/Registry changes.
+
+**STATUS:** `PASS_G3L_V4_ZIP64_11_AND_INHERITED_50_PARTIAL` / `FAIL_CLOSED_G3L_V4_AGGREGATE_LAYOUT_DIAGNOSTIC_MISMATCH` / `REAL31_GRAPH_NOT_RUN`.
+
+**ONE NEXT:** Read-only targeted review of ALL strict fixture negative expectations and all G3J ZIP64 parser diagnostic paths/priority, design v5 compatibility delta fully before the **last permitted aggregate synthetic attempt**. Journal/readback every single action. Do not run real source-selected Verify or change original scripts.
