@@ -72,3 +72,7 @@ RDC native PS7 `Get-FileHash` on exact new v2 draft, PID **1532**, completed wit
 Read-only native PS7 PID **2124**, separately obtained full original v1/v2 UTF8 text; compared entire v2 with v1 after exactly two expected, source-literal parameter/constructor substitutions. Native stdout `PASS_V2_EXACT_TWO_TEXT_SUBSTITUTIONS`, completed. v1 SHA `C7964D4C7B5D1820A4C40E25B8C6640C96BD04ECCE3FB5F75E24975F070DDF46`; v2 SHA `75CAED7CC858D9FF1C131BBFDA7880F7E2D9CCEDE3F1F14C21373D1F660C2B1E`, distinct versioned files. Neither ZIP/MSIX source bytes nor WIM accessed in this compare. No parser runtime success inferred.
 
 **ONE NEXT:** one isolated read-only PS7 AST0 v2 check, followed by its independent Git journal readback, before second cumulative native SelfTest.
+
+## G3-D11 — separate v2 PS7 AST verification PASS (attempt 1/3)
+
+RDC native **PID448**, exact local v2 source SHA256 `75CAED7CC858D9FF1C131BBFDA7880F7E2D9CCEDE3F1F14C21373D1F660C2B1E`, read-only PowerShell 7 parser `System.Management.Automation.Language.Parser::ParseFile` completed with literal stdout **`V2_AST_ERRORS=0`**. Native numeric exit not separately surfaced; no v2 SelfTest or real archive Verify run by this operation, no cache/source-image/registry mutation. Source was exactly v1+two reviewed parameter/constructor substitutions (D10). **ONE NEXT:** native v2 `-Mode SelfTest`, cumulative attempt 2/3 for original INVALID_ZIP fixture failure; journal original outcome/readback before any new action.
