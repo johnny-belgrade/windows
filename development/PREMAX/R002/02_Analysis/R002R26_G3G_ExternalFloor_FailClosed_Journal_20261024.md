@@ -94,3 +94,7 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D22 — v9a source-only AST helper write
 - RDC wrote new owned 11-line AST-only helper `04_StaticTests\R002R26_G3G_v9a_AST_v1.ps1` after negative existence guard, no binary/cache reads. PASS write only.
 - ONE NEXT: full independent read helper and then native AST.
+
+## D23 — v9a AST helper independent readback
+- RDC full 11/11-line new helper readback, exact corrected v9a target and only Parser.ParseFile. No real Verify. PASS.
+- ONE NEXT: run native PS7 -File AST helper, then journal actual error count.
