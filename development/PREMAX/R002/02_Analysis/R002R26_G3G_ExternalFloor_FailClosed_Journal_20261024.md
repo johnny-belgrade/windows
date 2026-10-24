@@ -25,3 +25,7 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D5 — RDC live policy
 - Allowed roots exactly `C:\work` and `C:\BLR20R2F5`, blockedCommands count 33 incl reg; v0.3.1 unchanged. PASS.
 - ONE NEXT: verify Git original v8 SHA and review source areas to change without touching original.
+
+## D6 — exact v8 source review
+- Git blob `1ba6fe8e268c36f6553d89b9740f993776b685d6`, 41005 ASCII bytes complete, `Resolve-Edges` absent provider MISSING_PROVIDER, no structured fail-receipt in `Verify`. Preserved v8 AST0/synthetic68 historic. PASS.
+- ONE NEXT: native preflight new versioned v9 target absence, then create source-only v9 with scoped code+synthetics, no actual Verify.
