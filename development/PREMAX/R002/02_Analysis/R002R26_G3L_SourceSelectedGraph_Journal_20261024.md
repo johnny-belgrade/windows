@@ -34,4 +34,8 @@
 
 **STATUS:** `PASS_CONTRACTS_READ` / `NO_PRODUCTION_PROMOTION`.
 
-**ONE NEXT:** Read relevant current `BlueLite_Sources.md` reference register, then original Git scripts and local SHA-bound copies for code integration.
+**D9 — live Git Sources read:** fetched `BlueLite_Sources.md` blob `275265a873ad15761ff082be9ec7434e8a7f04d3`, 39,676 chars. Relevant G1/G2 original 26300.9807 target UUID source checksum, G2 five provider SHA1 + F4 seed26 => **31 content SHA1**, not XML provider graph. CAB UUID-specific SHA1 known `0A5F6B6ADD22E6500ECFB91E192FC7B17B8327F7` not acquired. This current source catalog confirms staged package binary identities; re-downloading 31 would duplicate evidence. No new mutation.
+
+**STATUS:** `PASS_SOURCES_TARGET_EVIDENCE_READ` / `G3L_SOURCE_REVIEW_NEXT`.
+
+**ONE NEXT:** Examine frozen G3G v9a, G3J v2 and G3K v1 source functions in their original source-exact Git mirrors; determine smallest safe ZIP64 integration delta before generating a uniquely named G3L draft.
