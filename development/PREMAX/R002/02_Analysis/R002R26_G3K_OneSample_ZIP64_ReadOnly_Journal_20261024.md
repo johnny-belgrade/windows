@@ -69,3 +69,7 @@ Existing R002; target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab1-4cd5-ad05-7
 ## D16 — independent post-Inspect original one-AppX SHA1 unchanged
 - Native PS7 PID4616 separately Get-FileHash SHA1 of protected original 32717B `C:\work\E2E\BlueLite_Stage1_S06_26300_9711_2b22470a\UUPs\AppInstaller_scale-100.msix` = `17C09E7AA0906DA13EBB6BDBB28A20AD1044BB18` exact pinned original F4, AFTER PID5884 real Inspect, independently confirming content unchanged. No file writes, PASS attempt1/3.
 - ONE NEXT: persist new G3K v1 source mirror under a unique development Git path after new-only gate, independent full source parity readback, then final §0R checkpoint (Current FIRST/Handoff FIRST+SECOND/Entry LAST).
+
+## D17 — new GitHub G3K source mirror created
+- RDC full new owned G3K source read 297 lines; GitHub `create_file` wrote separate unique new development-only mirror `development/PREMAX/R002/04_StaticTests/R002R26_G3K_OneSampleZip64_v1_DRAFT.ps1`, 16851 chars, commit `811902b73a65afb808bbcd42e892810d9daf3e99`. Native local v1 source SHA256 `6E68BA02153B31570A885B50DA4A3D4F8745EA72EC666350E7B1B143C5070268`, AST0, synthetic11 and actual native one original PID5884 PASS. No original/local v1 overwrite, mirror newly created. New Git source independent fetch/text parity PENDING.
+- ONE NEXT: independent full Git mirror readback + direct native text parity comparison, then §0R Current/Handoff/Entry closure.
