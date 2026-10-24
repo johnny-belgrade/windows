@@ -98,3 +98,7 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D23 — v9a AST helper independent readback
 - RDC full 11/11-line new helper readback, exact corrected v9a target and only Parser.ParseFile. No real Verify. PASS.
 - ONE NEXT: run native PS7 -File AST helper, then journal actual error count.
+
+## D24 — corrected v9a native AST0 PASS
+- RDC native PS7 PID12052 finished helper; literal `G3G_V9A_AST_ERRORS=0` and `PASS_G3G_V9A_AST0_SOURCE_ONLY`. Rejected v9 remains AST6 historical, no v9a source overwrite. Numeric process exit separately not supplied. PASS.
+- ONE NEXT: isolated in-memory G3G classification/failclosed fixture `-Mode SelfTestG3G` only; real 31-AppX Verify NOT_RUN.
