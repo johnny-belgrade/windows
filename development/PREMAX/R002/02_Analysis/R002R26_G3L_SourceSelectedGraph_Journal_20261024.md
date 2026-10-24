@@ -30,4 +30,8 @@
 
 **STATUS:** `PASS_REGISTRY_R38_JSON_READ_ALL_RUNTIME_FALSE` / `G3L_SOURCE_NOT_CREATED`.
 
-**ONE NEXT:** Inspect source-bound `production/contracts/README.md` and source catalog, then existing frozen v9a and G3K script structure before G3L code review.
+**D8 — contract README source read:** Git `production/contracts/README.md` complete 3,635 chars, blob `144889b63173adc392ff046826cf8dadcf914b78`. Contracts design only; original source/converter/WIM cannot be mutated by a schema or G3L static receipt; runtime authorization flags default false; target topology and negative tests mandatory. No schema change required for G3L parser static development.
+
+**STATUS:** `PASS_CONTRACTS_READ` / `NO_PRODUCTION_PROMOTION`.
+
+**ONE NEXT:** Read relevant current `BlueLite_Sources.md` reference register, then original Git scripts and local SHA-bound copies for code integration.
