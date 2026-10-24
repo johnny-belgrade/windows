@@ -76,3 +76,7 @@
 ## D18 — Native v8 byte length
 - RDC native PS7 PID1528 Get-Item source file length = **41,005 bytes**, no file change. Prior RDC read_file transport returned 41,006 characters including an extra wrapper newline; source is ASCII and expected Git content must be exact 41,005. Attempt1/3 PASS.
 - ONE NEXT: independently reread full original local v8 source and only transfer exact 41,005 ASCII chars to distinct Git v8 draft path, preserving v7.
+
+## D19 — Full local original bytes source pre-mirror QA
+- RDC reread 636/636 lines, transport 41,006 chars with one wrapper LF; exact original ASCII text is first 41,005 chars, matching native byte length PID1528. All `SelfTestStrict`/ZIP/CRC/descriptor/legacy mode anchors present; non-ASCII count 0. Attempt1/3 PASS.
+- ONE NEXT: Git create distinct source-only v8 DRAFT path using only exact 41,005 chars; preserve local and Git frozen v7 originals. Independently compare Git SHA256 against native `A5D5D5B4D8AB270CD50DE33E2BD2884E388EDCC1E4A3D8F5AC86AD9CBFDBFC71` before PASS.
