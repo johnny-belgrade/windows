@@ -84,3 +84,8 @@
 
 - Direct authoritative Git read `development/PREMAX/R002/02_Analysis/R002R26_G1_9807_SourceProviderChecksum_Matrix_20261024.json` blob **`a118b7e5510fb0153ae32f0d3f651566b878d7b1`**, parsed JSON source build `26300.9807`, UUID `687d1ced-aab1-4cd5-ad05-705189769731`, R23 exact inventory SHA256 `0058049376679F6011F9BD3C9D51FE49BD631E46D843E38CF09E15D7AFD1CDE6`, provider rows exactly 5; Git raw 2931 characters, URL-free, `runtime_execution_allowed=false`. Local v6 `MatrixPath` previously direct ENOENT; unchanged source/cache.
 - **ONE NEXT:** create *only the previously absent* exact G1 matrix path as owned source-referenced development metadata copy in existing R002, then independently read its complete JSON and native SHA, using Git source blob as lineage reference. Do not infer that original F4 or real packages are available until separately checked.
+
+## G3C-D15 — materialized formerly missing local G1 source metadata, no package change
+
+- Distinct scoped RDC `write_file` created previously ENOENT path `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\02_Analysis\R002R26_G1_9807_SourceProviderChecksum_Matrix_20261024.json`, reports **73 lines**. Input unmodified Git canonical 2931-character URL-free JSON blob `a118b7e5510fb0153ae32f0d3f651566b878d7b1` parsed and checked before delivery: build/UUID/R23 SHA and providers5, `runtime_execution_allowed=false`. Source/path belonged to existing approved R002; no original cache/WIM/CAB/host changes. This is a local metadata copy, not a real AppX provider closure or certified runtime.
+- **ONE NEXT:** independent full local JSON read and native SHA/provenance checks; then inspect exact original F4 metadata separately.
