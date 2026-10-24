@@ -52,3 +52,8 @@
 
 - Read-only native PS7 `Get-FileHash -Algorithm SHA256` PID `7632` finished on exact new local G3C v6 path, stdout SHA256 **`D407B162BCFA62BCE347C073AE5FFA8481B1722A09D9A7032B86E2016C36A401`**. Numeric exit not separately provided; source hash result recorded. Original prior v5 SHA `6577EFB72482A4CAC24635B24BEA2F20CF3B3B38D603D75810158D9DB06F42DE` preserved. No AST/SelfTest or real Verify claimed.
 - **ONE NEXT:** native v6 AST read-only parse, separately document and read back.
+
+## G3C-D9 — v6 native AST zero syntax errors
+
+- Exact source SHA256 `D407B162BCFA62BCE347C073AE5FFA8481B1722A09D9A7032B86E2016C36A401`; read-only native PowerShell AST Parser PID `2808` finished with `G3C_V6_AST_ERRORS=0` (first attempt 1/3, numeric exit not separately exposed). No code changed, no actual archive Verify. AST0 is syntax-only PASS, fixture predicates still untested.
+- **ONE NEXT:** source-only native v6 `-Mode SelfTest` exact-match negative fixtures; then journal/readback and stop on any fail-closed mismatch per 3 attempts.
