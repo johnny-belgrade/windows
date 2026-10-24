@@ -102,4 +102,8 @@
 
 **STATUS:** `PASS_G3L_V2_ZIP64_SYNTHETIC11` / `FAIL_CLOSED_G3L_V2_AGGREGATE_EXPECTED_ERROR_TAXONOMY` / `REAL31_NOT_RUN`.
 
-**ONE NEXT:** Source-review exact inherited v9a vs G3J parser error-code contract and design a **new nonoverwriting G3L v3** that preserves existing v9a error taxonomy where possible, while keeping ZIP64-specific failclosed classes; mandatory full readback/AST/SHA before any additional fixture attempt, no blind rerun.
+**D26 — source-only taxonomy review:** Exact immutable G3G v9a and G3J v2 Git mirrors re-read and ZIP central `Hold` code lists/old `SelfTest`/`G3E-SelfTestStrict` negative expectations compared. G3J guard outcomes semantically correspond to inherited v9a prefix codes (`CASEFOLD_DUPLICATE` -> `ZIP_DUPLICATE_CASEFOLD_ENTRY`; `ENCRYPTED` -> `ZIP_ENCRYPTED_UNSUPPORTED`; `METHOD_UNSUPPORTED` -> `ZIP_METHOD_UNSUPPORTED`; `LOCAL_CRC` -> `ZIP_LOCAL_CRC_MISMATCH`; `EXTRA_MALFORMED` -> `ZIP_EXTRA_FIELD_MALFORMED`; `CENTRAL_HEADER`, `CENTRAL_LAYOUT`, `MULTIDISK`, `EOCD_MISSING`, etc.). ZIP64-specific failures (`ZIP64_LOCATOR_MISSING`, `ZIP64_RECORD_BOUND`, etc.) should remain fine-grained. Proposed v3 adapter maps ZIP parser error codes at the parser boundary, not a new runtime permission and not an automatic rewrite of historical v9a. Target isolated v2→v3 change also updates ZIP64 fixture expectations for normalized legacy errors. Risk: AST/synthetic gates mandatory; do not call graph PASS until actual source-scoped 31 Verify passes. Existing v2 is immutable.
+
+**STATUS:** `PASS_SOURCE_ONLY_ERROR_TAXONOMY_MAPPING_DESIGN` / `G3L_V3_DOCUMENTED_NOT_CREATED_OR_RUN`.
+
+**ONE NEXT:** Verify new v3 filename absent in existing R002 `03_Drafts`, then independently document/readback; subsequently create single new v3 source using existing v2 SHA guard, CreateNew, and narrow code mapping/fixture expectation adaptation, full source/AST/SHA/fixtures separately.
