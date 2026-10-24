@@ -36,3 +36,8 @@
 
 - Current Git `development/PREMAX/R002/CycleManifest.json` blob `8bd7e7b21b5b4d2282a1efac01dd1835d35754ac`; cycle `R002_Universal_Stage1_MAXPRE_Package`, recorded status `R002R26_G2_FIVE_PROVIDER_SHA1_EXACT_NOT_XML_CLOSURE` (historic reference, not new G3D certification). Existing R002 retained, no R### allocation or manifest modification.
 - **ONE NEXT:** exact native SHA of local frozen v6, then independent checkpoint; targeted ZIP format source review.
+
+## G3D-D8 — native pinned v6 source SHA exact
+
+- Native scoped read-only PS7 Get-FileHash on original G3C v6 `03_Drafts/R002R26_G3C_AppxManifestGraph_v6_DRAFT.ps1` finished, returned exact SHA256 `D407B162BCFA62BCE347C073AE5FFA8481B1722A09D9A7032B86E2016C36A401` (same source-pinned G3C), no edits. Tool output PID not separately extracted. Existing v6 remains static test50/AST0, not graph proof.
+- **ONE NEXT:** review detailed v6 ZIP handling and explicitly freeze G3D negative-test design prior to any new script.
