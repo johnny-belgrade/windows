@@ -82,3 +82,7 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D19 — full independent corrected v9a local readback
 - RDC full 728/728 lines read; transport 46856 chars includes one reader-added LF; authored source 46855 chars. G3G error-code, source external floor, deterministic receipt, fixture and dispatch anchors all present; no prior bad substitution markers. PASS static source check, not AST proof.
 - ONE NEXT: native v9a source SHA256 pin and AST0 before any test execution.
+
+## D20 — native v9a SHA pin
+- Native RDC PS7 PID5368 finished source SHA256 `B422869D4629A87EDD8FC836508DE50BD4F3FC40769AF755D8B52A5ADE08456F` of owned corrected v9a DRAFT. No binaries, cache or image modified. PASS.
+- ONE NEXT: use an independently reviewed native ParseFile wrapper on exact v9a path to confirm AST0, journal and readback before fixture execution.
