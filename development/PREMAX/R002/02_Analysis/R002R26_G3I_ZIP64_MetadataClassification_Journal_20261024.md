@@ -65,3 +65,7 @@ Scope: existing R002, target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab1-4cd5
 ## D15 — native G3I PS7 AST source gate
 - RDC native PS7 PID9964 parsed exact owned G3I v1 `04_StaticTests\R002R26_G3I_Zip64MetadataInspector_v1_DRAFT.ps1`, literal `G3I_V1_AST_ERRORS=0`; no source execution/reads/writes. PASS attempt1/3.
 - ONE NEXT: native PS7 SHA256 of only new owned script, source pin before SelfTest.
+
+## D16 — native exact owned G3I source SHA256
+- RDC native PS7 PID10840 one `Get-FileHash -Algorithm SHA256` on 108-line new G3I v1 source returned `AB4DCB2012180557427646262AB678B760A760919369A70C4B663DF3E2AC31C7`, source pinned for later testing; original G3G v9a untouched. PASS attempt1/3.
+- ONE NEXT: run G3I v1 isolated 6 synthetic ZIP64 extra/sentinel decoding fixtures ONLY, then checkpoint/readback before real selected 31 read-only Inspect.
