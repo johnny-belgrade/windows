@@ -89,3 +89,8 @@
 
 - Distinct scoped RDC `write_file` created previously ENOENT path `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\02_Analysis\R002R26_G1_9807_SourceProviderChecksum_Matrix_20261024.json`, reports **73 lines**. Input unmodified Git canonical 2931-character URL-free JSON blob `a118b7e5510fb0153ae32f0d3f651566b878d7b1` parsed and checked before delivery: build/UUID/R23 SHA and providers5, `runtime_execution_allowed=false`. Source/path belonged to existing approved R002; no original cache/WIM/CAB/host changes. This is a local metadata copy, not a real AppX provider closure or certified runtime.
 - **ONE NEXT:** independent full local JSON read and native SHA/provenance checks; then inspect exact original F4 metadata separately.
+
+## G3C-D16 — independent complete local G1 matrix readback
+
+- Scoped RDC `read_file` returned all **73/73 lines** of exact G1 `MatrixPath` previously missing. Source-derived build `26300.9807`, target UUID `687d1ced-aab1-4cd5-ad05-705189769731`, original R23 SHA256 `0058049376679F6011F9BD3C9D51FE49BD631E46D843E38CF09E15D7AFD1CDE6`, `runtime_execution_allowed=false` and unchanged source/cache flag present. New local file now exists; no package bytes read. Local byte SHA and parsed cardinality need independent native check.
+- **ONE NEXT:** native SHA256 + parsed JSON controlled check on G1 metadata only, then F4 input path preflight.
