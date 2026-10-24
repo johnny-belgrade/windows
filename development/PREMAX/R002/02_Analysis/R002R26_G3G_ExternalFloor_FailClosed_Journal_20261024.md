@@ -13,3 +13,7 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D2 — Current full checkpoint
 - Git main Current blob `966ffa9cf4642db4a1a7cc8a459875b908475b03` full 1495096 chars read. Latest G3F path 31/31 PASS, actual graph NOT_RUN, missing explicit external-floor class. PASS.
 - ONE NEXT: Handoff governing §0R SECOND and §0BL plus §0BE.
+
+## D3 — Handoff full governing scope
+- Handoff blob `8e10359bd1723a197ed553da52cdcb4a429f45a7`, 1081940 chars; current §0BZ+§0R SECOND mandates nonoverwriting v9 source-only external floor classification + owned fail-closed receipt tests; §§0BE/0BL/0R/0S/12B present. PASS.
+- ONE NEXT: verify RDC connectivity/config; read frozen v8 complete source and source pins.
