@@ -36,3 +36,9 @@ RDC `start_process`, shell `powershell.exe` invoking PowerShell 7 Get-FileHash o
 RDC `start_process` using **pwsh.exe**, native PID **7912**, parser `System.Management.Automation.Language.Parser::ParseFile` against new source with frozen SHA256 `C7964D4C7B5D1820A4C40E25B8C6640C96BD04ECCE3FB5F75E24975F070DDF46` completed and emitted literal `AST_ERRORS=0`. Only syntax validated, **no SelfTest, Verify, package archive read, output JSON or graph closure**. Native numeric exit unexposed. Original G1 matrix remains source-pinned; no code promotion.
 
 **ONE NEXT:** invoke isolated source-only `-Mode SelfTest` against **unchanged SHA-pinned draft**, record exact negative-fixture stdout/error and limit retries to 3 total; then journal independent readback. No Verify or cache reads in this step.
+
+## G3-D5 — FIRST native v1 SelfTest FAIL_CLOSED (attempt 1/3 for this SelfTest issue)
+
+RDC native **PID6740**, unchanged v1 SHA256 `C7964D4C7B5D1820A4C40E25B8C6640C96BD04ECCE3FB5F75E24975F070DDF46`, `-Mode SelfTest`, process completed with red exception at draft line 170: `SELFTEST_WRONG_REJECTION expected=INVALID_ZIP actual=Cannot convert the "System.Collections.ArrayList+ArrayListEnumeratorSimple" value of type ... to type "System.IO.Stream".` **NOT PASS** despite AST0, provider graph Verify **NOT_RUN**, no source packages opened, no owned graph output, no image mutation. One attempt for this logical SelfTest failure; do not blind retry. The exception shows a test harness type/binding problem before intended invalid-ZIP gate; need targeted read-only review of exact fixture and function signature, then create **NEW versioned v2** if needed (v1 immutable for audit). No platform/safety bypass.
+
+**ONE NEXT:** inspect only v1 lines surrounding the faulty `INVALID_ZIP` synthetic fixture and `Read-Archive` invocation, determine exact cause and patch in *v2*, then AST and negative SelfTest as separately journaled steps, not G3 real Verify.
