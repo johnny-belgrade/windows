@@ -54,3 +54,7 @@
 ## D12 — New owned read-only cache-presence helper written
 - RDC wrote previously absent `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\04_StaticTests\R002R26_G3F_CachePresence_v1.ps1` 34 lines. Reviewed script parses only pinned F4+G1 local JSON and runs 31 `Test-Path`/`Get-Item` filename/length checks under exact historical S06 cache; does NOT read package bytes, hash original binaries, generate report files or run G3E Verify. Attempt1/3 WRITE_CONFIRMED, local full helper readback pending.
 - ONE NEXT: independently full read 34-line helper then execute it as a single scoped filename inventory.
+
+## D13 — Full independent local helper readback
+- RDC full direct read 34/34 lines exact newly owned cache-presence helper; fixed G1+F4 paths/UUID, leaf safety+dedup, read-only original 31 path/size metadata; no content SHA of packages and no original/cache writes. Attempt1/3 PASS.
+- ONE NEXT: native PS7 `-File` 31 selected historical cache path and archive length inspection, separate runtime receipt.
