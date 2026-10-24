@@ -12,3 +12,7 @@
 ## D2 — Current Status live
 - Full Current blob `2d28dc11e10d3b0de086131378932cbdfc2a8576`, 1,488,682 characters; TOP v7 AST0/inherited 50 PASS only; v8 fixtures NOT_RUN. Attempt1/3 PASS.
 - ONE NEXT: Handoff relevant sections and RDC status; remain source-only.
+
+## D3 — Handoff governance/live
+- Handoff full 1,071,776 chars blob `2fdc0fcf4fc3c354075ace91ff51e5179a3e30ef`; reviewed latest §0BX + §0R SECOND v8 NOT_CREATED and mandatory §§0BE/0BL/0R/0S/12B. Allowed source-only synthetic development, single action/checkpoint/readback, no real graph Verify as this block side-effect. Attempt1/3 PASS.
+- ONE NEXT: check RDC live roots/blocked list then source v7 exact pins.
