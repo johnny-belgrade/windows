@@ -76,3 +76,9 @@ Read-only native PS7 PID **2124**, separately obtained full original v1/v2 UTF8 
 ## G3-D11 — separate v2 PS7 AST verification PASS (attempt 1/3)
 
 RDC native **PID448**, exact local v2 source SHA256 `75CAED7CC858D9FF1C131BBFDA7880F7E2D9CCEDE3F1F14C21373D1F660C2B1E`, read-only PowerShell 7 parser `System.Management.Automation.Language.Parser::ParseFile` completed with literal stdout **`V2_AST_ERRORS=0`**. Native numeric exit not separately surfaced; no v2 SelfTest or real archive Verify run by this operation, no cache/source-image/registry mutation. Source was exactly v1+two reviewed parameter/constructor substitutions (D10). **ONE NEXT:** native v2 `-Mode SelfTest`, cumulative attempt 2/3 for original INVALID_ZIP fixture failure; journal original outcome/readback before any new action.
+
+## G3-D12 — second cumulative native SelfTest v2 PASS (attempt 2/3)
+
+PowerShell 7 remote process **PID7720**, frozen local **v2** SHA256 `75CAED7CC858D9FF1C131BBFDA7880F7E2D9CCEDE3F1F14C21373D1F660C2B1E`, actual `-Mode SelfTest` completed with exact stdout **`PASS_R002R26_G3_STATIC_SELFTEST_12_NEGATIVE_FIXTURES_NOT_SOURCE_GRAPH`**. First native v1 attempt (PID6740) failed closed on `$Input` automatic-variable collision; this v2 attempt **2/3 resolved** the same SelfTest issue. Numeric process exit was not separately exposed. 12 local synthetic fixtures only: **not** all G1 design cases, no real ZIP/AppxManifest XML graph verify, no 26300.9807 target-specific CAB, no source/cache/image/network/registry modifications and no release certification. v1 draft preserved unchanged; v2 remains DRAFT, not production promoted.
+
+**ONE NEXT:** close this G3 parser-development logical block with exact source-bound static result in Current FIRST, Handoff FIRST/SECOND, and concise Session Entry LAST; separately review extended negative ZIP/bundle fixtures and source provenance before any real 31-archive Verify; §0E GUI pause.
