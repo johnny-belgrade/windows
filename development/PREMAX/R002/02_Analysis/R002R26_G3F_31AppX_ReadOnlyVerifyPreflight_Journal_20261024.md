@@ -58,3 +58,7 @@
 ## D13 — Full independent local helper readback
 - RDC full direct read 34/34 lines exact newly owned cache-presence helper; fixed G1+F4 paths/UUID, leaf safety+dedup, read-only original 31 path/size metadata; no content SHA of packages and no original/cache writes. Attempt1/3 PASS.
 - ONE NEXT: native PS7 `-File` 31 selected historical cache path and archive length inspection, separate runtime receipt.
+
+## D14 — Native 31-AppX filename+size inventory PASS
+- RDC native PS7 PID440 completed reviewed helper; stdout `G3F_PRESENT=31`, `G3F_SELECTED=31`, `G3F_MISSING=0`, `G3F_OVERSIZE_256M=0`, `G3F_TOTAL_SOURCE_BYTES=112616297`, `G3F_MAX_ARCHIVE_BYTES=59212375`, `G3F_ORIGINAL_BINARY_CONTENT_READ=0`, `PASS_G3F_CACHE_NAME_SIZE_PREFLIGHT_SOURCE_ONLY`. This is filename/size gate only, not new SHA1, archive contents or graph closure. Native numeric exit not separately supplied; finished literal result. Attempt1/3 PASS.
+- ONE NEXT: verify future G3 report file AND parent are absent in owned R002/05_Evidence using isolated read-only Test-Path (no dir creation).
