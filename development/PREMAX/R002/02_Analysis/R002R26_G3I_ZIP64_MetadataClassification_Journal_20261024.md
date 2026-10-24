@@ -21,3 +21,7 @@ Scope: existing R002, target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab1-4cd5
 ## D4 — actual G3H granular receipt ledger
 - Full G3H journal blob `e3ef1ccc8581384e2852c23bd892e51d8135cf41` confirms D23 native 31/31 source SHA1, D31 real PID11580 failclosed, D32 receipt readback, D33 v9a ZIP64 guard branches, D34 receipt hash and D35 main graph parent absent.
 - ONE NEXT: verify reconnect / RDC device and allowed scopes, then target 7-Zip read-only availability and source-pinned independent ZIP metadata classification. G3I native work NOT_STARTED.
+
+## D5 — operator GitHub reconnect authenticated
+- Fresh GitHub connector `get_user_login` returned authenticated `johnny-belgrade` ID323928627, no errors; source-only access PASS, no mutation except owned journal. Attempt1/3.
+- ONE NEXT: live RDC device online check.
