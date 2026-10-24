@@ -22,3 +22,7 @@
 ## D4 — RDC device online
 - Native connector DESKTOP-4J4KCEA ID `d892c878-1a42-4fcd-b0e7-c51caf510ab6` online v0.3.1. No execution. Attempt1/3 PASS.
 - ONE NEXT: exact live RDC config allowed roots and blocked commands.
+
+## D5 — RDC exact native policy
+- Live config v0.3.1, allowedDirectories exactly `C:\work`,`C:\BLR20R2F5`; 33 blocked including `reg`, unchanged. Attempt1/3 PASS, no config write.
+- ONE NEXT: Session Entry G3F IN_PROGRESS source-bound plan before native analytical work; then SHA and G1/F4 guards.
