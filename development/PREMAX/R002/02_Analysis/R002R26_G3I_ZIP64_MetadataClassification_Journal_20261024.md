@@ -57,3 +57,7 @@ Scope: existing R002, target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab1-4cd5
 ## D13 — corrected standalone source-only ZIP64 inspector created
 - RDC direct `write_file` created previously absent `04_StaticTests\R002R26_G3I_Zip64MetadataInspector_v1_DRAFT.ps1`, 108 physical lines, unique owned path. Modes `SelfTest` synthetic-only and `Inspect` read-only source-pinned 31 SHA1 + ZIP EOCD/CDFH sentinel and 0x0001 extra count, bounded tail/central reads, no output file/ZIP extraction/v9a run. Source full local readback, AST and test still PENDING. Source delivery attempt2/3 PASS; no original mutation.
 - ONE NEXT: independent full local source readback, then AST / fixture tests before real selected metadata inspection.
+
+## D14 — independent complete new G3I local source readback
+- RDC direct `read_file` retrieved all 108/108 lines of new owned G3I v1 inspector; confirmed only read-only `SelfTest` and `Inspect` paths, exact pinned F4/G1, 31 SHA1, scoped cache bounds, ZIP EOCD/CDFH/extra metadata, stdout only. No source edit, attempt1/3 PASS. Parser AST and synthetic behavior are distinct pending gates.
+- ONE NEXT: native PS7 AST parse of this one owned script (no execution), journal/readback.
