@@ -18,3 +18,7 @@ RDC device `DESKTOP-4J4KCEA` online, app v0.3.1. Exact allowedDirectories `C:\wo
 
 ## ONE NEXT
 Operator review of the GitHub large-document read blocker and authorization of a verifiably accessible, authoritative way to read latest Current and required Handoff §0R/task sections. Re-enter complete mandatory bootstrap and independent readback before G3L source drafting; preserve all existing gates and the original G3K PASS/HOLD distinction.
+
+## 2026-10-24 — operator GitHub reconnect / verified recovery addendum
+
+Operator explicitly authorized two additional passes after reconnect. Pass 1: authenticated GitHub fetch_file again returned zero text for Current (blob `18440506d76e1305e0c7fe7f76bc273ec99fc632`) and Handoff (blob `7522b9d6b42e15a66b3a0025f73525244a01bbe1`). Pass 2: authenticated GitHub fetch of the **exact known Git blob endpoints** returned complete UTF-8 text, Current `1,514,527` characters, Handoff `1,110,401` characters, exact same Git blob identities. Read and reconciled Current TOP G3K, Handoff TOP §0CG and §0R SECOND, §§0R, 0BE, 0BL, 0S, 12B; G3K PASS one original, 31 graph not run, G3L NEXT unchanged. This was a content-access size limitation of the prior fetch_file path; **recovery PASS**, not a source or script runtime event. No new source/host/WIM mutation, no change to Current/Handoff/Registry/Master by this recovery operation. Next operation: pre-consequential G3L IN_PROGRESS checkpoint and mandatory local README/source verification. Original HOLD retained as history; current bootstrap read blocker RESOLVED.
