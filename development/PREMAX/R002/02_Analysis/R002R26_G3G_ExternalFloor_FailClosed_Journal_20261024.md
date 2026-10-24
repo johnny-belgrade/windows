@@ -50,3 +50,7 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D11 — complete local v9 source readback
 - RDC direct read all 853/853 lines, transport 56152 chars includes added trailing read wrapper newline; original authored v9 56151 chars. Exact external-floor mapping, G3G-SelfTest, sanitized G3G-Receipt and future Verify-only G3G-WriteFailure function anchors confirmed. This is source readback, not native byte or runtime proof. PASS.
 - ONE NEXT: native PowerShell7 source SHA256, then source-only AST and synthetic tests with per-operation receipts.
+
+## D12 — native v9 SHA256 pin
+- Native PS7 PID9416 finished SHA256 of newly owned local v9 DRAFT: `B9F9D8B586744D49727A490604B8B94B383B6B512BFB20CE97A00093BF13ABB6`. No original input/source/cache/image write. PASS.
+- ONE NEXT: inspect absence of a uniquely named G3G AST helper, create and full-read it; run native AST0 before any fixture.
