@@ -10,4 +10,8 @@
 
 **STATUS:** `PASS_LOCAL_READMES_38_AND_66` / `G3L_NOT_CREATED_NOT_RUN`.
 
-**ONE NEXT:** Perform a narrowly targeted RH06/RH07/RH08 index evidence lookup (no external sibling C:\work inventory) and record the exact relevant source paths/limits before reading original code and drafting G3L.
+**D3 — historical provenance-index one-operation read:** RDC direct `read_file` consumed all **2,417 lines** of `C:\work\UUP-history\99_Index\RH06_Final_ProvenanceMapping.csv` (header+2,416 rows). Verified columns include `source_kind`,`source_rel`,`source_sha256`,`build_group`,`stage`,`action`,`final_rel`; historical 26200.9445 / CrossBuild / Unresolved entries are provenance only, **NOT** 26300.9807 source identity, runtime authorization, AppX-graph completion or permission to execute historical scripts. No external C:\work sibling comparison, no file changes. Relevant historic AppX allowed/alwayskeep pattern paths exist as index references, but no reason to rerun their old parsing for G3L yet.
+
+**STATUS:** `PASS_RH06_2416_ROW_INDEX_READ` / `G3L_SOURCE_AND_TEST_NOT_CREATED`.
+
+**ONE NEXT:** Read `RH07_Manifest_SHA256.txt` in a separate file read, journal+independent readback, then `RH08_ContentMarkers_ForUniversalDrafts.csv` separately. 
