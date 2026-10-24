@@ -90,4 +90,8 @@
 
 **STATUS:** `PASS_G3L_V2_NATIVE_AST0` / `SHA_AND_SYNTHETIC_PENDING`.
 
-**ONE NEXT:** One native SHA256 of exact v2 under approved R002, per-action journal/readback, then synthetic retry #2 against SHA-pinned source.
+**D23 — native PS7 v2 SHA256 and GitHub first attempt blocked:** Native PS7 single-source `Get-FileHash` PID **11356** finished, exact v2 SHA256 **`64375085660B5B58BE5712E002F2470CDF51374FDE3D80278CE2DECB15E9E024`**. v1 SHA256 `8AEDAB580E1E0CBBEB2DA82125BBA17B2EFC00DC615C93A44B4F00351B3A6772`. Original Git D23 write attempt **1/3** denied by OpenAI safety checks before any Git commit; operator performed GitHub reconnect and explicitly approved **two additional compliant attempts**. This is source-hash evidence only, NOT synthetic/real 31 graph success; no original/cache/WIM/registry mutation.
+
+**STATUS:** `PASS_G3L_V2_NATIVE_AST0_SHA256_READBACK` / `G3L_V2_SYNTHETIC_NOT_RUN_REAL31_NOT_RUN`.
+
+**ONE NEXT:** Independently verify this exact Git D23 write, then separately execute only `-Mode SelfTestZip64` against the pinned v2 source (cumulative G3L synthetic attempt2/3), journal each operation/readback before next work.
