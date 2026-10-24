@@ -67,3 +67,8 @@
 
 - New non-overwriting local `R002R26_G3B_AppxManifestGraph_v5_DRAFT.ps1` written via RDC `write_file`: 317 lines / 23,158 chars, generated only from preserved v3 315-line source. JS callback-based literal replacement eliminates `$'` replacement expansion; exactly one old namespace predicate matched; exact source length change **+335 chars**, equal replacement-text length delta, no other planned change. New rule restricts package to Microsoft AppX manifest namespaces (including `manifest/foundation/windows10`) and bundle to explicit Microsoft bundle namespaces. Unchecked v4 retained unexecuted; v1/v2/v3 untouched. Source SHA, AST and SelfTest **not yet run**.
 - **ONE NEXT:** independent complete readback of local v5, native SHA and AST, then SelfTest cumulative attempt 2/3.
+
+## G3B-D13 — independent v5 complete local readback PASS
+
+- Scoped RDC `read_file` returned **317/317 v5 lines**, correct explicit Microsoft package/bundle namespace branches, original in-memory ZIP helpers, complete native SelfTest dispatch and no truncated end. No new execution or image/cache mutation.
+- **ONE NEXT:** independent native SHA256 of exactly v5, journal/readback; then independent native AST parse.
