@@ -126,3 +126,7 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D30 — live Registry r38 runtime guard
 - Registry main JSON blob `44f6c2f37cf9d4fd8c10331b491ff3d75c7c136b`, revision r38, recipes7/7 runtime_execution_allowed=false. Master frozen, original WIM/Cache/runtime unaffected. PASS.
 - ONE NEXT: Git Current FIRST complete G3G v9a AST0/synthetic81/source parity findings, then readback, Handoff FIRST/SECOND and Entry LAST.
+
+## D31 — §0R Current FIRST completed and independently read
+- Current FIRST commit `82079a96ba7f8df1dc39001f0cfad1915241ba4b`, blob `89d90a0f8e052711bb5f42086d26abbd276e22ff`, independent full 1,498,808-character readback PASS; v9a corrected AST0 source-exact synthetic81 and prior G3F checkpoint retained, real 31-AppX Verify NOT_RUN. 
+- ONE NEXT: Handoff FIRST documentation and independent blob readback; then reviewed SECOND and Entry LAST, GUI pause.
