@@ -46,3 +46,8 @@
 
 - First AST subprocess command PID `3356` exited after outer Windows PowerShell expanded embedded `$t/$e` variables inside double-quoted `pwsh.exe -Command` argument; child printed parser error `You must provide a value expression following the '+' operator`. **Wrapper AST attempt 1/3; v3 source AST NOT_EVALUATED**, no v3 file change. This is a command-string quoting issue, not proof that v3 code is malformed.
 - **ONE NEXT:** use literal-safe escaped variables in same intended bounded PowerShell AST-only command (attempt 2/3), with independent output and journal.
+
+## G3B-D9 — v3 native AST 0 syntax errors after corrected wrapper
+
+- Second cumulative AST wrapper attempt PID `7736` (outer-PowerShell variable escaping corrected) finished with literal `G3B_V3_AST_ERRORS=0`; exact local v3 source SHA256 still previously pinned `C1F6E6AC17D52A0BC0EBA435248D58343D267240525D210617B03E995EF979DC` (pre-run). No edits, no real manifest Verify. **AST0 PASS**, SelfTest still NOT_RUN. First wrapper failure remains in D8 history; cumulative 2/3.
+- **ONE NEXT:** native v3 `-Mode SelfTest` synthetic ZIP/XML/provider test, separately capture precise result and journal before any correction or mirror.
