@@ -101,3 +101,9 @@ PASS_R002R26_G3D_ZIP_SYNTHETIC_15_NOT_INTEGRATED_NOT_REAL_APPX
 
 - Direct Git Contents lookup for new source-only `development/PREMAX/R002/03_Drafts/R002R26_G3D_ZipCentralStrict_v1_DRAFT.ps1` returned HTTP404/NOT_FOUND, no existing Git source at this exact name. Synthetic v1 native AST0 and SelfTest15 source SHA `CE0CF14D0A6F734209131862BC7308C5931171A9611D34C3E7CE45F070050F1A` pinned locally; no Git source write yet.
 - **ONE NEXT:** exact local v1 byte transport into new Git development source path; independently verify all bytes SHA256 vs native.
+
+## G3D-D19 — source-exact ZIP standalone v1 Git mirror PASS
+
+- Local byte capture RDC PID8064 of previously SHA-pinned 139-line standalone G3D DRAFT, exact **7406 UTF-8 bytes**, new Git `development/PREMAX/R002/03_Drafts/R002R26_G3D_ZipCentralStrict_v1_DRAFT.ps1` commit `87c928de0f92837e16e472521427621d616e0c90` blob `f9f128102956aa738fa9d1c5301302026d1d36e0`. Independent Git Base64 raw readback **7406 bytes**, JavaScript SHA256 implementation selfchecked against canonical `abc` digest, resulting `CE0CF14D0A6F734209131862BC7308C5931171A9611D34C3E7CE45F070050F1A` **EXACT native PID2932**. Git mirror/byte-source identity PASS, development-only script, no v6 integration/real Verify.
+- Native AST0 PID2684, synthetic-only SelfTest **15/15 PID5224** PASS, including stored CRC known vector and tampered stored CRC negative; deflate central header positive did **not** test decompressed CRC. Lack of integration into source v6 is explicit unresolved dependency, not a parser certification.
+- **ONE NEXT:** review external provider/WIM floor evidence and write a source-bound next-real-Verify plan (design only), then G3D protocol closeout Current FIRST/Handoff FIRST+SECOND/Session Entry LAST/GUI pause.
