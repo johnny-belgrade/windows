@@ -142,4 +142,8 @@
 
 **STATUS:** `PASS_V3_FIXTURE_REVIEW_ONE_EXPECTATION_DELTA` / `V4_DOCUMENTED_NOT_CREATED`.
 
-**ONE NEXT:** Verify v4 exact target is absent under existing R002 `03_Drafts`; then use a source-SHA-gated, nonoverwriting CreateNew one-string v4 correction, full independent source readback, native AST/SHA and separate fixture gates.
+**D36 — new v4 exact path absence preflight:** Scoped RDC `list_directory` of existing `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\03_Drafts` at depth1 confirms G3L v3 exists and exact `R002R26_G3L_AppxManifestGraph_Zip64_v4_DRAFT.ps1` **absent**. No source/cache/OS changes or execution. Frozen v3 native SHA256 `C8365420FE9011D3AC9A9C0762878D3783C6BF16C89F06431C3FFD1B2E4275DF`.
+
+**STATUS:** `PASS_G3L_V4_DEST_ABSENT` / `NEW_SOURCE_NOT_DELIVERED`.
+
+**ONE NEXT:** Author new v4 with exact one-expected-code fixture literal correction using source-v3 SHA guard, `FileMode.CreateNew`, then direct readback before native AST/hash/fixture operation.
