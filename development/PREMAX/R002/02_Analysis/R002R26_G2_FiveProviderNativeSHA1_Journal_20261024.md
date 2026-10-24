@@ -21,3 +21,7 @@ One RDC direct exact `list_directory(depth=1)` under `C:\work\E2E\BlueLite_Stage
 ## D — Owned G2 destination collision gate
 
 One exact RDC `list_directory` under `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\05_Evidence\R002R26_G2_ProviderSHA1_001` returned `[NOT_FOUND]`. Thus no existing owned report at this target path at observation time. G2 operations below only read five original .9711 providers (combined 32-file cohort previous full 115,765,780B), SHA1 CPU/disk/thermal scope; no new output directory necessary until owned receipt is prepared and checked. **ONE NEXT:** first isolated SHA-1 of historical `Microsoft.UI.Xaml.x64.2.8.appx` versus frozen 9807 expected `A5FA9D96FE72D5CD885DAB0B6F50A44CA82949A6`; record native result and readback before file2.
+
+## E — Provider 1/5 native SHA1 exact .9807 source-match PASS
+
+Single source-cache read-only `Get-FileHash -Algorithm SHA1` on `C:\work\E2E\BlueLite_Stage1_S06_26300_9711_2b22470a\UUPs\Microsoft.UI.Xaml.x64.2.8.appx` via unchanged RDC command; native **PID7256** completed, stdout `A5FA9D96FE72D5CD885DAB0B6F50A44CA82949A6`; identical to original 26300.9807 R23 SHA-1 metadata pin in G1 matrix. **PASS_REUSABLE_EXACT_SOURCE_SHA1 (1/5)**. Native exit integer not independently exposed; no source, cache, WIM, or output edit. **ONE NEXT:** independently read back this journal, then separate SHA1 for `Microsoft.VCLibs.x64.14.00.Desktop.appx` expected `9C0F20CDA41ECEEA9989F9A0C0999D82B7C05F19`.
