@@ -64,3 +64,7 @@
 ## D15 — Native v8 AST0
 - RDC PS7 PID6620 finished reviewed helper, stdout `G3E_V8_AST_ERRORS=0` and `PASS_G3E_V8_AST0_SOURCE_ONLY`. Numeric native exit not independently surfaced. This certifies syntax ONLY, not fixture behavior nor graph Verify. Attempt1/3 PASS.
 - ONE NEXT: execute v8 `-Mode SelfTestStrict` only (pure in-memory ZIP fixture scope); do not run `-Mode Verify`.
+
+## D16 — Native strict ZIP/CRC fixtures 18/18
+- RDC PS7 PID4696 finished v8 `-Mode SelfTestStrict`, literal stdout **`PASS_R002R26_G3E_V8_STRICT_SYNTHETIC_18_NOT_REAL_APPX`**; 18 in-memory positives/negatives cover stored, deflate, descriptor, CRC vector, altered stored/deflate manifest CRC, encrypted flag, unsupported method, ZIP64 sentinel, malformed central/EOCD/offset, multidisk, local CRC and local name mismatch, safe UTF8, bundle child pass and mismatch. Numeric native exit not separately exposed. Original real AppX / WIM unchanged, no `-Mode Verify`. Attempt1/3 PASS.
+- ONE NEXT: separately execute complete inherited 50 + strict 18 `-Mode SelfTest`, then independently journal/readback. This will NOT prove real 31 package graph.
