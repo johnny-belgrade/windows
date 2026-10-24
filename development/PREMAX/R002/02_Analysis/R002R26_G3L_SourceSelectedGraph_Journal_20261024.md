@@ -162,4 +162,8 @@
 
 **STATUS:** `PASS_G3L_V4_LOCAL_SOURCE_READBACK_AST0_SHA256` / `SYNTHETIC_NOT_RUN_REAL31_GRAPH_NOT_RUN`.
 
-**ONE NEXT:** Run only v4 `-Mode SelfTestZip64` on SHA-pinned local draft; journal result, independently read back, and only then decide on aggregate `SelfTest`. No blind rerun frozen v9a or real AppX until all static/synthetic/error/collision preflight PASS.
+**D41 — G3L v4 native ZIP64 synthetic 11/11 PASS:** One bounded native PowerShell 7 `-Mode SelfTestZip64` on v4 SHA256 `60FD996C6AD419E42B7C219EF9208C87D3847E494E5CE3014CEB159388B714A7`, RDC PID **11416** finished with literal **`PASS_G3L_ZIP64_CENTRAL_SYNTHETIC_11_ONLY_NOT_REAL_APPX`**. This validates 3 synthetic positive plus 8 negative ZIP64/classic central cases in memory; previous v3 fixture expectation taxonomy fail is corrected by new nonoverwriting v4 without modifying v3. **NOT** actual selected 31 cache/manifest/provider graph, CAB or WIM. Native numeric exit unavailable; literal test pass and completed tool result retained. No protected file/OS mutation.
+
+**STATUS:** `PASS_G3L_V4_ZIP64_SYNTHETIC_11_AST0_SHA` / `HOLD_AGGREGATE_SELFTEST_AND_REAL31_VERIFY_NOT_RUN`.
+
+**ONE NEXT:** Independently read back D41 journal, then execute separately only v4 `-Mode SelfTest` inherited graph/CRC/manifest/ZIP fixtures and ZIP64 fixtures; journal/readback before any subsequent real source-scoped 31-file operation.
