@@ -57,3 +57,7 @@ Direct scoped local `read_file` first8 lines confirmed original R002 CycleManife
 ## M — local R002 manifest root G2 status edit/readback
 
 One scoped RDC `edit_block` changed only root `status` to `R002R26_G2_FIVE_PROVIDER_SHA1_EXACT_NOT_XML_CLOSURE`; separate direct first6-line readback verified exact value, original source-build string unchanged. No F4/G1/history fields edited. **ONE NEXT:** root `one_next` only -> `R002R26_G3_APPX_ZIP_XML_MANIFEST_PARSER_DRAFT_AND_NEGATIVE_TESTS`, readback/journal before append receipt.
+
+## N — local manifest ONE NEXT G3 source-only parser/negative fixtures
+
+One scoped RDC `edit_block` only root `one_next` from G2 to `R002R26_G3_APPX_ZIP_XML_MANIFEST_PARSER_DRAFT_AND_NEGATIVE_TESTS`, separate direct local readback around line229 confirmed exact value, previous R9 record untouched. No parser draft or XML executed. **ONE NEXT:** append one G2 binary-SHA receipt object preserving F4/G1, independent full local JSON parse+QA and Git CAS sync.
