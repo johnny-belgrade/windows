@@ -30,3 +30,9 @@ RDC direct `read_file` from the **same exact new source path**, independent of t
 RDC `start_process`, shell `powershell.exe` invoking PowerShell 7 Get-FileHash on only new 242-line draft, native PID **1228**, completed stdout SHA256 **`C7964D4C7B5D1820A4C40E25B8C6640C96BD04ECCE3FB5F75E24975F070DDF46`**. Remote tool reports process finished; numeric native exit was not separately exposed. No source/cache writes, packages read, network, WIM or registry. This is a content pin **not** AST, negative fixtures or manifest closure.
 
 **ONE NEXT:** single independent PS7 parser/AST0 check of exact pinned local new source, read-only; document and read back the result before negative fixtures.
+
+## G3-D4 — read-only PS7 AST parser check (attempt 1/3)
+
+RDC `start_process` using **pwsh.exe**, native PID **7912**, parser `System.Management.Automation.Language.Parser::ParseFile` against new source with frozen SHA256 `C7964D4C7B5D1820A4C40E25B8C6640C96BD04ECCE3FB5F75E24975F070DDF46` completed and emitted literal `AST_ERRORS=0`. Only syntax validated, **no SelfTest, Verify, package archive read, output JSON or graph closure**. Native numeric exit unexposed. Original G1 matrix remains source-pinned; no code promotion.
+
+**ONE NEXT:** invoke isolated source-only `-Mode SelfTest` against **unchanged SHA-pinned draft**, record exact negative-fixture stdout/error and limit retries to 3 total; then journal independent readback. No Verify or cache reads in this step.
