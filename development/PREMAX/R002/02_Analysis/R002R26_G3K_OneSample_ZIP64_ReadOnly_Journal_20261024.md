@@ -53,3 +53,7 @@ Existing R002; target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab1-4cd5-ad05-7
 ## D12 — G3K owned v1 native AST0
 - RDC PS7 PID10292 literal `G3K_V1_AST_ERRORS=0` on complete new 297-line file, no source execution/extra file reads. PASS attempt1/3.
 - ONE NEXT: native SHA256 source pin, log and independent readback, then synthetic-only SelfTest prior to original sample.
+
+## D13 — G3K v1 exact native SHA256 pin
+- Native RDC PS7 PID10488 one Get-FileHash of owned G3K v1 297-line source = `6E68BA02153B31570A885B50DA4A3D4F8745EA72EC666350E7B1B143C5070268`; native AST0 and complete source readback previously. No original source/cache mutation. PASS.
+- ONE NEXT: run only in-memory synthetic fixtures `-Mode SelfTest` (11 inherited negative/positive) with this fixed exact source; checkpoint before one-original native read-only Inspect.
