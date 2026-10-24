@@ -85,3 +85,14 @@ CRC32_TYPE=NO
 
 - Native PS7 AST parse first attempt PID unknown returned `G3D_ZIP_AST_ERRORS=0`. Script SHA256 `CE0CF14D0A6F734209131862BC7308C5931171A9611D34C3E7CE45F070050F1A`. Syntax PASS, semantics not yet evaluated.
 - **ONE NEXT:** execute exclusively local synthetic memory SelfTest once, then checkpoint/readback.
+
+## G3D-D17 — first native ZIP central-header synthetic-only SelfTest
+
+- Native scoped PS7 `-File R002R26_G3D_ZipCentralStrict_v1_DRAFT.ps1 -Mode SelfTest`, PID unknown, source SHA256 `CE0CF14D0A6F734209131862BC7308C5931171A9611D34C3E7CE45F070050F1A`: **PASS 15 synthetics**. Actual output excerpt (shortened): `Process started with PID 5224 (shell: powershell.exe)
+Initial output:
+PASS_R002R26_G3D_ZIP_SYNTHETIC_15_NOT_INTEGRATED_NOT_REAL_APPX
+
+✅ Process 5224 has finished execution
+
+[executed on device: DESKTOP-4J4KCEA (d892c878-1a42-4fcd-b0e7-c51caf510ab6)]`. Cumulative SelfTest attempt **1/3**; not integrated into v6 real parser, no actual 31-AppX Verify.
+- **ONE NEXT:** independently source-freeze exact script into new Git development path with byte SHA, then classify uncovered CRC/data descriptor and real Verify design.
