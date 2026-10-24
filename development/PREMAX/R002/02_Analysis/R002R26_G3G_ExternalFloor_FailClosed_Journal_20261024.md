@@ -17,3 +17,7 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D3 — Handoff full governing scope
 - Handoff blob `8e10359bd1723a197ed553da52cdcb4a429f45a7`, 1081940 chars; current §0BZ+§0R SECOND mandates nonoverwriting v9 source-only external floor classification + owned fail-closed receipt tests; §§0BE/0BL/0R/0S/12B present. PASS.
 - ONE NEXT: verify RDC connectivity/config; read frozen v8 complete source and source pins.
+
+## D4 — RDC device
+- DESKTOP-4J4KCEA online, connector v0.3.1, ID `d892c878-1a42-4fcd-b0e7-c51caf510ab6`. PASS.
+- ONE NEXT: get live allowedDirectories/blockedCommands policy unchanged.
