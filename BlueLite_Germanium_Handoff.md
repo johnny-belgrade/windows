@@ -1,5 +1,11 @@
 # BlueLite v1.0 — Germanium Universal Successor Handoff
 
+## 0BT. 2026-10-24 — G3C Git reconnect recovery, previously blocked journal and Current writes PASS (§0R FIRST)
+
+Operator authorized retry of both previously blocked Git writes after GitHub reconnect, at most two additional attempts per logical operation. **Recovered D2 journal review:** cumulative 2/3, Git commit `b7cead4ee7f457f3b47a492a2e962b8dc0e08e1b`, blob `d3c9af13dbcf8e60f82382c3cfdf7556b0aad4f6`, independent readback. **Recovered Current FIRST:** cumulative 2/3 commit `7c8613d338570157c49cd11d4d48b665ca324d64`, blob `efb2f39d087aa39bb1d4f708cb76253171e1cd82`, independent full blob content readback PASS. Original two platform safety refusals remain historical in G3C journal D2/D3. No third attempt was needed and no permission/transport workaround was used.
+
+Current actual G3C technical evidence is prior source-only local v5 full 317-line read plus independent native SHA PID7768 exactly `6577EFB72482A4CAC24635B24BEA2F20CF3B3B38D603D75810158D9DB06F42DE`, same pinned Git v5 blob `849eb1fc5620d5978d315486310941109f2dc845`. G3B native synthetic 35 PASS remains earlier proof, not a new G3C fixture run. New v6 not created, real 31-package AppX Verify not run, CAB not acquired, WIM/CBS/registry/ISO/NTLite/VM unchanged. Master v6.3.1 and RecipeRegistry r38 unchanged; RDC live on approved paths and original denylist33. No mutation authorization inferred. [G3C reviewed journal](development/PREMAX/R002/02_Analysis/R002R26_G3C_RemainingStrictFixtures_Journal_20261024.md) and [Current](BlueLite_Current_Status.md) retain literal results.
+
 ## 0BS. 2026-10-24 — R26 G3B reconnect v2 mirror recovery, local v5 35 fixture static PASS (§0R FIRST)
 
 **Operator reconnect scope:** user confirmed GitHub reconnect and explicitly allowed the **two remaining attempts** on prior source-mirror block. Cumulative v2 mirror attempt **2/3 SUCCESS**: scoped RDC PID1536 exact original 16,464 bytes, Git development source commit `209d0ec043374dd49a15d6b8634b674fbf9885a6` blob `8bcc7a463edb3bf43e7969bdd4723c919960d4af`, independent Git raw SHA256 equals prior native original v2 `75CAED7CC858D9FF1C131BBFDA7880F7E2D9CCEDE3F1F14C21373D1F660C2B1E`. Previous 1/3 safety rejection stays historical, no third attempt. RDC permitted roots/33 blocklist unchanged; Master v6.3.1 original blob unchanged.
