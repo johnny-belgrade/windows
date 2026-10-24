@@ -30,3 +30,7 @@ Project existing R002 only, target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab
 ## D6 — original G3J v1 source-only candidate created
 - RDC `write_file` wrote **new, previously absent** 212-line standalone draft `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\04_StaticTests\R002R26_G3J_Zip64Central_v1_DRAFT.ps1`; no overwrite and no v9a/original/cache mutations. Contains ZIP64 EOCD+locator/record, bounded 64-bit counts and central offsets, optional zero-length ZIP64 extra, entry/local/CRC/path checks, generated in-memory classic/ZIP64 fixtures including adversarial negative cases. **SOURCE WRITE only; complete local source readback, native AST, hash and any self-test pending.** Attempt1/3 write confirmed.
 - ONE NEXT: independent full 212-line source readback; journal and verify before AST.
+
+## D7 — independent 212-line source readback
+- RDC direct read completed full 212/212 lines from new owned G3J v1; verified isolated `SelfTest` entrypoint, in-memory fixtures and no original access/filestream original or output write. ZIP64 record/central/path/local/CRC guard functions are present. No claim AST/test readiness. Attempt1/3 readback PASS.
+- ONE NEXT: native PS7 parser AST-only examination of exact owned v1, separately journal result before any execution.
