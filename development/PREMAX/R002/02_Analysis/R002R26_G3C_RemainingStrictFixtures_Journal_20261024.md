@@ -42,3 +42,8 @@
 
 - After D5 independent Git readback, reviewed exact Git v5 source blob `849eb1fc5620d5978d315486310941109f2dc845`. A **new**, non-overwriting owned RDC local draft `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\03_Drafts\R002R26_G3C_AppxManifestGraph_v6_DRAFT.ps1` was written, RDC tool confirmed **372 lines** (~26,871 source chars). Preserved v1–v5, unchanged original AppX cache. Modifications compared to v5: added archive-wide declared expanded-size budget function integrated in ZIP reading; reusable source build/UUID/R23/F4 cardinality contract and digest comparator used by Verify; 15 appended in-memory synthetic assertions (including positive controls) for contract mismatch, SHA1, ZIP size arithmetic, bundle child Name/Version and nested-bundle rejection. This is **draft only**; v6 SHA, AST and SelfTest not yet executed.
 - **ONE NEXT:** independent complete local v6 readback, then separate native SHA256, AST and synthetic SelfTest, journaling each result before next action.
+
+## G3C-D7 — independent v6 local complete source readback
+
+- Scoped RDC direct `read_file` returned **372/372 lines**, confirmed precise `Assert-ZipBudget`, `Assert-SourceContract`, `Assert-MatchedSha1` helper declarations, G3C SelfTest marker and complete original Verify/Mode dispatch at end. Original v5 Git source remained separate. This proves full local text present, not AST or synthetic functional PASS.
+- **ONE NEXT:** native v6 SHA256 only; journal/readback before AST.
