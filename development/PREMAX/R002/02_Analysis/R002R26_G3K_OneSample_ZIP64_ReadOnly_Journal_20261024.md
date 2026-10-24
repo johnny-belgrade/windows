@@ -57,3 +57,7 @@ Existing R002; target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab1-4cd5-ad05-7
 ## D13 — G3K v1 exact native SHA256 pin
 - Native RDC PS7 PID10488 one Get-FileHash of owned G3K v1 297-line source = `6E68BA02153B31570A885B50DA4A3D4F8745EA72EC666350E7B1B143C5070268`; native AST0 and complete source readback previously. No original source/cache mutation. PASS.
 - ONE NEXT: run only in-memory synthetic fixtures `-Mode SelfTest` (11 inherited negative/positive) with this fixed exact source; checkpoint before one-original native read-only Inspect.
+
+## D14 — G3K native synthetic fixture regression PASS
+- RDC PS7 PID8236 executed exact owned G3K v1 `-Mode SelfTest`, literal `PASS_G3J_ZIP64_CENTRAL_SYNTHETIC_11_ONLY_NOT_REAL_APPX`, process completed. 3 classic/ZIP64/optional-extra positives + 8 failclosed guards inherited G3J v2; original file not accessed, no output writes. PASS attempt1/3.
+- ONE NEXT: single source-bound original 32717-byte AppInstaller_scale-100.msix read-only `-Mode Inspect` (SHA1 + ZIP64 central + .NET ZipArchive names + manifest CRC/XML). Max original disk read about 64 KiB plus bounded manifest decompression, CPU low, no output files. One attempt then separately journal/readback, no v9a Verify.
