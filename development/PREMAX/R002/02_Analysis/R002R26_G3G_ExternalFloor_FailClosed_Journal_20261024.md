@@ -62,3 +62,7 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D14 — native AST helper created
 - RDC wrote new 11-line owned `04_StaticTests\R002R26_G3G_v9_AST_v1.ps1`, only Parser.ParseFile against v9; no archive or Verify executed. File absence established PID12164. Write reported PASS.
 - ONE NEXT: independently full read helper before native AST invocation.
+
+## D15 — independent AST helper full readback
+- RDC direct full read 11/11 lines of new helper. Fixed v9 source path, only native ParseFile, zero-error acceptance, no real AppX/cache manipulation. PASS.
+- ONE NEXT: execute read-only AST helper with native PS7 -File and journal numeric error count.
