@@ -96,3 +96,7 @@
 ## D23 — §0R Current FIRST committed and read back
 - Current main updated commit `7114fd37b422fcfcfa8bcc2c237aa8b104993452`, blob `a83477debadea72d70d08f72032e4530736cf1ba`; independent full fetch 1,491,847 chars, new G3E v8 50+18 static PASS and v7 historical retained. No release/real graph claim. Attempt1/3 PASS.
 - ONE NEXT: Handoff §0R FIRST verified G3E endpoint and one next G3F source-bound real Verify preflight, then Handoff SECOND and Entry LAST; Master and Registry unchanged.
+
+## D24 — Handoff §0R FIRST/SECOND independent closeout
+- Handoff FIRST commit `1c04d3a27aa45b074aa91454275630313d2d1b5f`, blob `8420891b1115c6ac87baf32980d9aa2a262bc8fb` independent full readback; Handoff SECOND commit `7d1a939e39e3a97c505a440c880e5e1451aaf895`, final blob `fd10dc139a897471b0ee3fd064a96b98fab04bc7` independent full 1,076,858-char readback including new §0BY/§0R SECOND and preserved old §0BX/§0BE. Next `R002R26_G3F_REAL_31APPX_READONLY_VERIFY_PREFLIGHT`, PREPARED_NOT_RUN. Attempt1/3 PASS.
+- ONE NEXT: Session Entry LAST CAS + independent exact fetch/readback as last Git mutation in G3E v8 block, then GUI pause; no real AppX Verify.
