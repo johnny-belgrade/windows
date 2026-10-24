@@ -33,3 +33,18 @@ One isolated native RDC `start_process`, `pwsh.exe` Get-FileHash SHA256 on only 
 ## F — first source-scoped provider lookup failed at PowerShell command quoting, zero provider evaluation
 
 Attempt1 launched remote `pwsh.exe -Command "…"` through default outer RDC `powershell.exe`; PID6468 reported process finished with **PowerShell ParserError** (`Missing statement after '=' in hash literal`). Observed error string shows `$j/$n/$_` interpolated/removed by **outer shell double-quote expansion** before inner script was parsed. No R23 JSON provider result, no output JSON/report and no package write; failure is strictly command quoting, not proof of missing providers or failure of SHA pin. **Cumulative 1/3** for this provider-lookup request. Next safe correction: use supported direct `shell: pwsh.exe` with command as a single native PowerShell expression (without nested `pwsh.exe -Command "…"`), exact same pinned R23 input and at most six URL-free results; no new tool/root or security restriction change. Do not claim provider verification until corrected run actually emits six records. **ONE NEXT:** one corrected direct PS7 read-only lookup, journal stdout/exit limitations, independent readback.
+
+## G — corrected original R23 read-only provider lookup PASS, six exact source records
+
+Second cumulative attempt, direct PS7 shell (`shell=pwsh.exe`, no nested double-quoted `-Command`), completed PID7956 with **six JSON results, all `count=1`** in pinned URL-free source 26300.9807 R23 `Apps` inventory. Expected per-file target queue SHA1:
+
+| Exact target out | Target 26300.9807 SHA-1 |
+|---|---|
+| `Microsoft.UI.Xaml.x64.2.8.appx` | `A5FA9D96FE72D5CD885DAB0B6F50A44CA82949A6` |
+| `Microsoft.VCLibs.x64.14.00.Desktop.appx` | `9C0F20CDA41ECEEA9989F9A0C0999D82B7C05F19` |
+| `Microsoft.VCLibs.x64.14.00.appx` | `6E15245AED25EE83B027521F9CF9EA812C9D016D` |
+| `Microsoft.NET.Native.Framework.x64.2.2.appx` | `612AD442B8740F4C57B8C84E6BF465BA4699118C` |
+| `Microsoft.NET.Native.Runtime.x64.2.2.appx` | `E1A85885FD4453165061351651289CCE8F8590C4` |
+| `687d1ced-aab1-4cd5-ad05-705189769731.AggregatedMetadata.cab` | `0A5F6B6ADD22E6500ECFB91E192FC7B17B8327F7` |
+
+All are from current source URL-free *metadata* `records`, not package bytes. The 5 provider candidates can be checked against historical S06 local SHA1 *per exact out*; same names alone do not qualify. The CAB is source UUID-bound and was absent from F4, independently require acquisition/provenance if reconstruction demands it. Numeric process exit not separately exposed; remote completion+valid 6-row JSON stdout observed. No signed URL, network request or cache mutation. **ONE NEXT:** prepare a bounded G1 design contract that explicitly includes five target metadata SHA pins and per-package SHA1 verification, safe archive XML, dependency closure; then review design as next phase before any new executable draft.
