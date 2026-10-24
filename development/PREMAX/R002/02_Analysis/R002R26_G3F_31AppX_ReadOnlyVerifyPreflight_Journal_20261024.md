@@ -62,3 +62,7 @@
 ## D14 — Native 31-AppX filename+size inventory PASS
 - RDC native PS7 PID440 completed reviewed helper; stdout `G3F_PRESENT=31`, `G3F_SELECTED=31`, `G3F_MISSING=0`, `G3F_OVERSIZE_256M=0`, `G3F_TOTAL_SOURCE_BYTES=112616297`, `G3F_MAX_ARCHIVE_BYTES=59212375`, `G3F_ORIGINAL_BINARY_CONTENT_READ=0`, `PASS_G3F_CACHE_NAME_SIZE_PREFLIGHT_SOURCE_ONLY`. This is filename/size gate only, not new SHA1, archive contents or graph closure. Native numeric exit not separately supplied; finished literal result. Attempt1/3 PASS.
 - ONE NEXT: verify future G3 report file AND parent are absent in owned R002/05_Evidence using isolated read-only Test-Path (no dir creation).
+
+## D15 — Owned graph-report parent absence
+- Native RDC PS7 PID6620 `Test-Path` exact owned `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\05_Evidence\R002R26_G3_AppxGraph_001` returned False; therefore graph-report file nested under it cannot yet exist by that path, no collision. No output directory or report was created. Attempt1/3 PASS.
+- ONE NEXT: static review source-exact v8 `Verify` implementation and ZIP budgets, detect any missing report/schema/transport guards before separately preparing actual real 31-AppX Verify.
