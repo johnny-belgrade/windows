@@ -52,3 +52,11 @@
 
 - New Git-only design `development/PREMAX/R002/02_Analysis/R002R26_G3D_ZIP_FormatGuards_And_31AppX_Verify_Design_20261024.md` commit `6b65fd103d0eaaec5c52cc69f8c392a983b717b8`, blob `999fefe8bfb32df1eda1dd0f6fa9995562475b05`, independent readback PASS. Includes EOCD/CDFH bounds, flags/method, ZIP64/multidisk, source-local manifest CRC, exact negative synthetics and separate later 31-AppX read-only Verify source gates. **Design only**, new v7 not created, real Verify NOT_RUN.
 - **ONE NEXT:** check local PowerShell .NET runtime CRC32 availability via read-only type inspection; journal result and select bounded implementation strategy. No binary archives opened.
+
+## G3D-D11 — native runtime ZIP CRC32 helper availability
+
+- Scoped read-only native PS7 `[Environment]::Version` and `[System.IO.Hashing.Crc32]` type presence query: DOTNET=10.0.13
+CRC32_TYPE=NO
+
+✅ P, `CRC32_TYPE=NO`, PID unavailable. No network, package access or modification. This only tells type availability in default resolution context; not implementation proof.
+- **ONE NEXT:** decide conservative v7 implementation scope and author new *non-overwriting* standalone negative ZIP metadata checker only after explicit source-code diff and no v6 modification; AST/SelfTest independent.
