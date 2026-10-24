@@ -78,4 +78,8 @@
 
 **STATUS:** `PASS_G3L_V2_PATH_ABSENT` / `V1_SYNTHETIC_FAIL_CLOSED_PRESERVED`.
 
-**ONE NEXT:** Deliver exact v1-derived v2 source with ONLY one expectation string replacement at synthetic `G3L-ExpectZip64Hold $unsafe 'UNSAFE_ENTRY_PATH'`; full local readback, native AST and SHA before test attempt2.
+**D20 — nonoverwriting local v2 source generated:** Native RDC PS7 PID **8200** finished `G3L_V2_SOURCE_CREATED_BYTES=54344`. Scoped only existing new v1→new v2 path inside R002 `03_Drafts`, verified v1 SHA256 `8AEDAB580E1E0CBBEB2DA82125BBA17B2EFC00DC615C93A44B4F00351B3A6772`; exactly one literal synthetic expectation `G3L-ExpectZip64Hold $unsafe 'UNSAFE_ENTRY_PATH'` changed to `... 'ZIP_UNSAFE_ENTRY_PATH'`; `FileMode.CreateNew` prevented overwriting an existing v2. **No independent v2 content/hash/AST yet**, no tests or original/AppX WIM mutation. v1 preserved.
+
+**STATUS:** `G3L_V2_CREATED_NATIVE_PENDING_INDEPENDENT_CHECK` / `V1_FAILCLOSED_PRESERVED`.
+
+**ONE NEXT:** Read full 867 lines of NEW v2 directly via RDC, verify correction and preservation of rest, then separate native AST0/hash/ZIP64 SelfTest attempt2.
