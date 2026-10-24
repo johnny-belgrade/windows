@@ -14,3 +14,7 @@
 ## D2 — Current Status verified
 - Exact Current main blob `a83477debadea72d70d08f72032e4530736cf1ba`, complete 1,491,847 chars; G3E v8 native AST0 + synthetic50+18 PASS, real 31-AppX graph NOT_RUN. Attempt1/3 PASS.
 - ONE NEXT: Handoff §0BY/§0R SECOND current plan and standing analytic authorization review.
+
+## D3 — Handoff §0R/§0BL governance
+- Full Handoff Git blob `fd10dc139a897471b0ee3fd064a96b98fab04bc7`, 1,076,858 chars; latest §0BY/§0R SECOND source v8 SHA, next G3F exact 31 file preflight and output absence; §§0BE/0BL/0R read. Standing scoped read-only analytics, no image mutation. Attempt1/3 PASS.
+- ONE NEXT: check RDC online/live allowroots/blocklist before native input checks.
