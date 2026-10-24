@@ -41,3 +41,7 @@ Scope: existing R002, target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab1-4cd5
 ## D9 — original G3H failure receipt re-read
 - RDC directly re-read full existing 15-line `05_Evidence\R002R26_G3G_FailureReceipt_001\R002R26_G3G_FailClosedReceipt.json`, `error_code=ZIP64_UNSUPPORTED`, frozen v9a source SHA pin, exact build+UUID, `graph_closure=NOT_CERTIFIED`; protected cache/WIM unchanged per actual receipt. This does not identify package; native prior receipt SHA256 `E4616A7F0A10864B857BE1D7B9D5F2FCFA3D74FB421EBD18123E219F398EB3BA`. Read attempt1/3 PASS.
 - ONE NEXT: confirm native 7-Zip command discovery within allowed scope without invoking external binary; then select bounded native parser inspection route.
+
+## D10 — user-reported 7-Zip native discoverability
+- RDC native PS7 PID8036 `Get-Command` metadata lookup for 7z.exe/7za.exe/7zz.exe (no binary execution, no access to nonallowed root) returned zero applications on PATH; user reports 7-Zip 26.05 installed, but native executable/version/path **NOT_VERIFIED**, so do not infer 7-Zip failure or connector problem. PASS command executed, discovery result NONE.
+- ONE NEXT: source-pinned native .NET/PS7 ZIP central-metadata classifier inside existing approved `C:\work` workspace; first verify unique owned draft destination absence.
