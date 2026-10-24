@@ -53,3 +53,7 @@ Scope: existing R002, target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab1-4cd5
 ## D12 — G3I source delivery wrapper JS error, no RDC write
 - First attempt to submit new standalone G3I inspector via script-based connector wrapper aborted before RDC call: literal `ReferenceError: p is not defined` from unescaped JavaScript `${p}` interpolation in raw PS7 text. **NO local source created, no original cache read, no mutation**. Source-delivery attempts cumulative 1/3 (not a platform safety rejection).
 - ONE NEXT: correct wrapper quoting by avoiding `${...}` within JS template; re-submit reviewed new-only 7-Zip-independent ZIP metadata read-only source, then independent local readback and AST.
+
+## D13 — corrected standalone source-only ZIP64 inspector created
+- RDC direct `write_file` created previously absent `04_StaticTests\R002R26_G3I_Zip64MetadataInspector_v1_DRAFT.ps1`, 108 physical lines, unique owned path. Modes `SelfTest` synthetic-only and `Inspect` read-only source-pinned 31 SHA1 + ZIP EOCD/CDFH sentinel and 0x0001 extra count, bounded tail/central reads, no output file/ZIP extraction/v9a run. Source full local readback, AST and test still PENDING. Source delivery attempt2/3 PASS; no original mutation.
+- ONE NEXT: independent full local source readback, then AST / fixture tests before real selected metadata inspection.
