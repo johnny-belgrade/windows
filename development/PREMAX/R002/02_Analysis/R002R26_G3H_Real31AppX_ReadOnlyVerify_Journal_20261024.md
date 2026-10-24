@@ -81,3 +81,7 @@ Boundary: existing R002 only, frozen v9a 728 lines/46855 bytes SHA256 `B422869D4
 ## D19 — new owned G3H SHA1 helper absence gate
 - Native PS7 PID2256 `Test-Path` exact `04_StaticTests\R002R26_G3H_Cache31_SHA1_Preflight_v1.ps1` = False, so a new helper can be written without overwriting frozen versions. Attempt1/3 PASS. Original failed SHA1 attempt count remains 1/3; no repeat yet.
 - ONE NEXT: create reviewed strict source-bound SHA1 preflight helper as new owned `04_StaticTests` file, then separately verify full source readback and AST; only then second native 31-file SHA1 attempt.
+
+## D20 — new standalone read-only SHA1 preflight helper write
+- RDC wrote new and previously proven absent `04_StaticTests\R002R26_G3H_Cache31_SHA1_Preflight_v1.ps1`, 41 lines. Self-contained source-bound F4/G1 SHA256 + UUID, 31 expected SHA1, leaf, reparse/scope, 256MiB size gates, read-only hashes, one result line; source complete local readback and AST still PENDING. **No 31 binary hashing execution yet; original attempt1/3 failed launch parse.** Attempt1/3 WRITE_CONFIRMED.
+- ONE NEXT: independent complete 41-line local script readback; then journal/readback before native AST.
