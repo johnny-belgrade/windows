@@ -33,3 +33,7 @@ Single unchanged RDC `Get-FileHash SHA1` on historic original `C:\work\E2E\BlueL
 ## G — Provider 3/5 native SHA1 exact .9807 source-match PASS
 
 Single RDC read-only `Get-FileHash -Algorithm SHA1` on historical `C:\work\E2E\BlueLite_Stage1_S06_26300_9711_2b22470a\UUPs\Microsoft.VCLibs.x64.14.00.appx`; PID6404 finished, SHA1 stdout `6E15245AED25EE83B027521F9CF9EA812C9D016D`, exact original 26300.9807 R23 source metadata pin. **PASS_REUSABLE_EXACT_SOURCE_SHA1 (3/5)**; native numeric exit not exposed, no file/cache modification. **ONE NEXT:** independent journal readback then one file4 hash `Microsoft.NET.Native.Framework.x64.2.2.appx`, source SHA1 expected `612AD442B8740F4C57B8C84E6BF465BA4699118C`.
+
+## H — Provider 4/5 native SHA1 exact .9807 source-match PASS
+
+One unchanged RDC read-only SHA1 `Get-FileHash` for original S06 `C:\work\E2E\BlueLite_Stage1_S06_26300_9711_2b22470a\UUPs\Microsoft.NET.Native.Framework.x64.2.2.appx`, PID3016 finished, stdout `612AD442B8740F4C57B8C84E6BF465BA4699118C`, exactly matches original target 26300.9807 R23 source SHA1. **PASS_REUSABLE_EXACT_SOURCE_SHA1 (4/5)**. Numeric native exit not separately exposed; no output/cache mutation, HTTP0. **ONE NEXT:** independent journal readback, then hash final fifth package `Microsoft.NET.Native.Runtime.x64.2.2.appx`, expected `E1A85885FD4453165061351651289CCE8F8590C4`.
