@@ -186,4 +186,8 @@
 
 **STATUS:** `PASS_G3L_V5_COMPLETE_SOURCE_READBACK` / `AST_SHA_AGGREGATE_LAST_ATTEMPT_PENDING`.
 
-**ONE NEXT:** Native PS7 parser-only v5 AST operation, journal/readback, then separate v5 SHA256; run synthetic fixture modes separately only after source pin PASS.
+**D47 — native PS7 parser-only AST check of v5:** Single RDC `Parser.ParseFile` read-only check on exact new 892-line G3L v5 source PID **420** finished with literal `G3L_V5_AST_ERRORS=0`. No execution of v5 script, original AppX, graph receipt or WIM/OS mutation. D46 source readback is separate prior PASS, source SHA pending.
+
+**STATUS:** `PASS_G3L_V5_NATIVE_AST0` / `SHA_AND_SYNTHETICS_PENDING`.
+
+**ONE NEXT:** Native SHA256 exactly one v5 source file via PS7, journal and independent readback before test execution.
