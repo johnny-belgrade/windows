@@ -1,0 +1,73 @@
+{
+  "schema": "BlueLite.R002R26.G1.SourceProviderChecksumMatrix.v1",
+  "date": "2026-10-24",
+  "source_build": "26300.9807",
+  "source_uuid": "687d1ced-aab1-4cd5-ad05-705189769731",
+  "source_inventory": "05_Evidence/R002R23_MetadataInventory_001/R002R23_SafeQueueInventory.json",
+  "source_inventory_sha256": "0058049376679F6011F9BD3C9D51FE49BD631E46D843E38CF09E15D7AFD1CDE6",
+  "source_inventory_native_sha_pid": 1812,
+  "source_lookup_native_pid": 7956,
+  "source_lookup_attempts": 2,
+  "source_lookup_first_failure": "NESTED_POWERSHELL_DOUBLE_QUOTE_PARSER_ERROR_NO_DATA",
+  "source_lookup_status": "PASS_URL_FREE_EXACT_NAME_SHA1_METADATA_ONLY",
+  "historic_reference": "C:\\work\\E2E\\BlueLite_Stage1_S06_26300_9711_2b22470a\\Queues\\ResolveAppDependencies.log",
+  "historic_resolver_evidence": "S06_9711_G4_27_SEED_TO_32_CLOSED_NOT_9807",
+  "f4_seed_appx_verified": 26,
+  "f4_seed_report_sha256": "8989870BADFEA64A3675E2AF22B4C29AC631CA222D6D8BD14CBAF5416D45084A",
+  "provider_records": [
+    {
+      "out": "Microsoft.UI.Xaml.x64.2.8.appx",
+      "queue": "Apps",
+      "source_matches": 1,
+      "expected_sha1": "A5FA9D96FE72D5CD885DAB0B6F50A44CA82949A6",
+      "local_binary_sha1_verified": false,
+      "provider_identity_xml_verified": false
+    },
+    {
+      "out": "Microsoft.VCLibs.x64.14.00.Desktop.appx",
+      "queue": "Apps",
+      "source_matches": 1,
+      "expected_sha1": "9C0F20CDA41ECEEA9989F9A0C0999D82B7C05F19",
+      "local_binary_sha1_verified": false,
+      "provider_identity_xml_verified": false
+    },
+    {
+      "out": "Microsoft.VCLibs.x64.14.00.appx",
+      "queue": "Apps",
+      "source_matches": 1,
+      "expected_sha1": "6E15245AED25EE83B027521F9CF9EA812C9D016D",
+      "local_binary_sha1_verified": false,
+      "provider_identity_xml_verified": false
+    },
+    {
+      "out": "Microsoft.NET.Native.Framework.x64.2.2.appx",
+      "queue": "Apps",
+      "source_matches": 1,
+      "expected_sha1": "612AD442B8740F4C57B8C84E6BF465BA4699118C",
+      "local_binary_sha1_verified": false,
+      "provider_identity_xml_verified": false
+    },
+    {
+      "out": "Microsoft.NET.Native.Runtime.x64.2.2.appx",
+      "queue": "Apps",
+      "source_matches": 1,
+      "expected_sha1": "E1A85885FD4453165061351651289CCE8F8590C4",
+      "local_binary_sha1_verified": false,
+      "provider_identity_xml_verified": false
+    }
+  ],
+  "metadata_cab": {
+    "out": "687d1ced-aab1-4cd5-ad05-705189769731.AggregatedMetadata.cab",
+    "queue": "Apps",
+    "source_matches": 1,
+    "expected_sha1": "0A5F6B6ADD22E6500ECFB91E192FC7B17B8327F7",
+    "source_specific": true,
+    "binary_present_verified": false,
+    "original_f4_excluded": true
+  },
+  "required_next": "VERIFY_FIVE_HISTORIC_LOCAL_PROVIDER_BINARY_SHA1_VS_SOURCE_9807_THEN_APPX_XML_GRAPH",
+  "appx_manifest_provider_closure": "NOT_EVALUATED",
+  "network_requests": 0,
+  "runtime_execution_allowed": false,
+  "source_or_cache_modified": false
+}
