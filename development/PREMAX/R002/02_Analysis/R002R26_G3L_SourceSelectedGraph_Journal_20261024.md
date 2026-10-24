@@ -70,4 +70,8 @@
 
 **STATUS:** `PASS_G3L_V1_NATIVE_SHA256_AST0_SOURCE_READBACK` / `SYNTHETIC_NOT_RUN_REAL31_NOT_RUN`.
 
-**ONE NEXT:** Run precisely scoped new **synthetic in-memory** G3L `-Mode SelfTestZip64` only from SHA-pinned draft, via native PowerShell 7, with no original AppX Verify/graph receipt or WIM/CBS operation; journal and independent readback.
+**D18 — actual G3L v1 ZIP64 synthetic result FAIL_CLOSED:** single native PS7 source-only `-Mode SelfTestZip64` **PID1388**, process finished with PowerShell exception `FIXTURE_EXPECTED_UNSAFE_ENTRY_PATH_GOT_G3_HOLD_ZIP_UNSAFE_ENTRY_PATH` at source line777. This is a **synthetic expected error-code naming mismatch**: inherited v9a `Assert-Entry` returns `ZIP_UNSAFE_ENTRY_PATH`, while G3J fixture retained `UNSAFE_ENTRY_PATH`; not evidence of a real AppX failure and not 31 graph success. Cumulative G3L synthetic attempt **1/3**. Frozen v1 SHA256 `8AEDAB580E1E0CBBEB2DA82125BBA17B2EFC00DC615C93A44B4F00351B3A6772` preserved, AST0 does not imply runtime pass. No source/archive/cache/WIM mutation.
+
+**STATUS:** `FAIL_CLOSED_G3L_V1_SYNTHETIC_EXPECTED_CODE_MISMATCH` / `REAL31_VERIFY_NOT_RUN`.
+
+**ONE NEXT:** Prepare a **distinct new v2** development source with exactly the expected-code fixture replacement `UNSAFE_ENTRY_PATH` -> `ZIP_UNSAFE_ENTRY_PATH` only at the synthetic `G3L-ExpectZip64Hold` call; preserve v1, independently readback/AST/SHA before a second synthetic attempt, no patch to frozen original.
