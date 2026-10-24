@@ -26,3 +26,7 @@
 ## D5 — RDC exact native policy
 - Live config v0.3.1, allowedDirectories exactly `C:\work`,`C:\BLR20R2F5`; 33 blocked including `reg`, unchanged. Attempt1/3 PASS, no config write.
 - ONE NEXT: Session Entry G3F IN_PROGRESS source-bound plan before native analytical work; then SHA and G1/F4 guards.
+
+## D6 — Session Entry G3F IN_PROGRESS guarded
+- Git Entry IN_PROGRESS commit `4be746dde504765111ae74dba706970d83e3ef27`, blob `7e8327fa6d3f6e3da78cab2fb12bd8002b0681d0`, fresh independent fetch confirms TOP and preserved G3E v8. No real Verify. Attempt1/3 PASS.
+- ONE NEXT: native read-only PS7 hash exact G3E v8 script, source SHA expected A5D5D5B4... .
