@@ -78,3 +78,7 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D18 — corrected versioned v9a source write
 - Native RDC created separate previously absent `03_Drafts\R002R26_G3G_AppxManifestGraph_v9a_DRAFT.ps1` as 728-line, 46,855-character source from frozen v8 Git SHA. Inserted G3G external-floor classification and 13 in-memory synthetic fixtures, sanitized deterministic owned future failure receipt; construction used literal-safe JS callback replacement, avoiding previous `$'` interpolation issue. Rejected v9 and original v8 untouched. Write success, AST NOT_RUN.
 - ONE NEXT: independently full read v9a and verify source anchors, then source hash and AST before synthetic execution.
+
+## D19 — full independent corrected v9a local readback
+- RDC full 728/728 lines read; transport 46856 chars includes one reader-added LF; authored source 46855 chars. G3G error-code, source external floor, deterministic receipt, fixture and dispatch anchors all present; no prior bad substitution markers. PASS static source check, not AST proof.
+- ONE NEXT: native v9a source SHA256 pin and AST0 before any test execution.
