@@ -60,3 +60,9 @@ One source-bound local PS7 process **PID6620**, first attempt, checked **v1 SHA2
 RDC direct `read_file` of exact new v2 path returned **242/242 lines**, with `function Read-Archive([System.IO.Stream]$SourceStream` and ZipArchive constructor consuming `$SourceStream`, former `Read-Archive(...$Input` absent; end-of-file SelfTest/Verify dispatch intact. Source not executed. This is independent syntactic-presence QA, not byte-level full diff/AST or native negative fixture proof.
 
 **ONE NEXT:** independently compute v2 native SHA256 and exact full-file v1→v2 two-substitution diff, recording native result before executing SelfTest.
+
+## G3-D9 — native v2 SHA256 receipt PASS (attempt 1/3)
+
+RDC native PS7 `Get-FileHash` on exact new v2 draft, PID **1532**, completed with stdout SHA256 **`75CAED7CC858D9FF1C131BBFDA7880F7E2D9CCEDE3F1F14C21373D1F660C2B1E`**, numeric native exit not separately exposed. Original v1 pin `C7964D4C7B5D1820A4C40E25B8C6640C96BD04ECCE3FB5F75E24975F070DDF46` remains distinct and unchanged; no archive Verify, no WIM/cache edits. v2 is still DRAFT.
+
+**ONE NEXT:** read-only exact v1→v2 normalized text compare asserting only two intended substitutions; then independent checkpoint readback before AST and native SelfTest attempt2.
