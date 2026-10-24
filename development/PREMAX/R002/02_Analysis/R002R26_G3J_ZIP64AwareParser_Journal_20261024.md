@@ -18,3 +18,7 @@ Project existing R002 only, target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab
 ## D3 — live RDC policy and 7-Zip boundary
 - RDC v0.3.1 native config exact allowed roots `C:\work` and `C:\BLR20R2F5`, 33 blocked commands incl `reg`, default shell powershell.exe, unchanged. Operator physical `C:\Program Files\7-Zip\7z.exe` exists outside allowed roots and is NOT being accessed or executed through RDC; PATH change not needed for G3J code. PASS attempt1/3.
 - ONE NEXT: review pinned G3G v9a ZIP parser and G3I sample implementation before new source creation.
+
+## D4 — frozen v9a parser-source review
+- Read full Git original v9a source path `development/PREMAX/R002/03_Drafts/R002R26_G3G_AppxManifestGraph_v9a_DRAFT.ps1`, original blob `333befcf162b53bf0ce8a73fabfbd5a22705ab57`, 46855 chars. Existing `G3E-Check-ZipCentral` rejects ZIP64 EOCD sentinel or central 0x0001 extra, then otherwise checks entry count, EOCD layout, flags, compression, CRC, path, casefold, local-central name, offsets. `Read-Archive` relies on its dictionary of manifest CRCs before bounded .NET ZipArchive. All this original MUST remain unmodified; G3J standalone candidate can return matching `Dictionary[string,uint32]` with safe ZIP64-aware central validation, not claim integrated graph PASS.
+- ONE NEXT: verify new exact G3J local draft path does not exist, then create nonoverwriting source-only candidate with in-memory positive/negative fixtures.
