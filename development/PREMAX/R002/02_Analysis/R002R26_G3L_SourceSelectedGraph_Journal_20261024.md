@@ -126,4 +126,8 @@
 
 **STATUS:** `PASS_G3L_V3_LOCAL_892_LINE_READBACK` / `AST_SHA_SELFTEST_PENDING`.
 
-**ONE NEXT:** Native PS7 parser-only AST check against v3 exact source, journal/readback before separate source SHA and fixture execution.
+**D32 — native PowerShell 7 AST-only v3:** RDC PID **4764** parser-only on new 892-line v3 source completed with literal stdout `G3L_V3_AST_ERRORS=0`, no script execution/real archive read/graph report/host or WIM mutation. Existing v1/v2 SHA records preserved.
+
+**STATUS:** `PASS_G3L_V3_NATIVE_PS7_AST0` / `SOURCE_SHA_AND_RUNTIME_SYNTHETICS_PENDING`.
+
+**ONE NEXT:** Separate native `Get-FileHash SHA256` of exact v3 new source, journal and independently fetch SHA receipt before v3 standalone and aggregate fixture attempts.
