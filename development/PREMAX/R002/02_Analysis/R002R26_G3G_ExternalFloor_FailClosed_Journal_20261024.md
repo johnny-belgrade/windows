@@ -9,3 +9,7 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D1 — live Session Entry
 - Entire Entry 35427 chars blob `0b6a58b6ef996470393648739f9774770246951f`, TOP G3F finalized external floor gate, G3G source-only NEXT. PASS.
 - ONE NEXT: full Current and Handoff relevant section read.
+
+## D2 — Current full checkpoint
+- Git main Current blob `966ffa9cf4642db4a1a7cc8a459875b908475b03` full 1495096 chars read. Latest G3F path 31/31 PASS, actual graph NOT_RUN, missing explicit external-floor class. PASS.
+- ONE NEXT: Handoff governing §0R SECOND and §0BL plus §0BE.
