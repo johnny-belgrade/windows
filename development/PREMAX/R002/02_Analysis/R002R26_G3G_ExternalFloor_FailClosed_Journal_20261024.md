@@ -70,3 +70,7 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D16 — v9 native AST FAIL, frozen as rejected draft
 - Native PS7 PID10336 parsed v9 and reported G3G_V9_AST_ERRORS=6. New synthetic tests NOT_RUN, real AppX Verify NOT_RUN. Determined source-generation defect: JavaScript string-replacement expansion of `$'` tokens from PowerShell regex inserted trailing original source text, causing parser errors. v9 local file preserved/frozen; no cache/image mutation. AST attempt1/3 failed, not connector permission denial.
 - ONE NEXT: preflight unique `R002R26_G3G_AppxManifestGraph_v9a_DRAFT.ps1` absence and reconstruct with replacement callbacks that preserve literal `$` correctly; verify AST before any new test.
+
+## D17 — corrective v9a new filename absence
+- Native PS7 PID2304 exact new `03_Drafts\R002R26_G3G_AppxManifestGraph_v9a_DRAFT.ps1` Test-Path returned False. No overwrite. PASS.
+- ONE NEXT: reconstruct v9a from original SHA-pinned v8 using literal-safe callback insert, separate new file and full readback; keep rejected v9 immutable.
