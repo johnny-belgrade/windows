@@ -21,3 +21,7 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D4 — RDC device
 - DESKTOP-4J4KCEA online, connector v0.3.1, ID `d892c878-1a42-4fcd-b0e7-c51caf510ab6`. PASS.
 - ONE NEXT: get live allowedDirectories/blockedCommands policy unchanged.
+
+## D5 — RDC live policy
+- Allowed roots exactly `C:\work` and `C:\BLR20R2F5`, blockedCommands count 33 incl reg; v0.3.1 unchanged. PASS.
+- ONE NEXT: verify Git original v8 SHA and review source areas to change without touching original.
