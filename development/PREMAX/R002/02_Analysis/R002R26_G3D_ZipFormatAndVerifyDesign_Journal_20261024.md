@@ -60,3 +60,8 @@ CRC32_TYPE=NO
 
 ✅ P, `CRC32_TYPE=NO`, PID unavailable. No network, package access or modification. This only tells type availability in default resolution context; not implementation proof.
 - **ONE NEXT:** decide conservative v7 implementation scope and author new *non-overwriting* standalone negative ZIP metadata checker only after explicit source-code diff and no v6 modification; AST/SelfTest independent.
+
+## G3D-D12 — new local-only strict ZIP fixture draft noncollision
+
+- Native read-only `Test-Path` on new local `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\03_Drafts\R002R26_G3D_ZipCentralStrict_v1_DRAFT.ps1` reported `G3D_V1_PATH_EXISTS=False`, confirming no overwrite of an existing owned v1-v6 file. No new script created yet.
+- **ONE NEXT:** new standalone SelfTest-only in-memory ZIP header strict fixture script; document raw source write and independently full readback before AST/SelfTest.
