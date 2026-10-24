@@ -49,3 +49,7 @@ Existing R002; target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab1-4cd5-ad05-7
 ## D11 — independent 297-line G3K local source readback
 - RDC direct `read_file` full 297/297 lines of new owned G3K v1; confirmed inherited ZIP64 parser function and exactly one `Inspect-One` F4 SHA1 pin / original 32717 bytes plus .NET archive/manifest CRC/XML, mode switch, no extraction/write. Direct source readback PASS attempt1/3; native AST/SHA/test NOT_RUN.
 - ONE NEXT: native PS7 AST parser on this one owned source, journal and independently read back.
+
+## D12 — G3K owned v1 native AST0
+- RDC PS7 PID10292 literal `G3K_V1_AST_ERRORS=0` on complete new 297-line file, no source execution/extra file reads. PASS attempt1/3.
+- ONE NEXT: native SHA256 source pin, log and independent readback, then synthetic-only SelfTest prior to original sample.
