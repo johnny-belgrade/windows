@@ -45,3 +45,7 @@ Existing R002; target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab1-4cd5-ad05-7
 ## D10 — new owned G3K read-only one-original source candidate written
 - RDC `write_file` created previously proved absent `04_StaticTests\R002R26_G3K_OneSampleZip64_v1_DRAFT.ps1`, 297 lines. Built from pinned G3J v2 Git blob `ee24b5d4c84a3366f716d609ff5d92bf8b66376d` with new modes SelfTest inherited 11 synthetic and Inspect ONE original F4 SHA1/32717B, ZIP64 central vs .NET ZipArchive, manifest bounded decompression/CRC/secure XML, stdout only. Source DELIVERY only, not run or certified, no v9a/cache/WIM mutation. Attempt1/3 PASS.
 - ONE NEXT: independent complete native source readback (297 lines), then AST and SHA gates separately.
+
+## D11 — independent 297-line G3K local source readback
+- RDC direct `read_file` full 297/297 lines of new owned G3K v1; confirmed inherited ZIP64 parser function and exactly one `Inspect-One` F4 SHA1 pin / original 32717 bytes plus .NET archive/manifest CRC/XML, mode switch, no extraction/write. Direct source readback PASS attempt1/3; native AST/SHA/test NOT_RUN.
+- ONE NEXT: native PS7 AST parser on this one owned source, journal and independently read back.
