@@ -18,3 +18,7 @@
 ## D3 — Handoff §0R/§0BL governance
 - Full Handoff Git blob `fd10dc139a897471b0ee3fd064a96b98fab04bc7`, 1,076,858 chars; latest §0BY/§0R SECOND source v8 SHA, next G3F exact 31 file preflight and output absence; §§0BE/0BL/0R read. Standing scoped read-only analytics, no image mutation. Attempt1/3 PASS.
 - ONE NEXT: check RDC online/live allowroots/blocklist before native input checks.
+
+## D4 — RDC device online
+- Native connector DESKTOP-4J4KCEA ID `d892c878-1a42-4fcd-b0e7-c51caf510ab6` online v0.3.1. No execution. Attempt1/3 PASS.
+- ONE NEXT: exact live RDC config allowed roots and blocked commands.
