@@ -74,4 +74,8 @@
 
 **STATUS:** `FAIL_CLOSED_G3L_V1_SYNTHETIC_EXPECTED_CODE_MISMATCH` / `REAL31_VERIFY_NOT_RUN`.
 
-**ONE NEXT:** Prepare a **distinct new v2** development source with exactly the expected-code fixture replacement `UNSAFE_ENTRY_PATH` -> `ZIP_UNSAFE_ENTRY_PATH` only at the synthetic `G3L-ExpectZip64Hold` call; preserve v1, independently readback/AST/SHA before a second synthetic attempt, no patch to frozen original.
+**D19 — scoped unique v2 absence preflight:** direct RDC list `03_Drafts` depth1 confirms G3L v1 exists and **G3L v2 absent**. No file write by listing, original versions intact. New exact owned path `03_Drafts\R002R26_G3L_AppxManifestGraph_Zip64_v2_DRAFT.ps1` reserved.
+
+**STATUS:** `PASS_G3L_V2_PATH_ABSENT` / `V1_SYNTHETIC_FAIL_CLOSED_PRESERVED`.
+
+**ONE NEXT:** Deliver exact v1-derived v2 source with ONLY one expectation string replacement at synthetic `G3L-ExpectZip64Hold $unsafe 'UNSAFE_ENTRY_PATH'`; full local readback, native AST and SHA before test attempt2.
