@@ -158,4 +158,8 @@
 
 **STATUS:** `PASS_G3L_V4_NATIVE_PS7_AST0` / `SHA_AND_SYNTHETICS_NOT_RUN`.
 
-**ONE NEXT:** One native PS7 `Get-FileHash SHA256` read-only of exactly this new v4 source; journal and independently read it back before any synthetic v4 execution.
+**D40 — native PowerShell 7 v4 source SHA256:** RDC single `Get-FileHash -Algorithm SHA256` over exactly `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\03_Drafts\R002R26_G3L_AppxManifestGraph_Zip64_v4_DRAFT.ps1` PID **7288** finished, literal SHA256 **`60FD996C6AD419E42B7C219EF9208C87D3847E494E5CE3014CEB159388B714A7`**. Direct 892-line source readback D38 and native AST0 D39 independently PASS. This is a DRAFT source checksum, not ZIP64 or AppX graph execution; no original/cache/WIM/OS mutation.
+
+**STATUS:** `PASS_G3L_V4_LOCAL_SOURCE_READBACK_AST0_SHA256` / `SYNTHETIC_NOT_RUN_REAL31_GRAPH_NOT_RUN`.
+
+**ONE NEXT:** Run only v4 `-Mode SelfTestZip64` on SHA-pinned local draft; journal result, independently read back, and only then decide on aggregate `SelfTest`. No blind rerun frozen v9a or real AppX until all static/synthetic/error/collision preflight PASS.
