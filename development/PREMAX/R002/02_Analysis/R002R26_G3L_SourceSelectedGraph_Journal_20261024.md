@@ -38,4 +38,8 @@
 
 **STATUS:** `PASS_SOURCES_TARGET_EVIDENCE_READ` / `G3L_SOURCE_REVIEW_NEXT`.
 
-**ONE NEXT:** Examine frozen G3G v9a, G3J v2 and G3K v1 source functions in their original source-exact Git mirrors; determine smallest safe ZIP64 integration delta before generating a uniquely named G3L draft.
+**D10 — existing frozen v9a source review:** fetched exact Git development original `development/PREMAX/R002/03_Drafts/R002R26_G3G_AppxManifestGraph_v9a_DRAFT.ps1`, blob `333befcf162b53bf0ce8a73fabfbd5a22705ab57`, 46,855 chars / 728 source lines. Reviewed `G3E-Check-ZipCentral` 144–207 rejecting ZIP64 sentinel (EOCD 16/32-bit fields, central packed/plain/local) and any central ZIP64 extra 0x0001, while manifest/bundle/provider/receipts are integrated elsewhere (read-only Verify). V9a still immutable and its `G3_HOLD_ZIP64_UNSUPPORTED` is expected for real 31. Need adapt only ZIP central metadata safely, maintain all other guards without source replacement. This is source inspection, NOT draft/test.
+
+**STATUS:** `PASS_V9A_SOURCE_STRUCTURE_REVIEW` / `G3L_NOT_CREATED`.
+
+**ONE NEXT:** Review G3J v2 independent ZIP64 parser full source and compare boundary checks; record source exact SHA before integrating.
