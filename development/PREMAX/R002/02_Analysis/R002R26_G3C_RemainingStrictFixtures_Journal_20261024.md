@@ -47,3 +47,8 @@
 
 - Scoped RDC direct `read_file` returned **372/372 lines**, confirmed precise `Assert-ZipBudget`, `Assert-SourceContract`, `Assert-MatchedSha1` helper declarations, G3C SelfTest marker and complete original Verify/Mode dispatch at end. Original v5 Git source remained separate. This proves full local text present, not AST or synthetic functional PASS.
 - **ONE NEXT:** native v6 SHA256 only; journal/readback before AST.
+
+## G3C-D8 — native v6 source SHA256 pinned
+
+- Read-only native PS7 `Get-FileHash -Algorithm SHA256` PID `7632` finished on exact new local G3C v6 path, stdout SHA256 **`D407B162BCFA62BCE347C073AE5FFA8481B1722A09D9A7032B86E2016C36A401`**. Numeric exit not separately provided; source hash result recorded. Original prior v5 SHA `6577EFB72482A4CAC24635B24BEA2F20CF3B3B38D603D75810158D9DB06F42DE` preserved. No AST/SelfTest or real Verify claimed.
+- **ONE NEXT:** native v6 AST read-only parse, separately document and read back.
