@@ -41,3 +41,8 @@
 
 - Native `pwsh.exe Get-FileHash -Algorithm SHA256` PID `7732`, process finished, SHA256 `C1F6E6AC17D52A0BC0EBA435248D58343D267240525D210617B03E995EF979DC` for `R002R26_G3B_AppxManifestGraph_v3_DRAFT.ps1`; independent original v2 SHA still `75CAED7CC858D9FF1C131BBFDA7880F7E2D9CCEDE3F1F14C21373D1F660C2B1E`. Native numeric exit separately unavailable; stdout hash proven, **no AST/SelfTest result yet**.
 - **ONE NEXT:** read-only AST parse of exactly v3, no source edits.
+
+## G3B-D8 — AST wrapper quotation failure, NOT source AST result
+
+- First AST subprocess command PID `3356` exited after outer Windows PowerShell expanded embedded `$t/$e` variables inside double-quoted `pwsh.exe -Command` argument; child printed parser error `You must provide a value expression following the '+' operator`. **Wrapper AST attempt 1/3; v3 source AST NOT_EVALUATED**, no v3 file change. This is a command-string quoting issue, not proof that v3 code is malformed.
+- **ONE NEXT:** use literal-safe escaped variables in same intended bounded PowerShell AST-only command (attempt 2/3), with independent output and journal.
