@@ -74,3 +74,7 @@
 ## D17 — Native local G1 exact matrix SHA guard
 - RDC PS7 PID2620 exact local G1 target source checksum matrix SHA256 = `A28DF1CDDA70A93FD1FAA9E928EC8C52C5409E365B86E92E06AEBEC4C391F34D`, matches prior independently proven G3C owned matrix. No mutation. Attempt1/3 PASS.
 - ONE NEXT: Current FIRST record G3F 31/31 size/target/output/source preflight PASS, actual 31-AppX Verify NOT_RUN and missing explicit external floor classification; then §0R Handoff FIRST/SECOND and Session Entry LAST.
+
+## D18 — §0R Current FIRST verified
+- Current Git commit `f51718f31cd8648bb11ffdfd1cdaa480cacaacc1`, blob `966ffa9cf4642db4a1a7cc8a459875b908475b03` independent full readback 1,495,096 chars. G3F 31/31 cache size/path checks PASS and explicit code classification dependency HOLD; actual real Verify NOT_RUN. Attempt1/3 PASS.
+- ONE NEXT: Handoff §0R FIRST, reviewed next v9 source-only correction, Handoff §0R SECOND then Session Entry LAST CAS/readback; GUI pause.
