@@ -57,3 +57,9 @@
 
 - Exact source SHA256 `D407B162BCFA62BCE347C073AE5FFA8481B1722A09D9A7032B86E2016C36A401`; read-only native PowerShell AST Parser PID `2808` finished with `G3C_V6_AST_ERRORS=0` (first attempt 1/3, numeric exit not separately exposed). No code changed, no actual archive Verify. AST0 is syntax-only PASS, fixture predicates still untested.
 - **ONE NEXT:** source-only native v6 `-Mode SelfTest` exact-match negative fixtures; then journal/readback and stop on any fail-closed mismatch per 3 attempts.
+
+## G3C-D10 — v6 native synthetic SelfTest PASS 50/50
+
+- Native source-pinned v6 `-Mode SelfTest` RDC PID `6104` completed with exact stdout **`PASS_R002R26_G3C_STATIC_SELFTEST_50_SYNTHETIC_FIXTURES_NOT_SOURCE_GRAPH`**, first native fixture attempt 1/3. Prior v5 original suite 35 synthetic cases retained; v6 adds **15** code-path checks including positive controls: cumulative ZIP-length overflow/negative size and accepted boundary, wrong build/source UUID/R23 hash/target UUID/provider count, positive source metadata, bad/good SHA1 comparison, bundle nested and child Name/Version negative. Distinct local v6 SHA256 `D407B162BCFA62BCE347C073AE5FFA8481B1722A09D9A7032B86E2016C36A401`; native AST0 PID2808; numeric process exit not separately exposed.
+- **Proof boundary:** 50 synthetic checks only, *not* complete AppxManifest graph, real ZIP method/encryption support, source dependency/WIM floor, source CAB, real package read, or external provider identity. Actual 31-AppX Verify NOT_RUN. Do not claim full G1 strict fixture coverage from this result.
+- **ONE NEXT:** source-exact Git freeze of v6 after noncollision check and independent byte SHA, then metadata-only **preflight** of real Verify guards (no package-byte reads), document remaining dependencies and close the block.
