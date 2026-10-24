@@ -150,4 +150,8 @@
 
 **STATUS:** `DELIVERED_G3L_V4_SOURCE_ONLY_PENDING_DIRECT_READBACK` / `31_REAL_GRAPH_NOT_RUN`.
 
-**ONE NEXT:** Independent exact Git journal readback; then direct full local v4 source readback (892 lines), journal/checkpoint/readback before native AST, SHA and synthetic tests.
+**D38 — complete native local v4 independent source readback:** RDC direct read of `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\03_Drafts\R002R26_G3L_AppxManifestGraph_Zip64_v4_DRAFT.ps1` returned **892/892** lines, zero remaining. Correct v4 heading; new ZIP64 parser boundary adapter and inherited `Verify` both present; new owned graph/failure receipt destinations; exactly expected fixture literal `G3L-ExpectZip64Hold $bad 'ZIP_CENTRAL_COUNT'` present and prior `'CENTRAL_COUNT'` call absent. Direct file read only, not bytewise full diff or native AST/SHA, no script execution, original AppX/WIM untouched.
+
+**STATUS:** `PASS_G3L_V4_FULL_892_LINE_READBACK` / `AST_SHA_SYNTHETICS_PENDING_REAL31_NOT_RUN`.
+
+**ONE NEXT:** Native PowerShell 7 parser-only AST check of this exact new v4 local source, journal/readback before independent source hash and each synthetic test.
