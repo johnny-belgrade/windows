@@ -58,3 +58,7 @@ Project existing R002 only, target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab
 ## D13 — complete independently read v2 owned source
 - RDC direct read **212/212** lines v2, confirmed new script complete; v1 invalid expression absent, exact intended `$extraBytes=0;if($extra){$extraBytes=4};$w.Write([uint16]$extraBytes)` present. No read of protected package or modification. PASS attempt1/3.
 - ONE NEXT: native PS7 parser AST only on new v2; journal/readback before hash and synthetic runtime test.
+
+## D14 — native v2 PS7 AST0
+- RDC PS7 native PID10704 parsed v2 exact source; literal `G3J_V2_AST_ERRORS=0`, process finished. No execution of synthetic fixtures and no original/cache access, PASS attempt1/3.
+- ONE NEXT: compute SHA256 of new v2 original bytes, journal/readback, then run synthetic-only `SelfTest`.
