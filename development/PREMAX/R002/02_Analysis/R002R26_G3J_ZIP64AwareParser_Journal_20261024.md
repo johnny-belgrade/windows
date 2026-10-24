@@ -66,3 +66,7 @@ Project existing R002 only, target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab
 ## D15 — native v2 SHA256 source pin
 - RDC native PS7 PID8028 SHA256 exact corrected G3J v2 `04_StaticTests\R002R26_G3J_Zip64Central_v2_DRAFT.ps1` = `CE7D0AD2A4DF496F1EFC7254374473A08C27FC76328FC0851573F0D5C5AEA725`. AST0 prior, source readback complete, no binary cache touch. PASS attempt1/3.
 - ONE NEXT: v2 in-memory-only SelfTest positive classic ZIP, ZIP64, optional extra and negative guard tests, then journal/readback; do not run G3G v9a or real AppX graph.
+
+## D16 — G3J corrected v2 native 11 synthetic PASS
+- Native PS7 PID11436 executed **only** G3J v2 `-Mode SelfTest` (source SHA256 `CE7D0AD2A4DF496F1EFC7254374473A08C27FC76328FC0851573F0D5C5AEA725`) and finished literal `PASS_G3J_ZIP64_CENTRAL_SYNTHETIC_11_ONLY_NOT_REAL_APPX`. Three positive fixtures: ordinary classic EOCD, 64-bit ZIP64 EOCD+locator record, optional empty 0x0001 extra. Eight negatives: absent locator, invalid locator offset, excessive count, multi-disk, encrypted CDFH flag, traversal entry path, local CRC mismatch, malformed extra length. PASS 11/11 selftest, **not real original 31 archive or AppxManifest graph**, no local output files/ZIP writes, attempt1/3. v1 remains rejected runtime, v2 AST0 SHA pinned.
+- ONE NEXT: preserve new v2 source in GitHub via non-overwriting versioned mirror (optional source archive, not production promotion), independently verify mirror, then conclude source-only G3J status and §0R Current FIRST / Handoff FIRST / SECOND / Entry LAST and pause.
