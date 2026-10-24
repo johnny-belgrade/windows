@@ -6,3 +6,8 @@
 
 - Complete live Master v6.3.1 Git blob `00d3d34e97c35d6fde241f5aa47f17de050d6eb7` read, Session Entry original finished G3C blob `007eb24f1b011264331d3802bab07fef0333c085`, Current TOP blob `6cd53da13528b933aef53ff64cf223523b57c135`, Handoff blob `86416f19a1cc74feba591ad3c73a5425e38970b5` including mandatory §0BL/§0BE/§0R/§0S/§12B. G3C source v6 previous Git blob `0c4b4f7f9935176dd82c7c1dac66185d3f4f9c7c` source SHA256 `D407B162BCFA62BCE347C073AE5FFA8481B1722A09D9A7032B86E2016C36A401`, native AST0 and synthetic50 previous certified scope only. New Session Entry IN_PROGRESS commit `67dc86b5f0e93c09ba6cbc755fd16c94bea75e7e` blob `1ca3cf8ec8f4260cdd1f5b722638a316714673c2` independently read back. RDC device `DESKTOP-4J4KCEA` online v0.3.1, original approved roots exactly `C:\work` and `C:\BLR20R2F5`, 33 blockedCommands including reg, unchanged.
 - **ONE NEXT:** inspect canonical Git Sources/contracts/Registry and mandatory local README evidence separately; then source-pinned detailed ZIP constraints review, all independently checkpointed.
+
+## G3D-D2 — canonical Sources reviewed
+
+- Read full current `BlueLite_Sources.md` Git blob `275265a873ad15761ff082be9ec7434e8a7f04d3` (~39,676 chars). Prior R26 G2 provider five exact native SHA1 checks and R23/F4+G2 historical 31/31 source-selected transport identity recorded; source bytes alone **not AppxManifest XML graph**. No download/network or mutation.
+- **ONE NEXT:** read current production contract and Registry source-gating statuses, then independent checkpoint.
