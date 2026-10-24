@@ -134,4 +134,8 @@
 
 **STATUS:** `PASS_G3L_V3_SOURCE_AST0_SHA256` / `SYNTHETIC_AND_REAL31_NOT_RUN`.
 
-**ONE NEXT:** Execute distinct v3 `-Mode SelfTestZip64` only against SHA-pinned new source, journal/readback, then independently run aggregate `-Mode SelfTest` only if ZIP64 standalone succeeds.
+**D34 — G3L v3 actual ZIP64 synthetic FAIL_CLOSED, platform still reachable:** Single scoped native PowerShell7 `-Mode SelfTestZip64` on the **source-pinned v3** (`C8365420FE9011D3AC9A9C0762878D3783C6BF16C89F06431C3FFD1B2E4275DF`) executed as RDC PID **7936**, finished with exception line 802: exact `FIXTURE_EXPECTED_CENTRAL_COUNT_GOT_G3_HOLD_ZIP_CENTRAL_COUNT`. It reflects an unupdated in-memory negative fixture expected string after v3 intentionally normalized central-count errors to inherited v9a taxonomy. This is **not** original AppX corruption, a platform safety rejection or a completed 31-package graph. Full v3 source readback/AST0/SHA preserved from D31–D33. No original cache, WIM/CBS, registry, ISO, NTLite or VM operations. User reported GUI blocking and explicitly requested continue; connector/GitHub can be reached as proven by fresh journal fetch. G3L v3 standalone SelfTest fail-closed, cumulative v3 ZIP64 test attempt **1/3**, frozen v2 synthetic11 PASS remains historical.
+
+**STATUS:** `FAIL_CLOSED_G3L_V3_ZIP64_FIXTURE_EXPECTED_TAXONOMY` / `REAL31_APPX_GRAPH_NOT_RUN`.
+
+**ONE NEXT:** Review v3 ZIP64 fixture exact expectations against new adapter, then create a separate non-overwriting G3L v4 with narrowly scoped correction(s), full independent source/AST/SHA before synthetic tests. No blind rerun and no original WIM/source/cache mutation.
