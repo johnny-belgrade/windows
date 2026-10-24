@@ -26,3 +26,8 @@
 
 - Independently read scoped RDC `C:\work\PREMAX-work\00_README.md` (10940 returned text chars; full read request 350 lines), verified owned R002 PREMAX workflow context. No local modification.
 - **ONE NEXT:** mandatory UUP-history README, then local current v6 source exact hash/readback.
+
+## G3D-D6 — mandatory local UUP-history README
+
+- Scoped direct RDC read `C:\work\UUP-history\00_README.md` full requested 300 lines, 4905 tool text chars, original historical provenance, no source mutation. No new R### cycle.
+- **ONE NEXT:** current R002 CycleManifest and v6 script exact local SHA, each individually journal/readback.
