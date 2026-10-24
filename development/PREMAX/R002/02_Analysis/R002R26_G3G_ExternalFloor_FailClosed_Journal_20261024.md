@@ -122,3 +122,7 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D29 — independent v9a Git source-exact SHA freeze
 - Git v9a source mirror commit `dda1c1be12a55faa4e2cef7e4165f79d653eb90f`, blob `333befcf162b53bf0ce8a73fabfbd5a22705ab57`, main complete 46855 ASCII bytes; independently computed SHA256 `B422869D4629A87EDD8FC836508DE50BD4F3FC40769AF755D8B52A5ADE08456F` EXACT native PID5368. SHA256 routine validated against known `abc` test vector. Rejected v9 AST6 historical and original v8 unchanged. PASS.
 - ONE NEXT: refresh Registry r38 runtime prohibition; then Current FIRST, Handoff FIRST/SECOND, Session Entry LAST, each independent readback; real Verify NOT_RUN.
+
+## D30 — live Registry r38 runtime guard
+- Registry main JSON blob `44f6c2f37cf9d4fd8c10331b491ff3d75c7c136b`, revision r38, recipes7/7 runtime_execution_allowed=false. Master frozen, original WIM/Cache/runtime unaffected. PASS.
+- ONE NEXT: Git Current FIRST complete G3G v9a AST0/synthetic81/source parity findings, then readback, Handoff FIRST/SECOND and Entry LAST.
