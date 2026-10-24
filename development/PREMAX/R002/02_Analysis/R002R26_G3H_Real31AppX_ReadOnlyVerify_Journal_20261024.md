@@ -85,3 +85,7 @@ Boundary: existing R002 only, frozen v9a 728 lines/46855 bytes SHA256 `B422869D4
 ## D20 — new standalone read-only SHA1 preflight helper write
 - RDC wrote new and previously proven absent `04_StaticTests\R002R26_G3H_Cache31_SHA1_Preflight_v1.ps1`, 41 lines. Self-contained source-bound F4/G1 SHA256 + UUID, 31 expected SHA1, leaf, reparse/scope, 256MiB size gates, read-only hashes, one result line; source complete local readback and AST still PENDING. **No 31 binary hashing execution yet; original attempt1/3 failed launch parse.** Attempt1/3 WRITE_CONFIRMED.
 - ONE NEXT: independent complete 41-line local script readback; then journal/readback before native AST.
+
+## D21 — independent complete local SHA1 helper source readback
+- RDC directly read full new `04_StaticTests\R002R26_G3H_Cache31_SHA1_Preflight_v1.ps1`, 41/41 lines. Confirmed F4/G1 exact pinned SHA256, target UUID, 31 records, restricted filenames/cache path, reparse and 256MiB gates, read-only original SHA1. No writes or binary hashing. Source readback PASS attempt1/3.
+- ONE NEXT: native PS7 AST-only source parser verification, one existing file; then journal/readback before reattempting 31 binary hashing.
