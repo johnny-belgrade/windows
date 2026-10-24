@@ -72,3 +72,8 @@
 
 - Scoped RDC `read_file` returned **317/317 v5 lines**, correct explicit Microsoft package/bundle namespace branches, original in-memory ZIP helpers, complete native SelfTest dispatch and no truncated end. No new execution or image/cache mutation.
 - **ONE NEXT:** independent native SHA256 of exactly v5, journal/readback; then independent native AST parse.
+
+## G3B-D14 — native SHA256 pinned distinct v5
+
+- Native PS7 Get-FileHash PID `4704`, finished, observed `6577EFB72482A4CAC24635B24BEA2F20CF3B3B38D603D75810158D9DB06F42DE`, target `03_Drafts/R002R26_G3B_AppxManifestGraph_v5_DRAFT.ps1`. Distinct v3 SHA256 `C1F6E6AC17D52A0BC0EBA435248D58343D267240525D210617B03E995EF979DC` preserved; v4 invalid draft never run. No AST or SelfTest claim yet.
+- **ONE NEXT:** native v5 AST-only check, then native SelfTest attempt 2/3.
