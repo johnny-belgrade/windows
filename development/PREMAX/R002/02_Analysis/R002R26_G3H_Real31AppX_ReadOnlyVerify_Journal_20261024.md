@@ -77,3 +77,7 @@ Boundary: existing R002 only, frozen v9a 728 lines/46855 bytes SHA256 `B422869D4
 ## D18 — original selected 31 SHA1 first preflight attempt parser HOLD
 - RDC native PowerShell invocation PID3328 attempted source-pinned 31 SHA1 verification but terminal reported `ParserError: An expression was expected after '('`; nested outer PowerShell double-quoted `-Command` stripped variable tokens before inner PS7 parsed. **NO PACKAGE SHA1 VERIFIED, NO BINARY READ, NO MUTATION.** Cum. attempts1/3 for this exact 31-SHA1 operation. Failure is launch quoting/parser only, not source/cache SHA mismatch; no platform safety rejection.
 - ONE NEXT: inspect absent unique owned `04_StaticTests\R002R26_G3H_Cache31_SHA1_Preflight_v1.ps1`, then write reviewed standalone source-only script that avoids nested interpolation, independent full source readback and native AST before controlled remaining retry (attempt2/3).
+
+## D19 — new owned G3H SHA1 helper absence gate
+- Native PS7 PID2256 `Test-Path` exact `04_StaticTests\R002R26_G3H_Cache31_SHA1_Preflight_v1.ps1` = False, so a new helper can be written without overwriting frozen versions. Attempt1/3 PASS. Original failed SHA1 attempt count remains 1/3; no repeat yet.
+- ONE NEXT: create reviewed strict source-bound SHA1 preflight helper as new owned `04_StaticTests` file, then separately verify full source readback and AST; only then second native 31-file SHA1 attempt.
