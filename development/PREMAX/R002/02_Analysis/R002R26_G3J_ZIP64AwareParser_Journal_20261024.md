@@ -38,3 +38,7 @@ Project existing R002 only, target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab
 ## D8 — native v1 PS7 AST zero errors
 - RDC native PS7 PID9400 parsed exact new 212-line G3J v1 source, printed `G3J_V1_AST_ERRORS=0`, process finished. No source execution or artifact changes, PASS attempt1/3.
 - ONE NEXT: native SHA256 pin of exact G3J v1, journal and readback, then isolated synthetic-only SelfTest.
+
+## D9 — native G3J v1 source SHA256 pinned
+- RDC native PS7 PID11084 `Get-FileHash` exact new owned 212-line G3J source = `945779796A2037A1840BE987590605E0DC930FB6A04BBE0CC0C74839D0877618`. Process finished; source-level SHA PASS attempt1/3. No original changes.
+- ONE NEXT: isolated `-Mode SelfTest` against only in-memory classic/ZIP64 fixtures; if fail report literal details and preserve frozen v1 source, do not overwrite it.
