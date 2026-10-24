@@ -32,3 +32,7 @@
 ## D7 — Native v8 target absence
 - RDC PS7 PID904 finished `Test-Path` proposed local R002/03_Drafts `R002R26_G3E_AppxManifestGraph_v8_DRAFT.ps1`: **False**, no preexisting file overwritten. Attempt1/3 PASS.
 - ONE NEXT: prepare one new versioned integrated v8 script with strict synthetic positives/negatives only; no real AppX `-Mode Verify`.
+
+## D8 — v7 strict helper and source anchors
+- Fresh exact Git v7 source blob `1800d1340a304945583f5c1e6a0a0376c8bf60f4`, 33,202 characters; reviewed `G3E-Check-ZipCentral` EOCD/CDFH guards, `G3E-ReadCentral`, decompressed XML CRC `G3E-ManifestBytes`, `New-SyntheticZip`, legacy `SelfTest`, and final mode dispatch. Missing explicit new strict-format branch tests confirmed. No source executed. Attempt1/3 PASS.
+- ONE NEXT: build ONLY newly versioned local v8 with `SelfTestStrict` synthetic fixtures; leave v7 intact and real `Verify` NOT_RUN.
