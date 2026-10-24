@@ -36,3 +36,7 @@
 ## D8 — v7 strict helper and source anchors
 - Fresh exact Git v7 source blob `1800d1340a304945583f5c1e6a0a0376c8bf60f4`, 33,202 characters; reviewed `G3E-Check-ZipCentral` EOCD/CDFH guards, `G3E-ReadCentral`, decompressed XML CRC `G3E-ManifestBytes`, `New-SyntheticZip`, legacy `SelfTest`, and final mode dispatch. Missing explicit new strict-format branch tests confirmed. No source executed. Attempt1/3 PASS.
 - ONE NEXT: build ONLY newly versioned local v8 with `SelfTestStrict` synthetic fixtures; leave v7 intact and real `Verify` NOT_RUN.
+
+## D9 — Newly owned G3E v8 source draft WRITE (not executed)
+- Local RDC direct write PASS to previously absent `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\03_Drafts\R002R26_G3E_AppxManifestGraph_v8_DRAFT.ps1`; source authored 41,005 ASCII chars / 636 lines from SHA-pinned v7. New `SelfTestStrict` synthetic in-memory stored/deflate/descriptor/bundle positives and exact CRC, ZIP64, EOCD/CDFH, flags, method and local-header rejection fixtures; original v7 untouched. `-Mode Verify` NOT_RUN. Attempt1/3 PASS for write response only.
+- ONE NEXT: independently read all local v8 lines and compare key test anchors, then native SHA and AST before ANY execution.
