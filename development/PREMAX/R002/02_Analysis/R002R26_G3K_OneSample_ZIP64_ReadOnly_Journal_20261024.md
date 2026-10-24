@@ -21,3 +21,7 @@ Existing R002; target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab1-4cd5-ad05-7
 ## D4 — Handoff permanent 7-Zip access contract §0CF committed and readback
 - Separate persistent Handoff `## 0CF. TRAJNO — opcioni lokalni 7-Zip 26.05 read-only evidence relay` added on main, commit `e383a4e7d1e05ef661a56e71051c51b0e4eb4322` blob `af28115cfcf90abc08cdf5a0bb82d0ffcc0c7764`, independently fetched all 1105802 chars PASS. Technical protocol: operator physically confirms `C:\Program Files\7-Zip\7z.exe` outside RDC allowroots; bare PATH command miss is not absent executable. DO NOT run/copy/access exe indirectly through RDC or modify config; optional future operator-initiated local `7z i` version/SHA and `l -slt -bd` original read-only comparison, only if justified and separately agreed, writes new owned evidence inside allowed `C:\work` for subsequent connector reading; never extraction, never bypass safety denial, does not certify AppX graph. Master unchanged.
 - ONE NEXT: confirm live RDC connection and allowed root/denylist, then inspect exact G3J v2 source/original source SHA and create new G3K tool (single original/negative fixtures) with separate readback.
+
+## D5 — RDC online
+- RDC `list_devices` observed DESKTOP-4J4KCEA online, ID `d892c878-1a42-4fcd-b0e7-c51caf510ab6`, v0.3.1; no local mutations, PASS attempt1/3.
+- ONE NEXT: live get_config allowed roots/blocklist, then source pin and single original SHA.
