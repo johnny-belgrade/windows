@@ -31,3 +31,8 @@
 
 - Single owned write via scoped RDC `write_file`, new non-overwriting `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\03_Drafts\R002R26_G3B_AppxManifestGraph_v3_DRAFT.ps1`; returned `Successfully wrote ... (315 lines)`. Input exact Git-mirrored v2 blob `8bcc7a463edb3bf43e7969bdd4723c919960d4af`, unchanged G3 core; adds in-memory ZIP fixture constructor, strict archive-rejection checker, 23 appended synthetic cases and positive control, new explicit G3B SelfTest status string. Output is **DRAFT**, no source hash/AST/SelfTest PASS yet, not a production candidate. Parent v1/v2 not modified.
 - **ONE NEXT:** independently direct local readback of full v3 to inspect inserted helper/tests and final mode-dispatch, then separate native SHA, AST, SelfTest.
+
+## G3B-D6 — independent complete local v3 source readback
+
+- Direct RDC `read_file` returned **315/315 lines** from new v3 only; beginning/closing dispatch, `New-SyntheticZip` helper, new exact negative fixture assertions and `PASS_R002R26_G3B_STATIC_SELFTEST_` marker all present. No original v2 overwrite and no local runtime claimed. Attempt 1/3.
+- **ONE NEXT:** independent native SHA256 hash of frozen local v3 for source pin; then AST parsing separately.
