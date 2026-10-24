@@ -49,3 +49,7 @@ Scope: existing R002, target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab1-4cd5
 ## D11 — unique G3I owned classifier source collision preflight
 - Native PS7 PID8700 exact `Test-Path` on `04_StaticTests\R002R26_G3I_Zip64MetadataInspector_v1_DRAFT.ps1` returned False. New non-overwriting source only can be created; no original cache or program mutation, attempt1/3 PASS.
 - ONE NEXT: write strictly read-only v1 inspector under this fresh owned path; independently read full source, AST, test synthetic markers before actual source-selected 31 metadata inspect.
+
+## D12 — G3I source delivery wrapper JS error, no RDC write
+- First attempt to submit new standalone G3I inspector via script-based connector wrapper aborted before RDC call: literal `ReferenceError: p is not defined` from unescaped JavaScript `${p}` interpolation in raw PS7 text. **NO local source created, no original cache read, no mutation**. Source-delivery attempts cumulative 1/3 (not a platform safety rejection).
+- ONE NEXT: correct wrapper quoting by avoiding `${...}` within JS template; re-submit reviewed new-only 7-Zip-independent ZIP metadata read-only source, then independent local readback and AST.
