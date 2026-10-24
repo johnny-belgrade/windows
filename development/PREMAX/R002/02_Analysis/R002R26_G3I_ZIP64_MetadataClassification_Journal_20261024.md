@@ -29,3 +29,7 @@ Scope: existing R002, target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab1-4cd5
 ## D6 — RDC online live check
 - `list_devices` shows DESKTOP-4J4KCEA Online, ID `d892c878-1a42-4fcd-b0e7-c51caf510ab6`, v0.3.1. PASS attempt1/3; no device mutations.
 - ONE NEXT: read native connector policy root allowlist and denylist.
+
+## D7 — native RDC connector policy
+- Live v0.3.1 `get_config`: allowed roots exactly `C:\work`,`C:\BLR20R2F5`; original 33 `blockedCommands` including `reg`, default shell powershell.exe. No changes, PASS attempt1/3.
+- ONE NEXT: read previous owned receipt exact bytes/content and verify source identity before new G3I classifier.
