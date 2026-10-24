@@ -33,3 +33,7 @@ Scope: existing R002, target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab1-4cd5
 ## D7 — native RDC connector policy
 - Live v0.3.1 `get_config`: allowed roots exactly `C:\work`,`C:\BLR20R2F5`; original 33 `blockedCommands` including `reg`, default shell powershell.exe. No changes, PASS attempt1/3.
 - ONE NEXT: read previous owned receipt exact bytes/content and verify source identity before new G3I classifier.
+
+## D8 — guarded Session Entry G3I IN_PROGRESS readback
+- Git Entry CAS commit `5d06ea1992fa9aaf8d9fa3c37c567390037011fe`, blob `1ebabf78ce056880eb71106eb63c15109651d10e`, independent same-path content readback confirms only scoped G3I, original G3H HOLD, source/cache protected. PASS attempt1/3.
+- ONE NEXT: inspect original local G3H failure receipt exact (no re-run), then checksum and native scope.
