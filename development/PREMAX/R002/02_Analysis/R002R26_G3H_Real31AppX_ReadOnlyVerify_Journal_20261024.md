@@ -9,3 +9,7 @@ Boundary: existing R002 only, frozen v9a 728 lines/46855 bytes SHA256 `B422869D4
 ## D1 — Session Entry current
 - Entry full 39564 chars blob `21ecd3b865cca467501bce46a21add557a412520`, latest G3G v9a AST0/81 synthetic PASS, one next G3H, real Verify NOT_RUN. PASS.
 - ONE NEXT: full Current latest state then Handoff §§0R/0BL/0BE.
+
+## D2 — Current full read
+- Main Current blob `89d90a0f8e052711bb5f42086d26abbd276e22ff`, full 1498808 chars, G3G v9a 81 synthetic only, G3H NOT_RUN. PASS.
+- ONE NEXT: full Handoff §0R SECOND, mutation/execution permissions and source I/O gate.
