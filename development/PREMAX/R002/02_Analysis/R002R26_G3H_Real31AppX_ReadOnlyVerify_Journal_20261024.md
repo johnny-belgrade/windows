@@ -25,3 +25,7 @@ Boundary: existing R002 only, frozen v9a 728 lines/46855 bytes SHA256 `B422869D4
 ## D5 — native RDC policy
 - Live v0.3.1 allowed roots exactly `C:\work`/`C:\BLR20R2F5`, 33 blocked including `reg`. No changes. PASS.
 - ONE NEXT: Session Entry G3H IN_PROGRESS pointer preflight, then exact native v9a SHA.
+
+## D6 — guarded Session Entry IN_PROGRESS
+- Git Entry top CAS commit `8b07825ebf6e8f90a0c0edce09b4122eb2521829`, blob `2754f69f731c28ee7333c929881da240a530f2be` readback confirms scoped G3H and real Verify NOT_STARTED. PASS.
+- ONE NEXT: local v9a SHA256 original exact gate.
