@@ -82,4 +82,8 @@
 
 **STATUS:** `G3L_V2_CREATED_NATIVE_PENDING_INDEPENDENT_CHECK` / `V1_FAILCLOSED_PRESERVED`.
 
-**ONE NEXT:** Read full 867 lines of NEW v2 directly via RDC, verify correction and preservation of rest, then separate native AST0/hash/ZIP64 SelfTest attempt2.
+**D21 — v2 direct full independent readback:** RDC `read_file` all **867/867** local lines from `03_Drafts\R002R26_G3L_AppxManifestGraph_Zip64_v2_DRAFT.ps1`, validates new `G3L-ExpectZip64Hold $unsafe 'ZIP_UNSAFE_ENTRY_PATH'` and absence of obsolete fixture expected token. Inherited ZIP64/parser/Verify still present, no real original touched. Full v1/v2 byte diff not yet independently confirmed; only declared literal change and readback expected, source SHA pending.
+
+**STATUS:** `PASS_G3L_V2_FULL_LOCAL_READBACK` / `AST_SHA_SYNTHETIC_NOT_RUN`.
+
+**ONE NEXT:** Run separate bounded native PS7 Parser AST check of exact new v2 source (no execution), journal/readback; then SHA hash, then synthetic fixture retry.
