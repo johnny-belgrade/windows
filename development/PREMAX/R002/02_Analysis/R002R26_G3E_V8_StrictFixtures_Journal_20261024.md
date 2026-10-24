@@ -72,3 +72,7 @@
 ## D17 — Native aggregate synthetic 50 + 18
 - RDC PS7 PID3784 finished v8 `-Mode SelfTest`: literal two PASS lines `PASS_R002R26_G3C_STATIC_SELFTEST_50_SYNTHETIC_FIXTURES_NOT_SOURCE_GRAPH` and `PASS_R002R26_G3E_V8_STRICT_SYNTHETIC_18_NOT_REAL_APPX`. Cumulative **68 synthetic PASS** (50 inherited, 18 new), not 68 real package tests. Numeric native exit separately unavailable. Attempt1/3 PASS.
 - ONE NEXT: freeze and source-exact mirror v8 to new GitHub draft path; independently verify actual raw-byte SHA equality before document completion. Real 31-AppX Verify remains NOT_RUN.
+
+## D18 — Native v8 byte length
+- RDC native PS7 PID1528 Get-Item source file length = **41,005 bytes**, no file change. Prior RDC read_file transport returned 41,006 characters including an extra wrapper newline; source is ASCII and expected Git content must be exact 41,005. Attempt1/3 PASS.
+- ONE NEXT: independently reread full original local v8 source and only transfer exact 41,005 ASCII chars to distinct Git v8 draft path, preserving v7.
