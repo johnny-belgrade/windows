@@ -194,4 +194,8 @@
 
 **STATUS:** `PASS_G3L_V5_SOURCE_READBACK_AST0_SHA256` / `SYNTHETIC_NOT_RUN_REAL_GRAPH_NOT_RUN`.
 
-**ONE NEXT:** Run single isolated v5 `-Mode SelfTestZip64` using pinned SHA source, journal/readback, then final aggregate `-Mode SelfTest` third/final attempt only if isolated ZIP64 tests pass.
+**D49 — native v5 ZIP64-only synthetic11 PASS:** One native PowerShell 7 `-Mode SelfTestZip64` on new G3L v5 source SHA256 `C1F97F6ED041482C882AD4E28AB3F74347FB417989D2B3F94D0C99F5F4AE53AA` completed RDC PID **7604**, literal stdout **`PASS_G3L_ZIP64_CENTRAL_SYNTHETIC_11_ONLY_NOT_REAL_APPX`**. These are only 11 isolated in-memory fixture cases; no original/cache AppX opened, no complete inherited G3C/G3E/G3G fixture closure, no actual 31 graph. Prior v4 11 tests remain separately valid, not a reason to call v5 aggregate PASS.
+
+**STATUS:** `PASS_G3L_V5_ZIP64_INMEMORY_11` / `AGGREGATE_LAST_ATTEMPT3_OF3_PENDING`.
+
+**ONE NEXT:** After independently reading back D49, run **exactly one** v5 `-Mode SelfTest` aggregate synthetic check; this is the **third and last cumulative aggregate diagnostic attempt** (G3L v2/v4 already failed). Journal exact result independently; if failed, ERROR_HOLD without new methods or retries.
