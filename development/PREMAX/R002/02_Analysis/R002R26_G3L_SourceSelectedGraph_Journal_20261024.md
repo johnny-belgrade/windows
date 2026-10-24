@@ -182,4 +182,8 @@
 
 **STATUS:** `DELIVERED_G3L_V5_SOURCE_ONLY_PENDING_LOCAL_READBACK` / `AGGREGATE_LAST_ATTEMPT_NOT_RUN`.
 
-**ONE NEXT:** Independent full direct readback all 892 local v5 lines; separately journal/readback before native AST and SHA; last aggregate v5 attempt only after those gates.
+**D46 — independent complete v5 source readback:** Direct RDC read of new v5 local draft returned **892/892** physical lines, zero remaining; v5 heading, exact `G3E-Fixture-Hold $v 'CENTRAL_BUDGET'` present, no old `G3E-Fixture-Hold $v 'ZIP_CENTRAL_LAYOUT'` expectation, ZIP64 central parser, `G3L-ZipHold` and `G3L-SelfTestZip64` structural anchors present. The source was **not executed** by this action, not yet AST/hash independently confirmed. v4 and protected original/cache/WIM untouched.
+
+**STATUS:** `PASS_G3L_V5_COMPLETE_SOURCE_READBACK` / `AST_SHA_AGGREGATE_LAST_ATTEMPT_PENDING`.
+
+**ONE NEXT:** Native PS7 parser-only v5 AST operation, journal/readback, then separate v5 SHA256; run synthetic fixture modes separately only after source pin PASS.
