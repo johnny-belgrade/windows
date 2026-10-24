@@ -77,3 +77,7 @@ Direct single local `read_file` confirmed active `C:\work\PREMAX-work\99_Index\C
 ## R — local active Registry R002-only G2 status, independent readback
 
 Exact scoped local `edit_block` changed only active R002 CSV fields to G2 status `R002R26_G2_FIVE_PROVIDER_SHA1_EXACT_NOT_XML_CLOSURE`, last receipt `05_Evidence/R002R26_G2_ProviderSHA1_001/R002R26_G2_FiveProviderSHA1_ReuseReceipt.json`, and ONE NEXT G3 XML parser+negative tests. Separate local direct readback confirmed original R001 unchanged, R002 original source SHA preserved, G2 and G3 fields exact; no prior snapshot touched. **ONE NEXT:** publish new immutable Git G2 three-row CSV, readback QA, native local CSV hash; then Current/Handoff/Entry §0R closure.
+
+## S — immutable G2 Registry Git snapshot and independent 3-row QA
+
+Created [G2 Registry snapshot](../05_Evidence/R002R26_G2_CycleRegistry_RuntimeCheckpoint.csv) Git commit `0ed4c35c53b1c11c392e5322e17dbc238bb67f83`, blob `dbdf08cec4aca3ce5af512eda8dee9f7edd6ba7e`. Independent Git fetch confirms **850 chars**, 3 CRLF lines, exact header, R001 historical row unchanged, R002 G2 binary SHA1+receipt and G3 NEXT, no R001 loss or previous snapshots replaced. **ONE NEXT:** separate native SHA256 of active local Registry CSV, record/check, then close Current FIRST, Handoff FIRST/SECOND, Entry LAST.
