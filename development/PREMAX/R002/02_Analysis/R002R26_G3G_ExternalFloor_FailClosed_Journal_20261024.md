@@ -134,3 +134,7 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D32 — §0R Handoff FIRST/SECOND independently verified
 - Handoff FIRST commit `e200049d9aaff0ded04ffa4d87d9646d8d2ffc98`, blob `d8b061e6a0d408f2483fb785cf4bb9354e3387a0`, independent full readback. Handoff SECOND commit `ed91ee94a5433b1208ddbf975ca8f49a50de2683`, final blob `a9bcb45ef72b2bf06f194be775752d93c3db7f3e`, independent 1087148-char readback verifies §0CA, §0R SECOND and old §0BZ preserved. G3H preflight next NOT_RUN; no real 31-AppX Verify or failure I/O proof claimed. PASS.
 - ONE NEXT: Git Session Entry LAST source-exact CAS to mark G3G v9a PASS / GUI_PAUSE, include Current/Handoff/journal immutable SHA; independent entry readback, stop at one-block boundary.
+
+## D33 — Interrupted-session successor Handoff and Entry verification
+- Resumed after platform interruption. Live G3G journal already includes D32; independent readback retained blob `02c60070d29d932688699409a3a458df4b472f9d`. Live Handoff main blob `a9bcb45ef72b2bf06f194be775752d93c3db7f3e`, independent complete 1,087,148 chars verified §0CA FIRST, §0R SECOND, historic §0BZ. Session Entry main still G3F blob `0b6a58b6ef996470393648739f9774770246951f` (no G3G LAST yet). No duplicate Handoff writes, source/cache mutations or real 31-AppX Verify. PASS.
+- ONE NEXT: Session Entry LAST fresh CAS to advance authoritative pointer to G3G v9a AST0/81 synthetic/source-exact PASS, G3H prepared NOT_RUN, then fresh independent readback and GUI pause.
