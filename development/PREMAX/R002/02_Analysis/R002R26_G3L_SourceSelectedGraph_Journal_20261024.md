@@ -130,4 +130,8 @@
 
 **STATUS:** `PASS_G3L_V3_NATIVE_PS7_AST0` / `SOURCE_SHA_AND_RUNTIME_SYNTHETICS_PENDING`.
 
-**ONE NEXT:** Separate native `Get-FileHash SHA256` of exact v3 new source, journal and independently fetch SHA receipt before v3 standalone and aggregate fixture attempts.
+**D33 — v3 native SHA256 independent source hash:** RDC PS7 single-source PID **9688** finished with literal SHA256 `C8365420FE9011D3AC9A9C0762878D3783C6BF16C89F06431C3FFD1B2E4275DF` for `03_Drafts\R002R26_G3L_AppxManifestGraph_Zip64_v3_DRAFT.ps1`; direct 892/892 source readback and native AST0 already proved separately. No new runtime execution of source/real AppX, source/cache/OS/WIM unchanged.
+
+**STATUS:** `PASS_G3L_V3_SOURCE_AST0_SHA256` / `SYNTHETIC_AND_REAL31_NOT_RUN`.
+
+**ONE NEXT:** Execute distinct v3 `-Mode SelfTestZip64` only against SHA-pinned new source, journal/readback, then independently run aggregate `-Mode SelfTest` only if ZIP64 standalone succeeds.
