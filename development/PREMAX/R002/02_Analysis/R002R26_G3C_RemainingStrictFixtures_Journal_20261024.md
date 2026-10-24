@@ -99,3 +99,8 @@
 
 - Native read-only `Get-FileHash -Algorithm SHA256` PID `7424` on newly materialized R002 `02_Analysis/R002R26_G1_9807_SourceProviderChecksum_Matrix_20261024.json` finished, reported SHA256 **`A28DF1CDDA70A93FD1FAA9E928EC8C52C5409E365B86E92E06AEBEC4C391F34D`**. This is local-file integrity receipt, not yet independent byte comparison to original Git content. No source/cache change or actual archive Verify.
 - **ONE NEXT:** independent parsed JSON source guards/provider count and Git-vs-local byte digest only if directly verifiable; then F4 path and output collision checks.
+
+## G3C-D18 — local G1 JSON parsed source contract PASS
+
+- New local G1 matrix parsed in native PS7 read-only PID `7632` `Get-Content -Raw | ConvertFrom-Json`, stdout `PASS_G3C_MATRIX_CONTRACT source=26300.9807 providerCount=5`; explicitly tested exact source build, UUID `687d1ced-aab1-4cd5-ad05-705189769731`, R23 source SHA and provider array length5. Local file SHA PID7424 `A28DF1CDDA70A93FD1FAA9E928EC8C52C5409E365B86E92E06AEBEC4C391F34D`. No AppX binary opened; not runtime/graph proof.
+- **ONE NEXT:** inspect existing original F4 input file path (read-only), and separately future G3 report output noncollision; then classify preflight result, no actual Verify.
