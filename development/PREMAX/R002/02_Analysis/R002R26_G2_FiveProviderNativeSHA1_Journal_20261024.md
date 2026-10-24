@@ -29,3 +29,7 @@ Single source-cache read-only `Get-FileHash -Algorithm SHA1` on `C:\work\E2E\Blu
 ## F — Provider 2/5 native SHA1 exact .9807 source-match PASS
 
 Single unchanged RDC `Get-FileHash SHA1` on historic original `C:\work\E2E\BlueLite_Stage1_S06_26300_9711_2b22470a\UUPs\Microsoft.VCLibs.x64.14.00.Desktop.appx`, native PID7788 process completed with stdout `9C0F20CDA41ECEEA9989F9A0C0999D82B7C05F19` = exactly unique 26300.9807 source G1 matrix checksum. **PASS_REUSABLE_EXACT_SOURCE_SHA1 (2/5)**. Native numeric exit not exposed; read-only, no new file, no network. **ONE NEXT:** independent journal readback, then single SHA1 check provider3 `Microsoft.VCLibs.x64.14.00.appx`, expected `6E15245AED25EE83B027521F9CF9EA812C9D016D`.
+
+## G — Provider 3/5 native SHA1 exact .9807 source-match PASS
+
+Single RDC read-only `Get-FileHash -Algorithm SHA1` on historical `C:\work\E2E\BlueLite_Stage1_S06_26300_9711_2b22470a\UUPs\Microsoft.VCLibs.x64.14.00.appx`; PID6404 finished, SHA1 stdout `6E15245AED25EE83B027521F9CF9EA812C9D016D`, exact original 26300.9807 R23 source metadata pin. **PASS_REUSABLE_EXACT_SOURCE_SHA1 (3/5)**; native numeric exit not exposed, no file/cache modification. **ONE NEXT:** independent journal readback then one file4 hash `Microsoft.NET.Native.Framework.x64.2.2.appx`, source SHA1 expected `612AD442B8740F4C57B8C84E6BF465BA4699118C`.
