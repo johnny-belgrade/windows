@@ -2,7 +2,7 @@
   "schema": "BlueLite.PREMAX.CycleManifest.v1",
   "cycle_id": "R002_Universal_Stage1_MAXPRE_Package",
   "created_date": "2026-10-22",
-  "status": "R002R26_F4_SHA1_VERIFIED_26_OF_26_NOT_PROVIDER_CLOSURE",
+  "status": "R002R26_G1_SOURCE_PROVIDER_METADATA_VERIFIED_DESIGN_ONLY_NOT_GRAPH_CLOSURE",
   "source_build": "Germanium 26300.x universal target; 26300.9711 pinned fixture; 26300.9807 baseline HOLD",
   "source_index": null,
   "source_sha256": "D3E7162605A61D8A0FD62E1738DE523B52B36059D6AAC8F756F90AEFCB64C4A2",
@@ -227,7 +227,7 @@
     "receipt": "05_Evidence/R002_Static_Draft_Receipt_20261022.txt",
     "note": "MAX_PRE/UUP payload/converter/WIM/registry/NTLite/VM/ISO runtime not executed. R22 separately executed two metadata GETs; see r22_metadata_fetch. This runtime object is not the metadata transport status."
   },
-  "one_next": "R002R26_G_APPX_MANIFEST_PROVIDER_DEPENDENCY_CLOSURE_DESIGN_NEXT",
+  "one_next": "R002R26_G2_FIVE_PROVIDER_SHA1_VS_9807_SOURCE",
   "r9_negative_source_audit": {
     "status": "PASS_SOURCE_ONLY_EXPECTED_GATE_ASSERTION_GAP_NEGATIVE_RUNTIME_HOLD",
     "script_source": "04_StaticTests/R002R6_Metadata_SourceAndQueue_Negatives.ps1",
@@ -595,5 +595,31 @@
     "network_requests": 0,
     "runtime_execution_allowed": false,
     "one_next": "R002R26_G_APPX_MANIFEST_PROVIDER_DEPENDENCY_CLOSURE_DESIGN_NEXT"
+  },
+  "r26_g1_provider_source_design": {
+    "status": "PASS_SOURCE_9807_PROVIDER_METADATA_FIVE_OF_FIVE_G1_DESIGN_ONLY_NOT_BINARY_OR_XML_CLOSURE",
+    "source_build": "26300.9807",
+    "source_uuid": "687d1ced-aab1-4cd5-ad05-705189769731",
+    "original_r23_urlfree_json_sha256": "0058049376679F6011F9BD3C9D51FE49BD631E46D843E38CF09E15D7AFD1CDE6",
+    "native_r23_hash_pid": 1812,
+    "source_name_lookup_pid": 7956,
+    "source_lookup_attempts": 2,
+    "source_provider_candidate_names": 5,
+    "source_provider_records_unique": 5,
+    "historic_five_files_present_by_name": true,
+    "provider_binary_sha1_verified": 0,
+    "metadata_cab_source_sha1": "0A5F6B6ADD22E6500ECFB91E192FC7B17B8327F7",
+    "metadata_cab_source_binary_verified": false,
+    "source_matrix_git": "02_Analysis/R002R26_G1_9807_SourceProviderChecksum_Matrix_20261024.json",
+    "source_matrix_git_blob": "a118b7e5510fb0153ae32f0d3f651566b878d7b1",
+    "source_matrix_git_commit": "e75af6ca13aad65bc1d054ae7ba6317ef7980be1",
+    "design_git": "02_Analysis/R002R26_G1_ManifestProviderClosure_Design_20261024.md",
+    "design_git_blob": "8bcdee85a14bfaf7c58842db9021418dcdd8747c",
+    "design_git_commit": "17c0ac6e2e8fa2c9506a648a0c47ea6f763ef6ef",
+    "appx_manifest_provider_closure": "NOT_EVALUATED",
+    "read_only_source_analysis": true,
+    "network_requests": 0,
+    "runtime_execution_allowed": false,
+    "one_next": "R002R26_G2_FIVE_PROVIDER_SHA1_VS_9807_SOURCE"
   }
 }
