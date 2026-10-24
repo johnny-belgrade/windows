@@ -54,3 +54,9 @@ Independently read exact original local draft lines around `Expect-Hold`, `SelfT
 One source-bound local PS7 process **PID6620**, first attempt, checked **v1 SHA256 exactly `C7964D4C7B5D1820A4C40E25B8C6640C96BD04ECCE3FB5F75E24975F070DDF46`**, nonexistence of v2, and each of two exact source anchors once, then created **NEW** `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\03_Drafts\R002R26_G3_AppxManifestGraph_v2_DRAFT.ps1`, stdout `CREATED_V2_ONLY_TWO_SOURCE_SUBSTITUTIONS`. Two intended textual replacements rename function parameter `Read-Archive(...$Input...)` to `$SourceStream` and ZipArchive constructor argument to `$SourceStream`. v1 unchanged; no script executed here, graph Verify NOT_RUN, no source cache, WIM or registry edits. Native tool completion, numeric exit unreported.
 
 **ONE NEXT:** independent local v2 full readback and SHA256/diff proof in isolated operations; log/readback after each, then AST and second cumulative v2 negative SelfTest.
+
+## G3-D8 — independent new v2 direct local readback PASS (attempt 1/3)
+
+RDC direct `read_file` of exact new v2 path returned **242/242 lines**, with `function Read-Archive([System.IO.Stream]$SourceStream` and ZipArchive constructor consuming `$SourceStream`, former `Read-Archive(...$Input` absent; end-of-file SelfTest/Verify dispatch intact. Source not executed. This is independent syntactic-presence QA, not byte-level full diff/AST or native negative fixture proof.
+
+**ONE NEXT:** independently compute v2 native SHA256 and exact full-file v1→v2 two-substitution diff, recording native result before executing SelfTest.
