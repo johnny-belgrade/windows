@@ -65,3 +65,7 @@ Boundary: existing R002 only, frozen v9a 728 lines/46855 bytes SHA256 `B422869D4
 ## D15 — frozen v9a real Verify and receipt source review
 - Git source read blob `333befcf162b53bf0ce8a73fabfbd5a22705ab57`, 728 lines / 46855 chars; actual Verify pins 31 F4+G1 SHA1, `C:\work\E2E\BlueLite_Stage1_S06_26300_9711_2b22470a\UUPs` original historical cache, report parent `05_Evidence\R002R26_G3_AppxGraph_001`; G3G failure receipt parent `05_Evidence\R002R26_G3G_FailureReceipt_001`. Strict ZIP limits 256MiB expanded, 4MiB manifest, 128MiB nested, entries4096. Original hash and source contract in code; `SelfTest` never writes failure receipt; real Verify catches and attempts distinct owned receipt. Caveat: writer's directory creation is not atomic vs simultaneous competing processes; run must be single-owner and collision-gated. No script edits or executions. Attempt1/3 PASS static review.
 - ONE NEXT: check original graph-report parent absence alone, then journal/readback, followed separately by failure-receipt parent absence.
+
+## D16 — graph report destination collision preflight
+- Native PS7 PID4940 one `Test-Path -LiteralPath` on exact owned graph output parent `05_Evidence\R002R26_G3_AppxGraph_001` returned False; output parent absent. This is a read-only preflight, not report creation. Attempt1/3 PASS.
+- ONE NEXT: separately check G3G failure receipt parent absence before any actual Verify.
