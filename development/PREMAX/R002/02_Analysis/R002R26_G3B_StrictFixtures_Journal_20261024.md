@@ -62,3 +62,8 @@
 
 - Scoped RDC distinct new v4 draft **written**, `R002R26_G3B_AppxManifestGraph_v4_DRAFT.ps1`, returned 847 lines / 63486 JS source chars instead of expected ~320 lines. Cause: JS `String.replace(pattern,replacementString)` interpreted literal `$'` from end-anchored PowerShell regex in replacement as JS replacement special token (remainder-of-source), injecting repeated content. **This is a draft-creation bug**, detected from immediate write cardinality/char output, **NOT AST or native SelfTest attempt**. v3 original remains immutable, SelfTest cumulative 1/3. Keep v4 as failed owned historical draft, do not execute/promote.
 - **ONE NEXT:** generate a unique v5 from the same v3 using callback-based literal replacement (no JS replacement-dollar expansion), assert exact new/old source diff and bounds before one local write. Then separately hash/AST and native SelfTest attempt 2/3.
+
+## G3B-D12 — v5 corrected literal source replacement, new local draft written
+
+- New non-overwriting local `R002R26_G3B_AppxManifestGraph_v5_DRAFT.ps1` written via RDC `write_file`: 317 lines / 23,158 chars, generated only from preserved v3 315-line source. JS callback-based literal replacement eliminates `$'` replacement expansion; exactly one old namespace predicate matched; exact source length change **+335 chars**, equal replacement-text length delta, no other planned change. New rule restricts package to Microsoft AppX manifest namespaces (including `manifest/foundation/windows10`) and bundle to explicit Microsoft bundle namespaces. Unchecked v4 retained unexecuted; v1/v2/v3 untouched. Source SHA, AST and SelfTest **not yet run**.
+- **ONE NEXT:** independent complete readback of local v5, native SHA and AST, then SelfTest cumulative attempt 2/3.
