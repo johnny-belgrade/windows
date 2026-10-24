@@ -68,3 +68,7 @@ Scoped RDC `edit_block` on local R002 CycleManifest changed one root field from 
 ## K — local R002 root ONE NEXT edit/readback
 
 One scoped RDC local `edit_block` changed root `one_next` to `R002R26_G2_FIVE_PROVIDER_SHA1_VS_9807_SOURCE`, anchored uniquely immediately before historical R9 block; separate local `read_file` at line229 confirmed new value and R9 block retained. No prior nested historical `one_next` changed. **ONE NEXT:** append one bounded new G1 design/source metadata object, parse and independently verify complete local manifest before Git CAS.
+
+## L — local CycleManifest appended G1 source-only record, independent parse/readback
+
+Scoped local RDC `edit_block` appended **only one new** top-level `r26_g1_provider_source_design` record (25 fields) after untouched F4 record. Independent direct full local `read_file`/`JSON.parse` confirms root 38 properties, `status=R002R26_G1_SOURCE_PROVIDER_METADATA_VERIFIED_DESIGN_ONLY_NOT_GRAPH_CLOSURE`, `one_next=R002R26_G2_FIVE_PROVIDER_SHA1_VS_9807_SOURCE`, source provider record count5, native source lookup PID7956, **provider_binary_sha1_verified=0**, retained F4 `matched_sha1=26`, historical R26 PID7712 and `runtime.executed=false`. The root status and ONE NEXT were individually edited/readback beforehand. **ONE NEXT:** CAS update existing Git R002 canonical JSON from fresh unchanged blob with exactly those root fields and one append-only G1 record, independently compare complete local/Git JSON; then local R002 CycleRegistry snapshot and closure.
