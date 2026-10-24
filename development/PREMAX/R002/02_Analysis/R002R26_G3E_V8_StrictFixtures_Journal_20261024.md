@@ -8,3 +8,7 @@
 ## D1 — Session Entry live
 - Read Entry full 29,565 chars, blob `c4e67980ce116683aadc1b1f848aabfbda21e7df`; top G3E v7 source-exact AST0 + 50 inherited synthetics. V8 NEXT explicitly new script, no automatic real AppX Verify. Attempt1/3 PASS.
 - ONE NEXT: Current Status top and Handoff latest; do not assume old pause == any test run.
+
+## D2 — Current Status live
+- Full Current blob `2d28dc11e10d3b0de086131378932cbdfc2a8576`, 1,488,682 characters; TOP v7 AST0/inherited 50 PASS only; v8 fixtures NOT_RUN. Attempt1/3 PASS.
+- ONE NEXT: Handoff relevant sections and RDC status; remain source-only.
