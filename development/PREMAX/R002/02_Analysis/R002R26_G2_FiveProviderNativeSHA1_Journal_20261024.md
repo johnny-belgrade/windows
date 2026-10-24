@@ -69,3 +69,7 @@ One scoped RDC `edit_block` appended new `r26_g2_provider_binary_sha1_reuse` (23
 ## P — canonical R002 manifest Git CAS + complete local/Git semantic parity
 
 Git R002 CycleManifest single CAS commit `fbe762b8759293f55e19be5f321bb177965c7b64`, blob `8bd7e7b21b5b4d2282a1efac01dd1835d35754ac`. Independent fetch JSON parsed 39 root keys: G2 provider SHA1 5/5, F4 26/26, G1 source five preserved, G3 ONE NEXT. Then separate independently fetched **entire local canonical and Git JSON**, entire parsed object equality PASS, prior F4 and G1 objects exact equal. No recipe/schema or original source/cache modifications. **ONE NEXT:** local active `CycleRegistry.csv` R002 row-only status+last receipt+NEXT; preserve R001, publish new immutable G2 registry snapshot, independently verify and close §0R Current/Handoff/Entry.
+
+## Q — active CycleRegistry baseline before R002-only G2 edit
+
+Direct single local `read_file` confirmed active `C:\work\PREMAX-work\99_Index\CycleRegistry.csv` exactly three lines (header/R001 unchanged/R002 G1 status). Previous immutable G1 Registry snapshot untouched. **ONE NEXT:** single scoped R002-row `edit_block` updates only `status`, `last_receipt`, and `one_next` to G2; independent readback, journal; then new immutable Git snapshot.
