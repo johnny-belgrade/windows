@@ -48,3 +48,7 @@
 ## D11 — Native v8 source hash
 - RDC PS7 PID8116 completed native SHA256 for only owned v8 DRAFT: `A5D5D5B4D8AB270CD50DE33E2BD2884E388EDCC1E4A3D8F5AC86AD9CBFDBFC71`. No other files read or mutated by hash. Numeric native exit separately unavailable. Attempt1/3 PASS stdout source digest.
 - ONE NEXT: create separate syntax-only AST helper in owned R002/04_StaticTests (nonoverwriting), verify readback, then native AST parser.
+
+## D12 — AST helper absence guard
+- Native RDC PS7 PID7692 `Test-Path -PathType Leaf` exact new owned `04_StaticTests\R002R26_G3E_V8_AST_v1.ps1` returned False, no existing artifact will be overwritten. Attempt1/3 PASS.
+- ONE NEXT: write uniquely versioned source-only PowerShell Parser.ParseFile helper; independent full readback before invocation.
