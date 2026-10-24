@@ -190,4 +190,8 @@
 
 **STATUS:** `PASS_G3L_V5_NATIVE_AST0` / `SHA_AND_SYNTHETICS_PENDING`.
 
-**ONE NEXT:** Native SHA256 exactly one v5 source file via PS7, journal and independent readback before test execution.
+**D48 — native PS7 v5 source SHA256:** RDC one-file `Get-FileHash SHA256` PID **7648** finished, literal SHA256 **`C1F97F6ED041482C882AD4E28AB3F74347FB417989D2B3F94D0C99F5F4AE53AA`** for `03_Drafts\R002R26_G3L_AppxManifestGraph_Zip64_v5_DRAFT.ps1`. New source direct readback 892/892 D46 and AST0 D47 independently confirmed. This hash pins new v5 to synthetic review only; real 31-AppX/metadata CAB/external WIM graph untouched.
+
+**STATUS:** `PASS_G3L_V5_SOURCE_READBACK_AST0_SHA256` / `SYNTHETIC_NOT_RUN_REAL_GRAPH_NOT_RUN`.
+
+**ONE NEXT:** Run single isolated v5 `-Mode SelfTestZip64` using pinned SHA source, journal/readback, then final aggregate `-Mode SelfTest` third/final attempt only if isolated ZIP64 tests pass.
