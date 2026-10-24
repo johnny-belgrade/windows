@@ -94,4 +94,8 @@
 
 **STATUS:** `PASS_G3L_V2_NATIVE_AST0_SHA256_READBACK` / `G3L_V2_SYNTHETIC_NOT_RUN_REAL31_NOT_RUN`.
 
-**ONE NEXT:** Independently verify this exact Git D23 write, then separately execute only `-Mode SelfTestZip64` against the pinned v2 source (cumulative G3L synthetic attempt2/3), journal each operation/readback before next work.
+**D24 — actual native v2 ZIP64 in-memory synthetic:** With operator-authorized GitHub reconnect, previously rejected D23 Git write recovered **cumulative attempt2/3** commit `fa415f7ff2b7545fda4cf50eb1d4d705c9f1756b`, blob `e8aa2034f1a704afad33a0f68547d39bf9153e2e` independent full 14924-character readback PASS. One separately executed native PS7 `-Mode SelfTestZip64` of new v2 SHA256 `64375085660B5B58BE5712E002F2470CDF51374FDE3D80278CE2DECB15E9E024`, RDC PID **10160** finished stdout exact **`PASS_G3L_ZIP64_CENTRAL_SYNTHETIC_11_ONLY_NOT_REAL_APPX`**. This is G3L synthetic cumulative attempt **2/3**, after v1 expected-code mismatch failure. 11 fixtures are synthetic memory only; no original AppX read/graph, WIM/CBS/registry/ISO/NTLite/VM or cached original mutation; native numeric exit not separately available.
+
+**STATUS:** `PASS_G3L_V2_ZIP64_SYNTHETIC_11_AST0_SHA_PINNED` / `HOLD_REAL_31_APPX_GRAPH_NOT_RUN`.
+
+**ONE NEXT:** Independently read back this D24 Git journal; then run distinct scoped v2 **aggregate `-Mode SelfTest`** to exercise inherited v9a manifest/provider/CRC fixtures alongside ZIP64 integration. Do not treat past v9a runtime as a substitute or run original source/package Verify before all fixture/output preflight gates.
