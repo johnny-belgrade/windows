@@ -58,4 +58,8 @@
 
 **STATUS:** `DELIVERED_G3L_V1_DRAFT_NOT_VERIFIED_NOT_EXECUTED`.
 
-**ONE NEXT:** Independent direct readback of all 867 local script lines; verify integration structural anchors and report/failure path uniqueness, then separately static AST / source SHA in an allowed bounded PS7 operation.
+**D15 — full local independent source readback:** RDC direct `read_file` returned **867/867 lines**, zero remaining, new `03_Drafts\R002R26_G3L_AppxManifestGraph_Zip64_v1_DRAFT.ps1`. Confirmed structural anchor `G3E-Check-ZipCentral`, new `G3L-SelfTestZip64`, inherited `Verify`, 31 SHA source guard, unique new report `R002R26_G3L_AppxGraph_001`, failure `R002R26_G3L_FailureReceipt_001` and no reused old G3G failure or G3 graph path literal. Source is newly authored draft only, no AST/test/hash yet. Frozen originals unchanged by write action; independent hash recheck still pending.
+
+**STATUS:** `PASS_G3L_V1_LOCAL_FULL_SOURCE_READBACK_ONLY` / `STATIC_AST_SHA_SYNTHETIC_PENDING`.
+
+**ONE NEXT:** Execute **one bounded native PS7 AST parser-only** check on this exact new local G3L draft, no source file execution, report parser error count; journal/readback separately before hash and synthetic runs.
