@@ -68,3 +68,9 @@
 
 - Direct GitHub Contents lookup of `development/PREMAX/R002/03_Drafts/R002R26_G3C_AppxManifestGraph_v6_DRAFT.ps1` returned expected `NOT_FOUND` HTTP404; no earlier Git source at this exact path. v1-v5 Git sources preserved. No source write in this operation.
 - **ONE NEXT:** transfer exact native byte-pinned v6 into this new development Git path; independently read the stored bytes and compute SHA256 vs local `D407B162BCFA62BCE347C073AE5FFA8481B1722A09D9A7032B86E2016C36A401` before other actions.
+
+## G3C-D12 — exact v6 Git source mirror and independent byte-SHA PASS
+
+- Source-exact local byte capture RDC PID `2552`, original new v6 26,873 UTF-8 bytes / 26,871 characters / 372 newline-delimited records, no old file changed. New Git source-only development mirror `development/PREMAX/R002/03_Drafts/R002R26_G3C_AppxManifestGraph_v6_DRAFT.ps1` commit **`5bf5ee678f9dab59ee780eae87b4b7bb337adc36`**, blob **`0c4b4f7f9935176dd82c7c1dac66185d3f4f9c7c`**. Independently fetched Git raw Base64 data, decoded all **26873 bytes**, computed SHA256 with a selftested SHA implementation (canonical `abc` digest): exactly **`D407B162BCFA62BCE347C073AE5FFA8481B1722A09D9A7032B86E2016C36A401`**, identical to native PID7632. Source integrity **PASS**; not production promotion.
+- G3C v6 native AST0 PID2808 and synthetic SelfTest50 PID6104 previously separately journaled. Still no actual 31-AppX Verify or CAB, archive real XML dependency graph not evaluated.
+- **ONE NEXT:** independent bounded, metadata-only preflight of actual G1 Matrix, F4 source and selected source locations without reading package binaries; record exact report and dependencies. Then close G3C Current FIRST/Handoff FIRST+SECOND/Session Entry LAST and GUI pause.
