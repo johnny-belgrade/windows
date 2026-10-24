@@ -21,3 +21,8 @@
 
 - `production/intelligence/BlueLite_RecipeRegistry.json` Git blob `44f6c2f37cf9d4fd8c10331b491ff3d75c7c136b` parsed, revision r38, exactly seven recipe entries and `runtime_execution_allowed=false` for all 7, status not released. No Registry edit, no mutation authorization.
 - **ONE NEXT:** read local original mandatory R002 PREMAX README and UUP-history README, each separately checkpointed.
+
+## G3D-D5 — mandatory local PREMAX README provenance
+
+- Independently read scoped RDC `C:\work\PREMAX-work\00_README.md` (10940 returned text chars; full read request 350 lines), verified owned R002 PREMAX workflow context. No local modification.
+- **ONE NEXT:** mandatory UUP-history README, then local current v6 source exact hash/readback.
