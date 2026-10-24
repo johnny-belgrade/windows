@@ -1,0 +1,9 @@
+# R002R26-G3C — remaining strict negatives + real Verify preflight journal
+
+**Authorized G3C scope (2026-10-24):** existing R002 cycle only, source-only parser development, additional synthetic fixtures, bounded read-only real Verify PRE-FLIGHT (not real 31 AppX Verify). Immutable 26300.9807 R23 source UUID `687d1ced-aab1-4cd5-ad05-705189769731`, R23 metadata SHA256 `0058049376679F6011F9BD3C9D51FE49BD631E46D843E38CF09E15D7AFD1CDE6`. Local workspace `C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package`; original .9711 cached 31 source-selected AppX transport binaries protected and unchanged. §0BE one-action→separate documented checkpoint→independent readback, §0R closeout. No CAB/download, no real 31-package Verify, WIM/CBS/registry/ISO/NTLite/VM or production/release mutation.
+
+## G3C-D1 — v5 baseline source integrity (read-only)
+
+- Current Master v6.3.1 Git blob `00d3d34e97c35d6fde241f5aa47f17de050d6eb7`, Session Entry prior G3B finished blob `0060ba30e7ff3f875337d53f63287245554119a3`, Current `c446811144af325197e9612b47b5493ed648bb85`, Handoff `a39ca0ea22ac41dab8d3ae299be206de3f86258d`, Registry r38 unchanged. Live RDC online, original two roots/33 blocked commands incl reg intact. Session Entry new prework IN_PROGRESS commit `b9b91102489feb798ad68a50caec9271c5ec6391`/blob `a01952e14013c917412039d1dffd9db7c06ea02d` independently checked.
+- RDC complete direct v5 local read 317/317 lines and functions verified; independent read-only native PS7 SHA256 PID `7768` finished with exact `6577EFB72482A4CAC24635B24BEA2F20CF3B3B38D603D75810158D9DB06F42DE`, equal Git source v5 blob `849eb1fc5620d5978d315486310941109f2dc845` from preceding G3B. No artifact changed. New G3C fixture execution `NOT_RUN`.
+- **ONE NEXT:** targeted source review of G1 requirements and actual v5 parser, then create unique versioned v6 draft with bounded missing synthetic cases; separately hash/AST/SelfTest and journal/readback each.
