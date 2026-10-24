@@ -81,3 +81,7 @@ Scope: existing R002, target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab1-4cd5
 ## D19 — operator reconnect authenticated; scoped retry approved
 - Fresh `get_user_login` returns authenticated `johnny-belgrade` ID 323928627 after operator reconnect. Previous latest G3I D18 blob `7b1743636ec1c180c08f87f0ac8151d59b1404b1`, unchanged. Operator explicitly authorizes at most **two additional** compliant attempts for previously denied operation(s), but requires immediate HOLD after any renewed safety refusal. No scope/config or source changes.
 - ONE NEXT: fresh Handoff exact blob fetch/CAS; make one same-connector Handoff FIRST retry, then independent readback if it succeeds. If refused, stop, record failure and no alternate method.
+
+## D20 — previously blocked Handoff FIRST write recovered after operator reconnect
+- Same GitHub connector `update_file` to `BlueLite_Germanium_Handoff.md` succeeded after operator-authorized scope-compliant retry (attempt2/3 total for this previously rejected write). Commit `d1c18a980ef42b718d76014d8c6b9bac84cd171b`, blob `54ebe1e1fa65ae9230e679d9504f187b1ee8bf79` full 1,094,019-char independent Git blob readback PASS (contains G3I 0CC FIRST), no Master or local mutation. Earlier platform denial remains historical, now this exact Git write is RESOLVED.
+- ONE NEXT: separately retry previously blocked native G3I `-Mode SelfTest` through the same authorized RDC once (attempt2/3), with no alternate shell/tool or modification, then checkpoint/readback. If rejected again, HOLD immediately.
