@@ -30,3 +30,7 @@
 ## D6 — Session Entry G3F IN_PROGRESS guarded
 - Git Entry IN_PROGRESS commit `4be746dde504765111ae74dba706970d83e3ef27`, blob `7e8327fa6d3f6e3da78cab2fb12bd8002b0681d0`, fresh independent fetch confirms TOP and preserved G3E v8. No real Verify. Attempt1/3 PASS.
 - ONE NEXT: native read-only PS7 hash exact G3E v8 script, source SHA expected A5D5D5B4... .
+
+## D7 — Native v8 exact source SHA preflight
+- RDC native PS7 PID2704 finished exact original v8 DRAFT SHA256 `A5D5D5B4D8AB270CD50DE33E2BD2884E388EDCC1E4A3D8F5AC86AD9CBFDBFC71` equal frozen Git/native. No mutation. Attempt1/3 PASS.
+- ONE NEXT: independent original F4 receipt SHA256 guard, one path one hash.
