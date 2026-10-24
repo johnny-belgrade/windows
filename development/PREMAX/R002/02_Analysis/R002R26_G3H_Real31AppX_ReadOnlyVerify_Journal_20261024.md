@@ -105,3 +105,7 @@ Boundary: existing R002 only, frozen v9a 728 lines/46855 bytes SHA256 `B422869D4
 ## D25 — isolated synthetic-only receipt filesystem write
 - RDC native PS7 PID9724 created only new owned `05_Evidence\R002R26_G3H_IOProbe_001\G3H_Synthetic_IO_FailClosed.json` via absent-parent guard and `FileMode.CreateNew` with UTF8 no BOM; native output `PASS_G3H_SYNTHETIC_IO_PROBE_CREATED=...`. This is **standalone synthetic filesystem I/O smoke**, **not** actual v9a G3G-WriteFailure function certification and **not** real 31-AppX Verify. Original source/cache protected. Attempt1/3 WRITE_CONFIRMED.
 - ONE NEXT: independently read exact owned JSON via RDC and verify schema/flags; then collision/rewrite rejection gate separately.
+
+## D26 — independent synthetic I/O receipt readback
+- RDC direct `read_file` 1/1 line confirmed existing owned `R002R26_G3H_IOProbe_001\G3H_Synthetic_IO_FailClosed.json` JSON schema `BlueLite.G3H.IOProbe.v1`, `synthetic=true`, `source_build=26300.9807`, `original_cache_modified=false`, `real_verify=NOT_RUN`. Direct content readback PASS, attempt1/3; not a test of v9a real failure writer.
+- ONE NEXT: verify exclusive-create collision behavior against this synthetic-owned file (expected FAIL_CLOSED) without rewriting it; then real Verify re-preflight.
