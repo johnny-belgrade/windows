@@ -62,4 +62,8 @@
 
 **STATUS:** `PASS_G3L_V1_LOCAL_FULL_SOURCE_READBACK_ONLY` / `STATIC_AST_SHA_SYNTHETIC_PENDING`.
 
-**ONE NEXT:** Execute **one bounded native PS7 AST parser-only** check on this exact new local G3L draft, no source file execution, report parser error count; journal/readback separately before hash and synthetic runs.
+**D16 — native PS7 AST only:** RDC `start_process` with `pwsh.exe` single parser-only action on exact new `03_Drafts\R002R26_G3L_AppxManifestGraph_Zip64_v1_DRAFT.ps1`, native PID **1188** finished and literal stdout **`G3L_V1_AST_ERRORS=0`**. This validates syntax only; no file execution, no source/archive reads, no package/graph state. Numeric process exit not independently reported; successful finished state plus literal parser count 0 retained.
+
+**STATUS:** `PASS_G3L_V1_NATIVE_PS7_AST0_ONLY` / `SHA_SYNTHETIC_REAL_VERIFY_PENDING`.
+
+**ONE NEXT:** Compute **native SHA256 for this single new draft** via separate PS7 read-only source hash action; journal and independent Git readback before executing synthetic fixture mode.
