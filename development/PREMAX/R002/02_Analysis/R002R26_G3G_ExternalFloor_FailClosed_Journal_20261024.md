@@ -42,3 +42,7 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D9 — Independent v9 source path absence after reconnect
 - RDC native PS7 PID7088 exact `Test-Path -PathType Leaf` for proposed `03_Drafts\R002R26_G3G_AppxManifestGraph_v9_DRAFT.ps1` returned False; no existing draft to overwrite. PASS.
 - ONE NEXT: construct revised versioned source from exact original Git v8 without overbroad string guard, write only previously absent v9 and independently full-read it.
+
+## D10 — new non-overwriting v9 source draft written
+- RDC created previously absent owned `03_Drafts\R002R26_G3G_AppxManifestGraph_v9_DRAFT.ps1`, 853 lines/56151 constructed ASCII characters, based on frozen v8 Git blob `1ba6fe8e268c36f6553d89b9740f993776b685d6`. Updated only missing-provider result/fixture expectations, pinned G1 SHA, added synthetic external-floor and sanitized receipt generation (no test-mode writes), distinct future Verify-only failure receipt writer; no actual real Verify. Write reported success. No changes to v8/cache/OS/image.
+- ONE NEXT: full independent local 853-line source readback before native AST and synthetic execution.
