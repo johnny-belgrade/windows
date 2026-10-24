@@ -20,3 +20,7 @@
 ## D4 — RDC live device
 - DESKTOP-4J4KCEA online v0.3.1 device `d892c878-1a42-4fcd-b0e7-c51caf510ab6`, one available. Attempt1/3 PASS.
 - ONE NEXT: get_config exact roots/denylist before any local command.
+
+## D5 — RDC configuration
+- Live v0.3.1 Windows; allowedDirectories exactly `C:\work` and `C:\BLR20R2F5`; 33 blocked commands including `reg`. No config mutation. Attempt1/3 PASS.
+- ONE NEXT: inspect actual pinned v7 source and new v8 target absence.
