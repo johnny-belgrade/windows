@@ -24,3 +24,7 @@
 ## D5 — RDC configuration
 - Live v0.3.1 Windows; allowedDirectories exactly `C:\work` and `C:\BLR20R2F5`; 33 blocked commands including `reg`. No config mutation. Attempt1/3 PASS.
 - ONE NEXT: inspect actual pinned v7 source and new v8 target absence.
+
+## D6 — Frozen v7 source read
+- Git exact blob `1800d1340a304945583f5c1e6a0a0376c8bf60f4`, 33,202 ASCII chars, all G3E central/read/manifest/legacy SelfTest anchors present. V7 inherited 50 and no new strict fixtures. Attempt1/3 PASS.
+- ONE NEXT: check native local v8 target absence before creating any source.
