@@ -64,3 +64,7 @@ Direct RDC `list_directory` on exact historical .9711 S06 `C:\work\E2E\BlueLite_
 ## J — canonical local R002 root status only, independent readback
 
 Scoped RDC `edit_block` on local R002 CycleManifest changed one root field from F4 `status` to `R002R26_G1_SOURCE_PROVIDER_METADATA_VERIFIED_DESIGN_ONLY_NOT_GRAPH_CLOSURE`. Immediate separate direct `read_file` first6 lines confirmed exact value and retained source build; no other mutation in this step. **ONE NEXT:** separate root `one_next` edit/readback to G2 five binary hashes, then one new append-only G1 evidence object.
+
+## K — local R002 root ONE NEXT edit/readback
+
+One scoped RDC local `edit_block` changed root `one_next` to `R002R26_G2_FIVE_PROVIDER_SHA1_VS_9807_SOURCE`, anchored uniquely immediately before historical R9 block; separate local `read_file` at line229 confirmed new value and R9 block retained. No prior nested historical `one_next` changed. **ONE NEXT:** append one bounded new G1 design/source metadata object, parse and independently verify complete local manifest before Git CAS.
