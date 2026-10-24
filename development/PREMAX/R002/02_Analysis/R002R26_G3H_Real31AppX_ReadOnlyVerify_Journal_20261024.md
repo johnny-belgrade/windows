@@ -69,3 +69,7 @@ Boundary: existing R002 only, frozen v9a 728 lines/46855 bytes SHA256 `B422869D4
 ## D16 — graph report destination collision preflight
 - Native PS7 PID4940 one `Test-Path -LiteralPath` on exact owned graph output parent `05_Evidence\R002R26_G3_AppxGraph_001` returned False; output parent absent. This is a read-only preflight, not report creation. Attempt1/3 PASS.
 - ONE NEXT: separately check G3G failure receipt parent absence before any actual Verify.
+
+## D17 — G3G failure receipt destination collision preflight
+- Native PS7 PID11740 one `Test-Path -LiteralPath` on exact owned `05_Evidence\R002R26_G3G_FailureReceipt_001` returned False; failure receipt parent absent. Read-only, attempt1/3 PASS. Both graph and failure receipt output parents absent as of respective checks; preserve collision recheck at actual Verify.
+- ONE NEXT: source-pinned independent 31 original cache binary SHA1 preflight, bounded original cache read only, no writes; then retained size/ZIP and receipt I/O guard.
