@@ -96,3 +96,8 @@ PASS_R002R26_G3D_ZIP_SYNTHETIC_15_NOT_INTEGRATED_NOT_REAL_APPX
 
 [executed on device: DESKTOP-4J4KCEA (d892c878-1a42-4fcd-b0e7-c51caf510ab6)]`. Cumulative SelfTest attempt **1/3**; not integrated into v6 real parser, no actual 31-AppX Verify.
 - **ONE NEXT:** independently source-freeze exact script into new Git development path with byte SHA, then classify uncovered CRC/data descriptor and real Verify design.
+
+## G3D-D18 — new Git source mirror noncollision gate
+
+- Direct Git Contents lookup for new source-only `development/PREMAX/R002/03_Drafts/R002R26_G3D_ZipCentralStrict_v1_DRAFT.ps1` returned HTTP404/NOT_FOUND, no existing Git source at this exact name. Synthetic v1 native AST0 and SelfTest15 source SHA `CE0CF14D0A6F734209131862BC7308C5931171A9611D34C3E7CE45F070050F1A` pinned locally; no Git source write yet.
+- **ONE NEXT:** exact local v1 byte transport into new Git development source path; independently verify all bytes SHA256 vs native.
