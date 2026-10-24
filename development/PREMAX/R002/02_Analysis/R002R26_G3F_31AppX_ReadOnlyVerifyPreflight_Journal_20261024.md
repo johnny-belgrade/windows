@@ -42,3 +42,7 @@
 ## D9 — Local original G1 matrix 73-line full read
 - RDC directly read 73/73 lines local `02_Analysis\R002R26_G1_9807_SourceProviderChecksum_Matrix_20261024.json`; target build 26300.9807 UUID `687d1ced-aab1-4cd5-ad05-705189769731`, R23 SHA256 `0058049376679F6011F9BD3C9D51FE49BD631E46D843E38CF09E15D7AFD1CDE6`, 5 named provider expected SHA1 and F4 SHA256 `8989870BADFEA64A3675E2AF22B4C29AC631CA222D6D8BD14CBAF5416D45084A`. CAB not acquired; XML graph NOT_EVALUATED; matrix historic local_binary_sha1_verified fields false are source snapshot, not contradiction of later G2 receipt. Attempt1/3 PASS read.
 - ONE NEXT: audit F4 26 seed JSON names/shape and exact target UUID before full 31-file filename-only inventory; no hash of 31 binaries in this preflight.
+
+## D10 — F4 native original parsed source
+- RDC full local original F4 JSON 206/206 lines read and parsed, target_build `26300.9807`, target_uuid `687d1ced-aab1-4cd5-ad05-705189769731`, 26 distinct `files` rows with `out` and `expected_sha1`; exact bytes native SHA256 confirmed earlier PID2108. Historic record 26 source-selected binaries; **no new SHA1 binary verification**. Attempt1/3 PASS.
+- ONE NEXT: prepare a uniquely owned, read-only 31-file filename/size inventory script for the canonical historical S06 cache, after verifying target helper file absent; output to console only.
