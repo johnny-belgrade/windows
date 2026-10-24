@@ -73,3 +73,7 @@ Existing R002; target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab1-4cd5-ad05-7
 ## D17 — new GitHub G3K source mirror created
 - RDC full new owned G3K source read 297 lines; GitHub `create_file` wrote separate unique new development-only mirror `development/PREMAX/R002/04_StaticTests/R002R26_G3K_OneSampleZip64_v1_DRAFT.ps1`, 16851 chars, commit `811902b73a65afb808bbcd42e892810d9daf3e99`. Native local v1 source SHA256 `6E68BA02153B31570A885B50DA4A3D4F8745EA72EC666350E7B1B143C5070268`, AST0, synthetic11 and actual native one original PID5884 PASS. No original/local v1 overwrite, mirror newly created. New Git source independent fetch/text parity PENDING.
 - ONE NEXT: independent full Git mirror readback + direct native text parity comparison, then §0R Current/Handoff/Entry closure.
+
+## D18 — independent G3K Git/native source mirror parity PASS
+- Independent Git read mirror blob `4a2c2398122f0b899499b9c0429ace9e57fec6c0`, 16851 chars; separately reread same native G3K owned source and compared exact 16851/16851 text incl ending LF **TRUE**. Native SHA256 already pinned PID10488; v1 native one-original PID5884 and independent original unchanged post-SHA PID4616. Git mirror commit `811902b73a65afb808bbcd42e892810d9daf3e99`. PASS, source-only transfer evidence, no source/cache change.
+- ONE NEXT: §0R Current FIRST with one-native-sample PASS scope and permanent Handoff 0CF 7-Zip procedure; independent readback. Then Handoff FIRST, reviewed G3L next, Handoff SECOND and Entry LAST, GUI pause.
