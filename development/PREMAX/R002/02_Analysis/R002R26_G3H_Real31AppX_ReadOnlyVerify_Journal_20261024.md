@@ -21,3 +21,7 @@ Boundary: existing R002 only, frozen v9a 728 lines/46855 bytes SHA256 `B422869D4
 ## D4 — RDC device
 - DESKTOP-4J4KCEA online ID `d892c878-1a42-4fcd-b0e7-c51caf510ab6`, v0.3.1. PASS.
 - ONE NEXT: exact local config allowed roots and blocklist.
+
+## D5 — native RDC policy
+- Live v0.3.1 allowed roots exactly `C:\work`/`C:\BLR20R2F5`, 33 blocked including `reg`. No changes. PASS.
+- ONE NEXT: Session Entry G3H IN_PROGRESS pointer preflight, then exact native v9a SHA.
