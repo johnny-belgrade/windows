@@ -118,3 +118,7 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D28 — new Git v9a source mirror created
 - GitHub created previously absent `development/PREMAX/R002/03_Drafts/R002R26_G3G_AppxManifestGraph_v9a_DRAFT.ps1`, commit `dda1c1be12a55faa4e2cef7e4165f79d653eb90f`, exactly 46855 ASCII chars reconstructed from independently re-read 728-line local original excluding RDC transport-added LF. No frozen Git v8/source overwrite. Create PASS, byte parity pending separate read/hash QA.
 - ONE NEXT: independent Git source fetch and SHA256 exact local pin `B422869D4629A87EDD8FC836508DE50BD4F3FC40769AF755D8B52A5ADE08456F` before declaring source frozen.
+
+## D29 — independent v9a Git source-exact SHA freeze
+- Git v9a source mirror commit `dda1c1be12a55faa4e2cef7e4165f79d653eb90f`, blob `333befcf162b53bf0ce8a73fabfbd5a22705ab57`, main complete 46855 ASCII bytes; independently computed SHA256 `B422869D4629A87EDD8FC836508DE50BD4F3FC40769AF755D8B52A5ADE08456F` EXACT native PID5368. SHA256 routine validated against known `abc` test vector. Rejected v9 AST6 historical and original v8 unchanged. PASS.
+- ONE NEXT: refresh Registry r38 runtime prohibition; then Current FIRST, Handoff FIRST/SECOND, Session Entry LAST, each independent readback; real Verify NOT_RUN.
