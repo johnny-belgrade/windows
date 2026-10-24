@@ -9,3 +9,7 @@ Fresh full Master Git blob `00d3d34e97c35d6fde241f5aa47f17de050d6eb7` unchanged.
 One RDC device listing verified DESKTOP-4J4KCEA online v0.3.1, ID `d892c878-1a42-4fcd-b0e7-c51caf510ab6`. Independent `get_config`: allowed roots exactly `C:\work` and `C:\BLR20R2F5`, 33 blocked commands including reg, default PowerShell; **no config change**. No prior G2 native execution established. Verified G1 provider names present in S06 historical cache in previous block; fresh bounded collision and provider preflight remain.
 
 **ONE NEXT:** standalone RDC active-session check; record + readback before first cache/file examination.
+
+## B — Exact RDC active session gate
+
+One independent RDC `list_sessions` returned **No active sessions** (no connector-owned processes). No PID launched, no cache source mutation. This does not prove other non-RDC Windows processes absent. **ONE NEXT:** exact direct S06 cache directory leaf listing, then separate journal/readback before output-collision check.
