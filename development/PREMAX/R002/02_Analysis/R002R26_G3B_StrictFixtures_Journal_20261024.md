@@ -82,3 +82,9 @@
 
 - Native PS7 parser PID `4688` completed with `G3B_V5_AST_ERRORS=0` against v5 SHA256 `6577EFB72482A4CAC24635B24BEA2F20CF3B3B38D603D75810158D9DB06F42DE`. This is syntax only, not fixture or source graph proof; no script modification.
 - **ONE NEXT:** execute version-pinned `-Mode SelfTest` against in-memory synthetic fixtures, cumulative attempt **2/3** for G3B SelfTest issue. Do not run real archive Verify.
+
+## G3B-D16 — native v5 extended synthetic fixture SelfTest PASS
+
+- Native PS7 `-File R002R26_G3B_AppxManifestGraph_v5_DRAFT.ps1 -Mode SelfTest` PID `4940` finished and returned exact `PASS_R002R26_G3B_STATIC_SELFTEST_35_SYNTHETIC_FIXTURES_NOT_SOURCE_GRAPH`; cumulative SelfTest issue resolved attempt **2/3** (prior v3 PID4996 failed closed on valid Windows10 AppX namespace). v4 corrupted-creator draft was never tested; original v1/v2, source cache untouched. Numeric process exit not separately exposed.
+- **Evidence class:** synthetic ZIP/XML/bundle/provider checks **35** (includes one positive provider control), AST0 and source SHA valid. Not all G1-mandated negative cases are included: encrypted/specially encoded ZIP and cumulative decompressed-size, source SHA/UUID-negative gating, missing external WIM floor, bundle child **Name/Version** mismatch, nested bundle, and complete namespace variants remain untested. Do **not** label comprehensive G1 fixture closure or real 31-AppX dependency closure PASS. No `-Mode Verify`, network/CAB or image mutation.
+- **ONE NEXT:** Git-mirror exact SHA-pinned **v5** source after local/Git noncollision, independent Git byte SHA readback. Then close limited G3B static block; separately plan uncovered strict fixture cases before future real 31-package manifest Verify.
