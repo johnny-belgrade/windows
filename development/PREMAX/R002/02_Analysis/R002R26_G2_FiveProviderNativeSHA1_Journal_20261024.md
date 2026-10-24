@@ -81,3 +81,7 @@ Exact scoped local `edit_block` changed only active R002 CSV fields to G2 status
 ## S — immutable G2 Registry Git snapshot and independent 3-row QA
 
 Created [G2 Registry snapshot](../05_Evidence/R002R26_G2_CycleRegistry_RuntimeCheckpoint.csv) Git commit `0ed4c35c53b1c11c392e5322e17dbc238bb67f83`, blob `dbdf08cec4aca3ce5af512eda8dee9f7edd6ba7e`. Independent Git fetch confirms **850 chars**, 3 CRLF lines, exact header, R001 historical row unchanged, R002 G2 binary SHA1+receipt and G3 NEXT, no R001 loss or previous snapshots replaced. **ONE NEXT:** separate native SHA256 of active local Registry CSV, record/check, then close Current FIRST, Handoff FIRST/SECOND, Entry LAST.
+
+## T — native SHA256 of active local CycleRegistry (separate) PASS
+
+One isolated RDC `Get-FileHash -Algorithm SHA256` on exact `C:\work\PREMAX-work\99_Index\CycleRegistry.csv`, **PID7384** process finished, native stdout SHA256 `E52A213386A0E8434287B2B4534DEECCF37D61EE07B00CD1E769E1C0023BD072`. Native exit integer unexposed. Current CSV and new Git immutable snapshot earlier verified same three semantic rows and CRLF representation; direct separate byte-hash match to Git blob has not yet been asserted. **ONE NEXT:** Current FIRST top G2 result; Handoff FIRST, reviewed G3 plan, Handoff SECOND, Session Entry LAST with independent CAS readback. No additional G3 runtime in this block.
