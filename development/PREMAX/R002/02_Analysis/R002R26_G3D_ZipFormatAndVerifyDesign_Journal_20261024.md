@@ -31,3 +31,8 @@
 
 - Scoped direct RDC read `C:\work\UUP-history\00_README.md` full requested 300 lines, 4905 tool text chars, original historical provenance, no source mutation. No new R### cycle.
 - **ONE NEXT:** current R002 CycleManifest and v6 script exact local SHA, each individually journal/readback.
+
+## G3D-D7 — existing R002 CycleManifest review
+
+- Current Git `development/PREMAX/R002/CycleManifest.json` blob `8bd7e7b21b5b4d2282a1efac01dd1835d35754ac`; cycle `R002_Universal_Stage1_MAXPRE_Package`, recorded status `R002R26_G2_FIVE_PROVIDER_SHA1_EXACT_NOT_XML_CLOSURE` (historic reference, not new G3D certification). Existing R002 retained, no R### allocation or manifest modification.
+- **ONE NEXT:** exact native SHA of local frozen v6, then independent checkpoint; targeted ZIP format source review.
