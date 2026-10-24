@@ -41,3 +41,7 @@ Existing R002; target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab1-4cd5-ad05-7
 ## D9 — G3K new source collision gate
 - Native PS7 PID8620 exact `Test-Path` new owned `04_StaticTests\R002R26_G3K_OneSampleZip64_v1_DRAFT.ps1` = False; safe new-only creation. No change to v2 source or protected cache, PASS.
 - ONE NEXT: reviewed source-only G3K new draft, implementing inherited pinned v2 ZIP64 central + in-memory 11 negatives and exact one F4 SHA1/32717B original/.NET archive manifest CRC, no extracted files; independently read back and AST/SHA before execution.
+
+## D10 — new owned G3K read-only one-original source candidate written
+- RDC `write_file` created previously proved absent `04_StaticTests\R002R26_G3K_OneSampleZip64_v1_DRAFT.ps1`, 297 lines. Built from pinned G3J v2 Git blob `ee24b5d4c84a3366f716d609ff5d92bf8b66376d` with new modes SelfTest inherited 11 synthetic and Inspect ONE original F4 SHA1/32717B, ZIP64 central vs .NET ZipArchive, manifest bounded decompression/CRC/secure XML, stdout only. Source DELIVERY only, not run or certified, no v9a/cache/WIM mutation. Attempt1/3 PASS.
+- ONE NEXT: independent complete native source readback (297 lines), then AST and SHA gates separately.
