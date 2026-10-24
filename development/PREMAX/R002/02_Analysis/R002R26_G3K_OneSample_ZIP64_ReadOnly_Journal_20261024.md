@@ -33,3 +33,7 @@ Existing R002; target 26300.9807 Pro amd64 en-US UUID `687d1ced-aab1-4cd5-ad05-7
 ## D7 — original one-sample SHA1 source authority verified
 - RDC direct original F4 `05_Evidence\R002R26_F_HistoricCache_SHA1_001\R002R26_F_ReuseGate.json` first60 of206 lines confirmed target build26300.9807 UUID687d1ced-aab1-4cd5-ad05-705189769731, exact leaf `AppInstaller_scale-100.msix` SHA1 **`17C09E7AA0906DA13EBB6BDBB28A20AD1044BB18`**, bytes32717; observed=expected. F4 native prior SHA256 `8989870BADFEA64A3675E2AF22B4C29AC631CA222D6D8BD14CBAF5416D45084A`. Source snapshot history 26300.9711 is cache, not selected build. No binary read this step; PASS.
 - ONE NEXT: verify locally pinned G3J v2 existing source SHA256 before new v3 G3K script, then absent output path guard.
+
+## D8 — original G3J v2 locally pinned unchanged
+- Native PS7 PID7836 Get-FileHash exact owned preexisting G3J v2 source = `CE7D0AD2A4DF496F1EFC7254374473A08C27FC76328FC0851573F0D5C5AEA725`, matches G3J source pin. Original v2 unchanged, 11 synthetic PASS source remains. No mutation, PASS.
+- ONE NEXT: check new G3K v1 source exact absence, then author minimal new version using pinned v2 parser and controlled one sample mode.
