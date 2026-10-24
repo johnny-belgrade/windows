@@ -90,3 +90,7 @@ Scope: new versioned source-only G3G v9 draft, explicit external provider classi
 ## D21 — corrected v9a AST helper absent
 - Native RDC PS7 PID4368 Test-Path new owned `04_StaticTests\R002R26_G3G_v9a_AST_v1.ps1` returned False; no overwrite. PASS.
 - ONE NEXT: write small ParseFile-only checker for exact v9a, independent full readback, then native AST test.
+
+## D22 — v9a source-only AST helper write
+- RDC wrote new owned 11-line AST-only helper `04_StaticTests\R002R26_G3G_v9a_AST_v1.ps1` after negative existence guard, no binary/cache reads. PASS write only.
+- ONE NEXT: full independent read helper and then native AST.
