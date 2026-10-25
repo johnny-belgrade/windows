@@ -6,4 +6,8 @@
 
 **STATUS:** `PASS_G3M_INIT_CHECKPOINT_AND_LIVE_DEVICE_REACHABLE` / `PREFLIGHT_NOT_RUN` / `REAL_31_NOT_RUN`.
 
-**ONE NEXT:** Read actual live RDC configuration, validate authorized roots and blocked command state without modifying it; journal exact result and independent readback before local code/source preflights.
+**D1 — live RDC configuration independently inspected:** Direct RDC `get_config` on exact authorized device returned version `0.3.1`, Windows `win32`, allowedDirectories **exactly** `["C:\\work","C:\\BLR20R2F5"]`, `blockedCommands` length **33** (existing 33 including `reg`, `diskpart`, `netsh`), `fileReadLineLimit=1000`, `fileWriteLineLimit=50`. No configuration changes or new root grants; this does not prove process-level containment and does not authorize any unapproved paths. Existing G3L owned R002 remains within `C:\\work`.
+
+**STATUS:** `PASS_G3M_RDC_LIVE_CONFIG_ROOTS_AND_33_BLOCKED` / `SOURCE_GATES_NOT_YET_RUN`.
+
+**ONE NEXT:** Direct complete local readback of frozen G3L v5 source from existing R002 `03_Drafts`; inspect exact in-script source/output/protection gates and verify source hash separately before any real package Verify or new receipt. Document and readback next.
