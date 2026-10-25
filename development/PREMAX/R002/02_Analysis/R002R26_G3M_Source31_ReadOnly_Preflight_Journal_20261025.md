@@ -26,4 +26,8 @@
 
 **STATUS:** `PASS_G3M_UNIQUE_SOURCE_DEST_ABSENT` / `G3M_DRAFT_NOT_CREATED`.
 
-**ONE NEXT:** Create separately versioned bounded G3M source-only read-only preflight draft with fresh-file gate: pin G3L v5/F4/G1/UUID, 26+5 leaf/SHA1 and 256 MiB budgets; reject any directory/file reparse points under approved `C:\\work`; ensure both G3L graph and failure output parents absent; success writes only ONE new uniquely owned G3M preflight JSON receipt. Then direct full local source readback, native AST and SHA before any preflight execution.
+**D6 — new separate G3M native source-only preflight DRAFT delivered:** RDC native PowerShell7 PID **2112** finished literal `G3M_V1_CREATED_BYTES=6009;LINES=106`. Exact NEW `04_StaticTests\\R002R26_G3M_Source31_ReadOnlyPreflight_v1_DRAFT.ps1` created with `FileMode.CreateNew` only under existing approved R002. Reviewed bounded source intended to SHA-pin existing v5/F4/G1 and exact UUID; 26+5 leaf SHA1; reject reparse point along each path at or below approved C:\\work; file 22B..256MiB; verify both G3L graph/failure parents and new G3M receipt parent absent; on successful source-only verification write just one newly owned G3M JSON receipt. It does **not** run G3L Verify or touch original AppX/WIM/CBS/registry/ISO/NTLite/VM. Creation stdout is **not** independent source review, AST/hash, nor a runtime PASS. Old G3L v5 immutable.
+
+**STATUS:** `DELIVERED_G3M_V1_SOURCE_ONLY_PENDING_INDEPENDENT_SOURCE_AST_SHA`.
+
+**ONE NEXT:** Direct full 106-line v1 local source readback, review major source/hash/collision guard anchors; journal/readback before native parser and SHA.
