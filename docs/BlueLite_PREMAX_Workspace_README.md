@@ -27,6 +27,12 @@ C:\work\PREMAX-work\R001_kratka-namena\
     06_Candidate\    # source-review-ready candidate, jos NE runtime-certified
 ```
 
+## Obavezni cilj svih offline-WIM/PRE_MAX nacrta — Indexing OFF (operator 2026-10-25)
+
+Po Master §16.1, svaka nova ili promovisana offline modifikacija zajedničke baze mora imati acceptance stavku **Windows Search file/content indexing OFF**: `WSearch` Disabled u ciljanom offline servisnom stanju, primenljive proverene sistemske/policy zabrane indeksiranja i mehanizam održanja posle OOBE, prvog boot-a, restart-a i servicing-a. Standardni korisnik ne sme jednim GUI klikom uključiti indeksiranje; ponovna aktivacija je namerna administrativna višekoračna reverzija, bez obaveze jednokliknog desktop enable paketa.
+
+U `02_Analysis` zabeležiti tačan OS build, offline servisna/policy mesta, dependency odnos sa Start/Search UI, CBS i Update; u `04_StaticTests` negativne kontrole i dokaz podrške tih mehanizama, a u `05_Evidence` native post-state `WSearch`/efektivnih politika i post-boot/perzistencije tek kada bude odobren izvršni test. Ne uklanjati Search/shell komponente naslepo niti izmišljati policy ključeve; ako neki nivo nije podržan, HOLD dependency i odvojiti servisni minimum od punog PASS. **Ova smernica nije dozvola za novu WIM/hive/CBS/registry mutaciju**, niti dokaz implementacije na 26300.9807; postojeće zaštite originalnih UUP ostaju na snazi.
+
 ## Promocija i granice
 
 - `UUP-history` = istorijski **READ-ONLY po operativnom ugovoru** (ne nužno NTFS ACL): nikada ne menjati stare fajlove/niti izvršavati istorijske skripte direktno odatle. Arhivske byte-originals i indeks su trajna referenca.
