@@ -30,4 +30,8 @@
 
 **STATUS:** `DELIVERED_G3M_V1_SOURCE_ONLY_PENDING_INDEPENDENT_SOURCE_AST_SHA`.
 
-**ONE NEXT:** Direct full 106-line v1 local source readback, review major source/hash/collision guard anchors; journal/readback before native parser and SHA.
+**D7 — independent exact new G3M source readback:** Direct RDC `read_file` returned **106/106** lines of new owned `04_StaticTests\\R002R26_G3M_Source31_ReadOnlyPreflight_v1_DRAFT.ps1`; all three SHA256 pins v5/F4/G1, strict source UUID/count, reparse guard, maximum 256 MiB file, destination collision and `FileMode.CreateNew` receipt gates present. Source has no G3L `-Mode Verify` invocation and never launches any old draft. Source text complete/readable; not yet native AST/hash or preflight runtime. Original protected cache untouched.
+
+**STATUS:** `PASS_G3M_V1_FULL_106_LINE_LOCAL_READBACK` / `AST_SHA_EXECUTION_PENDING`.
+
+**ONE NEXT:** Run parser-only native PowerShell7 AST check on G3M v1; journal/readback, then native SHA in separate logged action; only after verified script code may one read-only preflight execute.
