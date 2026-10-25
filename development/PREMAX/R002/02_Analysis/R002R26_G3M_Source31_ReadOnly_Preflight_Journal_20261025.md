@@ -14,4 +14,8 @@
 
 **STATUS:** `PASS_G3M_G3L_V5_FULL_892_LINE_SOURCE_READBACK` / `REAL31_NOT_RUN`.
 
-**ONE NEXT:** Independently obtain native SHA256 of exact 892-line v5 and check against frozen value `C1F97F6ED041482C882AD4E28AB3F74347FB417989D2B3F94D0C99F5F4AE53AA`, then log/readback. Subsequently review targeted v5 Verify control flow and exact path/receipt semantics.
+**D3 — fresh native immutable G3L v5 source pin:** RDC native PowerShell7 PID **7192** completed `Get-FileHash -Algorithm SHA256` on exact authorized existing `03_Drafts\\R002R26_G3L_AppxManifestGraph_Zip64_v5_DRAFT.ps1`, exact stdout **`C1F97F6ED041482C882AD4E28AB3F74347FB417989D2B3F94D0C99F5F4AE53AA`** equals G3L v5 frozen source pin. Direct full local source readback 892/892 separately proved D2. No source execution, writes, original/cache/WIM/CBS mutation.
+
+**STATUS:** `PASS_G3M_G3L_V5_NATIVE_SHA256_PARITY` / `VERIFY_GATE_PREFLIGHT_PENDING`.
+
+**ONE NEXT:** Targeted read-only source review: inspect `Verify` function and actual source identity, SHA1, archive/manifest checks, output/failure CreateNew flow, then separately document exact safety dependencies.
