@@ -22,4 +22,8 @@
 
 **STATUS:** `PASS_G3M_V5_SOURCE_CONTRACT_REVIEW` / `HOLD_UNVERIFIED_REPARSE_SOURCE_PINS_COLLISION_GATES` (pending verification, **not** an encountered error).
 
-**ONE NEXT:** Prepare a separately scoped new G3M *read-only* preflight candidate for F4+G1, local cache root/ancestor/file reparse, 31/31 expected SHA1, source-size and graph/failure-output collision gates. Do not alter v5, frozen v9a, protected cache or host/image; review and AST/hash new preflight before running.
+**D5 — G3M source-only draft destination preflight:** Scoped native RDC `list_directory` of existing allowed `C:\\work\\PREMAX-work\\R002_Universal_Stage1_MAXPRE_Package\\04_StaticTests` confirms existing directory usable and exact proposed NEW `R002R26_G3M_Source31_ReadOnlyPreflight_v1_DRAFT.ps1` absent. No file authored or target/original examined in this action. G3M can be delivered only as a fresh CreateNew draft; preexisting G3L v5 remains SHA-pinned immutable.
+
+**STATUS:** `PASS_G3M_UNIQUE_SOURCE_DEST_ABSENT` / `G3M_DRAFT_NOT_CREATED`.
+
+**ONE NEXT:** Create separately versioned bounded G3M source-only read-only preflight draft with fresh-file gate: pin G3L v5/F4/G1/UUID, 26+5 leaf/SHA1 and 256 MiB budgets; reject any directory/file reparse points under approved `C:\\work`; ensure both G3L graph and failure output parents absent; success writes only ONE new uniquely owned G3M preflight JSON receipt. Then direct full local source readback, native AST and SHA before any preflight execution.
