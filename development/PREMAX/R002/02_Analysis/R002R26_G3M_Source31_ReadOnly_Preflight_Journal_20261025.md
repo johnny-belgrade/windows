@@ -38,4 +38,8 @@
 
 **STATUS:** `PASS_G3M_V1_NATIVE_AST0` / `SHA_EXECUTION_PENDING`.
 
-**ONE NEXT:** Native SHA256 hash of exact approved G3M v1 source; journal/write independent readback before performing source-selected read-only preflight execution.
+**D9 — native G3M v1 SHA256:** RDC PID **7484**, exact own `04_StaticTests\\R002R26_G3M_Source31_ReadOnlyPreflight_v1_DRAFT.ps1`, native `Get-FileHash SHA256` stdout **`8D443C10BD9C4785165180CF2D1CDCC7380B2237F239D4DE500D7D193CA11815`**. Preceding full local source106/106 and native AST0 independently verified. No test/receipt/original reads in this hash operation.
+
+**STATUS:** `PASS_G3M_V1_NATIVE_AST0_SHA256_8D443C10` / `READONLY_PREFLIGHT_NOT_RUN`.
+
+**ONE NEXT:** Execute once exactly `G3M v1 -Mode Check` after immediate SHA guard, on approved existing R002 and cache only, expected new G3M receipt if PASS; never invoke v5 `-Mode Verify` in same action. If any source/path/receipt gate fails, halt HOLD and record literal result rather than retry or weakening check.
