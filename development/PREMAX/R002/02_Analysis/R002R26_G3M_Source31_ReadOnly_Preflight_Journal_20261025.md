@@ -70,4 +70,8 @@
 
 **STATUS:** `PASS_G3K_READONLY_ZIP_XML_DIAGNOSTIC_PRECEDENT_REVIEWED` / `IDENTITY_CULPRIT_NOT_YET_FOUND`.
 
-**ONE NEXT:** One direct read-only inventory of existing R002 static-tests directory to verify a **unique G3N** identity-only diagnostic draft name absent (separate versioned draft); journal/readback before any new source creation. G3N will require independent full source/AST/SHA and only a separate read-only native diagnostic execution against F4+G1 pinned sources.
+**D17 — unique diagnostic source name verified absent:** Native RDC `list_directory` depth1 of existing approved `C:\\work\\PREMAX-work\\R002_Universal_Stage1_MAXPRE_Package\\04_StaticTests` confirmed exact new leaf `R002R26_G3N_IdentityOnly_v1_DRAFT.ps1` absent. No new data, target original or extra program touched; no old draft overwrite permitted. Authorized bounded analytic plan: create **NEW** one-purpose G3N readonly identity-only scanner, enforce target F4/G1 build/UUID pins, 31 expected SHA1 and source root/size/reparse, parse only bounded AppxManifest/BundleManifest and optional nested package identity using .NET ZipArchive + secure XML (the prior G3K pattern). Emit minimal per-file field mismatch to stdout; no file/receipt writes by scanner, no v5 Verify, no broad filesystem inventory.
+
+**STATUS:** `PASS_G3N_DIAGNOSTIC_NEW_PATH_ABSENT` / `SOURCE_NOT_CREATED`.
+
+**ONE NEXT:** One `FileMode.CreateNew` G3N source-only draft under approved R002 `04_StaticTests`; journal independent readback, then full source reading, AST and native SHA before any single readonly native diagnostic attempt.
