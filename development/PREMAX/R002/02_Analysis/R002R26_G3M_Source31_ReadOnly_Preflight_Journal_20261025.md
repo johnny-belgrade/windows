@@ -86,4 +86,8 @@
 
 **STATUS:** `PASS_G3N_V1_NATIVE_AST0` / `SOURCE_SHA_SCAN_PENDING`.
 
-**ONE NEXT:** Separate native SHA256 of exact new G3N v1 source, record/readback before at most one SHA-pinned readonly `-Mode Inspect` on original selected31 corpus.
+**D21 — independent native G3N source SHA256:** Native PS7 RDC PID **1284** single-source `Get-FileHash SHA256` new `04_StaticTests\\R002R26_G3N_IdentityOnly_v1_DRAFT.ps1` finished stdout exact `A0A7F3877C3CB2E1C0FBCE8F3FADB615837A3749DC1D49A6A405D7785FDEBD7F`. Direct source readback 152/152 and PS7 AST0 PID1768 separately passed; this operation no original package reads or writes.
+
+**STATUS:** `PASS_G3N_V1_NATIVE_SOURCE_SHA_AST0_READBACK` / `SOURCE31_IDENTITY_SCAN_NOT_RUN`.
+
+**ONE NEXT:** One exact readonly G3N v1 `-Mode Inspect` from approved R002, guarded by this SHA256; script verifies G3L v5/F4/G1 pins, 31 source SHA1 and selects only AppxManifest/BundleManifest identities, captures offending filename/nested identity field. No G3L v5 Verify retry, no receipt or source write. On any block/denial or execution error, stop HOLD and document native stdout.
