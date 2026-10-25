@@ -10,4 +10,8 @@
 
 **STATUS:** `PASS_G3M_RDC_LIVE_CONFIG_ROOTS_AND_33_BLOCKED` / `SOURCE_GATES_NOT_YET_RUN`.
 
-**ONE NEXT:** Direct complete local readback of frozen G3L v5 source from existing R002 `03_Drafts`; inspect exact in-script source/output/protection gates and verify source hash separately before any real package Verify or new receipt. Document and readback next.
+**D2 — exact complete local G3L v5 source readback:** RDC `read_file` of only owned R002 `03_Drafts\\R002R26_G3L_AppxManifestGraph_Zip64_v5_DRAFT.ps1` returned explicit **892/892 lines (0 remaining)**. Source has `function Verify`, `G3L-ZipHold`, ZIP64 in-memory fixtures and manifest/CRC routines, intended new graph JSON path `05_Evidence\\R002R26_G3L_AppxGraph_001\\R002R26_G3L_Graph.json`. Its `$Cache` literal points to preserved historical `C:\\work\\E2E\\BlueLite_Stage1_S06_26300_9711_2b22470a\\UUPs`; **do not infer target source identity from directory name**. F4+G1 target UUID, queue SHA1 and exact cache leaf identity require verification. No source execution or files modified in this read-only action. Native source SHA and destination collision checks **still pending**, even though v5 SHA is recorded in predecessor G3L.
+
+**STATUS:** `PASS_G3M_G3L_V5_FULL_892_LINE_SOURCE_READBACK` / `REAL31_NOT_RUN`.
+
+**ONE NEXT:** Independently obtain native SHA256 of exact 892-line v5 and check against frozen value `C1F97F6ED041482C882AD4E28AB3F74347FB417989D2B3F94D0C99F5F4AE53AA`, then log/readback. Subsequently review targeted v5 Verify control flow and exact path/receipt semantics.
