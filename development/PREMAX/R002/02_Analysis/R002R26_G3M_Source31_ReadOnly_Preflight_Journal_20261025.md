@@ -50,4 +50,8 @@
 
 **STATUS:** `PASS_G3M_SOURCE31_NATIVE_RECEIPT_READBACK_15_OF15` / `G3L_V5_REAL_VERIFY_NOT_RUN`.
 
-**ONE NEXT:** Fresh targeted direct read-only native filesystem check confirms intended G3L success and fail parent *both absent* plus R002 `05_Evidence` non-reparse; journal/readback, then make separate narrowly scoped decision whether all read-only v5 `-Mode Verify` source, SHA, ownership and collision gates permit exactly one actual run.
+**D12 — immediate G3L owned-success/failure destination anti-collision final PASS:** Native RDC PS7 PID **8288**, targeted `05_Evidence` read-only `Get-Item -Force` + exact child name enumeration (case-insensitive) returned literal **`PASS_G3M_G3L_FINAL_PARENT_PREFLIGHT|GRAPH_PARENT=ABSENT|FAIL_PARENT=ABSENT|EVIDENCE_REPARSE=FALSE`**. The G3M 31 original SHA1/path/UUID preflight native+receipt were PASS D10/D11; frozen G3L v5 source SHA256 `C1F97F6ED041482C882AD4E28AB3F74347FB417989D2B3F94D0C99F5F4AE53AA` native PID7192 PASS D3, native aggregate synthetic 92 from preceding G3L, full source 892 lines D2/D4. Per Master §0C.1.6 and Handoff §0BL / §0CH SECOND, operator continuation authorizes a **bounded source-pinned READ-ONLY test** and *only* new owned G3L graph or failure JSON; no high-impact offline-WIM mutation authorization inferred. Source-specific CAB and external WIM dependency floor independent HOLD.
+
+**STATUS:** `PASS_G3M_ALL_SOURCE31_SHA1_REPARSE_OUTPUT_PREFLIGHT` / `G3L_REAL_VERIFY_STILL_NOT_RUN`.
+
+**ONE NEXT:** One exactly scoped native v5 `-Mode Verify` after an immediate G3L script SHA guard, original/AppX read-only and NEW owned G3L JSON only. Capture complete native stdout/error and fail-closed status; journal and independently read back **before any further operation**. If real Verify produces any error or unresolved dependency, stop HOLD and do NOT rerun or weaken gate.
