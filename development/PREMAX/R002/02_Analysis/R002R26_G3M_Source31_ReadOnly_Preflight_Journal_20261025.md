@@ -42,4 +42,8 @@
 
 **STATUS:** `PASS_G3M_V1_NATIVE_AST0_SHA256_8D443C10` / `READONLY_PREFLIGHT_NOT_RUN`.
 
-**ONE NEXT:** Execute once exactly `G3M v1 -Mode Check` after immediate SHA guard, on approved existing R002 and cache only, expected new G3M receipt if PASS; never invoke v5 `-Mode Verify` in same action. If any source/path/receipt gate fails, halt HOLD and record literal result rather than retry or weakening check.
+**D10 — actual new source-selected 31 SHA1/reparse/output preflight PASS:** Native RDC PS7 PID **3316** ran **only** G3M v1 `-Mode Check` after source SHA256 guard `8D443C10BD9C4785165180CF2D1CDCC7380B2237F239D4DE500D7D193CA11815`, finished literal **`PASS_G3M_SOURCE31_READONLY_PREFLIGHT|FILES=31|BYTES=112616297|ORIGINAL_MUTATION=0|GRAPH=NOT_EVALUATED`**. 31 unique source-pinned F4 26 + G1 5 original cache files SHA1 and 22B..256MiB gates passed, source/ancestors inspected for reparse and containment, exact build/UUID/R23 and v5/F4/G1 SHA pins matched; neither G3L graph nor failure parent existed at both preflight checks. One owned NEW G3M receipt path created `05_Evidence\\R002R26_G3M_Source31_Preflight_001\\R002R26_G3M_Source31_ReadOnlyPreflight.json`. **Receipt bytes/content and post-run original SHA1 NOT independently read back yet; no G3L ZIP64/XML graph run; CAB/WIM floor not evaluated.** No original/cache/WIM/OS/registry/ISO mutation requested.
+
+**STATUS:** `PASS_G3M_NATIVE_SOURCE_SELECTED_31_SHA1_REPARSE_COLLISION_PREFLIGHT` / `RECEIPT_POST_READBACK_PENDING` / `G3L_REAL_VERIFY_NOT_RUN`.
+
+**ONE NEXT:** Direct RDC read exact owned G3M JSON receipt and inspect literal schema/count/bytes/flags, journal/readback, then do separate immediate G3L graph/failure parent absence/collision final check before any real G3L v5 `-Mode Verify`. If any gate fails stop with HOLD.
