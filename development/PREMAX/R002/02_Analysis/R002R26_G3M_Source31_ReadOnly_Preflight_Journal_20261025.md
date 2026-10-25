@@ -98,4 +98,8 @@ Historical precedent: Handoff §0BE permanent support-based QA protocol enforces
 
 **STATUS:** `PASS_SUPPORT_HISTORY_SCOPE_REVIEW` / `G3N_INSPECT_PLATFORM_BLOCKED_ATTEMPT1_OF3` / `ORIGINAL_IDENTITY_NOT_YET_FOUND`.
 
-**ONE NEXT:** Independently read back D22 Git checkpoint, then one **single-source SHA256 native read-only confirmation** on G3N v1 (separate command). Independently journal and read back before retrying only the narrowly scoped same-RDC G3N `-Mode Inspect` against unchanged SHA-pinned source; no rerun of G3L Verify. On renewed safety refusal stop immediately per Handoff §0BE and Master §0E even if one remaining nominal attempt.
+**D23 — independent narrow single-file native SHA guard succeeded:** With same RDC device and unchanged allowed roots, standalone read-only PowerShell 7 `Get-FileHash SHA256` of exact owned `C:\\work\\PREMAX-work\\R002_Universal_Stage1_MAXPRE_Package\\04_StaticTests\\R002R26_G3N_IdentityOnly_v1_DRAFT.ps1` completed native **PID2600**. Exact SHA256 `A0A7F3877C3CB2E1C0FBCE8F3FADB615837A3749DC1D49A6A405D7785FDEBD7F`, matches D21; no original/corpus inspection, no original/cache/OS/image or project-file write. SHA check separately performed per Support and §0BE; source 152-line readback + AST0 remain predecessor proof. The script was **NOT executed** in this SHA-only operation.
+
+**STATUS:** `PASS_G3N_SOURCE_SINGLE_SHA256_PIN_READONLY` / `G3N_INSPECT_ATTEMPT1_BLOCKED_PENDING_OPERATOR_RETRY2`.
+
+**ONE NEXT:** Independently read back D23 Git journal, then only one same-connector and same-owned-script `-Mode Inspect` attempt2/3 with no embedded SHA/write/other batch operations. If platform again returns a safety rejection, stop and report HOLD without method changes or further retries. Do not execute G3L v5 Verify.
