@@ -78,4 +78,8 @@
 
 **STATUS:** `G3N_V1_NEW_DRAFT_CREATED_PENDING_SOURCE_READBACK_AST_SHA` / `G3L_REAL31_GRAPH_HOLD_PRESERVED`.
 
-**ONE NEXT:** Direct RDC full 152-line G3N source readback, inspect exact SHA and identity clauses, journal/readback, separately native AST and SHA, then consider one G3N-only original identity scan.
+**D19 — independent exact complete G3N v1 local source readback:** RDC `read_file` of exact newly owned `04_StaticTests\\R002R26_G3N_IdentityOnly_v1_DRAFT.ps1` returned **152/152 lines (0 remaining)**. Verified F4/G1 SHA256, G3L v5 SHA and R23/UUID pins, ZIP archive read-only open, XML DTD Prohibit, all v5 identity fields NAME_REGEX_OR_LENGTH, PUBLISHER_EMPTY_OR_LENGTH, VERSION_REGEX, ARCH_INVALID_OR_EMPTY, VERSION_PARSE, nested bundle scan and bounded entry read. No v5 `-Mode Verify` invocation, no output file write in scanner. Readback proves content present, NOT native parse/hash or source-scan PASS. Old V5/Cache unchanged.
+
+**STATUS:** `PASS_G3N_V1_COMPLETE_SOURCE_READBACK_152_OF152` / `AST_SHA_NATIVE_RUN_PENDING`.
+
+**ONE NEXT:** Run native PowerShell7 parser-only AST check for exact new G3N v1. Journal/readback, then separate native SHA256 proof before one guarded readonly diagnostic scan.
