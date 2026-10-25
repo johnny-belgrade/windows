@@ -82,4 +82,8 @@
 
 **STATUS:** `PASS_G3N_V1_COMPLETE_SOURCE_READBACK_152_OF152` / `AST_SHA_NATIVE_RUN_PENDING`.
 
-**ONE NEXT:** Run native PowerShell7 parser-only AST check for exact new G3N v1. Journal/readback, then separate native SHA256 proof before one guarded readonly diagnostic scan.
+**D20 — G3N v1 native PowerShell7 AST-only PASS:** Native RDC PS7 `Parser.ParseFile` PID **1768** returned exact `G3N_V1_AST_ERRORS=0` for new `04_StaticTests\\R002R26_G3N_IdentityOnly_v1_DRAFT.ps1`. No script run, protected AppX reads, receipt or OS writes in this parser-only step. Prior 152-line complete local source readback PASS.
+
+**STATUS:** `PASS_G3N_V1_NATIVE_AST0` / `SOURCE_SHA_SCAN_PENDING`.
+
+**ONE NEXT:** Separate native SHA256 of exact new G3N v1 source, record/readback before at most one SHA-pinned readonly `-Mode Inspect` on original selected31 corpus.
