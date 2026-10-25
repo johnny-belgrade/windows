@@ -34,4 +34,8 @@
 
 **STATUS:** `PASS_G3M_V1_FULL_106_LINE_LOCAL_READBACK` / `AST_SHA_EXECUTION_PENDING`.
 
-**ONE NEXT:** Run parser-only native PowerShell7 AST check on G3M v1; journal/readback, then native SHA in separate logged action; only after verified script code may one read-only preflight execute.
+**D8 — native PowerShell 7 AST-only new preflight:** RDC PID **10028** native `Parser.ParseFile` on exact G3M v1 106-line draft returned `G3M_V1_AST_ERRORS=0`. No script execution, source/cache/receipt writes or host/WIM changes.
+
+**STATUS:** `PASS_G3M_V1_NATIVE_AST0` / `SHA_EXECUTION_PENDING`.
+
+**ONE NEXT:** Native SHA256 hash of exact approved G3M v1 source; journal/write independent readback before performing source-selected read-only preflight execution.
