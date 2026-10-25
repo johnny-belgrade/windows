@@ -9,6 +9,12 @@
 **Acceptance:** Odvojeno proveriti offline servisni start/policy, post-first-boot i post-servicing efektivno stanje, izostanak indeksiranja i običnog enable prekidača, kao i očuvanje Search/shell i servisnih zavisnosti. Svaka WIM/hive/ISO/host modifikacija tek uz posebno odobrenje i rollback/health. **Sada samo dokumenti izmenjeni**, nikakav WIM/ISO/Registry/NTLite/host niti JSON Registry nije menjan. G3O zaseban real31 graph HOLD ostaje.
 
 **STATUS:** DOC_INDEXING_OFF_MANDATORY / OFFLINE_IMPLEMENTATION_NOT_RUN. **ONE NEXT:** Handoff SECOND i Session Entry LAST readback, pa GUI pauza.
+### §0R SECOND — indexing-OFF dokumentaciona direktiva reviewed, nije implementirana
+
+**Review NEXT:** Nova Master §16.1 normativna obaveza važi za sve buduće offline build-ove; istorijski planovi sa WSearch disabled nisu dokaz da je konkretan 26300.9807 offline WIM već efektivno imao sve service/policy/post-boot protection slojeve. Za stvarnu implementaciju: prethodno operatorom odobrena odvojena offline mutacija, tačan target-build policy proof, rollback i izvorni dependency floor, test posle OOBE/restart/servicing, i negativan test da standardni korisnik ne može jednostavno uključiti indexing. Održavati administrativnu mogućnost svesne višekoračne reverzije. Ne menjati Store/Start/Search UI/CBS zavisnosti radi prividnog PASS; ne menjati runtime Registry r38/NTLite import XML bez sopstvene posebne source-bound revizije.
+
+**Status:** DOC_INDEXING_OFF_MANDATORY / NATIVE_WIM_INDEXING_OFF_NOT_TESTED. **ONE NEXT:** ažurirati Session Entry kao poslednji §0R upis sa novim Master i Current/Handoff blob identitetima i zadržati zaseban G3O HOLD/NEXT. Nakon nezavisnog readback-a protokolarna pauza.
+
 ## 0CJ. 2026-10-25 — G3O successor source-only lookup review DONE, exact deterministic next (§0R FIRST)
 
 **Operator one-block scope:** Two narrowly scoped native RDC `read_file` actions on existing G3N v1 152-line source SHA256 `A0A7F3877C3CB2E1C0FBCE8F3FADB615837A3749DC1D49A6A405D7785FDEBD7F`: source bundle `Inspect-Zip` region offset88/62; helper `Entry`/identity region offset45/51. Each action independently logged and readback per §0BE. [G3O D25–D26 journal](development/PREMAX/R002/02_Analysis/R002R26_G3M_Source31_ReadOnly_Preflight_Journal_20261025.md) commit `350597de74b3222b362cd0d30449d662ddfc0b1c`, final blob `7607a49842b6d1f1d75013ca7d5f8c85cd8846b5` verified. Current FIRST commit `e31a9f5bf55f34475336ec47d4f3f58a4663d848`, full 1,522,318 char blob `928a32ac7f7c8b6ea5f5e0cf723faaee50b4e6f7` independently fetched PASS.
