@@ -74,4 +74,8 @@
 
 **STATUS:** `PASS_G3N_DIAGNOSTIC_NEW_PATH_ABSENT` / `SOURCE_NOT_CREATED`.
 
-**ONE NEXT:** One `FileMode.CreateNew` G3N source-only draft under approved R002 `04_StaticTests`; journal independent readback, then full source reading, AST and native SHA before any single readonly native diagnostic attempt.
+**D18 — NEW nonoverwriting G3N identity-only diagnostic source created:** Scoped RDC native PS7 PID **2744** finished `G3N_SOURCE_CREATED_BYTES=8618;LINES=152`. New `C:\\work\\PREMAX-work\\R002_Universal_Stage1_MAXPRE_Package\\04_StaticTests\\R002R26_G3N_IdentityOnly_v1_DRAFT.ps1` delivered via `FileMode.CreateNew` (existing v5, G3K and G3M untouched). Source design: SHA-gates v5/F4/G1 and R23/UUID, SHA1 gates exact original 26+5 cache leaves under C:\\work with per ancestor reparse guard; .NET ZipArchive readonly and bounded streamed XML, at most one nested bundle depth; reproduces v5 `Get-Identity` predicates as separate NAME/PUBLISHER/VERSION/ARCH diagnostics. The code **only prints** invalid identity and scan counts, no output file or original mutation; not yet independently read/AST/SHA, not executed on original AppX. Earlier G3L `-Mode Verify` **not retried**.
+
+**STATUS:** `G3N_V1_NEW_DRAFT_CREATED_PENDING_SOURCE_READBACK_AST_SHA` / `G3L_REAL31_GRAPH_HOLD_PRESERVED`.
+
+**ONE NEXT:** Direct RDC full 152-line G3N source readback, inspect exact SHA and identity clauses, journal/readback, separately native AST and SHA, then consider one G3N-only original identity scan.
