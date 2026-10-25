@@ -1030,6 +1030,15 @@ Exact service start values must be verified against the current certified rule, 
 
 Do not “debloat” the common base by amputating the entire Windows Update engine.
 
+### 16.1. OBAVEZNO — Windows Search INDEXING OFF u offline common base (izričita operatorska direktiva 2026-10-25)
+
+**Normativni cilj svakog budućeg BlueLite offline build-a:** Windows *file/content indexing* mora biti **isključen već u osnovnoj offline slici**, sistemski i kroz primenljive podržane policy/service mehanizme. `WSearch` mora ostati `Disabled` (offline servisni start onemogućen); indeksiranje fajlova/sadržaja, automatska izgradnja kataloga i samopokretanje indeksatora ne smeju biti omogućeni prvim boot-om, OOBE, korisničkim profilom, Windows Update/servicing rutinom ili običnim GUI podešavanjem. Kontrolu sprovesti slojevito (servis + proverene sistemske politike + first-boot/post-setup persistence) **samo na odgovarajućem dokazano podržanom target build-u**. Ne izmišljati registry/policy ključeve niti mešati zabranu indeksiranja sa uklanjanjem neophodnih Start/Search UI i shell zavisnosti.
+
+**Korisnički UX namerno restriktivan:** krajnji standardni korisnik ne dobija jednostavan toggle, automatsko uključivanje, ni jednoklikni desktop enable za indexing. Ponovno uključivanje, ako korisnik insistira, ostaje **svesna administrativna višekoračna reverzija** servisne konfiguracije i relevantnih efektivnih politika, uz sopstvenu proveru i odgovornost; nije obaveza BlueLite-a da ga olakša. Ne sabotirati administratoru oporavak niti uklanjati servicing/Windows Search UI zavisnosti naslepo.
+
+**Obavezni test/receipt pre release sertifikacije:** na ciljnoj offline WIM/working kopiji i posle stvarnog prvog boot-a zasebno dokazati `WSearch` startup state, efektivnu index-policy zabranu, odsustvo aktivnog index crawl-a/kataloga, nemogućnost običnog user-toggle uključivanja, trajnost kroz restart/servicing, i očuvanje Start menija, osnovnog file-search UX-a gde nezavisan UI dependency to dozvoljava, CBS i Windows Update/Defender poda. Ako konkretna build-policy nema dokazanu podršku, primeniti fail-closed servisni minimum i prijaviti otvorenu dependency umesto lažnog PASS. **Ova normativna direktiva nije dokaz da je ijedan trenutni WIM/ISO već promenjen.** Svaka stvarna offline mutacija i dalje zahteva zasebno operatorsko odobrenje, owner, rollback i health gates po §0C/§0E/§0R.
+
+
 ---
 
 # 17. APPX / STORE / OPTIONAL APPLICATION POLICY
