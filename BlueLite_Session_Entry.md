@@ -1,5 +1,22 @@
 # BlueLite v1.0 — Session Entry (2026-10-23)
 
+## 2026-10-25 — OPERATOR NORMATIVE OFFLINE INDEXING OFF DIRECTIVE; DOCS ONLY; GUI_PAUSE
+
+**Obavezno za svakog successor-a i svaki budući BlueLite offline modifikovani Windows common-base image:** Windows Search file/content indexing **bazno i efektivno isključen**, WSearch service Disabled, uz podržane sistemske i policy mere i OOBE/restart/servicing perzistenciju. Standardni korisnik ne treba da dobije prost način uključivanja indeksa; ponovno uključivanje ostaje svesna višekoračna administratorska promena, ne desktop jednoklikni enable. Ne amputirati Start/Search UI, CBS/servicing ili Windows Update zavisnosti. Ne izmišljati policy reg ključeve; dokazati build-specific offline i post-boot Service/Policy/UX post-state i rollback pre release PASS.
+
+**Sada samo dokumentacija, svi upisi nezavisno provereni:**
+- **BlueLite-Master_Germanium_Strategy_final.md** — postojeći §16 proširen novim obavezujućim §16.1, commit `41e1dad7ba4d66478da5142ae9a6aa17d16dd634`, novi aktuelni Master blob `04491092b5cc7f09556831b2df8903fa731e0f0e` (istorijski old `00d3d34e97c35d6fde241f5aa47f17de050d6eb7` samo prethodni snapshot).
+- **production/contracts/README.md** — obavezan acceptance contract, commit `39192a6acc451c680f6b1250be9271c36c999477`, blob `2480f7794f3853801fbee52016e070cb8bee378e`.
+- **docs/BlueLite_PREMAX_Workspace_README.md** — offline PRE_MAX source/fixture/post-state gates, commit `aba229a9472df9be9ecd23a2b95e55ff4ecde3f9`, blob `b6f32bf3ffec9899d6f4de8defc5abb86271716e`.
+- **BlueLite_Current_Status.md** — latest FIRST commit `1bb29bb0ea1c2c5a901790bb69e535a959a3eb81`, blob `eeff12ab7beeb31f57a9d59eca308286f9469864`, full readback.
+- **BlueLite_Germanium_Handoff.md** — new §0CK FIRST commit `1afee824a1f5f753aa11c923e29850b66971daf8` and §0R SECOND commit `2be1f3a4cc9632ed52a468e080101e6e4560555a`, latest full blob `63ee31aa5440c26faceae41e26612d465a47a118`, readback.
+- **BlueLite_Session_Entry.md** — THIS LAST sync, pending independent readback.
+
+**Scope:** Nema novih komandi na originalnom UUP/WIM/hive/live OS-u, nema promena actual ISO-a, NTLite_Full_Component_List.xml (istorijski preset), runtime RecipeRegistry r38 (sva execution false) ili drugih machine contracta. Samo zahtev/policy i budući acceptance kriterijumi. Prethodni G3O source review PASS, real bundle/resource dependency i full31 XML graph HOLD ostaju odvojeni. Svaka stvarna offline mutacija traži zasebno operatorsko odobrenje.
+
+**STATUS:** `PASS_OFFLINE_INDEXING_OFF_POLICY_DOCUMENTED` / `OFFLINE_IMPLEMENTATION_NOT_RUN` / `GUI_PAUSE_AWAITING_OPERATOR`.
+**ONE NEXT:** Po nalogu operatora sledeći G3O scoped source-only diagnostic block iz Handoff §0CJ, uz trajni indexing-OFF gate za svaku narednu offline modifikaciju, bez pretvaranja dokumentacije u native proof.
+
 ## R002R26-G3O — successor single read-only SOURCE-REVIEW block CLOSED; bundle identity path diagnostic NEXT / GUI_PAUSE — 2026-10-25
 
 **Authority:** Master v6.3.1 unchanged, one operator-requested logical block, strictly per-action journal + independent readback. Same approved RDC DESKTOP-4J4KCEA online v0.3.1, roots historically `C:\\work` and `C:\\BLR20R2F5`, blocked33; no settings modified. Existing target 26300.9807 Pro x64 en-US UUID `687d1ced-aab1-4cd5-ad05-705189769731`; F4 seed26 + G1 provider5 originals source SHA1 preflight 31/31 PASS 112,616,297B. Frozen G3L v5 SHA256 `C1F97F6ED041482C882AD4E28AB3F74347FB417989D2B3F94D0C99F5F4AE53AA`, frozen G3N v1 SHA256 `A0A7F3877C3CB2E1C0FBCE8F3FADB615837A3749DC1D49A6A405D7785FDEBD7F`. G3L original one `-Mode Verify` `G3_HOLD_IDENTITY_INVALID` (fail receipt verified, culprit file not reported); G3N native `-Mode Inspect` cumulative second attempt PID4728 ran, flagged **12** real scale-resource MSIX `ProcessorArchitecture` empty then `G3N_HOLD_CHILD_NOT_FOUND`, 31/31 identity scan incomplete. That is an **identity validation dependency**, not evidence of defective original files, nor complete graph. CAB NOT_ACQUIRED; external WIM/CBS floor NOT_EVALUATED; **no production mutation**.
