@@ -46,4 +46,8 @@
 
 **STATUS:** `PASS_G3M_NATIVE_SOURCE_SELECTED_31_SHA1_REPARSE_COLLISION_PREFLIGHT` / `RECEIPT_POST_READBACK_PENDING` / `G3L_REAL_VERIFY_NOT_RUN`.
 
-**ONE NEXT:** Direct RDC read exact owned G3M JSON receipt and inspect literal schema/count/bytes/flags, journal/readback, then do separate immediate G3L graph/failure parent absence/collision final check before any real G3L v5 `-Mode Verify`. If any gate fails stop with HOLD.
+**D11 — independent actual G3M owned JSON receipt readback:** Direct RDC `read_file` exact `05_Evidence\\R002R26_G3M_Source31_Preflight_001\\R002R26_G3M_Source31_ReadOnlyPreflight.json`, **15/15** lines. JSON literal `schema=BlueLite.R002R26.G3M.Source31ReadOnlyPreflight.v1`, `result=PASS_SOURCE31_SHA1_AND_PATH_GATE_ONLY`, build26300.9807 UUID `687d1ced-aab1-4cd5-ad05-705189769731`, G3L v5 SHA `C1F97F6ED041482C882AD4E28AB3F74347FB417989D2B3F94D0C99F5F4AE53AA`, `transport_packages=31`, `total_source_bytes=112616297`, original_binary_mutation false, G3L graph/failure parent absence true, ZIP64/XML graph `NOT_EVALUATED`, CAB `NOT_ACQUIRED`, WIM floor `NOT_EVALUATED`. This is source-selected SHA1/path gate proof, **not** 31 ZIP64/XML manifest graph PASS; no protected file modifications.
+
+**STATUS:** `PASS_G3M_SOURCE31_NATIVE_RECEIPT_READBACK_15_OF15` / `G3L_V5_REAL_VERIFY_NOT_RUN`.
+
+**ONE NEXT:** Fresh targeted direct read-only native filesystem check confirms intended G3L success and fail parent *both absent* plus R002 `05_Evidence` non-reparse; journal/readback, then make separate narrowly scoped decision whether all read-only v5 `-Mode Verify` source, SHA, ownership and collision gates permit exactly one actual run.
