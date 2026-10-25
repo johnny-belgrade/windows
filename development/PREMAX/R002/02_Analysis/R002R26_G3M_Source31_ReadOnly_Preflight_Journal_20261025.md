@@ -66,4 +66,8 @@
 
 **STATUS:** `PASS_G3L_NATIVE_FAILCLOSED_JSON_EXACT_15_LINES` / `HOLD_IDENTITY_CULPRIT_NOT_YET_IDENTIFIED`.
 
-**ONE NEXT:** Review prior G3K single-real ZIP64/CRC/XML identity evidence and frozen G3L v5 Get-Identity predicate and protect original source before building a new one-purpose, versioned identity-only read-only diagnostic (31 + nested bundle identity) with exact F4/G1 SHA guards. Source/AST/SHA and output collision gates before any scan; do not rerun G3L v5 Verify.
+**D16 — prior proven G3K source reviewed, reuse precedent:** Direct GitHub exact frozen `development/PREMAX/R002/04_StaticTests/R002R26_G3K_OneSampleZip64_v1_DRAFT.ps1` Git blob `4a2c2398122f0b899499b9c0429ace9e57fec6c0`, 16851 chars/298 split lines. Its bounded original AppX route pins F4 expected SHA1 before readonly `[IO.File]::Open(... Read, Share.Read)`, reads .NET `ZipArchive` entry `AppxManifest.xml`, performs independent CRC32 of manifest against ZIP64 central, parses secure XML with `XmlReaderSettings`; prior native one-original sample PASS. Crucially G3K did **not** run G3L's `Get-Identity` predicate; the present v5 `IDENTITY_INVALID` may be a predicate/missing attribute rather than ZIP corruption. New diagnostic must preserve these independent proof boundaries and report **per-leaf/per-nested identity raw fields** with failure category and sanitization, not alter source or rerun whole graph.
+
+**STATUS:** `PASS_G3K_READONLY_ZIP_XML_DIAGNOSTIC_PRECEDENT_REVIEWED` / `IDENTITY_CULPRIT_NOT_YET_FOUND`.
+
+**ONE NEXT:** One direct read-only inventory of existing R002 static-tests directory to verify a **unique G3N** identity-only diagnostic draft name absent (separate versioned draft); journal/readback before any new source creation. G3N will require independent full source/AST/SHA and only a separate read-only native diagnostic execution against F4+G1 pinned sources.
