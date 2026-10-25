@@ -26,6 +26,12 @@ Canonical authority: [Master](../../BlueLite-Master_Germanium_Strategy_final.md)
 9. Record failed negative fixtures, known dependency holds and separately approved exception paths. No auto-promote from `STATIC_VERIFIED` to `RELEASE_CERTIFIED`.
 10. Master release gates remain normative (Defender ON/OFF, Store policy, servicing/pending, Update Pause/Resume, VMware/VirtualBox **host** testing, footprint and SHA).
 
+## Obavezni offline common-base indexing acceptance contract — operator 2026-10-25
+
+Normativan cilj iz [Master §16.1](../../BlueLite-Master_Germanium_Strategy_final.md): **Windows Search file/content indexing u osnovnom offline target OS-u je OFF**, `WSearch` Disabled, sa podržanim sistemskim/policy i post-setup ograničenjima koja ne dopuštaju trivijalno uključivanje standardnom korisniku. Oporavak je samo namerna administrativna višekoračna promena. **Ne uklanjati Start/Search UI/CBS/servicing zavisnosti** radi prividnog smanjenja. Svaka implementacija mora imati target-build proof efektivnog policy ključa i WSearch start-state, posle prvog boot-a/restarta i servicing-a, negativni test user-toggle, i nezavisne native/post-state dokaze pre oznake PASS. Slučaj unsupported policy ili nerazrešenog dependency ide na HOLD; nema izmišljenog ključa, automatske promocije ili aktiviranja runtime recipe-a.
+
+Ovaj README i postojeći JSON Schema/RecipeRegistry **ne omogućavaju izvršenje**; svi originalni `runtime_execution_allowed=false` ostaju kakvi jesu, a istorijski dokaz nije sertifikacija za 26300.9807. Za konkretnu offline WIM promenu i dalje se zahteva posebno eksplicitno odobrenje i rollback/health. Ova izmena je *isključivo dokumentacioni zahtev*, ne potvrda da je offline slika modifikovana.
+
 ## Next engineering work, not completed by this commit
 
 Bind the existing D4/D6/Stage1 scripts and later common engine to the same manifest and receipt contracts; replace provisional intelligence records with exact `engine_module` SHA and actual independent negative/runtime evidence **only after operator authorization and tests**. Do not duplicate the D4 URL renewer or restart 26200 R7 experiments.
