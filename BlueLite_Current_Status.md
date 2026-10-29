@@ -1,17 +1,25 @@
 # BlueLite v1.0 — CURRENT STATUS (single active checkpoint)
-Updated: 2026-10-29 12:33 UTC (13:33 Europe/Budapest; G3O full source readback block)
+Updated: 2026-10-29 12:49 UTC (13:49 Europe/Budapest; G3O native SHA256/metadata block)
 
-## ACTIVE — G3O FULL SOURCE READBACK PASS / SOURCE SHA + AST + FIXTURES NOT_RUN / GUI_PAUSE_AWAITING_OPERATOR
+## ACTIVE — G3O SOURCE READBACK + SHA/METADATA PASS / AST + FIXTURES NOT_RUN / GUI_PAUSE_AWAITING_OPERATOR
 
 **Normative authority:** BlueLite-Master_Germanium_Strategy_final.md §0G (new operator-approved Hybrid v2), §0C/§0D/§0E, §0F, §16.1, §31. Master v2 migration commit 85f71845966c75f3f0fb4c1ee1f4ddbc1bce1776, blob 018840bac8abd2a0b08058e21cd702ad42d3beb2. Handoff remains a frozen *historical* archive, not an active append log. Session Entry becomes an entry/router, not a second checkpoint. No fourth active status document.
 
 **Preserved historical current before compaction:** this document's old blob b22fde41a6175a6cd70636d6a9bd7198d87e1203; historical Current FIRST commit 7d07d572ec6db835958772400ef51cc8e9e7203b, complete original 1,527,308 chars previously verified. Git ancestry is retained; do not force-push. Historical Handoff full blob 5a26abd83aabbf7d37eda0f70de065772d982384; historical SECOND commit 1488a8cc796617c93026478ae8e3208489832c6f. Historical status content is evidence, not the live task state.
 
-### LAST VERIFIED technical checkpoint — G3O complete source readback only
+### LAST VERIFIED technical checkpoint — G3O source readback and native SHA/metadata
 - Work: R002 / universal 26300.x MAX_PRE, current source selected Windows 11 26H2 GA 26300.9807 Pro x64 en-US, UUP UUID 687d1ced-aab1-4cd5-ad05-705189769731. Original F4 26 + G1 5 AppX SHA1 from earlier G3M native 31/31, 112,616,297 bytes; not a real31 XML/dependency verification.
-- Native Windows PS7 PID2296 (prior session): created only C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\04_StaticTests\R002R26_G3O_ResourceBundleIdentity_v1_DRAFT.ps1 through CreateNew, 11,802 bytes, 212 lines. This session separately read the complete source via RDC: **212/212 lines, 0 remaining, SOURCE_READBACK_PASS**. Native G3O source SHA256, AST0, fixture testing and real-original G3O Inspect **NOT_RUN**. Draft design descriptions are NOT functional PASS.
+- Native Windows PS7 PID2296 (prior session): created only C:\work\PREMAX-work\R002_Universal_Stage1_MAXPRE_Package\04_StaticTests\R002R26_G3O_ResourceBundleIdentity_v1_DRAFT.ps1 through CreateNew, 11,802 bytes, 212 lines. Prior block separately read the complete source via RDC: **212/212 lines, 0 remaining, SOURCE_READBACK_PASS**. Current block independently pinned native SHA256 **76143B517333442072016D968DC560F4E1FBD28C39B576761DAA91091C496BA0**, **11,802 bytes / 212 lines**, then remeasured in a separate PS7 process: exact match. This is the first native G3O hash pin, not a comparison to an earlier creation-time hash. AST, fixture testing and real-original G3O Inspect **NOT_RUN**. Draft design descriptions are NOT functional PASS.
 - Frozen G3L v5 real Verify failed G3_HOLD_IDENTITY_INVALID; G3N v1 native PID4728 found 12 resource-scale manifest ProcessorArchitecture empty, then G3N_HOLD_CHILD_NOT_FOUND (bundle child not specified); full 31-package provider graph **HOLD**. Original UUID-specific AggregatedMetadata CAB NOT_ACQUIRED; external WIM/CBS provider floor NOT_EVALUATED.
 - No new AppX scan, image mount, UUP download/reconstruction, WIM/CBS/Registry/ISO/NTLite/VM mutation, indexed-Search offline change or production/release certification. Master §16.1 WSearch Disabled and effective offline indexing OFF remain future acceptance requirements only. Registry r38 runtime flags all false.
+
+### 2026-10-29 native source pin — per-operation evidence
+- Operator continuation explicitly required individual-operation records. Live RDC config again confirmed C:\work / C:\BLR20R2F5 and 33 blocked commands; unchanged. Scope: existing G3O v1 source only, no script execution.
+- Operation G3O-SourcePin-20261029-5fbd46ea, native PS7 PID8960: measured SHA256 and strict decoded line count from one read-locked stream; 11,802 bytes, 212 lines, source last-write UTC 2026-10-25T14:20:38.7564113Z. Source and helper parent chains rejected reparse points; reviewed helper SHA guarded before use.
+- New immutable receipt C:\work\logs\BlueLite_G3O_SourcePin_20261029_5fbd46ea.json, 1,923 bytes, SHA256 F756F23984E45D1A3C0ED64444F89DAE5AF5E4D50879234930B5934FA1A9811A, recorded 2026-10-29T12:49:13.3842256Z. Contains actual source hash/path, metadata, authority/scope, preceding receipt pointer, NOT_RUN boundaries and one next verification.
+- Independent PS7 PID8400 freshly read and hashed the receipt, validated exact action/id/outcome/source/SHA/metadata/authorization and NOT_RUN/no-mutation fields, then freshly remeasured the source under a read lock using Get-FileHash and ReadAllLines. SHA/bytes/lines exactly matched; G3O_SOURCE_PIN_INDEPENDENT_MATCH and BLV2_INDEPENDENT_READBACK_PASS observed. Both native processes finished. Only after this verification was Current closeout begun.
+- Result: SOURCE_PIN_ASSISTANT_VERIFIED_PASS only. G3O was not dot-sourced or executed; no AST/fixtures/Inspect/31-package scan occurred. No source, Master, image, historical evidence, Session Entry, Handoff, Registry or Contracts changes.
+- Previous readback receipt remains C:\work\logs\BlueLite_G3O_SourceRead_20261029_9626c69e.json with SHA256 C237FEBBF8FD7A4613E63366F5B975AB80991429FF24964A4E06A83C48572846. Current before this block: blob aa48f44a2c749c362b0c8024da69cc213662540b, commit 59a490a5b9feddd9e704db1d2914c87df6c2e230.
 
 ### 2026-10-29 successor/readback evidence
 - Git main at entry: 281bec6d037efdfe04f07f781968eb0903cbe1f6; Master blob 018840bac8abd2a0b08058e21cd702ad42d3beb2; Session Entry blob 6fbf33a0416af9fd00204fc553fb7ca0dd641cd9; preceding Current fd422322810dd4ffaa1401440ac0c770ba4ac887. Current Master read, including controlling §0G; local historical/workspace READMEs read in full.
@@ -28,7 +36,7 @@ Updated: 2026-10-29 12:33 UTC (13:33 Europe/Budapest; G3O full source readback b
 - Governance migration source/config/README and local helper QA completed; Session Entry router updated last. Static operator TXT runbook delivered in GUI, not a new active Git status. Original G3O technical HOLD remains unchanged.
 
 **Authorization:** operator requested continuation under §0G with explicit prohibition on Master/image changes absent separate approval. This block used read-only source/evidence checks and a new local receipt only. No G3O Inspect/real31 scan or image mutation.
-**ONE NEXT:** After GUI pause and operator continuation, perform one separate native G3O source SHA256 + size/line metadata pin, create a unique receipt and independently verify it. AST and fixtures remain subsequent separate processes; no real31 Inspect without security/dependency review and additional scope approval.
+**ONE NEXT:** After GUI pause and operator continuation, perform a separate PowerShell 7 AST parse of the exact G3O source pinned to SHA256 76143B517333442072016D968DC560F4E1FBD28C39B576761DAA91091C496BA0, without invoking the draft; create a new operation receipt and independently verify native parser results and receipt before continuing. Fixtures and real31 Inspect remain NOT_RUN; no real31 Inspect without security/dependency review and additional scope approval.
 
 ### Hybrid v2 evidence closeout
 - PREMAX README Git mirror docs/BlueLite_PREMAX_Workspace_README.md commit e3a24184d25da38865553ffa6f759611104cc31e, blob 2113f43531b1353cb7984f9a9683e704696c162a readback PASS; local C:\work\PREMAX-work\00_README.md appended identical §Hybrid v2, RDC tail readback PASS. Historical UUP-history unchanged.
