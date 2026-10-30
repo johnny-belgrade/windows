@@ -1,7 +1,7 @@
 # BlueLite v1.0 — MASTER GERMANIUM STRATEGY v6.3.1
 
 **Status:** AUTHORITATIVE / UNIFIED PRODUCTION ARCHITECTURE — SUPERSEDES PREVIOUS MASTER REVISIONS  
-**Date:** 2026-10-16 · **Normative amendments:** 2026-10-21 (v6.1 connector/NTLite; v6.2 UUP/PRE_MAX history lifecycle; v6.2.1 two-phase Session Entry checkpoint; v6.3 GUI block pauses and three-attempt errors)  
+**Date:** 2026-10-16 · **Normative amendments:** 2026-10-21 (v6.1 connector/NTLite; v6.2 UUP/PRE_MAX history lifecycle; v6.2.1 two-phase Session Entry checkpoint; v6.3 GUI block pauses and three-attempt errors); 2026-10-29 (§0G); 2026-10-30 (§0H)  
 **Scope:** PRIMARY Windows 11 26H2 GA / 26300.x; SECONDARY 26200.x solely historic/regression/Component Intelligence; shared 26100 servicing reference; future Germanium branches only after operator decision and lineage verification.  
 **Project:** BlueLite v1.0  
 **Team:** Operator + ChatGPT; locally approved execution by operator or by the authorized, scoped Remote Desktop Commander connector after operator GUI approval  
@@ -123,6 +123,20 @@ Every action records actual evidence, never inferred PASS. If write/readback fai
 
 ---
 
+## 0H. OPERATOR-APPROVED — 2026-10-30 UNIVERSAL 26300 DELIVERY, WINRE, SIZE AND SPEED
+
+**Normative: supersedes incompatible old recommendations and priorities throughout this Master.** Source integrity, current-image dependency gates, servicing/health, retained Update and VMware-host capability, §16.1 indexing OFF, per-mutation approval, §0G receipts and GUI pause remain binding. No runtime authorization or completed MVP/release is implied.
+
+1. **NO PREFERRED BUILD.** New BlueLite UUP source and production targets are **exclusively operator-selected official 26300.x GA** (currently amd64/en-US/Professional per chosen profile). Never prefer, default or hardcode 26300.9711, 26300.9807, 26300.9818 or any other CU. Freeze exact original UUP Dump ZIP, launcher/UUID, converter/config/queues and hashes per run. All 26200.x material is **historical/revision-only analysis**, not a new build/release or dedicated test campaign absent fresh operator decision. Initial universality is tested on at least two distinct selected 26300.x sources when available, not a frozen version.
+2. **P0 MVP1 FIRST.** Build one small runnable universal UUP wrapper from already available Oct-3 resolver/patch-converter, D4/D6 URL renewal and converter-native AppX findings, after reviewing actual source and hashes. Prioritize exact source identity, renewal, unmodified original converter + reviewed reversible overlay, supported native CustomAppsList five-staging-app selection plus real framework/reference closure, necessary Windows/FoD/delta/LCU/SSU queue, update/cleanup semantics, correct install.wim and standard Setup ISO, bounded logs and SHA. Do not destructively prune reconstruction inputs or invent converter switches. Operator-reported original 26300.9818/v128m ZIP is a valuable **candidate to verify on receipt**, not a build preference or assumed inspected file. Preserve originals.
+3. **P1 MVP2 SECOND.** Prioritize largest measured current-image removable payload, including eligible large Edge/WebView, OneDrive, Recall/AI or optional FoD, using existing independently proven GREEN/AMBER current-topology recipes and correct post-state. Evaluate actual unique/hardlink-aware and compressed WIM/ISO byte gains; large names are not proof of gain. Smaller packages, intricate CBS/AppX owner residue and unsupported converter removal move explicitly to Stage2 offline, Stage3 NTLite or Stage4 VMware Workstation Pro/online tasks. Do not delay runnable P0/P1 for completion of unrelated G3O/ZIP64/real31 parser research: it becomes **conditional diagnostic** if a current source/native converter or release-critical dependency exposes a real gap. Preserve current G3O F02/P03 HOLD, never mislabel PASS. Mandatory final release targets are still gates, not prerequisites for testing an intermediate MVP.
+4. **WINPE STAYS, WINRE CANDIDATE.** Preserve standard installer WinPE/Windows Setup boot.wim and bootable ISO. Safely omit the installed WinRE payload (winre.wim) only when supported by the exact source-pinned converter SkipWinRE=1 or independently approved offline recipe, with verified post-state. Document loss of built-in WinRE/Reset/Advanced Startup recovery functions and provide a verified alternative external recovery/deployment route; do not equate WinPE with WinRE or blindly remove Setup/servicing dependencies.
+5. **INSTALLATION AND BOOT PERFORMANCE.** Optimize installation time, first boot/OOBE and subsequent cold, warm and reboot timings without removing required boot/network/storage/servicing/VM host/Update functionality. Benchmark under comparable machine/VM conditions; separately measure download/conversion, Setup, first profile/boot, subsequent boots. Skipping WinRE alone does not prove acceleration of each boot. No fabricated timing gains.
+6. **ISO TARGET ABOUT 5 GB**, not the old 3.5–5 GB envelope and no 3.5 GB lower-bound pressure. Installed clean physical footprint remains approximately 11–15 GB subject to build-specific measurement. Do **not** remove the entire WinSxS/component store, disable functioning Windows Update or fake component-size savings to hit ISO target. Record exact build, output WIM/ISO compressed bytes, physical/hardlink-aware installed bytes and verified dependency costs; explain deviations.
+7. **SEPARATE TIERS:** MVP_CONVERSION_VERIFIED requires actual P0 native converter runtime, correct source-bound install.wim and standard ISO with hashes; MVP2 P1 removals require approved offline working-image transactions and health; RELEASE_CERTIFIED still requires Stage2/NTLite/VM/Defender/CU and first/repeated boot tests. A P0 MVP may be tested without every P1 or real31 diagnostic complete. No stage runtime executes merely because this strategy changed.
+8. **SUCCESSOR EVIDENCE:** use existing Session Entry bootstrap unchanged; before source/removal research examine applicable original Library, local UUP-history and PREMAX files, GitHub Sources mandatory links and earlier reviewed receipts. Update only short Current and relevant source contracts; retain historical build references as history. No additional status document.
+
+---
 ## 0A. MASTER OPERATING CONTRACT — UNIVERSAL GERMANIUM FACTORY
 
 **PRIMARNI OBUHVAT OD v6.0.0: Windows 11 26H2 / 26300.x GA.** Prethodni 25H2 / 26200.x materijal ostaje za regresiju i već potvrđene recepte; nije drugi tekući proizvodni ili istraživački front. Sledeće Germanium linije zahtevaju novi dokaz i odobrenje. Zastarela prethodna linija je isključena iz novih UUP/PowerShell/NTLite/VM proizvodnih profila, matrica regresije i istraživačkog backlog-a. Nasleđeni tehnički logovi i precizni identiteti komponenti ostaju neizmenjeni kao istorijska evidencija; njihov zapis ne vraća podršku zastareloj liniji.
@@ -187,7 +201,7 @@ Operator određuje cilj, autorizuje mutacije i bira obim; ChatGPT proučava doka
 
 ## 0B. v6.0.0 — ČVRSTA STRATEŠKA ODLUKA: 26H2 / 26300 GA FIRST (2026-10-16)
 
-**OPERATOR APPROVED / EFFECTIVE IMMEDIATELY.** Završavamo 45-dnevni razvoj usmeren na 25H2; **26300.x / 26H2 GA je primarni i jedini novi proizvodni/release cilj**. Kao početnu reviziju biramo **26300.9711 / KB5127648**, odnosno noviju potvrđenu GA reviziju ako je operator izabere. **26200.x ostaje istorijska, dokazna i regresiona baza**, ne aktivni paralelni release. R7/26200 i dalji inventar diska se ne nastavljaju rutinski. Reč "latest" nikada nije zamena za operatorov stvarno izabrani i SHA-zamrznuti UUP.
+**OPERATOR APPROVED / EFFECTIVE IMMEDIATELY.** Završavamo 45-dnevni razvoj usmeren na 25H2; **26300.x / 26H2 GA je primarni i jedini novi proizvodni/release cilj**. Nijedna 26300.x revizija nije preferirana; izvor za svaki run bira i SHA-zamrzava operator. **26300.9711 / KB5127648 je isključivo istorijski primer.** **26200.x ostaje istorijska, dokazna i regresiona baza**, ne aktivni paralelni release. R7/26200 i dalji inventar diska se ne nastavljaju rutinski. Reč "latest" nikada nije zamena za operatorov stvarno izabrani i SHA-zamrznuti UUP.
 
 ### 0B.1 Zvanično potvrđena zajednička servisna osnova
 
@@ -204,11 +218,11 @@ Operator određuje cilj, autorizuje mutacije i bira obim; ChatGPT proučava doka
 
 ### 0B.3 NOVA PRIMARNA PROIZVODNA PUTANJA
 
-1. Operator bira zvanični GA **26300.x UUP**, poželjno trenutno 26300.9711: amd64, en-US, Professional i install.wim po odabranoj konfiguraciji; NetFx3 ostaje OFF ako korisnik ne zatraži drugačije. Zamrzavaju se originalni UUPDump ZIP, launcher, URL/UUID, converter, config/list, checksum i source manifest. Nikakav automatski fallback na 26200.
+1. Operator bira zvanični GA **26300.x UUP, bez preferirane revizije**: amd64, en-US, Professional i install.wim po odabranoj konfiguraciji; NetFx3 ostaje OFF ako korisnik ne zatraži drugačije. Zamrzavaju se originalni UUPDump ZIP, launcher, URL/UUID, converter, config/list, checksum i source manifest. Nikakav automatski fallback na 26200.
 2. Ponovo koristiti postojeće Phase A2, R26-D6, R15/R113/R120 i prethodne converter-native selektore. Prvo proveriti male Windows/Apps queue metapodatke, nezavisni originalni queue checksum, signed URL expiry i manifest-based AppX dependency closure. Tek zatim operator odobrava veliki source download; **ne duplirati stare GB dokazne materijale**.
 3. **PRE_DOWNLOAD:** bezbedno filtriranje nepotrebnih AppX/MSIX; pet obaveznih staging aplikacija i stvarne framework/flat bundle reference ostaju. **WINDOWS RECONSTRUCTION:** nikad destruktivno filtrirati referentni/delta/FoD/ESD/LCU/SSU/DU/EKB Windows queue samo zato što se komponenta kasnije želi ukloniti. SkipEdge=1, SkipWinRE i cleanup konvertera tumače se prema TAČNO pinovanoj verziji originalnog convertera. SkipEdge ne dokazuje da Edge.wim sme da se preskoči pri download-u.
 4. Izvorni rekonstruisani **26300 install.wim je immutable**. Na njegovoj posebno vlasnički izdvojenoj izvedenici pokrenuti MAX_PRE POST-RECONSTRUCTION/PRE-ISO sa build-resolved recipes, CBS/feature/FoD/AppX/pending/health i zaštićenim VM/network/servicing floor. R7 CBS 0x800F0825 i R4 DesktopAppInstaller 0x80073CFA iz 26200 su **poznati failure potpisi**, ne automatski 26300 outcome; proveriti 26300 stvarno stanje.
-5. Dalje samo STAGE2 standalone PowerShell offline residue, STAGE3 NTLite Business portable preset i STAGE4 VMBox/admin/Defender ON/OFF + finalni WIM/ISO i footprint. Postojeći ISO 3.5–5 GB, install footprint 11–15 GB i Store/Windows Update/4-final AppX ugovor ostaju ciljevi i gate-ovi, a ne tvrdnje da su dostignuti.
+5. Dalje samo STAGE2 standalone PowerShell offline residue, STAGE3 NTLite Business portable preset i STAGE4 VMBox/admin/Defender ON/OFF + finalni WIM/ISO i footprint. **Novi ISO cilj oko 5 GB** (bez ranijeg 3.5–5 GB ciljnog intervala), install footprint okvirno 11–15 GB i Store/Windows Update/4-final AppX ugovor ostaju ciljevi i gate-ovi, a ne tvrdnje da su dostignuti.
 
 ### 0B.4 Prostor, putanje, zadržavanje i završena A02 akcija
 
@@ -263,7 +277,7 @@ BlueLite is an **automated, build-independent Windows 11 Germanium transformatio
 
 The target envelope is:
 
-- final ISO approximately **3.5–5 GB**;
+- final ISO **about 5 GB** (selected 26300.x, measured not guaranteed; no 3.5-GB lower-bound pressure);
 - installed footprint approximately **11–15 GB** before machine-specific drivers and user programs;
 - maximum offline debloat consistent with the proven dependency and servicing graph;
 - maximum practical WinSxS reduction consistent with clean servicing state;
@@ -643,7 +657,7 @@ Normative §0A and **v6.0.0 primary-target §0B** apply to **all four production
 
 ## 7.1 Source authority
 
-The canonical release source is the **exact UUP Dump source/archive selected by the operator**, now obligatorily 26H2 GA/26300.x for NEW production. Prefer current 26300.9711/KB5127648 as of 2026-10-16 but never assume source availability, preexisting download or fixed UUID.
+The canonical release source is the **exact UUP Dump source/archive selected by the operator**, now obligatorily 26H2 GA/26300.x for NEW production. No patch revision is preferred or assumed; 26300.9711 is an historical example, not a source-selection recommendation. Never assume source availability, preexisting download, original converter version or fixed UUID.
 
 BlueLite must capture and log:
 
@@ -755,7 +769,7 @@ Final release gate remains absolute for declared mandatory removals and protecte
 
 ## 8.3 Cross-build regression and quick release
 
-The regression matrix must cover representative real builds **26200.x, 26300.x and later confirmed Germanium build lines** (as image sources are available), including positive and deliberately negative fixtures. Regression code validates the engine, recipe variants and expected state. A new CU on unchanged topology runs **selective** current-image tests and an end-to-end acceptance suite; it does not redo full historical rule creation. Deep `ScanHealth`/new hardlink ownership proof is mandatory on newly researched high-impact topology, not automatically on every already-certified unchanged removal. Final release still needs its declared health/serviceability tests.
+The active regression matrix covers **at least two different operator-selected 26300.x GA sources** when available, with positive and negative fixtures. **26200.x is historical review-only evidence**; no new 26200 build or dedicated runtime regression is scheduled absent separate operator decision. Later Germanium lines require explicit acceptance. Regression code validates the engine, recipe variants and expected state. A new CU on unchanged topology runs **selective** current-image tests and an end-to-end acceptance suite; it does not redo full historical rule creation. Deep `ScanHealth`/new hardlink ownership proof is mandatory on newly researched high-impact topology, not automatically on every already-certified unchanged removal. Final release still needs its declared health/serviceability tests.
 
 Generate machine-readable result per target: `source_identity`, `logical_id`, `resolved_exact_identity`, `topology_fingerprint`, `recipe_id/version`, `decision`, `post_state`, `expected_delta`, `observed_delta`, `protected_floor`, `time_ms`. A simple syntax/anchor PASS is never substituted for runtime behavior.
 
@@ -1494,7 +1508,7 @@ No universal system can guarantee a fixed ISO or instant release for every futur
 
 ### 29.4 Acceptance benchmark
 
-Record repeated end-to-end dry runs **first on actual 26300 GA**, while using existing 26200 receipts and fixtures for regression/known-rule comparison rather than requiring a new parallel 25H2 release. No 26300 run has yet occurred. Track median operator touches, automated rule coverage, unknown-dependency count, build wall time (separate network/download/CPU/VM portions), SHA reproducibility for identical inputs/toolchains and final serviceability. Target same-day/hours for **compatible known-topology** new sources once production artifacts exist; do not claim uploader competitors' private implementation or actual times without evidence.
+Record repeated end-to-end dry runs **first on actual 26300 GA**, while using existing 26200 receipts and fixtures for regression/known-rule comparison rather than requiring a new parallel 25H2 release. Earlier 26300 source/runtime receipts exist but do not certify the new runnable universal P0 MVP, full cross-build package or final release. Track median operator touches, automated rule coverage, unknown-dependency count, build wall time (separate network/download/CPU/VM portions), SHA reproducibility for identical inputs/toolchains and final serviceability. Target same-day/hours for **compatible known-topology** new sources once production artifacts exist; do not claim uploader competitors' private implementation or actual times without evidence.
 
 # 30. CANONICAL DELIVERABLES — VERSIONED REAL FILES, NOT HUNDREDS OF DEVELOPMENT SCRIPTS
 
@@ -1582,7 +1596,7 @@ Every **final release** requires:
 
 **Automatic outcome states**: `RELEASE_PASS`; `RELEASE_BLOCKED_TARGET_DEPENDENCY`; `RELEASE_BLOCKED_SERVICEABILITY`; `RELEASE_BLOCKED_RUNTIME`; `RELEASE_BLOCKED_SOURCE`. Scope each failure with exact owner and next action. A blocked release must not silently ship; however **do not restart source download, known-rule engineering or unrelated finished stages because one target changed**. Rebuild/resume only jobs whose input/dependency fingerprints became invalid.
 
-The 3.5–5 GB ISO and 11–15 GB installed footprint are **measured engineering targets**, not permitted excuses to mutilate shared CBS ownership or misrepresent solid compression as removed Windows payload. If the build exceeds them, report exact dependency and size cost, alternative optionalization and why it remains.
+The **about 5 GB final ISO** and **approximately 11–15 GB installed footprint** are **measured engineering targets**, not permitted excuses to mutilate shared CBS ownership or misrepresent solid compression as removed Windows payload. If the build exceeds them, report exact dependency and size cost, alternative optionalization and why it remains.
 
 # 32. MAIN RULE — BUILD FACTORY, NOT MONTH-LONG RESEARCH
 
@@ -1623,6 +1637,8 @@ At each stage:
 The success metric is not the count of scripts, phases or retrieved logs. It is how many **finished Germanium releases** can be produced from available verified UUP sources with **minimal operator intervention** and accurate serviceability/functional evidence.
 
 # 33. CHANGE HISTORY AND AUTHORITY
+
+**2026-10-30 — operator-approved §0H priority/source/recovery/size revision.** No preferred 26300.x CU; 26200 historical only; runnable UUP P0 MVP followed by largest demonstrated P1 payload, then offline/NTLite/VMware residue. Preserve installer WinPE, evaluate safe installed WinRE omission, optimize measured Setup/first/repeat boot. ISO target about 5 GB while maintaining WinSxS/Update/dependencies; old smaller range is obsolete. Existing development receipts and G3O HOLD unchanged.
 
 **v6.3.0 — 2026-10-21, operator-approved protocol.** §0E requires a concise GUI report/operator decision after every completed logical work block; sets a hard total of three attempts per unresolved issue, with documented HOLD and GUI explanation; only explicit „Nastavi bez prekida“ waives routine successful-block pauses, never separate authorizations or error rules.
 
