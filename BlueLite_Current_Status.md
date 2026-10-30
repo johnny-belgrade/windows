@@ -1,5 +1,18 @@
 # BlueLite v1.0 — Current Status (single active checkpoint)
-Updated 2026-10-30 · R003-S11 v1 INI_PARSER_HOLD_ATTEMPT_1 / S10 PASS / S06 HOLD
+Updated 2026-10-30 · S11 v1 INI_PARSER_HOLD 1/3 · S11 v2 CORRECTED_SCRIPT_PREPARED_NOT_RUN · S10 PASS
+
+## R003-S11 v2 — second S11 attempt prepared, not executed
+
+- **New directly delivered executable:** `R003_S11_P0Staging_v2.ps1`, saved/invoked at `C:\work\scripts\R003_S11_P0Staging_v2.ps1`. Reviewed exact **17,398 B, 252 LF lines**, SHA256 **`A39954FD0F9AF40D6A61C29C80E04CF38311909BA65141F0FE81FEF35BFAAFCA`**. v2 replaces only two faulty INI/AppX newline split sites with deterministic PowerShell regex `-split '\r?\n'`, renames attempt-specific stage/log/receipt from `001` to **`002`**, and updates revision comment. Old v1 remains unchanged and MUST NOT be rerun.
+- **Root cause confirmed on actual local PS7, read-only:** original S11 v1 split parsed each real INI as only 1 key and threw `R003_S11_HOLD_INI_34_KEYS`, *before* folder/log creation (user-confirmed). New split tested independently on the same local original ZIP and S10 evidence under PS7, yielding `BASE_COUNT=34`, `TARGET_COUNT=34`, `SkipISO 0→1`. v1 was failure attempt **1 of maximum 3** for this issue; v2 is prepared second attempt; DO NOT claim PASS until user returns logs.
+- **Assistant v2 source/reference tests PASS:** exact SHA/size, both split sites, new `002` names, original/proposed INI 34/34 keys and exact three planned deltas, 5 active AppX. Full v2 Windows PS7 AST/Run = **NOT_RUN** (operator command tests AST first). No converter, UUP payload download, mount/unmount, WIM/ISO, registry or native OS mutation.
+- **Exact unchanged inputs:** source `C:\work\UUP_Source\26300.9818_amd64_en-us_professional_6c7bf258_convert.zip`, SHA `39406F106A467D1DFD592AC8BDF36C665B126EEDD4A4A268E19E1EF30062E9E2`; S10 ZIP `C:\work\logs\BlueLite_R003_S10_P0Adapter_001_Evidence.zip`, SHA `E1E07214B6F7AA52657CB40237A53A3E0B1732EF56A2403F240D399A7DBD4294`. Test source build `26300.9818`, UUID `6c7bf258-2632-47dd-83ee-c23945978da1`, not preferred production CU.
+- **Unique v2 output:** development stage `C:\work\PREMAX-work\R003_Universal26300_P0_MVP\04_StaticTests\R003_S11_P0_Stage_002`; operator-return evidence exclusively `C:\work\logs\BlueLite_R003_S11_P0Stage_002_Evidence.zip` (contains report, receipt, separate independent QA and 2 configs), with optional standalone `_Report.json`, `_Receipt.json`, `_IndependentQA.txt` in same log folder. CreateNew, no overwrite; each action has its own receipt and fresh PS7 independent Verify with 3 negative fixtures. Earlier S06 platform-denied Verify HOLD unchanged.
+- Authority unchanged: Master Git blob `65ee4b96da48581da4a2277445fb6cd45d3e3669`, Session Entry blob `1325d0521e83b56775b877f81ed16a60a1559593`, Handoff frozen. No Master or image mutation.
+
+**ONE NEXT:** Operator executes ONLY v2 source-only S11 after SHA and AST pin, then returns `C:\work\logs\BlueLite_R003_S11_P0Stage_002_Evidence.zip` on PASS; if HOLD, return actual error/partial files without retry. Keep cumulative S11 attempt counter.
+
+**STATE:** S11_V1_HOLD_ATTEMPT_1 / S11_V2_SCRIPT_PREPARED_NOT_RUN / S10_QA_PASS / S06_VERIFY_HOLD / NO_IMAGE_RUN / GUI_PAUSE_AWAITING_OPERATOR.
 
 ## R003-S11 v1 — failure reported; root cause independently isolated (attempt 1)
 
