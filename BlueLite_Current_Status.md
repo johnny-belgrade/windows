@@ -1,5 +1,17 @@
 # BlueLite v1.0 — Current Status (single active checkpoint)
-Updated 2026-10-30 · S10 OPERATOR_EVIDENCE_QA_PASS / S11 OFFLINE_STAGING_SCRIPT_PREPARED_NOT_RUN / S06 VERIFY HOLD
+Updated 2026-10-30 · R003-S11 v1 INI_PARSER_HOLD_ATTEMPT_1 / S10 PASS / S06 HOLD
+
+## R003-S11 v1 — failure reported; root cause independently isolated (attempt 1)
+
+- Operator ran the approved single command for `C:\work\scripts\R003_S11_P0Staging_v1.ps1` SHA `DBE0E1D4D939458E56F2B10AB80EE9418FBBBD35FC85C9D75744993200045433`. Native PowerShell exception: `R003_S11_HOLD_INI_34_KEYS` at helper `Check` line 42. Operator explicitly confirms **NO logs and NO developmental stage directory were created**. This is **v1 attempt 1/3**, fail-closed before staging; do NOT rerun the exact v1 unchanged.
+- Assistant inspected the actual pinned v1 script, 26300.9818 source ZIP and previously verified S10 evidence ZIP; both original and proposed INI have **34 legitimate section-qualified assignments** (Python independent byte-count), same already verified hashes. v1 `CheckIni/ToIni` and `CheckFive` used overloaded `.Split(@("`r`n","`n"),[StringSplitOptions]::None)`, which did not split CRLF lines as intended in Windows PS7, yielding map count 1 instead of 34. This is a **script parser defect, not changed source/INI data**.
+- RDC optional read-only diagnostic (online device, approved nonempty roots + original 33 blocks checked) reproduced `A_COUNT=1,B_COUNT=1` for equivalent prior splitting against existing local exact source/S10 ZIP, and then an independent **fresh process** tested deterministic PS regex `-split '\r?\n'` against the same read-only inputs, obtaining `A=34,B=34,SkipISO old 0,new 1`. The diagnostic used no file write or image operation. Exact old v1 S11 action remains failed, not silently upgraded to PASS.
+- **Next distinct v2 source revision** should use explicit CRLF/LF regex split in both INI and AppX parsing, preserve source SHA/INI/AppX policies, do not reuse v1 staging/log names. Emit direct operator PS1 to `C:\work\scripts`; new unique outputs only in `C:\work\logs`; GUI hash+AST verification and one command. v1 failure counts as the first attempt in the same S11 task; stop after maximum three failures across variants (or earlier for a definitive restriction).
+- Master, Session Entry, Handoff, Registry and original UUP source remain unchanged. Previous S10 evidence PASS, S06 exact denied Verify HOLD persist.
+
+**ONE NEXT:** deliver independently reviewed S11 v2 script (new name, unique `_002` stage/logs) after recording SHA and syntax expectations. Operator runs only v2 command, no retry of original v1.
+
+**STATE:** R003_S11_V1_INI_PARSER_HOLD_1_OF_3 / S10_SOURCE_NATIVE_ADAPTER_QA_PASS / S06_RECEIPT_NATIVE_VERIFY_PLATFORM_HOLD / NO_STAGE_OR_LOG_OUTPUT_CONFIRMED_BY_OPERATOR / V2_PREPARATION_NEXT.
 
 ## R003-S11 — next operator-local source-only staging, PREPARED_NOT_RUN
 
