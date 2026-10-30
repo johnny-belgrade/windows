@@ -1,7 +1,18 @@
 # BlueLite v1.0 — Current Status (single active checkpoint)
-Updated 2026-10-30 · R003-S06 V4 SOURCE_QA_PASS / FIXTURE_RECEIPT_PLATFORM_HOLD / GUI_ERROR_HOLD_AWAITING_OPERATOR
+Updated 2026-10-30 · R003-S06 RETRY RECEIPT RECORDED / VERIFY PLATFORM_HOLD / GUI_ERROR_HOLD_AWAITING_OPERATOR
 
-## R003-S06 — latest bounded operation checkpoint
+## 2026-10-30 — R003-S06 receipt recovery after operator RDC restart
+
+**User scope:** operator restarted RDC and explicitly requested retry of the previously blocked **exact** local fixture receipt Record call, not re-extraction of an existing fixture. Verified RDC `DESKTOP-4J4KCEA` online, `allowedDirectories` only `C:\work` and `C:\BLR20R2F5`, 33 original blocks. Prior Current authoritative blob `08d3ca551729217951cc4ba65563eefe72a10143`.
+
+**RECORDED (native process PASS, Verify still HOLD):** identical formerly blocked `C:\work\scripts\BlueLite-ReceiptGate-v2.ps1 -Mode Record` now returned `BLV2_RECORDED|ID=R003-S06-V4FIX|SHA256=49194ECCB634702AEC43253D002134F12855EFBA2E81512A0F7FDFB824D2BA31|BYTES=852|QA=PENDING` with successful RDC process PID 4708. Exact new receipt: `C:\work\PREMAX-work\R003_Universal26300_P0_MVP\05_Evidence\R003_S06_v4Fixture.json`. Receipt describes previous PID 8452 source-only 3-file configuration proposal native stdout; **fixture was NOT run again** and no current independent output-byte/diff QA was run.
+
+**PLATFORM SAFETY DENIAL:** next separate `-Mode Verify -ReceiptPath '...\R003_S06_v4Fixture.json' -ExpectedSha256 '49194ECCB634702AEC43253D002134F12855EFBA2E81512A0F7FDFB824D2BA31'` was denied **before execution** with `This tool call was blocked by OpenAI's safety checks. Please double check what you are sending.` No independent receipt Verify or native fixture QA; no alternative connector/shell/user lane or retry. Do not claim fixture/certified PASS. Retain all earlier R003-S06 source AST/Audit/negative PASS and previous S03 ZIP 11/11 QA PASS unchanged.
+
+**ONE NEXT (operator guidance needed):** resolve the platform boundary on receipt Verify; when explicitly permitted, run one reviewed independent SHA/receipt Verify followed by separate original-versus-proposal SHA/diff/five-AppX output QA, each with its own immutable receipt and independent Verify. Never rerun SmallFixture against its existing directory. Do not run network, vendor converter, WIM/ISO, or source image mutation. Original 26300.9818 ZIP remains required **later** and unavailable now.
+
+**STATE:** V4_FIXTURE_RECEIPT_RECORDED_SHA_PINNED / V4_FIXTURE_RECEIPT_QA_PENDING / V4_INDEPENDENT_FIXTURE_QA_NOT_RUN / PLATFORM_SAFETY_HOLD / GUI_ERROR_HOLD_AWAITING_OPERATOR.
+## R003-S06 — previous bounded operation checkpoint
 
 **Authority/permissions:** User continued planned R003 development under Master §0G/§0H. GitHub Master `df14b801fe5b44f57c5bb2bd39361da57db51ba4`, Session Entry `c0f9969627ec8285ded8c9f3f8d542af04cfdf1a`, prior Current `762cd7df52fac929a8f1848c5744818aafbecec7`, Sources `275265a873ad15761ff082be9ec7434e8a7f04d3`. Actual local mandatory UUP-history and PREMAX README, S05 plan and R002R3 source contract read. RDC `DESKTOP-4J4KCEA` online, allowed roots `C:\work` / `C:\BLR20R2F5`, 33 original block rules. No root/config mutation. Original 26300.9818 ZIP still **required later**, not received or verified. 26300.9711 historical test only, no preferred build.
 
