@@ -1,7 +1,18 @@
 # BlueLite v1.0 — CURRENT STATUS (single active checkpoint)
-Updated: 2026-10-30 01:16 UTC (02:16 Europe/Budapest; F02 source-only correction review)
+Updated: 2026-10-30 (operator-approved §0H strategic priority/documentation update; F02 source-only correction review retained)
 
-## ACTIVE — F02 CORRECTION REVIEW VERIFIED / V2 CANDIDATE NOT_CREATED / P03 HOLD / GUI_PAUSE_AWAITING_OPERATOR
+## ACTIVE — DELIVERY_P0_FIRST_APPROVED / F02_REVIEW_VERIFIED / V2_NOT_CREATED / P03_HOLD / GUI_PAUSE_AWAITING_OPERATOR
+
+## 2026-10-30 — OPERATOR APPROVED PRODUCT STRATEGY PIVOT (documentation ONLY)
+
+**New authority:** Master §0H, git commits 5d5f5a662e84c20c3eb7fec845822871eae99a1b and 066cba6b4b908a1b598ecb6601a8a69d253d344b, final independently read-back blob df14b801fe5b44f57c5bb2bd39361da57db51ba4. P0 first runnable universal UUP native converter package; P1 largest proven measured image reductions; Stage2 offline/Stage3 NTLite/Stage4 VMware Workstation Pro for small or unresolved residue. Actual original vendor ZIP/converter, version and SHA are source-dependent; operator's 26300.9818/v128m ZIP is mentioned but NOT_YET_REVIEWED. No hardcoded preferred GA 26300.x build. 26200 corpus remains historical/revision-only, not new build/production. Cross-build proof uses ≥2 different operator-chosen 26300.x where available.
+
+**Recovery/size/performance:** WinPE/Setup boot.wim PRESERVED for standard installer. Installed WinRE/winre.wim is candidate for omission only after exact pinned converter SkipWinRE=1 semantics, poststate and external recovery alternative proven; built-in recovery feature loss explicit. Final ISO target ABOUT 5 GB (old 3.5–5 GB interval retired); installed clean footprint about 11–15 GB, both measured without deleting whole WinSxS or disabling functional Windows Update. Optimize installation, first and subsequent boot times by measuring rather than assuming. No WinRE/ISO/boot mutation or speed measurement executed this block.
+
+**Git readback and documents:** production/contracts/README.md commit 6ebffb18abae4b0ececa0eaf73242bdbe2066bc3 blob 4095a8022a903a31a2fb1c8de30265bbc8f08e19; docs/BlueLite_PREMAX_Workspace_README.md commit f09b2d6d55cb18cbe2f1633a9b3665ec9e5ca377 blob 6ed152f35c3c8dbd49980a6fbfe2a382c1225b7b; local C:\work\PREMAX-work\00_README.md matching new §2026-10-30 appended, tail readback PASS. Session Entry short router commit 59f940df3429c49b58ed9b0f5d4ab094d3cb552c blob c0f9969627ec8285ded8c9f3f8d542af04cfdf1a; removes stale G3O Next, still routes mandatory Library/local/Sources. Original historical Handoff, source UUP ZIPs, scripts, image, Registry and Recipe runtime flags not changed. This is a policy/documentation block, not new native test or G3O fix.
+
+**Technical checkpoint preserved:** F02 source-only review verified, G3O v2 candidate NOT_CREATED; P03 actual HOLD, source/harness identity, all receipt hashes, F01/F03, unexecuted real31 and 26300.9807 selected test fixture facts remain below unchanged. The G3O old next is explicitly deferred, NOT a prerequisite to reviewing native-converter P0; no assertion that G3O is fixed.
+
 
 **Authority:** Master §0G and applicable §0C–§0F, §16.1, §31. Master migration commit 85f71845966c75f3f0fb4c1ee1f4ddbc1bce1776 / blob 018840bac8abd2a0b08058e21cd702ad42d3beb2. Current alone is live; Session Entry is a router, Handoff frozen history. No fourth status document.
 
@@ -59,6 +70,8 @@ Updated: 2026-10-30 01:16 UTC (02:16 Europe/Budapest; F02 source-only correction
 - Reviewed helper C:\work\scripts\BlueLite-ReceiptGate-v2.ps1 SHA256 **FCF7B00AA731E9EFC610796CA7A82D1AFC128FD0A0BEAF2907375CDB41999786**; guarded before use. Helper integrity PASS never substitutes for native proof.
 - This block added only one immutable F02 review receipt and this Current update. Master, image, v1 source/harness, Session Entry, Handoff, Registry, Contracts and fixture evidence unchanged. No background work.
 
-**ONE NEXT:** After GUI pause and operator continuation, CreateNew **only the reviewed G3O v2 source** at the planned Windows path using the exact three substitutions above and receipt A41A3734... as the specification. Require original v1 pin, target absence/reparse checks, UTF-8 without BOM/original newlines, expected **11,801 bytes / SHA256 33F76F56B2E3AB1D15182E9C4339FA66B0418EE9537B8ECC749479BE0DAE3FF5**. Write a new creation receipt; independently verify full source bytes, exact limited diff and AST0 before further steps. Do not execute candidate or create/run harness in that operation; keep v1 immutable. Master/image/real31 unchanged.
+**FORMER TECHNICAL ONE NEXT (SUPERSEDED BY OPERATOR PRIORITY §0H; NOT AN EXECUTION AUTHORIZATION):** After GUI pause and operator continuation, CreateNew **only the reviewed G3O v2 source** at the planned Windows path using the exact three substitutions above and receipt A41A3734... as the specification. Require original v1 pin, target absence/reparse checks, UTF-8 without BOM/original newlines, expected **11,801 bytes / SHA256 33F76F56B2E3AB1D15182E9C4339FA66B0418EE9537B8ECC749479BE0DAE3FF5**. Write a new creation receipt; independently verify full source bytes, exact limited diff and AST0 before further steps. Do not execute candidate or create/run harness in that operation; keep v1 immutable. Master/image/real31 unchanged.
 
-**STATE:** F02_REVIEW_VERIFIED / V2_SOURCE_NOT_CREATED / V2_RUNTIME_NOT_RUN / P03_VERIFIED_HOLD / REAL31_READINESS_HOLD / GUI_PAUSE_AWAITING_OPERATOR.
+**ONE NEXT (ONLY after new operator continuation):** first read-only cross-reference/review of original 2026-10-03 BlueLite_ResolveUUP.ps1 / BlueLite_PatchConverter.ps1 plus earlier D4/D6 and any operator-supplied original 26300.9818/v128m UUP ZIP, preserve hashes/source semantics, define P0 runnable converter-native MVP1 scope and nonmutating preflight. No UUP download/converter execution/WinRE image mutation/ISO creation authorized by this documentation change; do not auto-create planned G3O v2.
+
+**STATE:** DELIVERY_P0_FIRST_DOCUMENTED / F02_REVIEW_VERIFIED / G3O_V2_SOURCE_NOT_CREATED / P03_VERIFIED_HOLD / REAL31_READINESS_HOLD / GUI_PAUSE_AWAITING_OPERATOR.
