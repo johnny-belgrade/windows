@@ -149,7 +149,7 @@ Every action records actual evidence, never inferred PASS. If write/readback fai
 
 ### 0A.2 ČETIRI SAMOSTALNO UNIVERZALNE FAZE — OBAVEZAN REDOSLED
 
-1. **GERMANIUM UUP MAX_PRE:** Jedan verzionisan wrapper i skup univerzalnih skripti/config/answer fajlova za operatorov izbor i zamrzavanje UUP izvora, rekonstrukciono bezbedno pre-download AppX filtriranje, updates, pravilno sklapanje WIM-a, **automatski maksimalni post-reconstruction/pre-ISO debloat**, eksport, ISO i hash manifest. Za isti logički target ne postoje odvojene proizvodne UUP skripte za 26200, 26300 ili kasniji potvrđeni Germanium build.
+1. **GERMANIUM UUP MAX_PRE:** Jedan verzionisan wrapper i skup univerzalnih skripti/config/answer fajlova za operatorov izbor i zamrzavanje UUP izvora, rekonstrukciono bezbedno pre-download AppX filtriranje, updates, pravilno sklapanje WIM-a, **automatizovan P0 UUP MVP, zatim najveći dokazani P1 post-reconstruction/pre-ISO debloat**, eksport, ISO i hash manifest. Za isti logički target ne postoje odvojene proizvodne UUP skripte za 26200, 26300 ili kasniji potvrđeni Germanium build.
 2. **GERMANIUM POWERSHELL OFFLINE MAX-DEBLOAT:** Verziona, samostalno primenljiva univerzalna PowerShell/DISM/offline-registry produkciona kolekcija. Koristi **iste** remove/keep/restore/intelligence module kao MAX_PRE; proverava ranije već izvršeno i obrađuje samo stvarni offline ostatak. CBS/WinSxS, feature/capability, package, AppX, servis, registry, integracije, optional/payload i dependency-gates su unapred automatizovani.
 3. **GERMANIUM NTLITE BUSINESS 2025.8.10552 (LICENSED):** Jedan bazni, verzionisan i **ponovo primenljiv XML preset set** sa deklarativnim profilima i preciznim build-aware izuzecima. NTLite je za opravdan `COMPONENT_ENGINE_HANDOFF`, ne za ponavljanje PS faze. Profili su realno testirani na više Germanium izvora; NTLite može da obradi samo preostali deo koji je izričito planiran.
 4. **GERMANIUM VM/VMBOX FINALIZACIJA:** Jedan unapred pripremljen VM bootstrap/first-logon/post-setup profil za ostatak online debloat-a, tweaks, **administratorski nalog**, Defender varijante, user desktop instalere, capture, testove i release. Guest-only VM proba nije dokaz da instalirani BlueLite može biti VMware/VirtualBox host.
@@ -220,7 +220,7 @@ Operator određuje cilj, autorizuje mutacije i bira obim; ChatGPT proučava doka
 
 1. Operator bira zvanični GA **26300.x UUP, bez preferirane revizije**: amd64, en-US, Professional i install.wim po odabranoj konfiguraciji; NetFx3 ostaje OFF ako korisnik ne zatraži drugačije. Zamrzavaju se originalni UUPDump ZIP, launcher, URL/UUID, converter, config/list, checksum i source manifest. Nikakav automatski fallback na 26200.
 2. Ponovo koristiti postojeće Phase A2, R26-D6, R15/R113/R120 i prethodne converter-native selektore. Prvo proveriti male Windows/Apps queue metapodatke, nezavisni originalni queue checksum, signed URL expiry i manifest-based AppX dependency closure. Tek zatim operator odobrava veliki source download; **ne duplirati stare GB dokazne materijale**.
-3. **PRE_DOWNLOAD:** bezbedno filtriranje nepotrebnih AppX/MSIX; pet obaveznih staging aplikacija i stvarne framework/flat bundle reference ostaju. **WINDOWS RECONSTRUCTION:** nikad destruktivno filtrirati referentni/delta/FoD/ESD/LCU/SSU/DU/EKB Windows queue samo zato što se komponenta kasnije želi ukloniti. SkipEdge=1, SkipWinRE i cleanup konvertera tumače se prema TAČNO pinovanoj verziji originalnog convertera. SkipEdge ne dokazuje da Edge.wim sme da se preskoči pri download-u.
+3. **PRE_DOWNLOAD:** bezbedno filtriranje nepotrebnih AppX/MSIX; pet obaveznih staging aplikacija i stvarne framework/flat bundle reference ostaju. **WINDOWS RECONSTRUCTION:** nikad destruktivno filtrirati referentni/delta/FoD/ESD/LCU/SSU/DU/EKB Windows queue samo zato što se komponenta kasnije želi ukloniti. SkipEdge=1, SkipWinRE=1 i cleanup konvertera tumače se prema TAČNO pinovanoj verziji originalnog convertera. **WinPE/Setup boot.wim ostaje u standardnom instalacionom ISO-u; WinRE/winre.wim se izostavlja samo ako su efekat i alternativa recovery-ja dokazani** (§0H). SkipEdge ne dokazuje da Edge.wim sme da se preskoči pri download-u.
 4. Izvorni rekonstruisani **26300 install.wim je immutable**. Na njegovoj posebno vlasnički izdvojenoj izvedenici pokrenuti MAX_PRE POST-RECONSTRUCTION/PRE-ISO sa build-resolved recipes, CBS/feature/FoD/AppX/pending/health i zaštićenim VM/network/servicing floor. R7 CBS 0x800F0825 i R4 DesktopAppInstaller 0x80073CFA iz 26200 su **poznati failure potpisi**, ne automatski 26300 outcome; proveriti 26300 stvarno stanje.
 5. Dalje samo STAGE2 standalone PowerShell offline residue, STAGE3 NTLite Business portable preset i STAGE4 VMBox/admin/Defender ON/OFF + finalni WIM/ISO i footprint. **Novi ISO cilj oko 5 GB** (bez ranijeg 3.5–5 GB ciljnog intervala), install footprint okvirno 11–15 GB i Store/Windows Update/4-final AppX ugovor ostaju ciljevi i gate-ovi, a ne tvrdnje da su dostignuti.
 
@@ -372,7 +372,7 @@ This distinction is fundamental:
 
 ## 2.6 NTLite only for proven scripted residue — not a research hostage
 
-NTLite is the third factory stage, after usable UUP/PowerShell offline modules. This does **not** authorize stopping scripted research prematurely, but neither does it demand months of exhaustive investigation into every hypothetical component before using a prepared NTLite profile.
+NTLite is the third factory stage, after usable UUP/PowerShell offline modules. This does **not** authorize stopping scripted research prematurely, but neither does it demand months of exhaustive investigation into every hypothetical component before using a prepared NTLite profile. **P0 native UUP MVP must be delivered first; P1 concentrates large measured payload, while small residue and unresolved nonblocking owners are explicitly passed to Stage2/NTLite or scoped diagnostics (§0H).**
 
 Each known/relevant target receives one terminal classification: `PRODUCTION_RULE`, `KEEP_SKIP`, `COMPONENT_ENGINE_HANDOFF`, or `RED_HOLD`. For **known and implementable scripted** cases, automate and finish first. Known NTLite-only cases pass with an explicit receipt. Unknown target dependencies become scoped issues; a mandatory release condition may block only the affected release candidate, **not the implementation of all other proven recipes or the ability to run a repeatable pipeline**.
 
@@ -392,7 +392,7 @@ Therefore:
 
 Hundreds of numbered development phases were valuable for research, but they are not the desired release interface.
 
-The end product is a small ordered production set plus a component intelligence database. Forensic scripts remain evidence and research tools, not normal build steps.
+The end product is a small ordered production set plus a component intelligence database. Forensic scripts remain evidence and research tools, not normal build steps. **G3O/ZIP64 deep package inspection is conditional when native converter AppX closure or release-critical dependency actually requires it; preserve current F02/P03 HOLD without making it a hard prerequisite for the independently verifiable P0 candidate.**
 
 ---
 
@@ -697,7 +697,7 @@ The UUP layer must first satisfy the converter's reconstruction dependency closu
 
 ## 7.4 Verified UUP converter selection — preserve current staging/final distinction
 
-Use the **actual pinned UUP converter implementation** and its supported configuration surfaces before touching UUP download queues. In tested uup-converter-wimlib, `ConvertConfig.ini` supports `CustomList=1` and a `CustomAppsList.txt` or `CustomAppsList2.txt` input; the selected converter code/manifest and resulting filtered reference closure are release inputs, not assumptions. Prefer supported `SkipApps`, `AppsLevel`, `CustomList`, `StubAppsFull` and update/cleanup switches where available and appropriate. Never blindly invent/remove a converter option because another release used it.
+Use the **actual pinned UUP converter implementation** and its supported configuration surfaces before touching UUP download queues. In tested uup-converter-wimlib, `ConvertConfig.ini` supports `CustomList=1` and a `CustomAppsList.txt` or `CustomAppsList2.txt` input; the selected converter code/manifest and resulting filtered reference closure are release inputs, not assumptions. Prefer supported `SkipApps`, `AppsLevel`, `CustomList`, `StubAppsFull` and update/cleanup switches where available and appropriate. Never blindly invent/remove a converter option because another release used it. **Inspect operator-selected original converter ZIP, revision and SHA (including v128m if the operator supplies that exact original); compare earlier Oct-3 resolver/patcher and D4/D6 renewal with real source. Original launcher/converter stays frozen; use source-reviewed reversible overlay only with verified anchors.**
 
 **BlueLite current known contract (not a claim for all future AppX revisions):**
 
@@ -723,7 +723,7 @@ Production interface: one pinned `START.cmd`/`Build-BlueLite.ps1` that reads an 
 
 **RESEARCH/FORENSIC** (new changed dependency): targeted deep package/owner/hardlink/CBS/component-store data; new disposable proof, observed-delta analysis and cross-build regression. Its tested result must be incorporated into production Intelligence so that it runs automatically next time.
 
-A build report must state `FAST_PATH_REUSED`, `KNOWN_VARIANT_APPLIED`, `TARGET_BLOCKED_NEW_DEPENDENCY`, `NEEDS_NTLITE_HANDOFF`, `ALREADY_ABSENT` and `RELEASE_PASS` accurately. One unforeseen block does not require re-running independently finished stages. Resume is checkpoint-aware with source hashes and run IDs, never “start over” by default.
+A build report must state `FAST_PATH_REUSED`, `KNOWN_VARIANT_APPLIED`, `TARGET_BLOCKED_NEW_DEPENDENCY`, `NEEDS_NTLITE_HANDOFF`, `ALREADY_ABSENT` and `RELEASE_PASS` accurately. **MVP_CONVERSION_VERIFIED is a separate intermediate source-bound converter/WIM/ISO outcome, not a claim that WinRE recovery, P1 component removal or final release passed.** One unforeseen block does not require re-running independently finished stages. Resume is checkpoint-aware with source hashes and run IDs, never “start over” by default.
 
 ## 7.7 Idempotent handoff
 
@@ -737,7 +737,7 @@ The **primary** BlueLite build route is: frozen operator-selected UUP source →
 
 1. Only converter-supported source/AppX selection is permitted before reconstruction; do not prune reconstruction-critical Windows/FoD/delta downloads to mimic final-OS removals.
 2. The immutable original reconstructed WIM is hashed and never mutated in place; modifications target an independently identified, hash-verified disposable copy. Mount/dispose/export/rollback is orchestrator-owned.
-3. **Every already-certified** native GREEN/portable AMBER operation safe for the current frozen build belongs before ISO assembly, not a separate post-ISO debloat pipeline. Preserve explicit dependent ordering (e.g. OneDrive current neutral → WOW64 neutral → old staged neutral).
+3. **Deliver the native P0 converter MVP first.** Then concentrate P1 work on **large measured, already-certified** native GREEN/portable AMBER removals safe for this source, before the pre-ISO assembly for the complete Stage1 output. Small or currently unsupported targets receive explicit Stage2/NTLite/diagnostic handoff; do not hold P0 or unrelated P1 targets because G3O real31 research is incomplete. Full release still requires terminal dispositions for mandatory targets. Preserve explicit dependent ordering (e.g. OneDrive current neutral → WOW64 neutral → old staged neutral).
 4. `START.cmd` and standalone offline orchestration must call the **same** versioned engine and Component Intelligence selectors; no duplicate divergent implementations.
 5. Subsequent Phase E/F handlers execute only genuinely unprocessed residue or newly proven rules; completed pre-ISO work yields idempotent `ALREADY_ABSENT`, not a second removal.
 6. Exact pre-state, dynamic owners, native transitions, expected satellites, physical post-state, retained service/VM/network floor, pending count, health and rollback must pass **before** commit/export/replace.
@@ -771,7 +771,7 @@ Final release gate remains absolute for declared mandatory removals and protecte
 
 The active regression matrix covers **at least two different operator-selected 26300.x GA sources** when available, with positive and negative fixtures. **26200.x is historical review-only evidence**; no new 26200 build or dedicated runtime regression is scheduled absent separate operator decision. Later Germanium lines require explicit acceptance. Regression code validates the engine, recipe variants and expected state. A new CU on unchanged topology runs **selective** current-image tests and an end-to-end acceptance suite; it does not redo full historical rule creation. Deep `ScanHealth`/new hardlink ownership proof is mandatory on newly researched high-impact topology, not automatically on every already-certified unchanged removal. Final release still needs its declared health/serviceability tests.
 
-Generate machine-readable result per target: `source_identity`, `logical_id`, `resolved_exact_identity`, `topology_fingerprint`, `recipe_id/version`, `decision`, `post_state`, `expected_delta`, `observed_delta`, `protected_floor`, `time_ms`. A simple syntax/anchor PASS is never substituted for runtime behavior.
+Report measured actual installation duration and first/subsequent cold/warm/reboot times for a consistent hardware/VM profile; neither WinRE omission nor generic debloat is automatically a speed PASS. Generate machine-readable result per target: `source_identity`, `logical_id`, `resolved_exact_identity`, `topology_fingerprint`, `recipe_id/version`, `decision`, `post_state`, `expected_delta`, `observed_delta`, `protected_floor`, `time_ms`. A simple syntax/anchor PASS is never substituted for runtime behavior.
 
 # 9. TWO-DIMENSION CLASSIFICATION: REMOVAL CLASS + RELEASE DISPOSITION
 
@@ -1282,7 +1282,7 @@ Input: selected/frozen operator-approved UUP source, edition/index, language/arc
 
 1. Check source identity and cached downloads. Run source-native UUP download/conversion; preserve required Windows/FoD/delta/reference closure, apply supported source-side AppX selection and update options.
 2. Reconstruct WIM; separate immutable source, owned working image and target ISO. Dynamic build/lineage fingerprint determines applicable rules.
-3. Perform a small discovery manifest, auto-select known GREEN/AMBER recipes by current topology, apply maximum proven pre-ISO removals, record allow-listed deltas and pending/health receipts. Five staging apps / four final apps remain the current AppX contract.
+3. **MVP1/P0:** construct and verify actual converter-native source/AppX/updates/install.wim/standard WinPE-Setup ISO with exact source and SHA. **MVP2/P1:** discover exact current topology and target **largest verified unique-payload GREEN/AMBER removals** on an owned derivative before complete pre-ISO candidate assembly; verify SkipWinRE=1 effect if chosen and explicitly document external recovery. Record deltas/pending/health; nonblocking smaller residue moves forward to Stage2/3. Five staging apps / four final apps remain the current AppX contract.
 4. Write intermediate working WIM/checkpoint and detailed stage manifest; assemble **candidate** ISO where appropriate. It is **not** yet the RELEASE until downstream NTLite/VM certification.
 5. Record source hashes, downloads reuse, exact identities, removed/already-absent, known-variant, remaining targets, errors and measured efficiency.
 
@@ -1291,7 +1291,7 @@ Input: selected/frozen operator-approved UUP source, edition/index, language/arc
 ## STAGE 2 — STANDALONE OFFLINE POWERSHELL MAX-DEBLOAT
 
 1. Read the Stage1 manifest and working WIM without new independent forensic copies unless needed for a risky new mutation.
-2. Use **exact same** recipes/policy modules; skip already completed targets; finish proven offline removals and integration/configuration not executed pre-ISO; apply remaining component store cleanup rules only when permitted.
+2. Use **exact same** recipes/policy modules; skip already completed targets; process proven smaller or deferred CBS/AppX/FoD residue and integration/configuration not executed pre-ISO; apply remaining component store cleanup only when permitted. Do not repeat already certified Stage1 work or perform unreviewed owner carve; pass component-engine-only items to NTLite.
 3. On changed target topology, automatically contain the block; process independently safe targets; research only the changed dependency and fold the result into global Intelligence.
 4. Prove common-base post-state, no unexpected pending, critical serviceability, retained optional restore payload, protected networking/storage/VM-host floor, Store release forbidden and native OS app keep set.
 5. Produce `Stage2_CommonBase.wim` or in-place approved candidate checkpoint, `Stage2_Receipt.json` and exact `NTLite_Handoff.json`.
@@ -1508,11 +1508,11 @@ No universal system can guarantee a fixed ISO or instant release for every futur
 
 ### 29.4 Acceptance benchmark
 
-Record repeated end-to-end dry runs **first on actual 26300 GA**, while using existing 26200 receipts and fixtures for regression/known-rule comparison rather than requiring a new parallel 25H2 release. Earlier 26300 source/runtime receipts exist but do not certify the new runnable universal P0 MVP, full cross-build package or final release. Track median operator touches, automated rule coverage, unknown-dependency count, build wall time (separate network/download/CPU/VM portions), SHA reproducibility for identical inputs/toolchains and final serviceability. Target same-day/hours for **compatible known-topology** new sources once production artifacts exist; do not claim uploader competitors' private implementation or actual times without evidence.
+Record actual MVP1 source/conversion dry runs **on at least two distinct operator-selected 26300.x GA sources** where available, then perform repeatable full pipeline acceptance. Use historical 26200 receipts only for revision/analytical comparisons, with no new 26200 target WIM/release. Earlier 26300 source/runtime receipts exist but do not certify the new runnable universal P0 MVP, full cross-build package or final release. Track median operator touches, automated rule coverage, unknown-dependency count, build wall time (separate network/download/CPU/VM portions), SHA reproducibility for identical inputs/toolchains and final serviceability. Target same-day/hours for **compatible known-topology** new sources once production artifacts exist; do not claim uploader competitors' private implementation or actual times without evidence.
 
 # 30. CANONICAL DELIVERABLES — VERSIONED REAL FILES, NOT HUNDREDS OF DEVELOPMENT SCRIPTS
 
-The repository must converge on a **small, runnable source-controlled production package**. This is a proposed logical layout (not a statement that all files already exist):
+The repository must converge on a **small, runnable source-controlled production package**. **The immediate deliverable is an executable universal P0 UUP source/renewal/native-converter wrapper with owned receipt; improve it with large measured P1 modules before reopening conditional fine-grained diagnostics.** This is a proposed logical layout (not a statement that all files already exist):
 
 ~~~text
 BlueLite-Master_Germanium_Strategy_final.md
@@ -1596,7 +1596,7 @@ Every **final release** requires:
 
 **Automatic outcome states**: `RELEASE_PASS`; `RELEASE_BLOCKED_TARGET_DEPENDENCY`; `RELEASE_BLOCKED_SERVICEABILITY`; `RELEASE_BLOCKED_RUNTIME`; `RELEASE_BLOCKED_SOURCE`. Scope each failure with exact owner and next action. A blocked release must not silently ship; however **do not restart source download, known-rule engineering or unrelated finished stages because one target changed**. Rebuild/resume only jobs whose input/dependency fingerprints became invalid.
 
-The **about 5 GB final ISO** and **approximately 11–15 GB installed footprint** are **measured engineering targets**, not permitted excuses to mutilate shared CBS ownership or misrepresent solid compression as removed Windows payload. If the build exceeds them, report exact dependency and size cost, alternative optionalization and why it remains.
+The **about 5 GB final ISO** and **approximately 11–15 GB installed footprint** are **measured engineering targets**, not permitted excuses to mutilate shared CBS ownership or misrepresent solid compression as removed Windows payload. If the build exceeds them, report exact dependency and size cost, alternative optionalization and why it remains; **never strip all WinSxS or disable functioning Windows Update to force the ISO near 5 GB**.
 
 # 32. MAIN RULE — BUILD FACTORY, NOT MONTH-LONG RESEARCH
 
