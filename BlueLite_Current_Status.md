@@ -1,5 +1,17 @@
 # BlueLite v1.0 — Current Status (single active checkpoint)
-Updated 2026-10-30 · S16_V3_STAGEINI_PIN_62_DIGITS_HOLD / S16_V4_CORRECTION_PLANNED / V2_TWO_QUEUES_PRESERVED
+Updated 2026-10-30 · S16 v3 INI PIN 62-HEX HOLD / v4 OFFLINE RECOVERY DIRECT PS1 PREPARED_NOT_RUN
+
+## S16 v4 — exact source pin correction, operator-local Run NOT_RUN
+
+- **Direct PS1 created and verified:** `R003_S16_QueueRecovery_v4.ps1`, 14,890 bytes, 212 LF lines, UTF-8 no BOM, **SHA256 `21868F438567B03D60B4F9020BE315B8D8F2B3967A9A64DAEA690A69008D8D9C`**. Operator saves exact file under `C:\work\scripts\R003_S16_QueueRecovery_v4.ps1`; use one PowerShell 7 GUI command with fixed SHA pin, full native AST check and `-Mode Run`. Original v3 script remains unchanged. **Full native v4 AST/Run/child Verify NOT_RUN** by assistant, user must return actual evidence.
+- **Only intended diffs from failed v3 (exact 4 edited lines):** first comment v3→v4; fix S11 staged `ConvertConfig.ini` pin to full 64 chars **`9EE3364AF8F6ACEEB1CB0B204F403B4D6088D8F723D52CE4A3FEC1622372399D`**; change operation ID `R003-S16-RECOVERY-003` → `R003-S16-RECOVERY-004`; log prefix `BlueLite_R003_S16_QueueRecovery_003_` → `BlueLite_R003_S16_QueueRecovery_004_`. No source/queue path changes, no download or new baseline. Exact diff 8 removed/added lines, all **11 literal source SHA pins are 64 hex**, native S11 INI 652 B SHA correct. Static immutable CreateNew and fresh child PS7 QA reviewed, no network/7z/converter/DISM/mount/image commands.
+- **Extra independent native PS7 source preflight:** all **9/9** pinned local input files hash PASS: original UUP ZIP (8218 B), S11 ConvertConfig (652), S11 CustomAppsList (3590), pinned D4 module (6767), v2 source PS1 (11832), original _002 Windows queue (34603), _002 Apps queue (947535), original v2 Report (1347) and Receipt (545). Current D4 re-parsed original _002 queue identities **98 records SHA `8B690FB8E065BD5DB668667A13FF1CA4B9A4029FB4947FD43E774E8B0D373644`**, **2798 records SHA `D0DB3270B88316B9D36EA3E05CD0076821AAFC25AD99B9EFD5A0A63107DB2B3E`**, PASS. No new network or input writes.
+- **Fresh v4 evidence locations, NOT yet created:** `C:\work\logs\BlueLite_R003_S16_QueueRecovery_004_Report.json`, `..._Receipt.json`, `..._IndependentQA.txt`, **`C:\work\logs\BlueLite_R003_S16_QueueRecovery_004_Evidence.zip`**. The previously failed v3 `_003` has no logs (native check); keep prior failed v1 partial and v2 completed first-observed data immutably. S16 first-observed remains **PENDING independent v4 evidence**; do not claim S16 PASS based solely on preflight.
+- **Standing directives:** operator-local corrective iterations unlimited numerically; original vendor and UUP sources immutable; all downloads preauthorized but none needed in v4. Separate R003-S06 platform-denied Verify stays HOLD, never bypass. No Master, Session Entry or historical Handoff mutation.
+
+**ONE NEXT:** operator saves v4 direct PS1 and executes a single SHA+AST-pinned PowerShell 7 `-Mode Run`, returns only `C:\work\logs\BlueLite_R003_S16_QueueRecovery_004_Evidence.zip` or actual console/partial _004 log evidence on HOLD. Assistant independently reviews, records Git Current and then proceeds to R003-S17 source-bound queue renewal using existing v2 first-observed baseline.
+
+**STATE:** S16_V3_STAGE_INI_PIN_TYPO_HOLD / S16_V4_PS1_PREPARED_NOT_RUN / V2_ORIGINAL_QUEUES_READY / S06_PLATFORM_VERIFY_HOLD_PRESERVED.
 
 ## S16 v3 micro-operation: observed operator HOLD, precise independent root cause
 
