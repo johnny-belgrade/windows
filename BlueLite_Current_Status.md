@@ -1,5 +1,18 @@
 # BlueLite v1.0 — Current Status (single active checkpoint)
-Updated 2026-10-30 · R003-S16 v1 HTTP_URI_POLICY_HOLD / V2 CORRECTION NEXT / S15 QA PASS
+Updated 2026-10-30 · S16 V1 URI_POLICY_HOLD / S16 V2 SHA_PINNED_PREPARED_NOT_RUN / S15 PASS
+
+## R003-S16 v2 — corrected direct PS1, operator Run NOT_RUN
+
+- **Delivered exact file:** `R003_S16_SourceQueueCapture_v2.ps1`, UTF-8 no BOM, **11,832 bytes, 195 LF lines, SHA256 `7CCFF0B2A19423B4D143F09CA565A4A7F55735053ABEA16F3DAA3FDA4BB75269`**. Save to `C:\work\scripts\R003_S16_SourceQueueCapture_v2.ps1`; one GUI SHA+PowerShell7 AST+Run command. Actual full Windows v2 AST/Run **NOT_RUN**; native in-memory fixture passed and source static diff reviewed.
+- **Fix:** v1 incorrectly required strictly HTTPS for **payload** transport, but real D4 queue-identity module intentionally permits HTTP and HTTPS for transport URLs checked by out+checksum. New guard `$u.Scheme -in @('http','https') -and -not $u.UserInfo -and $u.Host`, preserves D4 checks, source SHA, URI source UUID, and hard **HTTPS only** for `uupdump.net/get.php` metadata endpoints. No change to original UUP ZIP/vendor source. Corrected failure marker is `QUEUE_NON_HTTP_OR_HTTPS_OR_UNSAFE_URI`.
+- **Fresh Windows native PS7.6.9 read-only fixture** on actual v1 34,599 B Windows partial: D4 parsed 98 records, **98/98 pass new HTTP/HTTPS guard**, invalid0; two synthetic negative URIs FTP and embedded credentials rejected **2/2**. All source pins and code branches from v1 preserved; static balanced delimiters. **No transfer in fixture test**, no independent S16 v2 native result yet.
+- **Unique v2 outputs:** new `C:\work\PREMAX-work\R003_Universal26300_P0_MVP\01_Inputs\R003_S16_QueueFirstObserved_002`, local files `Windows.FirstObserved.aria2` and `Apps.FirstObserved.aria2` only upon PASS; operation `R003-S16-QUEUE-CAPTURE-002`; new three micro-logs and ZIP under `C:\work\logs\BlueLite_R003_S16_QueueCapture_002_*`, returned evidence **`C:\work\logs\BlueLite_R003_S16_QueueCapture_002_Evidence.zip`**. Full fresh separate PS7 Verify and CreateNew guards remain.
+- **V1 trace retained:** old `R003_S16_QueueFirstObserved_001\Windows.FirstObserved.aria2.partial` 34,599 B SHA `111C5992EBA85EA2FCFF89A7949CD8198975724D85670D334CBC4EA7CA8B7E66`, 98 HTTP records, not promoted to completed baseline; no v1 Report/Receipt/QA/Evidence logs. Preserve before independently evidenced cleanup; never silently overwrite old failed attempt.
+- **Boundary:** two current Windows/Apps metadata GET only, 32MiB per queue, no UUP package payload, converter, mount, WIM/ISO, registry. Once captured, classify as FIRST_OBSERVED, not historical immutable upstream baseline. Do not share raw signed URLs. All network transfers already preauthorized; no separate download permission. Local script fixes unlimited numerically, versioned outputs mandatory. S15 source-only QA PASS; historical R003-S06 specifically platform-denied Verify HOLD preserved. Master/Session/Handoff/image unmodified.
+
+**ONE NEXT:** operator saves v2, runs one SHA+AST-gated `-Mode Run` PowerShell 7 command locally, returns `C:\work\logs\BlueLite_R003_S16_QueueCapture_002_Evidence.zip`, or actual console/partial _002 files if HOLD; assistant independently verifies then proceeds to D4/D6 renewal and source-bound AppX framework closure.
+
+**STATE:** S16_V1_URI_POLICY_HOLD / S16_V2_PREPARED_NOT_RUN / V1_PARTIAL_NOT_BASELINE / S15_QA_PASS / NETWORK_PREAUTHORIZED / S06_PLATFORM_VERIFY_HOLD.
 
 ## R003-S16 v1 — actual operator HOLD and independently reproduced root cause
 
