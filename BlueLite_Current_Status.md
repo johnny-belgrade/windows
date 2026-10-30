@@ -1,6 +1,23 @@
 # BlueLite v1.0 — Current Status (single active checkpoint)
-Updated 2026-10-30 · block R003-S02 PREPARE SECURITY REVIEW / V3_GENERATION_HOLD_3_OF_3 / ERROR_HOLD_AWAITING_OPERATOR
+Updated 2026-10-30 · block R003-S03 NEW METHOD / BOUNDED FIXTURE SHA 11/11 PASS / GUI_PAUSE_AWAITING_OPERATOR
 
+## 2026-10-30 — R003-S03 NEW METHOD SUCCESS / standalone bounded fixture
+
+**Operator decision:** operator explicitly allowed a different, reviewed generator and local fallback if needed; no 7-Zip binary or PATH change necessary. Earlier exact-anchor text-splice method **still exhausted 3/3**, never retried. A *new standalone* v3 PowerShell 7 script uses SHA-pinned unchanged v2 read-only `-Mode Audit` and .NET ZIP extraction. No original source/converter or UUP payload download.
+
+**Native source QA:** new local `C:\work\PREMAX-work\R003_Universal26300_P0_MVP\03_Drafts\R003_P0_BoundedOriginalZip_v3_DRAFT.ps1`, **8,533 bytes**, 160 lines, SHA256 `CB3353AC7283D13A23317B6131850B5E4B370910AA6CDD37ECA46473F551E84F`, PS7 AST0, deny tokens for network/converter/DISM. GitHub development-only `development/PREMAX/R003/03_Drafts/R003_P0_BoundedOriginalZip_v3_DRAFT.ps1` commit `e1d06058ee7868fce5e6b5d3a8647f45e64d05cc`, independent blob `007c6017abcb978998f9544b3b8c7e2f6eeb082e`, byte length 8533; **NOT a reviewed executable production candidate**.
+
+**Native tests PASS:** read-only v3 Audit on original frozen .9711 UUP Dump ZIP `D3E7162605A61D8A0FD62E1738DE523B52B36059D6AAC8F756F90AEFCB64C4A2` yielded 11 members, 18,116 expanded bytes; 2 separate deliberate negative cases failed closed as required (wrong expected SHA and outside-owned-root path; forbidden destination remained absent). Bounded tiny ZIP extraction then produced new owned fixture `C:\work\PREMAX-work\R003_Universal26300_P0_MVP\04_StaticTests\R003_S03_Fixture_9711_001`, **11/11 original ZIP decompressed member SHA256s independently matched** extracted bytes, total 18,116B. Independent QA reports 12 physical output files (11 source + BlueLite/SourceAudit.json), report SHA256 `A256E5EAD3D9F3700C75FC26A01766D529A43453289E0CE5D856A28315D18767`. Original ZIP same SHA, unmodified. No original launcher/config/list executed or overwritten, no WIM/ISO.
+
+**Per-operation receipts and independent Verify (all PASS)** under `C:\work\PREMAX-work\R003_Universal26300_P0_MVP\05_Evidence`: `R003_S03_OperatorDecision.json`, `R003_S03_MethodContract.json`, `R003_S03_V3Created.json`, `R003_S03_V3AST.json`, `R003_S03_V3AuditPositive.json`, `R003_S03_NegSHA.json`, `R003_S03_NegRoot.json`, `R003_S03_FixtureCreated.json`, `R003_S03_FixtureIndependentQA.json`, `R003_S03_V3GitPublish.json`, `R003_S03_LocalState.json`; each recorded then separate process independently verified. Method plan: `02_Analysis/R003_S03_StandaloneV3_ReviewedPlan.md`. The first drafting of that plan caused a JS syntax error before remote dispatch; corrected version was actually written, recorded, verified, not an operation bypass.
+
+**Local current cycle verified:** `CycleManifest.json` SHA256 `B3854E6FE4D4E51E6247A3F07F23870D63DADF3018E3AC9A853B49DBD81186FD`; `PREMAX-work/99_Index/CycleRegistry.csv` SHA256 `5259C3ABE668A5EC43AD767129EE46E8B237E4DDD1EF7E8DB5A46053FA25072B`. Status `R003_S03_V3_BOUNDED_FIXTURE_11_OF_11_SHA_PASS`, runtime authorization false, candidate SHA null, original R002/G3O P03 HOLD untouched.
+
+**Scope:** This certifies only source-bound ZIP fixture extraction, **NOT** v3 universality across two actual 26300.x original sources, not live UUP URL renewal, not a runnable converter, not Stage1/MAX_PRE P1, not WinRE omission, no WIM/ISO/VM release. Target final ISO about 5GB remains; WinPE retained and local WinRE removal conditional.
+
+**ONE NEXT (after new operator continuation):** add native original `ConvertConfig.ini`/`CustomAppsList.txt` proposal adapter and reviewed D4/D6 dynamic source-renewal/Apps closure to the standalone v3 extraction layer, with separate per-operation SHA/readback, selected 26300.x ZIP identity and fixture tests. If operator supplies original 26300.9818/v128m ZIP, inspect exact bytes first for second-build universality; do not assume it is available. Do not auto-run converter/download/WIM/ISO without separate authorization.
+
+**STATE:** R003_S03_V3_STATIC_AST_PASS / POSITIVE_ZIP_AUDIT_PASS / TWO_NEGATIVE_FAIL_CLOSED_PASS / SMALL_FIXTURE_11_OF_11_SHA_PASS / STANDALONE_V3_DRAFT_NOT_CONVERTER / R003_S02_ANCHOR_HOLD_HISTORIC / G3O_P03_HOLD / GUI_PAUSE_AWAITING_OPERATOR.
 ## 2026-10-30 — R003-S02 individual-operation checkpoint (operator continuation)
 
 **PREPARE SECURITY REVIEW = HOLD, source was not modified.** Complete Master §0H/§0G and current Session/Current/Sources, both required local READMEs, RDC live online with C:\work/C:\BLR20R2F5 and 33 blocked commands, source v2 142/142 lines read. v2 Audit-only previously PASS; PrepareSmallFixture branch is **NOT_RUN** and source audit found absent limits for count/expanded size/entry/ratio, unsafe Windows alias cases and parent-reparse checks. No source/content/security gate was bypassed.
@@ -13,7 +30,7 @@ Updated 2026-10-30 · block R003-S02 PREPARE SECURITY REVIEW / V3_GENERATION_HOL
 
 **Local checkpoint independently PASS:** C:\work\PREMAX-work\R003_Universal26300_P0_MVP\CycleManifest.json SHA256 70708647EFB7517AE1A6EA3DF3B95EAC0B6F3767403FD4B382513E37548E2BF5; C:\work\PREMAX-work\99_Index\CycleRegistry.csv SHA256 5AA9EA3AC0D3BCC2EADCDD84E5046BED530AE70595CCFBE70CC9FADD38E4A4C0. Status R003_S02_V3_SOURCE_GENERATOR_HOLD_3_OF_3, `candidate.sha256=null`, `runtime.authorized=false`.
 
-**ONE NEXT (operator decision required):** decide how to resume v3 bounded fixture-script generation after the exhausted exact-anchor attempt limit. A genuinely new, reviewed generation procedure and explicitly approved new task are needed; no automatic rerun of failed generator. Then independently source-review/AST/negative-test before any 8KB tiny ZIP fixture extraction. No network, vendor converter, image/ISO mutation permitted.
+**SUPERSEDED HISTORIC ONE NEXT (R003-S02, resolved through operator-approved *different* v3 method):** old exact-anchor 3/3 remains in historical receipts; do not retry that text-splice generator. A genuinely new, reviewed generation procedure and explicitly approved new task are needed; no automatic rerun of failed generator. Then independently source-review/AST/negative-test before any 8KB tiny ZIP fixture extraction. No network, vendor converter, image/ISO mutation permitted.
 
 **STATE:** V2_AUDIT_SOURCE_PASS / V2_PREPARE_NOT_RUN / V3_NOT_CREATED / V3_ANCHOR_ATTEMPTS_3_OF_3_HOLD / P0_MVP_NOT_DELIVERED / G3O_P03_HOLD / ERROR_HOLD_AWAITING_OPERATOR.
 ## Authority / active scope
