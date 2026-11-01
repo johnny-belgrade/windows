@@ -1,7 +1,9 @@
 # BlueLite v1.0 — MASTER GERMANIUM STRATEGY v6.3.1
 
+> **MANDATORY NEW STRATEGY — §0I (2026-11-01): UNIVERSAL UUP SOURCE CONTRACT + SELECTIVE WIM/ISO FACTORY.** Three variable-per-build operator inputs **`List of files UUP.txt`**, **`File_renaming_script.cmd`** (**DATA ONLY**) and **`SHA-1 checksums file.txt`** must be 1:1:1 source-verified against original UUP ZIP and D4 Windows queue. Reuse existing G2/G3/D4/D6 signed URL renewal and source-reviewed converter; pre-download Windows omission **ONLY after converter reconstruction dependency proof**. First executable **S19A = offline dry-run, zero downloads/converter/image operations**. Source: `BlueLite_S19_Universal_UUP_Strategy.md` with exact S19A code backup.
+
 **Status:** AUTHORITATIVE / UNIFIED PRODUCTION ARCHITECTURE — SUPERSEDES PREVIOUS MASTER REVISIONS  
-**Date:** 2026-10-16 · **Normative amendments:** 2026-10-21 (v6.1 connector/NTLite; v6.2 UUP/PRE_MAX history lifecycle; v6.2.1 two-phase Session Entry checkpoint; v6.3 GUI block pauses and three-attempt errors); 2026-10-29 (§0G); 2026-10-30 (§0H)  
+**Date:** 2026-10-16 · **Normative amendments:** 2026-10-21 (v6.1 connector/NTLite; v6.2 UUP/PRE_MAX history lifecycle; v6.2.1 two-phase Session Entry checkpoint; v6.3 GUI block pauses and three-attempt errors); 2026-10-29 (§0G); 2026-10-30 (§0H); 2026-11-01 (§0I Universal UUP source contract)  
 **Scope:** PRIMARY Windows 11 26H2 GA / 26300.x; SECONDARY 26200.x solely historic/regression/Component Intelligence; shared 26100 servicing reference; future Germanium branches only after operator decision and lineage verification.  
 **Project:** BlueLite v1.0  
 **Team:** Operator + ChatGPT; locally approved execution by operator or by the authorized, scoped Remote Desktop Commander connector after operator GUI approval  
