@@ -155,6 +155,35 @@ Every action records actual evidence, never inferred PASS. If write/readback fai
 8. **SUCCESSOR EVIDENCE:** use existing Session Entry bootstrap unchanged; before source/removal research examine applicable original Library, local UUP-history and PREMAX files, GitHub Sources mandatory links and earlier reviewed receipts. Update only short Current and relevant source contracts; retain historical build references as history. No additional status document.
 
 ---
+
+## 0I. **OBAVEZNA STRATEGIJA — UNIVERSAL BLUE LITE UUP SOURCE-CONTRACT → SELECTIVE WIM/ISO FACTORY** (operator approved 2026-11-01)
+
+**OVAJ ODELJAK JE NORMATIVAN I PRIORITETAN.** Dopunjuje §0H P0 MVP1 i §7.3–7.4; ne ukida §0G CAS/readback, zasebna odobrenja za image mutation, izvorne checksum-e, Windows Update/servicing, boot.wim/WinPE ni završne testove. **Jedan engine + promenljivi source files + deklarativni izbor**; nikad namenski downloader/konverter po svakom CU. Nema unapred izabranog 26300.x build-a.
+
+### 0I.1 Obavezni promenljivi ulazi svake UUP sesije
+
+Operator dostavlja svoj *originalni UUP Dump ZIP* (launcher, tačan UUID, pack/edition, Config, converter), kao i **TRI imenovana dokumenta**:
+1. **`List of files UUP.txt`** — vremenski vezan inventar Microsoft Windows UUP transportnih fajlova (ime, datum isteka, SHA-1, prikazana veličina); datum isteka NIJE trajni URL.
+2. **`File_renaming_script.cmd`** — kanonska mapa privremeni GUID → stvarni `out` filename; **tretirati isključivo kao podatke, nikada izvršavati slepo**.
+3. **`SHA-1 checksums file.txt`** — nezavisna kanonska kontrolna lista `SHA-1 *filename`.
+
+Ime i semantika ova tri ulaza ostaju konstantni, *sadržaj se menja za svaki izabrani izvor*. Bez pojedinačne provere **1:1:1** (jedinstveni nazivi/renames/SHA-1) i dodatnog **1:1 D4 `out+checksum`** poređenja sa **izvornim** Windows `.aria2` queue-om strogo **HOLD**. Uvek vezati original ZIP/launcher UUID/Windows queue/Apps queue, izdanje, jezik, build i SHA256 u nepromenljivi Source Contract. Poređenje s aktivnim URL redovima ne zamenjuje nepromenljivi digest. Kad originalni aria2 već ima tačan `out`, rename CMD nije potreban za transfer.
+
+**Potvrđena razvojna proba 26300.9818, isključivo fixture:** 98/98 Windows stavki u sva tri fajla; 76 CAB + 19 ESD + 2 MSU + 1 WIM; nezavisni D4 Windows identitet `8B690FB8E065BD5DB668667A13FF1CA4B9A4029FB4947FD43E774E8B0D373644`, normalizovan parni otisak `65CF6BBC1AD6DA869B3478C7E466C234942476392028381EAF5A2D0B9B3C004A`. SHA256 ulaza: List `D4E315D675260B4D2E9F354739C53DA069528AC47C18D428B4F6198E42DC6AAA`; CMD `5B2EF8687885E2D9EDFC5A1F50C2D25F37E8E86D4E23E2EA92833022C3579C94`; SHA-1 ledger `C757AE7C250F25C1FFD265EECB140528EFAC51283558FCC699E182360EB632F4`. Ovi hash-evi **nisu univerzalno hardkodovani**. Originalni prilozi/sha evidentirani u `BlueLite_Sources.md` i `BlueLite_S19_Universal_UUP_Strategy.md`.
+
+### 0I.2 Dvostepena selekcija, očuvana rekonstrukcija, ponovljivi izlazi
+
+**FAZA A / S19A: OFFLINE DRY-RUN.** Univerzalni *Source Contract Compiler* učitava i proverava tri fajla, originalni launcher i D4 Windows queue, kreira JSON inventar/provenance, izdvojenu klasifikaciju (reconstruction-core, edition/language, delta, SSU/LCU, FoD, Apps, Edge/WebView, WinPE/WinRE, nepoznato), korisnički **selection profile** i kandidata za izostavljanje. **Nikad ne odbacuje Windows input na osnovu imena, veličine ili željenog finalnog odsustva**. S19A nema download/rename/execute/Apply i preuzima **0 bajtova**. Nezavisni readback/hash/QA; odbijanje na neusklađenost.
+
+**FAZA B / P0:** izabrani profil → rešavanje **converter/source dependency closure** nad stvarnim referencama CompDB/edition/base ESD, edition pack/WOW64, language metadata, delta, FOD references, SSU/LCU/NDP/updates, potom G4 za AppX. *Pre-download* izostavljanje dozvoljeno **samo** za dokazano nereferenciran paket. Ako dokaz nedostaje: **KEEP_FOR_RECONSTRUCTION**, a njegovu nepoželjnu finalnu komponentu ukloniti u odobrenoj *post-conversion offline* fazi. Ponovo koristiti dokazani **G2/G3 JIT potpisanih Microsoft URL-ova + D4/D6 identity renewal**, bez ponovnog izmišljanja downloadera ili zaobilaženja pravog HTTP 403. Ako je potpis istekao, obnoviti originalnu queue za isti UUID/pack/edition i proveriti ceo `out+SHA-1` set pre prenosa. Verifikovati svaki preuzet fajl SHA-1, računati SHA256.
+
+**FAZA C / final:** koristiti **provereni originalni v128m converter + reverzibilan source-anchored overlay** i njegove stvarno podržane `ConvertConfig.ini` / `CustomAppsList.txt` opcije, obavezne Windows update/cleanup semantike, zatim zasebno servisirati/exportovati `install.wim` i validirati standardni Setup `boot.wim` i bootabilan ISO. Ne mešati WinPE Setup sa opcionim WinRE; finalna 4-app politika i posebna 5-app staging politika ostaju. Za **svaki novi build** zamrzava se nov source contract; univerzalnost se dokazuje na najmanje **dva operatorski izabrana 26300.x izvora**. ISO približno 5 GB i instaliranih 11–15 GB su **mereni cilj**, ne garancija, a veliki MSU/FOD filename nije dokaz da može da se izbaci.
+
+### 0I.3 Proces i sertifikacione granice
+
+**S19A rezultat = `SOURCE_CONTRACT_DRYRUN_PASS`, NE converter/ISO/runtime PASS**. Realno download, rekonstrukcija, update/cleanup, image mutations, export i final ISO imaju svoje zasebne nezavisne PASS/QA i odobrenja prema §0G/§0H; ne dirati Master/imaging bez eksplicitnog naloga. S18H za fixture 26300.9818 ima **5 consumer + 5 provider + 15 required dependency edges manifest-level PASS**, ali to NE potvrđuje Windows reconstruction closure, jezičke resurse, stvarnu provisioning instalaciju ili ISO. Istorijski Handoff ostaje **frozen** prema §0G; reference na staro Oct-3 rešenje ostaju važeće, novi normativni tekst se održava ovde, u Session Entry locatoru, Sources i S19 spec-u. Skriptu S19A arhivirati dvostruko: izvršivi GitHub `.ps1` + kompletan izvor u `BlueLite_S19_Universal_UUP_Strategy.md`; operator GUI dobija direktnu kopiju, SHA256, jednu PS7 AST-proverenu komandu i immutable evidence.
+
+---
 ## 0A. MASTER OPERATING CONTRACT — UNIVERSAL GERMANIUM FACTORY
 
 **PRIMARNI OBUHVAT OD v6.0.0: Windows 11 26H2 / 26300.x GA.** Prethodni 25H2 / 26200.x materijal ostaje za regresiju i već potvrđene recepte; nije drugi tekući proizvodni ili istraživački front. Sledeće Germanium linije zahtevaju novi dokaz i odobrenje. Zastarela prethodna linija je isključena iz novih UUP/PowerShell/NTLite/VM proizvodnih profila, matrica regresije i istraživačkog backlog-a. Nasleđeni tehnički logovi i precizni identiteti komponenti ostaju neizmenjeni kao istorijska evidencija; njihov zapis ne vraća podršku zastareloj liniji.
