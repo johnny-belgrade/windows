@@ -1,5 +1,22 @@
 # BlueLite Project Sources
 
+## **2026-11-01 — AUTHORITATIVE S19 UNIVERSAL UUP THREE-FILE INPUT CONTRACT: 98/98 CROSS-VERIFIED**
+
+**Decision:** operator-approved Master **§0I**. Universal offline source compiler consumes original UUP ZIP/launcher/UUID + immutable D4 Windows `out+sha-1` source queue and the **three user-attached, variable-per-build files** named exactly `List of files UUP.txt`, `File_renaming_script.cmd`, `SHA-1 checksums file.txt`. This is a **new top-priority source input** for P0 MVP1; do not infer converter reconstruction exclusion from a FOD filename or from an expired Microsoft transport URL. Signed URLs renewed using existing G2/G3 JIT method only after whole content equality. S19A is **offline metadata-only**, not download/build.
+
+**User attachment provenance (exact R003 example, 26300.9818; hashes NOT universal defaults):**
+
+| User-original filename | Role | Bytes | SHA256 |
+|---|---|---:|---|
+| `List of files UUP.txt` | `File, Expires, SHA-1, Size` — UTC signed-link expiry and rounded transport size | 12,759 | `D4E315D675260B4D2E9F354739C53DA069528AC47C18D428B4F6198E42DC6AAA` |
+| `File_renaming_script.cmd` | 98 `rename "GUID" "real out filename"` records; input **data only**, not executable | 10,393 | `5B2EF8687885E2D9EDFC5A1F50C2D25F37E8E86D4E23E2EA92833022C3579C94` |
+| `SHA-1 checksums file.txt` | 98 `40HEX *filename` independently declared expected checksums | 9,779 | `C757AE7C250F25C1FFD265EECB140528EFAC51283558FCC699E182360EB632F4` |
+
+**Independent source set readback:** 98/98 unique `out` filenames and SHA-1 across all 3 inputs (76 CAB, 19 ESD, 2 MSU, 1 WIM), no duplicates/mismatch; canonical sorted-casefold `filename|sha-1=<HEX>` digest SHA256 `65CF6BBC1AD6DA869B3478C7E466C234942476392028381EAF5A2D0B9B3C004A`. Native Windows PowerShell7 independently recomputed **exactly same digest** from actual `C:\work\PREMAX-work\R003_Universal26300_P0_MVP\01_Inputs\R003_S17_QueueReissue_001\Windows.Reissued.aria2`, count=98, D4 source identity `8B690FB8E065BD5DB668667A13FF1CA4B9A4029FB4947FD43E774E8B0D373644`; original source ZIP `C:\work\UUP_Source\26300.9818_amd64_en-us_professional_6c7bf258_convert.zip` SHA256 `39406F106A467D1DFD592AC8BDF36C665B126EEDD4A4A268E19E1EF30062E9E2`, launcher UUID `6c7bf258-2632-47dd-83ee-c23945978da1`. **Content match is source-specific, not proof that all 98 Windows files can be dropped or that ISO will be ~5 GB**; displayed total ~8.85 GiB is rounded source traffic, not downloaded or final WIM/ISO bytes. Mandatory reconstruction closure must be measured against converter v128m, CompDB, base/edition/language/LCU/SSU/delta references before selective Windows pre-download.
+
+**Normative/code references:** `BlueLite-Master_Germanium_Strategy_final.md` §0I; `BlueLite_S19_Universal_UUP_Strategy.md` (complete technical contract and S19A backup PS1); `scripts/BlueLite_S19A_UniversalSourceContract_v1.ps1` (single reviewed executable). Existing historical G2/G3/D4/D6, 2026-10-03 converter/source patch, S18H G4 5 consumer/5 provider/15 edge manifest closure remain provenance. Historical Handoff frozen per §0G and intentionally unchanged.
+
+
 ## 2026-10-24 — R002-R26 G2 five provider native binary SHA1 5/5 PASS (not XML graph closure)
 
 - Operator-authorized, source-bound **five separate** actual native SHA1 checks (one PS process/journal/readback per provider) on original `C:\work\E2E\BlueLite_Stage1_S06_26300_9711_2b22470a\UUPs`, against [G1 exact 9807 source matrix](development/PREMAX/R002/02_Analysis/R002R26_G1_9807_SourceProviderChecksum_Matrix_20261024.json) blob `a118b7e5510fb0153ae32f0d3f651566b878d7b1`. `Microsoft.UI.Xaml.x64.2.8.appx` PID7256, `Microsoft.VCLibs.x64.14.00.Desktop.appx` PID7788, `Microsoft.VCLibs.x64.14.00.appx` PID6404, `Microsoft.NET.Native.Framework.x64.2.2.appx` PID3016, `Microsoft.NET.Native.Runtime.x64.2.2.appx` PID7848: **5/5 exact expected==observed SHA-1**, differences0/missing0, numeric native exits unexposed; no network, archive extraction or cache edits.
