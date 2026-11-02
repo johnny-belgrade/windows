@@ -1,6 +1,6 @@
 # BlueLite S19 — **UNIVERSAL UUP SOURCE CONTRACT + SELECTIVE WIM/ISO STRATEGY**
 
-**STATUS:** 2026-11-01 operator-approved normative implementation companion to **Master §0I**, §0H, §7.3–§7.4. **S19A code exists, verified UTF-8 Git blob and native Windows PS7 AST PASS; S19A real operator Run NOT_RUN.** This is not a separate dynamic status document; live NEXT remains only in `BlueLite_Current_Status.md`.
+**STATUS:** 2026-11-01 operator-approved technical companion to **Master v6.3.2 §0I / §0J**, §0H, §7.3–§7.4. Latest §0J additionally governs target footprint, permanent download approval, unlimited versioned Lane B corrective runs and 3-attempt connector/platform HOLD. **S19A code exists, verified UTF-8 Git blob and native Windows PS7 AST PASS; S19A real operator Run NOT_RUN.** This is not a separate dynamic status document; live NEXT remains only in `BlueLite_Current_Status.md`.
 
 ## 1. **Non-negotiable universal flow**
 
@@ -9,7 +9,7 @@
 1. **S19A SOURCE-ONLY — ZERO NETWORK:** validate all input sources/renaming/sha1 and original launcher/D4, output deterministic frozen contract and conservative `KEEP_UNTIL_CONVERTER_CLOSURE_PROVEN` selection inventory, independently verify report/receipt.
 2. **S19B SELECTIVE FETCH — CONDITIONAL:** classify ESD/edition/language/base/delta/metadata/SSU/LCU/NDP/needed FOD as potentially mandatory; grant omission only on observed converter/CompDB dependency proof. AppX five required staging identities and exact providers may be source-bound selected without downloading 2798 apps. JIT G2/G3 handles expired MS signatures under strict same-UUID D4 identity gate. Check every downloaded SHA-1 and compute SHA256.
 3. **S19C CONVERSION — SEPARATE APPROVAL:** original v128m, source-pinned reversible overlay and real supported configuration; preserve source reconstruction closure. Build correct `install.wim` and supported updates/cleanup; WinPE Setup `boot.wim` is retained; WinRE only under approved verified alternate recovery.
-4. **S19D POST-RECONSTRUCTION — SEPARATE APPROVAL:** offline remove/disable only verified residuals, WIM export/recompression and full integrity checks; ISO with boot validation, final ISO/footprint measurement and rollback evidence. Goal about 5GB ISO/11–15GB clean install is NOT a guarantee. Real installation/Update/VM tests are mandatory for release.
+4. **S19D POST-RECONSTRUCTION — SEPARATE APPROVAL:** offline remove/disable only verified residuals, WIM export/recompression and full integrity checks; ISO with boot validation, final ISO/footprint measurement and rollback evidence. Measured target: final ISO around 5 GB (compressed transport) and clean installed physical footprint 15.0 GB ± 500 MB, acceptable 14.5–15.5 GB decimal (GB=10^9 B, MB=10^6 B), before machine-specific drivers/user programs; actual native evidence required, no guarantee. Master v6.3.2 §0J defines scope and dependency disposition. Real installation/Update/VM tests are mandatory for release.
 
 **NEVER execute `File_renaming_script.cmd` as a command.** It is only a GUID-name lookup and redundant cross-check; original `aria2` `out=` records already provide correct destination names. Never drop needed reconstruction packages merely because their final feature is unwanted.
 
