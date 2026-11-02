@@ -1,6 +1,26 @@
 # BlueLite v1.0 — Current Status (single active checkpoint)
-**Updated:** 2026-11-01 · **NORMATIVE MASTER §0I**, latest Master Git blob `ddd04eeec8c1a2bbb1cc90f8ba3e9abed58f4f7f`; no user-selected production CU. R003 `26300.9818` development source.
+**Updated:** 2026-11-02 · **NORMATIVE MASTER v6.3.2 §0J + §0I**, latest Master Git blob `5ea91be49145becabef50a2f88a79b58d8f6c444`; no user-selected production CU. R003 `26300.9818` remains development fixture. Technical S19A operator run still NOT_RUN.
 **STATE:** MASTER_0I_STRATEGY_AND_REFERENCES_GITHUB_READBACK_PASS / S19A_OFFLINE_SCRIPT_ARCHIVED_NATIVE_AST_PASS_OPERATOR_RUN_NOT_RUN / SOURCE_TRIPLE_98_D4_VERIFIED / S18H_FIVE_APP_G4_MANIFEST_QA_PASS / WINDOWS_CONVERTER_WIM_BOOTWIM_ISO_NOT_RUN / R003_S06_PLATFORM_DENIED_VERIFY_HOLD.
+
+## 2026-11-02 operator-approved policy documentation consolidation — READBACK PASS, HISTORICAL HANDOFF READ HOLD
+
+**DOCUMENTATION R/W:** PASS. Explicit user authorization to edit Master and all relevant active docs; user permitted ignoring RDC's still-empty allowlist discrepancy **as a GitHub documentation blocker only**. Each updated file used live GitHub pre-write blob SHA, sequential Contents write, independent subsequent fetch/full-content comparison. Final authoritative Git blob results:
+- Master v6.3.2 §0J: 5ea91be49145becabef50a2f88a79b58d8f6c444.
+- Session Entry: 9d2b6eb972a7dfe775c8de90a82cbf819e64d185.
+- Intro: 088643e66118ecb64337f427a86fac49ae470c70.
+- S19 universal strategy: 489a1551cfa5bd89fd7b9702a541595eeea4c69d.
+- production/contracts/README.md: f1354a0629c9489a84a30fd932bd0a908a55d605.
+- docs/BlueLite_PREMAX_Workspace_README.md: 10c01bded5effba6e19a99cf9b27ad3421c24d2e.
+- docs/BlueLite_UUP_History_README.md: 362b7c7ae76621f920841dbf6e0abac78761104e.
+- BlueLite_Sources.md: f6f20b2abbe748d1cf843ca8edd85515ebddf25d.
+- This Current file: CAS+independent readback, actual blob identified by fresh fetch after write.
+
+**POLICY DELTA (normative §0J):** final clean installed OS footprint 15.0 GB ± 500 MB (14.5–15.5 GB decimal, GB=10^9 B/MB=10^6 B), ISO around 5 GB separate compressed output. All needed BlueLite network downloads permanently preapproved regardless of size/count; announce heavy CPU/IO/thermal operations. Properly reviewed/versioned operator-local Lane B corrections unlimited with unique immutable receipts in C:\work\logs + fresh separate-process QA, exact GUI scripts under C:\work\scripts/one PS7 command/returned evidence. For a same GitHub/RDC/tool/platform read/write/connect failure, at most 3 genuine attempts then HOLD; terminal safety denial stops earlier; independently permitted local operator step may be supplied, never a disguised repeat of an explicitly safety-denied action. WIM/CBS/registry/ISO still separately gated. Expected RDC allowedDirectories=["C:\\work","C:\\BLR20R2F5"] with original 33 blockedCommands. Live 2026-11-02 after RDC restart still returned [] (RDC_CONFIG_DEVIATION); operator instructed not to let this block GitHub-only documentation changes. Config was NOT changed.
+
+**HISTORICAL_HANDOFF_FETCH_HOLD:** historical BlueLite_Germanium_Handoff.md GitHub blob 5a26abd83aabbf7d37eda0f70de065772d982384 was identified but returned 0 content in full fetch and alternate ranged/base64 reads; GitHub raw/web retrieval also failed. >=3 access approaches did not produce a usable section; **Handoff NOT_FULLY_READ** and archive intentionally unchanged. Local original UUP-history/00_README.md and PREMAX-work/00_README.md were NOT independently re-read or overwritten using RDC in this documentation-only block; GitHub mirrors above are updated but are not a validated local readback. Before dependent source use, obtain actual allowed/local read and compare. Prior S19A source fixture, original Windows queues and SHA identities unchanged. Canonical S19A PS1 Git blob e9635461636eb7daa01cd9c6be73a913ba607cec unchanged; backup embedded source normalized text matched, S19A operator runtime **NOT_RUN**. No WIM/ISO/convert or local mutation executed.
+
+**STATE:** MASTER_0J_DOCUMENTATION_R_W_READBACK_PASS / HISTORICAL_HANDOFF_READ_HOLD / LOCAL_README_ORIGINALS_NOT_REVALIDATED / RDC_CONFIG_DEVIATION_IGNORED_FOR_GITHUB_DOCS / S19A_OPERATOR_RUN_NOT_RUN / GUI_PAUSE_AWAITING_OPERATOR.
+**ONE NEXT (technical work, pending operator's new instruction):** existing S19A source-only operator dry-run from the original S17 D4 queue/triad, return native evidence ZIP from C:\work\logs for independent QA. Until then no scripts or image modifications.
 
 ## S19A operator-approved universal source pipeline — actual completed document + script checkpoint
 
