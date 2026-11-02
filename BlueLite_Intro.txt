@@ -1,0 +1,25 @@
+1. Pročitaj kompletan aktuelni Master Strategy, Session Entry, najnoviji Current Status, Sources, relevantne obavezne sekcije istorijskog Handoff-a i druga relevantna dokumenata na mom  GitHub repo, kao i odgovarajuće originalne dokaze iz Library.
+2. Za UUP/PRE_MAX posao proveri i obavezne lokalne README dokumente, kanonske izvore, SHA256 i postojeće dokaze. Ne ponavljaj završene analize ili operacije.
+3. Utvrdi poslednji stvarno izvršen i nezavisno potvrđen checkpoint, postojeće HOLD-ove, konkretno ONE NEXT i opseg važećih odobrenja.
+
+Metodologija izvršavanja:
+
+- Lane B — Operator Local je podrazumevani način rada. RDC je pomoćni/opcioni alat, a ne obavezni posrednik.
+- Preko RDC imaš pristup kompletnom lokalnom `C:\work` folderu koji treba da koristiš R/W po zapisanim pravilima i putanjama.
+- Izvršne PS1/CMD skripte (i eventualne dodatne fajlove ili arhive koje skripta poziva) isporučuj direktno kroz GUI. Ja ih čuvam i pokrećem iz `C:\work\scripts`.
+- Sve izlazne logove, receipts, JSON, CSV, TXT i evidence ZIP datoteke generiši u `C:\work\logs`.
+- Uputstva, tačan SHA256 i jednu gotovu PowerShell 7 komandu (i eventualne dodatne fajlove ili arhive koje skripta poziva) daješ u GUI poruci. 
+- Na kraju svake GUI poruke sa komandom obavezno navedi tačne putanje i nazive logova koje treba da vratim.
+- Poštuj mikro-protokol: jedna pojedinačna operacija → upis nalaza i sledećeg koraka → nezavisan readback → naredna operacija. Primenjuj fail-closed pravila i evidentiraj stvarni rezultat.
+- Nakon vraćanja dokaza analiziraj stvarne fajlove, ažuriraj relevantni GitHub checkpoint pomoću fresh SHA/CAS i nezavisnog readback-a. Master ne menjaj bez posebnog odobrenja. Handoff ostaje istorijska arhiva, osim u slučaju kada ti ja eksplicitno navedem da izvršiš određene upise ili promene u taj dokument, a na osnovu međusobnog dogovora ili tvoje sugestije.
+- Ne menjaj originalne UUP izvore, WIM/ISO niti offline image bez odgovarajuće zasebne autorizacije. Poštuj zavisnosti, izvorne SHA, rollback i health uslove, kao i postojeća bezbednosna ograničenja.
+- Pre mount/unmount operacija obavezno me upozori da zatvorim Total Commander i Explorer prozore koji koriste mount direktorijume.
+- Koristi sve raspoložive odgovarajuće Windows, PowerShell, besplatne i povezane alate. NTLite Business 2025.8.10552 je jedini plaćeni alat. 
+- Takođe, u svom radu koristi sve dostupne fajlove (lokalne i Library), sve raspoložive linkove u Sources, kao i ceo web.
+- Kada je potrebno, privremeno ukidaš platformske blokade koje vraćaš u prethodno stanje nakon izvršene operacije.
+
+Stvarni tehnički rad nastavljaš prema aktuelnom ONE NEXT, bez nepotrebnih dodatnih analiza. Po završetku logičkog bloka daj kratak GUI izveštaj sa PASS/HOLD/FAIL, izmenjenim GitHub dokumentima i jednim narednim korakom, pa napravi obaveznu protokolarnu pauzu. Rad vanredno pauziraš (HOLD) ukoliko dođe do odbijanja nekog upisa ili izvršenja u tri prolaza, sa preciznim objašnjenjem i razlogom neuspeha.
+
+Striktno poštuj sve pojedinačne upise, nezavisne provere i kontinuitet između sesija (jedna pojedinačna operacija → upis nalaza i sledećeg koraka → nezavisan readback → naredna operacija).
+
+Kada od mene dobiješ povratni log, pristupaš narednom planiranom bloku, osim ako drugačije ne napišem ili dođe do neke greške. Sve eventualne dodatne ili vanredne zadatke dobijaš od mene u GUI na protokolarnoj pauzi.
