@@ -1,0 +1,13 @@
+{
+  "test": "PS7_Preflight_OpenStdin",
+  "utc": "2026-11-03T22:25:21.6076922Z",
+  "script_sha256": "17C5FA426D9856C65BD0077BE5AD9C148A55CBA4D941B4866E9A333A07099437",
+  "expected_exit": 0,
+  "actual_exit": 0,
+  "expected_marker": "PREFLIGHT_PASS",
+  "log": "C:\\work\\logs\\BlueLite_R008_Compatibility_20261103\\PS7_Preflight_OpenStdin.log",
+  "log_sha256": "C3262E9864DFDCC13A32F41C2CA371F017038DB31182491027441DCC756C222A",
+  "status": "PASS",
+  "stdin_kept_open": true,
+  "image_mutation": false
+}

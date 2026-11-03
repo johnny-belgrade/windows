@@ -1,0 +1,5 @@
+# Reconstruction metadata only. App/framework dependencies are resolved dynamically
+# from the selected retained AppX/MSIX manifests; broad runtime-family pinning is forbidden.
+AggregatedMetadata.cab
+CompDB
+.xml.cab

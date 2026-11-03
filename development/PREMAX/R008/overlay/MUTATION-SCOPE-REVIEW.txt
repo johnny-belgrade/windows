@@ -1,0 +1,37 @@
+BlueLite MAX_PRE 26300.x v6.1 — automatic mutation scope after UUP reconstruction
+
+ORIGINAL VENDOR FILES: original uup_download_windows.cmd, UUP Dump converter asset
+manifests and original UUID, Apps/Windows queues are source authority.
+NO source/ESD/FoD input deletion prior to reconstruction.
+
+AUTOMATIC OFFLINE WIM MUTATION AFTER RECONSTRUCTION (NOT BEFORE):
+- Mount reconstructed install.wim only; no /Online Windows image modification.
+- Verify offline SOFTWARE CurrentBuildNumber exactly 26300, and UBR from hive;
+  require source resolver selected EXACT build, do not switch/update build.
+- Require five staging AppX identities, protected VM/network/storage file floor,
+  component store CheckHealth and zero pending packages BEFORE first mutation.
+- Apply common base SOFTWARE telemetry/policy, service disable options.
+- Remove staging-only DesktopAppInstaller where offline provisioning permits.
+- Remove denied provisioned Apps, verify four final retained Apps and disabled
+  Apps absence before final commit.
+- Remove only observed installed matching FoD capabilities using native DISM.
+- Selectively disable/remove listed optional feature payload where present.
+- Native CBS package removal only if PackageState is Superseded.
+- No raw WinSxS/component hive surgery; no ResetBase.
+- No Sense component removal; all AMBER/NTLite deferred to later BlueLite phases.
+- After mutations: pending=0, CheckHealth/ScanHealth, protected floor, Apps
+  verify, and two inventory snapshots; DISM /Discard on pre-commit failure.
+- On successful commit, export compressed install.wim, then original converter
+  continues WinRE/boot WIM and ISO final steps.
+
+Proven 26300.9818 v4 conversion and MAX_PRE native run produced install.wim/ISO. V5 policy-only delta has NOT yet been runtime run.
+Predecessor v2.0 did real 26300.9818 reconstruction but stopped at old
+26200 family guard. No predicted installed size is a substitute for native
+measurement (project target 14.5–15.5 decimal GB, ISO around 5 GB).
+On failure, only latest timestamped BlueLite_EVIDENCE_*.zip is requested.
+
+F01 DesktopAppInstaller original native remove refused: later owned offline/AppX dependency phase. F02 Language.Basic en-US original 0x800F0825: retained in UUP v6.1 and deferred for future scoped CBS owner proof; no forced package/registry removal. F03 WMIC invalid selectors remain native guarded Superseded-only SKIP; post-script can revisit. NTLite then VMware Workstation Pro follow after the current UUP phase.
+
+R007 v6.1 = source contract first, triad required before network, full D4 equality before Windows payload. FoD candidates are classified but retained for reconstruction until approved converter dependency closure. Existing v5/v4 MAX_PRE WIM GREEN actions unchanged; F01 AppInstaller + F02 Basic CBS owner deferred. SkipWinRE=1 already enabled; Setup boot.wim preserved. Following stages offline PS -> NTLite Business -> VMware Workstation Pro.
+
+R008 v6.1: strict offline triad validation before network; malformed/duplicate data refused; D4 SHA256-bound precut receipt; recheck on resume. WIM engine unchanged. Static/fixture result is not native v6.1 conversion or release certification.

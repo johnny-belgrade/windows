@@ -1,0 +1,4 @@
+# Provisioned only to satisfy proven v125r Apps/CompDB staging.
+# Supported offline removal is attempted and verified. Remaining items are handed to the later full offline script-debloat queue.
+Microsoft.DesktopAppInstaller
+Microsoft.Services.Store.Engagement

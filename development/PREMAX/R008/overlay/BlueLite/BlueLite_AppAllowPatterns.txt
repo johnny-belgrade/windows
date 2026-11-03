@@ -1,0 +1,11 @@
+# Intentional user-facing Apps. Also contains common UUP filename aliases.
+Microsoft.SecHealthUI
+SecHealthUI
+Microsoft.DesktopAppInstaller
+AppInstaller_
+Microsoft.WindowsCalculator
+Calculator_
+Microsoft.WindowsNotepad
+NotepadApp_
+Microsoft.Windows.Photos
+LightboxApp_

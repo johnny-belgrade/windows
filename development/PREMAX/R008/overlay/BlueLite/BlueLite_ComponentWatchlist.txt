@@ -1,0 +1,52 @@
+# INFORMATIONAL / DISCOVERY ONLY. MAX_PRE never manually deletes WinSxS component payloads.
+# This list feeds reports and later full offline script-debloat / dependency analysis.
+# Promote a target to automatic removal only after it has a supported package/capability path
+# or a separately validated component rule and passes the health/update gates.
+
+# Windows UX / consumer shell
+Widgets
+Widgets.WidgetPicker
+Microsoft-Windows-WidgetsPlatformRuntime
+WindowsBackup
+CBS\WindowsBackup
+CBS\Cortana.UI
+DiscoveryHubWidget
+FamilyValueProp
+ValueBanner
+AppListBackup
+BackupBanner
+
+# Search / web UX
+SearchHost.exe
+FESearchHost.exe
+SearchUx.Core.dll
+SearchUx.InternalWebApi.dll
+SearchUx.Model.dll
+SearchUx.UI.dll
+SearchUx.WebApi.dll
+Cortana.Internal
+Cortana.Search
+
+# AI / Recall / 2026 Germanium evolution
+CoreAI
+AIX
+Recall
+AIFabric
+Microsoft.AIFabric.CBS
+App Overlay Platform
+Windows User Experience - AOT
+Windows AI Isolation Session
+ShellMcpServers
+ShellMcpServers.ConsentPrompts
+ShellMcpServers.Packaging
+MicrosoftGraphRecentItemsManager.dll
+
+# Accessibility / speech (evaluate independently)
+VoiceAccess
+LiveCaptions
+SpeechSynthesizer
+
+# Runtime/version-lifecycle controls discovered during FBConan work
+WindowsAppRuntimeCBS
+WinAppSDK
+WiFiNetworkManager

@@ -1,0 +1,21 @@
+# BlueLite post-pre-debloat queue for the FULL OFFLINE SCRIPT-DEBLOAT phase.
+# Presence here is evidence only; it never authorizes raw WinSxS deletion.
+Microsoft.DesktopAppInstaller
+Microsoft.Services.Store.Engagement
+Microsoft.Windows.Sense.Client
+Microsoft-Windows-SenseClient-FoD-Package
+OneDrive
+SearchEngine
+srchadmin
+CoreAI
+AIX
+Recall
+AIFabric
+Microsoft.AIFabric.CBS
+App Overlay Platform
+Windows User Experience - AOT
+Windows AI Isolation Session
+ShellMcpServers
+MicrosoftGraphRecentItemsManager
+WebView2Standalone
+OneDriveBackup

@@ -1,0 +1,139 @@
+{
+  "status": "NATIVE_SOURCE_FIXTURE_PASS",
+  "count": 26,
+  "utc": "2026-11-03T22:24:18.3060647Z",
+  "tests": [
+    {
+      "test": "AST_PS7",
+      "receipt_sha256": "2F0BB8EF2B56F9E1016B6487227B98A76245CA27F8D98B029D3887F8B3923692",
+      "status": "PASS"
+    },
+    {
+      "test": "AST_PS51",
+      "receipt_sha256": "866C8D5CEEB08D25B5D86AD83402098FA52042966C2D8C69943345256A318641",
+      "status": "PASS"
+    },
+    {
+      "test": "OriginalSource_Preflight",
+      "receipt_sha256": "5EDE4570D781D47536C8061B2DA354B61E25BE65C4AC246F68A3555FFDA40C3D",
+      "status": "PASS"
+    },
+    {
+      "test": "OriginalSource_Offline",
+      "receipt_sha256": "287A9FD5EE679ADA76D62D3A9C14ED2F3B3E488DB0DE2882D511A4E5860EA502",
+      "status": "PASS"
+    },
+    {
+      "test": "OriginalSource_D4",
+      "receipt_sha256": "92ACC45D5F9CCB39629E2ED85C11F5F803CF1E4B9E2B7C241786C10B1A55A0EB",
+      "status": "PASS"
+    },
+    {
+      "test": "OriginalSource_Classify",
+      "receipt_sha256": "9936DF4E2340DB0C7723487516877D985CFFC8A4330EB11FCE998525F9D25069",
+      "status": "PASS"
+    },
+    {
+      "test": "Missing_Input_1",
+      "receipt_sha256": "8A9A88C3FEE69B6EE3D10A020F22C88C98B0F32DE233C92B12B58A44713EC1AC",
+      "status": "PASS"
+    },
+    {
+      "test": "Missing_Input_2",
+      "receipt_sha256": "E47C74501EA1EAC435D42E566F78FF3FA7A1037146C3C028148747B51009269A",
+      "status": "PASS"
+    },
+    {
+      "test": "Missing_Input_3",
+      "receipt_sha256": "56962139E213EF33ACD0EEB8AE489AE06A302CECD3FF70A12DBF205F66B535D7",
+      "status": "PASS"
+    },
+    {
+      "test": "WrongBuild",
+      "receipt_sha256": "4DF3E778A9365643D9E5388B6584CFD995FD1064A04608BEC5508CC1FEDC9E2B",
+      "status": "PASS"
+    },
+    {
+      "test": "SyntheticOtherCU_NoHardcodedRevision",
+      "receipt_sha256": "DC5286FBE01139E541D5CF0A4796AAC3424BDB30DD19BB092B5F1AA6D2019777",
+      "status": "PASS"
+    },
+    {
+      "test": "TamperedProfile",
+      "receipt_sha256": "AD96D3DDE8C221C09557ED368EA6B3BCFCF56EE2F7504D754EF3017897E68179",
+      "status": "PASS"
+    },
+    {
+      "test": "WrongSourceHash",
+      "receipt_sha256": "50115A79FE16999CEC79A54B9422813AEB1AEBBD69E57013EE8A3068B7128F1D",
+      "status": "PASS"
+    },
+    {
+      "test": "MalformedLedger",
+      "receipt_sha256": "72AE7D120C10444DD93E27E8E11E6A369866AE10C74137D36AD484DBF789424F",
+      "status": "PASS"
+    },
+    {
+      "test": "MalformedList",
+      "receipt_sha256": "BECE3AD089BC8C3A3DB1ECA5F4A4331B64CB6AA77345A073E428D7FBB543E598",
+      "status": "PASS"
+    },
+    {
+      "test": "RenameDataNeverExecuted",
+      "receipt_sha256": "EB76B141FFD1560D9720648A262A48638309A415D9B37A47E2354733DF79F34E",
+      "status": "PASS"
+    },
+    {
+      "test": "DuplicateRenameGUID",
+      "receipt_sha256": "9295F0D5C3666EA0A11536C84BAB9A78BC307F52CC0CCE67892B421485188E79",
+      "status": "PASS"
+    },
+    {
+      "test": "DuplicateLedgerName",
+      "receipt_sha256": "38225170F4785C009E4C82A68B665E2B3E10EB7813DDD7F22123DC4DB85B8DB5",
+      "status": "PASS"
+    },
+    {
+      "test": "IncompleteD4Record",
+      "receipt_sha256": "41563D3BFD81C790E1C2D3FF28932E6206C704C7345C8832EF97766589E68989",
+      "status": "PASS"
+    },
+    {
+      "test": "DuplicateD4Out",
+      "receipt_sha256": "1D14A477AED506D8D1870788102C86829752EE850642A2163666E943C1751707",
+      "status": "PASS"
+    },
+    {
+      "test": "UnsafeFilename",
+      "receipt_sha256": "324037B3819C499D18F2217EA8BBCD6C254A13FDCCA6D322AA2BF9B4BC940ABB",
+      "status": "PASS"
+    },
+    {
+      "test": "BarePassMarkerRejected",
+      "receipt_sha256": "EF747C45E01A0F413A4DC8821063F6E4B674FE09F6DFBA4A278FDA8195B04D75",
+      "status": "PASS"
+    },
+    {
+      "test": "ChangedQueueAfterGate",
+      "receipt_sha256": "CC3565EE20E338636C52C8AF875C63005BAA5D399A344A3A99F2DB9DB1FA3D16",
+      "status": "PASS"
+    },
+    {
+      "test": "ChangedMetadataAfterGate",
+      "receipt_sha256": "B35071A99D75B86FD64254ECDB50562842D6949B80366F0705BDF2EB015D590E",
+      "status": "PASS"
+    },
+    {
+      "test": "RenewIdentityUnchanged",
+      "receipt_sha256": "53CFBD102346B5DA85F65630827AD67E4ADFE4CEECDE27AEF69CD1F578A75E2F",
+      "status": "PASS"
+    },
+    {
+      "test": "RenewIdentityChanged",
+      "receipt_sha256": "640EAA5DE556C4961D94BF9F45546E25A5A7F017D6A0488E859BAD29946855B9",
+      "status": "PASS"
+    }
+  ],
+  "runtime_UUP": "NOT_RUN",
+  "image_mutation": false
+}

@@ -1,0 +1,5 @@
+# Must not exist in the final BlueLite release; MAX_PRE reports any residue for the later offline script-debloat phase.
+Microsoft.WindowsStore
+Microsoft.StorePurchaseApp
+Microsoft.DesktopAppInstaller
+Microsoft.Services.Store.Engagement

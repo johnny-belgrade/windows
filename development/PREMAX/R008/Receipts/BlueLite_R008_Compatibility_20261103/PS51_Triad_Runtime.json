@@ -1,0 +1,13 @@
+{
+  "test": "PS51_Triad_Runtime",
+  "utc": "2026-11-03T22:25:22.9870307Z",
+  "script_sha256": "DD68E9CCA96C14CD7DAD6E93567042F8D543DBD4F827B8B0E9B8757FE3262A84",
+  "expected_exit": 0,
+  "actual_exit": 1,
+  "expected_marker": "SOURCE_TRIAD_D4_PASS names=98",
+  "log": "C:\\work\\logs\\BlueLite_R008_Compatibility_20261103\\PS51_Triad_Runtime.log",
+  "log_sha256": "B60D219A0EE69943B19305E5287A9B8C6909207545B31E4AB9BB3BFD24744178",
+  "status": "FAIL",
+  "stdin_kept_open": true,
+  "image_mutation": false
+}

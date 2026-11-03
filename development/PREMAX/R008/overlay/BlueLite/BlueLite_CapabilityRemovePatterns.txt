@@ -1,0 +1,44 @@
+# BlueLite MAX_PRE v2.0 - native capability removal candidates.
+# Only Installed capabilities are attempted. Every failure is logged; topology/health gates remain authoritative.
+# Sense is intentionally NOT here: Microsoft.Windows.Sense.Client is COMPONENT_ENGINE_HANDOFF.
+# Defender/SecHealthUI and Windows servicing capabilities are protected.
+Accessibility.Braille~~~~
+App.StepsRecorder~~~~
+App.WirelessDisplay.Connect~~~~
+Browser.InternetExplorer~~~~
+Hello.Face
+Language.Handwriting~~~
+Language.OCR~~~
+Language.Speech~~~
+Language.TextToSpeech~~~
+MathRecognizer~~~~
+Media.WindowsMediaPlayer~~~~
+Microsoft.WebDriver~~~~
+Microsoft.Wallpapers.Extended~~~~
+Microsoft.Windows.MSPaint~~~~
+Microsoft.Windows.Notepad.System~~~~
+Microsoft.Windows.PowerShell.ISE~~~~
+Microsoft.Windows.WordPad~~~~
+Msix.PackagingTool.Driver~~~~
+Network.Irda~~~~
+OneCoreUAP.OneSync~~~~
+OpenSSH.Client~~~~
+OpenSSH.Server~~~~
+Print.Fax.Scan~~~~
+Print.Management.Console~~~~
+RasCMAK.Client~~~~
+RIP.Listener~~~~
+Rsat.
+SNMP.Client~~~~
+Tools.DeveloperMode.Core~~~~
+Tools.Graphics.DirectX~~~~
+VBSCRIPT~~~~
+WMIC~~~~
+WMI-SNMP-Provider.Client~~~~
+
+# Certified BlueLite GREEN/native production rules, dynamically resolved on current image.
+Edge.Webview2.Platform~~~~
+DirectX.Configuration.Database~~~~
+Windows.Kernel.LA57~~~~
+# F02: Language.Basic en-US retained for offline CBS owner/dependency gate; native 26300.9818 0x800F0825
+XPS.Viewer~~~~0.0.1.0

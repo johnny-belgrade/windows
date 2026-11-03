@@ -1,0 +1,14 @@
+{
+  "test": "OriginalSource_Preflight",
+  "utc": "2026-11-03T22:23:02.8343007Z",
+  "script": "C:\\work\\PREMAX-work\\R008_CompleteKit_20261103\\cases\\positive\\BlueLite\\BlueLite_Preflight.ps1",
+  "script_sha256": "FC0B9927956AB66916E1EE949A4F0CEB2A0853EC2F50A71C1588A7E95917452D",
+  "actual_exit": -1,
+  "expected_exit": 0,
+  "expected_marker": "PREFLIGHT_PASS",
+  "log": "C:\\work\\logs\\BlueLite_R008_SourceQA_20261103_v1\\OriginalSource_Preflight.log",
+  "log_sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+  "status": "FAIL",
+  "scope": "ISOLATED_SOURCE_FIXTURE_NO_DOWNLOAD_NO_CONVERTER_NO_IMAGE",
+  "next": "Independent receipt verification"
+}

@@ -1,0 +1,14 @@
+{
+  "test": "AST_PS51",
+  "utc": "2026-11-03T22:22:18.6427132Z",
+  "script": "C:\\work\\PREMAX-work\\R008_CompleteKit_20261103\\tests\\Parse-All.ps1",
+  "script_sha256": "0C89A9AC06D241D0DF04DAFC08F2083916BC13C5811F00C2E6F9C3CDA04166EA",
+  "actual_exit": 0,
+  "expected_exit": 0,
+  "expected_marker": "AST_PASS count=15",
+  "log": "C:\\work\\logs\\BlueLite_R008_SourceQA_20261103_v1\\AST_PS51.log",
+  "log_sha256": "233A08253E8B6625F6B1E953A9EC2E89372CDDAE1BE939CA47922B4D84F467FE",
+  "status": "PASS",
+  "scope": "ISOLATED_SOURCE_FIXTURE_NO_DOWNLOAD_NO_CONVERTER_NO_IMAGE",
+  "next": "Independent receipt verification"
+}

@@ -1,0 +1,6 @@
+# Dependency-conscious features: disable but retain payload unless a later rule proves removal safe.
+WCF-Services45
+WCF-TCP-PortSharing45
+MediaPlayback
+SearchEngine-Client-Package
+Printing-Foundation-InternetPrinting-Client

@@ -1,0 +1,6 @@
+# MAX_PRE v2.0: native optional-feature payload removals suitable before deep AMBER work.
+# VirtualMachinePlatform is intentionally deferred to the later protected virtualization script phase.
+WorkFolders-Client
+SmbDirect
+Microsoft-RemoteDesktopConnection
+MSRDC-Infrastructure

@@ -1,0 +1,25 @@
+# BlueLite MAX_PRE v2.0 - native SUPERSEDED package cleanup candidates.
+# The engine only removes rows whose current DISM PackageState is Superseded.
+# Installed/Staged/current packages are deliberately left for capability/feature logic or later universal script-debloat.
+Microsoft-Windows-DirectoryServices-ADAM-Client-FOD-Package
+Microsoft-Windows-EnterpriseClientSync-Host-FOD-Package
+Microsoft-Windows-Hello-Face-Package
+Microsoft-Windows-InternetExplorer-Optional-Package
+Microsoft-Windows-MediaPlayer-Package
+Microsoft-Windows-PowerShell-ISE-FOD-Package
+Microsoft-Windows-Printing-PMCPPC-FoD-Package
+Microsoft-Windows-ProjFS-OptionalFeature-FOD-Package
+Microsoft-Windows-SimpleTCP-FOD-Package
+Microsoft-Windows-StepsRecorder-Package
+Microsoft-Windows-TabletPCMath-Package
+Microsoft-Windows-Telnet-Client-FOD-Package
+Microsoft-Windows-TerminalServices-AppServer-Client-FOD-Package
+Microsoft-Windows-TFTP-Client-FOD-Package
+Microsoft-Windows-VBSCRIPT-FoD-Package
+Microsoft-Windows-Wallpaper-Content-Extended-FoD-Package
+Microsoft-Windows-WinOcr-FOD-Package
+Microsoft-Windows-WMIC-FoD-Package
+OpenSSH-Client-Package
+OpenSSH-Server-Package
+# Certified native superseded FoDMetadata servicing payload; current provider layers are not matched by state gate.
+Microsoft-Windows-FodMetadataServicing-Desktop-Metadata-Package

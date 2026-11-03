@@ -1,0 +1,12 @@
+# Current proven VM/network/storage protected floor. Paths are relative to mounted Windows root.
+Windows\System32\WinHvPlatform.dll
+Windows\System32\hvax64.exe
+Windows\System32\hvix64.exe
+Windows\System32\drivers\vmbus.sys
+Windows\System32\drivers\vid.sys
+Windows\System32\drivers\ndis.sys
+Windows\System32\drivers\netio.sys
+Windows\System32\drivers\tcpip.sys
+Windows\System32\drivers\storport.sys
+Windows\System32\drivers\disk.sys
+Windows\System32\drivers\partmgr.sys

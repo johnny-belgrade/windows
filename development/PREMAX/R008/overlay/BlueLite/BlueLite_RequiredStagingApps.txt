@@ -1,0 +1,6 @@
+# Required at UUP/v125r staging time. DesktopAppInstaller is infrastructure-only.
+Microsoft.SecHealthUI
+Microsoft.DesktopAppInstaller
+Microsoft.WindowsCalculator
+Microsoft.WindowsNotepad
+Microsoft.Windows.Photos

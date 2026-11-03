@@ -1,0 +1,14 @@
+{
+  "test": "RenewIdentityUnchanged",
+  "utc": "2026-11-03T22:24:17.4585521Z",
+  "script": "C:\\work\\PREMAX-work\\R008_CompleteKit_20261103\\revision2\\cases\\renew\\BlueLite\\BlueLite_RenewQueue.ps1",
+  "script_sha256": "201661946A98452739387BBE8BEC1A8743EA776406549D205CE32050CE6D76F7",
+  "actual_exit": 0,
+  "expected_exit": 0,
+  "expected_marker": "QUEUE_RENEW_IDENTITY_PASS",
+  "log": "C:\\work\\logs\\BlueLite_R008_SourceQA_20261103_v2\\RenewIdentityUnchanged.log",
+  "log_sha256": "3C62005095778AC8A62BB7C5358D3D166C1A8380477FD20C63BE567B7774CF26",
+  "status": "PASS",
+  "scope": "ISOLATED_SOURCE_FIXTURE_NO_DOWNLOAD_NO_CONVERTER_NO_IMAGE",
+  "next": "Independent receipt verification"
+}

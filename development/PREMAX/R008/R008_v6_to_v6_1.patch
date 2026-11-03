@@ -1,0 +1,379 @@
+--- R007_v6/00-EXECUTION-ORDER.txt
++++ R008_v6.1/00-EXECUTION-ORDER.txt
+@@ -1,4 +1,4 @@
+-BlueLite MAX_PRE v6 26300.x - EXACT EXECUTION ORDER
++BlueLite MAX_PRE v6.1 26300.x - EXACT EXECUTION ORDER
+ ==================================================
+ 00 START.cmd: require administrator/PowerShell7; restore latest verified
+    evidence archive (if checkpoint exists); verify package manifest SHA256,
+@@ -33,4 +33,6 @@
+ 
+ V5 SOURCE-BOUND DELTA: original v4 engine and 26300 reconstruction unchanged; Language.Basic en-US 0x800F0825 excluded from unconditional GREEN attempt (retained for offline dependency gate). F01 AppInstaller, F03 WMIC, full post-debloat/NTLite/VM remain subsequent phases, not invented pre-download pruning.
+ 
+-R007 v6 = source contract first, triad required before network, full D4 equality before Windows payload. FoD candidates are classified but retained for reconstruction until approved converter dependency closure. Existing v5/v4 MAX_PRE WIM GREEN actions unchanged; F01 AppInstaller + F02 Basic CBS owner deferred. SkipWinRE=1 already enabled; Setup boot.wim preserved. Following stages offline PS -> NTLite Business -> VMware Workstation Pro.
++R007 v6.1 = source contract first, triad required before network, full D4 equality before Windows payload. FoD candidates are classified but retained for reconstruction until approved converter dependency closure. Existing v5/v4 MAX_PRE WIM GREEN actions unchanged; F01 AppInstaller + F02 Basic CBS owner deferred. SkipWinRE=1 already enabled; Setup boot.wim preserved. Following stages offline PS -> NTLite Business -> VMware Workstation Pro.
++
++R008 v6.1: strict offline triad validation before network; malformed/duplicate data refused; D4 SHA256-bound precut receipt; recheck on resume. WIM engine unchanged. Static/fixture result is not native v6.1 conversion or release certification.
+--- R007_v6/BlueLite/BlueLite_Preflight.ps1
++++ R008_v6.1/BlueLite/BlueLite_Preflight.ps1
+@@ -9,8 +9,8 @@
+  }
+   # R007 source identity is mandatory BEFORE download; full 1:1:1 + D4 follows after URL queue retrieval.
+   foreach($n in @('List of files UUP.txt','File_renaming_script.cmd','SHA-1 checksums file.txt')){
+-   $input=Join-Path $root $n
+-   if(-not(Test-Path -LiteralPath $input -PathType Leaf) -or (Get-Item -LiteralPath $input).Length -lt 100){
++   $sourceInputPath=Join-Path $root $n
++   if(-not(Test-Path -LiteralPath $sourceInputPath -PathType Leaf) -or (Get-Item -LiteralPath $sourceInputPath).Length -lt 100){
+     throw ('SOURCE_TRIAD_REQUIRED_BEFORE_DOWNLOAD: '+$n)
+    }
+   }
+@@ -52,6 +52,11 @@
+   [void][Management.Automation.Language.Parser]::ParseFile($f.FullName,[ref]$tok,[ref]$err)
+   if($err.Count -gt 0){throw ('PS AST error in {0}: {1}' -f $f.Name,$err[0].Message)}
+  }
++ # Validate all three source maps before bootstrap or payload download.
++ $gate=Join-Path $root 'BlueLite\BlueLite_SourceTriadGate.ps1'
++ $ps7=(Get-Command pwsh.exe -ErrorAction Stop).Source
++ & $ps7 -NoProfile -NonInteractive -File $gate -UUPRoot $root -OfflineOnly -LogPath (Join-Path $root 'BlueLite_Logs\SourceTriad.offline.log')
++ if($LASTEXITCODE -ne 0){throw 'SOURCE_TRIAD_OFFLINE_HOLD'}
+  $log=Join-Path $root 'BlueLite_Logs\Preflight.txt'
+  $folder=Split-Path -Parent $log
+  if(-not(Test-Path -LiteralPath $folder)){New-Item -ItemType Directory -Path $folder -Force|Out-Null}
+--- R007_v6/BlueLite/BlueLite_Profile.ini
++++ R008_v6.1/BlueLite/BlueLite_Profile.ini
+@@ -1,5 +1,5 @@
+ [BlueLite]
+-Profile=MAX_PRE_26300_V6
++Profile=MAX_PRE_26300_V6_1
+ HealthGate=1
+ RunScanHealth=1
+ RunStartComponentCleanup=1
+--- R007_v6/BlueLite/BlueLite_SourcePrecutDecision.ps1
++++ R008_v6.1/BlueLite/BlueLite_SourcePrecutDecision.ps1
+@@ -1,5 +1,6 @@
+ [CmdletBinding()]
+ param(
++ [Parameter(Mandatory=$true)][string]$UUPRoot,
+  [Parameter(Mandatory=$true)][string]$WindowsQueueFile,
+  [Parameter(Mandatory=$true)][string]$AppsQueueFile,
+  [Parameter(Mandatory=$true)][string]$SourceTriadLog,
+@@ -39,7 +40,14 @@
+  $triad=[IO.File]::ReadAllText($SourceTriadLog)
+  $m=[regex]::Match($triad,'SOURCE_TRIAD_D4_PASS names=(\d+) GUID=(\d+)')
+  if(-not $m.Success){throw 'Mandatory D4 source triad was not fully verified'}
++ $proof=Get-Content -LiteralPath ($SourceTriadLog+'.json') -Raw | ConvertFrom-Json
++ if($proof.schema -ne 'BlueLite.SourceTriad.v6.1' -or $proof.status -ne 'SOURCE_TRIAD_D4_PASS'){throw 'Wrong source-triad receipt schema/status'}
++ if((Get-FileHash -LiteralPath $WindowsQueueFile -Algorithm SHA256).Hash -ne $proof.windows_queue_sha256){throw 'D4 queue changed since source gate'}
++ foreach($n in @('List of files UUP.txt','File_renaming_script.cmd','SHA-1 checksums file.txt')){
++  if((Get-FileHash -LiteralPath (Join-Path $UUPRoot $n) -Algorithm SHA256).Hash -ne $proof.source_sha256.$n){throw ('Source metadata changed since gate: '+$n)}
++ }
+  $expected=[int]$m.Groups[1].Value
++ if($expected -ne [int]$proof.count){throw 'Triad text/JSON mismatch'}
+  $win=[object[]](Parse-Queue $WindowsQueueFile)
+  $apps=[object[]](Parse-Queue $AppsQueueFile)
+  if($win.Count -ne $expected -or $expected -lt 10){throw ('D4 queue cardinality mismatch: '+$win.Count+'/'+$expected)}
+@@ -66,6 +74,8 @@
+   source_windows_omissions_authorized=0
+   AppX_top_level_staging_policy='five required, framework dependency closure independently resolved'
+   WinRE_policy='effective SkipWinRE=1; preserve Setup boot.wim; optional external recovery'
++  windows_queue_sha256=$proof.windows_queue_sha256
++  apps_queue_sha256=(Get-FileHash -LiteralPath $AppsQueueFile -Algorithm SHA256).Hash
+   source_win_queue_modified=$false
+   rationale='CompDB mentions are NOT proof of converter-unreferenced payloads; protect reconstruction'
+   candidates=@($rows.ToArray())
+--- R007_v6/BlueLite/BlueLite_SourceTriadGate.ps1
++++ R008_v6.1/BlueLite/BlueLite_SourceTriadGate.ps1
+@@ -1,68 +1,87 @@
+ [CmdletBinding()]
+ param(
+  [Parameter(Mandatory=$true)][string]$UUPRoot,
+- [Parameter(Mandatory=$true)][string]$WindowsQueueFile,
+- [string]$LogPath='.\BlueLite_Logs\SourceTriad.log'
++ [string]$WindowsQueueFile,
++ [string]$LogPath='.\BlueLite_Logs\SourceTriad.log',
++ [switch]$OfflineOnly
+ )
++Set-StrictMode -Version Latest
+ $ErrorActionPreference='Stop'
+ function Add-Mapping($Map,[string]$Name,[string]$Hash,[string]$Tag) {
+- if([string]::IsNullOrWhiteSpace($Name) -or $Name -ne [IO.Path]::GetFileName($Name)){throw ('Invalid name in {0}: {1}' -f $Tag,$Name)}
+- if($Map.ContainsKey($Name)){throw ('Duplicate filename in {0}: {1}' -f $Tag,$Name)}
++ if([string]::IsNullOrWhiteSpace($Name) -or $Name -ne [IO.Path]::GetFileName($Name) -or $Name -match '[\\/:*?"<>|]' -or $Name.Contains('..') -or $Name.TrimEnd('.',' ') -cne $Name){throw ('Invalid name in '+$Tag+': '+$Name)}
++ if($Hash -notmatch '^[a-fA-F0-9]{40}$'){throw ('Invalid SHA1 in '+$Tag)}
++ if($Map.ContainsKey($Name)){throw ('Duplicate filename in '+$Tag+': '+$Name)}
+  $Map.Add($Name,$Hash.ToUpperInvariant())
+ }
+ function Compare-Mappings($A,$B,[string]$Tag) {
+- if($A.Count -ne $B.Count){throw ('{0} count mismatch: {1}/{2}' -f $Tag,$A.Count,$B.Count)}
+- foreach($n in $A.Keys){if(-not $B.ContainsKey($n) -or $A[$n] -ne $B[$n]){throw ('{0} identity mismatch: {1}' -f $Tag,$n)}}
++ if($A.Count -ne $B.Count){throw ('Count mismatch '+$Tag)}
++ foreach($n in $A.Keys){if(-not $B.ContainsKey($n) -or $A[$n] -ne $B[$n]){throw ('Identity mismatch '+$Tag+': '+$n)}}
+ }
+ try {
+  $root=(Resolve-Path -LiteralPath $UUPRoot).Path
+- $listFile=Join-Path $root 'List of files UUP.txt'
+- $cmdFile=Join-Path $root 'File_renaming_script.cmd'
+- $shaFile=Join-Path $root 'SHA-1 checksums file.txt'
+- $present=@($listFile,$cmdFile,$shaFile | Where-Object {Test-Path -LiteralPath $_ -PathType Leaf})
+- $lDir=Split-Path -Parent $LogPath;if($lDir -and -not(Test-Path -LiteralPath $lDir)){New-Item -ItemType Directory -Path $lDir -Force|Out-Null}
+- if($present.Count -ne 3){throw ('SOURCE_TRIAD_REQUIRED: incomplete source triad: {0}/3 files present' -f $present.Count)}
++ $files=@('List of files UUP.txt','File_renaming_script.cmd','SHA-1 checksums file.txt')
++ $sourceHashes=[ordered]@{}
++ foreach($n in $files){$p=Join-Path $root $n;if(-not(Test-Path -LiteralPath $p -PathType Leaf)){throw ('SOURCE_TRIAD_REQUIRED: '+$n)};$sourceHashes[$n]=(Get-FileHash -LiteralPath $p -Algorithm SHA256).Hash}
+  $makeMap={New-Object 'System.Collections.Generic.Dictionary[string,string]' ([StringComparer]::OrdinalIgnoreCase)}
+- $ledger=& $makeMap; $fromList=& $makeMap; $fromCmd=& $makeMap; $queue=& $makeMap
+- foreach($line in [IO.File]::ReadAllLines($shaFile)){
+-  if($line -match '^([a-fA-F0-9]{40})\s+\*(.+?)\s*$'){Add-Mapping $ledger $Matches[2] $Matches[1] 'sha-ledger'}
++ $ledger=& $makeMap; $list=& $makeMap; $renames=& $makeMap; $queue=& $makeMap
++ foreach($line in [IO.File]::ReadAllLines((Join-Path $root $files[2]))){
++  if(-not $line.Trim()){continue}
++  $m=[regex]::Match($line,'^([a-fA-F0-9]{40})\s+\*(.+?)\s*$')
++  if(-not $m.Success){throw 'Malformed SHA1 ledger row'}
++  Add-Mapping $ledger $m.Groups[2].Value $m.Groups[1].Value 'SHA ledger'
+  }
+- foreach($line in [IO.File]::ReadAllLines($listFile)){
++ foreach($line in [IO.File]::ReadAllLines((Join-Path $root $files[0]))){
++  if(-not $line.Trim() -or $line -match '^File\tExpires\tSHA-1\tSize\s*$'){continue}
+   $f=$line.Split([char]9)
+-  if($f.Length -ge 4 -and $f[2] -match '^[a-fA-F0-9]{40}$'){Add-Mapping $fromList $f[0].Trim() $f[2] 'uup-file-list'}
++  if($f.Length -ne 4 -or $f[2] -notmatch '^[a-fA-F0-9]{40}$'){throw 'Malformed UUP file-list row'}
++  Add-Mapping $list $f[0].Trim() $f[2] 'UUP list'
+  }
+- $guidMap=[Collections.Generic.Dictionary[string,string]]::new([StringComparer]::OrdinalIgnoreCase)
+- foreach($line in [IO.File]::ReadAllLines($cmdFile)){
+-  if($line -match '(?i)^\s*rename\s+"([a-f0-9-]{36})"\s+"([^"]+)"\s*$'){
+-   if($guidMap.ContainsKey($Matches[1])){throw ('Duplicate GUID in rename data: {0}' -f $Matches[1])}
+-   $guidMap.Add($Matches[1],$Matches[2])
++ $guidSet=New-Object 'System.Collections.Generic.HashSet[string]' ([StringComparer]::OrdinalIgnoreCase)
++ foreach($line in [IO.File]::ReadAllLines((Join-Path $root $files[1]))){
++  # This file is NEVER executed. Only the known UUP rename-data grammar is accepted.
++  if(-not $line.Trim() -or $line -match '(?i)^\s*(?:@?echo off|cd /d "%~dp0"|pause|exit /b(?: 0)?|rem(?:\s.*)?|::.*)\s*$'){continue}
++  $m=[regex]::Match($line,'(?i)^\s*rename\s+"([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})"\s+"([^"]+)"\s*$')
++  if(-not $m.Success){throw 'Malformed or unexpected rename-data row'}
++  if(-not $guidSet.Add($m.Groups[1].Value)){throw 'Duplicate rename GUID'}
++  $name=$m.Groups[2].Value
++  if(-not $ledger.ContainsKey($name)){throw ('Rename-only filename: '+$name)}
++  Add-Mapping $renames $name $ledger[$name] 'rename data'
++ }
++ if($ledger.Count -lt 1){throw 'Empty source ledger'}
++ Compare-Mappings $ledger $list 'list/ledger'; Compare-Mappings $ledger $renames 'rename/ledger'
++ $queueHash=$null
++ if(-not $OfflineOnly){
++  if(-not $WindowsQueueFile -or -not(Test-Path -LiteralPath $WindowsQueueFile -PathType Leaf)){throw 'Windows D4 queue required'}
++  $out='';$hash='';$started=$false
++  foreach($line in [IO.File]::ReadAllLines($WindowsQueueFile)){
++   if($line -match '^\s*https?://'){
++    if($started){if(-not $out -or -not $hash){throw 'Incomplete D4 record'};Add-Mapping $queue $out $hash 'D4'}
++    $started=$true;$out='';$hash=''
++   }elseif($line -match '^\s*out='){
++    if(-not $started -or $out){throw 'Orphan/duplicate D4 out'}
++    $out=$line.Trim().Substring(4).Trim().Trim('"')
++    if(-not $out){throw 'Empty D4 out'}
++   }elseif($line -match '^\s*checksum='){
++    $m=[regex]::Match($line,'^\s*checksum=sha-1=([a-fA-F0-9]{40})\s*$')
++    if(-not $started -or $hash -or -not $m.Success){throw 'Orphan/duplicate/malformed D4 checksum'}
++    $hash=$m.Groups[1].Value
++   }elseif($line.Trim() -and $line -notmatch '^\s*#' -and $line -notmatch '^\s*(?:dir|header|user-agent|max-connection-per-server|split|continue|check-integrity)='){
++    throw 'Unexpected D4 queue line'
++   }
+   }
++  if(-not $started -or -not $out -or -not $hash){throw 'Incomplete final D4 record'}
++  Add-Mapping $queue $out $hash 'D4';Compare-Mappings $ledger $queue 'D4/ledger'
++  $queueHash=(Get-FileHash -LiteralPath $WindowsQueueFile -Algorithm SHA256).Hash
+  }
+- foreach($name in $guidMap.Values){
+-  if($fromCmd.ContainsKey($name)){throw ('Duplicate output in rename data: {0}' -f $name)}
+-  if(-not $ledger.ContainsKey($name)){throw ('Rename-only name: {0}' -f $name)}
+-  Add-Mapping $fromCmd $name $ledger[$name] 'rename-data'
+- }
+- $out='';$hash=''
+- foreach($line in [IO.File]::ReadAllLines($WindowsQueueFile)){
+-  if($line -match '^\s*https?://'){
+-   if($out){if(-not $hash){throw ('Queue hash missing: {0}' -f $out)}; Add-Mapping $queue $out $hash 'windows-queue'}
+-   $out='';$hash=''
+-  } elseif($line -match '^\s*out=(.+?)\s*$'){$out=$Matches[1].Trim().Trim('"')}
+-  elseif($line -match '^\s*checksum=sha-1=([a-fA-F0-9]{40})\s*$'){$hash=$Matches[1]}
+- }
+- if($out){if(-not $hash){throw ('Queue hash missing: {0}' -f $out)};Add-Mapping $queue $out $hash 'windows-queue'}
+- if($ledger.Count -lt 10){throw 'SHA ledger contained too few entries.'}
+- Compare-Mappings $ledger $fromList 'list-vs-sha'
+- Compare-Mappings $ledger $fromCmd 'rename-vs-sha'
+- Compare-Mappings $ledger $queue 'queue-vs-sha'
+- $msg=('SOURCE_TRIAD_D4_PASS names={0} GUID={1}' -f $ledger.Count,$guidMap.Count)
+- $msg|Set-Content -LiteralPath $LogPath -Encoding UTF8
+- Write-Host $msg -ForegroundColor Green
+- exit 0
++ $status=if($OfflineOnly){'SOURCE_TRIAD_OFFLINE_PASS'}else{'SOURCE_TRIAD_D4_PASS'}
++ $msg=('{0} names={1} GUID={2}' -f $status,$ledger.Count,$guidSet.Count)
++ $dir=Split-Path -Parent $LogPath;if($dir -and -not(Test-Path -LiteralPath $dir)){[void][IO.Directory]::CreateDirectory($dir)}
++ $msg | Set-Content -LiteralPath $LogPath -Encoding UTF8
++ [ordered]@{schema='BlueLite.SourceTriad.v6.1';status=$status;utc=[DateTime]::UtcNow.ToString('o');count=$ledger.Count;guids=$guidSet.Count;source_sha256=$sourceHashes;windows_queue_sha256=$queueHash} | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath ($LogPath+'.json') -Encoding UTF8
++ Write-Host $msg -ForegroundColor Green;exit 0
+ }catch{
+  $msg='SOURCE_TRIAD_D4_HOLD: '+$_.Exception.Message
+  Write-Host $msg -ForegroundColor Red
+- try{$msg|Set-Content -LiteralPath $LogPath -Encoding UTF8}catch{}
++ try{$msg|Set-Content -LiteralPath $LogPath -Encoding UTF8; if(Test-Path -LiteralPath ($LogPath+'.json')){Remove-Item -LiteralPath ($LogPath+'.json') -Force}}catch{}
+  exit 1
+-}+}
+--- R007_v6/BlueLite/BlueLite_UUP.cmd
++++ R008_v6.1/BlueLite/BlueLite_UUP.cmd
+@@ -101,7 +101,7 @@
+ if /i not "%UUP_EDITION%"=="professional" goto :FAIL
+ if /i not "%UUP_ARCH%"=="amd64" goto :FAIL
+ 
+-title BlueLite v1.0 MAX_PRE 26300 Universal v4 %UUP_BUILD%
++title BlueLite v1.0 MAX_PRE 26300 Universal v6.1 %UUP_BUILD%
+ echo [INFO] ORIGINAL UUP target: %UUP_BUILD% / %UUP_ID%
+ echo [INFO] amd64 / en-us / professional / install.wim / NetFx3 OFF
+ 
+@@ -213,7 +213,7 @@
+ if errorlevel 1 goto :FAIL
+ 
+ echo === Frozen D4 FoD/AppX precut decision and reconstruction-keep ledger ===
+-powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%BL%\BlueLite_SourcePrecutDecision.ps1" -WindowsQueueFile "%uupScript%" -AppsQueueFile "%appsScript%" -SourceTriadLog ".\%LOG%\SourceTriad.log" -LogPath ".\%LOG%\SourcePrecutDecision.json"
++powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%BL%\BlueLite_SourcePrecutDecision.ps1" -UUPRoot "." -WindowsQueueFile "%uupScript%" -AppsQueueFile "%appsScript%" -SourceTriadLog ".\%LOG%\SourceTriad.log" -LogPath ".\%LOG%\SourcePrecutDecision.json"
+ if errorlevel 1 goto :FAIL
+ echo Downloading complete Windows reference/delta source...
+ "%aria2%" --no-conf --async-dns=false --console-log-level=warn --log-level=info --log="%ariaLog%" -x16 -s16 -j5 -c -R -d"UUPs" -i"%uupScript%"
+@@ -238,8 +238,12 @@
+ powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%BL%\BlueLite_VerifySource.ps1" -UUPDirectory ".\UUPs" -AppsQueueFile "%appsScript%" -AppsQueueOriginalFile ".\%LOG%\AppsQueue.original.txt" -WindowsQueueFile "%uupScript%" -WindowsQueueOriginalFile ".\%LOG%\WindowsQueue.original.txt" -ExpectedBuild "%UUP_BUILD%" -RequiredAppIdentitiesFile "%BL%\BlueLite_RequiredStagingApps.txt" -LogPath ".\%LOG%\VerifySource.log"
+ if errorlevel 1 goto :FAIL
+ 
+-echo === Verifying optional operator triad against frozen D4 identity ===
++echo === Verifying mandatory operator triad against frozen D4 identity ===
+ powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%BL%\BlueLite_SourceTriadGate.ps1" -UUPRoot "." -WindowsQueueFile "%uupScript%" -LogPath ".\%LOG%\SourceTriad.log"
++if errorlevel 1 goto :FAIL
++
++echo === Refreshing source-bound reconstruction ledger, including resume ===
++powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%BL%\BlueLite_SourcePrecutDecision.ps1" -UUPRoot "." -WindowsQueueFile "%uupScript%" -AppsQueueFile "%appsScript%" -SourceTriadLog ".\%LOG%\SourceTriad.log" -LogPath ".\%LOG%\SourcePrecutDecision.json"
+ if errorlevel 1 goto :FAIL
+ 
+ echo === Verifying SHA-1 bytes of all queued Windows and AppX payloads ===
+@@ -264,7 +268,7 @@
+ echo ================================================================
+ echo BlueLite v1.0 Custom UUP completed successfully.
+ echo Original UUP archive authority: %UUP_BUILD% / %UUP_ID%
+-echo Final retained inbox apps: Security Health UI, Calculator, Notepad, Photos.
++echo Final app target: Security Health UI, Calculator, Notepad, Photos; inspect residue report for actual state.
+ echo Windows UUP reference/delta queue stayed intact.
+ echo Pre-debloated WIM passed AppX, pending, protected-floor and component-store health gates.
+ echo Release-forbidden AppX residues, if any, are reported for the later full offline script-debloat queue.
+--- R007_v6/BlueLite_Package_SHA256.txt
++++ R008_v6.1/BlueLite_Package_SHA256.txt
+@@ -1,4 +1,4 @@
+-320E1BAD9A8EAB26EDC021A2B36FADCAF2BA37BF1488D7A7CC84460B027964EE *00-EXECUTION-ORDER.txt
++B6119336F21812517CDD3DE8DD53307DFCF301DD94D64E6E7BB4F32279191698 *00-EXECUTION-ORDER.txt
+ B099C3F688A8AEC7AF151E838E263DC713D05432F682117E002AD0BDC19B49DB *BlueLite/BlueLite_AppAllowPatterns.txt
+ DA6638876F07453A3185F0EC420FA7FD52C615D9CA29702F9E89E6CCC72F8B5B *BlueLite/BlueLite_AppAlwaysKeepPatterns.txt
+ D4939465778A07A88DE6DBBE5ACADCC48D905D53C473E6E53BE588268009512E *BlueLite/BlueLite_Bootstrap.ps1
+@@ -9,12 +9,12 @@
+ 827CC9BAC9B8690AC05BDD45545138ABB9FDBD097AE47CD37AA51496157C8BD8 *BlueLite/BlueLite_FilterApps.ps1
+ C5EF48F611755A9EB4E26692812F19946AA7DC33149CBFF31BACE61B5B4BCD5E *BlueLite/BlueLite_GenerateCustomAppsList.ps1
+ 09BBA0A818D0EDE13F978226F659B1A2109E6E093706E18674C939D85F2B6231 *BlueLite/BlueLite_OfflineHandoffPatterns.txt
++9FC4F2F0EC12897516E854870A4BCD5AE6DCA8AF86EEF5B5FEBE364D78A614BD *BlueLite/BlueLite_PackEvidence.ps1
+ 240F7A162348AE4789E4EA3FE47B265A6037DC16EABB96FFD97E455A3060EBB0 *BlueLite/BlueLite_PackageRemovePatterns.txt
+-9FC4F2F0EC12897516E854870A4BCD5AE6DCA8AF86EEF5B5FEBE364D78A614BD *BlueLite/BlueLite_PackEvidence.ps1
+ 0ABC4E76567E2B236E23F9D4E8495E923136C57199746FA78B9F405F1C307035 *BlueLite/BlueLite_PatchConverter.ps1
+ 70B137758AB8CF7741DB84BB15E02C7544097DA58B492AB6DE2551FDBAD46DA5 *BlueLite/BlueLite_PreDebloatWim.ps1
+-08FF6A6B7A3E4829F2EF140758168DF53608195E568BE714412C8F46B4A55A38 *BlueLite/BlueLite_Preflight.ps1
+-1BAFA2B1EDEB592F6A7FADF49AFFFCBF5E53F584AAB4B120803A60984D89BCA8 *BlueLite/BlueLite_Profile.ini
++17C5FA426D9856C65BD0077BE5AD9C148A55CBA4D941B4866E9A333A07099437 *BlueLite/BlueLite_Preflight.ps1
++B1F1869C83106ACCDB9A697E38986C6B0AB229A2F4C6655341A3E8294CE72E54 *BlueLite/BlueLite_Profile.ini
+ 8B4FA326D1099C7DFFBB82F49D5215CC192A73919292678ABCFBF6F0F4CD8CAC *BlueLite/BlueLite_ProtectedFloor.txt
+ A5B48EFB0FCCA6575C1301A2744C163F74372CCC83C093286ECC3D0C3F9071D1 *BlueLite/BlueLite_ReleaseForbiddenAppPatterns.txt
+ 201661946A98452739387BBE8BEC1A8743EA776406549D205CE32050CE6D76F7 *BlueLite/BlueLite_RenewQueue.ps1
+@@ -23,15 +23,15 @@
+ 0E7B127582BF809EA3AE361727116A38E917968A455D009DB7BA55F7B6F141E2 *BlueLite/BlueLite_ResolveAppDependencies.ps1
+ 72938F2D306F47A4463DB743A4005E97FE5B9C3782630B4911E6FF3CD4CA0256 *BlueLite/BlueLite_ResolveUUP.ps1
+ 6A7013D91CB1734C8F157F16E8074C1A046850271816F954BE639647740CB47E *BlueLite/BlueLite_RestoreEvidence.ps1
+-B7741D4C72E9A9CF9FE499CF0C11288B7619AC31E7F23DF5FF1263A9AF85C3FA *BlueLite/BlueLite_SourcePrecutDecision.ps1
+-98549131684C39DB1D127F6CE824F7AB04EBB5EFC4A14858660DC1CB5EDA071D *BlueLite/BlueLite_SourceTriadGate.ps1
++43BC70511DFA2EFF7486784809FEB98871E4355796786A5525323607866A578C *BlueLite/BlueLite_SourcePrecutDecision.ps1
++DD68E9CCA96C14CD7DAD6E93567042F8D543DBD4F827B8B0E9B8757FE3262A84 *BlueLite/BlueLite_SourceTriadGate.ps1
+ 133CA20185712218B5C6F31F63606A211BB2369E209D02C13CE2B75934C6BD1E *BlueLite/BlueLite_StagingOnlyAppPatterns.txt
+-6372BFECF16F25D6345BF4CF679632BD92760918B9CA0102A67A4BC2AA1AE5F8 *BlueLite/BlueLite_UUP.cmd
++1DB4087883CD66B1253E29661168BA7650522433B386F52000CC4087974CF867 *BlueLite/BlueLite_UUP.cmd
+ D8FBB11F49AF7D9C678CF32565034B70A720C71332A3723141CDABAC96EFE462 *BlueLite/BlueLite_VerifyDownloadedHashes.ps1
+ 1068314D33AE1DD3F24190EEBF16F94AD29560C24EE5B9BD610F7C677B3858EA *BlueLite/BlueLite_VerifySource.ps1
+ B8A8B187A1DAD38E67EA8370356DD3FF95E07126C59C88E72EFA06FCD90284E2 *BlueLite/ConvertConfig.ini
+-8AFC7256659F15A04347642B7A0071851434FF9CD28280FA3A319DF968BBABE9 *INTEGRITY-AND-LIMITS.txt
+-795FAB98E1DEF9570081E535D869042FAEA4574E117B8E8B5F44869930360C5D *MUTATION-SCOPE-REVIEW.txt
+-70DB8E89F6ECDA5C22FB5CCE49EFD5A1E2DBC31CFF90F1AD165940B3F19DDFB6 *README-FIRST.txt
++F25FF9C7DE840BB1799588F288A0C024A786BE4F75014FE5D8F5A0D0B1B4EBF7 *INTEGRITY-AND-LIMITS.txt
++7E92C0D8BF7379E541D9437A8318E849E59138FB2544F469CCAA974D2DBF1E9C *MUTATION-SCOPE-REVIEW.txt
++059AF1E6428BD15EE04090FDD8F42B1ECF6343E96D34DBE90D5C815686B8A6B7 *README-FIRST.txt
+ EC7B12C61FEAB5BCAD7928E7F65791DACCC7C2236FD23FDFBE1F5728504ACEB7 *Recovery-on-Demand.txt
+ 12488649F0455BE87E9D8251ED71BBB006B4A17C0C2AD7C1441A1C4F38BA5491 *START.cmd
+--- R007_v6/INTEGRITY-AND-LIMITS.txt
++++ R008_v6.1/INTEGRITY-AND-LIMITS.txt
+@@ -1,16 +1,16 @@
+-v6 SOURCE-BOUND QA / EVIDENCE LIMITS (2026-11-03)
++v6.1 SOURCE-BOUND QA / EVIDENCE LIMITS (2026-11-03)
+ ================================================
+ R004 v4 proven operator native 26300.9818 MAX_PRE: real download/
+ source SHA1 verification, original converter WIM reconstruction, protected
+ WIM mutation, native export and ISO created, health and poststate evidence.
+ Golden WIM SHA256 3D606513D9C1D2B157AAFD6925FF1655C9A48520CE5D4219AF2ED654C82753E4
+ Golden ISO SHA256 570BD12E9DBBBB51CACFB3B9A403326AA5000FAC1D2F7E44482EFCC154CB3736
+-This v6 source is a conservative policy-only v4 successor: failed
++This v6.1 source is a conservative policy-only v4 successor: failed
+ Language.Basic en-US 0x800F0825 removal attempt excluded from GREEN.
+ DesktopAppInstaller 1->1 and WMIC Superseded rejects remain later stage.
+ Original manufacturer UUP Dump launcher, source UUID, converter flow, apps
+ dependency resolution, FoD input and WinRE/boot media remain untouched.
+-V5 native static AST/preflight and manifest PASS is NOT proof of v6 full
++V5 native static AST/preflight and manifest PASS is NOT proof of v6.1 full
+ download/ISO/VM; unknown 26300 converters are strictly fail-closed.
+ Original v4 native ISO was 6822354944 B, above project ~5GB ISO goal;
+ actual installed footprint, speed and future update servicing NOT measured
+@@ -18,4 +18,6 @@
+ VMware Workstation Pro only after next-run native evidence.
+ Generated logs are compacted to exactly one last-timestamp verified
+ BlueLite_EVIDENCE_*.zip in the operator-selected UUP root.
+-R007 v6 = source contract first, triad required before network, full D4 equality before Windows payload. FoD candidates are classified but retained for reconstruction until approved converter dependency closure. Existing v5/v4 MAX_PRE WIM GREEN actions unchanged; F01 AppInstaller + F02 Basic CBS owner deferred. SkipWinRE=1 already enabled; Setup boot.wim preserved. Following stages offline PS -> NTLite Business -> VMware Workstation Pro.
++R007 v6.1 = source contract first, triad required before network, full D4 equality before Windows payload. FoD candidates are classified but retained for reconstruction until approved converter dependency closure. Existing v5/v4 MAX_PRE WIM GREEN actions unchanged; F01 AppInstaller + F02 Basic CBS owner deferred. SkipWinRE=1 already enabled; Setup boot.wim preserved. Following stages offline PS -> NTLite Business -> VMware Workstation Pro.
++
++R008 v6.1: strict offline triad validation before network; malformed/duplicate data refused; D4 SHA256-bound precut receipt; recheck on resume. WIM engine unchanged. Static/fixture result is not native v6.1 conversion or release certification.
+--- R007_v6/MUTATION-SCOPE-REVIEW.txt
++++ R008_v6.1/MUTATION-SCOPE-REVIEW.txt
+@@ -1,4 +1,4 @@
+-BlueLite MAX_PRE 26300.x v6 — automatic mutation scope after UUP reconstruction
++BlueLite MAX_PRE 26300.x v6.1 — automatic mutation scope after UUP reconstruction
+ 
+ ORIGINAL VENDOR FILES: original uup_download_windows.cmd, UUP Dump converter asset
+ manifests and original UUID, Apps/Windows queues are source authority.
+@@ -30,6 +30,8 @@
+ measurement (project target 14.5–15.5 decimal GB, ISO around 5 GB).
+ On failure, only latest timestamped BlueLite_EVIDENCE_*.zip is requested.
+ 
+-F01 DesktopAppInstaller original native remove refused: later owned offline/AppX dependency phase. F02 Language.Basic en-US original 0x800F0825: retained in UUP v6 and deferred for future scoped CBS owner proof; no forced package/registry removal. F03 WMIC invalid selectors remain native guarded Superseded-only SKIP; post-script can revisit. NTLite then VMware Workstation Pro follow after the current UUP phase.
++F01 DesktopAppInstaller original native remove refused: later owned offline/AppX dependency phase. F02 Language.Basic en-US original 0x800F0825: retained in UUP v6.1 and deferred for future scoped CBS owner proof; no forced package/registry removal. F03 WMIC invalid selectors remain native guarded Superseded-only SKIP; post-script can revisit. NTLite then VMware Workstation Pro follow after the current UUP phase.
+ 
+-R007 v6 = source contract first, triad required before network, full D4 equality before Windows payload. FoD candidates are classified but retained for reconstruction until approved converter dependency closure. Existing v5/v4 MAX_PRE WIM GREEN actions unchanged; F01 AppInstaller + F02 Basic CBS owner deferred. SkipWinRE=1 already enabled; Setup boot.wim preserved. Following stages offline PS -> NTLite Business -> VMware Workstation Pro.
++R007 v6.1 = source contract first, triad required before network, full D4 equality before Windows payload. FoD candidates are classified but retained for reconstruction until approved converter dependency closure. Existing v5/v4 MAX_PRE WIM GREEN actions unchanged; F01 AppInstaller + F02 Basic CBS owner deferred. SkipWinRE=1 already enabled; Setup boot.wim preserved. Following stages offline PS -> NTLite Business -> VMware Workstation Pro.
++
++R008 v6.1: strict offline triad validation before network; malformed/duplicate data refused; D4 SHA256-bound precut receipt; recheck on resume. WIM engine unchanged. Static/fixture result is not native v6.1 conversion or release certification.
+--- R007_v6/README-FIRST.txt
++++ R008_v6.1/README-FIRST.txt
+@@ -1,4 +1,4 @@
+-BlueLite v1.0 | MAX_PRE 26300.x UNIVERSAL OVERLAY v6 | 2026-11-03
++BlueLite v1.0 | MAX_PRE 26300.x UNIVERSAL OVERLAY v6.1 | 2026-11-03
+ ================================================================
+ 
+ READ ME FIRST (original UUP Dump authoritative, build not hardcoded)
+@@ -6,7 +6,7 @@
+    amd64, en-us, Professional, AddUpdates=1, WIM not ESD, NetFx3=0.
+ 2) Extract ORIGINAL UUP Dump ZIP into one clean folder YOU CHOOSE (NO SPACES
+    in folder path; original UUP converter rejects paths with spaces).
+-3) Extract ENTIRE BlueLite MAX_PRE v6 ZIP into SAME root folder. When done:
++3) Extract ENTIRE BlueLite MAX_PRE v6.1 ZIP into SAME root folder. When done:
+      YOUR_ROOT\START.cmd
+      YOUR_ROOT\uup_download_windows.cmd   <-- untouched original vendor
+      YOUR_ROOT\BlueLite\BlueLite_UUP.cmd  <-- overlay runner
+@@ -55,3 +55,5 @@
+ 
+ R007 strict: required source triad, 98/98 native proof for 26300.9818, generic other 26300 sources require their OWN three metadata files. SourcePrecutDecision.json records candidate/KEEP before Windows transfer. No unsupported Windows FoD source omission; 62/62 current FoD candidates appear in selected CompDB, full converter owner graph still OPEN. Keep five AppX top-level staging identities + framework dependencies.
+ RECOVERY-ON-DEMAND: SkipWinRE=1 is already effective; the bundled Recovery-on-Demand.txt is metadata only OUTSIDE base ISO. Preserve Setup sources/boot.wim; do not claim another 700MB or functional native recovery without separate VM test.
++
++R008 v6.1: strict offline triad validation before network; malformed/duplicate data refused; D4 SHA256-bound precut receipt; recheck on resume. WIM engine unchanged. Static/fixture result is not native v6.1 conversion or release certification.

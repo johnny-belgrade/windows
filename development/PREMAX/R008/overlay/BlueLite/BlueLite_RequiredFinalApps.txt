@@ -1,0 +1,5 @@
+# Required in the BlueLite post-pre-debloat WIM and final release.
+Microsoft.SecHealthUI
+Microsoft.WindowsCalculator
+Microsoft.WindowsNotepad
+Microsoft.Windows.Photos

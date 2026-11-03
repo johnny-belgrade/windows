@@ -1,0 +1,14 @@
+{
+  "test": "WrongSourceHash",
+  "utc": "2026-11-03T22:24:10.0695746Z",
+  "script": "C:\\work\\PREMAX-work\\R008_CompleteKit_20261103\\revision2\\cases\\mismatch\\BlueLite\\BlueLite_SourceTriadGate.ps1",
+  "script_sha256": "DD68E9CCA96C14CD7DAD6E93567042F8D543DBD4F827B8B0E9B8757FE3262A84",
+  "actual_exit": 1,
+  "expected_exit": 1,
+  "expected_marker": "SOURCE_TRIAD_D4_HOLD",
+  "log": "C:\\work\\logs\\BlueLite_R008_SourceQA_20261103_v2\\WrongSourceHash.log",
+  "log_sha256": "DBE33F0066A1800246DE6247A43577C802A434A79B5A453A1FB4B189B3D22819",
+  "status": "PASS",
+  "scope": "ISOLATED_SOURCE_FIXTURE_NO_DOWNLOAD_NO_CONVERTER_NO_IMAGE",
+  "next": "Independent receipt verification"
+}

@@ -1,0 +1,14 @@
+{
+  "test": "SyntheticOtherCU_NoHardcodedRevision",
+  "utc": "2026-11-03T22:24:08.8525084Z",
+  "script": "C:\\work\\PREMAX-work\\R008_CompleteKit_20261103\\revision2\\cases\\other_CU\\BlueLite\\BlueLite_Preflight.ps1",
+  "script_sha256": "17C5FA426D9856C65BD0077BE5AD9C148A55CBA4D941B4866E9A333A07099437",
+  "actual_exit": 0,
+  "expected_exit": 0,
+  "expected_marker": "PREFLIGHT_PASS",
+  "log": "C:\\work\\logs\\BlueLite_R008_SourceQA_20261103_v2\\SyntheticOtherCU_NoHardcodedRevision.log",
+  "log_sha256": "39C542581E7DBCD8B63EBCFBFF9AFD6D8EB0D3F3697D3A14CD094FB34B374E26",
+  "status": "PASS",
+  "scope": "ISOLATED_SOURCE_FIXTURE_NO_DOWNLOAD_NO_CONVERTER_NO_IMAGE",
+  "next": "Independent receipt verification"
+}

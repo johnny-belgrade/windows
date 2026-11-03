@@ -1,0 +1,23 @@
+v6.1 SOURCE-BOUND QA / EVIDENCE LIMITS (2026-11-03)
+================================================
+R004 v4 proven operator native 26300.9818 MAX_PRE: real download/
+source SHA1 verification, original converter WIM reconstruction, protected
+WIM mutation, native export and ISO created, health and poststate evidence.
+Golden WIM SHA256 3D606513D9C1D2B157AAFD6925FF1655C9A48520CE5D4219AF2ED654C82753E4
+Golden ISO SHA256 570BD12E9DBBBB51CACFB3B9A403326AA5000FAC1D2F7E44482EFCC154CB3736
+This v6.1 source is a conservative policy-only v4 successor: failed
+Language.Basic en-US 0x800F0825 removal attempt excluded from GREEN.
+DesktopAppInstaller 1->1 and WMIC Superseded rejects remain later stage.
+Original manufacturer UUP Dump launcher, source UUID, converter flow, apps
+dependency resolution, FoD input and WinRE/boot media remain untouched.
+V5 native static AST/preflight and manifest PASS is NOT proof of v6.1 full
+download/ISO/VM; unknown 26300 converters are strictly fail-closed.
+Original v4 native ISO was 6822354944 B, above project ~5GB ISO goal;
+actual installed footprint, speed and future update servicing NOT measured
+or release-certified by this package. Continue offline PS -> NTLite ->
+VMware Workstation Pro only after next-run native evidence.
+Generated logs are compacted to exactly one last-timestamp verified
+BlueLite_EVIDENCE_*.zip in the operator-selected UUP root.
+R007 v6.1 = source contract first, triad required before network, full D4 equality before Windows payload. FoD candidates are classified but retained for reconstruction until approved converter dependency closure. Existing v5/v4 MAX_PRE WIM GREEN actions unchanged; F01 AppInstaller + F02 Basic CBS owner deferred. SkipWinRE=1 already enabled; Setup boot.wim preserved. Following stages offline PS -> NTLite Business -> VMware Workstation Pro.
+
+R008 v6.1: strict offline triad validation before network; malformed/duplicate data refused; D4 SHA256-bound precut receipt; recheck on resume. WIM engine unchanged. Static/fixture result is not native v6.1 conversion or release certification.

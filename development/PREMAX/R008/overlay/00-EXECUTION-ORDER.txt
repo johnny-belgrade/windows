@@ -1,0 +1,38 @@
+BlueLite MAX_PRE v6.1 26300.x - EXACT EXECUTION ORDER
+==================================================
+00 START.cmd: require administrator/PowerShell7; restore latest verified
+   evidence archive (if checkpoint exists); verify package manifest SHA256,
+   original UUP launcher title/build/arch, UUP UUID, 14 PS1 native AST.
+01 BlueLite_UUP.cmd: use untouched original launcher as source of authority;
+   parse UUID, 26300 build, source URLs, original config. Metadata API 404
+   is nonfatal if original launcher independently supplies build proof.
+02 Bootstrap: original files/get_aria2.ps1 and converter_windows with SHA256.
+03 Original UUP selected Apps queue 2798-type inventory per build; select
+   five seeds + converter CompDB and AppX manifest transitive dependencies.
+04 Apps seed SHA downloads; if Microsoft signed URL expired, refresh source
+   get.php from SAME original UUID and require exact full (out,SHA1) equality.
+05 Read full original Windows queue, keep ALL reconstruction/FoD/reference
+   sources. Optional user triad must match exact Windows D4 identities.
+06 Download Windows queue; if expired, refresh URLs with frozen (out,SHA1).
+07 Native verification: original Apps/Windows queues, selected dependencies,
+   missing files/partials; new full payload SHA-1 content check.
+08 Reconstruct with actual original UUP converter and original Updates /
+   boot.wim and WinRE flow, with reviewed semantic pre-ISO hook only.
+09 MAX_PRE offline install.wim: guarded offline hive/Apps/FoD/feature policy,
+   only Superseded CBS packages removed, no ResetBase, pending/store-health
+   and VM/network/storage protected floor. Any precommit failure -> Discard.
+10 Compact/re-export final install.wim, resume native ISO assembly.
+11 START.cmd: whatever engine exit code, package all BlueLite_Logs into ONE
+   latest timestamped ZIP; independently verify every ZIP member SHA256,
+   remove temporary log folder after verified archive, prune older ZIPs.
+12 Final ISO/footprint/system servicing and VM gates remain release tasks.
+
+Operator action: unzip original UUP Dump ZIP and this BlueLite ZIP into same
+no-spaces target folder; right-click START.cmd -> Run as administrator.
+Only user-selected original UUP determines exact 26300.x build and converter.
+
+V5 SOURCE-BOUND DELTA: original v4 engine and 26300 reconstruction unchanged; Language.Basic en-US 0x800F0825 excluded from unconditional GREEN attempt (retained for offline dependency gate). F01 AppInstaller, F03 WMIC, full post-debloat/NTLite/VM remain subsequent phases, not invented pre-download pruning.
+
+R007 v6.1 = source contract first, triad required before network, full D4 equality before Windows payload. FoD candidates are classified but retained for reconstruction until approved converter dependency closure. Existing v5/v4 MAX_PRE WIM GREEN actions unchanged; F01 AppInstaller + F02 Basic CBS owner deferred. SkipWinRE=1 already enabled; Setup boot.wim preserved. Following stages offline PS -> NTLite Business -> VMware Workstation Pro.
+
+R008 v6.1: strict offline triad validation before network; malformed/duplicate data refused; D4 SHA256-bound precut receipt; recheck on resume. WIM engine unchanged. Static/fixture result is not native v6.1 conversion or release certification.
