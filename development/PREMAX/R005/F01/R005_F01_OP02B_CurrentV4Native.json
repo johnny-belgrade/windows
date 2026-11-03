@@ -1,0 +1,55 @@
+{
+  "schema": "BlueLite.R005.F01.OP02B.v1",
+  "utc": "2026-11-03T17:36:54.7449725Z",
+  "operation": "CURRENT_26300_V4_CODE_NATIVE_LOG_INVENTORY_READ_ONLY",
+  "source_script": "C:\\work\\26300.9818-UUP-MAX_PRE_26300_v4\\BlueLite\\BlueLite_PreDebloatWim.ps1",
+  "source_sha256": "70B137758AB8CF7741DB84BB15E02C7544097DA58B492AB6DE2551FDBAD46DA5",
+  "release_policy": "C:\\work\\26300.9818-UUP-MAX_PRE_26300_v4\\BlueLite\\BlueLite_ReleaseForbiddenAppPatterns.txt",
+  "policy_sha256": "A5B48EFB0FCCA6575C1301A2744C163F74372CCC83C093286ECC3D0C3F9071D1",
+  "source_zip": "C:\\work\\26300.9818-UUP-MAX_PRE_26300_v4\\BlueLite_EVIDENCE_20261103T160115024Z.zip",
+  "zip_sha256": "D64DAD834847DE4CD4FA577D51ED25158085B29D3A81BF073697B673A14D3905",
+  "code_matches": [
+    "14: [Parameter(Mandatory=$true)][string]$ReleaseForbiddenAppPatternsFile,",
+    "107: ProvisionedApps=@(Get-AppxProvisionedPackage -Path $Mount -ErrorAction Stop | Select-Object DisplayName,PackageName,Version,Architecture,ResourceId)",
+    "121: function Assert-RetainedProvisionedApps([object[]]$Apps,[string[]]$Required,[string]$Label,[System.Collections.Generic.List[string]]$Actions) {",
+    "139: function Get-MatchingProvisionedApps([object[]]$Apps,[string[]]$Patterns) {",
+    "150: function Assert-NoDeniedProvisionedApps([object[]]$Apps,[string[]]$Denied,[string]$Label,[System.Collections.Generic.List[string]]$Actions) {",
+    "151: $hits=Get-MatchingProvisionedApps $Apps $Denied",
+    "158: function Attempt-RemoveProvisionedAppPatterns([string]$Mount,[string[]]$Patterns,[System.Collections.Generic.List[string]]$Actions,[System.Collections.Generic.List[string]]$Warnings) {",
+    "160: $current=@(Get-AppxProvisionedPackage -Path $Mount -ErrorAction Stop)",
+    "165: try { Remove-AppxProvisionedPackage -Path $Mount -PackageName $app.PackageName -ErrorAction Stop | Out-Null }",
+    "167: $verify=@(Get-AppxProvisionedPackage -Path $Mount -ErrorAction Stop | Where-Object { $_.PackageName -eq $app.PackageName -or $_.DisplayName -eq $app.DisplayName })",
+    "197: foreach ($p in @($CapabilityPatternsFile,$FeatureDisableOnlyFile,$FeatureRemovePayloadFile,$PackagePatternsFile,$CustomAppsListPath,$ProfilePath,$ComponentWatchlistFile,$RequiredStagingAppIdentitiesFile,$RequiredFinalAppIdentitiesFile,$StagingOnlyAppPatternsFile,$ReleaseForbiddenAppPatternsFile,$OfflineHandoffPatternsFile,$ProtectedFloorFile)) {",
+    "209: $strictReleaseApps=Get-IniInt $profile 'StrictReleaseForbiddenAppGate' 0",
+    "237: [string[]]$releaseForbiddenApps=Read-PatternFile $ReleaseForbiddenAppPatternsFile",
+    "289: $preApps=@(Get-AppxProvisionedPackage -Path $mountDir -ErrorAction Stop)",
+    "290: Assert-RetainedProvisionedApps $preApps $requiredStagingApps 'PRE-DEBLOAT STAGING APPX GATE' $actions",
+    "348: # DesktopAppInstaller is known to resist standard offline removal on this baseline;",
+    "350: Attempt-RemoveProvisionedAppPatterns $mountDir $stagingOnlyApps $actions $warnings",
+    "354: $prov=@(Get-AppxProvisionedPackage -Path $mountDir -ErrorAction Stop)",
+    "360: Remove-AppxProvisionedPackage -Path $mountDir -PackageName $app.PackageName -ErrorAction Stop | Out-Null",
+    "427: $postApps=@(Get-AppxProvisionedPackage -Path $mountDir -ErrorAction Stop)",
+    "432: # made fail-closed by setting StrictReleaseForbiddenAppGate=1.",
+    "433: Assert-RetainedProvisionedApps $postApps $requiredFinalApps 'POST-DEBLOAT FINAL APPX GATE' $actions",
+    "434: Assert-NoDeniedProvisionedApps $postApps $appDeny 'POST-DEBLOAT DISABLED APPX ABSENCE GATE' $actions",
+    "435: $forbiddenHits=Get-MatchingProvisionedApps $postApps $releaseForbiddenApps",
+    "436: $residuePath=Join-Path $logDir \"ReleaseForbiddenAppResidues-$actualBuild.txt\"",
+    "483: \"Release-forbidden residues: $(Join-Path $logDir \"ReleaseForbiddenAppResidues-$actualBuild.txt\")\","
+  ],
+  "native_log_matches": [
+    "15: PRE-DEBLOAT STAGING APPX GATE PASSED: Microsoft.SecHealthUI, Microsoft.DesktopAppInstaller, Microsoft.WindowsCalculator, Microsoft.WindowsNotepad, Microsoft.Windows.Photos",
+    "61: POST-DEBLOAT FINAL APPX GATE PASSED: Microsoft.SecHealthUI, Microsoft.WindowsCalculator, Microsoft.WindowsNotepad, Microsoft.Windows.Photos",
+    "62: POST-DEBLOAT DISABLED APPX ABSENCE GATE PASSED",
+    "65: APPX STAGING RESIDUE: Microsoft.DesktopAppInstaller :: Microsoft.DesktopAppInstaller_2024.401.617.0_neutral_~_8wekyb3d8bbwe :: Removal failed. Please contact your software vendor.",
+    "72: RELEASE-FORBIDDEN APPX RESIDUE -> FULL OFFLINE SCRIPT QUEUE: Microsoft.DesktopAppInstaller"
+  ],
+  "before_appx_count": 10,
+  "after_appx_count": 10,
+  "before_dai": [
+    "Microsoft.DesktopAppInstaller | Microsoft.DesktopAppInstaller_2024.401.617.0_neutral_~_8wekyb3d8bbwe"
+  ],
+  "after_dai": [
+    "Microsoft.DesktopAppInstaller | Microsoft.DesktopAppInstaller_2024.401.617.0_neutral_~_8wekyb3d8bbwe"
+  ],
+  "status": "READ_ONLY_NOT_MUTATION"
+}
