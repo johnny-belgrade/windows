@@ -1,0 +1,197 @@
+{
+  "schema": "BlueLite.R006.OP01.v1",
+  "utc": "2026-11-03T19:16:14.7616762Z",
+  "operation": "COPY_SHA_PINNED_PROVEN_V4_ZIP_AND_EXTRACT_TO_NEW_OWNED_CANDIDATE",
+  "source": "C:\\work\\26300.9818-UUP-MAX_PRE_26300_v4\\BlueLite_MAXPRE_26300_Universal_v4_20261103.zip",
+  "source_sha256": "0CBA819F2F1A88659DD884633920E6D3F8FFF9C7E1AE8D3C89CC724183C88922",
+  "copied": "C:\\work\\PREMAX-work\\R006_26300_MAXPRE_v5_Package\\01_Source\\Proven_v4_20261103.zip",
+  "copied_sha256": "0CBA819F2F1A88659DD884633920E6D3F8FFF9C7E1AE8D3C89CC724183C88922",
+  "candidate_root": "C:\\work\\PREMAX-work\\R006_26300_MAXPRE_v5_Package\\02_Drafts\\PackageRoot",
+  "member_count": 36,
+  "extracted_file_count": 36,
+  "members": [
+    {
+      "path": "BlueLite/BlueLite_AppAllowPatterns.txt",
+      "bytes": 279,
+      "compressed_bytes": 160
+    },
+    {
+      "path": "BlueLite/BlueLite_AppAlwaysKeepPatterns.txt",
+      "bytes": 216,
+      "compressed_bytes": 167
+    },
+    {
+      "path": "BlueLite/BlueLite_Bootstrap.ps1",
+      "bytes": 5801,
+      "compressed_bytes": 2036
+    },
+    {
+      "path": "BlueLite/BlueLite_CapabilityRemovePatterns.txt",
+      "bytes": 1342,
+      "compressed_bytes": 716
+    },
+    {
+      "path": "BlueLite/BlueLite_ComponentWatchlist.txt",
+      "bytes": 1305,
+      "compressed_bytes": 712
+    },
+    {
+      "path": "BlueLite/BlueLite_FeatureDisableOnly.txt",
+      "bytes": 230,
+      "compressed_bytes": 173
+    },
+    {
+      "path": "BlueLite/BlueLite_FeatureRemovePayload.txt",
+      "bytes": 277,
+      "compressed_bytes": 208
+    },
+    {
+      "path": "BlueLite/BlueLite_FilterApps.ps1",
+      "bytes": 5904,
+      "compressed_bytes": 1978
+    },
+    {
+      "path": "BlueLite/BlueLite_GenerateCustomAppsList.ps1",
+      "bytes": 3967,
+      "compressed_bytes": 1369
+    },
+    {
+      "path": "BlueLite/BlueLite_OfflineHandoffPatterns.txt",
+      "bytes": 536,
+      "compressed_bytes": 344
+    },
+    {
+      "path": "BlueLite/BlueLite_PackageRemovePatterns.txt",
+      "bytes": 1347,
+      "compressed_bytes": 525
+    },
+    {
+      "path": "BlueLite/BlueLite_PackEvidence.ps1",
+      "bytes": 4195,
+      "compressed_bytes": 1544
+    },
+    {
+      "path": "BlueLite/BlueLite_PatchConverter.ps1",
+      "bytes": 8369,
+      "compressed_bytes": 3009
+    },
+    {
+      "path": "BlueLite/BlueLite_PreDebloatWim.ps1",
+      "bytes": 33246,
+      "compressed_bytes": 8108
+    },
+    {
+      "path": "BlueLite/BlueLite_Preflight.ps1",
+      "bytes": 3974,
+      "compressed_bytes": 1806
+    },
+    {
+      "path": "BlueLite/BlueLite_Profile.ini",
+      "bytes": 333,
+      "compressed_bytes": 237
+    },
+    {
+      "path": "BlueLite/BlueLite_ProtectedFloor.txt",
+      "bytes": 481,
+      "compressed_bytes": 177
+    },
+    {
+      "path": "BlueLite/BlueLite_ReleaseForbiddenAppPatterns.txt",
+      "bytes": 241,
+      "compressed_bytes": 169
+    },
+    {
+      "path": "BlueLite/BlueLite_RenewQueue.ps1",
+      "bytes": 5541,
+      "compressed_bytes": 1982
+    },
+    {
+      "path": "BlueLite/BlueLite_RequiredFinalApps.txt",
+      "bytes": 172,
+      "compressed_bytes": 116
+    },
+    {
+      "path": "BlueLite/BlueLite_RequiredStagingApps.txt",
+      "bytes": 218,
+      "compressed_bytes": 136
+    },
+    {
+      "path": "BlueLite/BlueLite_ResolveAppDependencies.ps1",
+      "bytes": 18022,
+      "compressed_bytes": 4945
+    },
+    {
+      "path": "BlueLite/BlueLite_ResolveUUP.ps1",
+      "bytes": 8491,
+      "compressed_bytes": 2963
+    },
+    {
+      "path": "BlueLite/BlueLite_RestoreEvidence.ps1",
+      "bytes": 2873,
+      "compressed_bytes": 1250
+    },
+    {
+      "path": "BlueLite/BlueLite_SourceTriadGate.ps1",
+      "bytes": 3959,
+      "compressed_bytes": 1563
+    },
+    {
+      "path": "BlueLite/BlueLite_StagingOnlyAppPatterns.txt",
+      "bytes": 264,
+      "compressed_bytes": 190
+    },
+    {
+      "path": "BlueLite/BlueLite_UUP.cmd",
+      "bytes": 15504,
+      "compressed_bytes": 4196
+    },
+    {
+      "path": "BlueLite/BlueLite_VerifyDownloadedHashes.ps1",
+      "bytes": 2973,
+      "compressed_bytes": 1297
+    },
+    {
+      "path": "BlueLite/BlueLite_VerifySource.ps1",
+      "bytes": 6785,
+      "compressed_bytes": 2100
+    },
+    {
+      "path": "BlueLite/ConvertConfig.ini",
+      "bytes": 444,
+      "compressed_bytes": 263
+    },
+    {
+      "path": "00-EXECUTION-ORDER.txt",
+      "bytes": 2263,
+      "compressed_bytes": 1189
+    },
+    {
+      "path": "BlueLite_Package_SHA256.txt",
+      "bytes": 3604,
+      "compressed_bytes": 1827
+    },
+    {
+      "path": "INTEGRITY-AND-LIMITS.txt",
+      "bytes": 857,
+      "compressed_bytes": 529
+    },
+    {
+      "path": "MUTATION-SCOPE-REVIEW.txt",
+      "bytes": 2018,
+      "compressed_bytes": 1144
+    },
+    {
+      "path": "README-FIRST.txt",
+      "bytes": 3263,
+      "compressed_bytes": 1699
+    },
+    {
+      "path": "START.cmd",
+      "bytes": 1703,
+      "compressed_bytes": 697
+    }
+  ],
+  "golden_image_modified": false,
+  "verdict": "PASS",
+  "next": "native fresh-process verify all 36 copied member hashes, then minimal v5 policy delta"
+}
