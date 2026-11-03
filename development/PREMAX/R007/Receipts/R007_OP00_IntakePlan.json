@@ -1,0 +1,14 @@
+{
+  "schema": "BlueLite.R007.OP00.v1",
+  "utc": "2026-11-03T20:59:28.4038934Z",
+  "operation": "OWNER_CYCLE_PLAN_AND_REAL_V5_EVIDENCE_INTAKE",
+  "master_git_blob": "81faff6c5a279ece94cb167c148f312870c4de19",
+  "source_zip": "C:\\work\\26300.9818-UUP-v5\\BlueLite_EVIDENCE_20261103T204109562Z.zip",
+  "source_sha256": "CD7EC26F85672111BACD39C269374C40D6643B43709249DFD816F10D4036DE82",
+  "plan_path": "C:\\work\\PREMAX-work\\R007_26300_SourcePrecise_PreCut\\00_Analysis\\R007_ActivePlan.md",
+  "plan_sha256": "7E02889DE17E90722B356E0837453AAB9B49EEA539596938DCABFC8BDA7F26D0",
+  "initial_write_attempt": "R007 plan first write FAILED ENOENT because new cycle directory not yet created; corrected by isolated owned directory creation before successful plan write",
+  "original_GOLDEN_WIM_modified": false,
+  "status": "PASS",
+  "one_next": "OP01_NATIVE_27_MEMBER_EVIDENCE_INVENTORY_AND_V4_DELTA"
+}
