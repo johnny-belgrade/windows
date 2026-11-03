@@ -1,4 +1,4 @@
-# BlueLite R005 F02 — aktivna analiza i plan (verzija 07)
+# BlueLite R005 F02 — aktivna analiza i plan (verzija 08)
 Datum: 2026-11-03. Master v6.3.4 §0L; korisnik je odobrio F02 read-only analizu uz pojedinačni dokazni upis i verifikaciju.
 Cilj: originalni 26300.9818 MAX_PRE Language.Basic en-US DISM odbijanje (-2146498523 / 0x800F0825), precizan capability/CBS owner, pre/post stanje, stvarne zavisnosti, status naredne korekcije. Nikada ne mešati source evidence, inference i istorijsku 26200 potvrdu.
 Freeze: GOLDEN root C:\work\26300.9818-UUP-MAX_PRE_26300_v4; WIM SHA256 3D606513D9C1D2B157AAFD6925FF1655C9A48520CE5D4219AF2ED654C82753E4; ISO SHA256 570BD12E9DBBBB51CACFB3B9A403326AA5000FAC1D2F7E44482EFCC154CB3736.
@@ -20,4 +20,5 @@ Završni korak: klasifikacija i v5 predlog HOLD/PASS, jedan poslednji ZIP sa man
 R5-NATIVE-GREEN-REVIEW__1E36989FBACB.txt navodi en-US Language.Basic kao jedan od pet GREEN kandidata. R7 strict-review pominje pet GREEN selektora; originalni R15 PreDebloatWim ima strict selector-check.
 Master v6.3.4 §10.3 navodi istorijski R115 fail-closed na Basic 0x800F0825, ali direktni R115 native log nije lociran po imenu u RH06; istorijski 26200 rezultat nije runtime dokaz za 26300.
 OP03C immutable receipt SHA256 5EF62738B07FE1F6E9CE5C9E078DDAF645BE002C816602BBBE7B87F2C066E187, fresh-process svih 5 originalnih SHA + linija PASS, GitHub exact readback PASS.
-**JEDAN NAREDNI KORAK:** F02-04 dokumentovati Microsoft 0x800F0825 = CBS_E_CANNOT_UNINSTALL i granice njegovog tumačenja; zatim read-only MUM/CBS owner u GOLDEN WIM.
+**DOKAZANO F02-04 PASS — EKSTERNI MS IZVOR:** Microsoft Learn https://learn.microsoft.com/en-us/troubleshoot/windows-client/deployment/common-windows-update-errors identifikuje 0x800F0825 kao CBS_E_CANNOT_UNINSTALL / Package can't be uninstalled. Njegov opšti primer o parcijalnoj instalaciji / korupciji NE dokazuje stvarni uzrok našeg 26300 slučaja; native CheckHealth/ScanHealth su clean, pending=0, Basic ostaje 4→4. Ni `Permanent` CBS flag nije dokaziv samo HRESULT-om. Originalni dokument i izvor: R005_F02_OP04_HRESULT_OfficialMeaning.md SHA256 FEFC85E2C63E0AC13DDCAFF6F58A83287ABD736812D9F6B598AE36793DFC9C0D, fresh-process local + Git exact readback PASS. Bez pokušaja DISM /Remove i bez offline registry radnji.
+**JEDAN NAREDNI KORAK:** F02-05 read-only wimlib image 1 servicing/Packages en-US Basic+ClientLanguagePack MUM listing, owner kandidat exact; bez mount-a i bez brisanja.
