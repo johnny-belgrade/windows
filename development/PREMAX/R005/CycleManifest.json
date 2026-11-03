@@ -1,7 +1,7 @@
 {
   "schema": "BlueLite.PREMAX.CycleManifest.v1",
   "cycle_id": "R005_GoldenFreeze_RecoveryOnDemand",
-  "status": "OP01_GOLDEN_FREEZE_SHA_MEDIA_ZIP_NATIVE_PASS_PHASE2_DEPENDENCIES_NEXT",
+  "status": "OP02_F01_CURRENT_4_DAI_VARIANTS_PASS_HARDLINK_REGISTRY_DEPENDENCY_HOLD_F02_NEXT",
   "created_utc": "2026-11-03T17:18:34.5304217Z",
   "source_build": "26300.9818",
   "source_index": 1,
@@ -28,7 +28,11 @@
     "Final WIM independently SHA256 verified twice =3D606513D9C1D2B157AAFD6925FF1655C9A48520CE5D4219AF2ED654C82753E4",
     "Final ISO independently SHA256 verified twice =570BD12E9DBBBB51CACFB3B9A403326AA5000FAC1D2F7E44482EFCC154CB3736",
     "ISO 7z full read Everything is Ok; original boot.wim/install.wim source and wimlib index PASS",
-    "10 file SHA receipts and fresh-process independent Verify; 23 verified evidence entries, 1 latest ZIP"
+    "10 file SHA receipts and fresh-process independent Verify; 23 verified evidence entries, 1 latest ZIP",
+    "R005 F01 current v4 package one provisioned before and one after; native remove failed; ten provisioned total remain",
+    "R005 F01 final WIM wimlib index 1 actual four DesktopAppInstaller variants (1 neutral bundle, x64, two scale split) independently verified",
+    "R005 F01 3 historical AMBER script SHA+AST verified; corrected full 340/359/361 source diff PASS; historical 26200 method not certified on 26300",
+    "R005 F01 per-operation 10 evidence files SHA verified in one latest ZIP 72163039BA82E3635830BCFB624D5B74641976E2D280ADB8E67C97CE4CE55B2F"
   ],
   "dependencies_unresolved": [
     "R004 AppInstaller residue",
@@ -37,7 +41,9 @@
     "transaction-safe export",
     "runtime triad NOT_PROVIDED",
     "Recovery-on-Demand native functional validation",
-    "ISO ~5GB and installed 14.5-15.5 GB"
+    "ISO ~5GB and installed 14.5-15.5 GB",
+    "F01 only four directory names proven; 26300 per-file hardlink owner, offline AppX/registry/Deprovisioned shape and post-removal servicing not proven",
+    "F01 release-forbidden AppInstaller remains with StrictReleaseForbiddenAppGate=0; no deletion attempted in this source-only block"
   ],
   "drafts": [
     "03_Drafts\\BlueLite_R005_GoldenFreeze_v1.ps1"
@@ -57,5 +63,5 @@
     "executed": true,
     "receipt": "C:\\work\\logs\\BlueLite_R005_GoldenFreeze_20261103T171855421Z_ca672a9b.zip"
   },
-  "one_next": "READ_ONLY_F01_F02_F03_F04_F06_DEPENDENCY_CLASSIFICATION_NO_IMAGE_MUTATION"
+  "one_next": "F02_LANGUAGE_BASIC_26300_9818_NATIVE_0x800F0825_READ_ONLY_SOURCE_CBS_CLASSIFICATION"
 }
