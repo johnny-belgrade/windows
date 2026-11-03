@@ -1,0 +1,63 @@
+{
+  "schema": "BlueLite.R007.OP04A.v1",
+  "utc": "2026-11-03T21:10:04.5814928Z",
+  "operation": "EXTRACT_ONLY_SIX_TARGETED_COMPDB_CAB_METADATA_READONLY",
+  "source": "C:\\work\\26300.9818-UUP-v5\\UUPs\\6c7bf258-2632-47dd-83ee-c23945978da1.AggregatedMetadata.cab",
+  "source_sha256": "AC771B577E3AA87C9D4D676224AB2BB4948984036238669CD535077542C3047E",
+  "selected": [
+    {
+      "name": "DesktopTargetCompDB_professional_en-us.xml.cab",
+      "sha256": "A850377F49846BA9BB3BE3235078923CA9BA38E80643D1844A983090F5C92E98",
+      "bytes": 17105,
+      "inner_xml_listing": [
+        "2024-04-01 10:00:00 ....A        53486               DesktopTargetCompDB_professional_en-us.xml"
+      ]
+    },
+    {
+      "name": "DesktopTargetCompDB_FOD_en-us.xml.cab",
+      "sha256": "6D2CB337CB21E3F5B9847F59E6176B92604F17F8D74DF77DC4C6D49B79E5AF5E",
+      "bytes": 17868,
+      "inner_xml_listing": [
+        "2024-04-01 00:09:00 ....A        78601               DesktopTargetCompDB_FOD_en-us.xml"
+      ]
+    },
+    {
+      "name": "DesktopTargetCompDB_FOD_Neutral.xml.cab",
+      "sha256": "401A1B189B94E8A614E5696394F2438C3EB4BE9548EE742AF0172B508C71028E",
+      "bytes": 47682,
+      "inner_xml_listing": [
+        "2024-03-31 23:57:00 ....A       374364               DesktopTargetCompDB_FOD_Neutral.xml"
+      ]
+    },
+    {
+      "name": "DesktopTargetCompDB_FOD_Metadata_Neutral.xml.cab",
+      "sha256": "7D55491923F485BAB954A131C1CA0E668CA761ECA3DCC435B9759BE5C0A52850",
+      "bytes": 468567,
+      "inner_xml_listing": [
+        "2026-10-25 19:19:00 ....A      3655545               DesktopTargetCompDB_FOD_Metadata_Neutral.xml"
+      ]
+    },
+    {
+      "name": "DesktopTargetCompDB_Neutral.xml.cab",
+      "sha256": "1EA1FDBEF7B3444E56265ECC4C6DDB1E4EDE514B43CEAED311AF511B6F5DAB75",
+      "bytes": 12406,
+      "inner_xml_listing": [
+        "2024-04-01 00:07:00 ....A        15367               DesktopTargetCompDB_Neutral.xml"
+      ]
+    },
+    {
+      "name": "DesktopBaselessCompDB_FOD_en-us.CompDB.xml.cab",
+      "sha256": "E70CD76EB8A34AB50099FC725DA4A7F7A03FC6D288467FD6E46AF0FAE915F64F",
+      "bytes": 21971,
+      "inner_xml_listing": [
+        "2024-04-01 00:10:00 ....A       101661               DesktopBaselessCompDB_FOD_en-us.CompDB.xml"
+      ]
+    }
+  ],
+  "selected_count": 6,
+  "output": "C:\\work\\PREMAX-work\\R007_26300_SourcePrecise_PreCut\\01_Source\\SelectedCompDB",
+  "image_modified": false,
+  "source_windows_queue_pruned": false,
+  "verdict": "SOURCE_METADATA_CAB_SHA_AND_INNER_XML_LISTED",
+  "one_next": "OP04B_CLASSIFY_98_WINDOWS_FROM_COMPLETE_TARGETED_COMPDB_REFERENCES"
+}
