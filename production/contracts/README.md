@@ -1,8 +1,10 @@
+> **2026-11-03 REAL EXTERNAL ENGINE PROOF vs CONTRACT STATUS (Master v6.3.3 §0K):** an **operator-executed reviewed MAX_PRE v4** (distinct from these initial declarative schemas/RecipeRegistry) returned native 26300.9818 WIM/ISO PASS. Final WIM 5736092221 B and physically existing ISO 6822354944 B; full evidence SHA256 D64DAD834847DE4CD4FA577D51ED25158085B29D3A81BF073697B673A14D3905; details in development/PREMAX/R004 OP04–OP08 and single live Current. This does NOT automatically certify this contract schema implementation, release target 5GB ISO, installed 14.5–15.5GB, OOBE/VM/WU, nor enable declarative RecipeRegistry runtime flags. The actual five warnings and missing runtime three-file triad must be addressed through source-bound dependency analysis before release. Contract designs otherwise unchanged.
+
 # BlueLite machine-readable contracts — initial governance foundation
 
 **Status:** CONTRACT_DESIGN_ONLY, 2026-10-17. These files are versioned, syntactically valid JSON Schema 2020-12 designs and a historical recipe index, **not a running converter, mutation engine, image certification or operator authorization**.
 
-Canonical authority: [Master v6.3.2 §0J](../../BlueLite-Master_Germanium_Strategy_final.md) > current-image operator proof > [Current Status](../../BlueLite_Current_Status.md). Latest protocol: all necessary network downloads permanently preapproved; unlimited independently verified versioned operator-local corrections; max three same-issue connector/platform diagnostic attempts then HOLD; all individual receipts preserved, no safety-denial bypass. [Handoff](../../BlueLite_Germanium_Handoff.md) explains how to use these contracts.
+Canonical authority: [Master v6.3.3 §0K / §0J](../../BlueLite-Master_Germanium_Strategy_final.md) > current-image operator proof > [Current Status](../../BlueLite_Current_Status.md). Latest protocol: all necessary network downloads permanently preapproved; unlimited independently verified versioned operator-local corrections; max three same-issue connector/platform diagnostic attempts then HOLD; all individual receipts preserved, no safety-denial bypass. [Handoff](../../BlueLite_Germanium_Handoff.md) explains how to use these contracts.
 
 ## Files and ownership
 
