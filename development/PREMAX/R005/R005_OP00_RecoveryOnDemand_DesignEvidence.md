@@ -1,0 +1,20 @@
+# R005 OP00 — Recovery-on-Demand, source-grounded design (PROPOSAL ONLY)
+2026-11-03 | Operator approves original design research, not a new WIM/ISO/WinRE mutation.
+
+## Normative actual source findings
+- BlueLite v4 effective ConvertConfig.ini SkipWinRE=1; final WIM /Windows/System32/Recovery has ReAgent.xml and Settings, not winre.wim. The ISO still has standard sources/boot.wim=824426219 B and must keep Windows Setup/WinPE boot.
+- ISO=6822354944 B, WIM=5736092221 B. Existing small metadata alone cannot create WinRE. Re-enabling WinRE later requires real compatible WinRE image, registration and space.
+
+## Microsoft technical evidence (external sources, not BlueLite runtime results)
+- Microsoft Customize Windows RE: a Windows installation can operate without winre.wim in its install image, but Windows RE will NOT be configured or accessible. https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/customize-windows-re?view=windows-11
+- REAgentC /setreimage supports offline /target; /enable and /info are separate validation surfaces. https://learn.microsoft.com/en-gb/windows-hardware/manufacture/desktop/reagentc-command-line-options?view=windows-11
+- Microsoft Deploy Windows RE prescribes installing compatible Winre.wim in Recovery/WindowsRE and registering with REAgentC; partition type/attributes depend on UEFI/BIOS. https://learn.microsoft.com/windows-hardware/manufacture/desktop/deploy-windows-re?view=windows-11
+- Microsoft UEFI/GPT partitions: separate recovery partition with correct type, image payload and additional 250MB space required for servicing; no assumption that a tiny metadata file can replace it. https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/configure-uefigpt-based-hard-drive-partitions?view=windows-11
+- Windows RE servicing: WinRE updates need consistent LCU/feature/language and version checks; reusing any random winre.wim from another CU is unproven. https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/add-update-to-winre?view=windows-11
+
+## Original BlueLite design proposal
+Separate three entities: 1) BUILT-IN BASE ISO Windows Setup/WinPE boot.wim, retained, 2) extremely small immutable per-build RecoveryDescriptor.json: source UUP UUID / edition/index/architecture/language/CU/UBR / original trusted WinRE provenance, SHA256 / recovery command policy / expected partition metadata / tested release flag / validation schema (only once actually proven), 3) optional user-controlled EXTERNAL matching WinRE payload or preprepared recovery USB image stored outside ISO/WIM/installed footprint. No embedded 700MB payload.
+Recovery modes are classified rather than automatically declared equivalent: a) boot into original Setup repair media for troubleshooting (does not prove normal Reset this PC functionality), b) create a standalone emergency recovery USB by documented vendor-supported means, c) optionally provision matching WinRE post-install using approved supported REAgentC commands and layout; verify EFI/BIOS boot, BitLocker unlock, partition layout, reagentc /info/enable, rollback, CU servicing and actual automatic startup recovery.
+Zero-image-size recovery descriptor is INSUFFICIENT if Microsoft RE image is not obtainable/byte-verified or build/LCU/language/driver mismatch; hold this option rather than advertise it as a functional replacement. External payload must be from the operator's licensed/official sources, not copied from unknown uploader systems.
+Performance contract: measure clean Setup from boot to OOBE, first new profile logon, cold boot and warm reboot across identical VM/hardware, memory and storage; report elapsed milliseconds and quality gates (Update, filesystem, networking, shutdown, VM host). WinRE omission is not itself evidence of speed. Installation transport compression may trade CPU for download and setup time: benchmark and choose separately.
+NEXT: Phase1 archive and hash GOLDEN, then Phase2 exact dependency classification and Phase3 actual Recovery-on-Demand design/fixtures with operator approval for any later image action.
