@@ -1,0 +1,24 @@
+BlueLite v1.0 — Recovery-on-Demand v1 (EXTERNAL DESCRIPTOR ONLY)
+==================================================================
+Policy: no embedded WinRE payload is bundled in this v6 MAX_PRE overlay.
+The UUP converter's supported SkipWinRE=1 already avoids creating
+the optional installed WinRE image. DO NOT count a second 700MB saving.
+
+KEEP: Microsoft's standard bootable Windows Setup media and sources/boot.wim.
+It is distinct from an installed winre.wim and contains Windows Setup/WinPE.
+
+OPTIONAL RECOVERY ROUTES FOR LATER VALIDATION:
+1. External bootable Windows Setup USB/ISO with Repair your computer.
+2. User-provided matching licensed recovery source media, SHA-verified,
+   staged OUTSIDE the base ISO/install.wim/installed OS.
+3. After separate approved post-install VM proof: correctly provision a
+   matched WinRE payload and recovery location, then verify reagentc /info
+   and native recovery boot. This descriptor DOES NOT perform that action.
+
+The descriptor is documentation, not a bootable recovery image and NOT
+proof that recovery tools work on every target without a real test.
+Do not delete or rename Setup boot.wim, boot files, BCD, WinPE storage,
+network drivers, update servicing, or OEM partitions as a size shortcut.
+
+Next stages: UUP pre-ISO MAX_PRE (source closures) -> offline PowerShell
+AppX/FoD owner-aware removal -> NTLite Business -> VMware Workstation Pro.
