@@ -1,0 +1,26 @@
+{
+  "schema": "BlueLite.R005.F02.GoldenUnchanged.v1",
+  "utc": "2026-11-03T18:42:51.0117308Z",
+  "operation": "POST_F02_READ_ONLY_FULL_GOLDEN_WIM_AND_ISO_SHA_REHASH",
+  "media": [
+    {
+      "name": "FINAL_GOLDEN_INSTALL_WIM",
+      "path": "C:\\work\\26300.9818-UUP-MAX_PRE_26300_v4\\install.wim",
+      "bytes": 5736092221,
+      "sha256": "3D606513D9C1D2B157AAFD6925FF1655C9A48520CE5D4219AF2ED654C82753E4",
+      "verdict": "ORIGINAL_SHA_MATCHES_FROZEN_R005_OP01"
+    },
+    {
+      "name": "FINAL_GOLDEN_ISO",
+      "path": "C:\\work\\26300.9818-UUP-MAX_PRE_26300_v4\\26300.9818.261025-0959.26H2_GE_RELEASE_SVC_PROD3_CLIENTPRO_OEMRET_X64FRE_EN-US.ISO",
+      "bytes": 6822354944,
+      "sha256": "570BD12E9DBBBB51CACFB3B9A403326AA5000FAC1D2F7E44482EFCC154CB3736",
+      "verdict": "ORIGINAL_SHA_MATCHES_FROZEN_R005_OP01"
+    }
+  ],
+  "count": 2,
+  "image_mutation_commands_run": 0,
+  "elapsed_ms": 18081,
+  "verdict": "PASS",
+  "one_next": "single_F02_zip_already_independently_SHA_VERIFIED_then_phase_F03_next"
+}
