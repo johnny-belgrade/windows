@@ -1,3 +1,11 @@
+# R008 — Consolidated UUP MAX_PRE delivery IN_PROGRESS (2026-11-03)
+User requested one complete ZIP of GitHub analyses, repairs and universal UUP package. Scope: retrieve/hash-check repository snapshot ab94087829167781a0dfad9ce5e7c11139eb6574; reconcile R007 v5 native evidence and v6 source delta; finish isolated source/AST/negative fixtures; package source, evidence and reviewed runnable overlay. No converter execution, WIM/CBS/registry/ISO mutation, Master or frozen Handoff changes.
+R007_ActivePlan and OP01–OP05B receipts supersede older below v5 NOT_RUN claims. Actual supplied native ZIP CD7EC26F85672111BACD39C269374C40D6643B43709249DFD816F10D4036DE82; R007 v6 38-file source exists, native fixtures pending. RDC online and exact C:\work / C:\BLR20R2F5 scope plus 33 blocked commands verified. All 366 repository paths inventoried; 365 downloaded with exact Git blob verification, large Handoff separately retrieved for hash verification. No runtime result inferred.
+ONE NEXT: finish source integrity and isolated v6 fixture verification, then deliver one complete verified ZIP.
+
+---
+## Previous checkpoint preserved (superseded where R007 evidence is newer)
+
 # BlueLite v1.0 — Current Status (ONE active live checkpoint)
 **Updated:** 2026-11-03. **Normative:** Master v6.3.4 §0L, §0K, §0J, §0I, §0G. New Master blob 81faff6c5a279ece94cb167c148f312870c4de19. Previous R004 proof remains authoritative. Older Current state preserved in immutable Git blob 0c586880782ab8119eb4d1e2b9ef91ba607be624; complete R004 per-operation evidence in development/PREMAX/R004.
 **STATE:** R006_V5_PACKAGE_NATIVE_14_AST_35_MANIFEST_36_ZIP_SHA_PUBLIC_DOWNLOAD_PASS / ORIGINAL_R004_V4_26300_9818_UUP_MAXPRE_WIM_ISO_PASS / R005_F01_APPINSTALLER_HOLD / R005_F02_LANGUAGE_BASIC_CBS_HOLD / OTHER_OFFLINE_DEBLOAT_NTLITE_VM_STAGES_PENDING / ORIGINAL_GOLDEN_UNCHANGED.
