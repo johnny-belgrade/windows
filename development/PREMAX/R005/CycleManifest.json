@@ -1,7 +1,7 @@
 {
   "schema": "BlueLite.PREMAX.CycleManifest.v1",
   "cycle_id": "R005_GoldenFreeze_RecoveryOnDemand",
-  "status": "OP02_F01_CURRENT_4_DAI_VARIANTS_PASS_HARDLINK_REGISTRY_DEPENDENCY_HOLD_F02_NEXT",
+  "status": "OP03_F02_LANGUAGE_BASIC_NATIVE_REFUSAL_MUM_READONLY_PASS_OWNER_HOLD_F03_NEXT",
   "created_utc": "2026-11-03T17:18:34.5304217Z",
   "source_build": "26300.9818",
   "source_index": 1,
@@ -32,7 +32,11 @@
     "R005 F01 current v4 package one provisioned before and one after; native remove failed; ten provisioned total remain",
     "R005 F01 final WIM wimlib index 1 actual four DesktopAppInstaller variants (1 neutral bundle, x64, two scale split) independently verified",
     "R005 F01 3 historical AMBER script SHA+AST verified; corrected full 340/359/361 source diff PASS; historical 26200 method not certified on 26300",
-    "R005 F01 per-operation 10 evidence files SHA verified in one latest ZIP 72163039BA82E3635830BCFB624D5B74641976E2D280ADB8E67C97CE4CE55B2F"
+    "R005 F01 per-operation 10 evidence files SHA verified in one latest ZIP 72163039BA82E3635830BCFB624D5B74641976E2D280ADB8E67C97CE4CE55B2F",
+    "R005 F02 R004 native Basic en-US exact capability raw State 4->4, DISM -2146498523/CBS_E_CANNOT_UNINSTALL; Handwriting/OCR/Speech/TextToSpeech en-US 4->0",
+    "R005 F02 full WIM index1 MUM listing: Basic 6 .mum/.cat entries; 5 bounded MUM XML copies SHA verified (100101 B), 3 parent relationships, no explicit permanence/removable attrs, 9818 Basic CBS record 4 and no 9818 MUM path listed",
+    "R005 F02 14 original per-operation immutable receipts plus source summary/active plan/five MUM copied to ONE 47001-B evidence ZIP, SHA C0B2EB32E65E3F127CDB9619E786EF3344C906308DEB52D21DC8A359131A8184, archive 22/22 member and original local SHA independently verified",
+    "R005 F02 rehash full frozen install.wim+ISO after all analysis: exact R005 OP01 SHA identities unchanged (WIM 3D6065... image bytes, ISO 570BD1... media bytes)"
   ],
   "dependencies_unresolved": [
     "R004 AppInstaller residue",
@@ -43,7 +47,9 @@
     "Recovery-on-Demand native functional validation",
     "ISO ~5GB and installed 14.5-15.5 GB",
     "F01 only four directory names proven; 26300 per-file hardlink owner, offline AppX/registry/Deprovisioned shape and post-removal servicing not proven",
-    "F01 release-forbidden AppInstaller remains with StrictReleaseForbiddenAppGate=0; no deletion attempted in this source-only block"
+    "F01 release-forbidden AppInstaller remains with StrictReleaseForbiddenAppGate=0; no deletion attempted in this source-only block",
+    "F02 Basic en-US remains after native Remove-Capability with CBS_E_CANNOT_UNINSTALL; old R15 GREEN selector not certified on current 26300.9818",
+    "F02 exact 26300 CBS registry CurrentState/Permanence and language/OOBE/servicing parent owner mapping not proven; proposed v5 RETAIN_BY_DEFAULT until separate approved disposable owner/health transaction"
   ],
   "drafts": [
     "03_Drafts\\BlueLite_R005_GoldenFreeze_v1.ps1"
@@ -63,5 +69,5 @@
     "executed": true,
     "receipt": "C:\\work\\logs\\BlueLite_R005_GoldenFreeze_20261103T171855421Z_ca672a9b.zip"
   },
-  "one_next": "F02_LANGUAGE_BASIC_26300_9818_NATIVE_0x800F0825_READ_ONLY_SOURCE_CBS_CLASSIFICATION"
+  "one_next": "F03_WMIC_26300_9818_INVALID_WOW64_ENUS_SUPERSEDED_SELECTORS_READ_ONLY_ANALYSIS"
 }
