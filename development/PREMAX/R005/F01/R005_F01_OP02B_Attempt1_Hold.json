@@ -1,0 +1,12 @@
+{
+  "schema": "BlueLite.R005.F01.DiagnosticAttempt.v1",
+  "operation": "OP02B_NATIVE_ZIP_READONLY_DIAGNOSTIC",
+  "attempt": 1,
+  "utc": "2026-11-03",
+  "status": "HOLD_TOOLING_ONLY",
+  "actual_error": "Add-Type -AssemblyName IO.Compression attempted loading nonexistent IO.Compression.dll; correct is System.IO.Compression",
+  "stage": "first statement before reading ZIP, no image/WIM/ISO calls",
+  "target_image_mutation": false,
+  "retry_revision": "replace assembly name with System.IO.Compression",
+  "next": "independent receipt verification then revised source analysis"
+}
