@@ -1,0 +1,19 @@
+{
+  "schema": "BlueLite.R006.OP07.v1",
+  "utc": "2026-11-03T19:26:54.3170779Z",
+  "operation": "FULL_BINARY_ZIP_MANIFEST_AND_LOCAL_SOURCE_SHA_INDEPENDENT_QA",
+  "zip": "C:\\work\\logs\\BlueLite_UUP_MAXPRE_26300x_v5_20261103T192513569Z.zip",
+  "zip_sha256": "0573CE971A3C956E37A2B100E56BA30EC1E6914D42AF31606AF19441F8495658",
+  "zip_bytes": 57801,
+  "entries": 36,
+  "manifest_items": 35,
+  "SHA256_verified_members": 35,
+  "source_SHA_verified": 35,
+  "original_UUP_launcher_included": false,
+  "portable_START_relative": true,
+  "Basic_green_active": false,
+  "v4_unchanged_engine": true,
+  "golden_image_modified": false,
+  "verdict": "PASS",
+  "next": "Git binary upload and CAS/readback then precise operator delivery"
+}
