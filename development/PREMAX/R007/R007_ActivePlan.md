@@ -24,4 +24,6 @@
 
 **Invariant:** user wants all unnecessary FoD and AppX removed as early as **permitted by demonstrable dependencies**. Do not discard CompDB/edition/SSU/LCU/delta/WinPE/FoD input merely due to name; unsupported FoD/DAI are handed to offline stage. ISO around 5GB and 14.5–15.5GB installed footprint remain measurements, not promises.
 
-**ACTIVE:** OP00_PLAN_RECORDED; **ONE NEXT:** OP01 original v5 evidence native manifest and v4-v5 exact metrics.
+**OP01 PASS (actual operator v5 run):** Full native ZIP 27/27 member SHA/bytes independently confirmed, separate new-process source-and-fields QA; receipt `R007_OP01_NativeEvidence.json` SHA256 `CEC7922DEC8B2136AC460D4FFDB38047BDAF2458FDE87042AAF852A7083CCE3D`, local/GitHub exact mirror readback PASS. v5 WIM 5,734,238,611 B (1,853,610 B less than v4); ISO 6,820,456,448 B (1,898,496 B less than v4), no material size improvement. Native Windows 98/98, selected AppX 32, provisioned 10→10, 18 capability state changes, 211→76 package records; Basic GREEN was disabled but DesktopAppInstaller release residue remains. Native v5 source triad absent. No assertion of source FoD reusability without converter graph.
+
+**ACTIVE:** OP01_PROVEN_AND_WRITTEN; **ONE NEXT:** OP02 source triad 98/98 exact current Windows D4 verification and classification.
