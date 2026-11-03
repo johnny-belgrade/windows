@@ -1,0 +1,133 @@
+{
+  "schema": "BlueLite.R005.F01.OP02E.v1",
+  "utc": "2026-11-03T17:40:37.0995228Z",
+  "operation": "READONLY_THREE_VARIANT_SOURCE_LINE_COMPARISON",
+  "paths": [
+    "C:\\work\\UUP-history\\02_Scripts\\Unresolved\\UUP\\BlueLite_DesktopAppInstaller__C77102063D4C.ps1",
+    "C:\\work\\UUP-history\\02_Scripts\\Unresolved\\UUP\\BlueLite_DesktopAppInstaller__C6F11A1811AE.ps1",
+    "C:\\work\\UUP-history\\02_Scripts\\Unresolved\\UUP\\BlueLite_DesktopAppInstaller__0D7711DCDCDB.ps1"
+  ],
+  "sha": [
+    "C77102063D4CCA879F65184ABE7BD07EDF566442DE2C09FBE88FABD32B41702E",
+    "C6F11A1811AE8DBF5973D84CD1FB397D63A9E32EFE9760644811D8B4B7E2D162",
+    "0D7711DCDCDB28ADD075321E8443E7277DB772B021E1C6BB62B04962A87F645C"
+  ],
+  "pair_deltas": [
+    {
+      "from": "BlueLite_DesktopAppInstaller__C77102063D4C.ps1",
+      "to": "BlueLite_DesktopAppInstaller__C6F11A1811AE.ps1",
+      "from_lines": 1,
+      "to_lines": 1,
+      "first_different_line": 1,
+      "first_source_before": "# BlueLite v1.0 - DesktopAppInstaller portable AMBER rule.",
+      "first_source_after": "# Source evidence: C29-R2 topology; C30-R3 disposable; C31 gate; C32 canonical.",
+      "unordered_line_delta": 2,
+      "fact_counts": [
+        {
+          "key": "function Get-BLDAIChildKeyCount",
+          "left": 0,
+          "right": 0
+        },
+        {
+          "key": "Get-BLDAIRegState",
+          "left": 0,
+          "right": 0
+        },
+        {
+          "key": "GetNumberOfLinks",
+          "left": 0,
+          "right": 0
+        },
+        {
+          "key": "DAI_SINGLE_LINK_FILES",
+          "left": 0,
+          "right": 0
+        },
+        {
+          "key": "Set-NonRemovableAppsPolicy",
+          "left": 0,
+          "right": 0
+        },
+        {
+          "key": "DAI_NATIVE_REMOVE_EXIT",
+          "left": 0,
+          "right": 0
+        },
+        {
+          "key": "DAI_LIFECYCLE_CLOSURE",
+          "left": 0,
+          "right": 0
+        },
+        {
+          "key": "DAI_RETAINED_APPX_FLOOR",
+          "left": 0,
+          "right": 0
+        },
+        {
+          "key": "DAI_POST_PROVISIONED",
+          "left": 0,
+          "right": 0
+        }
+      ]
+    },
+    {
+      "from": "BlueLite_DesktopAppInstaller__C6F11A1811AE.ps1",
+      "to": "BlueLite_DesktopAppInstaller__0D7711DCDCDB.ps1",
+      "from_lines": 1,
+      "to_lines": 1,
+      "first_different_line": 1,
+      "first_source_before": "# Source evidence: C29-R2 topology; C30-R3 disposable; C31 gate; C32 canonical.",
+      "first_source_after": "# Called ONLY from a mounted OFFLINE PreISO image, before final certification.",
+      "unordered_line_delta": 2,
+      "fact_counts": [
+        {
+          "key": "function Get-BLDAIChildKeyCount",
+          "left": 0,
+          "right": 0
+        },
+        {
+          "key": "Get-BLDAIRegState",
+          "left": 0,
+          "right": 0
+        },
+        {
+          "key": "GetNumberOfLinks",
+          "left": 0,
+          "right": 0
+        },
+        {
+          "key": "DAI_SINGLE_LINK_FILES",
+          "left": 0,
+          "right": 0
+        },
+        {
+          "key": "Set-NonRemovableAppsPolicy",
+          "left": 0,
+          "right": 0
+        },
+        {
+          "key": "DAI_NATIVE_REMOVE_EXIT",
+          "left": 0,
+          "right": 0
+        },
+        {
+          "key": "DAI_LIFECYCLE_CLOSURE",
+          "left": 0,
+          "right": 0
+        },
+        {
+          "key": "DAI_RETAINED_APPX_FLOOR",
+          "left": 0,
+          "right": 0
+        },
+        {
+          "key": "DAI_POST_PROVISIONED",
+          "left": 0,
+          "right": 0
+        }
+      ]
+    }
+  ],
+  "status": "HISTORIC_SOURCE_ONLY_NOT_TESTED_ON_26300",
+  "next": "F01 dependency classification exact current topology, registry and hardlink gates remain unproven"
+}
