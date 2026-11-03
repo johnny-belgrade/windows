@@ -1,0 +1,52 @@
+{
+  "schema": "BlueLite.R005.F02.OP06B1.v1",
+  "utc": "2026-11-03T18:21:08.1683269Z",
+  "operation": "EXTRACT_EXACT_ONE_BASIC_MUM_FROM_FROZEN_WIM",
+  "source": "\\Windows\\servicing\\Packages\\Microsoft-Windows-LanguageFeatures-Basic-en-us-Package~31bf3856ad364e35~amd64~~10.0.26100.1742.mum",
+  "file": "C:\\work\\PREMAX-work\\R005_GoldenFreeze_RecoveryOnDemand\\01_Inputs\\F02_MUM_ReadOnlyExtract\\Microsoft-Windows-LanguageFeatures-Basic-en-us-Package~31bf3856ad364e35~amd64~~10.0.26100.1742.mum",
+  "bytes": 3373,
+  "sha256": "493D77A640DAEA6060D85AA8D60EC5A26058AECA6E0B81CA5332DC1033DEAB2C",
+  "xml_root": "assembly",
+  "package_attrs": [
+    {
+      "tag": "package",
+      "name": "identifier",
+      "value": "KB777778"
+    },
+    {
+      "tag": "package",
+      "name": "releaseType",
+      "value": "OnDemand Pack"
+    },
+    {
+      "tag": "package",
+      "name": "contained",
+      "value": "false"
+    },
+    {
+      "tag": "package",
+      "name": "integrate",
+      "value": "hidden"
+    },
+    {
+      "tag": "package",
+      "name": "contained",
+      "value": "false"
+    },
+    {
+      "tag": "package",
+      "name": "integrate",
+      "value": "hidden"
+    }
+  ],
+  "parents": [],
+  "native_exit": 0,
+  "native_output": [
+    "",
+    "Extracting file data: 3373 bytes of 3373 bytes (100%) done",
+    "Done extracting files."
+  ],
+  "wim_untouched": true,
+  "verdict": "READ_ONLY_SOURCE_EXTRACT_PASS",
+  "next": "fresh-process verify extracted XML sha, then four remaining preflight MUM files"
+}
