@@ -1,0 +1,36 @@
+{
+  "schema": "BlueLite.R006.OP03.v1",
+  "utc": "2026-11-03T19:21:19.6962842Z",
+  "operation": "ACTUAL_VENDOR_UUP_26300_9818_ZIP_PLUS_V5_OVERLAY_NATIVE_PS7_AST_AND_PREFLIGHT",
+  "fixture": "C:\\work\\PREMAX-work\\R006_26300_MAXPRE_v5_Package\\03_QA\\Fixture26300_9818",
+  "vendor_archive": "C:\\work\\26300.9818-UUP-MAX_PRE_26300_v4\\26300.9818_amd64_en-us_professional_6c7bf258_convert.zip",
+  "vendor_archive_sha256": "8117C725C1EF9C8F5C73C5A22887DB38C222C373ED601C94D24DC9109AFEDEF8",
+  "original_launcher_sha256": "838619DB9AEC53A1D0F111967FE04965852BD7A28F58611C6236FCE086C2D42D",
+  "PS7_AST_pass_count": 14,
+  "AST_files": [
+    "BlueLite_Bootstrap.ps1",
+    "BlueLite_FilterApps.ps1",
+    "BlueLite_GenerateCustomAppsList.ps1",
+    "BlueLite_PackEvidence.ps1",
+    "BlueLite_PatchConverter.ps1",
+    "BlueLite_PreDebloatWim.ps1",
+    "BlueLite_Preflight.ps1",
+    "BlueLite_RenewQueue.ps1",
+    "BlueLite_ResolveAppDependencies.ps1",
+    "BlueLite_ResolveUUP.ps1",
+    "BlueLite_RestoreEvidence.ps1",
+    "BlueLite_SourceTriadGate.ps1",
+    "BlueLite_VerifyDownloadedHashes.ps1",
+    "BlueLite_VerifySource.ps1"
+  ],
+  "native_exit": 0,
+  "native_output": [
+    "PREFLIGHT_PASS build=26300.9818 uuid=6c7bf258-2632-47dd-83ee-c23945978da1 members=35 PS_AST=14"
+  ],
+  "preflight_log": "C:\\work\\PREMAX-work\\R006_26300_MAXPRE_v5_Package\\03_QA\\Fixture26300_9818\\BlueLite_Logs\\Preflight.txt",
+  "preflight_log_sha256": "DB842BFEE7B7D5EE3C72CA39615E52336E1FBB61FE6B13005558BC88CDA66CE6",
+  "net_downloads": 0,
+  "wim_mutations": 0,
+  "verdict": "PASS",
+  "next": "fresh-process verify fixture vendor SHA, 14 AST, manifest 35/35, then negative fixtures"
+}
