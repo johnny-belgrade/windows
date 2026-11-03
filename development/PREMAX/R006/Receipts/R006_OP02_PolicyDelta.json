@@ -1,0 +1,53 @@
+{
+  "schema": "BlueLite.R006.OP02.v1",
+  "utc": "2026-11-03T19:19:15.3374579Z",
+  "operation": "ONLY_SEVEN_DELIBERATE_V5_SOURCE_AND_DOCUMENT_CHANGES",
+  "root": "C:\\work\\PREMAX-work\\R006_26300_MAXPRE_v5_Package\\02_Drafts\\PackageRoot",
+  "file_count": 36,
+  "modified_count": 7,
+  "changed": [
+    {
+      "file": "00-EXECUTION-ORDER.txt",
+      "before": "A1013B5592D6BA99B7150FEE09AE0460B418C732AB2DC92E8013635FCCD37077",
+      "after": "CC8E8C37EE21AE269C817C5F17AE3C9A48364A4132ACF93C067A21D21D28C5B7"
+    },
+    {
+      "file": "BlueLite_Package_SHA256.txt",
+      "before": "22C577A3C3322D3EBCB58A407330BA680FFC8B54558916A72DDB5F708D421F69",
+      "after": "87CF09B87772BC810694372CD01449BE7A28E2917B3F97390E64F2A6DF16EBBB"
+    },
+    {
+      "file": "INTEGRITY-AND-LIMITS.txt",
+      "before": "977391487C20D9F6855ECBAF2E49605D1EE382E5BD848636BAE3E1C12EDC604E",
+      "after": "A15164E7780F28454B61A282553D7F966D4B947ADF12489B9A42BD2E84FEFF65"
+    },
+    {
+      "file": "MUTATION-SCOPE-REVIEW.txt",
+      "before": "FEFE7D53833AE11C82C74C181845A9524E8E41255882D3F28C888E68C1EB34A5",
+      "after": "CA377AE42797783A5BD0BD56B2CEB4F3C546030F8EC2B815AADD40C8D480C863"
+    },
+    {
+      "file": "README-FIRST.txt",
+      "before": "249EDE6314D92E6422B367C959B387869723EED83ACD099989B9EE4802850385",
+      "after": "3F06E44A32CCBF4F74ABFE169BC79A7A7E98CA66BF95B7F6FB4445621883D44D"
+    },
+    {
+      "file": "BlueLite/BlueLite_CapabilityRemovePatterns.txt",
+      "before": "D960471A21043F531F6602A41F3B53FF989E4EF17DFEE7202E0F4F52F6B4734A",
+      "after": "E9A54316B8A5D90067DA32F76155F0434CAD8B34EE2DAA15B58B4688EBE152FA"
+    },
+    {
+      "file": "BlueLite/BlueLite_Profile.ini",
+      "before": "507E992ADB54A34D1A0C18D17F3A4A3510B5689F149DDF486D594CADC3DE1069",
+      "after": "D06F9851D3B88F77498E71C91569F3442E87E6FCF0A4942241D1199C2CCD0D48"
+    }
+  ],
+  "unmodified_count": 29,
+  "original_PowerShell_and_CMD_engine_unchanged": true,
+  "original_ConvertConfig_unchanged": true,
+  "UUP_Windows_queue_filter_unchanged": true,
+  "Basic_Green_removed": true,
+  "golden_image_mutation": false,
+  "status": "PASS",
+  "next": "native independent verify all 35 package manifest rows, all PS7 AST, isolated vendor UUP preflight"
+}
