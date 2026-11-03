@@ -1,0 +1,42 @@
+{
+  "schema": "BlueLite.R007.OP02.v1",
+  "utc": "2026-11-03T21:02:54.2616307Z",
+  "operation": "THREE_ORIGINAL_UUPDUMP_TRIAD_VS_ACTUAL_OPERATOR_V5_D4",
+  "fixture": "C:\\work\\PREMAX-work\\R007_26300_SourcePrecise_PreCut\\01_Source\\Triad_26300_9818",
+  "operator_evidence_zip": "C:\\work\\26300.9818-UUP-v5\\BlueLite_EVIDENCE_20261103T204109562Z.zip",
+  "original_gate": "C:\\work\\26300.9818-UUP-v5\\BlueLite\\BlueLite_SourceTriadGate.ps1",
+  "gate_sha256": "2A9D76A63269C267116D6EAD6EF01AD071936CBDC1B4F5B01FF0CB9C16E9269F",
+  "triad": [
+    {
+      "name": "List of files UUP.txt",
+      "sha256": "D4E315D675260B4D2E9F354739C53DA069528AC47C18D428B4F6198E42DC6AAA"
+    },
+    {
+      "name": "File_renaming_script.cmd",
+      "sha256": "5B2EF8687885E2D9EDFC5A1F50C2D25F37E8E86D4E23E2EA92833022C3579C94"
+    },
+    {
+      "name": "SHA-1 checksums file.txt",
+      "sha256": "C757AE7C250F25C1FFD265EECB140528EFAC51283558FCC699E182360EB632F4"
+    }
+  ],
+  "windows_original_queue": "C:\\work\\PREMAX-work\\R007_26300_SourcePrecise_PreCut\\01_Source\\Triad_26300_9818\\WindowsQueue.original.txt",
+  "windows_original_SHA256": "38AA65E9D0EF857853CDDFB5D0A3C4FF7BFD9EC22D3C654DBFF71329B12F014B",
+  "output_count": 98,
+  "url_count": 98,
+  "class_counts": {
+    "cab": 76,
+    "esd": 19,
+    "msu": 2,
+    "wim": 1,
+    "FoD_name_candidates": 62
+  },
+  "native_exit": 0,
+  "native_output": [
+    "SOURCE_TRIAD_D4_PASS names=98 GUID=98"
+  ],
+  "native_log_sha256": "37498251E85996180A6454B3F88B1D05A3B1C459EA8F722728DA578EF17946B7",
+  "source_drop_executed": false,
+  "verdict": "TRIAD_REAL_V5_D4_PASS",
+  "one_next": "OP03_WINRE_SETUP_MEDIA_READ_ONLY_AND_DESCRIPTOR_DESIGN"
+}
