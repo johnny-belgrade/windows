@@ -1,0 +1,286 @@
+{
+  "schema": "BlueLite.R005.F02.OP02.v1",
+  "utc": "2026-11-03T18:05:43.1145732Z",
+  "operation": "V4_EXACT_CAPABILITY_REMOVAL_CODE_AND_PATTERNS",
+  "source_root": "C:\\work\\26300.9818-UUP-MAX_PRE_26300_v4\\BlueLite",
+  "code_hits": [
+    {
+      "line": 4,
+      "text": "    [Parameter(Mandatory=$true)][string]$CapabilityPatternsFile,",
+      "context": [
+        "2:    [Parameter(Mandatory=$true)][string]$WimPath,",
+        "3:    [int]$Index = 1,",
+        "4:    [Parameter(Mandatory=$true)][string]$CapabilityPatternsFile,",
+        "5:    [Parameter(Mandatory=$true)][string]$FeatureDisableOnlyFile,",
+        "6:    [Parameter(Mandatory=$true)][string]$FeatureRemovePayloadFile,",
+        "7:    [Parameter(Mandatory=$true)][string]$PackagePatternsFile,"
+      ]
+    },
+    {
+      "line": 105,
+      "text": "        Capabilities=@(Get-WindowsCapability -Path $Mount -ErrorAction Stop | Select-Object Name,State)",
+      "context": [
+        "103:        Build=$Build",
+        "104:        Packages=@(Get-WindowsPackage -Path $Mount -ErrorAction Stop | Select-Object PackageName,PackageState,ReleaseType)",
+        "105:        Capabilities=@(Get-WindowsCapability -Path $Mount -ErrorAction Stop | Select-Object Name,State)",
+        "106:        Features=@(Get-WindowsOptionalFeature -Path $Mount -ErrorAction Stop | Select-Object FeatureName,State)",
+        "107:        ProvisionedApps=@(Get-AppxProvisionedPackage -Path $Mount -ErrorAction Stop | Select-Object DisplayName,PackageName,Version,Architecture,ResourceId)",
+        "108:    }"
+      ]
+    },
+    {
+      "line": 197,
+      "text": "    foreach ($p in @($CapabilityPatternsFile,$FeatureDisableOnlyFile,$FeatureRemovePayloadFile,$PackagePatternsFile,$CustomAppsListPath,$ProfilePath,$ComponentWatchlistFile,$RequiredStagingAppIdentitiesFile,$RequiredFinalAppIdentitiesFile,$StagingOnlyAppPatternsFile,$ReleaseForbiddenAppPatternsFile,$OfflineHandoffPatternsFile,$ProtectedFloorFile)) {",
+      "context": [
+        "195:    if (-not (Test-Path -LiteralPath $WimPath)) { throw \"Final install.wim not found: $WimPath\" }",
+        "196:    $WimPath=(Resolve-Path -LiteralPath $WimPath).Path",
+        "197:    foreach ($p in @($CapabilityPatternsFile,$FeatureDisableOnlyFile,$FeatureRemovePayloadFile,$PackagePatternsFile,$CustomAppsListPath,$ProfilePath,$ComponentWatchlistFile,$RequiredStagingAppIdentitiesFile,$RequiredFinalAppIdentitiesFile,$StagingOnlyAppPatternsFile,$ReleaseForbiddenAppPatternsFile,$OfflineHandoffPatternsFile,$ProtectedFloorFile)) {",
+        "198:        if (-not (Test-Path -LiteralPath $p)) { throw \"Required BlueLite input not found: $p\" }",
+        "199:    }",
+        "200:"
+      ]
+    },
+    {
+      "line": 229,
+      "text": "    [string[]]$capPatterns=Read-PatternFile $CapabilityPatternsFile",
+      "context": [
+        "227:    if (-not (Test-Path -LiteralPath $logDir)) { New-Item -ItemType Directory -Path $logDir -Force | Out-Null }",
+        "228:",
+        "229:    [string[]]$capPatterns=Read-PatternFile $CapabilityPatternsFile",
+        "230:    [string[]]$featDisable=Read-PatternFile $FeatureDisableOnlyFile",
+        "231:    [string[]]$featRemove=Read-PatternFile $FeatureRemovePayloadFile",
+        "232:    [string[]]$pkgPatterns=Read-PatternFile $PackagePatternsFile"
+      ]
+    },
+    {
+      "line": 365,
+      "text": "    $caps=@(Get-WindowsCapability -Path $mountDir -ErrorAction Stop)",
+      "context": [
+        "363:    }",
+        "364:",
+        "365:    $caps=@(Get-WindowsCapability -Path $mountDir -ErrorAction Stop)",
+        "366:    foreach ($cap in $caps) {",
+        "367:        if (-not (Match-Any $cap.Name $capPatterns) -or $cap.State -eq 'NotPresent') { continue }",
+        "368:        Write-Host \"[REMOVE CAPABILITY] $($cap.Name) [$($cap.State)]\" -ForegroundColor Yellow"
+      ]
+    },
+    {
+      "line": 368,
+      "text": "        Write-Host \"[REMOVE CAPABILITY] $($cap.Name) [$($cap.State)]\" -ForegroundColor Yellow",
+      "context": [
+        "366:    foreach ($cap in $caps) {",
+        "367:        if (-not (Match-Any $cap.Name $capPatterns) -or $cap.State -eq 'NotPresent') { continue }",
+        "368:        Write-Host \"[REMOVE CAPABILITY] $($cap.Name) [$($cap.State)]\" -ForegroundColor Yellow",
+        "369:        try {",
+        "370:            Invoke-Dism @('/English',\"/Image:$mountDir\",'/Remove-Capability',\"/CapabilityName:$($cap.Name)\") \"Remove capability $($cap.Name)\"",
+        "371:            [void]$actions.Add(\"CAPABILITY REMOVE: $($cap.Name)\")"
+      ]
+    },
+    {
+      "line": 370,
+      "text": "            Invoke-Dism @('/English',\"/Image:$mountDir\",'/Remove-Capability',\"/CapabilityName:$($cap.Name)\") \"Remove capability $($cap.Name)\"",
+      "context": [
+        "368:        Write-Host \"[REMOVE CAPABILITY] $($cap.Name) [$($cap.State)]\" -ForegroundColor Yellow",
+        "369:        try {",
+        "370:            Invoke-Dism @('/English',\"/Image:$mountDir\",'/Remove-Capability',\"/CapabilityName:$($cap.Name)\") \"Remove capability $($cap.Name)\"",
+        "371:            [void]$actions.Add(\"CAPABILITY REMOVE: $($cap.Name)\")",
+        "372:        } catch { [void]$warnings.Add(\"CAPABILITY SKIP: $($cap.Name) :: $($_.Exception.Message)\") }",
+        "373:    }"
+      ]
+    },
+    {
+      "line": 372,
+      "text": "        } catch { [void]$warnings.Add(\"CAPABILITY SKIP: $($cap.Name) :: $($_.Exception.Message)\") }",
+      "context": [
+        "370:            Invoke-Dism @('/English',\"/Image:$mountDir\",'/Remove-Capability',\"/CapabilityName:$($cap.Name)\") \"Remove capability $($cap.Name)\"",
+        "371:            [void]$actions.Add(\"CAPABILITY REMOVE: $($cap.Name)\")",
+        "372:        } catch { [void]$warnings.Add(\"CAPABILITY SKIP: $($cap.Name) :: $($_.Exception.Message)\") }",
+        "373:    }",
+        "374:",
+        "375:    $features=@(Get-WindowsOptionalFeature -Path $mountDir -ErrorAction Stop)"
+      ]
+    },
+    {
+      "line": 426,
+      "text": "    $postCaps=@(Get-WindowsCapability -Path $mountDir -ErrorAction Stop)",
+      "context": [
+        "424:    $watchHits=[System.Collections.Generic.List[string]]::new()",
+        "425:    $postPkgs=@(Get-WindowsPackage -Path $mountDir -ErrorAction Stop)",
+        "426:    $postCaps=@(Get-WindowsCapability -Path $mountDir -ErrorAction Stop)",
+        "427:    $postApps=@(Get-AppxProvisionedPackage -Path $mountDir -ErrorAction Stop)",
+        "428:    $postFeatures=@(Get-WindowsOptionalFeature -Path $mountDir -ErrorAction Stop)",
+        "429:"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "BlueLite_PreDebloatWim.ps1",
+      "path": "C:\\work\\26300.9818-UUP-MAX_PRE_26300_v4\\BlueLite\\BlueLite_PreDebloatWim.ps1",
+      "sha256": "70B137758AB8CF7741DB84BB15E02C7544097DA58B492AB6DE2551FDBAD46DA5",
+      "line_count": 503,
+      "content": null
+    },
+    {
+      "name": "BlueLite_CapabilityRemovePatterns.txt",
+      "path": "C:\\work\\26300.9818-UUP-MAX_PRE_26300_v4\\BlueLite\\BlueLite_CapabilityRemovePatterns.txt",
+      "sha256": "D960471A21043F531F6602A41F3B53FF989E4EF17DFEE7202E0F4F52F6B4734A",
+      "line_count": 44,
+      "content": [
+        "# BlueLite MAX_PRE v2.0 - native capability removal candidates.",
+        "# Only Installed capabilities are attempted. Every failure is logged; topology/health gates remain authoritative.",
+        "# Sense is intentionally NOT here: Microsoft.Windows.Sense.Client is COMPONENT_ENGINE_HANDOFF.",
+        "# Defender/SecHealthUI and Windows servicing capabilities are protected.",
+        "Accessibility.Braille~~~~",
+        "App.StepsRecorder~~~~",
+        "App.WirelessDisplay.Connect~~~~",
+        "Browser.InternetExplorer~~~~",
+        "Hello.Face",
+        "Language.Handwriting~~~",
+        "Language.OCR~~~",
+        "Language.Speech~~~",
+        "Language.TextToSpeech~~~",
+        "MathRecognizer~~~~",
+        "Media.WindowsMediaPlayer~~~~",
+        "Microsoft.WebDriver~~~~",
+        "Microsoft.Wallpapers.Extended~~~~",
+        "Microsoft.Windows.MSPaint~~~~",
+        "Microsoft.Windows.Notepad.System~~~~",
+        "Microsoft.Windows.PowerShell.ISE~~~~",
+        "Microsoft.Windows.WordPad~~~~",
+        "Msix.PackagingTool.Driver~~~~",
+        "Network.Irda~~~~",
+        "OneCoreUAP.OneSync~~~~",
+        "OpenSSH.Client~~~~",
+        "OpenSSH.Server~~~~",
+        "Print.Fax.Scan~~~~",
+        "Print.Management.Console~~~~",
+        "RasCMAK.Client~~~~",
+        "RIP.Listener~~~~",
+        "Rsat.",
+        "SNMP.Client~~~~",
+        "Tools.DeveloperMode.Core~~~~",
+        "Tools.Graphics.DirectX~~~~",
+        "VBSCRIPT~~~~",
+        "WMIC~~~~",
+        "WMI-SNMP-Provider.Client~~~~",
+        "",
+        "# Certified BlueLite GREEN/native production rules, dynamically resolved on current image.",
+        "Edge.Webview2.Platform~~~~",
+        "DirectX.Configuration.Database~~~~",
+        "Windows.Kernel.LA57~~~~",
+        "Language.Basic~~~en-US~0.0.1.0",
+        "XPS.Viewer~~~~0.0.1.0"
+      ]
+    },
+    {
+      "name": "BlueLite_ProtectedFloor.txt",
+      "path": "C:\\work\\26300.9818-UUP-MAX_PRE_26300_v4\\BlueLite\\BlueLite_ProtectedFloor.txt",
+      "sha256": "8B4FA326D1099C7DFFBB82F49D5215CC192A73919292678ABCFBF6F0F4CD8CAC",
+      "line_count": 12,
+      "content": [
+        "# Current proven VM/network/storage protected floor. Paths are relative to mounted Windows root.",
+        "Windows\\System32\\WinHvPlatform.dll",
+        "Windows\\System32\\hvax64.exe",
+        "Windows\\System32\\hvix64.exe",
+        "Windows\\System32\\drivers\\vmbus.sys",
+        "Windows\\System32\\drivers\\vid.sys",
+        "Windows\\System32\\drivers\\ndis.sys",
+        "Windows\\System32\\drivers\\netio.sys",
+        "Windows\\System32\\drivers\\tcpip.sys",
+        "Windows\\System32\\drivers\\storport.sys",
+        "Windows\\System32\\drivers\\disk.sys",
+        "Windows\\System32\\drivers\\partmgr.sys"
+      ]
+    },
+    {
+      "name": "BlueLite_Profile.ini",
+      "path": "C:\\work\\26300.9818-UUP-MAX_PRE_26300_v4\\BlueLite\\BlueLite_Profile.ini",
+      "sha256": "507E992ADB54A34D1A0C18D17F3A4A3510B5689F149DDF486D594CADC3DE1069",
+      "line_count": 15,
+      "content": [
+        "[BlueLite]",
+        "Profile=MAX_PRE_26300_V4",
+        "HealthGate=1",
+        "RunScanHealth=1",
+        "RunStartComponentCleanup=1",
+        "RunResetBase=0",
+        "KeepDefenderPayload=1",
+        "KeepWindowsUpdateServicing=1",
+        "EnableClassicPhotoViewer=0",
+        "DisableSearchIndexing=1",
+        "DisableSysMain=1",
+        "DeliveryOptimizationStart=3",
+        "FinalCompression=max",
+        "StrictReleaseForbiddenAppGate=0",
+        "AllowedBuildFamilies=26300"
+      ]
+    },
+    {
+      "name": "BlueLite_ComponentWatchlist.txt",
+      "path": "C:\\work\\26300.9818-UUP-MAX_PRE_26300_v4\\BlueLite\\BlueLite_ComponentWatchlist.txt",
+      "sha256": "435C3DD6EA61F0AD29936CA98F250ACC4AFB2EB6EB87086A3BFFC1FA40AF95A9",
+      "line_count": 52,
+      "content": [
+        "# INFORMATIONAL / DISCOVERY ONLY. MAX_PRE never manually deletes WinSxS component payloads.",
+        "# This list feeds reports and later full offline script-debloat / dependency analysis.",
+        "# Promote a target to automatic removal only after it has a supported package/capability path",
+        "# or a separately validated component rule and passes the health/update gates.",
+        "",
+        "# Windows UX / consumer shell",
+        "Widgets",
+        "Widgets.WidgetPicker",
+        "Microsoft-Windows-WidgetsPlatformRuntime",
+        "WindowsBackup",
+        "CBS\\WindowsBackup",
+        "CBS\\Cortana.UI",
+        "DiscoveryHubWidget",
+        "FamilyValueProp",
+        "ValueBanner",
+        "AppListBackup",
+        "BackupBanner",
+        "",
+        "# Search / web UX",
+        "SearchHost.exe",
+        "FESearchHost.exe",
+        "SearchUx.Core.dll",
+        "SearchUx.InternalWebApi.dll",
+        "SearchUx.Model.dll",
+        "SearchUx.UI.dll",
+        "SearchUx.WebApi.dll",
+        "Cortana.Internal",
+        "Cortana.Search",
+        "",
+        "# AI / Recall / 2026 Germanium evolution",
+        "CoreAI",
+        "AIX",
+        "Recall",
+        "AIFabric",
+        "Microsoft.AIFabric.CBS",
+        "App Overlay Platform",
+        "Windows User Experience - AOT",
+        "Windows AI Isolation Session",
+        "ShellMcpServers",
+        "ShellMcpServers.ConsentPrompts",
+        "ShellMcpServers.Packaging",
+        "MicrosoftGraphRecentItemsManager.dll",
+        "",
+        "# Accessibility / speech (evaluate independently)",
+        "VoiceAccess",
+        "LiveCaptions",
+        "SpeechSynthesizer",
+        "",
+        "# Runtime/version-lifecycle controls discovered during FBConan work",
+        "WindowsAppRuntimeCBS",
+        "WinAppSDK",
+        "WiFiNetworkManager"
+      ]
+    }
+  ],
+  "pattern_contains_basic": true,
+  "profile_contains_strict": true,
+  "code_line_count": 503,
+  "golden_mutation": false,
+  "verdict": "READ_ONLY_SOURCE_TEXT",
+  "next": "F02-03 historical canonical Language.Basic/R115 reason and CBS dependency"
+}
