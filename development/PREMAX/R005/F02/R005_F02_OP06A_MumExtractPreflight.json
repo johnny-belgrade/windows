@@ -1,0 +1,31 @@
+{
+  "schema": "BlueLite.R005.F02.OP06A.v1",
+  "utc": "2026-11-03T18:18:36.4671334Z",
+  "operation": "READ_ONLY_WIMLIB_EXTRACT_SAFE_SCOPE_PREFLIGHT",
+  "wim": "C:\\work\\26300.9818-UUP-MAX_PRE_26300_v4\\install.wim",
+  "index": 1,
+  "wim_bytes": 5736092221,
+  "wimlib": "C:\\work\\26300.9818-UUP-MAX_PRE_26300_v4\\bin\\wimlib-imagex.exe",
+  "wimlib_sha256": "01168A00FFC84EBFA1BD3B9C841214ED114B9AE4E9B23D555C0686448FD56BDE",
+  "source_listing": "C:\\work\\PREMAX-work\\R005_GoldenFreeze_RecoveryOnDemand\\05_Evidence\\R005_F02_OP05_WimServicingListing.json",
+  "source_listing_sha256": "7480770300D4C3B7B004F04E8BEB8AF99536CDA66A2C3759C1347E5FD351B538",
+  "selected_mum_full_paths": [
+    "\\Windows\\servicing\\Packages\\Microsoft-Windows-LanguageFeatures-Basic-en-us-Package-Wrapper~31bf3856ad364e35~amd64~~10.0.26100.1742.mum",
+    "\\Windows\\servicing\\Packages\\Microsoft-Windows-LanguageFeatures-Basic-en-us-Package~31bf3856ad364e35~amd64~~10.0.26100.1742.mum",
+    "\\Windows\\servicing\\Packages\\Microsoft-Windows-LanguageFeatures-Basic-en-us-Package~31bf3856ad364e35~wow64~~10.0.26100.1.mum",
+    "\\Windows\\servicing\\Packages\\Microsoft-Windows-Client-LanguagePack-Package-Wrapper~31bf3856ad364e35~amd64~en-US~10.0.26100.1742.mum",
+    "\\Windows\\servicing\\Packages\\Microsoft-Windows-Client-LanguagePack-Package~31bf3856ad364e35~amd64~en-US~10.0.26100.1742.mum"
+  ],
+  "selected_count": 5,
+  "dest": "C:\\work\\PREMAX-work\\R005_GoldenFreeze_RecoveryOnDemand\\01_Inputs\\F02_MUM_ReadOnlyExtract",
+  "dest_existed_before": false,
+  "wimlib_extract_help_exit": 0,
+  "wimlib_options": [
+    "                    [--check] [--ref=\"GLOB\"] [--dest-dir=CMD_DIR]",
+    "                    [--to-stdout] [--no-acls] [--strict-acls]",
+    "                    [--nullglob] [--preserve-dir-structure] [--recover-data]"
+  ],
+  "source_mount_executed": false,
+  "verdict": "READY_FOR_BOUNDED_MUM_EXTRACTION_ONLY",
+  "next": "separately extract exactly 5 MUM and independently SHA verify extracted bytes"
+}
