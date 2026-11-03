@@ -1,3 +1,5 @@
+> **AKTUELNI USMERIVAČ 2026-11-03 — Master v6.3.3 §0K / live Current:** istorijski UUP-history RH01–RH08 ostaje READ-ONLY. Novi R004 operator-run `26300.9818` MAX_PRE v4 WIM/ISO dokaz i original source 98 Windows / 2798 Apps identity diff čuvaju se u ODVOJENOM R004: `development/PREMAX/R004/` (OP04–OP08) i lokalno `C:\work\PREMAX-work\R004_26300_9818_Predecessor_MAXPRE`. Originalni runtime ZIP SHA256 D64DAD834847DE4CD4FA577D51ED25158085B29D3A81BF073697B673A14D3905. Ovaj GitHub mirror je samo istorijski navigacioni vodič, ne menjati originalni lokalni `C:\work\UUP-history\00_README.md` niti RH provenance. Nastavak samo po važećem `BlueLite_Current_Status.md`.
+
 # BlueLite — UUP historical evidence corpus
 
 **Datum organizacije:** 2026-10-21  
