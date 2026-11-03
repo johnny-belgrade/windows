@@ -1,0 +1,14 @@
+{
+  "schema": "BlueLite.R007.OP05A.v1",
+  "utc": "2026-11-03T21:15:26.7713540Z",
+  "operation": "COPY_VERIFIED_V5_SOURCE_NO_ENGINE_MUTATION",
+  "source_zip": "C:\\work\\logs\\BlueLite_UUP_MAXPRE_26300x_v5_20261103T192513569Z.zip",
+  "source_sha256": "0573CE971A3C956E37A2B100E56BA30EC1E6914D42AF31606AF19441F8495658",
+  "target": "C:\\work\\PREMAX-work\\R007_26300_SourcePrecise_PreCut\\02_Drafts\\v6_OverlayRoot",
+  "count": 36,
+  "member_sha_verified": 35,
+  "source_original_v5_unchanged": true,
+  "golden_WIM_mutated": false,
+  "verdict": "SOURCE_COPY_PASS",
+  "one_next": "OP05B_ANNOTATED_SOURCE_PATCH_AND_EARLY_STRICT_TRIAD"
+}
