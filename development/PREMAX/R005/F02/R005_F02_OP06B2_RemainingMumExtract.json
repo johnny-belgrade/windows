@@ -1,0 +1,2459 @@
+{
+  "schema": "BlueLite.R005.F02.OP06B2.v1",
+  "utc": "2026-11-03T18:23:31.7870701Z",
+  "operation": "BOUNDED_EXTRACT_FOUR_PEER_MUM_FILES_FROM_FROZEN_WIM",
+  "source_wim": "C:\\work\\26300.9818-UUP-MAX_PRE_26300_v4\\install.wim",
+  "source_wim_bytes": 5736092221,
+  "dest": "C:\\work\\PREMAX-work\\R005_GoldenFreeze_RecoveryOnDemand\\01_Inputs\\F02_MUM_ReadOnlyExtract",
+  "planned_remaining_count": 4,
+  "completed_count": 4,
+  "records": [
+    {
+      "source": "\\Windows\\servicing\\Packages\\Microsoft-Windows-LanguageFeatures-Basic-en-us-Package-Wrapper~31bf3856ad364e35~amd64~~10.0.26100.1742.mum",
+      "file": "C:\\work\\PREMAX-work\\R005_GoldenFreeze_RecoveryOnDemand\\01_Inputs\\F02_MUM_ReadOnlyExtract\\Microsoft-Windows-LanguageFeatures-Basic-en-us-Package-Wrapper~31bf3856ad364e35~amd64~~10.0.26100.1742.mum",
+      "bytes": 1585,
+      "sha256": "89CE131EA5F370F30371DE3E296A6CF40289F314FB3994AEB998A9C27441210C",
+      "native_exit": 0,
+      "xml_root": "assembly",
+      "package_nodes": 2,
+      "parent_nodes": 1,
+      "important_attrs": [
+        {
+          "element": "assembly",
+          "name": "manifestVersion",
+          "value": "1.0"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1742"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "neutral"
+        },
+        {
+          "element": "package",
+          "name": "identifier",
+          "value": "KB5043080"
+        },
+        {
+          "element": "package",
+          "name": "releaseType",
+          "value": "Security Update"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "neutral"
+        },
+        {
+          "element": "installerAssembly",
+          "name": "version",
+          "value": "6.0.0.0"
+        },
+        {
+          "element": "installerAssembly",
+          "name": "language",
+          "value": "neutral"
+        },
+        {
+          "element": "installerAssembly",
+          "name": "versionScope",
+          "value": "nonSxS"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1742"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "neutral"
+        }
+      ],
+      "native_excerpt": [
+        "",
+        "Extracting file data: 1585 bytes of 1585 bytes (100%) done",
+        "Done extracting files."
+      ]
+    },
+    {
+      "source": "\\Windows\\servicing\\Packages\\Microsoft-Windows-LanguageFeatures-Basic-en-us-Package~31bf3856ad364e35~wow64~~10.0.26100.1.mum",
+      "file": "C:\\work\\PREMAX-work\\R005_GoldenFreeze_RecoveryOnDemand\\01_Inputs\\F02_MUM_ReadOnlyExtract\\Microsoft-Windows-LanguageFeatures-Basic-en-us-Package~31bf3856ad364e35~wow64~~10.0.26100.1.mum",
+      "bytes": 1761,
+      "sha256": "78550BA8AABA330C74A831C22C49107B0493C43D65852A39F3118FCB529E9192",
+      "native_exit": 0,
+      "xml_root": "assembly",
+      "package_nodes": 3,
+      "parent_nodes": 0,
+      "important_attrs": [
+        {
+          "element": "assembly",
+          "name": "manifestVersion",
+          "value": "1.0"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "neutral"
+        },
+        {
+          "element": "package",
+          "name": "identifier",
+          "value": "KB777778"
+        },
+        {
+          "element": "package",
+          "name": "releaseType",
+          "value": "OnDemand Pack"
+        },
+        {
+          "element": "OptionalFeatures",
+          "name": "SchemaVersion",
+          "value": "1.0"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "neutral"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "neutral"
+        }
+      ],
+      "native_excerpt": [
+        "",
+        "Extracting file data: 1761 bytes of 1761 bytes (100%) done",
+        "Done extracting files."
+      ]
+    },
+    {
+      "source": "\\Windows\\servicing\\Packages\\Microsoft-Windows-Client-LanguagePack-Package-Wrapper~31bf3856ad364e35~amd64~en-US~10.0.26100.1742.mum",
+      "file": "C:\\work\\PREMAX-work\\R005_GoldenFreeze_RecoveryOnDemand\\01_Inputs\\F02_MUM_ReadOnlyExtract\\Microsoft-Windows-Client-LanguagePack-Package-Wrapper~31bf3856ad364e35~amd64~en-US~10.0.26100.1742.mum",
+      "bytes": 1541,
+      "sha256": "39B6E83B49F99F0134CE1F331EF95CC9E89BB67508AEE011AA042BA0D1776064",
+      "native_exit": 0,
+      "xml_root": "assembly",
+      "package_nodes": 2,
+      "parent_nodes": 1,
+      "important_attrs": [
+        {
+          "element": "assembly",
+          "name": "manifestVersion",
+          "value": "1.0"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1742"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "package",
+          "name": "identifier",
+          "value": "KB5043080"
+        },
+        {
+          "element": "package",
+          "name": "releaseType",
+          "value": "Security Update"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "installerAssembly",
+          "name": "version",
+          "value": "6.0.0.0"
+        },
+        {
+          "element": "installerAssembly",
+          "name": "language",
+          "value": "neutral"
+        },
+        {
+          "element": "installerAssembly",
+          "name": "versionScope",
+          "value": "nonSxS"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1742"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        }
+      ],
+      "native_excerpt": [
+        "",
+        "Extracting file data: 1541 bytes of 1541 bytes (100%) done",
+        "Done extracting files."
+      ]
+    },
+    {
+      "source": "\\Windows\\servicing\\Packages\\Microsoft-Windows-Client-LanguagePack-Package~31bf3856ad364e35~amd64~en-US~10.0.26100.1742.mum",
+      "file": "C:\\work\\PREMAX-work\\R005_GoldenFreeze_RecoveryOnDemand\\01_Inputs\\F02_MUM_ReadOnlyExtract\\Microsoft-Windows-Client-LanguagePack-Package~31bf3856ad364e35~amd64~en-US~10.0.26100.1742.mum",
+      "bytes": 91841,
+      "sha256": "E3B5B5A5A1AD25BCDBE50DFCA08C0320F024F813D0552C92B8B531489F8394BE",
+      "native_exit": 0,
+      "xml_root": "assembly",
+      "package_nodes": 206,
+      "parent_nodes": 1,
+      "important_attrs": [
+        {
+          "element": "assembly",
+          "name": "manifestVersion",
+          "value": "1.0"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1742"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "package",
+          "name": "identifier",
+          "value": "Language Pack"
+        },
+        {
+          "element": "package",
+          "name": "releaseType",
+          "value": "Language Pack"
+        },
+        {
+          "element": "OptionalFeatures",
+          "name": "SchemaVersion",
+          "value": "1.0"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1742"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "neutral"
+        },
+        {
+          "element": "capabilityIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1742"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1742"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1742"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1742"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1742"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1742"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1742"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1742"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1742"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1742"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1742"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1742"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1742"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1742"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1742"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1591"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1591"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "versionScope",
+          "value": "nonSxS"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "versionScope",
+          "value": "nonSxS"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "versionScope",
+          "value": "nonSxS"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "versionScope",
+          "value": "nonSxS"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "versionScope",
+          "value": "nonSxS"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1591"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1591"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1742"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1591"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1591"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1000"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1591"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "versionScope",
+          "value": "nonSxS"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1591"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1591"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1301"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1301"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1301"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1301"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "versionScope",
+          "value": "nonSxS"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "versionScope",
+          "value": "nonSxS"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "versionScope",
+          "value": "nonSxS"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "versionScope",
+          "value": "nonSxS"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "versionScope",
+          "value": "nonSxS"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "versionScope",
+          "value": "nonSxS"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "versionScope",
+          "value": "nonSxS"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "versionScope",
+          "value": "nonSxS"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "versionScope",
+          "value": "nonSxS"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "versionScope",
+          "value": "nonSxS"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "versionScope",
+          "value": "nonSxS"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "versionScope",
+          "value": "nonSxS"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "versionScope",
+          "value": "nonSxS"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1591"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1591"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1591"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1591"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "11.0.26100.1742"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1591"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1000"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1591"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1591"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.712"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1591"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1591"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1591"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1591"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1000"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1000"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1301"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1301"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1742"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1742"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1301"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1301"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1742"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1742"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1591"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1591"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "versionScope",
+          "value": "nonSxS"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "version",
+          "value": "10.0.26100.1"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "language",
+          "value": "en-US"
+        },
+        {
+          "element": "assemblyIdentity",
+          "name": "versionScope",
+          "value": "nonSxS"
+        }
+      ],
+      "native_excerpt": [
+        "",
+        "Extracting file data: 32 KiB of 89 KiB (35%) done",
+        "Extracting file data: 64 KiB of 89 KiB (71%) done",
+        "Extracting file data: 89 KiB of 89 KiB (100%) done",
+        "Done extracting files."
+      ]
+    }
+  ],
+  "dest_file_count": 5,
+  "error": "",
+  "source_wim_mutated": false,
+  "verdict": "EXTRACT_PEER_MUMS_PASS",
+  "next": "fresh process SHA/XML verify all five, then compare package permanence and CBS owner"
+}
