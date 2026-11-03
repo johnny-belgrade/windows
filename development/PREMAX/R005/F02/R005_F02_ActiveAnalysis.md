@@ -1,4 +1,4 @@
-# BlueLite R005 F02 — aktivna analiza i plan (verzija 00)
+# BlueLite R005 F02 — aktivna analiza i plan (verzija 01)
 Datum: 2026-11-03. Master v6.3.4 §0L; korisnik je odobrio F02 read-only analizu uz pojedinačni dokazni upis i verifikaciju.
 Cilj: originalni 26300.9818 MAX_PRE Language.Basic en-US DISM odbijanje (-2146498523 / 0x800F0825), precizan capability/CBS owner, pre/post stanje, stvarne zavisnosti, status naredne korekcije. Nikada ne mešati source evidence, inference i istorijsku 26200 potvrdu.
 Freeze: GOLDEN root C:\work\26300.9818-UUP-MAX_PRE_26300_v4; WIM SHA256 3D606513D9C1D2B157AAFD6925FF1655C9A48520CE5D4219AF2ED654C82753E4; ISO SHA256 570BD12E9DBBBB51CACFB3B9A403326AA5000FAC1D2F7E44482EFCC154CB3736.
@@ -9,5 +9,5 @@ Korak F02-03: pregledati UUP-history/RH06/RH08 kanonske stare Language.Basic/0x8
 Korak F02-04: pročitati read-only završni WIM sadržaj oko jezika/servicing-a bez mount-a; razdvojiti osnovni WIM listing od stvarne offline CBS vlasničke mape i ne tvrditi nedokazano.
 Završni korak: klasifikacija i v5 predlog HOLD/PASS, jedan poslednji ZIP sa manifestom svih receipts u C:\work\logs, nezavisna provera, lokalni R005 CycleManifest+Registry, aktivni Current jednom po materijalnom F02 bloku, GitHub Source/Session pointers i nezavisni readback. Nijedna korekcija ne može se izvršiti bez posebnog odobrenja.
 **Trenutni dokaz:** R004 OP05 navodi upozorenje 0x800F0825 i 424 capability redova pre i posle, 18 promena stanja. Ovo nije dokaz konkretnog stanja Language.Basic; precizan poststate tek F02-01.
-**Trenutni status:** PLAN_RECORDED / F02_01_NOT_RUN.
-**JEDAN NAREDNI KORAK:** F02-01 source-bound native ZIP, capability pre/post i log.
+**Trenutni status:** F02-01 ATTEMPT 1 HOLD (tooling only): PowerShell automatska `$Matches` promenljiva (case-insensitive) pregazila je našu `$matches` List kolekciju i Add() je odbijen; R004 original ZIP samo čitan, WIM/ISO netaknuti. Poseban immutable HOLD `05_Evidence/R005_F02_OP01_Attempt1_HOLD.json`, nezavisni fresh-process PASS, GitHub `development/PREMAX/R005/F02/R005_F02_OP01_Attempt1_HOLD.json` sa readback PASS. Plan: ispraviti List promenljivu na `$foundLines` i ponoviti F02-01 bez menjanja izvora.
+**JEDAN NAREDNI KORAK:** Ponoviti F02-01 (attempt 2) sa popravljenom report promenljivom; zatim opet nezavisna provera.
