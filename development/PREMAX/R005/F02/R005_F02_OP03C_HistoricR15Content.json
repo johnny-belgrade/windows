@@ -1,0 +1,83 @@
+{
+  "schema": "BlueLite.R005.F02.OP03C.v1",
+  "utc": "2026-11-03T18:12:11.6050280Z",
+  "operation": "READ_ONLY_RH06_R15_SOURCE_HASH_AND_CONTENT_EVIDENCE",
+  "files": [
+    {
+      "name": "04_Analyses\\Unresolved\\CrossPhase\\BlueLite_CertifiedGreenCapabilityPatterns__33B4EED75934.txt",
+      "path": "C:\\work\\UUP-history\\04_Analyses\\Unresolved\\CrossPhase\\BlueLite_CertifiedGreenCapabilityPatterns__33B4EED75934.txt",
+      "sha256": "33B4EED75934756932CC4FE634C5D945491FEE623338DD56B3CFE78BA422CB28",
+      "bytes": 246,
+      "line_count": 6,
+      "matches": [
+        {
+          "line": 5,
+          "text": "Language.Basic~~~en-US~0.0.1.0"
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "name": "04_Analyses\\Unresolved\\CrossPhase\\BlueLite_CapabilityRemovePatterns__8D372A1DF739.txt",
+      "path": "C:\\work\\UUP-history\\04_Analyses\\Unresolved\\CrossPhase\\BlueLite_CapabilityRemovePatterns__8D372A1DF739.txt",
+      "sha256": "8D372A1DF7394E64F5B035ADA0C27EB4FA8803FF986335FC78E28B5DBF3FEA78",
+      "bytes": 1516,
+      "line_count": 46,
+      "matches": [
+        {
+          "line": 45,
+          "text": "Language.Basic~~~en-US~0.0.1.0"
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "name": "04_Analyses\\Unresolved\\CrossPhase\\R7-STRICT-CAPABILITY-REVIEW__8B19F7706283.txt",
+      "path": "C:\\work\\UUP-history\\04_Analyses\\Unresolved\\CrossPhase\\R7-STRICT-CAPABILITY-REVIEW__8B19F7706283.txt",
+      "sha256": "8B19F77062838D827DEE8600F9BCD1EEECB7F954ED19D1D247E57D7E8AD56398",
+      "bytes": 1199,
+      "line_count": 18,
+      "matches": [
+        {
+          "line": 6,
+          "text": "while only 5 certified GREEN capabilities had strict post-state checking."
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "name": "04_Analyses\\Unresolved\\CrossPhase\\R5-NATIVE-GREEN-REVIEW__1E36989FBACB.txt",
+      "path": "C:\\work\\UUP-history\\04_Analyses\\Unresolved\\CrossPhase\\R5-NATIVE-GREEN-REVIEW__1E36989FBACB.txt",
+      "sha256": "1E36989FBACB6ECD4B74DDFCEE2F73FDBF164494C9D93AF8D181272147C15602",
+      "bytes": 2022,
+      "line_count": 29,
+      "matches": [
+        {
+          "line": 15,
+          "text": "   DirectX.Configuration.Database, LA57, en-US Language.Basic, XPS Viewer)"
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "name": "02_Scripts\\Unresolved\\CrossPhase\\BlueLite_PreDebloatWim__79145AE9BABA.ps1",
+      "path": "C:\\work\\UUP-history\\02_Scripts\\Unresolved\\CrossPhase\\BlueLite_PreDebloatWim__79145AE9BABA.ps1",
+      "sha256": "79145AE9BABA91D66CBC798F6DCB2B64ABDBA972B643B60AF5DDE9864FD86098",
+      "bytes": 140876,
+      "line_count": 1966,
+      "matches": [
+        {
+          "line": 1620,
+          "text": "        if ($selector -cnotin $capPatterns) { throw \"R5 certified GREEN selector missing in capability removal input: $selector\" }"
+        }
+      ],
+      "match_count": 1
+    }
+  ],
+  "file_count": 5,
+  "historical_master_claim": "R115 native 26200 Language.Basic 0x800F0825 fail-closed (Master v6.3.4 section 10.3 historical tier); direct R115 log not located in canonical RH06 file names",
+  "first_party_outcome": "canonical text checked only, no execution",
+  "golden_mutation": false,
+  "verdict": "HISTORIC_CONTENT_IN_SCOPE",
+  "next": "interpret HRESULT from official Microsoft docs, then current WIM read-only CBS MUM ownership"
+}
