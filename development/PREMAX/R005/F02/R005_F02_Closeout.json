@@ -1,0 +1,64 @@
+{
+  "schema": "BlueLite.R005.F02.Closeout.v1",
+  "utc": "2026-11-03T18:48:18.7755478Z",
+  "stage": "F02_ANALYSIS_COMPLETE",
+  "status": "READ_ONLY_PROOF_PASS__LANGUAGE_BASIC_NATIVE_REFUSAL__CBS_OWNER_DEPENDENCY_HOLD",
+  "archive": "C:\\work\\logs\\BlueLite_R005_F02_20261103T184051802Z_d004eee2.zip",
+  "archive_sha256": "C0B2EB32E65E3F127CDB9619E786EF3344C906308DEB52D21DC8A359131A8184",
+  "archive_bytes": 47001,
+  "zipped_original_member_hash_verified": 22,
+  "zip_count_for_F02_in_logs": 1,
+  "checkpoints": [
+    {
+      "name": "CycleManifest",
+      "path": "C:\\work\\PREMAX-work\\R005_GoldenFreeze_RecoveryOnDemand\\CycleManifest.json",
+      "bytes": 4891,
+      "sha256": "2982D8EFDA6FC6EED559BE7A97F3C02470800AD53ED911FC5AB795F253F71266"
+    },
+    {
+      "name": "CycleRegistry",
+      "path": "C:\\work\\PREMAX-work\\99_Index\\CycleRegistry.csv",
+      "bytes": 2057,
+      "sha256": "81400B80713B4BC5EA61628008042CA0971235B76AB8B62928CABBB2D51B4F42"
+    },
+    {
+      "name": "PREMAX_README",
+      "path": "C:\\work\\PREMAX-work\\00_README.md",
+      "bytes": 23866,
+      "sha256": "276E10487E82373D4DC09E2422276B4701D23B72BE7F2009789113BAF4E1034B"
+    },
+    {
+      "name": "F02_ACTIVE_PLAN_V16",
+      "path": "C:\\work\\PREMAX-work\\R005_GoldenFreeze_RecoveryOnDemand\\02_Analysis\\R005_F02_ActiveAnalysis.md",
+      "bytes": 15844,
+      "sha256": "4C6B2813BF829EFDBFF9F5B8EA1EB020694FB7A32AAB0371507464DD43B2715E"
+    },
+    {
+      "name": "F02_PROOF_AND_DISPOSITION",
+      "path": "C:\\work\\PREMAX-work\\R005_GoldenFreeze_RecoveryOnDemand\\02_Analysis\\R005_F02_LanguageBasic_26300_ProofAndDisposition.md",
+      "bytes": 11179,
+      "sha256": "D123BFAAD06300487E32F78E2D73AFD319F2965D300EBC2855BEBCA70C9A5D66"
+    },
+    {
+      "name": "F02_ARCHIVE_QA",
+      "path": "C:\\work\\PREMAX-work\\R005_GoldenFreeze_RecoveryOnDemand\\05_Evidence\\R005_F02_ArchiveQA.json",
+      "bytes": 784,
+      "sha256": "BAFF1C4F36F9B3913DDD2FF289239263A4FDBC271902EF7042562C46B0DD398E"
+    },
+    {
+      "name": "F02_GOLDEN_MEDIA_FULL_HASH_QA",
+      "path": "C:\\work\\PREMAX-work\\R005_GoldenFreeze_RecoveryOnDemand\\05_Evidence\\R005_F02_GoldenMediaUnchangedQA.json",
+      "bytes": 1043,
+      "sha256": "EBFCCD070C74F92EF451EA5AAA544B2976682C01B438AE4C6A483C28FB31A149"
+    }
+  ],
+  "checkpoint_count": 7,
+  "golden_WIM_full_SHA_unchanged": true,
+  "golden_ISO_full_SHA_unchanged": true,
+  "F02_image_mutation_commands_run": 0,
+  "original_R004_archive_intact": true,
+  "f01_owner_dependency_still_open": true,
+  "f02_cbs_owner_dependency_still_open": true,
+  "one_next": "F03_WMIC_SUPERSEDED_WOW64_ENUS_INVALID_SELECTORS_READ_ONLY",
+  "verdict": "PASS"
+}
