@@ -1,0 +1,58 @@
+{
+  "schema": "BlueLite.R005.F01.OP02F.v1",
+  "utc": "2026-11-03T17:41:37.7134072Z",
+  "operation": "CORRECTED_READONLY_SOURCE_VARIANT_DIFF",
+  "sources": [
+    {
+      "path": "C:\\work\\UUP-history\\02_Scripts\\Unresolved\\UUP\\BlueLite_DesktopAppInstaller__C77102063D4C.ps1",
+      "sha256": "C77102063D4CCA879F65184ABE7BD07EDF566442DE2C09FBE88FABD32B41702E"
+    },
+    {
+      "path": "C:\\work\\UUP-history\\02_Scripts\\Unresolved\\UUP\\BlueLite_DesktopAppInstaller__C6F11A1811AE.ps1",
+      "sha256": "C6F11A1811AE8DBF5973D84CD1FB397D63A9E32EFE9760644811D8B4B7E2D162"
+    },
+    {
+      "path": "C:\\work\\UUP-history\\02_Scripts\\Unresolved\\UUP\\BlueLite_DesktopAppInstaller__0D7711DCDCDB.ps1",
+      "sha256": "0D7711DCDCDB28ADD075321E8443E7277DB772B021E1C6BB62B04962A87F645C"
+    }
+  ],
+  "line_counts": [
+    340,
+    359,
+    361
+  ],
+  "pair_deltas": [
+    {
+      "left": "BlueLite_DesktopAppInstaller__C77102063D4C.ps1",
+      "right": "BlueLite_DesktopAppInstaller__C6F11A1811AE.ps1",
+      "left_lines": 340,
+      "right_lines": 359,
+      "first_changed_line": 25,
+      "left_at_first": "function Get-BLDAIRegState {",
+      "right_at_first": "function Get-BLDAIChildKeyCount {",
+      "unordered_lines_differ": 25,
+      "left_child_parser": 0,
+      "right_child_parser": 1,
+      "left_link_probe": 3,
+      "right_link_probe": 3
+    },
+    {
+      "left": "BlueLite_DesktopAppInstaller__C6F11A1811AE.ps1",
+      "right": "BlueLite_DesktopAppInstaller__0D7711DCDCDB.ps1",
+      "left_lines": 359,
+      "right_lines": 361,
+      "first_changed_line": 25,
+      "left_at_first": "function Get-BLDAIChildKeyCount {",
+      "right_at_first": "# Use native registry APIs for canonical offline SOFTWARE topology.",
+      "unordered_lines_differ": 64,
+      "left_child_parser": 1,
+      "right_child_parser": 0,
+      "left_link_probe": 3,
+      "right_link_probe": 3
+    }
+  ],
+  "supersedes": "OP02E_HOLD_BAD_ARRAY_UNROLL",
+  "image_mutation": false,
+  "verdict": "SOURCE_DIFF_PASS_NOT_PRODUCTION_RULE",
+  "one_next": "F01 classify 26300 current AppInstaller owner and hardlink conditions as unproven"
+}
