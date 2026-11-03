@@ -1,0 +1,31 @@
+{
+  "schema": "BlueLite.R005.F02.OP05.v1",
+  "utc": "2026-11-03T18:16:18.8810310Z",
+  "operation": "WIMLIB_INDEX1_SERVICING_PACKAGES_READONLY_DIRECTORY",
+  "wim": "C:\\work\\26300.9818-UUP-MAX_PRE_26300_v4\\install.wim",
+  "wim_bytes": 5736092221,
+  "wim_sha256_from_previously_proven_R005_freeze": "3D606513D9C1D2B157AAFD6925FF1655C9A48520CE5D4219AF2ED654C82753E4",
+  "index": 1,
+  "wimlib_executable": "C:\\work\\26300.9818-UUP-MAX_PRE_26300_v4\\bin\\wimlib-imagex.exe",
+  "wimlib_sha256": "01168A00FFC84EBFA1BD3B9C841214ED114B9AE4E9B23D555C0686448FD56BDE",
+  "exit_code": 0,
+  "total_listing_lines": 4629,
+  "basic_lines": [
+    "\\Windows\\servicing\\Packages\\Microsoft-Windows-LanguageFeatures-Basic-en-us-Package-Wrapper~31bf3856ad364e35~amd64~~10.0.26100.1742.cat",
+    "\\Windows\\servicing\\Packages\\Microsoft-Windows-LanguageFeatures-Basic-en-us-Package-Wrapper~31bf3856ad364e35~amd64~~10.0.26100.1742.mum",
+    "\\Windows\\servicing\\Packages\\Microsoft-Windows-LanguageFeatures-Basic-en-us-Package~31bf3856ad364e35~amd64~~10.0.26100.1742.cat",
+    "\\Windows\\servicing\\Packages\\Microsoft-Windows-LanguageFeatures-Basic-en-us-Package~31bf3856ad364e35~amd64~~10.0.26100.1742.mum",
+    "\\Windows\\servicing\\Packages\\Microsoft-Windows-LanguageFeatures-Basic-en-us-Package~31bf3856ad364e35~wow64~~10.0.26100.1.cat",
+    "\\Windows\\servicing\\Packages\\Microsoft-Windows-LanguageFeatures-Basic-en-us-Package~31bf3856ad364e35~wow64~~10.0.26100.1.mum"
+  ],
+  "client_enUS_lines": [
+    "\\Windows\\servicing\\Packages\\Microsoft-Windows-Client-LanguagePack-Package-Wrapper~31bf3856ad364e35~amd64~en-US~10.0.26100.1742.cat",
+    "\\Windows\\servicing\\Packages\\Microsoft-Windows-Client-LanguagePack-Package-Wrapper~31bf3856ad364e35~amd64~en-US~10.0.26100.1742.mum",
+    "\\Windows\\servicing\\Packages\\Microsoft-Windows-Client-LanguagePack-Package~31bf3856ad364e35~amd64~en-US~10.0.26100.1742.cat",
+    "\\Windows\\servicing\\Packages\\Microsoft-Windows-Client-LanguagePack-Package~31bf3856ad364e35~amd64~en-US~10.0.26100.1742.mum"
+  ],
+  "other_language_features_lines": [],
+  "scope": "READONLY_NO_MOUNT_NO_EXTRACT",
+  "verdict": "WIM_BASIC_MUM_NAMES_OBSERVED",
+  "next": "independently re-enumerate WIM and inspect exact MUM XML as bounded metadata extraction only"
+}
