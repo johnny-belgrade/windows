@@ -1,0 +1,11 @@
+{
+  "schema": "BlueLite.R005.F02.Attempt.v1",
+  "operation": "F02-07 MUM XML relationships",
+  "attempt": 1,
+  "verdict": "HOLD_POWERSHELL_PARSER",
+  "error": "PowerShell syntax `@(foreach (...) {...} | Sort-Object -Unique)` is invalid: empty pipe element. Correct by collecting foreach array first then separately piping to Sort-Object.",
+  "where": "PS parser before any script execution, no output receipt or WIM mutation",
+  "golden_image_mutated": false,
+  "fix": "split `$release=@(foreach(...))` and `$release=@($release|Sort-Object -Unique)`",
+  "one_next": "verify HOLD receipt then rerun F02-07 analysis"
+}
