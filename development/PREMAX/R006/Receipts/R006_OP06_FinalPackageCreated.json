@@ -1,0 +1,17 @@
+{
+  "schema": "BlueLite.R006.OP06.v1",
+  "utc": "2026-11-03T19:25:13.6039200Z",
+  "operation": "ASSEMBLE_ONE_OPERATOR_PORTABLE_V5_ZIP_FROM_VERIFIED_36_SOURCE_FILES",
+  "archive": "C:\\work\\logs\\BlueLite_UUP_MAXPRE_26300x_v5_20261103T192513569Z.zip",
+  "archive_sha256": "0573CE971A3C956E37A2B100E56BA30EC1E6914D42AF31606AF19441F8495658",
+  "archive_bytes": 57801,
+  "source_root": "C:\\work\\PREMAX-work\\R006_26300_MAXPRE_v5_Package\\02_Drafts\\PackageRoot",
+  "member_count": 36,
+  "original_v4_engine_unchanged": true,
+  "native_positive_preflight_pass": true,
+  "native_negative_manifest_reject_pass": true,
+  "native_negative_26200_reject_pass": true,
+  "golden_image_changed": false,
+  "verdict": "ASSEMBLED_AWAIT_INDEPENDENT_ZIP_MEMBER_SHA_QA",
+  "next": "OP07 separate process member-byte hashes and SHA manifest verified, then Git publish"
+}
