@@ -1,0 +1,14 @@
+{
+  "schema": "BlueLite.R007.OP05B.Attempt2.v1",
+  "utc": "2026-11-03T21:23:19.4216139Z",
+  "operation": "SOURCE_DELTA_FIRST_NATIVE_APPLY_PREWRITE_ANCHOR_GATE",
+  "verdict": "HOLD_PREWRITE",
+  "error": "Preflight launcher line has ONE leading space; code incorrectly required TWO",
+  "source": "C:\\work\\PREMAX-work\\R007_26300_SourcePrecise_PreCut\\02_Drafts\\R007_ApplyV6_SourceDelta.ps1",
+  "source_sha256": "BCDC187D15239974C2E22607C2C5C7931AD70BE528B2E3910F0D2780778EF377",
+  "target": "C:\\work\\PREMAX-work\\R007_26300_SourcePrecise_PreCut\\02_Drafts\\v6_OverlayRoot\\BlueLite\\BlueLite_Preflight.ps1",
+  "target_sha256": "294D75CFB78CCD4E5C5B5ACBA094AD967FBD9D7F888569B2907070A1F48DF63B",
+  "candidate_mutations_executed": 0,
+  "golden_image_modified": false,
+  "fix": "change exact anchor to one leading space and independently rerun AST and source SHA before applying"
+}
