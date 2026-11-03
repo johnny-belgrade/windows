@@ -1,0 +1,177 @@
+{
+  "schema": "BlueLite.R005.F02.OP01.v1",
+  "operation": "NATIVE_26300_9818_LANGUAGE_BASIC_EXACT_STATE_AND_REFUSAL",
+  "source_zip": "C:\\work\\26300.9818-UUP-MAX_PRE_26300_v4\\BlueLite_EVIDENCE_20261103T160115024Z.zip",
+  "source_zip_sha256": "D64DAD834847DE4CD4FA577D51ED25158085B29D3A81BF073697B673A14D3905",
+  "utc": "2026-11-03T18:03:45.8103302Z",
+  "capability_catalog_before": 424,
+  "capability_catalog_after": 424,
+  "all_language_capabilities_before": 337,
+  "all_language_capabilities_after": 337,
+  "target_name": "Language.Basic~~~en-US~0.0.1.0",
+  "target_before": [
+    {
+      "Name": "Language.Basic~~~en-US~0.0.1.0",
+      "State": "4"
+    }
+  ],
+  "target_after": [
+    {
+      "Name": "Language.Basic~~~en-US~0.0.1.0",
+      "State": "4"
+    }
+  ],
+  "all_enUS_language_before": [
+    {
+      "Name": "Language.Basic~~~en-US~0.0.1.0",
+      "State": "4"
+    },
+    {
+      "Name": "Language.Handwriting~~~en-US~0.0.1.0",
+      "State": "4"
+    },
+    {
+      "Name": "Language.OCR~~~en-US~0.0.1.0",
+      "State": "4"
+    },
+    {
+      "Name": "Language.Speech~~~en-US~0.0.1.0",
+      "State": "4"
+    },
+    {
+      "Name": "Language.TextToSpeech~~~en-US~0.0.1.0",
+      "State": "4"
+    }
+  ],
+  "all_enUS_language_after": [
+    {
+      "Name": "Language.Basic~~~en-US~0.0.1.0",
+      "State": "4"
+    },
+    {
+      "Name": "Language.Handwriting~~~en-US~0.0.1.0",
+      "State": "0"
+    },
+    {
+      "Name": "Language.OCR~~~en-US~0.0.1.0",
+      "State": "0"
+    },
+    {
+      "Name": "Language.Speech~~~en-US~0.0.1.0",
+      "State": "0"
+    },
+    {
+      "Name": "Language.TextToSpeech~~~en-US~0.0.1.0",
+      "State": "0"
+    }
+  ],
+  "language_CBS_before": [
+    {
+      "Name": "Microsoft-Windows-Client-LanguagePack-Package~31bf3856ad364e35~amd64~en-US~10.0.26100.1",
+      "State": "6"
+    },
+    {
+      "Name": "Microsoft-Windows-Client-LanguagePack-Package~31bf3856ad364e35~amd64~en-US~10.0.26100.1742",
+      "State": "2"
+    },
+    {
+      "Name": "Microsoft-Windows-Client-LanguagePack-Package~31bf3856ad364e35~amd64~en-US~10.0.26100.9818",
+      "State": "4"
+    },
+    {
+      "Name": "Microsoft-Windows-LanguageFeatures-Basic-en-us-Package~31bf3856ad364e35~amd64~~10.0.26100.1",
+      "State": "6"
+    },
+    {
+      "Name": "Microsoft-Windows-LanguageFeatures-Basic-en-us-Package~31bf3856ad364e35~amd64~~10.0.26100.1742",
+      "State": "2"
+    },
+    {
+      "Name": "Microsoft-Windows-LanguageFeatures-Basic-en-us-Package~31bf3856ad364e35~amd64~~10.0.26100.9818",
+      "State": "4"
+    },
+    {
+      "Name": "Microsoft-Windows-LanguageFeatures-Handwriting-en-us-Package~31bf3856ad364e35~amd64~~10.0.26100.1",
+      "State": "6"
+    },
+    {
+      "Name": "Microsoft-Windows-LanguageFeatures-Handwriting-en-us-Package~31bf3856ad364e35~amd64~~10.0.26100.1742",
+      "State": "2"
+    },
+    {
+      "Name": "Microsoft-Windows-LanguageFeatures-Handwriting-en-us-Package~31bf3856ad364e35~amd64~~10.0.26100.9818",
+      "State": "4"
+    },
+    {
+      "Name": "Microsoft-Windows-LanguageFeatures-OCR-en-us-Package~31bf3856ad364e35~amd64~~10.0.26100.1",
+      "State": "6"
+    },
+    {
+      "Name": "Microsoft-Windows-LanguageFeatures-OCR-en-us-Package~31bf3856ad364e35~amd64~~10.0.26100.1742",
+      "State": "2"
+    },
+    {
+      "Name": "Microsoft-Windows-LanguageFeatures-OCR-en-us-Package~31bf3856ad364e35~amd64~~10.0.26100.9818",
+      "State": "4"
+    },
+    {
+      "Name": "Microsoft-Windows-LanguageFeatures-Speech-en-us-Package~31bf3856ad364e35~amd64~~10.0.26100.1",
+      "State": "6"
+    },
+    {
+      "Name": "Microsoft-Windows-LanguageFeatures-Speech-en-us-Package~31bf3856ad364e35~amd64~~10.0.26100.1742",
+      "State": "2"
+    },
+    {
+      "Name": "Microsoft-Windows-LanguageFeatures-Speech-en-us-Package~31bf3856ad364e35~amd64~~10.0.26100.9818",
+      "State": "4"
+    },
+    {
+      "Name": "Microsoft-Windows-LanguageFeatures-TextToSpeech-en-us-Package~31bf3856ad364e35~amd64~~10.0.26100.1",
+      "State": "6"
+    },
+    {
+      "Name": "Microsoft-Windows-LanguageFeatures-TextToSpeech-en-us-Package~31bf3856ad364e35~amd64~~10.0.26100.1742",
+      "State": "2"
+    },
+    {
+      "Name": "Microsoft-Windows-LanguageFeatures-TextToSpeech-en-us-Package~31bf3856ad364e35~amd64~~10.0.26100.9818",
+      "State": "4"
+    }
+  ],
+  "language_CBS_after": [
+    {
+      "Name": "Microsoft-Windows-Client-LanguagePack-Package~31bf3856ad364e35~amd64~en-US~10.0.26100.1742",
+      "State": "2"
+    },
+    {
+      "Name": "Microsoft-Windows-Client-LanguagePack-Package~31bf3856ad364e35~amd64~en-US~10.0.26100.9818",
+      "State": "4"
+    },
+    {
+      "Name": "Microsoft-Windows-LanguageFeatures-Basic-en-us-Package~31bf3856ad364e35~amd64~~10.0.26100.1742",
+      "State": "2"
+    },
+    {
+      "Name": "Microsoft-Windows-LanguageFeatures-Basic-en-us-Package~31bf3856ad364e35~amd64~~10.0.26100.9818",
+      "State": "4"
+    }
+  ],
+  "matching_native_log_lines": [
+    {
+      "line": 67,
+      "text": "CAPABILITY SKIP: Language.Basic~~~en-US~0.0.1.0 :: Remove capability Language.Basic~~~en-US~0.0.1.0 failed with DISM exit code -2146498523",
+      "context": [
+        "65: APPX STAGING RESIDUE: Microsoft.DesktopAppInstaller :: Microsoft.DesktopAppInstaller_2024.401.617.0_neutral_~_8wekyb3d8bbwe :: Removal failed. Please contact your software vendor.",
+        "66: ",
+        "67: CAPABILITY SKIP: Language.Basic~~~en-US~0.0.1.0 :: Remove capability Language.Basic~~~en-US~0.0.1.0 failed with DISM exit code -2146498523",
+        "68: SUPERSEDED PACKAGE SKIP: Microsoft-Windows-WMIC-FoD-Package~31bf3856ad364e35~wow64~~10.0.26100.1 :: The specified package is not valid Windows package.",
+        "69: "
+      ]
+    }
+  ],
+  "native_log_count": 79,
+  "verdict": "READ_ONLY_NATIVE_SOURCE_OBSERVED",
+  "image_modified": false,
+  "next": "F02-02 exact v4 code/pattern and failure branch"
+}
