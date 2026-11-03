@@ -1,0 +1,13 @@
+{
+  "schema": "BlueLite.R005.F01.ArchiveQA.v1",
+  "utc": "2026-11-03T17:45:54.1840407Z",
+  "operation": "INDEPENDENT_ARCHIVE_ALL_10_SHA256_VERIFY",
+  "archive": "C:\\work\\logs\\BlueLite_R005_F01_20261103T174529660Z.zip",
+  "archive_sha256": "72163039BA82E3635830BCFB624D5B74641976E2D280ADB8E67C97CE4CE55B2F",
+  "verified_data_members": 10,
+  "manifest": "MANIFEST.sha256",
+  "verdict": "PASS",
+  "source_mutation": false,
+  "F01_status": "4_CURRENT_WIM_VARIANTS_MATCH_SHAPE_HARDLINK_AND_REGISTRY_OWNER_UNPROVEN",
+  "next": "F02_LANGUAGE_BASIC_READ_ONLY"
+}
