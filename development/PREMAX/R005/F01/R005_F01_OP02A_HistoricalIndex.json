@@ -1,0 +1,42 @@
+{
+  "schema": "BlueLite.R005.F01.OP02A.v1",
+  "utc": "2026-11-03T17:33:57.7006474Z",
+  "operation": "HISTORIC_CANONICAL_SOURCE_INDEX_ONLY",
+  "source": "C:\\work\\UUP-history\\99_Index\\RH06_Final_ProvenanceMapping.csv",
+  "source_sha256": "AE45B2A4FF35A063B72DDAA9A77B7F0994B8AEDEE5A5C9C560F9C6AE3A187D2D",
+  "rows": 2416,
+  "matched_rows": 4,
+  "data": [
+    {
+      "source_rel": "UUP_R13_Review\\BlueLite\\BlueLite_Profile.ini",
+      "final_rel": "05_Manifests\\Unresolved\\UUP\\BlueLite_Profile__2D5C218CE340.ini",
+      "recorded_sha256": "2D5C218CE340F645A4AD99FF78C903F2D10AE8D7F6E3201B82E8609E146C7EF2",
+      "stage": "UUP",
+      "category": "05_Manifests"
+    },
+    {
+      "source_rel": "UUP_V3\\BlueLite_V3_1_C33_R2_Candidate\\BlueLite\\SourceLayer\\BlueLite_DesktopAppInstaller.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\UUP\\BlueLite_DesktopAppInstaller__C77102063D4C.ps1",
+      "recorded_sha256": "C77102063D4CCA879F65184ABE7BD07EDF566442DE2C09FBE88FABD32B41702E",
+      "stage": "UUP",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_V3\\BlueLite_V3_1_C33_R3_R2_Candidate\\BlueLite\\SourceLayer\\BlueLite_DesktopAppInstaller.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\UUP\\BlueLite_DesktopAppInstaller__C6F11A1811AE.ps1",
+      "recorded_sha256": "C6F11A1811AE8DBF5973D84CD1FB397D63A9E32EFE9760644811D8B4B7E2D162",
+      "stage": "UUP",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_V3\\BlueLite_V3_1_C33_R3_R4_Candidate\\BlueLite\\SourceLayer\\BlueLite_DesktopAppInstaller.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\UUP\\BlueLite_DesktopAppInstaller__0D7711DCDCDB.ps1",
+      "recorded_sha256": "0D7711DCDCDB28ADD075321E8443E7277DB772B021E1C6BB62B04962A87F645C",
+      "stage": "UUP",
+      "category": "02_Scripts"
+    }
+  ],
+  "execution": "READ_ONLY",
+  "status": "INDEX_HITS_NOT_RUNTIME_PROOF",
+  "one_next": "F01 exact historical matching source + v4 script and native log inspection"
+}
