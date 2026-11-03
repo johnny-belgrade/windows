@@ -1,0 +1,41 @@
+{
+  "schema": "BlueLite.R006.CycleManifest.v1",
+  "cycle_id": "R006_26300_MAXPRE_v5_Package",
+  "utc": "2026-11-03T19:37:09.0615615Z",
+  "source_build_family": "26300.x",
+  "source_arch": "amd64",
+  "source_language": "en-us",
+  "source_edition": "professional",
+  "known_native_build": "26300.9818",
+  "original_operator_UUP_zip_SHA256": "8117C725C1EF9C8F5C73C5A22887DB38C222C373ED601C94D24DC9109AFEDEF8",
+  "original_proven_v4_overlay_SHA256": "0CBA819F2F1A88659DD884633920E6D3F8FFF9C7E1AE8D3C89CC724183C88922",
+  "source_proven_v4_engine_files_unchanged": 29,
+  "v5_changed_policy_document_manifest_files": 7,
+  "complete_operator_distribution_ZIP": "C:\\work\\logs\\BlueLite_UUP_MAXPRE_26300x_v5_20261103T192513569Z.zip",
+  "ZIP_SHA256": "0573CE971A3C956E37A2B100E56BA30EC1E6914D42AF31606AF19441F8495658",
+  "ZIP_members": 36,
+  "ZIP_manifest_SHA256_member_verification": 35,
+  "PS7_AST_tested": 14,
+  "native_UUP_original_vendor_Preflight": "PASS",
+  "native_negative_manifest_tamper": "REJECT_PASS",
+  "native_negative_wrong_build_26200": "REJECT_PASS",
+  "official_GitHub_binary_commit": "ecb330a30117b626ce9ead685ce6c38342f292c6",
+  "official_GitHub_blob_sha": "7b3b61ebe2298a7ea657ab6a0a942110cf2a0885",
+  "public_download_SHA256_match": true,
+  "original_GOLDEN_WIM_ISO_changed": false,
+  "full_V5_UUP_network_and_WIM_conversion_run": false,
+  "operator_command": "Unzip original UUP and v5 package into same chosen no-space 26300.x directory; launch START.cmd as Administrator",
+  "stage_order": [
+    "UUP MAX_PRE next operator run",
+    "offline PS post-debloat",
+    "NTLite Business",
+    "VMware Workstation Pro"
+  ],
+  "dependency_HOLD": [
+    "F01 DesktopAppInstaller AppX owner/hardlink",
+    "F02 Language.Basic CBS 0x800F0825 and owner",
+    "F03 WMIC unsupported Superseded native selectors"
+  ],
+  "status": "R006_PORTABLE_PACKAGE_PUBLISHED_NATIVE_QA_PASS_OPERATOR_RUN_PENDING",
+  "one_next": "OPERATOR_RUN_START_CMD_ON_FRESH_SELECTED_26300_UUP_AND_RETURN_ONE_EVIDENCE_ZIP"
+}
