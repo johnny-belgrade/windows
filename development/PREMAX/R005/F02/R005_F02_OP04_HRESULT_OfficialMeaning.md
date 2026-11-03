@@ -1,0 +1,13 @@
+# R005 F02-04 — Microsoft HRESULT evidence (external documentation, not proof of this-image CBS owner)
+Verified on 2026-11-03. Operation: READ-ONLY external technical documentation. No user GOLDEN image interaction, no DISM /Remove, no registry writes.
+
+**Exact official source:** https://learn.microsoft.com/en-us/troubleshoot/windows-client/deployment/common-windows-update-errors
+Microsoft's 0x800f0825 row labels it `CBS_E_CANNOT_UNINSTALL` / `Package can't be uninstalled`. The page says one common cause is component-store corruption associated with partially installed components and gives a RestoreHealth/repair workflow. This is *general troubleshooting guidance*, not a diagnosis of our specific offline 26300 image.
+
+**Native BlueLite evidence, independent of website:** R004 original 26300.9818 final WIM native DISM Remove-Capability `Language.Basic~~~en-US~0.0.1.0` returned signed `-2146498523`, hex `0x800F0825` (native source log line 67). The capability remained `State=4` before/after. Actual original offline CheckHealth + ScanHealth reported no component corruption and pending=0. The healthy result conflicts with casually assuming corruption from the Microsoft 'typically' phrase, and does not exclude every possible CBS package-owner constraint.
+
+**Interpretation boundary:** `CBS_E_CANNOT_UNINSTALL` describes the refusal, not by itself whether the owner is `Permanent`, a partially installed component, service stack policy, a parent language dependency, or a source/CBS topological mismatch. An earlier BlueLite Master §10.3 historical R115 summary described a 'permanent CBS refusal' on a previous build, but the direct R115 proof is not yet recovered and cannot transfer its internal registry/CBS flags to 26300.9818.
+
+**Decision:** no repeated native removal, no automatic online RestoreHealth, no raw `WinSxS` or CBS registry changes. First inspect the exact frozen 26300 `Microsoft-Windows-LanguageFeatures-Basic-en-us-Package~31bf3856ad364e35~amd64~~10.0.26100.9818` MUM and predecessor/parent metadata in a read-only way; classify ownership, servicing and language/OOBE dependencies; if supported removal cannot be established then retain Basic in v5 and remove false GREEN success claim.
+
+**NEXT:** R005 F02-05 read-only wimlib index1 servicing Packages directory + strict exact identity list; receipt and fresh verification, then optionally extract only bounded MUM text files to owned R005 input if justified.
