@@ -1,0 +1,22 @@
+{
+  "schema": "BlueLite.R005.F01.LogCompaction.v1",
+  "utc": "2026-11-03T17:46:30.2568468Z",
+  "operation": "EXACT_9_OWNED_LOG_RECEIPT_COMPACTION_AFTER_INDEPENDENT_ZIP_QA",
+  "deleted_loose_receipts": [
+    "BlueLite_R005_F01_OP02A_HistoricalIndex_20261103.json",
+    "BlueLite_R005_F01_OP02B_Attempt1_Hold_20261103.json",
+    "BlueLite_R005_F01_OP02B_Attempt2_Hold_20261103.json",
+    "BlueLite_R005_F01_OP02B_CurrentV4Native_20261103.json",
+    "BlueLite_R005_F01_OP02C_HistoricAmberSource_20261103.json",
+    "BlueLite_R005_F01_OP02D_GoldenWimTopology_20261103.json",
+    "BlueLite_R005_F01_OP02E_HistoricVariantsDelta_20261103.json",
+    "BlueLite_R005_F01_OP02E_IndependentHold_20261103.json",
+    "BlueLite_R005_F01_OP02F_CorrectedHistoricSourceDelta_20261103.json"
+  ],
+  "removed_count": 9,
+  "preserved_zip": "C:\\work\\logs\\BlueLite_R005_F01_20261103T174529660Z.zip",
+  "preserved_zip_sha256": "72163039BA82E3635830BCFB624D5B74641976E2D280ADB8E67C97CE4CE55B2F",
+  "original_git_copies": "development/PREMAX/R005/F01/",
+  "golden_image_mutation": "NONE",
+  "status": "PASS"
+}
