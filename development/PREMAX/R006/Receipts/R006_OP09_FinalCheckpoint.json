@@ -1,0 +1,15 @@
+{
+  "schema": "BlueLite.R006.OP09.v1",
+  "utc": "2026-11-03T19:37:09.0954726Z",
+  "operation": "R006_PACKAGE_PUBLISHED_AND_LOCAL_CANONICAL_CYCLE_CHECKPOINT",
+  "cycle": "C:\\work\\PREMAX-work\\R006_26300_MAXPRE_v5_Package\\CycleManifest.json",
+  "cycle_sha256": "99751719B6224949D0246CD65E7FCFD9DA0E3C32AFFE2A3A067268D911E6964E",
+  "registry": "C:\\work\\PREMAX-work\\99_Index\\CycleRegistry.csv",
+  "registry_sha256": "D26C23ED9A513E447CC21214910010F4C2642F9A3EEA405B84DAE6A38A2BADDA",
+  "readme": "C:\\work\\PREMAX-work\\00_README.md",
+  "readme_sha256": "543CA86EAB8249A12E5A2A986801171A5419FEE45D2A1C53F01AAC2233710D4E",
+  "public_archive_SHA": "0573CE971A3C956E37A2B100E56BA30EC1E6914D42AF31606AF19441F8495658",
+  "original_golden_image_modified": false,
+  "runtime_next_operator_only": true,
+  "verdict": "PASS"
+}
