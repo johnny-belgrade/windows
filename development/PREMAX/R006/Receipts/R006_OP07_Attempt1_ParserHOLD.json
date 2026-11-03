@@ -1,0 +1,13 @@
+{
+  "schema": "BlueLite.R006.OP07.Attempt.v1",
+  "utc_date": "2026-11-03",
+  "operation": "independent distribution ZIP integrity verification",
+  "attempt": 1,
+  "status": "HOLD_POWERSHELL_PARSER_ONLY",
+  "error": "Last Write-Output expression used undeclared bare `archive` rather than `$archive`, causing parser failure before code ran",
+  "result_written": false,
+  "distribution_zip_modified": false,
+  "original_golden_image_modified": false,
+  "correction": "rewrite verifier as source file, PS7 AST check first, invoke only corrected reviewed verifier",
+  "next": "OP07 independent binary 35-of-35 member hash check"
+}
