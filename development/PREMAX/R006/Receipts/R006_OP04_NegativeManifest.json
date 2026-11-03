@@ -1,0 +1,14 @@
+{
+  "schema": "BlueLite.R006.OP04.v1",
+  "utc": "2026-11-03T19:22:20.2359164Z",
+  "fixture": "C:\\work\\PREMAX-work\\R006_26300_MAXPRE_v5_Package\\03_QA\\Fixture_TAMPERED_PROFILE",
+  "operation": "NEGATIVE_MUTATED_PROFILE_SHA_MANIFEST_REJECTED_BEFORE_DOWNLOAD",
+  "exit_code": 1,
+  "log": [
+    "PREFLIGHT_HOLD: Overlay member SHA256 mismatch: BlueLite/BlueLite_Profile.ini"
+  ],
+  "original_source_unchanged": true,
+  "net_downloads": 0,
+  "image_changes": 0,
+  "verdict": "EXPECTED_REJECT_PASS"
+}
