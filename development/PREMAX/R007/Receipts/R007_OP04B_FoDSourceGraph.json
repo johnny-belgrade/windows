@@ -1,0 +1,833 @@
+{
+  "schema": "BlueLite.R007.OP04B.v1",
+  "utc": "2026-11-03T21:12:17.1307564Z",
+  "operation": "SIX_COMPDB_XML_TARGET_PRESENCE_NOT_GRAPH_CLOSURE",
+  "source_sha256": "AC771B577E3AA87C9D4D676224AB2BB4948984036238669CD535077542C3047E",
+  "xmls": [
+    {
+      "name": "DesktopBaselessCompDB_FOD_en-us.CompDB.xml",
+      "sha256": "5F1DBAB509AFEBBEDB177EF260D975D229FFB348239B9CBBAC2D4B26AF776CC7"
+    },
+    {
+      "name": "DesktopTargetCompDB_FOD_en-us.xml",
+      "sha256": "88C69977065C600C066596FC67E11E1F3A9A65956A42C38E5C311F64B8320383"
+    },
+    {
+      "name": "DesktopTargetCompDB_FOD_Metadata_Neutral.xml",
+      "sha256": "D00F735EEAD6A815C91E8334C0035D1162FE80C826613C47B4A54B588FFB5069"
+    },
+    {
+      "name": "DesktopTargetCompDB_FOD_Neutral.xml",
+      "sha256": "9B1EE3B0A3E509A5F07D5EFF75C7A5D3167023BE38CA9BE35842EABB61BD4544"
+    },
+    {
+      "name": "DesktopTargetCompDB_Neutral.xml",
+      "sha256": "04DB7392F6BB4DB31B4963F84872A310C4B0F382D89D2D7D2B696F7B62289849"
+    },
+    {
+      "name": "DesktopTargetCompDB_professional_en-us.xml",
+      "sha256": "0E79C70A3301C3C4ED26FF7E3231D2FF6035BEA30DDC9F43665C9FB0400D9A63"
+    }
+  ],
+  "windows_d4_count": 98,
+  "fod_name_candidates": 62,
+  "fod_mentioned_selected_six_compdb": 62,
+  "fod_not_mentioned_selected_six_compdb": 0,
+  "unproven_converter_reconstruction_closure": true,
+  "source_pruning_executed": false,
+  "selected_fod_names": [
+    {
+      "name": "Microsoft-Windows-Wallpaper-Content-Extended-FoD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Wallpaper-Content-Extended-FoD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-SimpleTCP-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-SimpleTCP-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopBaselessCompDB_FOD_en-us.CompDB.xml",
+        "DesktopTargetCompDB_FOD_en-us.xml",
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 4,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-TFTP-Client-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-TFTP-Client-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopBaselessCompDB_FOD_en-us.CompDB.xml",
+        "DesktopTargetCompDB_FOD_en-us.xml",
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 4,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-EnterpriseClientSync-Host-FOD-Package-wow64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-EnterpriseClientSync-Host-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopBaselessCompDB_FOD_en-us.CompDB.xml",
+        "DesktopTargetCompDB_FOD_en-us.xml",
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 4,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Ethernet-Client-Vmware-Vmxnet3-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Ethernet-Client-Vmware-Vmxnet3-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Telnet-Client-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Telnet-Client-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopBaselessCompDB_FOD_en-us.CompDB.xml",
+        "DesktopTargetCompDB_FOD_en-us.xml",
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 4,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-SmbDirect-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-SmbDirect-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopBaselessCompDB_FOD_en-us.CompDB.xml",
+        "DesktopTargetCompDB_FOD_en-us.xml",
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 4,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-WinOcr-FOD-Package-wow64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-WinOcr-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopBaselessCompDB_FOD_en-us.CompDB.xml",
+        "DesktopTargetCompDB_FOD_en-us.xml",
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 4,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-PowerShell-ISE-FOD-Package-wow64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-PowerShell-ISE-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopBaselessCompDB_FOD_en-us.CompDB.xml",
+        "DesktopTargetCompDB_FOD_en-us.xml",
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 4,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-WinOcr-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-WinOcr-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopBaselessCompDB_FOD_en-us.CompDB.xml",
+        "DesktopTargetCompDB_FOD_en-us.xml",
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 4,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-LanguageFeatures-OCR-en-us-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-LanguageFeatures-OCR-en-us-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-ProjFS-OptionalFeature-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-ProjFS-OptionalFeature-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopBaselessCompDB_FOD_en-us.CompDB.xml",
+        "DesktopTargetCompDB_FOD_en-us.xml",
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 4,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Notepad-System-FoD-Package-wow64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Notepad-System-FoD-Package",
+      "mentioned_compdb_names": [
+        "DesktopBaselessCompDB_FOD_en-us.CompDB.xml",
+        "DesktopTargetCompDB_FOD_en-us.xml",
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 4,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Notepad-System-FoD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Notepad-System-FoD-Package",
+      "mentioned_compdb_names": [
+        "DesktopBaselessCompDB_FOD_en-us.CompDB.xml",
+        "DesktopTargetCompDB_FOD_en-us.xml",
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 4,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Ethernet-Client-Intel-E2f68-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Ethernet-Client-Intel-E2f68-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-TerminalServices-AppServer-Client-FOD-Package-wow64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-TerminalServices-AppServer-Client-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopBaselessCompDB_FOD_en-us.CompDB.xml",
+        "DesktopTargetCompDB_FOD_en-us.xml",
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 4,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Ethernet-Client-Realtek-Rtcx21x64-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Ethernet-Client-Realtek-Rtcx21x64-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-VBSCRIPT-FoD-Package-wow64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-VBSCRIPT-FoD-Package",
+      "mentioned_compdb_names": [
+        "DesktopBaselessCompDB_FOD_en-us.CompDB.xml",
+        "DesktopTargetCompDB_FOD_en-us.xml",
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 4,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Ethernet-Client-Intel-E1i68x64-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Ethernet-Client-Intel-E1i68x64-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-VBSCRIPT-FoD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-VBSCRIPT-FoD-Package",
+      "mentioned_compdb_names": [
+        "DesktopBaselessCompDB_FOD_en-us.CompDB.xml",
+        "DesktopTargetCompDB_FOD_en-us.xml",
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 4,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-WMIC-FoD-Package-wow64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-WMIC-FoD-Package",
+      "mentioned_compdb_names": [
+        "DesktopBaselessCompDB_FOD_en-us.CompDB.xml",
+        "DesktopTargetCompDB_FOD_en-us.xml",
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 4,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-WMIC-FoD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-WMIC-FoD-Package",
+      "mentioned_compdb_names": [
+        "DesktopBaselessCompDB_FOD_en-us.CompDB.xml",
+        "DesktopTargetCompDB_FOD_en-us.xml",
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 4,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Printing-PMCPPC-FoD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Printing-PMCPPC-FoD-Package",
+      "mentioned_compdb_names": [
+        "DesktopBaselessCompDB_FOD_en-us.CompDB.xml",
+        "DesktopTargetCompDB_FOD_en-us.xml",
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 4,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-DirectoryServices-ADAM-Client-FOD-Package-wow64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-DirectoryServices-ADAM-Client-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopBaselessCompDB_FOD_en-us.CompDB.xml",
+        "DesktopTargetCompDB_FOD_en-us.xml",
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 4,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Wifi-Client-Realtek-Rtl8192se-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Wifi-Client-Realtek-Rtl8192se-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-OneCore-DirectX-Database-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-OneCore-DirectX-Database-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-FoDMetadata-Package.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-FoDMetadata-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 1,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Wifi-Client-Marvel-Mrvlpcie8897-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Wifi-Client-Marvel-Mrvlpcie8897-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-TerminalServices-AppServer-Client-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-TerminalServices-AppServer-Client-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopBaselessCompDB_FOD_en-us.CompDB.xml",
+        "DesktopTargetCompDB_FOD_en-us.xml",
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 4,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-EnterpriseClientSync-Host-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-EnterpriseClientSync-Host-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopBaselessCompDB_FOD_en-us.CompDB.xml",
+        "DesktopTargetCompDB_FOD_en-us.xml",
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 4,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Wifi-Client-Qualcomm-Athw8x-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Wifi-Client-Qualcomm-Athw8x-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Wifi-Client-Broadcom-Bcmpciedhd63-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Wifi-Client-Broadcom-Bcmpciedhd63-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Wifi-Client-Qualcomm-Athwnx-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Wifi-Client-Qualcomm-Athwnx-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-PowerShell-ISE-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-PowerShell-ISE-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopBaselessCompDB_FOD_en-us.CompDB.xml",
+        "DesktopTargetCompDB_FOD_en-us.xml",
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 4,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Wifi-Client-Ralink-Netr28x-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Wifi-Client-Ralink-Netr28x-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Wifi-Client-Realtek-Rtwlane13-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Wifi-Client-Realtek-Rtwlane13-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Wifi-Client-Broadcom-Bcmwl63al-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Wifi-Client-Broadcom-Bcmwl63al-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Wifi-Client-Qualcomm-Qcamain10x64-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Wifi-Client-Qualcomm-Qcamain10x64-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Wifi-Client-Intel-Netwbw02-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Wifi-Client-Intel-Netwbw02-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Wifi-Client-Intel-Netwlv64-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Wifi-Client-Intel-Netwlv64-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Wifi-Client-Intel-Netwns64-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Wifi-Client-Intel-Netwns64-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Wifi-Client-Broadcom-Bcmwl63a-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Wifi-Client-Broadcom-Bcmwl63a-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Wifi-Client-Realtek-Rtwlane01-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Wifi-Client-Realtek-Rtwlane01-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Wifi-Client-Intel-Netwew00-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Wifi-Client-Intel-Netwew00-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Wifi-Client-Intel-Netwew01-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Wifi-Client-Intel-Netwew01-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Wifi-Client-Intel-Netwsw00-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Wifi-Client-Intel-Netwsw00-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Wifi-Client-Intel-Netwtw04-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Wifi-Client-Intel-Netwtw04-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Wifi-Client-Realtek-Rtwlane-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Wifi-Client-Realtek-Rtwlane-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Wifi-Client-Intel-Netwtw06-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Wifi-Client-Intel-Netwtw06-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Wifi-Client-Intel-Netwtw08-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Wifi-Client-Intel-Netwtw08-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Wifi-Client-Intel-Netwtw02-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Wifi-Client-Intel-Netwtw02-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Wifi-Client-Intel-Netwtw10-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Wifi-Client-Intel-Netwtw10-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-OneCore-ApplicationModel-Sync-Desktop-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-OneCore-ApplicationModel-Sync-Desktop-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-Kernel-LA57-FoD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-Kernel-LA57-FoD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-DirectoryServices-ADAM-Client-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-DirectoryServices-ADAM-Client-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopBaselessCompDB_FOD_en-us.CompDB.xml",
+        "DesktopTargetCompDB_FOD_en-us.xml",
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 4,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-LanguageFeatures-Handwriting-en-us-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-LanguageFeatures-Handwriting-en-us-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-LanguageFeatures-Basic-en-us-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-LanguageFeatures-Basic-en-us-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "HyperV-OptionalFeature-VirtualMachinePlatform-Client-Disabled-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "HyperV-OptionalFeature-VirtualMachinePlatform-Client-Disabled-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopBaselessCompDB_FOD_en-us.CompDB.xml",
+        "DesktopTargetCompDB_FOD_en-us.xml",
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 4,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-SenseClient-Fod-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-SenseClient-Fod-Package",
+      "mentioned_compdb_names": [
+        "DesktopBaselessCompDB_FOD_en-us.CompDB.xml",
+        "DesktopTargetCompDB_FOD_en-us.xml",
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 4,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-LanguageFeatures-TextToSpeech-en-us-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-LanguageFeatures-TextToSpeech-en-us-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Windows-LanguageFeatures-Speech-en-us-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Windows-LanguageFeatures-Speech-en-us-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    },
+    {
+      "name": "Microsoft-Edge-WebView-FOD-Package-amd64.cab",
+      "potential_FoD": true,
+      "package_identity_hint": "Microsoft-Edge-WebView-FOD-Package",
+      "mentioned_compdb_names": [
+        "DesktopTargetCompDB_FOD_Neutral.xml",
+        "DesktopTargetCompDB_professional_en-us.xml"
+      ],
+      "mentioned_count": 2,
+      "pre_download_omit_authorized": false,
+      "decision": "KEEP_FOR_RECONSTRUCTION_UNTIL_COMPLETE_CONVERTER_GRAPH"
+    }
+  ],
+  "verdict": "CANDIDATE_CLASSIFIED_ZERO_SAFE_OMISSIONS_PROVEN",
+  "one_next": "OP05_PORTABLE_V6_TRIAD_MANDATORY_SOURCE_COMPILER_AND_RECOVERY_DESCRIPTOR"
+}
