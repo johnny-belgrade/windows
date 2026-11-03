@@ -1,0 +1,14 @@
+{
+  "schema": "BlueLite.R006.OP05.v1",
+  "utc": "2026-11-03T19:23:00.9339195Z",
+  "operation": "NEGATIVE_MISMATCH_26200_VENDOR_LAUNCHER_REJECTED_BEFORE_NETWORK",
+  "fixture": "C:\\work\\PREMAX-work\\R006_26300_MAXPRE_v5_Package\\03_QA\\Fixture_REJECT_26200",
+  "native_exit": 1,
+  "native_log": [
+    "PREFLIGHT_HOLD: Selected launcher is not 26300.x: 26200.9818"
+  ],
+  "sha_of_synthetic_launcher": "1D44974F4FF9B439163932E336B1AA76EF7A2B48D00267CA10555586051E41CF",
+  "mutated_GOLDEN": false,
+  "downloads": 0,
+  "verdict": "EXPECTED_REJECT_PASS"
+}
