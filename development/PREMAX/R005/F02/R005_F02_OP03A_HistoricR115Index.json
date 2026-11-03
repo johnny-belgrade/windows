@@ -1,0 +1,698 @@
+{
+  "schema": "BlueLite.R005.F02.OP03A.v1",
+  "utc": "2026-11-03T18:08:04.4843398Z",
+  "operation": "RH06_CANONICAL_INDEX_OF_R115_R15_AND_LANGUAGE_BASIC",
+  "index": "C:\\work\\UUP-history\\99_Index\\RH06_Final_ProvenanceMapping.csv",
+  "index_sha256": "AE45B2A4FF35A063B72DDAA9A77B7F0994B8AEDEE5A5C9C560F9C6AE3A187D2D",
+  "total": 2416,
+  "matched": 114,
+  "hits": [
+    {
+      "source_rel": "08_Extracted\\Archive_7D59DD0F65396771\\R15-RECALL-AIX-PORTABLE-REVIEW.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\R15-RECALL-AIX-PORTABLE-REVIEW__A7019A9123F5.ps1",
+      "sha256": "A7019A9123F514EE80B7261E4B4CEE648FB616CAB40A0EE7A50A8CECA895F533",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "08_Extracted\\Archive_7D59DD0F65396771\\R15-RECALL-AIX-PORTABLE-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R15-RECALL-AIX-PORTABLE-REVIEW__5BEEECBE0AB5.txt",
+      "sha256": "5BEEECBE0AB5860557048A82ED329AB0735D60D7C65CBD3DF718A0CB319E7ABA",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "BlueLite_DL_R26_D3_Review\\Assets\\BlueLite_UUP_MAX_PRE_v2.0-R15-R1_AUDIT_LITERAL_FIX_REVIEW.zip",
+      "final_rel": "06_Archives\\Unresolved\\MAX_PRE\\01_R15_MAX_PRE_STATIC_ONLY__7D59DD0F6539.zip",
+      "sha256": "7D59DD0F653967717CC4B84D47C50A9DE2863F7EB3DD9EF09B0221B3E05E7BE8",
+      "category": "06_Archives"
+    },
+    {
+      "source_rel": "BlueLite_UUP_MAX_PRE_R105_SourceLocked_v01\\OriginalArchives\\01_R15_MAX_PRE_STATIC_ONLY.zip",
+      "final_rel": "06_Archives\\Unresolved\\MAX_PRE\\01_R15_MAX_PRE_STATIC_ONLY__7D59DD0F6539.zip",
+      "sha256": "7D59DD0F653967717CC4B84D47C50A9DE2863F7EB3DD9EF09B0221B3E05E7BE8",
+      "category": "06_Archives"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\00-EXECUTION-ORDER.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\00-EXECUTION-ORDER__0862EAFFF887.txt",
+      "sha256": "0862EAFFF887CA60D2D099C50BCA3874F4C20A4032D613AEA338C1E02BFD6A68",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\BlueLite\\BlueLite_AppAllowPatterns.txt",
+      "final_rel": "03_Logs\\CrossBuild\\CrossPhase\\BlueLite_AppAllowPatterns__B099C3F688A8.txt",
+      "sha256": "B099C3F688A8AEC7AF151E838E263DC713D05432F682117E002AD0BDC19B49DB",
+      "category": "03_Logs"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\BlueLite\\BlueLite_AppAlwaysKeepPatterns.txt",
+      "final_rel": "04_Analyses\\26300.9711\\CrossPhase\\BlueLite_AppAlwaysKeepPatterns__DA6638876F07.txt",
+      "sha256": "DA6638876F07453A3185F0EC420FA7FD52C615D9CA29702F9E89E6CCC72F8B5B",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\BlueLite\\BlueLite_Bootstrap.ps1",
+      "final_rel": "02_Scripts\\26200.9445\\CrossPhase\\BlueLite_Bootstrap__D4939465778A.ps1",
+      "sha256": "D4939465778A07A88DE6DBBE5ACADCC48D905D53C473E6E53BE588268009512E",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\BlueLite\\BlueLite_CapabilityRemovePatterns.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\BlueLite_CapabilityRemovePatterns__8D372A1DF739.txt",
+      "sha256": "8D372A1DF7394E64F5B035ADA0C27EB4FA8803FF986335FC78E28B5DBF3FEA78",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\BlueLite\\BlueLite_CertifiedGreenCapabilityPatterns.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\BlueLite_CertifiedGreenCapabilityPatterns__33B4EED75934.txt",
+      "sha256": "33B4EED75934756932CC4FE634C5D945491FEE623338DD56B3CFE78BA422CB28",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\BlueLite\\BlueLite_ComponentWatchlist.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\BlueLite_ComponentWatchlist__435C3DD6EA61.txt",
+      "sha256": "435C3DD6EA61F0AD29936CA98F250ACC4AFB2EB6EB87086A3BFFC1FA40AF95A9",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\BlueLite\\BlueLite_FeatureDisableOnly.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\BlueLite_FeatureDisableOnly__991AF6743A93.txt",
+      "sha256": "991AF6743A93BFBEC60BC64C63FEAF48D1542AE69B65438DF48787B174BD29CD",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\BlueLite\\BlueLite_FeatureRemovePayload.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\BlueLite_FeatureRemovePayload__480BB07288B2.txt",
+      "sha256": "480BB07288B2C0783FFD8F94DC86CD042B0CB1EF48534CBBBDA838F5EAFC5AE0",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\BlueLite\\BlueLite_FilterApps.ps1",
+      "final_rel": "02_Scripts\\CrossBuild\\CrossPhase\\BlueLite_FilterApps__827CC9BAC9B8.ps1",
+      "sha256": "827CC9BAC9B8690AC05BDD45545138ABB9FDBD097AE47CD37AA51496157C8BD8",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\BlueLite\\BlueLite_GenerateCustomAppsList.ps1",
+      "final_rel": "02_Scripts\\CrossBuild\\CrossPhase\\BlueLite_GenerateCustomAppsList__C5EF48F61175.ps1",
+      "sha256": "C5EF48F611755A9EB4E26692812F19946AA7DC33149CBFF31BACE61B5B4BCD5E",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\BlueLite\\BlueLite_OfflineHandoffPatterns.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\BlueLite_OfflineHandoffPatterns__09BBA0A818D0.txt",
+      "sha256": "09BBA0A818D0EDE13F978226F659B1A2109E6E093706E18674C939D85F2B6231",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\BlueLite\\BlueLite_PackageRemovePatterns.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\BlueLite_PackageRemovePatterns__2594D5033F7D.txt",
+      "sha256": "2594D5033F7D7C6ADA7A02B28C699071400EDE9777CBFB9AFBB82F87D85DA7E9",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\BlueLite\\BlueLite_PatchConverter.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\BlueLite_PatchConverter__398555A83CC0.ps1",
+      "sha256": "398555A83CC054879EB3B9D35308FE3D9099C27C93BA5708CDDDC2E7B3FA2C37",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\BlueLite\\BlueLite_PreDebloatWim.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\BlueLite_PreDebloatWim__79145AE9BABA.ps1",
+      "sha256": "79145AE9BABA91D66CBC798F6DCB2B64ABDBA972B643B60AF5DDE9864FD86098",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\BlueLite\\BlueLite_Profile.ini",
+      "final_rel": "05_Manifests\\Unresolved\\CrossPhase\\BlueLite_Profile__93729A58B0FB.ini",
+      "sha256": "93729A58B0FBE678A111C4F5C191783259DA7323250E9ED67DFF1FF025964864",
+      "category": "05_Manifests"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\BlueLite\\BlueLite_ProtectedFloor.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\BlueLite_ProtectedFloor__8B4FA326D109.txt",
+      "sha256": "8B4FA326D1099C7DFFBB82F49D5215CC192A73919292678ABCFBF6F0F4CD8CAC",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\BlueLite\\BlueLite_RecallAIX_PreISO.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\BlueLite_RecallAIX_PreISO__53BD90ADD357.ps1",
+      "sha256": "53BD90ADD3575F6C5FD3A1C85DA0BE5B058728A119B2DFAD7E3E75093ACCEBE2",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\BlueLite\\BlueLite_ReleaseForbiddenAppPatterns.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\BlueLite_ReleaseForbiddenAppPatterns__A5B48EFB0FCC.txt",
+      "sha256": "A5B48EFB0FCCA6575C1301A2744C163F74372CCC83C093286ECC3D0C3F9071D1",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\BlueLite\\BlueLite_RequiredFinalApps.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\BlueLite_RequiredFinalApps__9D723DE7CAC1.txt",
+      "sha256": "9D723DE7CAC1198447F918DE8254415890D7D5A0ECF1D73C9B9A077A813E3C2B",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\BlueLite\\BlueLite_RequiredStagingApps.txt",
+      "final_rel": "03_Logs\\CrossBuild\\CrossPhase\\BlueLite_RequiredStagingApps__3812FFA2EBE6.txt",
+      "sha256": "3812FFA2EBE6085889F007D1522D2EC3F970A9C23E1457B8B2D73798FD252265",
+      "category": "03_Logs"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\BlueLite\\BlueLite_ResolveAppDependencies.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\BlueLite_ResolveAppDependencies__AB06E5A161E1.ps1",
+      "sha256": "AB06E5A161E1909E14A6F656E7A76123CC8E6302D42179E4BB0F204B46BA86EC",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\BlueLite\\BlueLite_ResolveUUP.ps1",
+      "final_rel": "02_Scripts\\26200.9445\\CrossPhase\\BlueLite_ResolveUUP__72938F2D306F.ps1",
+      "sha256": "72938F2D306F47A4463DB743A4005E97FE5B9C3782630B4911E6FF3CD4CA0256",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\BlueLite\\BlueLite_StagingOnlyAppPatterns.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\BlueLite_StagingOnlyAppPatterns__133CA2018571.txt",
+      "sha256": "133CA20185712218B5C6F31F63606A211BB2369E209D02C13CE2B75934C6BD1E",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\BlueLite\\BlueLite_UUP.cmd",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\BlueLite_UUP__70B1FB9D5E4E.cmd",
+      "sha256": "70B1FB9D5E4EBE142B0DC08BE67779F0959FA29043A2E1E098CF483913FCC796",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\BlueLite\\BlueLite_VerifyPackage.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\BlueLite_VerifyPackage__09F271ABF3EB.ps1",
+      "sha256": "09F271ABF3EB141FB9DE2C0109CAA380ECD68DB82765FFBD3B36AB89188134A0",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\BlueLite\\BlueLite_VerifySource.ps1",
+      "final_rel": "02_Scripts\\CrossBuild\\CrossPhase\\BlueLite_VerifySource__1068314D33AE.ps1",
+      "sha256": "1068314D33AE1DD3F24190EEBF16F94AD29560C24EE5B9BD610F7C677B3858EA",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\BlueLite\\ConvertConfig.ini",
+      "final_rel": "05_Manifests\\26300.9711\\CrossPhase\\ConvertConfig__B8A8B187A1DA.ini",
+      "sha256": "B8A8B187A1DAD38E67EA8370356DD3FF95E07126C59C88E72EFA06FCD90284E2",
+      "category": "05_Manifests"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\HOTFIX1-NOTES.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\HOTFIX1-NOTES__A32BE3118DA7.txt",
+      "sha256": "A32BE3118DA7BF8A1022FC4528951EEAB1D7AB48230E880E5BE9A1307FD26C3E",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\MUTATION-SCOPE-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\MUTATION-SCOPE-REVIEW__68CCB012ABDF.txt",
+      "sha256": "68CCB012ABDF778D4B214C8781578AA01B2D5EBC4EF23E9EEBB642F4927F2AA1",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\R10-AMBER-OBSERVED-DELTA-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R10-AMBER-OBSERVED-DELTA-REVIEW__47DC693A995E.txt",
+      "sha256": "47DC693A995E62D5CE9E056643F7873748D1B09904CB013C7AF1D6D04E0D8CBA",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\R11-SEARCH-AMBER-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R11-SEARCH-AMBER-REVIEW__3DEBD6B3BA78.txt",
+      "sha256": "3DEBD6B3BA78A2C075CABC761DFD076EAD5CA278CBF3C958641A848F9EBB507C",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\R12-ONEDRIVE-AMBER-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R12-ONEDRIVE-AMBER-REVIEW__31B598FCC900.txt",
+      "sha256": "31B598FCC900845422AE22E16CA28E2E684643421CB51F95DA4193FAA1DB1A7D",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\R13-FODMETADATA-CORE-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R13-FODMETADATA-CORE-REVIEW__B09062BABDF4.txt",
+      "sha256": "B09062BABDF41FC8D13C04307F1663557D9EF4D4AE889858C6F3F2B797538E42",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\R14-PRINTING-AMBER-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R14-PRINTING-AMBER-REVIEW__A32E6975BCBC.txt",
+      "sha256": "A32E6975BCBC7A37FAB6EDBA1067AD10A32FA944E7DC3BDFAFCCC2A7BC063E6C",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\R15-RECALL-AIX-PORTABLE-REVIEW.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\R15-RECALL-AIX-PORTABLE-REVIEW__A7019A9123F5.ps1",
+      "sha256": "A7019A9123F514EE80B7261E4B4CEE648FB616CAB40A0EE7A50A8CECA895F533",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\R15-RECALL-AIX-PORTABLE-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R15-RECALL-AIX-PORTABLE-REVIEW__5BEEECBE0AB5.txt",
+      "sha256": "5BEEECBE0AB5860557048A82ED329AB0735D60D7C65CBD3DF718A0CB319E7ABA",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\R2-INTEGRITY-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R2-INTEGRITY-REVIEW__3D97678040DE.txt",
+      "sha256": "3D97678040DEB2F0ED0DA131F864CA576BE73B7BC9BA6C27CF9333B59ED3A00F",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\R3-STATIC-REVIEW.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\R3-STATIC-REVIEW__3A01B2AD23C3.ps1",
+      "sha256": "3A01B2AD23C3845C1019544A3DFCB88B166AA140EF5B3AE3B715BB55BAEB462C",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\R3-TRANSACTION-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R3-TRANSACTION-REVIEW__058374BB8DD4.txt",
+      "sha256": "058374BB8DD4D66526BADA4B120274A43369676570A060D7E55B5C3419A6AA5B",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\R4-PREDEBLOAT-REVIEW.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\R4-PREDEBLOAT-REVIEW__3DF87106986B.ps1",
+      "sha256": "3DF87106986BB88EE9F2F1650CD8EA687A2B8CD402110A818D36642CFA0DE7A4",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\R4-PREDEBLOAT-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R4-PREDEBLOAT-REVIEW__C13465D69DF8.txt",
+      "sha256": "C13465D69DF8B30F4912F34CC48EF490E0FBC88CF80909BDF4428E04BB16A382",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\R5-NATIVE-GREEN-REVIEW.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\R5-NATIVE-GREEN-REVIEW__DB6C833AD508.ps1",
+      "sha256": "DB6C833AD50825C74C6C26A8298E765FDF652E088DD8DADA72793EC19131E5C4",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\R5-NATIVE-GREEN-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R5-NATIVE-GREEN-REVIEW__1E36989FBACB.txt",
+      "sha256": "1E36989FBACB6ECD4B74DDFCEE2F73FDBF164494C9D93AF8D181272147C15602",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\R6-NATIVE-FEATURE-REVIEW.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\R6-NATIVE-FEATURE-REVIEW__03AA91E1636B.ps1",
+      "sha256": "03AA91E1636B9FF6C7F30D2238476C878241355D2A30B01F8DDDF70DBDDF2C3C",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\R6-NATIVE-FEATURE-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R6-NATIVE-FEATURE-REVIEW__0090FE02E9B6.txt",
+      "sha256": "0090FE02E9B6C87014117B33477B29DA4E9615C19E63B8ED0C023F87697F73E7",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\R7-STRICT-CAPABILITY-REVIEW.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\R7-STRICT-CAPABILITY-REVIEW__C8D9AFA27372.ps1",
+      "sha256": "C8D9AFA2737285EBDB1B07A5C2F63BBA9A8EB73714A672B789CB4B9B31B7D9F8",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\R7-STRICT-CAPABILITY-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R7-STRICT-CAPABILITY-REVIEW__8B19F7706283.txt",
+      "sha256": "8B19F77062838D827DEE8600F9BCD1EEECB7F954ED19D1D247E57D7E8AD56398",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\R8-STRICT-SUPERSEDED-REVIEW.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\R8-STRICT-SUPERSEDED-REVIEW__68BA02BD0F9A.ps1",
+      "sha256": "68BA02BD0F9AEC182D4497213A0976256B4DFB59BBE4097C2A3301DAD051C98C",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\R8-STRICT-SUPERSEDED-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R8-STRICT-SUPERSEDED-REVIEW__944F1556EF84.txt",
+      "sha256": "944F1556EF845E7D99704C3484B2160D4FA4B25737044F5C4A2C7F803EB0F785",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\R9-STRICT-DISABLE-AMBER-REVIEW.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\R9-STRICT-DISABLE-AMBER-REVIEW__402C39ECE3D6.ps1",
+      "sha256": "402C39ECE3D687ABA81A9F097C680D27DE65138ADB8010AF8C50EFAB42F6931B",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\R9-STRICT-DISABLE-AMBER-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R9-STRICT-DISABLE-AMBER-REVIEW__8EC369271923.txt",
+      "sha256": "8EC36927192345AC9D33943DD3867D9BCBD71C16E4C1A61CD1FCA91667E8D6F3",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\README-FIRST.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\README-FIRST__E5395D3F6E78.txt",
+      "sha256": "E5395D3F6E7863CE01D204C1C601390ABDC61FB5BD75461F6FE71990F77B9ED1",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\SHA256SUMS.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\SHA256SUMS__FAAA2AC73ADC.txt",
+      "sha256": "FAAA2AC73ADCB23D84BA6CDCA01AF85D3DD1157BD816C82645203FD52B263BA2",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_R1_Review\\START.cmd",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\START__F7D0224A027A.cmd",
+      "sha256": "F7D0224A027A5FDD20BBF312C6E6EC85DAB0DB2309EC180CD82CCE8D6BF37E8F",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\00-EXECUTION-ORDER.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\00-EXECUTION-ORDER__0862EAFFF887.txt",
+      "sha256": "0862EAFFF887CA60D2D099C50BCA3874F4C20A4032D613AEA338C1E02BFD6A68",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\BlueLite\\BlueLite_AppAllowPatterns.txt",
+      "final_rel": "03_Logs\\CrossBuild\\CrossPhase\\BlueLite_AppAllowPatterns__B099C3F688A8.txt",
+      "sha256": "B099C3F688A8AEC7AF151E838E263DC713D05432F682117E002AD0BDC19B49DB",
+      "category": "03_Logs"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\BlueLite\\BlueLite_AppAlwaysKeepPatterns.txt",
+      "final_rel": "04_Analyses\\26300.9711\\CrossPhase\\BlueLite_AppAlwaysKeepPatterns__DA6638876F07.txt",
+      "sha256": "DA6638876F07453A3185F0EC420FA7FD52C615D9CA29702F9E89E6CCC72F8B5B",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\BlueLite\\BlueLite_Bootstrap.ps1",
+      "final_rel": "02_Scripts\\26200.9445\\CrossPhase\\BlueLite_Bootstrap__D4939465778A.ps1",
+      "sha256": "D4939465778A07A88DE6DBBE5ACADCC48D905D53C473E6E53BE588268009512E",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\BlueLite\\BlueLite_CapabilityRemovePatterns.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\BlueLite_CapabilityRemovePatterns__8D372A1DF739.txt",
+      "sha256": "8D372A1DF7394E64F5B035ADA0C27EB4FA8803FF986335FC78E28B5DBF3FEA78",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\BlueLite\\BlueLite_CertifiedGreenCapabilityPatterns.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\BlueLite_CertifiedGreenCapabilityPatterns__33B4EED75934.txt",
+      "sha256": "33B4EED75934756932CC4FE634C5D945491FEE623338DD56B3CFE78BA422CB28",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\BlueLite\\BlueLite_ComponentWatchlist.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\BlueLite_ComponentWatchlist__435C3DD6EA61.txt",
+      "sha256": "435C3DD6EA61F0AD29936CA98F250ACC4AFB2EB6EB87086A3BFFC1FA40AF95A9",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\BlueLite\\BlueLite_FeatureDisableOnly.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\BlueLite_FeatureDisableOnly__991AF6743A93.txt",
+      "sha256": "991AF6743A93BFBEC60BC64C63FEAF48D1542AE69B65438DF48787B174BD29CD",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\BlueLite\\BlueLite_FeatureRemovePayload.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\BlueLite_FeatureRemovePayload__480BB07288B2.txt",
+      "sha256": "480BB07288B2C0783FFD8F94DC86CD042B0CB1EF48534CBBBDA838F5EAFC5AE0",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\BlueLite\\BlueLite_FilterApps.ps1",
+      "final_rel": "02_Scripts\\CrossBuild\\CrossPhase\\BlueLite_FilterApps__827CC9BAC9B8.ps1",
+      "sha256": "827CC9BAC9B8690AC05BDD45545138ABB9FDBD097AE47CD37AA51496157C8BD8",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\BlueLite\\BlueLite_GenerateCustomAppsList.ps1",
+      "final_rel": "02_Scripts\\CrossBuild\\CrossPhase\\BlueLite_GenerateCustomAppsList__C5EF48F61175.ps1",
+      "sha256": "C5EF48F611755A9EB4E26692812F19946AA7DC33149CBFF31BACE61B5B4BCD5E",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\BlueLite\\BlueLite_OfflineHandoffPatterns.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\BlueLite_OfflineHandoffPatterns__09BBA0A818D0.txt",
+      "sha256": "09BBA0A818D0EDE13F978226F659B1A2109E6E093706E18674C939D85F2B6231",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\BlueLite\\BlueLite_PackageRemovePatterns.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\BlueLite_PackageRemovePatterns__2594D5033F7D.txt",
+      "sha256": "2594D5033F7D7C6ADA7A02B28C699071400EDE9777CBFB9AFBB82F87D85DA7E9",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\BlueLite\\BlueLite_PatchConverter.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\BlueLite_PatchConverter__398555A83CC0.ps1",
+      "sha256": "398555A83CC054879EB3B9D35308FE3D9099C27C93BA5708CDDDC2E7B3FA2C37",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\BlueLite\\BlueLite_PreDebloatWim.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\BlueLite_PreDebloatWim__79145AE9BABA.ps1",
+      "sha256": "79145AE9BABA91D66CBC798F6DCB2B64ABDBA972B643B60AF5DDE9864FD86098",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\BlueLite\\BlueLite_Profile.ini",
+      "final_rel": "05_Manifests\\Unresolved\\CrossPhase\\BlueLite_Profile__93729A58B0FB.ini",
+      "sha256": "93729A58B0FBE678A111C4F5C191783259DA7323250E9ED67DFF1FF025964864",
+      "category": "05_Manifests"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\BlueLite\\BlueLite_ProtectedFloor.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\BlueLite_ProtectedFloor__8B4FA326D109.txt",
+      "sha256": "8B4FA326D1099C7DFFBB82F49D5215CC192A73919292678ABCFBF6F0F4CD8CAC",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\BlueLite\\BlueLite_RecallAIX_PreISO.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\BlueLite_RecallAIX_PreISO__53BD90ADD357.ps1",
+      "sha256": "53BD90ADD3575F6C5FD3A1C85DA0BE5B058728A119B2DFAD7E3E75093ACCEBE2",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\BlueLite\\BlueLite_ReleaseForbiddenAppPatterns.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\BlueLite_ReleaseForbiddenAppPatterns__A5B48EFB0FCC.txt",
+      "sha256": "A5B48EFB0FCCA6575C1301A2744C163F74372CCC83C093286ECC3D0C3F9071D1",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\BlueLite\\BlueLite_RequiredFinalApps.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\BlueLite_RequiredFinalApps__9D723DE7CAC1.txt",
+      "sha256": "9D723DE7CAC1198447F918DE8254415890D7D5A0ECF1D73C9B9A077A813E3C2B",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\BlueLite\\BlueLite_RequiredStagingApps.txt",
+      "final_rel": "03_Logs\\CrossBuild\\CrossPhase\\BlueLite_RequiredStagingApps__3812FFA2EBE6.txt",
+      "sha256": "3812FFA2EBE6085889F007D1522D2EC3F970A9C23E1457B8B2D73798FD252265",
+      "category": "03_Logs"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\BlueLite\\BlueLite_ResolveAppDependencies.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\BlueLite_ResolveAppDependencies__AB06E5A161E1.ps1",
+      "sha256": "AB06E5A161E1909E14A6F656E7A76123CC8E6302D42179E4BB0F204B46BA86EC",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\BlueLite\\BlueLite_ResolveUUP.ps1",
+      "final_rel": "02_Scripts\\26200.9445\\CrossPhase\\BlueLite_ResolveUUP__72938F2D306F.ps1",
+      "sha256": "72938F2D306F47A4463DB743A4005E97FE5B9C3782630B4911E6FF3CD4CA0256",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\BlueLite\\BlueLite_StagingOnlyAppPatterns.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\BlueLite_StagingOnlyAppPatterns__133CA2018571.txt",
+      "sha256": "133CA20185712218B5C6F31F63606A211BB2369E209D02C13CE2B75934C6BD1E",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\BlueLite\\BlueLite_UUP.cmd",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\BlueLite_UUP__70B1FB9D5E4E.cmd",
+      "sha256": "70B1FB9D5E4EBE142B0DC08BE67779F0959FA29043A2E1E098CF483913FCC796",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\BlueLite\\BlueLite_VerifyPackage.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\BlueLite_VerifyPackage__09F271ABF3EB.ps1",
+      "sha256": "09F271ABF3EB141FB9DE2C0109CAA380ECD68DB82765FFBD3B36AB89188134A0",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\BlueLite\\BlueLite_VerifySource.ps1",
+      "final_rel": "02_Scripts\\CrossBuild\\CrossPhase\\BlueLite_VerifySource__1068314D33AE.ps1",
+      "sha256": "1068314D33AE1DD3F24190EEBF16F94AD29560C24EE5B9BD610F7C677B3858EA",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\BlueLite\\ConvertConfig.ini",
+      "final_rel": "05_Manifests\\26300.9711\\CrossPhase\\ConvertConfig__B8A8B187A1DA.ini",
+      "sha256": "B8A8B187A1DAD38E67EA8370356DD3FF95E07126C59C88E72EFA06FCD90284E2",
+      "category": "05_Manifests"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\HOTFIX1-NOTES.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\HOTFIX1-NOTES__A32BE3118DA7.txt",
+      "sha256": "A32BE3118DA7BF8A1022FC4528951EEAB1D7AB48230E880E5BE9A1307FD26C3E",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\MUTATION-SCOPE-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\MUTATION-SCOPE-REVIEW__68CCB012ABDF.txt",
+      "sha256": "68CCB012ABDF778D4B214C8781578AA01B2D5EBC4EF23E9EEBB642F4927F2AA1",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\R10-AMBER-OBSERVED-DELTA-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R10-AMBER-OBSERVED-DELTA-REVIEW__47DC693A995E.txt",
+      "sha256": "47DC693A995E62D5CE9E056643F7873748D1B09904CB013C7AF1D6D04E0D8CBA",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\R11-SEARCH-AMBER-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R11-SEARCH-AMBER-REVIEW__3DEBD6B3BA78.txt",
+      "sha256": "3DEBD6B3BA78A2C075CABC761DFD076EAD5CA278CBF3C958641A848F9EBB507C",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\R12-ONEDRIVE-AMBER-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R12-ONEDRIVE-AMBER-REVIEW__31B598FCC900.txt",
+      "sha256": "31B598FCC900845422AE22E16CA28E2E684643421CB51F95DA4193FAA1DB1A7D",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\R13-FODMETADATA-CORE-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R13-FODMETADATA-CORE-REVIEW__B09062BABDF4.txt",
+      "sha256": "B09062BABDF41FC8D13C04307F1663557D9EF4D4AE889858C6F3F2B797538E42",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\R14-PRINTING-AMBER-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R14-PRINTING-AMBER-REVIEW__A32E6975BCBC.txt",
+      "sha256": "A32E6975BCBC7A37FAB6EDBA1067AD10A32FA944E7DC3BDFAFCCC2A7BC063E6C",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\R15-RECALL-AIX-PORTABLE-REVIEW.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\UUP\\R15-RECALL-AIX-PORTABLE-REVIEW__1515D6A441AB.ps1",
+      "sha256": "1515D6A441AB8526FA87D022834B670E414EBC342520BA3A34CAC956F6B15F45",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\R15-RECALL-AIX-PORTABLE-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R15-RECALL-AIX-PORTABLE-REVIEW__5BEEECBE0AB5.txt",
+      "sha256": "5BEEECBE0AB5860557048A82ED329AB0735D60D7C65CBD3DF718A0CB319E7ABA",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\R2-INTEGRITY-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R2-INTEGRITY-REVIEW__3D97678040DE.txt",
+      "sha256": "3D97678040DEB2F0ED0DA131F864CA576BE73B7BC9BA6C27CF9333B59ED3A00F",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\R3-STATIC-REVIEW.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\R3-STATIC-REVIEW__3A01B2AD23C3.ps1",
+      "sha256": "3A01B2AD23C3845C1019544A3DFCB88B166AA140EF5B3AE3B715BB55BAEB462C",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\R3-TRANSACTION-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R3-TRANSACTION-REVIEW__058374BB8DD4.txt",
+      "sha256": "058374BB8DD4D66526BADA4B120274A43369676570A060D7E55B5C3419A6AA5B",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\R4-PREDEBLOAT-REVIEW.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\R4-PREDEBLOAT-REVIEW__3DF87106986B.ps1",
+      "sha256": "3DF87106986BB88EE9F2F1650CD8EA687A2B8CD402110A818D36642CFA0DE7A4",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\R4-PREDEBLOAT-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R4-PREDEBLOAT-REVIEW__C13465D69DF8.txt",
+      "sha256": "C13465D69DF8B30F4912F34CC48EF490E0FBC88CF80909BDF4428E04BB16A382",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\R5-NATIVE-GREEN-REVIEW.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\R5-NATIVE-GREEN-REVIEW__DB6C833AD508.ps1",
+      "sha256": "DB6C833AD50825C74C6C26A8298E765FDF652E088DD8DADA72793EC19131E5C4",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\R5-NATIVE-GREEN-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R5-NATIVE-GREEN-REVIEW__1E36989FBACB.txt",
+      "sha256": "1E36989FBACB6ECD4B74DDFCEE2F73FDBF164494C9D93AF8D181272147C15602",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\R6-NATIVE-FEATURE-REVIEW.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\R6-NATIVE-FEATURE-REVIEW__03AA91E1636B.ps1",
+      "sha256": "03AA91E1636B9FF6C7F30D2238476C878241355D2A30B01F8DDDF70DBDDF2C3C",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\R6-NATIVE-FEATURE-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R6-NATIVE-FEATURE-REVIEW__0090FE02E9B6.txt",
+      "sha256": "0090FE02E9B6C87014117B33477B29DA4E9615C19E63B8ED0C023F87697F73E7",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\R7-STRICT-CAPABILITY-REVIEW.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\R7-STRICT-CAPABILITY-REVIEW__C8D9AFA27372.ps1",
+      "sha256": "C8D9AFA2737285EBDB1B07A5C2F63BBA9A8EB73714A672B789CB4B9B31B7D9F8",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\R7-STRICT-CAPABILITY-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R7-STRICT-CAPABILITY-REVIEW__8B19F7706283.txt",
+      "sha256": "8B19F77062838D827DEE8600F9BCD1EEECB7F954ED19D1D247E57D7E8AD56398",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\R8-STRICT-SUPERSEDED-REVIEW.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\R8-STRICT-SUPERSEDED-REVIEW__68BA02BD0F9A.ps1",
+      "sha256": "68BA02BD0F9AEC182D4497213A0976256B4DFB59BBE4097C2A3301DAD051C98C",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\R8-STRICT-SUPERSEDED-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R8-STRICT-SUPERSEDED-REVIEW__944F1556EF84.txt",
+      "sha256": "944F1556EF845E7D99704C3484B2160D4FA4B25737044F5C4A2C7F803EB0F785",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\R9-STRICT-DISABLE-AMBER-REVIEW.ps1",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\R9-STRICT-DISABLE-AMBER-REVIEW__402C39ECE3D6.ps1",
+      "sha256": "402C39ECE3D687ABA81A9F097C680D27DE65138ADB8010AF8C50EFAB42F6931B",
+      "category": "02_Scripts"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\R9-STRICT-DISABLE-AMBER-REVIEW.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\R9-STRICT-DISABLE-AMBER-REVIEW__8EC369271923.txt",
+      "sha256": "8EC36927192345AC9D33943DD3867D9BCBD71C16E4C1A61CD1FCA91667E8D6F3",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\README-FIRST.txt",
+      "final_rel": "04_Analyses\\Unresolved\\CrossPhase\\README-FIRST__E5395D3F6E78.txt",
+      "sha256": "E5395D3F6E7863CE01D204C1C601390ABDC61FB5BD75461F6FE71990F77B9ED1",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\SHA256SUMS.txt",
+      "final_rel": "04_Analyses\\Unresolved\\UUP\\SHA256SUMS__1A50BC713913.txt",
+      "sha256": "1A50BC713913D564BE7427E7D6C2E8D901D32B243CA275EA2E55B8993D07FE6D",
+      "category": "04_Analyses"
+    },
+    {
+      "source_rel": "UUP_R15_Review\\START.cmd",
+      "final_rel": "02_Scripts\\Unresolved\\CrossPhase\\START__F7D0224A027A.cmd",
+      "sha256": "F7D0224A027A5FDD20BBF312C6E6EC85DAB0DB2309EC180CD82CCE8D6BF37E8F",
+      "category": "02_Scripts"
+    }
+  ],
+  "scope": "READ_ONLY_INDEX_NOT_NATIVE_26300",
+  "verdict": "INDEX_LOOKUP",
+  "next": "read relevant canonical candidate sources with original sha"
+}
