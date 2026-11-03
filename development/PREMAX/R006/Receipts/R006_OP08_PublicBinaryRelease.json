@@ -1,0 +1,21 @@
+{
+  "schema": "BlueLite.R006.OP08.v1",
+  "utc": "2026-11-03T19:31:26.1967600Z",
+  "operation": "GITHUB_PUBLIC_BINARY_RELEASE_GIT_BLOB_AND_NATIVE_RAW_DOWNLOAD_SHA_VERIFIED",
+  "archive": "C:\\work\\logs\\BlueLite_UUP_MAXPRE_26300x_v5_20261103T192513569Z.zip",
+  "archive_sha256": "0573CE971A3C956E37A2B100E56BA30EC1E6914D42AF31606AF19441F8495658",
+  "archive_bytes": 57801,
+  "archive_member_count": 36,
+  "manifest_sha256_entries": 35,
+  "public_download_url": "https://raw.githubusercontent.com/johnny-belgrade/windows/refs/heads/main/development/PREMAX/R006/release/BlueLite_UUP_MAXPRE_26300x_v5_20261103T192513569Z.zip",
+  "git_commit": "ecb330a30117b626ce9ead685ce6c38342f292c6",
+  "git_blob_sha": "7b3b61ebe2298a7ea657ab6a0a942110cf2a0885",
+  "public_download_roundtrip_sha256": "0573CE971A3C956E37A2B100E56BA30EC1E6914D42AF31606AF19441F8495658",
+  "original_vendor_launcher_replaced": false,
+  "native_v5_download_conversion_executed": false,
+  "safe_to_run_next": "26300.x amd64 en-us Professional UUP Dump original extracted under an operator-selected no-space folder, overlay extracted into same root, run START.cmd as Administrator",
+  "original_golden_wim_iso_changed": false,
+  "downstream_phases": "post-debloat offline PowerShell then NTLite Business then VMware Workstation Pro",
+  "status": "PUBLISHED_AND_NATIVE_DOWNLOAD_SHA_QA_PASS",
+  "next": "Git Current/Session/Sources R006 checkpoint and user delivery"
+}
