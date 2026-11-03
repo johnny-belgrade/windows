@@ -1,0 +1,18 @@
+{
+  "schema": "BlueLite.R005.F02.ArchiveQA.v1",
+  "utc": "2026-11-03T18:41:34.4437610Z",
+  "operation": "FULL_INDEPENDENT_ARCHIVE_MANIFEST_AND_ORIGINAL_SOURCE_SHA_RECHECK",
+  "archive": "C:\\work\\logs\\BlueLite_R005_F02_20261103T184051802Z_d004eee2.zip",
+  "sha256": "C0B2EB32E65E3F127CDB9619E786EF3344C906308DEB52D21DC8A359131A8184",
+  "bytes": 47001,
+  "full_manifest_members": 22,
+  "archive_data_members": 22,
+  "archive_total_members": 23,
+  "original_local_source_sha_rechecked": 22,
+  "contains_attempt_HOLD_receipts": true,
+  "contains_five_MUMs": true,
+  "contains_active_plan_and_final_decision": true,
+  "original_image_mutated": false,
+  "verdict": "PASS",
+  "one_next": "fresh_process_archive_QA_readback_then_GOLDEN_SHA_and_Cycle_Checkpoint_F03_NEXT"
+}
