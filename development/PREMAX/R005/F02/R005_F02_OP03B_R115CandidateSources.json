@@ -1,0 +1,12 @@
+{
+  "schema": "BlueLite.R005.F02.OP03B.v1",
+  "utc": "2026-11-03T18:09:51.2136084Z",
+  "operation": "CANONICAL_R115_R116_AND_BASIC_SOURCE_PATH_SHA_VERIFICATION",
+  "parent_index": "C:\\work\\PREMAX-work\\R005_GoldenFreeze_RecoveryOnDemand\\05_Evidence\\R005_F02_OP03A_HistoricR115Index.json",
+  "parent_index_sha256": "1712070CCA193F82BDE72232BD2940ADE028EF23D9C4C3B5B394B68273E7549C",
+  "selected": [],
+  "selected_count": 0,
+  "source_only": true,
+  "verdict": "SHA_PINNED_HISTORIC_PATH_SELECTION",
+  "next": "read relevant canonical R115 text and exact error provenance"
+}
