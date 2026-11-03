@@ -1,0 +1,91 @@
+{
+  "schema": "BlueLite.PREMAX.CycleManifest.v1",
+  "cycle_id": "R004_26300_9818_Predecessor_MAXPRE",
+  "status": "NATIVE_26300_9818_MAX_PRE_WIM_ISO_BUILD_PASS_RELEASE_GATES_OPEN",
+  "created_utc": "2026-11-03",
+  "source_build": "26300.9818",
+  "source_index": 1,
+  "source_sha256": "8117C725C1EF9C8F5C73C5A22887DB38C222C373ED601C94D24DC9109AFEDEF8",
+  "source_path": "C:\\work\\26300.9818-UUP-MAX_PRE_26300_v4\\26300.9818_amd64_en-us_professional_6c7bf258_convert.zip",
+  "operator_scope_approval": "Operator independently selected/run reviewed v4 in own UUP root; no automatic approval for future WIM/ISO/VM mutation.",
+  "inputs": [
+    {
+      "role": "original_uup_archive",
+      "sha256": "8117C725C1EF9C8F5C73C5A22887DB38C222C373ED601C94D24DC9109AFEDEF8"
+    },
+    {
+      "role": "source_launcher",
+      "sha256": "838619DB9AEC53A1D0F111967FE04965852BD7A28F58611C6236FCE086C2D42D"
+    },
+    {
+      "role": "reviewed_overlay_v4_zip",
+      "sha256": "0CBA819F2F1A88659DD884633920E6D3F8FFF9C7E1AE8D3C89CC724183C88922"
+    },
+    {
+      "role": "runtime_evidence_zip",
+      "sha256": "D64DAD834847DE4CD4FA577D51ED25158085B29D3A81BF073697B673A14D3905"
+    },
+    {
+      "role": "frozen_runtime_source_code_zip",
+      "sha256": "133B375FFA097514D6DD03CDF9C4FBA14865EB347508F07389D944A40A5FA077"
+    }
+  ],
+  "provenance": {
+    "local_history_readme_verified": true,
+    "history_mapping_refs": [
+      "C:\\work\\UUP-history\\99_Index\\RH06_Final_ProvenanceMapping.csv (historical mapping; not re-read in this OP04–OP08 runtime evidence cycle)"
+    ],
+    "library_refs": [],
+    "github_refs": [
+      "BlueLite_Current_Status.md",
+      "BlueLite-Master_Germanium_Strategy_final.md §0K",
+      "development/PREMAX/R004/R004_OP04_20261103_RuntimeZipIntake.md",
+      "development/PREMAX/R004/R004_OP05_20261103_InventoryHealthFullDiff.md",
+      "development/PREMAX/R004/R004_OP06_20261103_SourceWinRE_ISO_Breakdown.md",
+      "development/PREMAX/R004/R004_OP07_FrozenRuntimeSource_SHA256.txt",
+      "development/PREMAX/R004/R004_OP08_20261103_PostSuccess_DependencyGatedRoadmap.md"
+    ]
+  },
+  "source_bound_predicates": [
+    "Windows 98/98 out+SHA1 content identity vs predecessor PASS",
+    "Apps original 2798/2798 out+SHA1 content identity vs predecessor PASS",
+    "SourceTriad external 3 files NOT_PROVIDED in this runtime (not PASS)",
+    "Apps selected 32, 5 dynamic framework dependencies, unresolved 0 PASS",
+    "Unique actual payload SHA1 129 files 9143080977 B PASS",
+    "Content archive CRC+27 member SHA PASS",
+    "Completed WIM+ISO native return code 0, pending 0 CheckHealth/ScanHealth and VM floor PASS"
+  ],
+  "dependencies_unresolved": [
+    "DesktopAppInstaller provisioned residue; StrictReleaseForbiddenAppGate=0",
+    "Language.Basic en-US capability DISM 0x800F0825",
+    "Two invalid WMIC Superseded package skip candidates",
+    "Mandatory triad alternative needed for future release",
+    "Final ISO 6822354944 B > approx 5GB goal",
+    "Installed 14.5–15.5GB hardlink-aware footprint not measured",
+    "Setup/OOBE/WinRE/Update/Defender/VM/NTLite release gates not tested"
+  ],
+  "drafts": [
+    "03_Drafts\\BlueLite_MAXPRE_26300_v4"
+  ],
+  "static_tests": {
+    "ast": "PS7 14/14 PASS; Windows PowerShell 5.1 14/14 PASS",
+    "negative_fixtures": "Signed URL changed SHA, changed CAB bytes, tampered overlay, evidence ZIP restore: PASS"
+  },
+  "candidate": {
+    "relative_path": "06_Candidate\\BlueLite_MAXPRE_26300_Universal_v4_20261103.zip",
+    "sha256": "0CBA819F2F1A88659DD884633920E6D3F8FFF9C7E1AE8D3C89CC724183C88922",
+    "reviewed": true,
+    "runtime_execution_allowed": "for operator-performed historical R004 run; future changes require new approval"
+  },
+  "runtime": {
+    "authorized": "operator-originated and operator-executed for this run only",
+    "executed": true,
+    "receipt": "05_Evidence\\R004_OP07_FrozenNativeRun_20261103T160115024Z.zip",
+    "receipt_sha256": "D64DAD834847DE4CD4FA577D51ED25158085B29D3A81BF073697B673A14D3905",
+    "engine_exit_code": 0,
+    "wim_bytes": 5736092221,
+    "iso_bytes": 6822354944,
+    "release_accepted": false
+  },
+  "one_next": "SEE_ONLY_CURRENT_STATUS: read-only dependency graph and media acceptance baseline"
+}
