@@ -1,0 +1,23 @@
+{
+  "schema": "BlueLite.R007.OP03.v1",
+  "utc": "2026-11-03T21:05:37.2691762Z",
+  "operation": "READ_ONLY_SEVENZIP_REAL_V5_ISO_PATH_AND_CONVERTER_SKIPWINRE",
+  "iso": "C:\\work\\26300.9818-UUP-v5\\26300.9818.261025-0959.26H2_GE_RELEASE_SVC_PROD3_CLIENTPRO_OEMRET_X64FRE_EN-US.ISO",
+  "iso_bytes": 6820456448,
+  "sevenzip": "C:\\Program Files\\7-Zip\\7z.exe",
+  "sevenzip_sha256": "94205CFC054DD3BBEB978905BC619A65B3F04E9E73BB2717841110B6F46D962E",
+  "metadata_listing": "C:\\work\\PREMAX-work\\R007_26300_SourcePrecise_PreCut\\03_Test\\R007_OP03_ISO_MetadataListing.txt",
+  "metadata_sha256": "FA3E44061F994BB265814888B45B1B5E5844A205C1C22A8D8503700DB9D72E64",
+  "native_exit": 0,
+  "listed_paths": 1058,
+  "found_install_wim": 1,
+  "found_setup_boot_wim": 1,
+  "direct_winre_named_paths": 0,
+  "effective_config": "C:\\work\\26300.9818-UUP-v5\\ConvertConfig.ini",
+  "effective_skip_winre": true,
+  "source_winre_full_wim_inside_install_independently_checked": false,
+  "external_recovery_descriptor_design": "metadata-only outside base ISO; separately matched recovery USB/optional WinRE content, never remove Setup boot.wim",
+  "golden_image_changed": false,
+  "verdict": "ISO_PATHS_READONLY_PASS_WITH_INNER_WINRE_PROOF_PENDING",
+  "one_next": "OP04_SOURCE_BOUND_V6_CODE_DELTA_AND_EXTERNAL_RECOVERY_DESCRIPTOR"
+}
