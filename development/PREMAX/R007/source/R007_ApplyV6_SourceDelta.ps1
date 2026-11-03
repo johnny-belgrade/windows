@@ -21,7 +21,7 @@ function Change-Exact([string]$file,[string]$from,[string]$to) {
 }
 $nl=[Environment]::NewLine
 $pre='BlueLite\BlueLite_Preflight.ps1'
-$anchor='  $launcher=[IO.File]::ReadAllText((Join-Path $root ''uup_download_windows.cmd''))'
+$anchor=' $launcher=[IO.File]::ReadAllText((Join-Path $root ''uup_download_windows.cmd''))'
 $check=@'
   # R007 source identity is mandatory BEFORE download; full 1:1:1 + D4 follows after URL queue retrieval.
   foreach($n in @('List of files UUP.txt','File_renaming_script.cmd','SHA-1 checksums file.txt')){
