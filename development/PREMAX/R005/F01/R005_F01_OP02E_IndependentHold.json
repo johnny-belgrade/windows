@@ -1,0 +1,10 @@
+{
+  "schema": "BlueLite.R005.F01.OP02E.QA.v1",
+  "utc": "2026-11-03T17:40:58.7985832Z",
+  "verdict": "HOLD_BAD_ARRAY_UNROLL",
+  "source": "C:\\work\\logs\\BlueLite_R005_F01_OP02E_HistoricVariantsDelta_20261103.json",
+  "source_sha256": "204F920DE802CDA64653637466020F3AA95675C38BBC7927A3F50ADEA6AAE95B",
+  "detected": "PowerShell pipeline unrolled each ReadAllLines string array; OP02E pairwise compare used only 1 line per file, not real 340/359/361 line scripts",
+  "recovery": "new OP02F with explicit boxed string-array collections",
+  "image_mutation": false
+}
