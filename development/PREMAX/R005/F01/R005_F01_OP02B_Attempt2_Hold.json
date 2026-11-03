@@ -1,0 +1,12 @@
+{
+  "schema": "BlueLite.R005.F01.DiagnosticAttempt.v1",
+  "operation": "OP02B_NATIVE_ZIP_READONLY_DIAGNOSTIC",
+  "attempt": 2,
+  "utc": "2026-11-03",
+  "status": "HOLD_REPORT_SERIALIZATION_ONLY",
+  "actual_error": "ConvertTo-Json -Depth 18 rejected a nested System.Collections.Hashtable with non-string keys while serializing raw inventory AppX objects",
+  "stage": "after read-only source and ZIP parsing; before writing OP02B output receipt",
+  "target_image_mutation": false,
+  "corrective_revision": "flatten AppX inventory objects to explicit plain-string DisplayName/PackageName and use text-only line evidence; depth 8",
+  "one_next": "independent receipt QA then corrected read-only OP02B"
+}
