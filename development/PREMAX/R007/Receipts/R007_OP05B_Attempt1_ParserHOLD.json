@@ -1,0 +1,13 @@
+{
+  "schema": "BlueLite.R007.OP05B.Attempt.v1",
+  "utc": "2026-11-03T21:20:07.7025195Z",
+  "operation": "FIRST_REVIEW_NATIVE_PS7_AST_OF_OWNED_SOURCE_PATCH",
+  "status": "HOLD_PARSER",
+  "error": "PowerShell does not allow pipe following foreach statement inside @() expression. No patch has executed.",
+  "source": "C:\\work\\PREMAX-work\\R007_26300_SourcePrecise_PreCut\\02_Drafts\\R007_ApplyV6_SourceDelta.ps1",
+  "source_sha256": "BD941517A777CF51EE9F7208828A719594DAB192D9E6DAD327AF32DFF976E167",
+  "golden_image_modified": false,
+  "draft_patch_executed": false,
+  "correction": "split foreach array and Sort-Object into two statements",
+  "one_next": "REVIEW_FIX_AST_BEFORE_APPLY"
+}
