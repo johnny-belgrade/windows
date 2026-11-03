@@ -1,0 +1,13 @@
+{
+  "schema": "BlueLite.R006.OP00.v1",
+  "utc": "2026-11-03T19:15:06.8120384Z",
+  "operation": "PREPARE_NEXT_PORTABLE_26300_MAX_PRE_V5",
+  "source_zip": "C:\\work\\26300.9818-UUP-MAX_PRE_26300_v4\\BlueLite_MAXPRE_26300_Universal_v4_20261103.zip",
+  "source_sha256": "0CBA819F2F1A88659DD884633920E6D3F8FFF9C7E1AE8D3C89CC724183C88922",
+  "plan": "C:\\work\\PREMAX-work\\R006_26300_MAXPRE_v5_Package\\00_Plan.md",
+  "plan_sha256": "684E9CC8908B870A21626AEC1BDB450753D27F0736672640862F5C9659092F8C",
+  "candidate_changes": "Basic retired from GREEN; preserve v4 native other filters and converter",
+  "golden_WIM_mutation": false,
+  "status": "PASS",
+  "next": "OP01 copy frozen v4 zip into R006 inputs, independently hash"
+}
