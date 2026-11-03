@@ -1,0 +1,247 @@
+{
+  "schema": "BlueLite.R005.F02.OP07.v1",
+  "utc": "2026-11-03T18:28:29.9101894Z",
+  "operation": "FIVE_EXTRACTED_BASIC_AND_CLIENT_MUM_XML_RELATIONSHIP_ANALYSIS_READONLY",
+  "source_file_count": 5,
+  "records": [
+    {
+      "name": "Microsoft-Windows-LanguageFeatures-Basic-en-us-Package~31bf3856ad364e35~amd64~~10.0.26100.1742.mum",
+      "sha256": "493D77A640DAEA6060D85AA8D60EC5A26058AECA6E0B81CA5332DC1033DEAB2C",
+      "bytes": 3373,
+      "release_types": [
+        "OnDemand Pack"
+      ],
+      "package_count": 7,
+      "parent_count": 0,
+      "parent_xml": [],
+      "permanence_or_removable_attributes": [],
+      "raw_permanence_word_present": false,
+      "identity_node_count": 7,
+      "identity_samples": [
+        {
+          "name": "Microsoft-Windows-LanguageFeatures-Basic-en-us-Package",
+          "version": "10.0.26100.1742",
+          "language": "neutral",
+          "processorArchitecture": "amd64"
+        },
+        {
+          "name": "LanguageFeatures-WordBreaking-en-Package",
+          "version": "10.0.26100.1",
+          "language": "neutral",
+          "processorArchitecture": "amd64"
+        },
+        {
+          "name": "LanguageFeatures-WordBreaking-en-legacy-Package",
+          "version": "10.0.26100.1150",
+          "language": "neutral",
+          "processorArchitecture": "amd64"
+        },
+        {
+          "name": "Microsoft-Windows-Hyphenation-Dictionaries-en-Package",
+          "version": "10.0.26100.1",
+          "language": "neutral",
+          "processorArchitecture": "amd64"
+        },
+        {
+          "name": "Microsoft-Windows-Spelling-Dictionaries-en-us-Package",
+          "version": "10.0.26100.1000",
+          "language": "neutral",
+          "processorArchitecture": "amd64"
+        },
+        {
+          "name": "Microsoft-Windows-TextPrediction-Dictionaries-en-Package",
+          "version": "10.0.26100.1",
+          "language": "neutral",
+          "processorArchitecture": "amd64"
+        },
+        {
+          "name": "Microsoft-Windows-LanguageFeatures-Basic-en-us-Package",
+          "version": "10.0.26100.1",
+          "language": "neutral",
+          "processorArchitecture": "wow64"
+        }
+      ]
+    },
+    {
+      "name": "Microsoft-Windows-LanguageFeatures-Basic-en-us-Package-Wrapper~31bf3856ad364e35~amd64~~10.0.26100.1742.mum",
+      "sha256": "89CE131EA5F370F30371DE3E296A6CF40289F314FB3994AEB998A9C27441210C",
+      "bytes": 1585,
+      "release_types": [
+        "Security Update"
+      ],
+      "package_count": 2,
+      "parent_count": 1,
+      "parent_xml": [
+        "<parent revisionCompare=\"GE\" integrate=\"standalone\" disposition=\"detect\" xmlns=\"urn:schemas-microsoft-com:asm.v3\"><assemblyIdentity name=\"Microsoft-Windows-LanguageFeatures-Basic-en-us-Package\" version=\"10.0.26100.1\" processorArchitecture=\"amd64\" language=\"neutral\" buildType=\"release\" publicKeyToken=\"31bf3856ad364e35\" /></parent>"
+      ],
+      "permanence_or_removable_attributes": [],
+      "raw_permanence_word_present": false,
+      "identity_node_count": 3,
+      "identity_samples": [
+        {
+          "name": "Microsoft-Windows-LanguageFeatures-Basic-en-us-Package-Wrapper",
+          "version": "10.0.26100.1742",
+          "language": "neutral",
+          "processorArchitecture": "amd64"
+        },
+        {
+          "name": "Microsoft-Windows-LanguageFeatures-Basic-en-us-Package",
+          "version": "10.0.26100.1",
+          "language": "neutral",
+          "processorArchitecture": "amd64"
+        },
+        {
+          "name": "Microsoft-Windows-LanguageFeatures-Basic-en-us-Package",
+          "version": "10.0.26100.1742",
+          "language": "neutral",
+          "processorArchitecture": "amd64"
+        }
+      ]
+    },
+    {
+      "name": "Microsoft-Windows-LanguageFeatures-Basic-en-us-Package~31bf3856ad364e35~wow64~~10.0.26100.1.mum",
+      "sha256": "78550BA8AABA330C74A831C22C49107B0493C43D65852A39F3118FCB529E9192",
+      "bytes": 1761,
+      "release_types": [
+        "OnDemand Pack"
+      ],
+      "package_count": 3,
+      "parent_count": 0,
+      "parent_xml": [],
+      "permanence_or_removable_attributes": [],
+      "raw_permanence_word_present": false,
+      "identity_node_count": 3,
+      "identity_samples": [
+        {
+          "name": "Microsoft-Windows-LanguageFeatures-Basic-en-us-Package",
+          "version": "10.0.26100.1",
+          "language": "neutral",
+          "processorArchitecture": "wow64"
+        },
+        {
+          "name": "LanguageFeatures-WordBreaking-en-WOW64-Package",
+          "version": "10.0.26100.1",
+          "language": "neutral",
+          "processorArchitecture": "wow64"
+        },
+        {
+          "name": "LanguageFeatures-WordBreaking-en-legacy-WOW64-Package",
+          "version": "10.0.26100.1",
+          "language": "neutral",
+          "processorArchitecture": "wow64"
+        }
+      ]
+    },
+    {
+      "name": "Microsoft-Windows-Client-LanguagePack-Package-Wrapper~31bf3856ad364e35~amd64~en-US~10.0.26100.1742.mum",
+      "sha256": "39B6E83B49F99F0134CE1F331EF95CC9E89BB67508AEE011AA042BA0D1776064",
+      "bytes": 1541,
+      "release_types": [
+        "Security Update"
+      ],
+      "package_count": 2,
+      "parent_count": 1,
+      "parent_xml": [
+        "<parent revisionCompare=\"GE\" integrate=\"standalone\" disposition=\"detect\" xmlns=\"urn:schemas-microsoft-com:asm.v3\"><assemblyIdentity name=\"Microsoft-Windows-Client-LanguagePack-Package\" version=\"10.0.26100.1\" processorArchitecture=\"amd64\" language=\"en-US\" buildType=\"release\" publicKeyToken=\"31bf3856ad364e35\" /></parent>"
+      ],
+      "permanence_or_removable_attributes": [],
+      "raw_permanence_word_present": false,
+      "identity_node_count": 3,
+      "identity_samples": [
+        {
+          "name": "Microsoft-Windows-Client-LanguagePack-Package-Wrapper",
+          "version": "10.0.26100.1742",
+          "language": "en-US",
+          "processorArchitecture": "amd64"
+        },
+        {
+          "name": "Microsoft-Windows-Client-LanguagePack-Package",
+          "version": "10.0.26100.1",
+          "language": "en-US",
+          "processorArchitecture": "amd64"
+        },
+        {
+          "name": "Microsoft-Windows-Client-LanguagePack-Package",
+          "version": "10.0.26100.1742",
+          "language": "en-US",
+          "processorArchitecture": "amd64"
+        }
+      ]
+    },
+    {
+      "name": "Microsoft-Windows-Client-LanguagePack-Package~31bf3856ad364e35~amd64~en-US~10.0.26100.1742.mum",
+      "sha256": "E3B5B5A5A1AD25BCDBE50DFCA08C0320F024F813D0552C92B8B531489F8394BE",
+      "bytes": 91841,
+      "release_types": [
+        "Language Pack"
+      ],
+      "package_count": 206,
+      "parent_count": 1,
+      "parent_xml": [
+        "<parent buildCompare=\"EQ\" disposition=\"detect\" distributionCompare=\"EQ\" integrate=\"separate\" revisionCompare=\"EQ\" serviceCompare=\"EQ\" xmlns=\"urn:schemas-microsoft-com:asm.v3\"><assemblyIdentity name=\"Microsoft-Windows-Foundation-Package\" version=\"10.0.26100.1742\" processorArchitecture=\"amd64\" language=\"neutral\" buildType=\"release\" publicKeyToken=\"31bf3856ad364e35\" /></parent>"
+      ],
+      "permanence_or_removable_attributes": [],
+      "raw_permanence_word_present": false,
+      "identity_node_count": 207,
+      "identity_samples": [
+        {
+          "name": "Microsoft-Windows-Client-LanguagePack-Package",
+          "version": "10.0.26100.1742",
+          "language": "en-US",
+          "processorArchitecture": "amd64"
+        },
+        {
+          "name": "Microsoft-Windows-Foundation-Package",
+          "version": "10.0.26100.1742",
+          "language": "neutral",
+          "processorArchitecture": "amd64"
+        },
+        {
+          "name": "Microsoft-Windows-Editions-EnterpriseS-Package",
+          "version": "10.0.26100.1742",
+          "language": "en-US",
+          "processorArchitecture": "amd64"
+        },
+        {
+          "name": "Microsoft-Windows-Editions-EnterpriseSEval-Package",
+          "version": "10.0.26100.1742",
+          "language": "en-US",
+          "processorArchitecture": "amd64"
+        },
+        {
+          "name": "Microsoft-Windows-Editions-EnterpriseSN-Package",
+          "version": "10.0.26100.1742",
+          "language": "en-US",
+          "processorArchitecture": "amd64"
+        },
+        {
+          "name": "Microsoft-Windows-Editions-EnterpriseSNEval-Package",
+          "version": "10.0.26100.1742",
+          "language": "en-US",
+          "processorArchitecture": "amd64"
+        },
+        {
+          "name": "Microsoft-Windows-Editions-CoreCountrySpecific-Package",
+          "version": "10.0.26100.1742",
+          "language": "en-US",
+          "processorArchitecture": "amd64"
+        },
+        {
+          "name": "Microsoft-Windows-Editions-Starter-Package",
+          "version": "10.0.26100.1742",
+          "language": "en-US",
+          "processorArchitecture": "amd64"
+        }
+      ]
+    }
+  ],
+  "current_9818_Basic_CBS_owner_row": {
+    "Name": "Microsoft-Windows-LanguageFeatures-Basic-en-us-Package~31bf3856ad364e35~amd64~~10.0.26100.9818",
+    "State": "4"
+  },
+  "current_9818_mum_path_present_in_wim_listing": false,
+  "note": "MUM XML alone does not establish CBS registry owners, permanence, uninstallability, actual payload deletion or size savings",
+  "golden_wim_mutated": false,
+  "verdict": "XML_RELATIONS_ANALYZED_CBS_OWNER_UNPROVEN",
+  "next": "F02 source-bound final decision and per-operation evidence ZIP with independent checks"
+}
