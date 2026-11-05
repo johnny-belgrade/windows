@@ -1,0 +1,17 @@
+# R010 — Read-only source gate following R009 native offline preflight PASS
+Date: 2026-11-05; normative Master §0G/§0I/§0J/§0L. R009 independently proven source-only native PASS at `development/PREMAX/R009/R009_OP03_20261105_NativeIntake_IndependentReview.md` (source commit `92538efe7da13a748ff4a76e5e3f69b89d62265d`, blob `21ba2e7dec7d9f8acbf7f60742eaadb1d2ecd65c`).
+
+## Scope and precautions
+R010 is **READ-ONLY** to existing original `C:\work\26300.9818-UUP`, isolated R009 stage `C:\work\PREMAX-work\R009_V61_OfflinePreflight\UUP`, and original R009 evidence logs; it may create only evidence files directly in **`C:\work\logs` root**. Neither source nor image/GOLDEN/Handoff/UUP-history/Master is changed. No `START.cmd`, no downloader, no converter, no WIM/ISO/CBS, no automatic NTLite/VM, and no root log subdirectories. Preapproved network permission is not itself converter/image approval. Stop on any changed source/hash or missing R009 proof.
+
+Single GUI-delivered PS1 `C:\work\scripts\BlueLite_R010_ReadOnlySourceGate_v1.ps1`, all files `C:\work\logs\BlueLite_R010_*.<extension>` direct. On a collision (earlier R010 run), HOLD without overwriting.
+
+## Strict one-op receipt + separate PS7 verification
+1. OP01: reread R009 `OP01_SourceManifest.json` and compare **all 15** exact byte lengths/SHA256 against original source and R009 stage. Write `BlueLite_R010_OP01_SourceReport.json` then immutable `BlueLite_R010_OP01_Receipt.json` to logs root. Spawn a new PS7 verifier process rehashing the same inputs, checking JSON/report hash, receipt fields, and source scope; write `BlueLite_R010_OP01_Verify.json`; proceed only on PASS.
+2. OP02: independently hash R009 staged `BlueLite_Package_SHA256.txt` and **37/37** overlay members, exact original preflight script and `START.cmd` presence but **no execution**. Write `BlueLite_R010_OP02_OverlayReport.json`, immutable `BlueLite_R010_OP02_Receipt.json`, child PS7 independent `BlueLite_R010_OP02_Verify.json`; proceed only on PASS.
+3. OP03: independently verify original R009 evidence ZIP SHA and embedded 13 member hashes and native PASS, 5 receipts + 5 Verify SHA/UTC chains, original triad 98 and `windows_queue_sha256=null`; output `BlueLite_R010_OP03_GateReport.json` with `FULL_V6_1_RUNTIME_NOT_RUN / FULL_RUNTIME_AUTHORIZATION_REQUIRED` and explicit open 5GB ISO, installed footprint, DAI/Basic/WMIC/F04, boot/Update/Defender, second-source gates; immutable `BlueLite_R010_OP03_Receipt.json`; child independent PS7 `BlueLite_R010_OP03_Verify.json`.
+4. OP04: archive ONLY R010 OP01–03 machine-readable report/receipt/Verify files into `C:\work\logs\BlueLite_R010_Evidence.zip` with explicit SHA+size listing, then immutable `BlueLite_R010_OP04_Receipt.json` and child fresh PS7 `BlueLite_R010_OP04_Verify.json` checking exact ZIP contents, SHA, member bytes. These final 2 JSONs are standalone due write-after-ZIP sequencing. HOLD receipt is `C:\work\logs\BlueLite_R010_HOLD.json`.
+
+Output required from operator via GUI: the **three root-level files** `C:\work\logs\BlueLite_R010_Evidence.zip`, `C:\work\logs\BlueLite_R010_OP04_Receipt.json`, and `C:\work\logs\BlueLite_R010_OP04_Verify.json`. No ad-hoc log directories. No native PASS until uploaded independent evidence review.
+
+**ONE NEXT:** deliver SHA-pinned PS1 with exact absolute-path PS7 operator command and above three files, receive R010 evidence, independently update one compact GitHub Current using CAS/readback, pause. Full START mutation still requires separately reviewed GUI authorization.
