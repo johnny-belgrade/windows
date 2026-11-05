@@ -1,0 +1,16 @@
+# BlueLite R013 OP00 — no-prompt no-Explorer AUTO launcher scope and proof
+2026-11-05. Master v6.3.4 §0G/0J/0L. User explicit requirement: one complete PowerShell command runs regardless of Explorer and current directory; never Read-Host or manually supply a folder; branded BlueLite; ready for first TeamOS draft. No Master, image, original source or GOLDEN mutation.
+
+## Scoped solution
+- Existing v7.0 package engine already computes `$SourceRoot=$PSScriptRoot` when no root explicitly specified. Previous GUI instruction wrongly injected `Read-Host` and caused interactive folder prompt. The fix is in the launcher and README; do NOT misrepresent this as an engine bug.
+- Versioned `BlueLite_PREMAX_AutoLaunch_v7_1.ps1` source artifact directly in delivered new ZIP; SHA256 `670119C4C3EFADE42BA61F7F86A4E764AA3569B499D4E182CB8413BCEC0E65EB`, 7,212 B, 128 lines. Only searches approved `C:\work` hierarchy for `BlueLite_PREMAX_Test.ps1`, independent of `$PWD`, `%~dp0`, Explorer and Read-Host.
+- Only accepts candidate engine SHA256 `A869E3294595AF26B3654E4534C6526886CC6CABB8BAF23904B145E0878A78E0` with source metadata triad and `BlueLite_Package_SHA256.txt`; fail-closed on zero or multiple matches, with candidate/rejection information, and never auto-selects an ambiguous build.
+- Full launcher checks every package manifest SHA256 entry plus PowerShell AST, then calls ONLY `pwsh.exe -NoProfile -NonInteractive -File <determined> -Mode Analyze -SourceRoot <determined>`; no high-impact Build authorization flags or caller's current working directory required. All newly created HOLD logs directly in `C:\work\logs` root (FileMode.CreateNew), never subfolders.
+- Included `BLUELITE-AUTO-COMMAND.txt` offers a fully self-contained ONE-PASTE single-line PowerShell 7 command: `Get-ChildItem -LiteralPath C:\work -Recurse -Depth 16 -Filter BlueLite_PREMAX_Test.ps1` with engine SHA pin, basic package manifest/module checks, exactly-one-candidate gate and source-only `pwsh ... -Mode Analyze`. This command does not need the new launcher to have been installed: works with prior extracted v7.0 root.
+- No network, Microsoft update URL renewal or UUP payload downloading occurs in Analyze; all original 1:1:1 list/rename/SHA-1, D4, FOD input and converter rules retained from the unchanged original source-gated v7.0 engine. Source location must be under canonical C:\work per Master, but no specific folder name or build is assumed.
+
+## Certification boundary
+- 19/19 separate static ZIP/launcher validations PASS. Newly authored launcher has NOT yet been native Windows PowerShell 7 AST/runtimed from operator environment. Base v7.0 engine SHA proven identical byte-for-byte, not a new claim about 5GB ISO or installed footprint.
+- The user may immediately run the fully self-contained GUI one-liner from any PowerShell current directory against an existing extracted v7.0 copy under approved C:\work. It prints build-resolved output and returns 5 canonical root logs on PASS or a HOLD on failure.
+
+ONE NEXT: record independent full v7.1 archive/member SHA QA as R013 OP01, independent GitHub readback, update compact Current via fresh CAS+independent readback; then protocol pause and await operator's v7.1 Analyze logs. No image mutation.
