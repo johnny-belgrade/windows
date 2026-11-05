@@ -1,0 +1,33 @@
+{
+  "schema": "BlueLite.R010.SourceQA.v1",
+  "date_utc": "2026-11-05",
+  "operation": "R010_OP01_STATIC_SOURCE_QA",
+  "status": "PASS",
+  "native_execution": "NOT_RUN",
+  "delivery": {
+    "filename": "BlueLite_R010_ReadOnlySourceGate_v1.ps1",
+    "operator_save_path": "C:\\work\\scripts\\BlueLite_R010_ReadOnlySourceGate_v1.ps1",
+    "bytes": 16088,
+    "sha256": "69212C74DFFF366458ABA6151303E0ABBB74C316E3EA3A9804190A1A77790BB1",
+    "source_git": "development/PREMAX/R010/BlueLite_R010_ReadOnlySourceGate_v1.ps1",
+    "source_commit": "6ee94719bb2342a593b681422c41869c5bea85b7",
+    "source_blob": "8b7fc953165683afabe8cfb3787a8db3741def88"
+  },
+  "independent": {
+    "file_library_read_equals_git_content": true,
+    "native_windows_ps7_parse_input_ast_errors": 0,
+    "native_windows_ps7_readonly_github_source_sha256": "69212C74DFFF366458ABA6151303E0ABBB74C316E3EA3A9804190A1A77790BB1",
+    "device": "DESKTOP-4J4KCEA",
+    "r009_native_evidence_previous_intake": "R009_SOURCE_ONLY_NATIVE_PREFLIGHT_PASS"
+  },
+  "logs": {
+    "root": "C:\\work\\logs",
+    "flat_direct_files_only": true,
+    "zip": "C:\\work\\logs\\BlueLite_R010_Evidence.zip",
+    "final_receipt": "C:\\work\\logs\\BlueLite_R010_OP04_Receipt.json",
+    "final_verify": "C:\\work\\logs\\BlueLite_R010_OP04_Verify.json",
+    "hold": "C:\\work\\logs\\BlueLite_R010_HOLD.json"
+  },
+  "restriction": "R010 only source/receipt verification; no START.cmd, downloader, converter, offline image, NTLite/VM; original R009 log subfolder is read-only evidence, NEVER a new output destination",
+  "one_next": "COMPACT_CURRENT_CAS_THEN_OPERATOR_EXECUTION"
+}
