@@ -1,0 +1,18 @@
+# BlueLite R011 OP00 — native original metadata discovery, second distinct 26300 build
+Date: 2026-11-05. One bounded **read-only** inspection via authorized RDC (device DESKTOP-4J4KCEA, `C:\work`+`C:\BLR20R2F5` roots, original 33 blocked commands). No source, Master, Handoff, GOLDEN, UUP-stage or image modification; no START/download/converter/WIM/ISO.
+Source A exact original directory `C:\work\26300.9725-UUP` currently contains ONLY 3 original metadata files, no complete 26300.9725 UUP Dump launcher/converter package.
+- `List of files UUP_26300.9725.txt` 12803 B SHA256 `5A9119E8EF697EA234E2902471BBA448748D3C36DE4EC6668711B2514C293297`.
+- `File_renaming_script_26300.9725.cmd` 10393 B SHA256 `014E3296D3D1F3FDBE4C239A56AF9FDA4EC8F708B0FB889BABC20AF1ABEB6F32`.
+- `SHA-1 checksums file 26300.9725.txt` 9779 B SHA256 `5309EAB995EFC18A292B90161954FEE10C78DB0B44C8B77B3A1DE177AEBC3808`.
+Source B frozen R009 original `C:\work\26300.9818-UUP` 3 canonical metadata files:
+- `List of files UUP.txt` 12759 B SHA256 `D4E315D675260B4D2E9F354739C53DA069528AC47C18D428B4F6198E42DC6AAA`.
+- `File_renaming_script.cmd` 10393 B SHA256 `5B2EF8687885E2D9EDFC5A1F50C2D25F37E8E86D4E23E2EA92833022C3579C94`.
+- `SHA-1 checksums file.txt` 9779 B SHA256 `C757AE7C250F25C1FFD265EECB140528EFAC51283558FCC699E182360EB632F4`.
+RDC native PS7 Get-FileHash -Algorithm SHA256 and byte lengths were printed read-only for these six exact files; no newly generated local evidence file in this probe. Separate cross-check via authorized RDC read_file (all 100/100/98 original lines) and independent in-memory source identity parser (not the shipped BlueLite gate) yielded:
+- 26300.9725 list=98 ledger=98 rename=98, unique GUID 98, per-name SHA-1 1:1:1 PASS; exactly 1 informational extra banner line ` Windows 11, version 26H2 (26300.9725) amd64`; original filenames contain build suffix.
+- 26300.9818 list=98 ledger=98 rename=98, unique GUID 98, per-name SHA-1 1:1:1 PASS, zero build-banner lines.
+- Cross-build: 94 names shared, SHA-1 changed for exactly 1 shared name, 4 names only in 9725, 4 only in 9818. This proves distinct real metadata, not an alternate copy of the same source.
+- **Existing original shipped v6.1 `BlueLite_SourceTriadGate.ps1`** (exact original 87 lines read via RDC) ignores empty/header rows but NOT the optional exact Windows build banner. Its UUP list parser will reject original 9725 banner as `Malformed UUP file-list row` even if canonical-renamed copies are staged. `BlueLite_Preflight.ps1` (72 lines read) requires 3 canonical unsuffixed names and entire untouched original launcher+converter; original 9725 directory has metadata only. DO NOT rewrite 9725 metadata, edit original v6.1 gate in place, misclaim native v6.1 PASS or download/converter ready.
+- Source-only corrective direction: versioned candidate parser must accept ONLY a strictly grammar-bound single build-banner with exact selected build/arch (and avoid any banner when missing); accept user-selected build-suffixed source paths by explicitly pinned SHA, validate 1:1:1 mapping with SHA-1 and unique GUID, reject unexpected extra lines/duplicates/path traversal, and leave all original 6 sources immutable. Run independent PS7 source-only fixture/negative checks before production promotion. All new operator-return evidence at C:\work\logs root, script under C:\work\scripts.
+
+ONE NEXT: create/review a new versioned standalone read-only `R011` two-build metadata validator, direct PS1 GUI delivery with SHA, per-op immutable receipt and independently fresh PS7 Verify, native run against both original 9725 and 9818 metadata, returned ZIP+final receipt/Verify direct logs root. Full 9725 preflight and full v6.1 WIM/ISO still not authorized or certified.
