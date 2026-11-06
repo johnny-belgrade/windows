@@ -107,7 +107,7 @@ try{
   $matches=[regex]::Matches($after,$rx)
   Require ($matches.Count -eq 1) ('CAPTURE_ANCHOR_COUNT_'+$matches.Count)
   $nl=[Environment]::NewLine
-  $hook='powershell -NoProfile -ExecutionPolicy Bypass -File "BlueLite\BlueLite_R027_CaptureImages.ps1" -StageRoot "."'+$nl+'if errorlevel 1 ('+$nl+'  echo [BlueLite ERROR] image capture failed; ISO stopped.'+$nl+'  exit /b 93'+$nl+')'+$nl
+  $hook='pwsh.exe -NoProfile -NonInteractive -File "BlueLite\BlueLite_R027_CaptureImages.ps1" -StageRoot "."'+$nl+'if errorlevel 1 ('+$nl+'  echo [BlueLite ERROR] image capture failed; ISO stopped.'+$nl+'  exit /b 93'+$nl+')'+$nl
   $patched=$before+[regex]::Replace($after,$rx,('$1'+$hook+'$2'),1)
   [IO.File]::WriteAllText($converter,$patched,$enc)
   Require ((H $converter) -ne $source.converter_sha256) 'PATCH_NOT_APPLIED'
