@@ -1,0 +1,21 @@
+# R022 OP02 — new complete PRE_MAX v11 source plan BEFORE archive authoring
+2026-11-06. Master v6.3.4 + operator §0M. R022 OP01 cleanup proof commit `182a5a9c61a3d3f021809b4bd2ecc0064cf7ecf5`, independent blob `b4789e9c557fc21a9b6fa1469b2819daefa92d4e`. All 33 paths and SHA256 in separately readback CSV `development/PREMAX/R022/R022_OP01_20261106_Cleanup_R021_33Deleted_ExactNativeEvidence.csv` blob `b5b69e07182d82e7fbc7e32bb45ab15d88aca4bc`.
+
+## Grounded predecessor lineage
+- Native R004 26300.9818 final image WIM/ISO built, historical ISO 6,822,354,944 B and WIM 5,736,092,221 B; v6.1 full engine archived; native v9.1 source-only PASS; v10.1 user native source-only with honest `D4_DERIVED_NOT_INDEPENDENT` triad 98/98 PASS. This new R022 is TEST DRAFT, not certified 5GB ISO.
+- Original vendor UUP Dump `uup_download_windows.cmd`, `files/get_aria2.ps1`, `files/converter_windows`, `files/converter_multi`, `ConvertConfig.ini` and `CustomAppsList.txt` retained as source of identity. Same UUID/build/arch/lang/edition. Prefer genuine metadata triad; absent original means get D4 queue and label D4 derived, never execute Rename CMD.
+- User MANDATORY layout: download ORIGINAL and BlueLite ZIP into ONE path without spaces, manually extract BOTH directly there. One root `BlueLite_START.cmd` Analyze only and separate `BlueLite_BUILD.cmd` explicit download/owned-image authorization, all outputs in `BlueLite_Work` and logs/Timeline/receipt ZIP in `BlueLite_Logs`; original extracted vendor files remain unchanged. No C:\work assumption or source path prompts.
+
+## Six sequential source-bound gates
+Phase 0: read-only extracted original vendor and original ZIP optional corroboration, exact launcher UUID and six provider member identities; a mixed source or partially matching original metadata -> HOLD. Copy vendor archive MEMBER FILES ONLY into unique owned `BlueLite_Work\...` stage, verify original source SHA after copy, and SHA manifest overlays.
+Phase 1: source triad gate and apps selected seed + full runtime Appx framework dependency closure; all source names/GUID/out/SHA1 matched, frozen D4 identity and metadata only. Do not execute generated rename CMD (data-only). Avoid unproven large Windows FOD/CAB input deletion before reconstruction.
+Phase 2: original UUP provider converter and aria2 manifests, UUID-bound renewable signed URLs; refresh ONLY if UUID/out/SHA1 unchanged, verify full Windows source SHA1. Full reconstruction-dependent FOD/delta inputs retained; historical wimlib blob-not-found 55 excludes blind FOD queue omission.
+Phase 3: original provider `convert-UUP.cmd` reconstructed WIM using config `SkipWinRE=1` for installed image and `wim2esd=0`. Setup WinPE/boot.wim kept; temporary original converter WinRE stage can still be required to construct boot.wim. No direct image mutation in Analyze.
+Phase 4: pre-ISO offline mounted WIM debloat with reviewed Apps + CBS/FOD capability allowlists, protected servicing, Defender/Update/network/storage, AppInstaller staging, Language.Basic en-US and WMIC dependency checks; DISM health and transactional export/promote. FoD 62 classified is NOT 62 safely removable.
+Phase 5: only AFTER successful pre-ISO WIM hook use ORIGINAL converter final ISO stage; WIM/ISO SHA and immutable receipts/timeline, status IMAGE_BUILT_NOT_RELEASE (not release, VM, installed footprint PASS).
+
+## Bounded source/QA and Git execution
+- Base exact v10.1 ZIP, preserve 33 reviewed UUP/FOD/Appx/converter/renewal modules byte-identically. Only update one-folder Factory native extracted source discovery/stage and branding/manifest/TL/ReadMe. Source QA and native PS7 AST if available; separate fresh process ZIP CRC and 1:1 SHA256 member hashes; negative fixtures ensure no vendor/root, wrong UUID, foreign metadata, unsafe filename and mismatch HOLD.
+- Per-operation Git OP03 reviewed source patch and readback BEFORE final immutable deliverable ZIP; Git OP04 source/ZIP SHA receipt and readback BEFORE user link; CAS only sole Current after verified package, Master/Handoff/Registry/GOLDEN unchanged. Local operator only may run future Build.
+
+**ONE NEXT:** Code isolated v11 complete package, verify scripts/fixtures and exact inherited module diff; Git OP03 + separate readback; then produce final ZIP/OP04 and Current. No live original UUP/WIM/ISO modifications.
