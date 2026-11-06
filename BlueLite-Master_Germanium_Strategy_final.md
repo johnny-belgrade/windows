@@ -4,6 +4,8 @@
 
 > **2026-11-03 SUCCESSOR TECHNICAL EVIDENCE — §0K:** operator-run 26300.9818 MAX_PRE v4 ENGINE_RETURNED_ZERO; final install.wim and ISO physically proven, native CBS/AppX/health evidence archived. This is **image-construction PASS**, not 5GB ISO / 14.5–15.5GB installed / VM / Defender / Windows Update release PASS. See single live Current and immutable R004 OP04–OP08 evidence.
 
+> **2026-11-06 §0M / R020 — OPERATOR-APPROVED 25H2/26200 RETENTION OVERRIDE:** Historical large 25H2/26200 build outputs may be deleted under the narrowly scoped, receipt-producing policy in §0M. This supersedes old image-copy KEEP flags for **26200 only**; preserve log/analysis/regression proof, original and BlueLite UUP archive/script materials, and ALL 26300/26H2 source/image assets. The operator alone runs cleanup.
+
 **Status:** AUTHORITATIVE / UNIFIED PRODUCTION ARCHITECTURE — SUPERSEDES PREVIOUS MASTER REVISIONS  
 **Date:** 2026-10-16 · **Normative amendments:** 2026-10-21 (v6.1 connector/NTLite; v6.2 UUP/PRE_MAX history lifecycle; v6.2.1 two-phase Session Entry checkpoint; v6.3 GUI block pauses and three-attempt errors); 2026-10-29 (§0G); 2026-10-30 (§0H); 2026-11-01 (§0I Universal UUP source contract); 2026-11-02 (§0J policy consolidation); 2026-11-03 (§0K native MAX_PRE v4 runtime proof and successor method; §0L ordered five phases/recovery-on-demand/speed)  
 **Scope:** PRIMARY Windows 11 26H2 GA / 26300.x; SECONDARY 26200.x solely historic/regression/Component Intelligence; shared 26100 servicing reference; future Germanium branches only after operator decision and lineage verification.  
@@ -1767,3 +1769,16 @@ The success metric is not the count of scripts, phases or retrieved logs. It is 
 ---
 
 **End of BlueLite v1.0 — MASTER GERMANIUM STRATEGY v6.3.1**
+
+
+## §0M — 2026-11-06 OPERATOR RETENTION OVERRIDE: historical 25H2/26200
+
+**Authorization:** The operator explicitly changed retention instructions on 2026-11-06. Earlier KEEP/freeze requirements for historical 25H2 / build 26200 **binary build artifacts only** are superseded: experimental, one-off, disposable WIM/ISO/ESD/VHD/VHDX/SWM/CAB and other 26200/25H2 generated build products larger than 100,000,000 bytes can be removed. This is not blanket permission to remove unnamed 26300/26H2 files.
+
+**Must retain:** Original UUP Dump archives and original downloader/converter scripts, all BlueLite custom UUP ZIPs/scripts, source metadata, SourceTriad/Rename/SHA-1 information, all archived analysis/Timeline/regression records, operator logs, readbacks, QA receipts and evidence archives. Preserve every original/GOLDEN **26300/26H2** source and image. User-designated current working 26300 source remains unchanged.
+
+**Cleanup implementation:** Only `C:\work` and `C:\BLR20R2F5`; only files strictly greater than 100,000,000 decimal bytes, with a grounded 26200/25H2 designation and **no** 26300/26H2 designation. Run in one controlled pass with no prompts, full preflight (zero DISM mounts, no running image/download process), do not traverse reparse points or remove whole directories, independent per-file audit/hash/receipt/fresh verifier. Positive matches are eligible without their former regression-WIM KEEP status. Unproven identity -> HOLD, not 26200 inference.
+
+**Actual evidence and proof boundary:** Previous Clean100 v2 native execution HOLD before enumeration with zero files deleted (invalid standalone PowerShell `-ErrorAction` token), despite independent evidence Verify PASS. On 2026-11-06 the user supplied subsequent R020 Clean25H2 v3 and PRE_MAX v10.1 Analyze evidence; audit separately in R020 checkpoint before claiming results. No tooling may silently alter this Master beyond this expressly authorized policy scope.
+
+**ONE NEXT:** Reconcile exact operator R020 cleanup and v10.1 Analyze evidence with independent hashes, then advance single Current Status; no other image deletion or Build action is implied.
