@@ -1,0 +1,14 @@
+# R018R1 OP00 — pre-delivery v10.0 manifest-checker incompatibility FOUND, HOLD and versioned v10.1 repair
+Date 2026-11-06. A direct second source audit of the independently CRC/SHA-verified new `BlueLite_PREMAX_26300_Portable_v10_0.zip` (SHA256 `2B4C109E1824534EDEAEE98073411136B9F711A16C38EF28D39A9DD16D8B3660`) revealed one **fatal native runtime source incompatibility** BEFORE operator handoff. Previous R018 OP02 static/ZIP QA PASS proved only bytes/inventory, NOT runtime suitability. No operator downloaded this package in current turn. Historical native v9.1 pass unchanged.
+
+## Root cause
+- New Factory executable is exactly `BlueLite_PREMAX_Factory_v10.ps1` in manifest. But Factory v10.0 `ValidateManifest()` still requires `$seen.Contains('BlueLite_PREMAX_Factory_v9.ps1')`. That nonexistent v9 name is absent from full v10 ZIP and stage, so `INCOMPLETE_PACKAGE_MANIFEST` always throws. This is an untested v9 name residual in a newly versioned producer. The actual ZIP remains internally consistent, but runtime ALWAYS HOLD. Do not distribute or run v10.0 for Analyze.
+- This is independent of genuine UUP metadata: source v9.1 operator returned native SourceOnly PASS. Never modify original vendor UUP ZIP, WIM, ISO, GOLDEN, Master, Handoff or stage to work around this mismatch.
+
+## Atomic correction plan
+1. Create distinct FULL `BlueLite_PREMAX_26300_Portable_v10_1.zip` ZIP, no silent replacement. In Factory `ValidateManifest` require exact correct `BlueLite_PREMAX_Factory_v10.ps1`, the root CMD/controller and rest manifest; increment owning `$Product`/stage ID to v10_1 (prevents stage collisions), preserve single-folder no-spaces/no-prompt contract.
+2. Bound source changes ONLY to corrected manifest gate, version/product and docs; preserve known v9.1 native core Gate fix, protected FoD/WinRE floor, original converter source, UUID/out/SHA1-bound renewal, D4 queue evidence and independent logs. Root `BlueLite_START.cmd` Analyze only; `BlueLite_BUILD.cmd` operator-distinct explicit high-impact Build.
+3. Fresh independent process: final exact ZIP SHA, CRC, 1:1 42/42 manifest file hashes, source AST/static, negative missing-v9 path and other wrong-file/duplicate checks; original 98-entry metadata sources immutable. When feasible, reproduce exact `ValidateManifest()` code using PS7 in-memory read-only with an extracted simulated manifest root (do NOT create on operator's machine).
+4. Write per-op immutable source/archive QA to new Git file and verify by new Git fetch; then fresh CAS update compact `BlueLite_Current_Status.md` and independent Git readback. ONLY exact v10.1 ZIP linked for user.
+
+**ONE NEXT:** R018R1 OP01 author new v10.1 complete ZIP and run independent QA; protocol PAUSE after artifact delivered for one native operator START Analyze. No WIM/ISO execution without explicit separate action.
