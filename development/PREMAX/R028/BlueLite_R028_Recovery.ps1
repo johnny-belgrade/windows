@@ -6,7 +6,7 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference='Stop';$ProgressPreference='SilentlyContinue'
 function MustBL([bool]$x,[string]$why){if(-not $x){throw ('R028_RECOVER_HOLD_'+$why)}}
 function HashBL([string]$p){(Get-FileHash -LiteralPath $p -Algorithm SHA256 -ErrorAction Stop).Hash.ToUpperInvariant()}
-function ExecBL([string[]]$args,[string]$label){& dism.exe @args;MustBL ($LASTEXITCODE -eq 0) ('DISM_'+$label+'_EXIT_'+$LASTEXITCODE)}
+function ExecBL([string[]]$DismArguments,[string]$label){& dism.exe @DismArguments;MustBL ($LASTEXITCODE -eq 0) ('DISM_'+$label+'_EXIT_'+$LASTEXITCODE)}
 function EmitBL([string]$p,$o){$data=[Text.UTF8Encoding]::new($false).GetBytes(($o|ConvertTo-Json -Depth 15)+[Environment]::NewLine);$f=[IO.File]::Open($p,[IO.FileMode]::CreateNew,[IO.FileAccess]::Write,[IO.FileShare]::None);try{$f.Write($data,0,$data.Length)}finally{$f.Dispose()}}
 $stage=[IO.Path]::GetFullPath($Stage).TrimEnd([char]'\')
 $root=[IO.Path]::GetFullPath($SelectedRoot).TrimEnd([char]'\')
