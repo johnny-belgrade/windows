@@ -68,7 +68,7 @@ $logs=Join-Path $root 'BlueLite_Logs'
 AssertBL ($root.StartsWith('C:\work\',[StringComparison]::OrdinalIgnoreCase) -and -not($root -match '\s')) 'BAD_USER_SELECTED_UUP_ROOT'
 AssertBL (Test-Path -LiteralPath $root -PathType Container) 'MISSING_UUP_FOLDER'
 foreach($dir in @($root,(Split-Path $root -Parent))) {
- AssertBL ((Get-Item -LiteralPath $dir -Force).Attributes -band [IO.FileAttributes]::ReparsePoint -eq 0) 'REPARSE_OWNER'
+ AssertBL (([IO.File]::GetAttributes($dir) -band [IO.FileAttributes]::ReparsePoint) -eq 0) 'REPARSE_OWNER'
 }
 if($Mode -eq 'Build'){[void][IO.Directory]::CreateDirectory($logs)}
 $run='BlueLite_R028_'+[DateTime]::UtcNow.ToString('yyyyMMddTHHmmssfffffffZ')+'_'+[Guid]::NewGuid().ToString('N').Substring(0,8)
