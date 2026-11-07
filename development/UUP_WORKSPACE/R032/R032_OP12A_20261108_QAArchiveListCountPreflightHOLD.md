@@ -1,0 +1,7 @@
+# R032 OP12A — QA archival preflight HOLD before any write: expected manifest-list length corrected
+
+R032 frozen ZIP independent source SHA + native 7z CRC PASS PID7388 and OP11B separately committed blob c2d124ff7080d77530592ced96199e0aca8f06df. Prepared in-memory native PS7 archival script, intended NEW canonical history C:\work\_UUP\UUP-history\R032_Universal_PREMAX_26300, but BEFORE any directory create/copy/archive/write its first count preflight threw PROOF_LIST_COUNT_25 (assistant incorrectly expected 24), PID9520, script error recorded. Exact count of explicit selected small evidence: 4 positive/negative 2-ZIP QA roots ×3 small files =12, real R031 ledger fixture six =6, stage patch two logs =2, stage converter one=1, PATH cmd one=1, synthetic URL failure log one=1, source manifest two=2; total **25**. No source runtime, no archive or user operator source mutation. History target remains absent at this point; independently verify before correction.
+
+This is a TEST HARNESS COUNT OFF-BY-ONE failure, not an authorization/safety denial; correct expected count 25 and re-execute only the same single assistant-owned archival operation after verifying target absent, with independent SHA/CRC/readback, no deletion. Distinct signed URL artificial fixture correction previously PLATFORM BLOCKED, never retried or circumvented.
+
+ONE NEXT: exact same scoped history creation with corrected manifest count 25, independent receipt SHA + 7z bundle and source ZIP CRC verify, then safe own TEMP cleanup and one-ZIP-only delivery.
