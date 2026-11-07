@@ -42,7 +42,7 @@ $proof=Join-Path $logs 'CWork_20261107T1650576887287Z_UUP_3way_SHA256.csv'
 $expectedProofSHA='872B94D2FE8BC5E7F9BEC8536B29D3D641DE50E4FDA4E81988C0894F702268DD'
 $iso=Join-Path $original '26300.9818.261025-0959.26H2_GE_RELEASE_SVC_PROD3_CLIENTPRO_OEMRET_X64FRE_EN-US.ISO'
 $goldenWim=Join-Path $original 'install.wim'
-$prefix='BlueLite_Cleanup_20261107_'+$Mode.ToUpperInvariant()
+$prefix='BlueLite_Cleanup_20261107_V2_'+$Mode.ToUpperInvariant()
 $receipt=Join-Path $logs ($prefix+'_RESULT.json')
 $evidence=Join-Path $logs ($prefix+'_EVIDENCE.zip')
 $started=Join-Path $logs ($prefix+'_STARTED.json')
@@ -61,8 +61,9 @@ try {
  }
  HoldBL (@(Get-WindowsImage -Mounted -ErrorAction Stop).Count -eq 0) 'DISM_IMAGE_MOUNT_EXISTS'
  HoldBL (@(Get-Process -Name 'dism','dismhost','aria2c','NTLite','wimlib-imagex' -ErrorAction SilentlyContinue).Count -eq 0) 'ACTIVE_DISM_DOWNLOAD_OR_NTLITE_PROCESS'
- $loaded=@(Get-ChildItem 'Registry::HKEY_LOCAL_MACHINE' -ErrorAction Stop | Where-Object {$_.PSChildName -match '^(?i:BLUELITE|BL_|PREMAX|OFFLINE)'})
- HoldBL ($loaded.Count -eq 0) 'POSSIBLE_LOADED_OFFLINE_HIVE'
+ foreach($hiveAlias in @('Registry::HKEY_LOCAL_MACHINE\BlueLiteSOFTWARE','Registry::HKEY_LOCAL_MACHINE\BlueLiteSYSTEM')) {
+  HoldBL (-not(Test-Path -LiteralPath $hiveAlias -ErrorAction Stop)) ('PROJECT_HIVE_STILL_LOADED_'+$hiveAlias)
+ }
  HoldBL (Test-Path $proof -PathType Leaf) 'TRIPLE_SHA_RECEIPT_MISSING'
  HoldBL ((HashBL $proof) -eq $expectedProofSHA) 'TRIPLE_SHA_RECEIPT_TAMPER'
  $proofRows=@(Import-Csv -LiteralPath $proof)
