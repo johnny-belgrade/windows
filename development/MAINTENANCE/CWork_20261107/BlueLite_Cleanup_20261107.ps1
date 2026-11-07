@@ -152,7 +152,7 @@ try {
   WriteJsonBL (Join-Path $logs ('BlueLite_Cleanup_20261107_'+$t.tag+'_DELETE_PASS.json')) $removed[-1]
   Write-Host ('BL_CLEANUP_DELETE_PASS '+$t.tag+' '+$t.path)
  }
- HoldBL (Test-Path -LiteralPath $goldenWim -PathType Leaf -and (Test-Path -LiteralPath $iso -PathType Leaf)) 'GOLDEN_LOST_AFTER_DELETE'
+ HoldBL ((Test-Path -LiteralPath $goldenWim -PathType Leaf) -and (Test-Path -LiteralPath $iso -PathType Leaf)) 'GOLDEN_LOST_AFTER_DELETE'
  HoldBL ((Get-ChildItem -LiteralPath $srcOriginal -File -Force -Recurse).Count -eq 184) 'GOLDEN_SOURCE_COUNT_AFTER_DELETE'
  $freeAfter=([IO.DriveInfo]::new('C:')).AvailableFreeSpace
  $state='DELETE_PASS'
