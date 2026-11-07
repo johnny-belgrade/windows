@@ -78,7 +78,8 @@ $stage=$null;$status='NOT_STARTED';$modeSelected='NONE'
 try{
  $vendor=OriginalBL $root
  $stage=StageBL $root $vendor
- Write-Host ('R028_ORIGINAL_VENDOR_SHA_PASS build='+$vendor.build+' uuid='+$vendor.uuid+' stage='+(if($null -eq $stage){'NONE'}else{$stage.stage}))
+ $stageLabel='NONE'; if($null -ne $stage){$stageLabel=$stage.stage}
+ Write-Host ('R028_ORIGINAL_VENDOR_SHA_PASS build='+$vendor.build+' uuid='+$vendor.uuid+' stage='+$stageLabel)
  if($Mode -eq 'Inspect'){
   if($null -ne $stage) {
    $marker=Test-Path (Join-Path $stage.stage 'BlueLite_Logs\ConvertStart.marker')
