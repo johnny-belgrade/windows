@@ -1,0 +1,9 @@
+# R031 OP15 — local UUP root README permanent ZIP-only contract and original backup SHA PASS
+
+Prior R031_OP14 sole Current Git SHA 21a7c4557bbac78276b89e3ebbe984355ffaa9ce independently readback. Authorized RDC, root outside actively running R031 cycle C:\work\_UUP\00_README.md only, no active source/stage/process/log touched.
+
+Local native PowerShell7 PID1220 verified original local root README sha 19AD7F8A757149C8F3064AA81D6DB7180513DEE758ED5399878A140C26F76E2D, copied byte-identically to C:\work\_UUP\UUP-history\_Governance\R031_20261107\R031_PreCleanDelivery_Root_00_README.md, SHA PASS. Prepended an explicit latest 2026-11-07 R031 CLEAN ZIP-ONLY USER DELIVERY CONTRACT to root README while preserving all R030 text below (new file 7,688 characters, native SHA256 1BDC2205AA0B096405F2DF648CBCA68B3D531AFCB1A3900894A03C98A8E7746A). Independent native RDC read_file fresh separate source readback confirms new priority marker, explicit ONLY ONE BlueLite ZIP/no extra extracted source/log/work in NEW delivery, future test under C:\work\_UUP\temp\<unique>, history SHA receipts before safe assistant disposable temp cleanup, then user adds genuine original ZIP/extract BOTH/run ONE admin root CMD. Independent read_file of backup confirmed old R030 header.
+
+Explicit exception: R031_Universal_PREMAX_Master was delivered pre-extracted under old procedure; DO NOT touch while user converter active. Optional exact UUID metadata 404 with original launcher fallback and SHA1-verified original UUP source after warning; no final image claim. Zero deletion, zero image edits.
+
+ONE NEXT: amend local non-active UUP-history\00_README.md with a fresh priority prefix, preserving exact original in R031 governance SHA backup; independently readback. Then record separate Git OP16; update short Session Entry router pointer to sole Current live run and final checkpoint. All future new delivery only one custom ZIP in fresh folder; no new build during running R031.
