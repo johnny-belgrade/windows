@@ -36,13 +36,13 @@ $stageR027='C:\work\_UUP_PREMAX_v11.2\BlueLite_Work\BlueLite_Stage_v11_3_26300_9
 $stageR028='C:\work\PREMAX-work\R028_Universal_Full_UUP_20261107\BlueLite_Work\BlueLite_Stage_v11_3_26300_9818_6c7bf258_273212e7'
 $stages=@(
  [pscustomobject]@{tag='R028_FAILED';path=$stageR028;bytes=19273553336L;count=1400;kind='COM_ERROR_0x8007007A'},
- [pscustomobject]@{tag='R027_FAILED';path=$stageR027;bytes=25062321218L;count=1479;kind='FALSE_WIM_IDENTITY_GATE'}
+ [pscustomobject]@{tag='R027_FAILED';path=$stageR027;bytes=25061978653L;count=1404;kind='FALSE_WIM_IDENTITY_GATE'}
 )
 $proof=Join-Path $logs 'CWork_20261107T1650576887287Z_UUP_3way_SHA256.csv'
 $expectedProofSHA='872B94D2FE8BC5E7F9BEC8536B29D3D641DE50E4FDA4E81988C0894F702268DD'
 $iso=Join-Path $original '26300.9818.261025-0959.26H2_GE_RELEASE_SVC_PROD3_CLIENTPRO_OEMRET_X64FRE_EN-US.ISO'
 $goldenWim=Join-Path $original 'install.wim'
-$prefix='BlueLite_Cleanup_20261107_V2_'+$Mode.ToUpperInvariant()
+$prefix='BlueLite_Cleanup_20261107_V3_'+$Mode.ToUpperInvariant()
 $receipt=Join-Path $logs ($prefix+'_RESULT.json')
 $evidence=Join-Path $logs ($prefix+'_EVIDENCE.zip')
 $started=Join-Path $logs ($prefix+'_STARTED.json')
@@ -137,7 +137,7 @@ try {
  $drive=[IO.DriveInfo]::new('C:')
  $freeBefore=$drive.AvailableFreeSpace
  if($Mode -eq 'Audit') {
-  WriteJsonBL $receipt ([ordered]@{schema='BlueLite.Cleanup.v1';utc=[DateTime]::UtcNow.ToString('o');mode=$Mode;status='AUDIT_PASS_NO_DELETE';source_sha_manifest=$expectedProofSHA;source_count=184;source_bytes_each=$sourceBytes;stages=$stageSnapshots;logical_candidate_bytes=44335874554L;evidence_zip=$evidence;evidence_zip_sha256=$zipSHA;archived_entries=$archived.Count;no_deletions=$true;freeCBytes=$freeBefore;one_next='OPERATOR_RUN_EXPLICIT_DELETE_COMMAND'})
+  WriteJsonBL $receipt ([ordered]@{schema='BlueLite.Cleanup.v1';utc=[DateTime]::UtcNow.ToString('o');mode=$Mode;status='AUDIT_PASS_NO_DELETE';source_sha_manifest=$expectedProofSHA;source_count=184;source_bytes_each=$sourceBytes;stages=$stageSnapshots;logical_candidate_bytes=44335531989L;evidence_zip=$evidence;evidence_zip_sha256=$zipSHA;archived_entries=$archived.Count;no_deletions=$true;freeCBytes=$freeBefore;one_next='OPERATOR_RUN_EXPLICIT_DELETE_COMMAND'})
   Write-Host ('BL_CLEANUP_AUDIT_PASS_NO_DELETE '+$receipt)
   Write-Host ('BL_CLEANUP_AUDIT_EVIDENCE '+$evidence)
   exit 0
@@ -157,7 +157,7 @@ try {
  HoldBL ((Get-ChildItem -LiteralPath $srcOriginal -File -Force -Recurse).Count -eq 184) 'GOLDEN_SOURCE_COUNT_AFTER_DELETE'
  $freeAfter=([IO.DriveInfo]::new('C:')).AvailableFreeSpace
  $state='DELETE_PASS'
- WriteJsonBL $receipt ([ordered]@{schema='BlueLite.Cleanup.v1';utc=[DateTime]::UtcNow.ToString('o');mode=$Mode;status=$state;exact_deleted=$removed;logical_candidate_bytes=44335874554L;actualCFreeBeforeBytes=$freeBefore;actualCFreeAfterBytes=$freeAfter;actualCFreeIncreaseBytes=($freeAfter-$freeBefore);evidence_zip=$evidence;evidence_zip_sha256=$zipSHA;original_golden_preserved=$true;source_proof_sha256=$expectedProofSHA;one_next='RETURN_DELETE_RESULT_AND_EVIDENCE_THEN_STOP'})
+ WriteJsonBL $receipt ([ordered]@{schema='BlueLite.Cleanup.v1';utc=[DateTime]::UtcNow.ToString('o');mode=$Mode;status=$state;exact_deleted=$removed;logical_candidate_bytes=44335531989L;actualCFreeBeforeBytes=$freeBefore;actualCFreeAfterBytes=$freeAfter;actualCFreeIncreaseBytes=($freeAfter-$freeBefore);evidence_zip=$evidence;evidence_zip_sha256=$zipSHA;original_golden_preserved=$true;source_proof_sha256=$expectedProofSHA;one_next='RETURN_DELETE_RESULT_AND_EVIDENCE_THEN_STOP'})
  Write-Host ('BL_CLEANUP_DELETE_PASS '+$receipt)
  Write-Host ('BL_CLEANUP_DELETE_EVIDENCE '+$evidence)
  exit 0
