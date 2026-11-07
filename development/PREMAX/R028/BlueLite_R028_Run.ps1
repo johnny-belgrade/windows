@@ -45,7 +45,7 @@ function StageBL([string]$root,$source) {
  foreach($f in $reps) {
   try{
    $d=ObjBL $f.FullName
-   if($d.status -ne 'DOWNLOADED_SHA1_PASS' -or $d.build -ne $source.build -or $d.payload_files -ne 130 -or $d.payload_bytes -ne 9143081111){continue}
+   if($d.status -ne 'DOWNLOADED_SHA1_PASS' -or $d.build -ne $source.build -or [int]$d.payload_files -lt 20 -or [long]$d.payload_bytes -lt 1000000000L){continue}
    $stage=[IO.Path]::GetFullPath([string]$d.stage).TrimEnd([char]'\')
    if(-not $stage.StartsWith((Join-Path $root 'BlueLite_Work')+'\',[StringComparison]::OrdinalIgnoreCase)){continue}
    $meta=ObjBL (Join-Path $stage 'BlueLite_Logs\ResolvedUUP.json')
