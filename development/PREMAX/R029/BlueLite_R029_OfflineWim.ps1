@@ -134,7 +134,8 @@ try{
  $state='INVENTORY_NATIVE'
  # Each native DISM query writes a numbered local log BEFORE any mutation.
  $beforeCaps=CapRecords (NativeDism 'BeforeCapabilities' @('/English',"/Image:$mount",'/Get-Capabilities'))
- $beforeApps=AppNames (NativeDism 'BeforeProvisionedApps' @('/English',"/Image:$mount",'/Get-ProvisionedAppxPackages'))
+ $beforeAppText=NativeDism 'BeforeProvisionedApps' @('/English',"/Image:$mount",'/Get-ProvisionedAppxPackages')
+ $beforeApps=AppNames $beforeAppText
  $pkgs=NativeDism 'BeforePackages' @('/English',"/Image:$mount",'/Get-Packages')
  GateBL ($pkgs -match '(?im)^\s*Package Identity\s*:') 'PACKAGE_NATIVE_PARSE'
  GateBL ($pkgs -notmatch '(?im)^\s*State\s*:\s*Install Pending') 'PENDING_CBS_INSTALL'
@@ -180,9 +181,32 @@ try{
    $warn.Add([pscustomobject]@{class='FEATURE_DEPENDENCY';name=$name;reason=$_.Exception.Message})
   }
  }
- $state='APPX_DEPENDENCY'
- # Do not hallucinate AppInstaller removed; verify native post-inventory and label RELEASE_HOLD if present.
- # Package-level CBS and AppRepository hardlink surgeries are prohibited.
+ $state='APPX_STAGING_ONLY_REMOVE'
+ $staging=Patterns $StagingOnlyAppPatternsFile
+ foreach($app in $beforeApps) {
+  if(-not(@($staging|Where-Object {$app.IndexOf($_,[StringComparison]::OrdinalIgnoreCase) -ge 0}).Count)){continue}
+  $appRx='(?ims)^\s*DisplayName\s*:\s*'+[regex]::Escape($app)+'\s*\r?\n(?<attrs>.*?)(?=^\s*DisplayName\s*:|\z)'
+  $block=[regex]::Match($beforeAppText,$appRx)
+  $package=if($block.Success){[regex]::Match($block.Groups['attrs'].Value,'(?im)^\s*PackageName\s*:\s*(\S+)')}else{$null}
+  if($null -eq $package -or -not $package.Success){
+   $warn.Add([pscustomobject]@{class='APPX_PACKAGE_IDENTITY_NOT_FOUND';name=$app;reason='DISM inventory did not supply an exact package name'})
+   Trace ('APPX_DEPENDENCY_NO_PACKAGE_IDENTITY '+$app)
+   continue
+  }
+  $pkgName=$package.Groups[1].Value
+  if($pkgName -notmatch '^[A-Za-z0-9_.~!-]+$'){
+   $warn.Add([pscustomobject]@{class='APPX_UNSAFE_PACKAGE_NAME';name=$app;reason=$pkgName})
+   continue
+  }
+  try{
+   $null=NativeDism ('RemoveStagingApp_'+$app) @('/English',"/Image:$mount",'/Remove-ProvisionedAppxPackage',"/PackageName:$pkgName")
+   Trace ('APPX_NATIVE_REMOVAL_ATTEMPTED '+$app+' '+$pkgName)
+  }catch{
+   $warn.Add([pscustomobject]@{class='APPX_CBS_DEPENDENCY';name=$app;reason=$_.Exception.Message})
+   Trace ('APPX_CBS_DEPENDENCY_HOLD '+$app+' '+$_.Exception.Message)
+  }
+ }
+ # A remove attempt never counts as success without AFTER DISM provisioned-app readback.
  $state='COMPONENT_CLEANUP'
  $null=NativeDism 'StartComponentCleanup' @('/English',"/Image:$mount",'/Cleanup-Image','/StartComponentCleanup')
  $null=NativeDism 'FinalCheckHealth' @('/English',"/Image:$mount",'/Cleanup-Image','/CheckHealth') -RequireHealthy
