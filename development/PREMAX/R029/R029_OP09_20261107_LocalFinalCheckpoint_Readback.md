@@ -1,0 +1,15 @@
+# R029 OP09 — final local root checkpoint, physical delivery recheck, no extraneous giant stage (2026-11-07)
+
+This OP continues SOURCE_ONLY handoff AFTER OP06 critical auth HOLD, OP07 Git source correction and OP08 corrected final ZIP native independent PASS. OP08 authoritative Git blob bcdf0c1a1bde0bc690a50cfdaaada49ec572575f. Sources final corrected provenance was CAS committed and independently readback: BlueLite_Sources.md blob 3d157a18d88fd5c9ca671741dd01297efeb4b10a, head explicitly supersedes old R029 ZIP hash and points ONLY to corrected SHA. Start_Instruction.md latest blob c0edeadfb1f495d70149b4f82e51aea5b200d548 already contains permanent C:\work\_UUP one-root, root-local Logs/Work, and no Explorer/TotalCmd closure.
+
+Native authorized Windows PS7 PID4184 physically rechecked the single SAME final operator root:
+C:\work\_UUP\BlueLite_PREMAX_R029_20261107
+Corrected existing one release filename BlueLite_R029_PREMAX_20261107.zip EXACT **122,159B, SHA256 3E9AC0498E274B01702560FC8D4054730F5E451EC81212DAF8F5C04582B5EDDA**, no other root-level ZIP. Get-WindowsImage mounted WIM count=0, no new native download or image build. Actual root source/ZIP 64 loose files /429,785 logical B; local logs initial 2 files /2,208B (before final QA JSON); QA fixture copies solely under SAME root BlueLite_Work 315 files /2,753,145 logical B (~2.63 MiB), including three previous fixtures, final corrected fixture and 122k temporary corrected ZIP. Safety layer blocked one attempted QA-only cleanup process before execution; this handful of MB is fully disclosed, not 9GB+ debris and no mutation/deletion attempted by successor.
+
+Created NEW authoritative local corrected checkpoint file in the SAME selected UUP root:
+C:\work\_UUP\BlueLite_PREMAX_R029_20261107\BlueLite_Logs\BlueLite_R029_FinalPackageQA.json
+RDC write PASS and fresh separate read_file PASS for corrected ZIP SHA, PRE_CORRECTION historical PackageQA explanation, one-command exact path, one evidence ZIP path. Earlier BlueLite_R029_PackageQA.json is PRE-CORRECTION historic and has old SHA; FinalPackageQA.json plus BlueLite_R029_ArchiveRewrite.json are LOCAL CURRENT evidence. Git OP06/OP07/OP08 and Sources corroborate.
+
+**REMAINING KNOWN LIMITATION**: R029 original launcher Build authorization is corrected and source-bound static parity PASS, but genuine UUP download, source stage converter native DISM servicing, actual post-mounted Windows removal of NIC FoD and staging-only AppInstaller, WIM export, WinRE proof, ISO, Setup, Defender/WU/VM/OOBE and installed footprint all NOT_RUN/NOT_CERTIFIED. No claim beats frozen R004. Re-run risk is high after ConvertStart.marker; preserve stage after HOLD.
+
+**ONE NEXT**: CAS rewrite one short Current to single authoritative latest R029 source PASS / Build NOT_RUN with exactly one operator CMD and exact root-local one evidence ZIP, fresh independent readback; update short Session Entry navigation, fresh readback; verify final Current SHA/link via independent fetch; PAUSE for operator to copy one ORIGINAL *_convert.zip, extract both into existing root and run only BlueLite_R029_RUN.cmd as admin. Explorer/Total Commander remain open.
