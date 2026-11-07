@@ -88,6 +88,7 @@ try {
  }
  WriteBL $report $final
  Write-Host ('R028_FOD_'+$final.status+' BEFORE_DRIVER='+$baseline.installed_driver_fod+' AFTER_DRIVER='+$final.final.installed_driver_fod+' HOLDS='+$holds.Count)
+ if($holds.Count -gt 0){exit 17}
  exit 0
 }catch{
  Write-Host ('R028_FOD_HOLD '+$_.Exception.Message)
