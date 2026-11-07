@@ -1,0 +1,11 @@
+# CWork cleanup OP05 — 2026-11-07 disproved stage drift, corrected scope/count
+
+**OP04 stage drift was an INVENTORY GROUPING ERROR, not a real file deletion.** Native Windows PS7 PID6880 independently compared original exhaustive `CWork_20261107T1647122645482Z_AllFiles.csv` (source), fresh raw .NET Directory.EnumerateFileSystemEntries and PS7 Get-ChildItem -Recurse -Force on BOTH exact target roots:
+- Actual R027 failed stage `C:\work\_UUP_PREMAX_v11.2\BlueLite_Work\BlueLite_Stage_v11_3_26300_9818_6c7bf258_734c2696`: **1,404 files, 25,061,978,653 B**, identical to original CSV, raw .NET and Get-ChildItem; zero mismatches / zero missing.
+- R028 failed stage `C:\work\PREMAX-work\R028_Universal_Full_UUP_20261107\BlueLite_Work\BlueLite_Stage_v11_3_26300_9818_6c7bf258_273212e7`: **1,400 files, 19,273,553,336 B**, identical across all three, zero mismatches.
+- Earlier OP01/OP02 incorrectly stated **R027 1,479 files / 25,062,321,218 B**, because grouping for `_UUP_PREMAX_v11.2\BlueLite_Work` included the *separate sibling* `BlueLite_Stage_v11_2_26300_9818_6c7bf258_038daa0a`. Native PS7 PID6476 independently proved sibling **75 files, 342,565 B**, which are OUTSIDE failed R027 target and **not to be deleted** by this operation.
+- Exact two selected failed stage totals **2,804 files / 44,335,531,989 logical B (41.29068 GiB)**. Prior OP01/OP02 totals 44,335,874,554 B are **SUPERSEDED for the deletion manifest**; they included unrelated v11.2 sibling. Git current checkpoint and runtime script MUST use corrected exact numbers. Preserve original v4 WIM/ISO/UUP sources, PREMAX R028 outer package and old v11.2 sibling.
+
+**Native Audit V2** ran all v4 full WIM+ISO SHA and 184×3 UUP full SHA without failure, then correctly held because the hardcoded expected stage size/count was wrong. Existing V2 HOLD receipt preserved. No archive or deletion occurred.
+
+**ONE NEXT:** correct the script R027 expected count/bytes and combined logical total using a safe exact literal source splice and new immutable V3 Audit/Delete report names, Git CAS and independent fetch, local copy/text/SHA+AST, run native V3 Audit. On PASS independently inspect evidence ZIP and produce final operator-only Delete command. No automated deletion over RDC.
