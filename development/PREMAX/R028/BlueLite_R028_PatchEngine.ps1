@@ -32,9 +32,8 @@ GateBL ((Test-Path $srcFod -PathType Leaf) -and (Test-Path $srcCapture -PathType
 GateBL ((Test-Path $logs -PathType Container)) 'ROOT_LOG_DIR'
 GateBL (-not(Test-Path $scriptPath) -and -not(Test-Path $targetFod) -and -not(Test-Path $targetCapture)) 'R028_PATCH_ALREADY_STARTED'
 $baseContent=[IO.File]::ReadAllText($baseline)
-$old='    if (($exportInfo -join '
-# Match the SINGLE full erroneous line, regardless of CRLF.
-$rx='(?m)^[ \t]*if \(\(\$exportInfo -join .+\) -notmatch \[regex\]::Escape\(\$actualBuild\)\) \{ throw "Compact export identity gate failed: expected build \$actualBuild\." \}[ \t]*$'
+# Match exactly one original wrong identity gate, tolerate CRLF and build UBR string syntax.
+$rx='(?m)^[ \t]*if \(\(\$exportInfo[^\r\n]*Compact export identity gate failed: expected build \$actualBuild\.[^\r\n]*$'
 $matches=[regex]::Matches($baseContent,$rx)
 GateBL ($matches.Count -eq 1) ('WIM_IDENTITY_ANCHOR_COUNT_'+$matches.Count)
 $identity=@'
@@ -53,7 +52,7 @@ $foDInsert=@'
     # R028: actual installed NIC driver/Sense FoD removal; distinct from UUP download references.
     $selectedUUPRoot=Split-Path (Split-Path (Get-Location).Path -Parent) -Parent
     $r028ExtraReport=Join-Path (Join-Path $selectedUUPRoot 'BlueLite_Logs') ('BlueLite_R028_FoD_'+$actualBuild+'_'+[Guid]::NewGuid().ToString('N').Substring(0,8)+'.json')
-    & powershell.exe -NoProfile -ExecutionPolicy Bypass -File 'BlueLite\BlueLite_R028_FoD.ps1' -Mode Execute -MountPath $mountDir -ReportPath $r028ExtraReport -RemoveNetworkDriverFoD -RemoveSenseClientFoD
+    & pwsh.exe -NoProfile -NonInteractive -File 'BlueLite\BlueLite_R028_FoD.ps1' -Mode Execute -MountPath $mountDir -ReportPath $r028ExtraReport -RemoveNetworkDriverFoD -RemoveSenseClientFoD
     if ($LASTEXITCODE -ne 0) { throw 'R028 extra FoD phase failed; refusing commit.' }
     [void]$actions.Add('R028 EXTRA FOD REPORT: '+$r028ExtraReport)
 '@
