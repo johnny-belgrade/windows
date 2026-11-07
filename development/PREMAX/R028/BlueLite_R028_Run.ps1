@@ -9,6 +9,29 @@ function AssertBL([bool]$b,[string]$m){if(-not $b){throw ('R028_HOLD_'+$m)}}
 function HashBL([string]$p){(Get-FileHash -LiteralPath $p -Algorithm SHA256 -ErrorAction Stop).Hash.ToUpperInvariant()}
 function ObjBL([string]$p){Get-Content -LiteralPath $p -Raw -Encoding UTF8|ConvertFrom-Json}
 function EmitBL([string]$p,$o){$b=[Text.UTF8Encoding]::new($false).GetBytes(($o|ConvertTo-Json -Depth 16)+[Environment]::NewLine);$f=[IO.File]::Open($p,[IO.FileMode]::CreateNew,[IO.FileAccess]::Write,[IO.FileShare]::None);try{$f.Write($b,0,$b.Length)}finally{$f.Dispose()}}
+function VerifyBundleBL([string]$root) {
+ $path=Join-Path $root 'BlueLite_R028_Manifest.sha256'
+ AssertBL (Test-Path -LiteralPath $path -PathType Leaf) 'FULL_BLUELITE_PACKAGE_MANIFEST_MISSING'
+ $rows=@(Get-Content -LiteralPath $path | Where-Object {$_.Trim()})
+ AssertBL ($rows.Count -eq 63) ('PACKAGE_MANIFEST_EXPECTED_63_GOT_'+$rows.Count)
+ $names=[Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
+ foreach($row in $rows) {
+  $m=[regex]::Match($row,'^([0-9A-Fa-f]{64}) \*(.+)$')
+  AssertBL $m.Success 'PACKAGE_MANIFEST_LINE'
+  $name=$m.Groups[2].Value.Replace('/','\')
+  AssertBL ($name -match '^[A-Za-z0-9_.\\-]+$' -and -not $name.Contains('..') -and -not $name.StartsWith('\')) ('PACKAGE_MANIFEST_UNSAFE_PATH_'+$name)
+  AssertBL ($names.Add($name)) ('PACKAGE_MANIFEST_DUPLICATE_'+$name)
+  $actual=[IO.Path]::GetFullPath((Join-Path $root $name))
+  AssertBL ($actual.StartsWith($root+'\',[StringComparison]::OrdinalIgnoreCase)) ('MANIFEST_PATH_ESCAPE_'+$name)
+  AssertBL (Test-Path -LiteralPath $actual -PathType Leaf) ('PACKAGE_FILE_MISSING_'+$name)
+  AssertBL (([IO.File]::GetAttributes($actual) -band [IO.FileAttributes]::ReparsePoint) -eq 0) ('MANIFEST_REPARSE_'+$name)
+  AssertBL ((HashBL $actual) -eq $m.Groups[1].Value.ToUpperInvariant()) ('PACKAGE_FILE_SHA256_'+$name)
+ }
+ foreach($required in @('BlueLite_R028_RUN.cmd','BlueLite_R028_Run.ps1','BlueLite_R028_FoD.ps1','BlueLite_R028_Capture.ps1','BlueLite_R028_PatchEngine.ps1','BlueLite_R028_Recovery.ps1','BlueLite_R028_ReadMe.txt','BlueLite_PREMAX_Factory_v11_3.ps1','BlueLite_Package_SHA256.txt')) {
+  AssertBL ($names.Contains($required)) ('REQUIRED_BUNDLE_FILE_NOT_MANIFESTED_'+$required)
+ }
+ Write-Host ('R028_FULL_BUNDLE_MANIFEST_SHA256_PASS '+$rows.Count)
+}
 function OriginalBL([string]$p) {
  $archives=@(Get-ChildItem -LiteralPath $p -File -Filter '*_convert.zip')
  AssertBL ($archives.Count -eq 1) ('ORIGINAL_ZIP_COUNT_'+$archives.Count)
@@ -76,6 +99,7 @@ $runReport=Join-Path $logs ($run+'_REPORT.json')
 $evidence=Join-Path $logs ($run+'_EVIDENCE.zip')
 $stage=$null;$status='NOT_STARTED';$modeSelected='NONE'
 try{
+ VerifyBundleBL $root
  $vendor=OriginalBL $root
  $stage=StageBL $root $vendor
  $stageLabel='NONE'; if($null -ne $stage){$stageLabel=$stage.stage}
