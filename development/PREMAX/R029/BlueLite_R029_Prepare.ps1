@@ -36,6 +36,10 @@ try{
  Gate ($raw.Split([string[]]@($oldCall),[StringSplitOptions]::None).Count -eq 2) 'ONE_OLD_MODULE_CALL_REQUIRED'
  Gate (-not($raw.Contains('BlueLite_R029_OfflineWim.ps1'))) 'ALREADY_R029_PATCHED'
  $patched=$raw.Replace($oldCall,'BlueLite\BlueLite_R029_OfflineWim.ps1')
+ $oldShell='powershell -NoProfile -ExecutionPolicy Bypass -File "BlueLite\BlueLite_R029_OfflineWim.ps1"'
+ Gate ($patched.Split([string[]]@($oldShell),[StringSplitOptions]::None).Count -eq 2) 'ONE_ORIGINAL_POWERSHELL5_OFFLINE_INVOCATION_REQUIRED'
+ $patched=$patched.Replace($oldShell,'pwsh.exe -NoProfile -NonInteractive -File "BlueLite\BlueLite_R029_OfflineWim.ps1"')
+
  $hookRx='(?m)(\s*exit /b 92\s*\)\s*)(if %SkipISO% neq 0 \()'
  $match=[regex]::Matches($patched,$hookRx)
  Gate ($match.Count -eq 1) ('SINGLE_CAPTURE_ANCHOR_EXPECTED_FOUND_'+$match.Count)
