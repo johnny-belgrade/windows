@@ -1,0 +1,10 @@
+# R032 OP09A — native source universal 26300.x second/third genuine vendor ZIP INSPECT plan
+
+Original local frozen history was independently enumerated with RDC, under C:\work\_UUP\UUP-history\08_LegacyCycles:
+1) 26300.9711-UUP\26300.9711_amd64_en-us_professional_2b22470a_convert.zip (genuine original untouched UUPdump archive);
+2) 26300.9807-UUP\26300.9807_amd64_en-us_professional_687d1ced_convert.zip;
+3) 26300.9818 (previous successful source-only genuine R032 2-ZIP CMD QA). No hardcoded 26300.9818 root in the actual current controller; manifest and expected build dynamically parsed from original launcher.
+
+Plan: create exactly two new owned TEMP test children C:\work\_UUP\temp\R032_Universal_26300_QA\QA_Original9711 and QA_Original9807; ensure both paths absent first; for each copy current V1 custom ZIP SHA7D4B6C31B3D01177C52213969714782882E428819035305779D7A51F6BC4B5BE and ONE original frozen vendor ZIP; verify original SHA locally and original ZIP member count/CRC; extract both archives DIRECTLY inside that own test child, no changes to originals. Invoke actual root BlueLite_R032_RUN.cmd --inspect native Windows CMD with QA no-pause flag (explicit never --Build); verify exact dynamic build and UUID from original source, original UUP ZIP member SHA 1:1 (controller has vendor SHA gate), 70 outer and 62 inner source manifests and final-only info + evidence with correct source identity. No native UUP network or WIM/ISO. If genuine sources have different vendor layout, classify actual dependency and perform only source-safe reversible temp-only adapter if supported; do not bypass source content identity, do not assume a build is good if fixture fails.
+
+This is source-selection universality QA across 26300.9711/.9807/.9818, NOT cross-build runtime ISO certification, which requires two independently successful genuine Builds. Previous R032 OP08B real R031 immutable OPDL final report 129/129 9,143,080,977 bytes was independently proved, blob a7f09e77d6270c2ea64e1cdedc6c9250a6b3c10b. Platform-blocked signed URL artificial positive/negative remains distinct OP06 HOLD, no circumventing it.
