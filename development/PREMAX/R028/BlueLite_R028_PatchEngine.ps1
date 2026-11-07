@@ -59,7 +59,7 @@ $foDInsert=@'
 '@
 $patched=$patched.Replace($foDAnchor,$foDInsert.TrimEnd()+[Environment]::NewLine+$foDAnchor)
 $tok=$null;$err=$null;[void][Management.Automation.Language.Parser]::ParseInput($patched,[ref]$tok,[ref]$err)
-GateBL ($err.Count -eq 0) ('PATCHED_PS_AST_'+($err|Select-Object -First 1).Message)
+if($err.Count -gt 0){throw ('R028_PATCH_HOLD_PATCHED_PS_AST_'+$err[0].Message)}
 $enc=[Text.Encoding]::GetEncoding(1252)
 $batch=[IO.File]::ReadAllText($converter,$enc)
 $oldCall='BlueLite\BlueLite_PreDebloatWim.ps1'
