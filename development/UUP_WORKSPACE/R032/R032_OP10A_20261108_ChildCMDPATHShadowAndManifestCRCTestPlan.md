@@ -1,0 +1,9 @@
+# R032 OP10A — bounded distinct child PATH shadow and final source SHA/CRC QA plan
+
+Review: previous PATHTEST PID9916 was a bad one-liner harness, exit0 empty output => NOT a PASS. Actual stage-only R029_Prepare -Mode Prepare PID9884 produced patched vendor converter SHA71AE0FC5FC77478103815223CCF67A36E6042478D, with TWO actual hook lines fully quoted "%BLUELITE_PWSH%" and original saved native converter SHA32878E09B87C87FE25CC31AAAEA12D29A0FF18582A54EE69EBCDB0F2D6B36163. Parent cmd R032_RUN resolves full pwsh.exe and exports BLUELITE_PWSH to nested environment.
+
+PLAN for a distinct test unrelated to blocked signed URL synthetic renewal: write only one disposable harmless CMD fixture under OWN TEMP QA_HookStage; first require inherited BLUELITE_PWSH absolute file path exists, force child PATH to System32 only (simulates converter PATH shadow), assert unqualified pwsh.exe not found, then invoke fully-qualified "%BLUELITE_PWSH%" -NoProfile noninteractive simple output; strictly check echo marker and process exit0 from child cmd, not PowerShell textual guess. No actual converter run, no UUP download/WIM/ISO, no security restrictions bypass.
+
+In SAME separately recorded following OP10B, CRC-test full final R032 custom ZIP using native C:\Program Files\7-Zip\7z.exe t and 70+62 source SHA manifest independent, zip member 71/71 SHA, dynamic original source vendor 26300.9711/.9807/.9818 exact SHA, report timing native notes and evidence proof. If a test fails, HOLD and fix only TEMP with a rebuilt hash-versioned package; do not deliver prematurely.
+
+All local state stays only C:\work\_UUP\temp\R032_Universal_26300_QA; archived canonical proof MUST be written and SHA readback under C:\work\_UUP\UUP-history\R032_Universal_PREMAX_26300 before any deletion; new delivery child EXACTLY ONE ZIP only. Platform-blocked URL renewal test OP06 never retried or circumvented.
