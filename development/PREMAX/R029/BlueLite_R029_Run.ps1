@@ -165,7 +165,7 @@ try{
  & pwsh.exe -NoLogo -NoProfile -NonInteractive -File (Join-Path $root 'BlueLite_R029_Prepare.ps1') -Mode Prepare -Stage $sourceStage -SelectedRoot $root
  Gate ($LASTEXITCODE -eq 0) 'PATCH_NATIVE_PREPARE_HOLD'
  $env:BLUELITE_DOWNLOAD_ONLY=''
- $env:BLUELITE_V7_IMAGE_AUTH='R029_OPERATOR_ADMIN_ONE_CMD_APPROVED'
+ $env:BLUELITE_V7_IMAGE_AUTH='RUNTIME_USER_APPROVED'
  $env:BLUELITE_UUP_ROOT=$root
  $state='CONVERSION'
  Push-Location -LiteralPath $sourceStage
