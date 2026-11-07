@@ -1,0 +1,9 @@
+# R032 OP10B — real nested Windows CMD child PATH shadow test PASS, distinct from URL renewal
+
+OP10A plan Git readback blob 054f7bb9356b828843e086ee955bb57610d2b0c6. Wrote sole harmless disposable fixture only inside OWN TEMP C:\work\_UUP\temp\R032_Universal_26300_QA\QA_HookStage\R032_PATHShadow_Test.cmd, readback exact. Native Windows CMD nested process invoked by PowerShell7 parent PID8836. Parent exported BLUELITE_PWSH=C:\Program Files\PowerShell\7\pwsh.exe from Get-Command, verified full path; child CMD explicitly shadowed PATH to C:\Windows\System32. Child proved unqualified pwsh.exe unavailable (marker R032_PATH_SHADOW_UNQUALIFIED_PWSH_UNAVAILABLE) then successfully executed **"%BLUELITE_PWSH%"** with actual quoted fully qualified Program Files path, output marker R032_CHILD_ABSOLUTE_PWSH_PASS, CMD exit0. Parent independently required BOTH exact markers + zero child exit. Native test PASS.
+
+This is exact reproduction of the original R031 converter environment regression (unqualified pwsh.exe not in child PATH) with verified full path invocation for the STAGED-only R029 hook. Previous real R032 converter stage source patch PID9884 produced BOTH offline and capture hook command strings with that exact inherited environment variable, native staged original vendor backup SHA still preserved, no real converter run. This corrects prior PID9916 one-liner QA HARNESS HOLD; no claim actual WIM/ISO succeeded.
+
+No URL renewed/tested here; original synthetic URL test remains PLATFORM_HOLD per OP06. No UUP/ISO/download/mount/image actions, original R031 untouched.
+
+ONE NEXT: independent release source ZIP 7z CRC + every ZIP-member SHA and chain manifests, create evidence/archive in canonical UUP-history with independent readback before cleanup. Then fresh only-one-ZIP delivery and Current/Session Entry Git writes, if all gates PASS.
