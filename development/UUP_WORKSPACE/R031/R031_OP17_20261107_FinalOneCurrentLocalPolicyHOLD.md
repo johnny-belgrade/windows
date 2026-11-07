@@ -1,0 +1,9 @@
+# R031 OP17 — sole Current live checkpoint + local policy SHA + history prefix platform HOLD
+
+R031 OP16 immutable Git readback 4ef8d82691cb9f06ccd2a26c56bda075520701e2 confirms historical README write was blocked BEFORE execution and old header remained, no bypass. Local root C:\work\_UUP\00_README.md new clean ZIP-only policy native readback SHA 1BDC2205AA0B096405F2DF648CBCA68B3D531AFCB1A3900894A03C98A8E7746A, original R030 copy independently SHA backed up.
+
+Git sole BlueLite_Current_Status.md CAS updated from old live-run blob f1518726453654c19ffddc5355feec327a2adeef to new **dd708e2072360d28125c29acd4e433839d9e823a**, commit 7e0a018b23f35231c11e0b78820188ceb2e033a9. Independent fresh fetch exact content/new sha PASS. Current remains ONE NEXT=await current operator R031 single CMD actual completion/evidence, no new delivery or manual cleanup. It includes live exact optional UUID metadata HTTP 404 -> original launcher fallback, full source SHA1 129 files/9143080977B PASS, WIM archiving and DISM 100% progress observed but no final WIM/ISO PASS declared. Current also distinguishes local root README update PASS and historic README new-prefix PLATFORM HOLD, latter old R030 text superseded by Master §0R.
+
+The crucial operator rule is NEW completely empty delivery root with exactly custom ZIP only; all assistant test ZIP extractions/edits/debris under separate C:\work\_UUP\temp\<unique>, permanently preserve SHA receipts to UUP-history and delete only disposable assistant-owned temp after proof, before delivery; then user original ZIP and direct extraction of BOTH and admin CMD. Current R031 already delivered unpacked and currently under real source-to-WIM execution must NOT be changed mid-run.
+
+ONE NEXT: CAS+readback short BlueLite_Session_Entry.md router ONLY to this one latest Current SHA and new Master/Start versions, then immutable OP18 final conclusion and protocol pause.
