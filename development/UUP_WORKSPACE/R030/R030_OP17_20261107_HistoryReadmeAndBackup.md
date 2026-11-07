@@ -1,0 +1,11 @@
+# R030 OP17 — local UUP-history README new governing contract (2026-11-07)
+
+Previous OP16 native mirror QA Git blob 10e1eca587082782d174680953d893f1d5d787bd independently read back before edit. User-supplied interrupted Thinking file is only a chronology aid, not an assertion of completed filesystem writes.
+
+SOURCE BACKUP FIRST: native Windows PS7 PID4880 checked that the original history README at C:\work\_UUP\UUP-history\00_README.md was identically copied to C:\work\_UUP\UUP-history\_Governance\R030_20261107\R030_PreR030_UUPHistory_00_README.md, 4,864 bytes and SHA256 3BB71AA370248649CBA2CC87F0D135969C66A55454AC85111FCB4E050C1EF6F4, PASS.
+
+LOCAL RULE CHANGE: prepended an explicit 2026-11-07 R030 active governance section to local UUP-history\00_README.md, leaving earlier historic RH02–RH08 instructions below a divider and preserving exact original copy above. RDC write_file plus separate read_file readback of new governing marker PASS. The R030 section now overrides old UUP permission to develop under C:\work\PREMAX-work, C:\work\scripts, C:\work\logs: ALL NEW UUP work strictly C:\work\_UUP\<new direct cycle>, cycle primary BlueLite_Logs first, automatic SHA-verified mirror UUP-history\<cycle>\BlueLite_Logs with version-preserving records; source/stages/images inside the same cycle folder only. Never require closing Explorer/Total Commander.
+
+Preserves existing RH02–RH08 canonical corpus, historic 47 old cycle directories and per-root path-map, 4 root-level archived files, protected Golden SHA/184-UUP proof, cleanup evidence and R030 _Governance. Archived old PREMAX external log junction remains ONLY a provenance object: no following old C:\work\logs link during future UUP operation. Read the local checkpoint and Git sole Current ONE NEXT, with per-operation receipts/readbacks. R029 instant CMD close/no newly generated log is RUNTIME HOLD; cause unknown. No new UUP conversion/download/servicing in R030.
+
+ONE NEXT: create/readback live C:\work\_UUP\00_README.md root workspace contract, separately record it on GitHub; then local R030 successor checkpoint, Master/Start/Sources/Current/Session updates one Git CAS/readback each and final inventory audit. No package release now.
