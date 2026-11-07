@@ -1,0 +1,7 @@
+# R030 OP05 — protected GOLDEN move preflight script HOLD before any rename (2026-11-07)
+
+OP04 SHA PASS was independently fetched Git blob d2c223800266f650e0b06660f3d981c77fbd6e0e. Native Windows PS7 PID8688 ran R030_OP05_MoveGolden.ps1 as a user-authorized prospective one-folder atomic relocation, but failed **BEFORE** directory creation / Directory.Move with strict PowerShell enumeration error "The property Count cannot be found on this object" at script line16, from a zero-match pipeline where Count was referenced on a null scalar. The rule was intended to reject file reparse points; no file reparse point was actually reported. This is a SCRIPT/COLLECTION TYPE bug, not proof of source drift.
+
+**NO GOLDEN MOVE executed, no deletion or image write.** Source still expected C:\work\_UUP\26300.9818-UUP-MAX_PRE_26300_v4; destination absent pending independent check. Golden WIM/ISO/vendor and 184 source hashes independently PASS in OP04. Previous failed source script is preserved in UUP-history\_Governance\R030_20261107\R030_OP05_MoveGolden.ps1; do not silently overwrite that historical failure.
+
+**ONE NEXT**: independently check current source+target locations, write a NEW R030_OP06_MoveGoldenV2.ps1 that uses @(...).Count for zero-match PowerShell arrays, native AST PASS then execute guarded same-volume atomic rename and verify critical WIM/ISO/vendor and 184 files. Git R030 OP06 result and independent readback after. On remote safety block stop, do not bypass.
