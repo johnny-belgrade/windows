@@ -1,0 +1,9 @@
+# R030 OP21 — successor Start_Instruction UUP R030 permanent override PASS (2026-11-07)
+
+Prior OP20 independently Git-fetched/readback blob a9a6515c75fc712dee2e763b6dfdd8cfb76b3a02 and new Master §0P blob 021acd7c802383d1987e27d21a0d5e15b233fbab; all older Master sections preserved below.
+
+Start_Instruction.md Git CAS updated from blob c0edeadfb1f495d70149b4f82e51aea5b200d548 to new blob b9d952319fd9c78ec6102a4c188a670c66c7a5ae, commit 2c1a7cb76475bd65fc13929778772887ab2f7837. New text length 31,076 chars. New permanent R030 §0P bootstrap paragraphs were prepended after original header; all original successor communication/protocol text preserved below. Independently Git fetch/readback PASS for exact blob/length/R030 §0P and dual-evidence clause.
+
+The update explicitly makes ALL UUP work R/W under ONLY C:\work\_UUP\, each NEW unproven cycle a distinct direct child, no older any-C:\work folder path permission, original UUPdump + custom ZIP in same folder, ONE admin root CMD, no closing Explorer/TotalCMD; root primary BlueLite_Logs before CMD/PowerShell checks then automatic repeated SHA-verified mirror to UUP-history\<same-cycle>\BlueLite_Logs with history versions; stage/images in same cycle BlueLite_Work. R030_WorkspaceTools is a tested mirror helper/template only, not retroactive successful R029 code. Multi-source successor recovery requires Master/Current/Entry/Sources/native root README/history README/R030 local checkpoint and immutable per-OP records, individual write/readbacks. Golden v4, original RH02–RH08 corpus and obsolete PREMAX external junction guarded; user-reported R029 no-log is RUNTIME HOLD cause unknown.
+
+ONE NEXT: update BlueLite_Sources.md canonical Golden, original vendor snapshot hashes, 53 root path-map and mirror source provenance; independent fresh Git readback; write OP22. Then Current/Session individually, final local checkpoint audit, protocol pause.
