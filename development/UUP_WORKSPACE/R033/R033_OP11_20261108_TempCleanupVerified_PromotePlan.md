@@ -1,0 +1,5 @@
+# R033 OP11 — exact own TEMP cleanup verified; single ZIP promotion plan
+
+OP10 c2f334e644798ebfc0428fc8acf112f4099077ba separately readback. PID5136 rechecked owner, receipt/archiveSHA, all262 archived source-file byte hashes at action time, parent/child no-reparse and zero WIM/ESD/ISO payload files. Removed ONLY C:\work\_UUP\temp\R033_PREMAX_QA_20261108. CleanupReceipt.json SHA44FFB5A9A5E4F8520DF31028161E763990FFDCE49636D41FE019CB8B06C79EDA under new R033 history. Separate fresh native process proves exact TEMP absent and final archived ZIP SHA unchanged. Original R032/Golden/historical roots untouched. No WIM deletion.
+
+ONE NEXT: assert new C:\work\_UUP\R033_PREMAX_26300 absent and parent ordinary, create it, copy exactly BlueLite_R033_PREMAX_v1.1.zip2364837B SHA B268C0BF9FE9E628D6E97AEFDC17DD7911C4A66FE2C65F2DADBCB7150B0D83FD from verified new history. No extraction or README in delivery root. Write delivery receipt ONLY in history, independent fresh process verifies exactly1file/0dirs, size/SHA, TEMP absent. Then final Current/Sources/Entry sequential CAS/readback, persist GUI archive and pause. R033 source QA PASS, image NOT_RUN, dependencies unchanged.
