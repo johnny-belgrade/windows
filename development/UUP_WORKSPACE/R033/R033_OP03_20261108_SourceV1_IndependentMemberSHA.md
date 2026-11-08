@@ -1,0 +1,9 @@
+# R033 OP03 — v1 source authored, independent native member SHA PASS
+
+UTC 2026-11-08. OP02 plan6064e41af2d143794336fef79197e292857ad0b3; pre-stage Entry f7c628632a39002cc08a5776daf95616c0622fd9 separately CAS/readback PASS. Unique owner marker under C:\work\_UUP\temp\R033_PREMAX_QA_20261108 SHA A682BA6DE2C96A7F58E861E038B351BCA71CA69BF6E12231402346C1A41E0914 independently verified PID9928.
+
+New source-only archive R033_source_qa_v1.zip1897180B SHA DB31BB0F4097A8E6900F9A8E3E1F65806A297A6B287A32641DDEC208DB5E3928 transferred as bytes to owned TEMP, verified before extraction PID6800. Separate fresh PS7 PID8820 rehashed ZIP and ALL101 manifest members PASS (102 files including manifest). New source at own TEMP\Source. Contains complete inherited engine plus R033 corrections and source/evidence dossier; compatibility file names remain explicit. Offline module SHA F3BF97F644CD97D00703B7D253CEA335E91075672E74B0BAC89B98390F29EFA2; independent verifier38B150A4EF1F7F5E9D7E7920746CA9B86539CFC37493B9587B39C7E0A90B0801; finalizerC559C7D8405E24FFA3FA411D98B7AB6EF462B30E073309E3685CE9D47B18B1B3.
+
+Implemented OP02 source changes; immutable baseline preserved, no automatic WIM deletion, exact Not Present parsing, final ScanHealth/pending/protected floor and after features, actual cap transitions, per-DISM separate-process receipt gate, visible stdout, Sense/AppInstaller explicit handoff, final-only summary. Source provenance-only PASS, no runtime PASS implied. Dossier intake JSON contains connector-rendered non-ASCII text differences; original native receipt SHA fields are authoritative, not reserialized text bytes.
+
+ONE NEXT: native PS7 AST all source only using BlueLite_R033_QA.ps1 -Mode AST, write new AST.json, separate process SHA/readback. No download/mount/registry/converter/image execution.
