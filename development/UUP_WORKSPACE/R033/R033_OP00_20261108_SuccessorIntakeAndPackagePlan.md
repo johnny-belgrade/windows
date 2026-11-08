@@ -1,0 +1,17 @@
+# R033 OP00 — successor recovery and requested PRE_MAX package
+
+UTC: 2026-11-08. IN_PROGRESS, source-only development, NOT image execution.
+
+Authorization: current operator explicitly requests full Start_Instruction and prescribed documents, detailed Library 43-ChatGPT.md, reconciliation against Git/native/Library evidence, then best PRE_MAX script ZIP, strict individual writes. This is a new instruction after R032's pause, authorizing source review/package preparation. It does not authorize a new real download, converter run, offline mount/servicing, host configuration, image or source deletion, or Master change.
+
+Initial observed main HEAD 0a0543e2bbb1728abe3dad1653f07f490c64024e. Start blob f446072cd43a0f0b926eb76eb5a58dd58f0bb85c; Master blob 9e0f856b1ebc32248b2be0697b4c07afbd920f8e; Current aa7969a341fea5e9db82c8864335af056b7636ba; Entry 45f38072f77f4a0434cca12ef3b7dfebfc6c516b; Sources af110468f488eae6c449e2c0397c5d64ad93a6a7. RDC DESKTOP-4J4KCEA online, allowedDirectories=[C:\work], original 33 blockedCommands intact; no config change.
+
+Latest recorded baseline R032 IMAGE_BUILT_SHA_VERIFIED / NOT_RELEASE_CERTIFIED. User source ZIP F2EE86702E080815214F976299997D76E0DB8376930CD6D65689EBFCB1445C8F, source26300.9818 x64/en-US/Professional; original run stage BlueLite_Stage_v11_3_26300_9818_6c7bf258_734f71f5. Verify actual current small receipts and file state before accepting. No rerun based on old NOT_RUN paragraphs.
+
+Library 43-ChatGPT.md materialized at 108832 bytes SHA256 311A37F2676686369FBF86C18EDC0C2377BB8A1EFF6668753EDA751E6243FFA3. Its final response ends during physical-media hash investigation; later R032 OP18–OP22 and actual local receipts are needed to complete checkpoint. R032 evidence original1372624 bytes CB090AEFF326C0D7B22E5610D21583D78D71907D61B4CE0543669AF7ED415FB0. Further full source/document and byte verification pending; do not claim intake finished.
+
+One bounded deliverable block, individually journaled stages: (1) finish governing/history intake and independent evidence reconciliation; (2) inspect exact R032 source plus existing target intelligence and identify defensible improvements; (3) write new complete versioned source in C:\work\_UUP\temp\R033_PREMAX_QA_20261108, with immutable own receipts archived to UUP-history\R033_PREMAX_26300; (4) native syntax, negative/source and packaging QA only, no real Build/mount/image operations; (5) preserve evidence, dispose only proven own temporary files and deliver exactly ONE ZIP in brand-new C:\work\_UUP\R033_PREMAX_26300, zero extracted files/directories; (6) separate Current/Entry CAS and fresh readbacks, concise GUI findings, one next, pause. An unknown dependency stays HOLD; no unsupported carve or invented target savings. Preserve R032 and R004 Golden, historical originals and existing source queues. Public runtime uses dynamic root, one Admin CMD, final-only info.txt; native progress retained.
+
+Rollback: only newly created source/test copies are disposable, never existing operator assets. Every meaningful result gets its own immutable OP and independent fetch before next segment; consequential actions have prior plan. Missing/failed independent verification stops dependent segment. Master, frozen Handoff, registry runtime flags unchanged absent proven authorized change.
+
+ONE NEXT: finish source intake and native read-only checkpoint verification; no new image execution.
