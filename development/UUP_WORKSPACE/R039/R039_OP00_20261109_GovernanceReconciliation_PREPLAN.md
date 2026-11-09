@@ -1,0 +1,24 @@
+# R039 OP00 — dokumentaciono uskladjivanje i release-gate razjasnjenje, PREPLAN
+Date: 2026-11-09. Type: GOVERNANCE_DOC_ONLY; NO runtime/VM/image/BCD/cleanup execution. User explicitly approved documentation changes, per-operation Git write and independent readback; requested prioritization of production results and demonstrably functional Microsoft Hyper-V.
+
+## Grounded starting checkpoint (main, independently fetched prior to plan)
+- SINGLE LIVE Current `BlueLite_Current_Status.md` blob `401a84582507c6d11fc84e21c25bcabd47a444be`: R038 OP59 terminal platform safety HOLD, no R038 OP60 independent postcheck. OP59 blob `585f9e0e13b77e62c05877c26f5d30054f47f769`. Last independent local physical PASS R038 OP57 blob `12d053fdce0932d016b2f83a71c85d60303ede4a`.
+- Git `BlueLite_Session_Entry.md` blob `c300d01e887a1c9b2d75fcaf4da1d2afa54e5049` and `BlueLite_Sources.md` blob `ebd55bd493405360befcd0f6caa792de774a5600` contain older R037 top capsules: historical, not competing live status. Start blob `a6f009922397741612e0bfe1877f9375b6e04887` likewise has R037 historic summary; section 9 explicitly forbids adding a new numbered live cycle to Start.
+- Master v6.3.4 original blob `3b32f372267fb6fb8fbdb5430476d915c4054c83`, **immutable** without separate user approval. Master §0T final ~5GB ISO / 14.5–15.5GB footprint at FINAL four-stage product, not R035 PRE_MAX stage. Master §19 and §19.1 explicitly differentiate third-party VM HOST floor from Microsoft Hyper-V requiring its OWN edition/feature proof.
+- Original R035 `install.wim` 5,663,629,505 B SHA `1441B1900374A503DB9045236AEDF1C9604E56A78AA5F9CDCF394DEDC383AD67`, `boot.wim` 824,384,151 B SHA `F659254B86D7478B02A5D02204530CDA8805FE8EA58A4DFE69F69BB4C0144A26`, ISO 6,749,851,648 B SHA `54719935DBB05261D562DE964635E934E1D066975E1AAB8334D67CF6F7EE2CEC`, native SHA previous PASS but release NOT_CERTIFIED; three R036 derivative boot WIM SHA PASS / real boot times NOT_MEASURED.
+- R038 host Hyper-V Gen2 controls exist (SBon and SBoff), yet both show `SCSI DVD: The boot loader failed`; this establishes available Hyper-V *test host* capability, NOT installed BlueLite Hyper-V host feature PASS, NOT first/repeat boot PASS.
+- R038 OP59 producer PID7592 EXIT0 claimed only temporary BIOS BCD deletion and receipt SHA `E64D196FA81C124046324BF0F7934CCEB09163B23B7E2E977FBA782B63298680`. Separate verify was BLOCKED BEFORE execution by platform safety. No alternate invocation, no new local readback through a different route to evade refusal.
+- Library `BlueLite_v1.0/Chats/44-ChatGPT.md` (historical, 1,992 lines) reviewed during prior analytical turn; local R038 CandidateManifest, R037 physical receipt, RDC config/readme read-only inspected. Frozen Handoff not modified; large text retrieval previously not full and may not be claimed fully reviewed.
+
+## Approved documentation operations, each ONE transaction then fresh Git fetch
+1. R039 OP01: author complete, source-bound decision record: lean proof automation without relaxing each OP pre/post; TWO PARALLEL engineering tracks (PRE_MAX payload size and setup/first/subsequent boot), real Microsoft Hyper-V HOST functionality as independent release gate, preserve third-party VM-host, explicit R038 safety STOP and same ONE NEXT.
+2. Update sole Current by CAS with compact governance reference; preserve its R038 OP59 and exact ONE NEXT, historical text untouched, then fresh fetch.
+3. Update Session Entry router by CAS with dynamic current pointer, avoid permanently hardcoded R###/SHA, followed by fresh fetch. Historical R037 content retained as history not active.
+4. Update Sources with R038/R039 source lineage + distinctions; fetch. Optionally modify Start ONLY for generic dynamic-pointer clarification, NEVER put R039 as its 'latest' current cycle; fetch.
+5. If safe and justified, a bounded local metadata README update via RDC only with its own Git preplan, local readback and written result; no scripts/native processes. No mutable R038 receipt or safety-blocked verification.
+6. R039 final OP records exact changed document blobs/commits + fresh independent fetch, check one and only ONE NEXT in Current; protocol pause.
+
+## Not authorized / held
+No Master, Handoff, RecipeRegistry, original UUP, Golden, protected R035/R036 WIM/ISO, R038 local receipts/BCD/SDI/VHDX, boot code, production OS, Hyper-V guest power/config, BCD/EFI, new media, blocked verifier or cleanup. No boot-speed assertion and no positive Hyper-V release certification from R038 host alone. User authorization for docs is NOT platform safety clearance; terminal HOLD stands.
+
+Failure policy: on write/readback mismatch STOP with explicit HOLD and no subsequent doc mutation; Git CAS only against fresh blob, no conflicts overwritten. This R039 is a **DOCUMENTATION sidecar**, NEVER a replacement for R038 active runtime cycle or its reserved OP60 verifier.
