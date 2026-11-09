@@ -1,6 +1,6 @@
 # BlueLite v1.0 — ONE LIVE CHECKPOINT
 
-**2026-11-09 R038 SOURCE/PACKAGE PREFLIGHT PASS; ISOLATED HYPER-V VM NOT YET CREATED.** User-authorized isolated benchmark, protected original R035 ISO/install/boot WIM and R036 3 Setup variants physical SHA twice; new owned R038 workspace and compact `BlueLite_Logs` only, 0 mounted WIMs and 0 R038 VM. No production image/Master/BCD/EFI changes.
+**2026-11-09 R038 SOURCE / PACKAGE PREFLIGHT PASS + REAL GEN2 HYPER-V ISOLATED VM CREATED OFF (NO ISO ATTACHED; NO ACTUAL BOOT).** User-authorized isolated benchmark, protected original R035 ISO/install/boot WIM and R036 3 Setup variants physical SHA twice; new owned R038 workspace and compact `BlueLite_Logs` only, 0 mounted WIMs and 0 R038 VM. No production image/Master/BCD/EFI changes.
 
 ## R038 ACTIVE ISO/WinPE → FIRST installed OS → EVERY later boot — ONE NEXT
 
@@ -12,7 +12,10 @@
 
 **Exact scripts**: `R038_00_PreflightReadOnly.ps1` (DONE), `R038_01_CandidateManifest_v1.1.ps1` (DONE), `R038_03_CreateIsolatedVM.ps1` (full Git source blob `50c345eb98200b2ea23677ce8134bc63bb94df09` authored but not yet deployed/executed); future script02 clone ISO and script04 setup/installed/repeat boot logging, script05 comparison, script06 immediate cleanup must have full immutable source/AST/physical receipt before execution. Hyper-V guest-only outcome is NOT proof BlueLite works as VMware/VBox host.
 
-**ONE NEXT:** deploy source-frozen script03 into `C:\work\scripts` with exact Git blob readback and local fresh PS7 AST SHA; write Git pre-create plan/fetch, execute mode `Create` ONE new Gen2 UEFI Hyper-V VM OFF state + 48GiB dynamic guest VHDX entirely under `C:\work\_UUP\R038_IsolatedBootBenchmark_26300`, independently verify created state/guest path/receipt, Git postrecord/fetch BEFORE attaching original ISO (next separate mode). Never modify host BCD/EFI or original media, never claim boot performance from VM registration.
+**NEW CHECKPOINT — native R038 OP10 actual isolated VM created OFF** Git `development/UUP_WORKSPACE/R038/R038_OP10_20261109_HyperV_UEFI_Gen2_OffCreated_IndependentPASS.md` blob **51244fe0099fa92169a7de0c55cb0dcb2450c5d0** (independent fetch), preceding Git OP09 PRECREATE `41b24b3309b9b5e690fa23ebaf5bc34c8c68ba4d`. Full native script03 `C:\work\scripts\R038_03_CreateIsolatedVM.ps1` SHA **F6FC1B01E56FB8AC3F24E32EDA0924C200D875D66C1C7B2B6DBDF9EAD82B154D** AST0; PID9144 script03 MODE=Create EXIT0, new guest **BlueLite-R038-UEFI-Baseline** Hyper-V Generation2 ID **c7536cc4-68f5-473a-9818-4053ba8794b2** created State **OFF**, 4GiB startup RAM, owned dynamic VHDX virtual 48GiB/51,539,607,552B and actual file only 4,194,304B in `C:\work\_UUP\R038_IsolatedBootBenchmark_26300\Guest_UEFI_Baseline`, no ISO attached, no Windows Setup/UI/OS first boot tested. Own `BlueLite_Logs\R038_03_Create_BlueLite-R038-UEFI-Baseline.json` SHA **4ACB2A915A3329FC4C723E8BCF02CF2757D791EF6FFC6336DA6871E86C10536F**. Fresh independent PID9084 re-read receipt and source full SHA, `Get-VM` exactly one expected guest Gen2 OFF and Get-VHD actual dynamic path under R038, no WIM mounts, current C free ~208.35GB. Original R035 ISO/boot/install, R036 3 candidate WIMs and Golden SHA unchanged.
+
+**ONE NEXT:** write independent Git R038 OP11 PRE_ATTACH plan and fetch, execute previously Git-frozen+AST0 `R038_03_CreateIsolatedVM.ps1 -Mode AttachMedia -VMName BlueLite-R038-UEFI-Baseline` ONLY, verifying original R035 ISO full SHA then attach it to new Gen2 guest and set guest firmware DVD first and SecureBoot ON; separate second native process confirm ISO attached, guest OFF, EFI boot order, source SHA unchanged, real C free, Git OP12 result/readback BEFORE a separate power-on. Do not touch host BCD/EFI or create test-media clones until baseline eligible.
+
 
 ---
 
