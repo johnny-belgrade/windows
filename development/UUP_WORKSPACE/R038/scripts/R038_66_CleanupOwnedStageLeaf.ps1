@@ -54,7 +54,7 @@ $expectedCount=$items.Count-$idx
 if ($actual.Count -ne $expectedCount) { throw ('STAGE_COUNT_DRIFT_'+$actual.Count+'_EXPECTED_'+$expectedCount) }
 foreach ($f in $actual) {
  $entry=@($items|Where-Object {[string]::Equals((Join-Path $stage $_.rel),$f.FullName,[StringComparison]::OrdinalIgnoreCase)})
- if ($entry.Count -ne 1 -or @($items|Where-Object {$_.mode -eq $entry[0].mode})[0].mode -eq $null) { throw ('FOREIGN_STAGE_LEAF_'+$f.FullName) }
+ if ($entry.Count -ne 1) { throw ('FOREIGN_STAGE_LEAF_'+$f.FullName) }
  $e=$entry[0]
  $pos=[array]::IndexOf(@($items.mode),$e.mode)
  if ($pos -lt $idx) { throw ('ALREADY_DELETED_FILE_REAPPEARED_'+$e.mode) }
