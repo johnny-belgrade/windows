@@ -1,0 +1,21 @@
+# R038 OP64 — INDEPENDENT PHYSICAL PASS: 7 exact members + R035 original ISO + guest & mounted WIM
+Date 2026-11-10. Source immutable PREPLAN Git blob `6769278fe716581eef52352f853f654c1009fa2f` independently fetched; frozen PowerShell non-mutating source Git blob `b72662e2a354b46743b3f999d5c64337bc91b44d`, compared byte-for-byte with local `C:\work\scripts\R038_64_SevenMemberSHA_ReadOnly.ps1` following exact RDC write + trailing LF append + independent full local readback. New Windows PS7 `pwsh.exe -NoProfile -NonInteractive -File "C:\work\scripts\R038_64_SevenMemberSHA_ReadOnly.ps1"` PID **6884**, tool `read_process_output` reported **EXIT CODE 0**, runtime **12.32 seconds**, result `INDEPENDENT_READ_ONLY_7_MEMBER_ISO_VM_PASS`, self-script SHA256 **8D53B452D85D4BE0DDD7FE5A05A53C188EFB1AD4D367060C25C75D23D32B1E10**. No mutation by verifier.
+## Exact seven hashed members (SHA256, bytes)
+| file relative to `C:\work\_UUP\R038_IsolatedBootBenchmark_26300\BlueLite_Logs\R038_14_ISO_BCD_SDI` | bytes | SHA256 |
+| --- | ---: | --- |
+| `boot\bcd.LOG` | 32768 | `B97E5FA9AA83C992CA2FC68E1A2818E7E7156D88636C75AE16DC6EFFC25EE03F` |
+| `boot\bcd.LOG1` | 0 | `E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855` |
+| `boot\bcd.LOG2` | 0 | `E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855` |
+| `boot\boot.sdi` | 3170304 | `CD2C00CE027687CE4A8BDC967F26A8AB82F651C9BECD703658BA282EC49702BD` |
+| `efi\microsoft\boot\bcd.LOG` | 32768 | `C8BFF340EB83585BAE8564077BABA4F3093AE1A15C0649D2E407B94DBC7CA1D1` |
+| `efi\microsoft\boot\bcd.LOG1` | 0 | `E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855` |
+| `efi\microsoft\boot\bcd.LOG2` | 0 | `E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855` |
+All seven are regular fixed member paths (no reparse in verifier), EXACTLY seven files, no foreign stage members; one original 3,170,304B SDI unchanged since OP57 + six sidecars created in OP54 time range. No sidecar deletion authorized by verification alone; their creation by offline BCD hive open remains high-confidence contextual provenance, not automatic permission to delete.
+## Other critical independent rechecks (PID6884)
+- Both EFI and BIOS temporary `bcd` work copies PHYSICALLY ABSENT; BIOS delete receipt SHA **E64D196FA81C124046324BF0F7934CCEB09163B23B7E2E977FBA782B63298680**; EFI delete receipt SHA **CD2BA5589EDB30D31D72574F0C628E4E5E8E92725A7AE77EC6364CF3C2EC1F80**.
+- Protected original source R035 ISO **6,749,851,648 B, SHA256 54719935DBB05261D562DE964635E934E1D066975E1AAB8334D67CF6F7EE2CEC**, independently rehashed full bytes AFTER OP59 and proved identical. Read-only ISO path resolved exclusively from source extraction receipt SHA `6F27FBFE4C5B93023096579DABC31A0B0F1DCF7159DCCC54CE9902678D253B0B`, under guarded R035 source directory and not reparse.
+- Hyper-V development guest `BlueLite-R038-UEFI-Baseline` **Running / SecureBoot On**; control `BlueLite-R038-UEFI-SBOff-Control` **Off / SecureBoot Off**; WIM mounted count **ZERO**. These are existing development HOST VM states, **NOT** installed BlueLite Microsoft Hyper-V host release proof; `HYPERV_HOST_NOT_RUN` remains.
+- Original prior OP60 `STAGE_NOT_EXACTLY_ONE_FILE` was accurately a HOLD for its overstrict total-file cardinality assumption; OP62/OP64 resolve that discrepancy by distinguishing six BCD hive sidecar files from ONE original surviving source member. No source ISO/WIM/Golden, guest VHDX, host BCD/EFI, Defender, security policy altered.
+
+## Final status and ONE NEXT (pending Current CAS)
+`R038_OP64_INDEPENDENT_SOURCE_ISO_SDI_BCD_RECEIPTS_GUEST_STATE_WIM_MOUNT_PASS`. No **new technical safety/RW HOLD** in this operation. **ONE NEXT:** separately preplanned SHA-scoped owned temp sidecar/SDI disposal lifecycle with original 7 file manifest and independent per-operation receipt readback, focusing on minimal automation. Do NOT delete any member automatically from this read-only result. The larger real UEFI ISO boot-chain setup failure remains unresolved for next isolation block (both SecureBoot ON/OFF originally rejected); installed Boot stages A/B/C NOT_RUN, compressed install.wim reduction and real installed Hyper-V host release gates remain active. Master unchanged.
