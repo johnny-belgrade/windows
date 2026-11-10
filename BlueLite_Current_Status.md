@@ -1,6 +1,8 @@
 # BlueLite v1.0 — ONE LIVE CHECKPOINT
 
-**Status: 2026-11-10 | ACTIVE: R038 OP133 independent 2-process original ISO UDF `efisys.bin` = El Torito FAT SHA PASS; UEFI Setup boot-chain DEPENDENCY_HOLD.** Git `main` is the single operational truth. This short document supersedes dated claims in old snapshots; each relevant immutable PRE/POST is linked below.
+**Status: 2026-11-10 | ACTIVE: R038 OP133 independent 2-process original ISO UDF `efisys.bin` = El Torito FAT SHA PASS; UEFI Setup boot-chain DEPENDENCY_HOLD.**
+
+**2026-11-10 OP138 OWNER DISCUSSION — PROPOSED, APPROVAL PENDING:** no new/control ISO download in next work; refocus primary engineering on real compressed PRE_MAX `install.wim` shrink, with UUP/CBS/AppX/FoD and protected hypervisor/servicing dependency closure. Secondary boot work is **functional UEFI/BCD/WinPE/Setup path**, not speed. Original Stage-A boot `DEPENDENCY_HOLD`, stages B/C/installed Hyper-V HOST `NOT_RUN`. Precise proposed milestones: `development/UUP_WORKSPACE/R038/R038_OP138_20261110_NoNewISO_PREMAX_SizeFirst_WIM_BCD_BootFunction_DecisionPROPOSAL.md` (Git `91d16f8e84923b0d5b06a13bc714269f5a0c0280`). **No runtime/image action authorized by this discussion.** Git `main` is the single operational truth. This short document supersedes dated claims in old snapshots; each relevant immutable PRE/POST is linked below.
 
 ## 1. Live physical status
 
@@ -37,6 +39,6 @@
 
 ## 4. EXACTLY ONE NEXT
 
-**R038 OP138: separately Git-preplan/readback a READ-ONLY, source-bound provenance and availability check for a *genuine Microsoft UEFI-capable Windows Setup/WinPE control ISO* with an independent real usable Gen2 boot-success receipt.** No such comparable proven control was found in the scoped OP136 source/metadata review; a file name, `Golden` label or Microsoft standard-format conformity is NOT a boot-success receipt. Pin download/source/image SHA, edition/arch, supported VM firmware path and actual Setup/WinPE state before any later controlled A/B. If absent, record `CONTROL_MEDIA_NOT_PROVEN` and propose an explicitly authorised isolated control acquisition/test; do NOT patch original R035 ISO, disable host Secure Boot, or fabricate a boot result.
+**EXACT ONE NEXT: wait for operator's explicit command approving or amending R038 OP138 proposed size-first plan.** Upon authorization, separately Git-PREPLAN/readback a read-only R035 existing one-index compressed `install.wim`, original two-index Setup `boot.wim` and existing UUP source triad/CompDB, converter and offline policy inventory. Do not download a reference ISO or mutate existing images/VM/BCD as part of the pending decision. Prior `CONTROL_MEDIA_NOT_PROVEN` remains an evidentiary limitation, **not** a requirement blocking read-only WIM analysis. After approval, prioritize size opportunities and functional boot dependency QA, leave boot speed until boot function passes.
 
 After each individual operation: Git PREPLAN → fresh readback → one scoped read-only/native action → independent QA → immutable POST/fetch → update this single Current by CAS at a material block. Stop on safety refusal, at most three ordinary R/W transport retries; release/boot timings only after real functional tests.
