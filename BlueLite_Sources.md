@@ -1,3 +1,18 @@
+# 2026-11-11 — NEW ORIGINAL 26300.x UUP ZIP SOURCE CANDIDATES (R038 OP175, READ-ONLY SHA PASS)
+
+> **DYNAMIC AUTHORITY** remains freshly fetched `BlueLite_Current_Status.md` and its sole ONE NEXT; this is a source-intake record, not a build switch or a runtime/size certification. Operator originals at `C:\work\_UUP\_UUP_Originals`, independently native inventoried by PID1744 and PID4620; immutable Git evidence `development/UUP_WORKSPACE/R038/R038_OP175_20261111_TwoNew26300UUP_ZIP_IndependentNativeSourceFingerprint_PASS.md` blob `4c9c06e65c3abbc182a707e3a870d109d81b675b`.
+
+| Candidate source ZIP | Bytes | Physical SHA256 | Content |
+| --- | ---: | --- | --- |
+| `26300.9911_amd64_en-us_professional_2ad1d9f3_convert.zip` | 8,208 | `4349C0A893AE8BCCAEF3ECA48A031C48B8883DB5874F2ABE575B395538A4801E` | 11 bootstrap members |
+| `26300.9974_amd64_en-us_professional_aa272a56_convert.zip` | 8,212 | `A8D3FA7235528E3586206D4116ED724077CFF57CE34A2BB9E0B67778630FE778` | 11 bootstrap members |
+
+Both have 0 duplicate names, 8/11 identical member SHA; only Windows/Linux/macOS download launchers differ. Common `ConvertConfig.ini` SHA `F7DB3FA739F2AC7B121C915BE6B8439201EF4E2828A57552B51A9306F19AD03E`; `CustomAppsList.txt` SHA `1F2FBC910A0F016EAD61D1FEEF41D1E7B75E234753572AE37C83D0DAE955CC94`; `files/converter_windows` SHA `BE1FCB13934FC4326CECE3F667F9C44F9B04C055CF1800398031624E2DDCB1EF` includes **128m marker**. This proves launcher references v128m, **not** that the converter binary has been downloaded, independently hashed, or run. Neither ZIP contains full UUP Windows payload nor named `List of files UUP.txt`, `File_renaming_script.cmd`, `List of downloaded files.txt` source triad. Source UUID/build in filename is uncorroborated beyond original name; no preferred or selected CU, no new converter or ISO execution.
+
+**PRE_MAX priority pinned to Master v6.3.4 §0H/§0I and R038 OP140:** P0 universal actual source/CompDB/delta/reference/FoD reconstruction, reversible pinned v128m converter, supported 5-AppX staging/native ISO; then P1 **largest measured, dependency-proven unique compressed `install.wim` payload** (e.g. qualified Edge/WebView, OneDrive, Recall/AI, FoD), not small leftover AppInstaller/WMIC/CBS owner analysis as a production blocker. Small/intricate residue moves to offline Stage2, NTLite Stage3 when required. R035 original built 26300.9818 one-index WIM byte inventory R038 OP172 remains independently PASS; new .9911/.9974 native UUP download/WIM build/ISO NOT_RUN. No new control ISO; boot/installed Hyper-V HOST gates remain separate. Do not duplicate downloads until source+Golden SHA/UUID/source closure validated. Originals, Master and frozen Handoff protected.
+
+---
+
 # R038 2026-11-10 — APPROVED ACTIVE STRATEGY SOURCE DELTA: PRE_MAX SIZE FIRST; NO NEW CONTROL ISO; R038 OP140
 
 > **SOLE LIVE AUTHORITY:** always freshly fetch `main:BlueLite_Current_Status.md` (after OP141 Git blob `8a8df43b63c715085a8f0d751ed9af8a562f4f85` at this exact timestamp). This Sources file is a historical evidence registry, not the live checkpoint. The older R039/R038 OP59 safety HOLD capsule below is correct only at its original 2026-11-09 time; later native OP115/OP133 passed and OP140 owner-approved new priorities.
