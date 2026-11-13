@@ -1,5 +1,18 @@
 # BlueLite v1.0 — ONE LIVE CHECKPOINT
 
+## LIVE 2026-11-13 R043 OP38 — original+only P1 working-copy dual SHA PASS, deletion DEFERRED by active dependency
+
+**ACTIVE `R043_OP38_SOURCE_SHA2_RETAIN_PASS / WIM_MOUNT0 / VM3OFF / C_FLOOR_PASS / OP29_PARENT_OWNERS_HOLD / P1_UNIQUE_COMPRESSED_GAIN_NOT_YET_PROVEN`.** Git OP37 PRE blob `86a5f1aeb1a21dc322933f5f796bb528bdee7436` → OP38 POST blob **`fbe3f741e4b5c1b053a78a2774c17ddb6a217cbd`**, commit `7029870c78d7e0747e2c34ef7f15b1af8f89f9eb`, independently readback PASS. Earlier OP36 Current capsule below is historical as to ONE NEXT.
+- Physical native PID5052 producer full SHA256 both R042 original WIM and only R043-owned mutable WIM: exact **`61AA38CD52B85962C52E4A8F9D14C4F7C4D0699D9A57446261D26EB723C0AEC2`** and size **5,602,983,183B each**. NTFS fsutil `hardlink list` original + clone native0, **exact one distinct hardlink each**, zero reparse; only one file in `OwnedDisposable`. Local producer `BlueLite_Logs\R043_OP37_WimCloneRetentionGate_Producer.json` SHA **`BFFBE2AB87546786F8E86A7424B051F9BC6B536529D63C2021A5A440613FAD99`**.
+- Separate new native PID1496 re-hashed both **full WIMs using certutil** exit0 each, same expected SHA, independent original WIM protected; no current WIM mount, 3 Hyper-V VMs Off, current C free **83,221,573,632 B** (~77.5GiB), minimum60GiB PASS. Second receipt `BlueLite_Logs\R043_OP37_WimCloneRetentionGate_IndependentVerify.json` SHA **`CCC661A33FED73ABAB1B7DEC15671D61B2EAD55735EE52EE9B620F8993FB2BC7`**, certutil independent exit0. No image or VM mutation.
+- **Delete disposition:** although file bytes duplicate, owned R043 file is sole legitimate *modifiable* WIM for ongoing P1 source-qualified size experiments, original R042 WIM protected. Removing now would require copying 5.60GB back later. **Retain existing copy; DELETE_HOLD_ACTIVE_DEPENDENCY, not a host storage optimization PASS.** No 5.6GB reclaimed claim, no new isolated space. Existing 80GiB virtual R042 guest disk unchanged and Off. Once P1 development completes, separately strict PREDELETE/independent post-delete.
+- No confirmed R043 compressed image payload saving yet. OneDrive reference2 remains no source removal; 26300.9974 exact parent/Owners graph OP29 PRE_ONLY_HOLD, current RDC `reg` blocked, no workaround. Boot speed second, Master/Golden unchanged.
+
+**EXACTLY ONE ACTIVE ONE NEXT — R043 OP39:** one bounded source-only native `wimlib-imagex dir` full original 26300.9974 WIM tree with `--detailed`, map largest true WIM compressed blob SHA1 to actual directory paths/protection roles, no extracted binary payload, no new WIM/ISO/VM/mount/delete or new isolated space, independent native SHA/path/size QA and immutable Git POST/readback. C free floor60GiB guard before action. Read exact previous Git R043 OP16/20/21 and original physical source receipts; don't equate single path removal with bytes when refcount>1. Universal PRE_MAX 26300.x physical savings PRIORITY; boot timings SECOND.
+
+---
+
+
 ## LIVE 2026-11-13 R043 OP36 — C: + existing 80GiB isolated VHD + disposable WIM native second PASS
 
 **ACTIVE `R043_OP36_NATIVE_INVENTORY_PASS / WIM0_VM3OFF / OP29_PARENT_OWNERS_HOLD / P1_UNIQUE_COMPRESSED_SAVINGS_0_CERTIFIED`.** OP35 PRE Git blob `2c984ab7ebcf81c50c744ff741f6a1a21264df35`, OP36 POST **`4febd686b76f8348584b1c178c57d865ae0728cc`**, commit `f1e32b40623e2c89adbb8502a0ebb4acddfd4cef`, independently read back; earlier OP34 live top below is historical as to ONE NEXT.
