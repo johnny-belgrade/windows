@@ -1,5 +1,17 @@
 # BlueLite v1.0 — ONE LIVE CHECKPOINT
 
+## LIVE 2026-11-13 R043 OP54 — Edge WebView FOD actual CBS State Staged, hidden capability; mount1 READONLY remains active
+
+**ACTIVE R043_OP54_EDGE_FOD_DIRECT_NATIVE_SECOND_PASS / ONLY_OWNED_WIM1_MOUNT_READONLY / OP29_CBS_PARENT_OWNERS_HOLD / P1_ACTUAL_COMPRESSED_WIM_GAIN0.** OP53 PRE Git a61958d948d89a4bb4fa8dbfad08d89a3c64e450 → OP54 POST **f6938034d8d961c985663a4a464f13467dc71182**, fetched/readback PASS. Sources live latest **7ef034bfadd9faa064f73f33f65d89b23c1ce1cc**, also fetched. Earlier OP52 top still accurately says WIM1 but historical NEXT OP53.
+- One true DISM /Image:existing owned ReadOnly R043 .9974 mount /Get-PackageInfo /PackageName:Microsoft-Edge-WebView-FOD-Package~31bf3856ad364e35~amd64~~10.0.26100.1 **exit0**: exact CBS identity, **State Staged**, **Release Type OnDemand Pack**, **Capability Identity Edge.Webview2.Platform~~~~**, **DismOptions Visibility hidden**, no features found. Earlier native /Get-CapabilityInfo guess Error87 was NOT evidence of absent package. Confirmed using SECOND separately run native exact DISM source query exit0 and current actual WIM1 index1 MountMode ReadOnly, 3VM Off, C free **82,562,150,400B** floor60GiB PASS.
+- Local first producer `BlueLite_Logs\R043_OP53_EdgeFOD_GetPackageInfo_Producer.json` SHA **50F0BF3D91DB47A0F513AC8C6E83AF4BC4F518A70F09E5B2737B3BE33AE75DFF**, native console SHA **C624442C148B1D8FD4B434F1FC2DE37231E71C592AA9CCEC5C228176E156051D**, independent `BlueLite_Logs\R043_OP53_EdgeFOD_GetPackageInfo_IndependentVerify.json` SHA **8C014221C1B1D120F2956553B152B5CC89BA92BA999EEFF359DAB48F9D12B4B3**, separate certutil exit0. R043 original index1 still mounted READ ONLY at **EXISTING** `C:\work\_UUP\R043_PREMAX_P1_20261112\OwnedMount`; original protected R042 source not mounted. No new cloned WIM/isolated 80GiB VHD/VM/ISO, no original/Golden image modifications, no servicing/CBS removal.
+- Prior direct OneDrive neutral State Staged, WOW64 neutral Installed; LTSB parent/Owners OP29 PRE_ONLY_HOLD, RDC reg blocked. Six old Edge WinSxS unique ref1 blobs 173,830,744B, one old OneDrive 56,623,160B conditional source only; package removability and actual savings remain HOLD. No boot-speed tests yet.
+
+**EXACTLY ONE ACTIVE ONE NEXT R043 OP55:** separately Git PRE/fetch one owner-scoped **/Unmount-Wim /MountDir:C:\work\_UUP\R043_PREMAX_P1_20261112\OwnedMount /Discard** native after exact WIM1/ReadOnly/owned source/VM3Off/Cfloor guard, then separate independent native mount0/VMOff/original source SHA and source receipt QA, immutable Git OP56 POST/fetch, CAS Current/Entry and local versioned checkpoint if needed. No host shutdown/reboot with WIM1; no direct package removal or registry workaround. Universal 26300.x source-driven P1 compressed gains first, boot speed SECOND.
+
+---
+
+
 ## LIVE 2026-11-13 R043 OP52 — ONLY R043 OWNED CLONE MOUNTED READ ONLY, index1; MOUNT1 ACTIVE
 
 **ACTIVE `R043_OP52_OWNED_READONLY_WIM_INDEX1_MOUNT_NATIVE_AND_SECOND_QA_PASS / EDGE_FOD_CBS_NATIVE_STATE_NEXT / R043_OP29_PARENT_OWNERS_HOLD / P1_COMPRESSED_PAYLOAD_GAIN_NOT_DONE`.** Last OP51 PRE Git `9fcd0ec758960a3a35a981872c1ff85e3a6ca713` → OP52 POST Git **`f5c17b62f8d160dfac61cf2856a63739068c4d70`**, commit `ad993988579ea980e050395c2252cab887b2a856`, independent fetch/readback PASS. Earlier OP50 Current top WIM0 is **HISTORICAL**: **live host WIM1 mounted ReadOnly; no reboot**.
