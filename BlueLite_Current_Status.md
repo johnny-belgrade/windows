@@ -1,5 +1,19 @@
 # BlueLite v1.0 — ONE LIVE CHECKPOINT
 
+## LIVE 2026-11-13 R043 OP36 — C: + existing 80GiB isolated VHD + disposable WIM native second PASS
+
+**ACTIVE `R043_OP36_NATIVE_INVENTORY_PASS / WIM0_VM3OFF / OP29_PARENT_OWNERS_HOLD / P1_UNIQUE_COMPRESSED_SAVINGS_0_CERTIFIED`.** OP35 PRE Git blob `2c984ab7ebcf81c50c744ff741f6a1a21264df35`, OP36 POST **`4febd686b76f8348584b1c178c57d865ae0728cc`**, commit `f1e32b40623e2c89adbb8502a0ebb4acddfd4cef`, independently read back; earlier OP34 live top below is historical as to ONE NEXT.
+- C free at separate native independent QA **83,221,393,408 bytes** (~77.51 GiB), protection floor **60 GiB** PASS; no new isolated space/VM/VHD or WIM clone created. Existing isolated R042 Hyper-V Gen2 VHDX `C:\work\_UUP\R042_InstalledBoot_9974_20261112\R042_Installed26300_9974_SourceOwner.vhdx` is **80 GiB VIRTUAL = 85,899,345,920 B**, **14,164,164,608 B actual dynamic file**, not a separate extra 80GB free on C; its VM Off. Two other R038 guest VHDs each 48 GiB virtual untouched. Never attach/create/start until separate scope.
+- Original R042 `install.wim` and assistant-owned disposable R043 copy each **5,602,983,183 B**; both full SHA in earlier independent OP32 `61AA38CD52B85962C52E4A8F9D14C4F7C4D0699D9A57446261D26EB723C0AEC2`. Current physical file sizes/reparse flags read-only verified; clone currently redundant but not deleted. WIM mounts0, VM3 Off, zero image tooling processes at OP35 producer. Exact source keeper/clone paths in Git OP36.
+- Original `OwnedEvidence\CBS_Hives_Snapshot` 6 files total **152,013,824 B**; disposable `OwnedEvidence\CBS_HiveQuery` is **NOW 6 files total 98,245,632 B**, comprising 3 previous SOFTWARE/LOG entries 97,131,520 B plus 3 previously created transaction auxiliaries 1,114,112 B. Do not confuse with earlier OP24 3-file snapshot and do not modify originals; all evidence preserved.
+- OP35 producer `BlueLite_Logs\R043_OP35_CFree_IsolatedVm_WimEvidence_Producer.json` SHA **873BCCFF60C232340953DDE8CBC10A9770CDD35D5009D525A5197410FCE0EAE9**; independent PID8920 native exit0 QA `BlueLite_Logs\R043_OP35_CFree_IsolatedVm_WimEvidence_IndependentVerify.json` SHA **D0336C4B57CFFA452304A0242A91DA3E0A231BBFE31C9E860E89DCDF12088AA6**, third certutil PID8896 exit0. All read-only apart from small receipts. No new actual image size savings.
+- OP29 native parent Owners query PRE-only NOT_RUN/HOLD, `reg` blocked, don't bypass; no current temp HKLM alias proof beyond historical OP27. No boot optimization or release claim. Master, Golden, original R042 and 80GiB guest disk protected.
+
+**EXACTLY ONE ACTIVE ONE NEXT — R043 OP37:** transaction-specific Git PRE/readback for **ONLY R043-owned post-DISCARD disposable duplicate 5,602,983,183B WIM**, current full source keeper+clone SHA/proof and reparse/hardlink/dependency/VM/WIM check, one safe deletion under 60GiB floor if proven, independent absent/keeper-full-SHA/free delta and Git POST/readback; otherwise record HOLD without delete. Workspace C reclaim `!=` PRE_MAX compressed savings. After that unique compressed payload/source-graph triage for general 26300.x universal PRE_MAX remains P1; boot speed second. Do not create new isolated 80GiB workspace.
+
+---
+
+
 ## LIVE 2026-11-13 R043 OP34 — local/history successor checkpoint independently SHA preserved (latest)
 
 **ACTIVE `R043_OP34_LOCAL_DOCS_PASS / R043_OP32_WIM0_SHA_PASS / R043_OP29_PARENT_OWNERS_HOLD / P1_COMPRESSED_PAYLOAD_GAIN_NOT_PROVEN`.** Previous OP32 live capsule below remains technically valid for WIM state but its OP33 NEXT is historical after this completed checkpoint sync. Immutable Git `R043_OP33_PRE_20261113_ReadOnlyOwnedWim_EvidenceInventory_LocalSuccessorCheckpoint.md` blob **`0bc5bee601caadec8fc92cd6e25cad2387b555c3`** → `R043_OP34_POST_20261113_LocalCurrentCheckpoint_PrimaryHistory_IndependentSHA_PASS.md` blob **`caede29f8bf9a0b8edea9baf6d5fabce7e694d72`**, commit `bfe962a56ea1dab6f70699d1968f5b8c4cbb6aef`, Git new-file fetch/readback PASS.
