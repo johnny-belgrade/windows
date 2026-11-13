@@ -1,0 +1,9 @@
+# R043 OP48 HOLD — OP47 first CBS crosswalk source-only script blocked by PowerShell H alias to Get-History
+
+2026-11-13. Parent immutable Git OP47 PRE `c804d2eceaf1b64b8ffe4b0ded3f804514f16cbd` fetched/readback. One intended read-only Windows PowerShell native process PID1704 attempted to correlate already-pinned original `BlueLite_Logs\R043_OP15_CBS_TargetOwner_Producer.json`, its independent QA and 10 MUM/47 WinSxS source manifest names, legacy Edge6/OneDrive1 resource owners from OP45, and previously proven actual DISM OneDrive neutral Staged/WOW64 Installed. No WIM mount, VM, registry, image or disk operation issued.
+
+It stopped before serialization because short helper function name `H` resolved to built-in Windows PowerShell alias `Get-History`. Actual error:
+`Get-History : Cannot bind parameter 'Id'. Cannot convert value '...R043_OP15_CBS_TargetOwner_IndependentVerify.json' to type System.Int64.`
+No OP47 producer JSON was authored, no independent QA receipt was produced; **status `R043_OP48_FIRST_SOURCE_CROSSWALK_POWERSHELL_ALIAS_HOLD`**. No result from this attempted process is claimed as verified.
+
+**EXACTLY ONE NEXT:** new separately immutable Git OP49 PRE/readback correcting helper to unambiguous `Get-PhysicalSHA256` and using **new** distinct local `R043_OP49_LegacyEdgeOneDrive_CBSManifestTopology_Producer.json` (preserve failed attempted OP47 provenance). Then one bounded read-only source crosswalk producer, separate fresh native independent source QA, certutil SHA, Git OP50 POST/readback and Current/Entry/Sources CAS. No big 159707-path WIM scan rerun, no new WIM/ISO/VM/VHD, existing 80GiB guest VHD Off and C floor60GiB. Do not use blocked `reg` or bypass any platform command restriction. Owner package state/protected servicing transitions remain HOLD until independently evidenced; source conditional 230,453,904B not actual WIM saving, boot speed second.
