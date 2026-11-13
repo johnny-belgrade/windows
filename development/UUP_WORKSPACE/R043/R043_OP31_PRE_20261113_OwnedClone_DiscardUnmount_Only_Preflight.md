@@ -1,0 +1,20 @@
+# R043 OP31 PRE — bounded unmount /Discard of ONLY owned disposable mounted 26300.9974 WIM clone
+
+Date: 2026-11-13. Operator requested protocol continuation and docs reconciliation, pre-debloat source size FIRST, boot speed SECOND. This PRE is an explicit consequential-action gate. Independently fetched Git OP30 POST blob `4f73c3e18809818436962d9ac9fcec7e0647a6e6`, Current reconciled CAS/readback `e68310579729bbef45b41a3902d8d2da5bd7bc16`, Entry `758b105579ab6233f0203b969af25f0580902a7b`, Sources `fa22df74e149e8af9353f8e65874521ba966dc9f`, Master unchanged `3b32f372267fb6fb8fbdb5430476d915c4054c83`. OP29 parent/Owners probe `PRE_ONLY`: no actual producer or QA receipt; no registry load, no policy workaround. Closing the WIM clone is independent from OP29 and does not pretend to certify that dependency.
+
+## Exact allowed target and preconditions
+- Allowed clone WIM: `C:\work\_UUP\R043_PREMAX_P1_20261112\OwnedDisposable\R043_Original9974_P1_OWNED.wim`, **index1**, 5,602,983,183 B, original+clone pre-mount SHA256 `61AA38CD52B85962C52E4A8F9D14C4F7C4D0699D9A57446261D26EB723C0AEC2`; original R042 external WIM is **NOT a target**. OP09 source copy/OP10 independent SHA and OP12R2 initial mount independent QA proof.
+- Only mount directory: `C:\work\_UUP\R043_PREMAX_P1_20261112\OwnedMount`. Last current native read-only inventory `Get-WindowsImage -Mounted`: exactly **one** record of this exact image/index/path, `MountStatus=Ok`; no other mount; 3 related Hyper-V guests Off, C free 82,790,731,776B at that measurement. Confirm immediately before action, fail closed if any different mounted image, mount root, owner or active serving process.
+- Local historic immutable six CBS snapshot files `OwnedEvidence\CBS_Hives_Snapshot` (152,013,824 B), disposable three `CBS_HiveQuery` (97,131,520 B), their receipts/logs, R042 original UUP/WIM/ISO/distribution, R004 Golden, host EFI/BCD, VM/VHDs, Master all **preserve**. Do not delete temp evidence in this step. No image servicing or CBS removal has been performed by R043.
+- Current RDC `allowedDirectories=C:\work`, 33 `blockedCommands` incl `reg`; NO reg/hive commands nor alternate bypass. No host restart.
+
+## One action
+1. New read-only preflight exact `Get-WindowsImage -Mounted`, source clone/target file, 3 VM Off, image processes (do not create a new full WIM clone, VM/ISO or source download).
+2. If exact and alone, issue **one** native DISM operation `dism.exe /Unmount-Wim /MountDir:C:\work\_UUP\R043_PREMAX_P1_20261112\OwnedMount /Discard` (equivalent built-in cmdlet acceptable only if connector authorizes; on platform denial stop, no bypass).
+3. Save unique OP31 producer receipt with exact command, exit, before/after mounted-state, input and output paths, Date/UTC and SHA of final receipt. Separate **new** process independent Verify must show mount0 and correct original non-target WIM still exists; VM3 Off; attempt authorized non-intrusive temp-alias check only if permitted; otherwise explicitly mark `HIVE_FRESH_UNKNOWN`. Never claim complete host restart readiness without required hive/post-state proof.
+4. Git **new** immutable `R043_OP32_POST` (PASS/HOLD actual facts) with producer and independent SHA/receipts and fresh fetch; then CAS update one active Current and short Entry, separate readback. On fail/hang, leave mount in `HOLD`, inspect actual state first, NEVER rerun unmount blindly.
+5. No new target removal, size claim, /Commit, boot timing, test media, Windows Update, VM lifecycle, protected original mutations or cleanup in OP31.
+
+Rollback: /Discard releases only *uncommitted changes of this assistant-owned disposable clone's mounted view*, not original source or kept snapshots. If mount/ownership mismatches, do nothing and record HOLD. Existing safety floor C free >60GiB, all guests OFF. After OP31 independent PASS return to source-qualified universal 26300.x WIM compressed-owner analysis, considering unresolved OneDrive parent graph as AMBER HOLD; boot speed only secondary.
+
+**ONE NEXT after this PRE/readback:** perform exact OP31 preflight and *only if clean* bounded native /Discard, then separate second native QA and Git OP32 POST/readback.
