@@ -1,5 +1,14 @@
 # BlueLite v1.0 — ONE LIVE CHECKPOINT
 
+## LIVE 2026-11-13 R043 OP44 — one OP43 source aggregation JSON serialization HOLD (no image change)
+
+**ACTIVE `R043_OP42_WIM_ROOT127_PATHS_SECOND_NATIVE_PASS / R043_OP44_SMALL_SOURCE_AGGREGATOR_JSON_HOLD / OP29_PARENT_OWNERS_HOLD / P1_UNIQUE_COMPRESSED_GAIN_NOT_RUN`.** Git OP43 PRE `51d04742f843a981fb8f372241e7673596ba7d6c` → Git OP44 HOLD blob **`1dd5f9c935dc1e66667cce4b74babb94762d115d`**, commit `599498cb9aab1acf305b62f23b6a13075714c4eb`, independently read back. One native PowerShell PID2396 attempted read-only aggregation of existing OP09/OP39/OP41 JSON and historic packages source but output `ConvertTo-Json NonStringKeyInDictionary` due local `$matches` colliding with automatic regex `$Matches`; **NO VALID OP43 PRODUCER RECEIPT, NO SECOND QA**. Prior OP42 source WIM full read-only map and second native QA PASS unaffected, no big WIM scanner repeated, no image/registry/VM/VHD mutation. C free last certified OP41 QA **83,218,829,312B**, floor60GiB, WIM0, 3 VM Off; sole editable R043 owned WIM retained and protected R042 original unchanged. No physical P1 byte savings.
+
+**EXACT ONE ACTIVE ONE NEXT R043 OP45:** versioned corrected *small read-only* already-proven source JSON metadata flag + old 26100.1 Edge/OneDrive WinSxS unique compressed SHA1 group aggregation (rename `$matches` to normal variable); local new receipt filename (do not overwrite any invalid OP43 artifact), separately authored independent native QA and SHA, Git POST/readback and CAS. Preserve original 159,707-file owner scan (no rerun), no new isolated 80GiB VHD/clone/ISO/VM, no raw CBS or `reg` bypass. Priority universal PRE_MAX size first, boot speed second.
+
+---
+
+
 ## LIVE 2026-11-13 R043 OP42 — 26300.9974 WIM compressed top128 TRUE file owners, independently native verified
 
 **ACTIVE `R043_OP42_SOURCE_OWNER127OF128_SECOND_NATIVE_PASS / ONE_UNMAPPED_7_213_982_METADATA_FLAG_PENDING / R043_OP29_PARENT_OWNERS_PRE_ONLY_HOLD / WIM0_VM3OFF / P1_UNIQUE_COMPRESSED_IMAGE_GAIN_0_CERTIFIED`.** Previous OP38 Current capsule below is historical for ONE NEXT. Immutable Git OP39 PRE source scan, OP39A source QA `d4a57062707860c67b04a7b4e9041fff4645bf2d`; OP40 first independent PowerShell5 missing Get-FileHash **HOLD** `b723944c4510eaf5e31aa607acc9c0a813b9c609`, corrected OP41 PRE / OP41A source AST0 `0bd5bfa3f4db08674bdc7fdcb01f0b24c7eed1df`; **OP42 POST blob `17eb03a8d1b6baf8f100145794e0f8579ec5523d`**, commit `b66326eed9c71a15b5e9b2e9d512edc5572bcf30`, independent Git readback PASS. `BlueLite_Sources.md` new top source CAS/readback **`36953552445b1718a82c79157cf0e3fa0d434d1d`**.
