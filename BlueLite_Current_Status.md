@@ -1,5 +1,16 @@
 # BlueLite v1.0 — ONE LIVE CHECKPOINT
 
+## LIVE 2026-11-14 R043 OP72 — alternative compressed-family classifier independent HOLD; protected servicing/assembly must be fixed
+
+**ACTIVE: `R043_OP70_EDGE_TRIAL_DESIGN_ONLY_PASS / OP72_ALTERNATIVE_CLASSIFIER_HOLD / WIM0 / VM3OFF / COMPRESSED_RECLAIM_0`.** Earlier OP70 ONE NEXT OP71 superseded: OP71 PRE Git `f4aa4ec1a715d36ebe250d3b14e2b956e36ca4f1`, source-only producer native PID2404 returned internal tentative `PENDING_SECOND_QA`, but independent native PID6472 found policy classification error and **correctly HOLD**. Git immutable OP72 HOLD **`1fb9904e8ad1116adc4d3326bee16431e9099184`**, commit `0b03a5cfc7feb19d1573c3e2d0d8dda0d46c684e` independently fetched/readback.
+- Producer `C:\work\_UUP\R043_PREMAX_P1_20261112\BlueLite_Logs\R043_OP71_AlternativeUniqueCompressedFamilies_Producer.json` SHA **`988ADD738E250C4A98632CD26E61F8919AF8A8A0CD8213589496259E7AED06D6`** read only OP57 source top80 WinSxS +32 nonWinSxS group families, did NOT redo 3,037,141 line scan. QA `BlueLite_Logs\R043_OP71_AlternativeUniqueCompressedFamilies_IndependentVerify.json` SHA **`BA9ECA33BAF4103A9D7ACE6428D3F676951C4A3EF0A333AC2778E960FFD29899`** identified `WindowsFolder:servicing` unique source **113,841,734 B** and `WindowsFolder:assembly` **108,876,790 B** MISLABELED DEPENDENCY_UNKNOWN; both must be **PROTECTED_CRITICAL**. Native certutil PID9184 independently confirmed both receipt SHA. Do not use uncorrected OP71 rankings for mutation, deletion or runtime recipe selection. AIX and Recall CBS MUM sources exist, but source MUM ≠ installed/removable; no actual package state yet. No WIM modifications.
+- Last QA WIM mounted0, 3 project VMs Off, free C >=60GiB, original R042/Golden/UUP, existing R043 one owned WIM clone and existing ~80GiB R042 VHDX intact and Off, no new isolation/ISO/VM/WIM clone; physical R043 compressed byte savings0. Protected Defender, servicing, WinPE/Setup, network/storage and installed Hyper-V HOST not candidates.
+
+**EXACTLY ONE ACTIVE ONE NEXT — `R043 OP73`: Git corrected source ranking PRE/readback, one bounded native reclassification of existing OP57 compact source with WindowsFolder:servicing and assembly PROTECTED, independently new QA/certutil, immutable Git OP74 POST/readback then Current/Entry/Sources CAS. No WIM scan rerun or image mutation, C floor60GiB; boot speed secondary to universal stable 26300.x PRE_MAX size improvement.**
+
+---
+
+
 ## LIVE 2026-11-14 R043 OP70 — NO-MUTATION owned-clone Edge FOD trial GATE design physical independent PASS
 
 **ACTIVE: `R043_OP70_OWNED_CLONE_TRIAL_GATES_DESIGN_ONLY_PASS / EDGE_CBS_PACKAGE_REMOVAL_HOLD / WIM0 / VM3OFF / RECLAIM_0 / NO_NEW_ISOLATION`.** Earlier OP68 active NEXT OP69 is superseded by new verified OP69 PRE blob `015e905329d06b8931d7d47a8a41b8f5a1caef3e` → OP70 POST **`487a41c2d86ff707c79ef3f162064592d3989db3`**, commit `87585afc0f3033dc5bf9e0fa29bee87f772a6e8b`, new Git fetch/readback PASS. Design-only: no image servicing command ever issued, no mutate authorization.
