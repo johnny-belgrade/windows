@@ -1,0 +1,11 @@
+# R043 OP83 PRE — scoped correction to AIX/Recall source-only matrix scalar Count; no image mutation
+
+2026-11-14. User's strict individual writes. OP81 PRE blob `4f43e96eb6775ca472cf03dc735c25e4b364e91f` → OP82 independently documented **HOLD** Git blob `5936195394718b01345576360ebba21a1ccf94bd` with immutable original producer SHA `AC9C6A6540030C5CDDA503317865E621123A88E3F24247D5A3B5EE0A3B587085`, native independent diagnostic SHA `4C283FA13EBD61D46ED0E0AEFC69B1E2CBD1C2A38B19FCB29A6127B889126F02`. Source safety gates otherwise pass. Preserve old receipts.
+
+## Sole correction
+- Use `$family=@($src57.topWinSxSAssemblyGroups | Where-Object {...})` instead of `@($src57.topWinSxSAssemblyGroups) | Where-Object {...}` to guarantee an array, count 1. Re-read existing *small* local OP57/OP73/OP15/OP77 native source JSONs. Reconfirm physical 26300.9974 AIX MUM bytes 812, Recall MUM 1207, exact .1591 IDs; AIX current DISM Staged Feature Pack independent OP77 source, Recall NOT_QUERIED. AIX source family 118 SHA1 and 50,837,910 compressed candidate, no physical saving and no removability. Countercheck protect 28 servicing/Defender/Hyper-V groups and 80 dependency UNKNOWN.
+- Preflight WIM mount0, project VMs3/3 Off, C floor >=60GiB. Use **new unique** local `BlueLite_Logs\R043_OP83_AIXRecall_SourceMatrix_Producer.json` and separate independent `...IndependentVerify.json`; full SHA each; independent native QA must independently re-read source and assert all numbers and no image changes, followed by third certutil SHA. Preserve previous OP81 HOLD files unchanged.
+- Never create/mount VHD (existing ~80GiB R042 VHD Off), WIM, ISO, VM, clone, hives or run DISM/remove/NTLite/registry. Original source WIM and owned cloned WIM unchanged. No deletion, no boot speed work.
+
+## Completion
+Git `R043_OP84_POST` only after real native producer PASS and independent QA PASS/readback. Then Current one live CAS and short Entry CAS, independent readback. ONE NEXT only a separate parent/owner source-bound Recall CBS actual state READONLY plan with controlled existing owned WIM1 mount and independent discard, or more source research if ambiguous; no new image edit. Universal max pre-debloat 26300.x compressed savings priority; boot speed secondary.
