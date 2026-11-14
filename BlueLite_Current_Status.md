@@ -1,5 +1,17 @@
 # BlueLite v1.0 — ONE LIVE CHECKPOINT
 
+## LIVE 2026-11-14 R043 OP86 — ONE exact existing owned clone 26300.9974 WIM1 mounted READONLY for Recall CBS inquiry
+
+**ACTIVE R043_OP86_ONLY_OWNED_WIM1_READONLY_MOUNT_QA_PASS / VM3OFF / RECALL_CBS_NATIVE_QUERY_NOT_RUN / PHYSICAL_SAVINGS_0.** Supersedes earlier OP84 WIM0 capsule. **NO HOST REBOOT** or DISM image mutation until separately verified source-owned /Discard and WIM0. Git OP85 PRE blob **`8a136b074ea3acf4d7c1d6bfa1a5c91acb4811d7`** → OP86 POST blob **`68078177be2b7bb7560396375d775a43e412714b`** commit `3bcccecc5739cf288011a7b4c310a6c2a83a8d9d`, Git fresh readback PASS.
+- Exact only `dism.exe /Mount-Wim /WimFile:C:\work\_UUP\R043_PREMAX_P1_20261112\OwnedDisposable\R043_Original9974_P1_OWNED.wim /Index:1 /MountDir:C:\work\_UUP\R043_PREMAX_P1_20261112\OwnedMount /ReadOnly`: native exit0 PID9800, saved producer `BlueLite_Logs\R043_OP85_OnlyOwnedRecall_ReadOnlyMount_Producer.json` physical SHA `6900657F56CA632FB10A1333951BB0DF61B1E5772C50D0F6B5ED1E42574A78FC`, DISM console SHA `B6A78F748FC72C353F767919FDDD05CC4A2074CD4C496EB02ADF9BBCC63211FB`.
+- Independently launched native PID6692 QA EXIT0: `Get-WindowsImage -Mounted` exactly **ONE** clone WIM, index1, mount status Ok, mode ReadOnly, all 3 project guests Off, C free **83,211,849,728B**; independent QA receipt `BlueLite_Logs\R043_OP85_OnlyOwnedRecall_ReadOnlyMount_IndependentVerify.json` SHA `AF0C38683469A3549EA2C37BD9036F1806AC04AD2DCB0EDF5076A01BBC2F1998`, certutil PID5304 EXIT0.
+- AIX exact dual native actual Staged Feature Pack, 118-source-SHA family 50,837,910B conditional; Recall exact `UserExperience-Recall-Package~31bf3856ad364e35~amd64~~10.0.26100.1591` MUM 1207B source present but CURRENT actual CBS state **NOT_QUERIED**. Protected original R042/Golden/UUP, existing ~80GB R042 installed VM VHD Off, no additional isolated disk/VHDX/VM/WIM clone, no source removal or actual compressed saving; no registry policy bypass.
+
+**EXACTLY ONE ACTIVE ONE NEXT R043 OP87:** new Git PRE/readback, one exact source-bound native `DISM /Image:<OwnedMount> /Get-PackageInfo /PackageName:UserExperience-Recall-Package~31bf3856ad364e35~amd64~~10.0.26100.1591` and a genuinely separate independent native requery, receipts and physical SHA, Git OP88 POST/readback, Current/Entry CAS. AFTER that a separate OP89 PRE/QA owner-only /Discard with WIM0/VMOff/full original+clone SHA2, OP90 POST and CAS. Preserve universal stable 26300.x pre-debloat P1 size priority, boot speed secondary.
+
+---
+
+
 ## LIVE 2026-11-14 R043 OP84 — AIX/Recall source matrix corrected independent PASS; OP82 validator HOLD retained
 
 **ACTIVE R043_OP84_AIX_RECALL_SOURCE_MATRIX_PASS / RECALL_CBS_NOT_QUERIED / WIM0 / VM3OFF / PHYSICAL_SAVED0.** This addendum supersedes earlier OP80 live next OP81; native DISM unmount OP80 remains PASS. Git OP81 PRE `4f43e96eb6775ca472cf03dc735c25e4b364e91f` → OP82 **HOLD** `5936195394718b01345576360ebba21a1ccf94bd` was false PowerShell scalar-count validator, no image mutation, receipts immutable. Corrected new OP83 PRE **`8b5ec0dc75c4ab739a492bf99d5d9384985ceb44`** → OP84 POST **`3ff443eb1e87d925d999ae6081213a69d3f3815e`**, commit `b538d446f98e0db03003e7f362d4d96198813510`, Git readback PASS.
