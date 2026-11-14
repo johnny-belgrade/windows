@@ -1,5 +1,13 @@
 # BlueLite v1.0 — ONE LIVE CHECKPOINT
 
+## LIVE 2026-11-14 R043 OP78 — AIX exact CBS Staged/Feature Pack dual direct native DISM PASS; WIM1 READONLY until discard
+
+**ACTIVE `R043_OP78_AIX_STAGED_FEATUREPACK_DUAL_NATIVE_PASS / OWNED_READONLY_WIM1_ACTIVE / VM3OFF / AIX_REMOVAL_DEPENDENCY_HOLD / WIM_COMPRESSED_RECLAIM_0`.** The prior OP76 WIM1 remains active, not WIM0. OP77 PRE `79827d61987f6a4756b9b95d90cf70d6a6bd10a4` → new Git OP78 POST **`832efad8717e12b145217e7a0da25e76213c52d9`**, commit `102a5613bfb138cb823a82a0d1b611309f570428`, independently Git fetched/readback. First native read-only DISM process PID6328 native exit0, second independent PID2172 separately repeated actual `/Image:C:\work\_UUP\R043_PREMAX_P1_20261112\OwnedMount /Get-PackageInfo /PackageName:UserExperience-AIX-Package~31bf3856ad364e35~amd64~~10.0.26100.1591`, image 26300.9974, **State Staged, Release Type Feature Pack, Restart Required Possible, Completely offline capable Undetermined**, no capability identity or features; both native exit0. Producer `BlueLite_Logs\R043_OP77_AIX_GetPackageInfo_Producer.json` SHA **`2B00633A1D12F88DB7B5DFEC009CFCBDC7B1D147C1B3D55FE35331383E8864F2`**, independent `R043_OP77_AIX_GetPackageInfo_IndependentVerify.json` SHA **`1717F23DB656CEAAB3C7EC664091B2DDA585BF48A73AFDCDC324856527A61812`**, native certutil PID7740 full rehash pass. No package removal or image modification. Source AIX WinSxS group 50,837,910 B unique compressed conditional; actual source WIM savings0; servicing/Defender/WinPE/Setup/network/storage/installed Hyper-V HOST preserved. Protected original R042/Golden/UUP and existing ~80GiB R042 guest VHD Off untouched, 3VM Off/C >=60GiB.
+**EXACTLY ONE NEXT R043 OP79:** separately Git PRE/readback owner-guarded READONLY existing R043 clone WIM1 `/Unmount-Wim /MountDir:C:\work\_UUP\R043_PREMAX_P1_20261112\OwnedMount /Discard`, native first and genuine second independent FULL SHA of R042 original+R043 owned clone and WIM0/VM3Off/C60 floor, Git OP80 POST/readback and CAS Current/Entry/Sources. Do not reboot while WIM1. No new 80GiB isolated disk or WIM clone; boot speed second.
+
+---
+
+
 ## LIVE 2026-11-14 R043 OP76 — ACTIVE one R043 owned WIM1 READONLY mounted; AIX actual DISM state NEXT
 
 **CURRENT HOST STATE: `R043_OP76_ONE_OWNED_CLONE_INDEX1_READONLY_MOUNT_PASS / WIM_MOUNTED1 / VM3OFF / AIX_CBS_NOT_YET_QUERIED / IMAGE_MUTATION0`.** Supersedes earlier OP74 WIM0 capsule. Do NOT reboot, discard original, claim mount0 or start another mount. Git OP75 PRE `9ecdbc6859c5b3dd57db609a9203cedc45a522c9` independently readback; OP76 POST **`a1bdf966427ea238a266739f4f7f629d96362b0c`** commit `9a6a38cacbd2f552e94c24b3960b800808f6cd59` separately Git fetched/readback.
