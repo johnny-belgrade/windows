@@ -1,0 +1,9 @@
+# R043 OP225 POST — exact R036 SetupOnly_XPRESS derived temp WIM removed with independent SHA PASS
+
+2026-11-17. Separate OP224 PRE commit a7b6fa8a745d096afbf05ee19e5f522ff5090087 and blob ed8b55dfda591fc1767067f45e1c739f0db9fe9e. After prior OP223 LZX PASS (not repeated), native exact direct Remove-Item -LiteralPath C:\work\_UUP\temp\R036_BootSpeed_Variants_20261109\SetupOnly_XPRESS.wim only, physical source length **865,395,146B** and previous full SHA **889113125DA22A7498EFC8A3C855AAE090530F2043E56C2DB7573972ED998ABF**, single hardlink and no VM mount. Native PID3556 exit0, target absent. C free **95,079,071,744B →95,944,470,528B**, physical delta **+865,398,784B**.
+
+Native immutable producer/mirror C:\work\logs\R043_OP224_Delete_SetupOnly_XPRESS_Producer.json SHA **904F083B07142CC0CF743A5040182AD8B450FB6BD13AF0E4276A38161895B3BE**. Separate actual independent PS7 PID8988 exit0 confirmed file absent and exactly 1 remaining R036 boot test WIM, original R035 boot.wim full original SHA **F659254B86D7478B02A5D02204530CDA8805FE8EA58A4DFE69F69BB4C0144A26**, protected original R036 historical evidence archive SHA F3A6A62D589FA2D1410D95F4465F1975EA97C73B9A6C22155FBF067DF448DEE8, final R044 ZIP unchanged SHA D77781967775FF4E09866A0F790E4DC37FA80DFAB51E0765FF507E4C8085515E, VM3Off and WIM0.
+
+Independent exact QA C:\work\logs\R043_OP224_Delete_SetupOnly_XPRESS_IndependentVerify.json and identical mirror SHA **9BCB97AFF920CA6AAB302A8C96AFC9631006793D1F1DB2D52DE224BEACBE0A11**, third native certutil PID5264 4/4 SHA PASS. Historical .receipt.json/.verified.json unchanged and small evidence ZIP preserved; no Golden, VM/VHD/ISO/other WIM deletion.
+
+ONE NEXT OP226 separate PRE/readback literal delete only final assistant-owned R036 Dual_XPRESS.wim size868,986,529 B SHA A21098E7B8A6E563219B9948526D84A7923A3D3A3777C69D776E4C8B04069C44, independent source boot verification, OP227 POST/readback, then C free and all-Cwork remaining candidate audit.
