@@ -1,0 +1,9 @@
+# R043 OP222 PRE — one R036 derived SetupOnly_LZX WIM disposal, exact path only
+
+2026-11-17. User approved remove unneeded >50 MB within C:\work. Initial inventory SHA EE51528D537EA2191E43DE273CB695708BE8FA39A5445E4C002181FA34668F1D; independent 4-candidate QA SHA F34A3250364B3DF03B9677BE103F0FEFABD876D217BB445D23FDE0A59EFB349E. Prior OP221 POST readback blob 28ef21155086307abfbfa404047986afe7f69de8, Current blob b06d36b8fb331f29703e1eb2c1eb1291196f1a11.
+
+EXACT ONLY TARGET C:\work\_UUP\temp\R036_BootSpeed_Variants_20261109\SetupOnly_LZX.wim length 810820600B, SHA256 3B564C831A0CF646F55B56572C438CD8B42AD381673BF4D458B36059301BF0FD, unique NTFS hardlink count1, no VM/DVD/WIM mount reference. Original R035 boot.wim SHA F659254B86D7478B02A5D02204530CDA8805FE8EA58A4DFE69F69BB4C0144A26 is PROTECTED and remains. Separate same-named .receipt.json and .verified.json confirm independent WIM index/source hash verification. Compact archived historical R036_ThreeVariant_Evidence.zip 9398B SHA F3A6A62D589FA2D1410D95F4465F1975EA97C73B9A6C22155FBF067DF448DEE8 and Library 44-ChatGPT.md preserve evidence. Boot-time measurement never run; this derived assistant-owned temp artifact can be reconstructed, MAX_PRE first, boot-speed second.
+
+One exact direct Remove-Item -LiteralPath of only this file, before/after real C free, immutable C:\work\logs native producer and exact R043 mirror; separate independent QA physically confirms file absent, native source+archived evidence+final R044 ZIP unchanged, third native certutil SHA, immutable OP223 POST/readback. No wildcard, root, original, VM, Golden, R042, R044 source or other R036 deletion.
+
+ONE NEXT: native exact LZX deletion and independent QA; then separate PRE for SetupOnly_XPRESS.
