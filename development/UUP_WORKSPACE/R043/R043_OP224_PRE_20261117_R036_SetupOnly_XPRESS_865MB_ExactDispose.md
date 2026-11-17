@@ -1,0 +1,7 @@
+# R043 OP224 PRE — one exact R036 SetupOnly_XPRESS derived test WIM deletion
+
+2026-11-17. OP223 POST commit 45d62fdd0c8628db7074c2bab9201d3b7f7219fd blob da20db088384f4d17660be5848fa169ebb872b17, independent QA SHA AF1FCF2390F7542D754ACB4691FB8542A7E20D4057168F1AFC82452C4FF2A410. Original whole-Cwork SHA inventory EE51528D537EA2191E43DE273CB695708BE8FA39A5445E4C002181FA34668F1D; verified exact candidate eligibility 4/5 SHA F34A3250364B3DF03B9677BE103F0FEFABD876D217BB445D23FDE0A59EFB349E.
+
+EXACT ONLY target C:\work\_UUP\temp\R036_BootSpeed_Variants_20261109\SetupOnly_XPRESS.wim, size **865,395,146 B**, full physical original+independent SHA **889113125DA22A7498EFC8A3C855AAE090530F2043E56C2DB7573972ED998ABF**, single NTFS hardlink, no active VM/DVD/WIM mount. R035 source boot.wim SHA **F659254B86D7478B02A5D02204530CDA8805FE8EA58A4DFE69F69BB4C0144A26** protected, R036 evidence ZIP 9398B SHA F3A6A62D589FA2D1410D95F4465F1975EA97C73B9A6C22155FBF067DF448DEE8, six original test receipts plus Library chat 44 retained.
+
+One inspected direct native Remove-Item -LiteralPath of this file, C free before/after; immutable producer under C:\work\logs+R043 mirror; truly independent separate PS7 QA verifies EXACT file absence, one remaining sibling, original R035 full SHA, preserved R036 evidence archive and current R044 ZIP SHA unchanged; third certutil+OP225 POST readback. NO wildcard, source, Golden, VM, ISO or other WIM action. ONE NEXT: exact XPRESS deletion and independent QA.
