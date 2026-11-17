@@ -1,0 +1,18 @@
+# R043 OP206 POST — exact three R036 derived historical WIMs SHA/owner independent PASS, insufficient storage alone
+2026-11-17. Git OP205 PRE commit f594eefa9d4eebf16b45c182f02f12762ba07a4b; independently readback blob **0cf7e871da4a93ae3e911b98c827c6ce267e5e8c**. Sole previous Current OP204 SHA **37c84fe223c76383f7752ef30beadca0a2b1e505**. Actual OP203/204 137/137 26300.10066 source signed SHA1 PASS; converter peak/rollback minimum deficit **5,133,489,112B**, plus unknown servicing scratch.
+
+## Real physical owner and source evidence
+Native scoped source-only 1,582 TEMP filesystem entries, reparse skipped0. Exact four files >=512MiB: THREE derived historical R036 boot-speed WIMs (below), plus protected new actual 26300.10066 Windows11.0-KB5132057-x64.msu 4,848,124,495B (never delete).
+- R036 SetupOnly_LZX.wim **810,820,600B SHA256 3B564C831A0CF646F55B56572C438CD8B42AD381673BF4D458B36059301BF0FD**.
+- R036 SetupOnly_XPRESS.wim **865,395,146B SHA256 889113125DA22A7498EFC8A3C855AAE090530F2043E56C2DB7573972ED998ABF**.
+- R036 Dual_XPRESS.wim **868,986,529B SHA256 A21098E7B8A6E563219B9948526D84A7923A3D3A3777C69D776E4C8B04069C44**.
+Their own historical R036 independent full SHA receipts matched, source protected original R035 BlueLite_R029_Outputs boot.wim **824,384,151B SHA256 F659254B86D7478B02A5D02204530CDA8805FE8EA58A4DFE69F69BB4C0144A26** independently rehashed and retained. Each derived variant distinct file ID / one hardlink, no Hyper-V disk or DVD attachment. **Total R036 potential logical content 2,545,202,275 B**, not actual C free. Even if all three retired, **2,588,286,837 B minimal deficit** remains without servicing scratch; therefore no source/safety-gated deletion in this OP.
+
+Native AST0 script SHA **D91785A9823359B4135DF134EB3E54DA765BD7967B6768EDB630FE037D09D54C**, PID7984 exit0, status R036_THREE_DERIVED_SHA_REPRODUCIBLE_2545MB_INSUFFICIENT_ALONE. Immutable producer C:\work\logs\R043_OP205_LargeTempOwner_Producer.json plus same-byte R043 mirror SHA **7D9E8719C9B89617BED2DF50E06E232A82B258A4D6699E47559C6802F364537C**.
+
+## Truly separate native independent physical QA
+Source SHA **323FF14463F359C60344A2F884B0668FB6CB2C2B4ECD4B351179C23E9DA33CB8**, AST0, native PID8960 exit0; separately full rehash of 3 derived WIM + original R035 keeper, file IDs and hardlinks and VM attachments, independently rescanned TEMP excluding reparse. Status **INDEPENDENT_R036_THREE_DERIVED_FULLSHA_NTFS_KEEPER_PASS_RECLAIM_INSUFFICIENT**, QA SHA **8132C5CF3ABBAD8650E77CEA804EED84D98AA9609373FC776AFDBFF4D9665379** equal mirror. Third certutil PID1928 producer/producer mirror/QA/QA mirror SHA4 PASS, VM3Off/WIM0.
+No deletion, WIM/ISO/VM/registry/hive mutation, actual freed C **0B**; new 26300.10066 WIM NOT_BUILT, compressed image gain0B.
+
+## Exactly ONE NEXT R043 OP207
+Read-only exact SHA/NTFS/owner comparison of historical assistant-generated R041 .9974 WIM intermediates and canonical R042 current retained WIM source. If physical byte-identical duplicates exist with distinct file ID, one hardlink each, no VM references and independently verifiable source/provenance/restore, only then isolated per-file PREDELETE/readback -> native SHA-gated delete -> independent physical keeper/free QA -> POST/CAS. Never remove unique or protected R035 Golden, R042, original UUP, WinPE, VM media or installed VHDX. If no suitable >5.2GB plus servicing scratch, source-certified rolling WIM-only stage reclamation after reconstructed-WIM SHA and strict rollback dependency analysis. Priority real .10066 MAX_PRE WIM, boot speed SECOND.
