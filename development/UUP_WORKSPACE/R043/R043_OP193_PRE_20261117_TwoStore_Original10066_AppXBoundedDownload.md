@@ -1,0 +1,15 @@
+# R043 OP193 PRE — source-bound bounded download exactly two missing .10066 Store parents
+
+Date 2026-11-17. Sole live Current OP192 SHA 7012222528c8c16ea55ff7796b2bd2902af29173, Session Entry readback 0f3ae5389398ec8eaccf6f5b651f17fa1710df8f. OP191 PRE 4dfce28091373eed1791f88bfd7fc3db9eca5f62 -> OP192 POST 1824eb5c22533a06503fcd591defbf8723b98676 independently readback. Original source ZIP8218B SHA8FE361765967DA0651078C324B21E6C6D7595081DBACBB26049EC53AB59DE404, renewed full authentic Apps2798 queue under C:\work\_UUP\temp\R043_OP191_10066_AppsRenew_20261117\apps_renewed_aria2.txt SHA256 **BBB4A9D384168DC3D0AE99A5084F496022585256B79D0BD16F4720B5E0A71579**. Independent R043 OP191 QA v2 SHA F3043713B0DF3B77DF8D70146DC659CE2A2A1581DD53ED569CBB68B35A919A40, producer 3E65D054D7CB95091EC85069A5765136EA599AD8D56A53D336E85F3D71EEA156.
+
+## ONE precisely bounded native two-file transport
+From signed renewed source only:
+(1) Microsoft.WindowsStore_8wekyb3d8bbwe.msixbundle SHA1 **F75E9B1596100CBD0D0F37746B3F073132A2AFF6**;
+(2) Microsoft.StorePurchaseApp_8wekyb3d8bbwe.appxbundle SHA1 **39B16B457BF16A8E5935B0E99953336ACAAA8764**.
+Both are known missing from original Golden/R042 protected physical Apps31 inventories; all other 31 contents already physically matched .10066 original source checksum in both roots, 112,616,297B reusable.
+
+No automatic 2798-file download. Newly unique owned workspace C:\work\_UUP\temp\R043_OP193_Store2_20261117; direct original renewed source transport URL as supplied, original host tlu.dl.delivery.mp.microsoft.com, no scheme/hostname rewriting, no redirect following, full per-file SHA1 and SHA256 and exact expected source identity before accepting destination. Cap 1GiB per file / 2GiB combined and C free floor 60GiB + bounded headroom. Stream one file at a time to CreateNew .partial in same owned root, verify bytes and downloaded source SHA1, move only on PASS, immutable *per-file* source receipt with source host, HTTP code, bytes, SHA values but NO signed query/token. Stop on any HTTP error or checksum mismatch with HOLD; preserve evidence, no retry with altered protocol.
+New native producer C:\work\logs\R043_OP193_Store2_Download_Producer.json and identical R043 BlueLite_Logs mirror, original queue + lineage PIN; native exit, real Free C and status. Different independently authored second native PS7 process rehash physical 2 new binaries by SHA1 and SHA256, verify original .10066 out/source identity and protected Golden31 + installed VM state, write unique QA+mirror; third certutil SHA4 and Git OP194 POST/readback + sole Current CAS/Entry. DO NOT modify original ZIP/Golden/R042/Windows98/UUP, WIM/ISO/VM/registry/hives, Master. No final AppX dependency claim from just parent bundles; extra Store bundle child/split source check after actual package acquisition.
+
+## Next gate
+After two verified binaries PASS, OP195 source-specific Store bundle / split closure and converter real peak scratch + owned config overlay prerequisite, before any new native .10066 MAX_PRE WIM build. Boot speed SECOND. Physical WIM savings remain 0B until real WIM export/QA.
