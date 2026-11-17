@@ -1,0 +1,22 @@
+# R043 OP204 POST — source 137 physical SHA PASS; converter rollback peak storage dependency HOLD
+2026-11-17. Git OP203 PRE commit 0315381e6ffc0863b0825701cde722f890c813e9, independent readback blob **ae3242fe16078039879501f8110fdcde66d3723d**; previous sole Current OP202 blob 10abbce29901aeab47bc643a38d56d98513dac86.
+
+## Native source and capacity proof
+- Windows 26300.10066 genuine source98 full SHA1 physical PASS: Golden94 original source SHA reuse + four new true SHA verified binary source; 8,962,207,841B.
+- Apps39 genuine signed source physical full SHA1 PASS: Golden/R042 Apps31 + two newly obtained Store neutral bundles + six original x64/scale child sources; 157,414,777B. Selected source total **9,119,622,618B**.
+- Original checked source script v1 AST0 SHA DDAD893C3BFDD90A556B54BB9761123F0D6FE13FD480C89303CBBC1223C5A322, checked all137 SHA but failed at final PowerShell Int32 Max overload; immutable native HOLD evidence SHA 2BF6FE37D84D1A5906A08A3BD7D605D384FFE219324EA191FF9AF9EC2A469AC1 preserved. Corrected NEW separate v2 source script SHA **87168DCBBFD5E383598511370776ABF6A794052B3BE9CE66C2D68DBE0FE410D9**, AST0, PID8744 EXIT0, again FULL rehashed 137/137 physical source SHA1, source-specific new-files SHA256 and source receipts pin. Native immutable v2 producer C:\work\logs\R043_OP203_10066Source137_Budget_Producer_v2.json and identical R043 mirror SHA **CB4F41DCD9BEDAA89DAC255C16537BFD68329E28C40EDD3D070F9E0668579329**, status **SOURCE137_PHYSICAL_SHA_PASS_CONVERTER_ROLLBACK_PEAK_STORAGE_HOLD**.
+
+## True original R029 WIM coexistence and physical disk bound
+Inspected unchanged R042 original BlueLite_R029_OfflineWim.ps1. It explicitly MOVES reconstructed working image to protected baseline, COPIES baseline to new working WIM, services DISM and produces compact export while baseline still present, then MOVES serviced working copy to retained precompact rollback and promotes final compact WIM. Concurrent physical image sources measured in original R042:
+- Baseline reconstructed WIM **7,384,383,716B**.
+- Precompact serviced WIM **7,432,605,707B**.
+- Promoted compact WIM **5,602,983,183B**.
+- Authenticated source staging **9,119,622,618B** (Windows98 and Apps39).
+Thus **lower bound simultaneously allocated = 29,539,595,224B**, excluding DISM servicing scratch, converter extraction and final ISO. Native C free above 60 GiB floor was **24,406,167,552B** at producer (C total free 88,830,676,992B), **minimum deficit 5,133,427,672B**. Full unmodified R029 source workflow not currently runnable within protected reserve, even if final WIM alone is only ~5.6GB. Original config root SkipWinRE0 and CustomList0 remain unmodified; new selected owner config requires SkipWinRE1 + CustomList1 overlay if build later.
+
+## Truly independent physical QA + third certutil
+Independent new PS7 verifier source SHA **ACA2888FAB9EEC1E7872E010738D5AF8E910B58DC17A5D30168CDB19517A4390**, AST0, native PID3816 EXIT0. Separately re-read and rehashed all **137 physical SHA1 source files**, original R029 rollback workflow signatures and original R042 four physical WIM/ISO stage file sizes; native WIM0 / 3 VMs Off; QA status **INDEPENDENT_SOURCE137_SHA1_PASS_ORIGINAL_ROLLBACK_PEAK_CAPACITY_DEFICIT_PROVEN** and QA own measured deficit **5,133,489,112B** after minor concurrent host writes. Immutable QA C:\work\logs\R043_OP203_10066Source137_Budget_IndependentVerify.json and identical R043 mirror SHA **67F644FB2459D269C1C19433DC9AAF7D7C306415E3C40AE4A7B846A8E3DF1850**; separate certutil native PID5844 hashed v1 HOLD + v2 producer + mirror + QA + mirror 5/5 PASS.
+No source download, image/ISO/VM/CBS/registry/hive mutation in OP203. New real .10066 install.wim NOT_BUILT, compressed WIM savings 0B.
+
+## Exactly ONE NEXT OP205
+Source-only safe storage reclamation candidate inventory and ownership under C:\work\_UUP\temp (historical R036 three boot-variant temp WIMs if present). Check exact SHA/provenance/hardlink/VM refs/keeper/rollback and protect Golden/R042/real source and all original vendor ZIP/VM media. Need at least 5.2GB PLUS unquantified servicing safety margin; source-only OP205 no deletion. If eligible exact duplicates, each deletion individually PRE/readback/native SHA+QA+POST/CAS. If insufficient, design and prove new WIM-only rolling owned source stage with required rollback before any native build. Do not lower 60GiB reserve without explicit user authorization. Priority real first .10066 MAX_PRE compact WIM, boot speed SECOND.
