@@ -1,0 +1,21 @@
+# R043 OP153 PRE — 26300.9974 AppX physical bundle/main/split mapping and unique WIM compressed reference source gate
+Date: 2026-11-17. Operator instruction: resume per-operation Git PRE/readback -> one native action -> independent separate native QA -> immutable Git POST/readback, approved downloads and owned-clone WIM changes only when exact closure exists; never modify protected images, originals, Master or protected registry. Total Commander not required or invoked.
+
+## Fresh source authority and preconditions
+- Git main current e38b24f5861bf74e59a6e8a54d650779f1dcf1f6 at R043 OP152; immutable OP152 POST 3afdb1d2668b7a177c316ab38cd531303930b279.
+- Actual independently verified OP151 12 genuine WIM-extracted manifests producer SHA A4CC82FFA14BD6D5D1811B3FEC0F1294F880AC7A1001BA1DB36251FD6663BEFC, independent v2 SHA 184B55A2FD198C3EE1FBE68F8D810A6B70709C36BD7D3435593A4FBC611EC794.
+- Actual OP145 physical source group census producer SHA C1B96821358E4678D2172EA0771C6AD3EC09BF83DF7C180A675D95A41DD637B4; OP57 all-WIM owner family producer prior SHA 8B019E9918684D4705BB154BF38616F1FE1BD82B913A0C489C4D870937A42CEC.
+- Native user workstation RDC DESKTOP-4J4KCEA online, allowedDirectories C:\work (nonempty); original 33 blockedCommands intact. After operator normal restart: DISM WIM mounts 0, all three named BlueLite Hyper-V guests Off, no DISM/wimlib/NTLite/aria2 process, C: > 60 GiB free; attached R042 source owner VHDX last measured False. HKLM hive alias occupancy UNKNOWN due prior platform access denial: do NOT retry/bypass.
+- Protected initial image and owned identical source R043 OwnedDisposable\R043_Original9974_P1_OWNED.wim index1, 5,602,983,183 B and expected full SHA 61AA38CD52B85962C52E4A8F9D14C4F7C4D0699D9A57446261D26EB723C0AEC2. Master and R042/Golden/UUP, installed Hyper-V HOST protected.
+
+## EXACTLY ONE native source-only operation and evidence
+1. Verify own input manifest/OP57/OP145 exact full SHA, physical source file existence, WIM full bytes/source-specific provenance, and no active host mounts/guests.
+2. Build exact join (case-insensitive) from three neutral AppxBundleManifest source members to the nine actually physical x64/split AppxManifest identities; record family/version/resource ID, all five required shared framework dependencies, actual physical membership vs manifest catalog. Never count 84/84/60 catalog rows as installed paths.
+3. Use pinned existing free wimlib-imagex vendor for bounded **read-only --detailed dir of the 12 exact existing WindowsApps family paths** to extract each full resource SHA1, compressed-size and refcount when possible. Cross-check family compressed counts and bytes against OP145 and OP57. Explicitly distinguish WIM content refcount from CBS servicing owner and effective deletable bytes. No output of full root 3 million lines or 176MB; no mounts.
+4. Fail-closed source gate: Photos, Calculator and Notepad are user-required retained apps and all 5 shared frameworks must remain. A scale resource split can be considered only with positive actual post-install functional/UI servicing proof and owned-clone rollback. If no source-qualified removable resource, report precisely HOLD for AppX deletion rather than manufacture a physical gain or alter source.
+5. Write immutable new local native producer with UTC, source SHA, operation log exit, checked member path and SHA/refcounts, source eligibility; separate fresh-process independent QA of original inputs, physical manifest SHA12 and producer, exact source results. Third SHA check, then immutable Git OP154 POST/readback, compact Current CAS/readback and Sources update only if substantial.
+
+Allowed write scope: new, small uniquely named R043_OP153 evidence and helper under C:\work\_UUP\temp\R043_OP153_20261117 and R043 BlueLite_Logs, plus short evidence C:\work\logs. No WIM image changes/download/VM/EFI/ISO/registry/hive access in OP153. One later mutation requires new separately logged exact target, rollback and postimage compressed WIM physical delta and VM host/Setup gates.
+
+## Stop
+Any mismatched SHA, duplicate operator, active mount/guest, unexpected source structure, unbounded output, blocked command, or inability to independently verify => preserve evidence and HOLD. No repeated denied owner probe. Next OP154 POST then one live checkpoint; NO invented success.
