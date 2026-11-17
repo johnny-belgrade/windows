@@ -1,0 +1,14 @@
+# R043 OP181 PRE — 2 NoPrompt ISO and 2 historical 26300.9974 UUP MSU exact content/hardlink keeper source-only
+Date 2026-11-17. Last live Current R043 OP180 blob **0d224ae28f97645dac272712b12de79a9928bbaa**, OP179 immutable PRE **09a6e0883b7c8e50bf0bd492d51d02ef7a9e67a8** -> OP180 POST **cad622efa8b610728b2e832b174cecf7b7b26eb8**, independent SHA7 QA PASS. Previous owner UUP 10066 new four 5,064,844,671B SHA validated, protected Golden94 SHA validated; 10066 Apps12 source bounded. C storage free ~77.48GB vs minimal 78.99GB needed before AppX+servicing; 60GiB reserve hard.
+ 
+## ONE source-only scoped native operation
+Compare FULL physical SHA256+bytes on 4 precisely identified files:
+- NoPrompt R041: `C:\work\_UUP\R041_FullBuild_9974_20261111\BlueLite_NoPrompt\26300.9974.261109-0904.26H2_GE_RELEASE_SVC_PROD1_CLIENTPRO_OEMRET_X64FRE_EN-US.BlueLite.NoPrompt.TEST.iso` 6,686,253,056B.
+- NoPrompt extra R042: `C:\work\_UUP\R042_NoPromptISO_9974_20261111\26300.9974.261109-0904.26H2_GE_RELEASE_SVC_PROD1_CLIENTPRO_OEMRET_X64FRE_EN-US.BlueLite.NoPrompt.TEST.iso` 6,686,253,056B.
+- R041 UUP `C:\work\_UUP\R041_FullBuild_9974_20261111\BlueLite_Work\BlueLite_Stage_v11_3_26300_9974_aa272a56_20ac5d93\UUPs\Windows11.0-KB5132061-x64.msu` 4,730,812,571B.
+- R042 UUP `C:\work\_UUP\R042_FULL_ONECMD_9974_20261111\BlueLite_Work\BlueLite_Stage_v11_3_26300_9974_aa272a56_bd6402ad\UUPs\Windows11.0-KB5132061-x64.msu` 4,730,812,571B.
+No other file target. For each capture exact SHA, bytes, physical file ID and hardlink list only through read-only fsutil if permitted, source classification and preserved historical keeper. Distinguish hardlinks (one underlying allocation) vs distinct physical files. No mutation, no deletion, no VHD/ISO creation, no modification of Golden/R042 original install WIM/host/VM/hive, no use D: writes.
+ 
+Native source script under NEW C:\work\_UUP\temp\R043_OP181_DuplicateISO_UUP_20261117, AST0/source SHA, immutable producer in C:\work\logs + byte-identical R043 BlueLite_Logs mirror. Independent *separate native process* must streaming-rehash all 4 files, compare exact pair identities including bytes and SHA, independent QA+mirror, third native Certutil SHA; Git OP182 POST/readback and Current CAS/Entry router. A matching SHA is **NOT** authorization to remove historic files without proving one canonical keeper, no hardlink/reparse, referenced owner path and existing independent evidence. If certified, separately scoped exact SINGLE-file PREDELETE Git readback, native SHA+ownership+keeper + deletion and second physical independent SHA/absence/free delta POST; otherwise exact storage dependency HOLD.
+ 
+Goal genuine universal MAX_PRE 26300.10066 compressed image first, boot speed second. Current source WIM/compression gain0 and build still NOT_RUN.
