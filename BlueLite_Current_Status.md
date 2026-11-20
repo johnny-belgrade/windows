@@ -1,4 +1,16 @@
-# BlueLite v1.0 — ONE LIVE CURRENT — 2026-11-20 R045 OP11 TRUE NATIVE 26300.10075 BUILD IN_PROGRESS / RDC RESTORED EXACT 33
+# BlueLite v1.0 — ONE LIVE CURRENT — 2026-11-20 R045 OP11 SOURCE_DOWNLOAD_SHA1_PASS / NATIVE WIM SAVING IN_PROGRESS
+
+**Latest live immutable checkpoint:** [R045 OP11 PROGRESS 2](development/UUP_WORKSPACE/R045/R045_OP11_PROGRESS2_20261120_DownloadSHA129_Reconstruction7100MiB_DISMSaving_IN_PROGRESS.md), Git commit **69b2845680abc9458fb8f6bdef089dbc2838bb08**, independently fetched blob **38a871e7e8dc95d20dd52473e08ad73d2b16617d**. Genuine native PID1048 still active in `C:\work\_UUP\temp\R045_OP07_BuildRoot_10075_20261120`. **Original .10075 UUP signed download stage native PASS:** SHA1 of 129 actual payloads, **9,039,561,779 B** (distinct 130-record OPDL scope 9,039,561,913 B), independent OPDL source verification native PASS; source triad Windows98, exact UUID **969fbd50-31b0-4242-92d3-90ed574dee9b**, AppX32 dependency closure. Original v128m converter reconstructed `install.wim` 7100/7100 MiB, 8 servicing update records successful, added selected Apps and reached **DISM Saving image (still active)**. This does **NOT** yet prove exported final install.wim/Setup boot.wim/ISO or native final exit; keep original process running until completion.
+
+**Security verification:** Owner-approved only-reg 33→32 temporary RDC config allowed original native CMD launch. **Full exact original 33-entry blocklist, including `reg`, and sole C:\work allowedDirectories were restored before monitoring**, `get_config` full comparison PASS. Local launch receipt SHA **D1184CA1C7ADD8041BB25BD339DA31313269303B9AA59DBF4C30BC4083D0D187**, independent fresh Windows PS5 launch/restore QA SHA **9F8C725F2F39990FF0F995F950E230B6A8D9C0FAE1144C4A76CE9EF97385D701**, EXIT0. Both owner permissions permanently in `BlueLite_Operator_Permissions.md`, `Start_Instruction.md`, `BlueLite_Session_Entry.md`, and local `00_README.md`. Original Master/Handoff/Golden/VM/D untouched. **Do not shut down host or start another build while current native process actively services image**.
+
+**EXACTLY ONE NEXT:** Monitor current native PID1048 to completed exit, independent physical SHA for native WIM/Setup ISO with 7zip CRC, updated source/capability/app servicing evidence, mount/hive cleanup; immutable OP11 POST + Current CAS. If long-running, preserve IN_PROGRESS instead of claiming PASS.
+
+---
+
+# HISTORICAL PRIOR OP11 CHECKPOINT (NATIVE DOWNLOAD INITIALLY IN PROGRESS, SUPERSEDED BY SOURCE_SHA PASS)
+
+# HISTORICAL 2026-11-20 OP11 FIRST SOURCE_DOWNLOAD CHECKPOINT
 
 **Current latest immutable evidence:** [R045 OP11 IN_PROGRESS](development/UUP_WORKSPACE/R045/R045_OP11_PROGRESS_20261120_Native10075DownloadStarted_Reg33Restored_IN_PROGRESS.md), Git commit **0e693eded8d39657306c8f6aaa8085ca5e51ae84**, independently fetched blob **b9381a4af11e668583962de3c11b36958922bf69**; genuine new reviewed [OP11 PRE](development/UUP_WORKSPACE/R045/R045_OP11_PRE_20261120_10075_NativeBuild_TempRegAndFullRollback.md) commit **5d7df9d20aa11514f9aee4556f095ee4a6f4a3fe**, blob **99ff24f7e14e30bcc068213c9dfff9a9d7635f2f**. OP10 previous [POST](development/UUP_WORKSPACE/R045/R045_OP10_POST_20261120_RegTemp32_ReadOnlyQuery_Exact33Restore_IndependentPASS.md) commit37960a0b7408078d235cebbd49c660412a56fcc0 blobf045e6b322ebc9af7e678272098efbc42c528942 PASS. Previous Current blob **68e8bf6bd20b74cc7a1ce741abea6c9464ddee4a** historical. Master v6.3.4 blob3b32f372267fb6fb8fbdb5430476d915c4054c83 UNCHANGED; Handoff frozen.
 
