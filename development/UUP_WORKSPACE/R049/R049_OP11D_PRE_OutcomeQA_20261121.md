@@ -1,0 +1,3 @@
+# OP11D PRE — monitor existing native run / independent evidence
+
+Read same run 20261121T192035Z_6ef1f48d only; no new Build. Determine actual native exit from independent root bootstrap, OS wrapper and run reports, inspect original source/cache/transport/converter evidence and verify original ZIP digests after execution. On failure locate first concrete error, record retained evidence and whether WIM/ISO exist. On success separately inspect all physical images including indexes/ISO contents/dependency evidence before promoting image PASS. Never alter an existing ZIP. Record POST, independent readback and Current CAS.
