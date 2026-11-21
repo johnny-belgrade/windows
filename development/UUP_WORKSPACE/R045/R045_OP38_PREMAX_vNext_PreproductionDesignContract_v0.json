@@ -1,0 +1,234 @@
+{
+  "schema": "BlueLite.R045.OP38.UniversalPREMAX.vNext.DesignContract.v0",
+  "createdUtc": "2026-11-21",
+  "status": "DESIGN_ONLY_NOT_EXECUTABLE_NOT_RELEASED",
+  "governingMaster": {
+    "repo": "johnny-belgrade/windows",
+    "path": "BlueLite-Master_Germanium_Strategy_final.md",
+    "blob": "3b32f372267fb6fb8fbdb5430476d915c4054c83",
+    "sections": [
+      "0G",
+      "0H",
+      "0I",
+      "0J",
+      "0T",
+      "6.1",
+      "6.2",
+      "7",
+      "8"
+    ]
+  },
+  "existingPortableSource": {
+    "path": "C:\\work\\_UUP\\R045_Universal_PREMAX_26300x_20261120\\BlueLite_Universal_PREMAX_26300x_R045_SourceVerified_v1.zip",
+    "sha256": "D77781967775FF4E09866A0F790E4DC37FA80DFAB51E0765FF507E4C8085515E",
+    "bytes": 126438,
+    "memberCount": 55,
+    "entrypoint": "PRE_MAX.cmd",
+    "manifestRows": {
+      "BlueLite_Package_SHA256.txt": 42,
+      "BlueLite_R029_Manifest.sha256": 47,
+      "BlueLite_R031_Manifest.sha256": 53
+    }
+  },
+  "positiveSourceInspectEvidence": [
+    {
+      "build": "26300.10066",
+      "vendorZipSHA256": "8FE361765967DA0651078C324B21E6C6D7595081DBACBB26049EC53AB59DE404",
+      "originalVendorMembers": 11,
+      "combinedR044Members": 55,
+      "nativeInspectExit": 0,
+      "independentSHA66": true,
+      "gitPostBlob": "763fddf1ce792efceecd1a2890c0bfe30006e259"
+    },
+    {
+      "build": "26300.10075",
+      "vendorZipSHA256": "3ACD1E923FDA2573DF923AE27360EBAAF20E91DF86D3AC043EB22184172091A9",
+      "originalVendorMembers": 11,
+      "combinedR044Members": 55,
+      "nativeInspectExit": 0,
+      "independentSHA66": true,
+      "gitPostBlob": "6192fc241dae10a65310a0d371dbc74ed0a3670d"
+    }
+  ],
+  "original137ManifestLineage": {
+    "sourceSHA256": "FA831096050A74AF5DF58B8C61DDF19BFD8487D34FACD75551F440FBB425DD75",
+    "rows": 137,
+    "totalBytes": 9119622618,
+    "roleCounts": {
+      "WindowsGolden9818": 94,
+      "WindowsNew10066": 4,
+      "AppsGolden9818": 31,
+      "AppsStoreBundleExternal": 2,
+      "AppsStoreChildExternal": 6
+    },
+    "historicGolden9818SourceRows": 125,
+    "standaloneCurrent10066SourceRows": 4,
+    "separateStoreSourceRows": 8,
+    "sourcePure10066": false,
+    "certification": "SIGNED_SOURCE_HASHES_PASS_ONLY; NOT_A_FULL_SINGLE_BUILD_UUP_CLOSURE",
+    "rule": "Do not treat this historical mixed-source manifest as genuinely independent native reconstruction evidence."
+  },
+  "newEntryContract": {
+    "operatorSelectedOriginal": "offical UUPdump 26300.x GA amd64 en-US Professional vendor archive and matching queue",
+    "hardcodedPreferredBuild": null,
+    "sourceIdentity": [
+      "vendor_zip_sha256",
+      "build",
+      "arch",
+      "language",
+      "edition",
+      "UUP_UUID_or_set",
+      "original_ConvertConfig_ini_sha",
+      "converter_archive_sha",
+      "original_launcher_sha",
+      "complete_source_closure_manifest_sha"
+    ],
+    "noOriginalLauncherMutation": true,
+    "possibleModes": [
+      "--inspect",
+      "--build"
+    ],
+    "defaultIntent": "source-selected build only; fail-closed if missing source pins",
+    "oneRootPackage": "extract original vendor archive + one BlueLite source archive directly to unique owned root; log exact precedence and collision policy",
+    "pureSourceValidation": "required for new true crossbuild FULL converter/WIM, hybrid historic samples treated as research-only",
+    "signedQueueRule": "Preserve reference/delta/FoD/app reconstruction closure; no unsupported early Windows source pruning."
+  },
+  "pipeline": [
+    {
+      "id": "P0_SOURCE",
+      "phase": "input freeze/source inspect",
+      "mustPass": [
+        "all 11 vendor members and SHA",
+        "R044 package all 55 member SHA/manifests",
+        "source identity and signed queue",
+        "disk gate",
+        "negative mismatch test"
+      ],
+      "exitKinds": [
+        "INSPECT_PASS",
+        "SOURCE_DEPENDENCY_HOLD"
+      ]
+    },
+    {
+      "id": "P1_RECONSTRUCTION_MAX_PRE",
+      "phase": "original downloader/converter then offline MAX_PRE",
+      "mustPass": [
+        "original pure build-specific UUP source closure",
+        "converter config overlay reversibility",
+        "5 staging KEEP",
+        "native WIM/index and CBS/health logs",
+        "transactional protected Setup boot"
+      ],
+      "exitKinds": [
+        "NATIVE_FULL_CONVERTER_WIM_PASS",
+        "NATIVE_DEPENDENCY_HOLD"
+      ]
+    },
+    {
+      "id": "P2_STANDALONE_OFFLINE",
+      "phase": "reviewed standalone residue and service/policy profile",
+      "mustPass": [
+        "4 final KEEP (SecHealthUI/Calc/Notepad/Photos)",
+        "AppInstaller/Store release separation",
+        "Defender and Windows Update servicing retained",
+        "independent offline CBS/appx/image SHA"
+      ],
+      "exitKinds": [
+        "OFFLINE_RESIDUE_PASS",
+        "TARGET_DEPENDENCY_HOLD"
+      ]
+    },
+    {
+      "id": "P3_NTLITE",
+      "phase": "operator-local NTLite Business XML handoff",
+      "mustPass": [
+        "preset source topology compliance",
+        "retained features and host Hyper-V dependencies",
+        "NTLite native logs and post-state"
+      ],
+      "exitKinds": [
+        "NTLITE_NATIVE_PASS",
+        "NTLITE_DEPENDENCY_HOLD"
+      ]
+    },
+    {
+      "id": "P4_VM_RELEASE",
+      "phase": "genuine Setup ISO build, VM first/repeat boot, installed evidence and final export",
+      "mustPass": [
+        "actual dual BIOS/UEFI Setup source",
+        "first OOBE and completed desktop",
+        "WU/CBS/Defender ON OFF and Hyper-V HOST",
+        "repeat boots and installed allocated/hardlink-aware measurement",
+        "final release ISO under size budget"
+      ],
+      "exitKinds": [
+        "RELEASE_PASS",
+        "RELEASE_DEPENDENCY_HOLD"
+      ]
+    }
+  ],
+  "appPolicy": {
+    "stagingKeep": [
+      "Microsoft.SecHealthUI",
+      "Microsoft.DesktopAppInstaller",
+      "Microsoft.WindowsCalculator",
+      "Microsoft.WindowsNotepad",
+      "Microsoft.Windows.Photos"
+    ],
+    "finalKeep": [
+      "Microsoft.SecHealthUI",
+      "Microsoft.WindowsCalculator",
+      "Microsoft.WindowsNotepad",
+      "Microsoft.Windows.Photos"
+    ],
+    "noEarlyRemovalOfDesktopAppInstallerInfrastructure": true,
+    "storePolicies": "release-forbidden Store/Purchase/Engagement per current Master; stage may require source closure"
+  },
+  "stagingBlocker": {
+    "op": "R045_OP37",
+    "actualAttempts": 3,
+    "allHungBeforeFirstScriptMarker": true,
+    "zeroCopiedOriginalMembers": true,
+    "originalSourcesUnchanged": true,
+    "stageAttemptOutcome": "HOLD",
+    "exactCause": "UNKNOWN",
+    "observedIndependentPreflightAll10": "PASS",
+    "tinyPowerShell7Script": "PASS",
+    "nextPermittedPath": "independent user-operated signed reviewed Lane B source-staging with native receipts; no fourth identical RDC attempt and no platform security bypass"
+  },
+  "safety": {
+    "existingVMs": 3,
+    "allOffAtLastQA": true,
+    "newDurableVMAllowed": false,
+    "allowedSourceRoot": "C:\\work",
+    "connectorBlockedCommandsCount": 33,
+    "blockerOverrideUsed": false,
+    "masterHandoffMutationAllowed": false,
+    "originalImageMutationPerformed": false,
+    "disposableCleanup": "per-file ownership/source SHA/reparse/VM dependency, local native delete and separate QA before removal"
+  },
+  "acceptance": {
+    "realNativeFullDistinct26300BuildsRequired": 2,
+    "actualCompleteDistinctBuildsWithThisExactUniversalPackage": 0,
+    "sourceInspectOnlyDistinctBuilds": 2,
+    "currentActualWIMandISO": "26300.10075 existing R045 OP20/OP22 with older workflow, not a second R044 universal native build",
+    "finalISOtargetBytesApprox": 5000000000,
+    "installedFootprintDecimalGBRange": [
+      14.5,
+      15.5
+    ],
+    "hostHyperVAndDefenderVariantRequired": true,
+    "releaseStatus": "NOT_CERTIFIED"
+  },
+  "proposedFutureDeliverables": [
+    "PRE_MAX.cmd one unique root",
+    "BlueLite_Build.ps1 source-selected core",
+    "BlueLite_SourceContract.ps1 read-only UUID+queue+SHA discovery",
+    "BlueLite_Staging.ps1 small independently executable bounded source copy",
+    "BlueLite_OfflinePreMax.ps1 WIM/CBS reviewed target module",
+    "BlueLite_Policy.json manifest and 5/4 app KEEP data",
+    "BlueLite_ReceiptGate.ps1 new unique receipts and independent QA",
+    "BlueLite_R045_Universal_PREMAX_vNext.zip AFTER new operator review, no README instruction payload"
+  ],
+  "ONE_NEXT": "Source-review/operator-local Lane B signed .10066 pure-source staging or source-closure source reconstruction gate; only after evidence reopen discussion on new universal PRE_MAX deliverable"
+}
