@@ -1,0 +1,3 @@
+# OP11A POST — preflight PASS
+
+Native PS7 PID5768 (admin) rehashed exact kit, source ZIP, frozen Windows/Store input queues, matching .10066 cache descriptor and OP05/OP10 independent receipts. Read every member covered by inner46/outer49. All three known VMs Off, DISM zero mounts, 168457912320 B free, declared cache 137 files/9119622618 B. Snapshotted ordered 33 blocked commands and sole allowed directory C:\work; reg currently blocked and genuinely used by the build. No configuration change. Independent new process rehashed each declared file and preflight receipt DAF19BB7BFDC202026B890B395B14E357C1361AFE119B0126BE449D88378C229. Native proof at C:\work\_UUP\UUP-history\R049_OP11_10066. Next stage immutable copies in C:\work\_UUP\R050_10066_Build.
