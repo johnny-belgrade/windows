@@ -1,0 +1,3 @@
+# OP47B PRE — generate a new portable source archive
+
+Use verified OP46 as input. Expose one root PRE_MAX.cmd, place implementation inside Engine, root-relative logs/work, dynamic source cardinality and selected vendor converter fingerprints. Prefer original three source docs when supplied, otherwise reuse existing explicitly D4-derived Factory path from selected vendor. Check exact cache destination against actual Factory stage, current volume and catalog, preserve existing source renewal and offline payload policy. Package source, SHA manifest, operator instructions and per-run evidence. Verify archive members, CRC and hashes by reopening generated ZIP. New isolated source files only. Next: Windows parser and two independent native source plans. No image.
