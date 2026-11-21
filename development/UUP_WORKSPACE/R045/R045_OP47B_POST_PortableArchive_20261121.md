@@ -1,0 +1,3 @@
+# OP47B POST — candidate packaging PASS
+
+New source candidate BlueLite_PRE_MAX_26300x_OP47.zip, 109995 bytes, SHA256 C3226AFE1A637C7245D1FD0CFFC89616C77CCAD9681D7B7B21927809A81F4304. Independent reopening: 51 unique members; ZIP CRC and complete outer 50-row and inner 46-row manifests PASS. One root CMD, inherited engine isolated, source-relative work and logs, per-run evidence ZIP, original source and D4-derived routes distinctly recorded. Original G4/renewal and payload profile unchanged. Native AST and behavior not yet tested. Next: stage candidate in QA and native verify before source plans.
