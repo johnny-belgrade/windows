@@ -1,0 +1,184 @@
+{
+  "schema": "BlueLite.R045.OP40B.SelectedSourceClosure.LaneB.DesignContract.v1",
+  "createdDate": "2026-11-21",
+  "status": "AUDIT_PASS_SOURCE_CLOSURE_DEPENDENCY_HOLD",
+  "artifactType": "SOURCE_ONLY_DESIGN_NOT_AN_EXECUTABLE_NOT_A_PRODUCTION_ZIP",
+  "sourceAuthority": {
+    "kind": "operator selected original UUPdump vendor ZIP",
+    "file": "C:\\work\\_UUP\\_UUP_Originals\\26300.10066_amd64_en-us_professional_0344497f_convert.zip",
+    "sha256": "8FE361765967DA0651078C324B21E6C6D7595081DBACBB26049EC53AB59DE404",
+    "originalArchiveMembers": 11,
+    "build": "26300.10066",
+    "arch": "amd64",
+    "edition": "professional",
+    "language": "en-us",
+    "uuid": "0344497f-5f08-49b5-9eae-6adf91923a2e",
+    "launcher": "uup_download_windows.cmd",
+    "launcherSourceModified": false,
+    "launcherGeneratedGMT": "2026-11-15 14:38:16 GMT",
+    "windowsQueueUrl": "https://uupdump.net/get.php?id=0344497f-5f08-49b5-9eae-6adf91923a2e&pack=en-us&edition=professional&aria2=2",
+    "storeQueueUrl": "https://uupdump.net/get.php?id=0344497f-5f08-49b5-9eae-6adf91923a2e&pack=neutral&edition=app&aria2=2",
+    "urlExpiry": "Dynamic/current transport URLs expire; source queue must be captured byte-exact for selected original source and SHA frozen, not inferred from old URLs"
+  },
+  "physicalEvidence": {
+    "producer": {
+      "local": "C:\\work\\logs\\R045_OP40A_Original10066Queue_AuditProducer_v2.json",
+      "sha256": "76BD2ABA8D3C8440DF86CC839966A8D56D98BA90EB1936765DDC06876C71134B",
+      "status": "ORIGINAL_ZIP11_LAUNCHER_UUID_SOURCE_FORENSICS_PASS_PURE10066_CLOSURE_UNPROVEN"
+    },
+    "independent": {
+      "local": "C:\\work\\logs\\R045_OP40A_Original10066Queue_AuditIndependent_v1.json",
+      "sha256": "95D3FB8AD1E707D58AC7F805E995312204828D0C1C7ADB350CDC594DC7C07AC3",
+      "archiveMemberStreamSHA256Count": 11,
+      "originalArchiveCRCExit": 0,
+      "allLocalCandidatePhysicalRehash": 205,
+      "original10066MetadataCRCExit": 0,
+      "metadataNestedCABMembers": 360,
+      "originalProfessionalENUSCompDB": true,
+      "errors": []
+    },
+    "original10066Metadata": {
+      "path": "C:\\work\\_UUP\\temp\\R043_OP173_10066_RenewedFour_20261117\\0344497f-5f08-49b5-9eae-6adf91923a2e.AggregatedMetadata.cab",
+      "bytes": 3150415,
+      "sha1": "809889A25F7CAAE6493650B7B6510D18AAC99085",
+      "contentIncludes": "DesktopTargetCompDB_professional_en-us.xml.cab",
+      "assertion": "CompDB metadata exists, but full current Windows transport closure not proven"
+    },
+    "localScanScope": "C:\\work\\_UUP only",
+    "localMatchingSourceCandidates": 205,
+    "triadFilesFound": 147,
+    "triadCopyCounts": {
+      "list": 49,
+      "rename": 49,
+      "sha1Checksums": 49
+    },
+    "historicalDistinctSHA256": {
+      "list": 9,
+      "rename": 9,
+      "sha1Checksums": 11
+    },
+    "triadLocatedUnderCurrent10066NamedRoot": 0,
+    "original10066WindowsAria2QueueCandidates": 0,
+    "originalZipIncludesDownloadedWindowsQueue": false,
+    "originalZipIncludesCompDB": false
+  },
+  "historicMixedStageNotProof": {
+    "manifest": "C:\\work\\_UUP\\temp\\R043_OP211_WimOnlyManifest_20261117\\R043_OP211_ProposedSource137Stage.json",
+    "sha256": "FA831096050A74AF5DF58B8C61DDF19BFD8487D34FACD75551F440FBB425DD75",
+    "totalFiles": 137,
+    "totalBytes": 9119622618,
+    "borrowedHistoricalGolden9818": 125,
+    "current10066FourUpdates": 4,
+    "externalStore8": 8,
+    "actualStageCreated": false,
+    "op37ActualNativeAttempts": 3,
+    "op37PhysicalCopiedCount": 0,
+    "sourcePurity": "HISTORICAL_HYBRID_FIXTURE_NOT_A_PURE_SELECTED10066_SOURCE",
+    "conditionalReuse": "A historical Golden 9818 payload may be used as a byte-identical physical cache ONLY IF new original current10066 queue independently names the exact canonical file and SHA1 matches the cached source. Label provenance original10066 queue + reused historic content. Without queue evidence, block."
+  },
+  "inputRootRules": {
+    "newRun": "C:\\work\\<operator-selected-unique-no-spaces-UUP-root>\\",
+    "originalVendorArchiveCopy": "root original selected untouched ZIP; only one original vendor set per root",
+    "originalUnpackedVendorFiles": "11 exact original archive members as read-only authority",
+    "newBlueLiteArchive": "one separately SHA-reviewed source archive only if authorized; not produced here",
+    "inputFiles": [
+      {
+        "name": "List of files UUP.txt",
+        "type": "snapshot tab-separated Windows file, expiration, SHA-1, size",
+        "rule": "May be a time-bound metadata list; source identity/build must match UUID/original current queue; never use an old identical filename as proof"
+      },
+      {
+        "name": "File_renaming_script.cmd",
+        "type": "original GUID source name -> canonical out name",
+        "rule": "Parse as UNTRUSTED DATA ONLY; never execute. Allow direct out canonical without renaming when actual aria2 already uses canonical name"
+      },
+      {
+        "name": "SHA-1 checksums file.txt",
+        "type": "40-hex SHA-1 and exact canonical filename",
+        "rule": "Checksum per canonical name 1:1"
+      },
+      {
+        "name": "Windows_original_aria2_snapshot.txt",
+        "type": "original generated Windows get.php pack=en-us&edition=professional&aria2=2 body",
+        "rule": "Actual out+checksum and URL lines, SHA256 frozen, output names/mapping unique; no sample/Golden/Store queue substituted"
+      },
+      {
+        "name": "Apps_original_aria2_snapshot.txt",
+        "type": "separate app get.php pack=neutral&edition=app&aria2=2 body",
+        "rule": "Must not be used to replace missing Windows queue"
+      }
+    ],
+    "mutationsAuthorized": false
+  },
+  "acceptancePredicates": [
+    {
+      "id": "I0_ORIGINAL",
+      "check": "original selected ZIP/11 member streams SHA256/CRC0, original launcher UUID+edition/arch/locale/build unchanged, two queue query URLs pinned",
+      "current": "PASS"
+    },
+    {
+      "id": "I1_COMPDB",
+      "check": "source selected matching AggregatedMetadata SHA1/uuid and actual Professional en-US target CompDB exists",
+      "current": "PARTIAL_METADATA_PRESENT"
+    },
+    {
+      "id": "I2_TRIAD",
+      "check": "exact current source selected three files, parse names and SHA1; each unique canonical out and no contradictions; source id different from older 9818",
+      "current": "HOLD_NOT_SOURCE_BOUND"
+    },
+    {
+      "id": "I3_D4_WINDOWS",
+      "check": "exact original current Windows .aria2 snapshot immutable full SHA256 and 1:1 canonical out+checksum after explicit rename map vs all three input tables",
+      "current": "HOLD_ZERO_MATCHING_CURRENT_QUEUE_UNDER_SCANNED_ROOT"
+    },
+    {
+      "id": "I4_SOURCE_REUSE",
+      "check": "each current Windows required file physically SHA1 matches canonical current frozen source queue, including references/delta/FoD/LCU/metadata; if old Golden bytes match current source digest, re-use allowed with logged dual provenance, else cannot borrow",
+      "current": "NOT_RUN"
+    },
+    {
+      "id": "I5_APP_STAGE",
+      "check": "independent Store Apps queue dependency closure with five staging KEEP: SecHealthUI, DesktopAppInstaller, Calculator, Notepad, Photos; final four core keep separate",
+      "current": "NOT_RUN"
+    },
+    {
+      "id": "I6_WIM",
+      "check": "actual converter and real independent target full 26300.10066 WIM; DISM servicing/CBS; original Setup ISO/VM tests only after source closure and separate approval",
+      "current": "NOT_RUN"
+    }
+  ],
+  "parserAndNegativeTests": {
+    "listFormat": "Tab-separated header File\\tExpires\\tSHA-1\\tSize; canonical exact filename+lowercase SHA1",
+    "checksumsFormat": "^([0-9a-f]{40})\\s+\\*?(.+)$",
+    "renameSyntax": "Only narrowly reviewed rename \"<GUID>\" \"<canonical>\" mapped as source metadata, NOT executable",
+    "windowsAria2Format": "URL stanza with indented out= and checksum=sha-1=; normalize original source URL escaping and original out after verified renames",
+    "mustReject": [
+      "missing any of three actual matching original docs",
+      "source UUID mismatch",
+      "using historical 6c7bf258 9818 metadata as current 0344497f source",
+      "zero or missing original current Windows .aria2 payload",
+      "URL-only matching without SHA identity",
+      "duplicate canonical filename or inconsistent checksum",
+      "wrong build/culture/edition",
+      "bad SHA1, missing FoD/reference/delta/CompDB",
+      "untested wildcard queue pruning",
+      "original launcher/config original modification",
+      "promotion of source-only Inspect to WIM/ISO RELEASE_PASS"
+    ]
+  },
+  "futureOperatorLaneB": {
+    "state": "PRESENT_FOR_REVIEW_NOT_EXECUTED",
+    "firstAction": "Acquire/freeze ONLY missing current official .10066 authoritative Windows aria2 and current exact three source docs under one new owned root, without modifying original selected ZIP. Native proof before payload staging; if unavailable, report exact source availability dependency.",
+    "secondAction": "Run reviewed read-only source contract validator and independent second process verifier; if full 1:1:1/D4 PASS, only then source stage and real native converter WIM after separate gated PRE",
+    "deliveryAfterReview": "small one-entry CMD with early root-local log, independent sha log mirror and preserved original vendor launcher; produced later, not in OP40"
+  },
+  "nonePerformed": [
+    "no network transfer",
+    "no execution of rename CMD",
+    "no original source copy",
+    "no converter/WIM/ISO",
+    "no VM creation/start",
+    "no Master/Handoff or original image mutation"
+  ],
+  "ONE_NEXT_AFTER_PROTOCOL_PAUSE": "R045 OP41: separately source-bound acquisition or discovery of missing exact original .10066 Windows aria2 and matching three current source documents, then independent source contract 1:1:1/D4 validation, no converter/VM without new authorization"
+}
