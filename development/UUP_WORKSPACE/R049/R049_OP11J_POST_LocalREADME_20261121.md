@@ -1,0 +1,3 @@
+# OP11J POST — local README raw suffix PASS
+
+New README SHA 360E48D293EE92F7115EE025C0D3E355CD50D0F49EF86746F6075E84753BC916, full OP10 raw suffix and immutable backup both match BC4863EADF0EFC2D6E28BBAB467660A2789826CA55530D0F7107A643764C647D, fresh independent native readback. Next close sole Current and terminal.
