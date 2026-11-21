@@ -1,3 +1,9 @@
+# BlueLite Session Entry — permanent router
+
+Fetch BlueLite_Current_Status.md fresh. R049 OP11 supersedes the OP10 image NOT_RUN state. The genuine .10066 Build was attempted once (HOLD17 before converter). A separate loose copy passed source-only verification of the corrected engine entry. Start from OP11D/OP11G and native OP11 receipts. All original archives retained.
+
+---
+
 # BlueLite v1.0 — Session Entry (router only; ONE live checkpoint in Current)
 
 > **2026-11-21 R049 OP10 SOURCE RELEASE SOURCE-PLAN VERIFIED (router only):** Physical separately versioned R049 repaired ZIP SHA **4E6C2CDDE9C068745D467CCC9598C571F06FA33EB367D55BD39478547483AE2B**, 110445B; repaired inner manifest SHA059CDC909209D2D4D2C32D4F0AB9401174EF5872A7BE9EA43A874E8D22B7BAD7, native independent 46/46 inner, 49/49 outer, PS7 AST26/26, inherited48/48. Genuine four selected original Windows 26300.10066/.9911/.9974/.10075 **native --plan-build EXIT0 EACH**, original Factory Analyze + D498/98 independent each; .10075 tested TWO ZIPs ONLY. Independent negatives noargs and foreign .10066 queue on .9911 both real EXIT17, specific source rejection; QA SHA18BBC9F2725C28CB157477B27D752AE200894F04757EA99153AE7B9A07F7ED7B. Native final host SHA D3DB76137C12F94F64E5A823D3965CE2FAAD1380477A4A447B99057CBF777F1C and separate QA SHA C08801F8C3CF81ECADB33FC299708C4C3BDE19BDEB2DE3235A3B7A7F3416A8F3: protected originals same, VM3 OFF, DISM mounted WIM0, RDC33 blockers unchanged. Master owner-corrected §0U SHA fafe03d3309997c106c27c40281d5828e5a9bbb4 means primary all relevant 26300.x sources; 26200.x only optional individual needed/applicable findings. Detailed newest BlueLite_Sources.md and immutable Git R049 OP01-OP10. **Current alone decides ONE NEXT; no full binary UUP/WIM/ISO/VM Build has been run with R049 v1, not release-certified.**
