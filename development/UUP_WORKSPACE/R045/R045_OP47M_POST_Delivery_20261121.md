@@ -1,0 +1,3 @@
+# OP47M POST — clean portable source package delivered
+
+Windows C:\work\_UUP\R046_PRE_MAX_26300x contains exactly one file and no subdirectories (including hidden entries). BlueLite_PRE_MAX_26300x_OP47.zip, 109995 bytes, SHA256 C3226AFE1A637C7245D1FD0CFFC89616C77CCAD9681D7B7B21927809A81F4304. Physical Windows digest, all 50 member hashes, 51 ZIP members and single root CMD independently verified; separate workspace ZIP CRC PASS. M-Delivery.json 93C0A8D8DE27C7D49AD9B9A46797ED89BE0E3665D0CA40CAC00DD8E70E4DCD76. Same original file saved for GUI download in project Custom_UUP. Source plan validated; full --build not run. Next documentation sync.
