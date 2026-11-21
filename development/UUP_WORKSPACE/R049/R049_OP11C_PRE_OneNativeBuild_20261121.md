@@ -1,0 +1,5 @@
+# OP11C PRE — one actual native image Build, isolated copy
+
+This owner-directed block continues R049 OP10 ONE NEXT. Target .10066 only, from C:\work\_UUP\R050_10066_Build, using the verified R049 v1 copy and exact same-source OP211 cache manifest + original OP43 Store catalog. Run exactly one PRE_MAX.cmd --build, capturing OS child exit, stdout/stderr, time and bootstrap. Never edit any ZIP. No host servicing or VM.
+
+RDC baseline saved C:\work\_UUP\UUP-history\R049_OP11_10066\RDC-Baseline.json SHA C045407F37D2661D1CA38305626F19129B5F45D9986CF6E1DBE789CF60D313BD. Required native offline registry operation: authorized supported config transaction only, remove exact reg entry, verify 32 entries/sole C:\work scope before launch; restore original ordered 33 and independently check in finally immediately after bounded launch. Configuration refusal means HOLD without launching. Record native status as running only when observed. No automatic second Build. On exit inspect actual first failing stage or independently hash and verify real install.wim/boot.wim/ISO if produced.
