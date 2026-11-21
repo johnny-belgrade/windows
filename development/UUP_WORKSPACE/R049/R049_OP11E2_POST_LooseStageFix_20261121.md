@@ -1,0 +1,3 @@
+# OP11E2 POST — extracted-only correction and independent SHA QA PASS
+
+Pristine R049 ZIP is unchanged. Only loose BuildController and the two loose manifest text files differ out of 50 source members. Controller creates/logs checked deep directory before Plan/Build split and passes the same variable to the native engine. Inner46, outer49 and native 26 AST zero errors; hash of controller AC498F03BCBA305D73237F805E2F4236AFF3B4D1BF012DA7F246D22290304139. E2-Independent.json SHA 59CEEA14F75B1861972AACAB0E1BF8FC5B881A26B0DD63DE4B2754F0C70CB55A. Both copied ZIPs identical. Next native source-plan proof of newly provisioned path.
