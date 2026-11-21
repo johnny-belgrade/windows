@@ -1,3 +1,9 @@
+# 2026-11-21 — R049 OP03 owner-corrected evidence priority: PRIMARY 26300.x / OPTIONAL APPLICABLE 26200.x
+
+**Autoritativni Master §0U blob fafe03d3309997c106c27c40281d5828e5a9bbb4:** Prvenstveno koristiti sve relevantne skripte, analize, logove i dokaze iz **26300.x** (Library, Chats, GitHub sve relevantne fajlove, SVE relevantne web linkove i baze u ovom Sources korpusu, lokalne originale/istoriju i native QA). **Samo po potrebi**, uključiti određene nalaze iz **26200.x ako i samo ako su dokazano primenljivi na rešavani zadatak 26300.x**. Ovo NE znači da se 26200.x izvori čitaju ili prenose svi i unapred; svaki stvarno prenet nalaz mora dobiti proveru na stvarnom originalnom 26300.x i dokaz zavisnosti. Prethodne šire formulacije u §0U su ispravljene na izričit zahtev vlasnika. UUP original/source-triad, hashovi i OP05 manifest analiza ostaju neizmenjeni; ovo je prioritet istraživanja, ne novo izvršenje.
+
+---
+
 # 2026-11-21 — R048 OP05: 4 original source-triad trees verified, exact R048 nested-manifest repair PROVEN IN MEMORY (not new ZIP)
 
 Native Windows PS7 producer PID8420 read **all 12 original files** in C:\work\_UUP\_UUP_Originals\26300.{9911,9974,10066,10075}_files. Every build has only File_renaming_script.cmd (100 lines / 98 rename), Files_List.txt (98 unheaded source entries), SHA-1_checksums_file.txt (98 original SHA1 rows); **4 x 98/98 cross-file filename/SHA1 matches and 98/98 rename target closure**. These are authentic selected original UUP source metadata, **not** the BlueLite engine SHA256 manifest and not yet downloaded binary SHA1 evidence; preserve original files.
