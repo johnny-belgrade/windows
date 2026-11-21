@@ -1,5 +1,7 @@
 # BlueLite v1.0 — Operator authorizations and execution-security gates (permanent successor pointer)
 
+> **Operativna primena Master §0U posle korekcije vlasnika 2026-11-21:** U svim BlueLite operacijama **primarni** izvori/dokazi su svi relevantni dostupni **26300.x** originali i analize; **26200.x se koristi isključivo sekundarno, po potrebi i samo za pojedinačno dokazane primenljive nalaze na 26300.x**. Ova izmena uređuje istraživački redosled, ne dodeljuje dodatne dozvole za izvršavanje, VM, bypass ili izmene originala. Master blob fafe03d3309997c106c27c40281d5828e5a9bbb4; obavezna pojedinačna PRE/QA/POST i bezbednosna ograničenja ostaju.
+
 **Read together with current Master §0F/§0G/§0J and the *fresh* `main:BlueLite_Current_Status.md`. This document records an owner authorization, NOT an exception to platform safety restrictions or a claimed completed execution.** Immutable authorizing operation: [R045 OP09 PRE](development/UUP_WORKSPACE/R045/R045_OP09_PRE_20261120_ExplicitRegTemporaryAuthorization_RestoreAndLocalCMD.md).
 
 ## 2026-11-20 — express owner approval, persistent for BlueLite successors
