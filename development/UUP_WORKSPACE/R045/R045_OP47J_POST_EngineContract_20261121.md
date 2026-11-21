@@ -1,0 +1,3 @@
+# OP47J POST — inherited source contract PASS
+
+33/33 BlueLite engine members (download, G4, renewal, protection lists, pre-ISO and converter hook) byte-identical between complete OP46 archive, new ZIP and actual deep native .10075 stage. G4 selects required manifest additions then uses original source-catalog renewal and retries; source identity compares out+SHA1 and the Windows full queue. Separate QA confirmed required member roles + J-Contract.json SHA 719197386F6869492600B83D0A9344801636F43B869C08AAEBF9B87BAF0DB544. Live G4/download/converter and build remain NOT_RUN. Next seal compact records and inventory assistant-owned QA tree for scoped cleanup.
