@@ -1,0 +1,7 @@
+# R055 OP04 PRE — 26300.10066 FoD acquisition dependency audit
+
+Scope is read-only against existing original amd64 en-US Professional source, provider inventory, signed queue identity, CompDB and local converter/reference evidence. No downloads, WIM servicing, ZIP/ISO build or VM operations. Owner resumed the documented ONE NEXT. Current input blob c8ae778af8ed9ea4ef535d80ff84310296c33749. R055 OP02/03 native receipt hashes revalidated on DESKTOP-4J4KCEA against Git before starting. The OP02 WIM is 5,588,286,200 B in the verified receipt, 88,286,200 B above the limit.
+
+Enumerate original provider, queue, metadata and cached payloads. Join source identity, SHA and bytes to original selected CompDB payloads and exact package identity. Check reconstruction, delta/reference, install, Setup PE, servicing and protected runtime uses. Distinguish per-package download proof from post-stage removability. Retain unknowns under DEPENDENCY_HOLD. Report actual queue/WIM savings only when physically measured. Record coverage, missing metadata and the precise remaining dependency for any HOLD.
+
+Write new evidence under C:\work\logs\R055_20261121 with exclusive create. A fresh native process independently checks original input hashes, joins/classification, counts and evidence hash. Record Git POST and verify by independent read, update routing and local README with historical prefix verification, then update the sole Current by blob CAS. A completed evidence inventory may still have a dependency HOLD.
